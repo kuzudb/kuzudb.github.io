@@ -5,8 +5,8 @@ nav_order: 1
 permalink: /
 ---
 
-# Kuzu
-Kuzu introduction.
+# Kùzu
+Kùzu introduction.
 
 ## Getting started
 ### Installation
