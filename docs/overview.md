@@ -6,7 +6,7 @@ Kùzu is an in-process property graph database management system (GDBMS) built f
 - Columnar disk-based storage
 - Columnar sparse row-based (CSR) adjacency list/Join indices
 - Vectorized and factorized query processor
-- Novel (and very fast) join algorithms
+- Novel and very fast join algorithms
 - Multi-core query parallelism
 - Serializable ACID transactions
 
