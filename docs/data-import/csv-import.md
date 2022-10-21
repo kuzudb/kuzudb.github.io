@@ -34,7 +34,7 @@ already in the database (either imported in bulk or inserted through Cypher data
 only appear to start a new row in your CSVs. It cannot appear inside column values, e.g, inside a string column between "...CRLF...". 
 `COPY FROM` commands will fail if this happens. You should instead use '\n' character to specify line breaks inside your strings.
 - **Wrapping strings inside quotes:** Kùzu will accept strings in string columns both with and without quotes. 
-- **Header line:** Header lines, if exists, are the first lines and ignored by the CSV reader. A header line can be added to your 
+- **Header line:** Header lines, if they exist, are the first lines and ignored by the CSV reader. A header line can be added to your 
    CSV files for your convenience but the CSV reader, both for CSVs for node as well as relationship tables, assumes a fixed order
    of columns, so simply ignores the header row.
   
