@@ -34,9 +34,10 @@ already in the database (either imported in bulk or inserted through Cypher data
 only appear to start a new row in your CSVs. It cannot appear inside column values, e.g, inside a string column between "...CRLF...". 
 `COPY FROM` commands will fail if this happens. You should instead use '\n' character to specify line breaks inside your strings.
 - **Wrapping strings inside quotes:** Kùzu will accept strings in string columns both with and without quotes. 
-- **Comments in CSV Files:** You can start a sequence of lines at the top of your CSV files with `#`, which will be ignored as comments.
-You cannot have comments after actual lines of your CSV file start.
-
+- **Header line:** Header lines, if exists, are the first lines and ignored by the CSV reader. A header line can be added to your 
+   CSV files for your convenience but the CSV reader, both for CSVs for node as well as relationship tables, assumes a fixed order
+   of columns, so simply ignores the header row.
+  
 ## `COPY FROM` a CSV File to Node Tables 
 Let us consider a `User(name STRING, age INT64, reg_date DATE, PRIMARY KEY (name))` node table with the name, age, and reg_date predefined properties.
 
@@ -47,8 +48,8 @@ in the catalog. This is the order you used when defining the schema of your node
 Example CSV file without a header file:
 ```
 user.csv
-Adam, 30, 2020-06-22
-Karissa, 40, 2019-05-12
+Adam,30,2020-06-22
+Karissa,40,2019-05-12
 ...
 ```
 Same file with header would have the following first line:
@@ -60,22 +61,24 @@ TODO: Write about unstructured properties.
 
 ## `COPY FROM` a CSV File to Rel Tables
 
-### Column Order in Rel Tables 
-If the FROM and TO nodes have a single label, then:
-  - 1st column: Primary key of the FROM node. If your CSV file has a header, make the name of the column `FROM`. 
-  - 2nd column: Primary key of the TO node. If your CSV file has a header make the name of the column `TO`. 
-  - 3rd, 4th, etc. columns: The predefined properties on the relationship table as defined in your `CREATE REL TABLE` command. 
-    If you have a header, make the names of the columns math those in your rel table schema. 
+### Column Order in Rel Tables
+The order of the columns are as follows:
+  - FROM Node Column(s): There are two cases here:
+    1. If the FROM nodes of the relationship can have a single label (as defined the REL TABLE schema), then the first column is the primary key of the from nodes.
+    2. If FROM nodes can contain multiple labels, then the first first column specifies the from nodes' labels, and the second column specifies their primary keys.
+  - TO Node Column(s): The next 1 or 2 columns similarly specify either the TO nodes' primary key (if TO nodes can take a single label) or their label and then their primary keys (if TO nodes can take multiple labels)
+  - Rest of the columns: The predefined properties on the relationship table as defined in your `CREATE REL TABLE` command. 
 
-Consider the `CREATE REL TABLE Follows(FROM User TO User, since DATE)` table. An example CSV file (with optional headers) would look as follows:
+
+Here are a few examples:
+Consider the `CREATE REL TABLE Follows(FROM User TO User, since DATE)` table. An example CSV file would look as follows:
 ```
 follows.csv
-FROM, TO, since
-Adam, Karissa, 2010-01-30
-Karissa, Michelle, 2014-01-30
+Adam,Karissa,2010-01-30
+Karissa,Michelle,2014-01-30
 ...
 ```
-you can use `COPY Follows FROM "follows.csv' (HEADER=true)` to load this file.
+you can use `COPY Follows FROM "follows.csv'` to load this file.
 
 If either the FROM or TO node have multiple labels, then you need an additional column before the primary key column 
 of those nodes to specify the label of those nodes. For example, consider `CREATE REL TABLE Likes(FROM User|Admin TO User)`
