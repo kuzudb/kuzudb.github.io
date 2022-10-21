@@ -69,7 +69,6 @@ The order of the columns are as follows:
   - TO Node Column(s): The next 1 or 2 columns similarly specify either the TO nodes' primary key (if TO nodes can take a single label) or their label and then their primary keys (if TO nodes can take multiple labels)
   - Rest of the columns: The predefined properties on the relationship table as defined in your `CREATE REL TABLE` command. 
 
-
 Here are a few examples:
 Consider the `CREATE REL TABLE Follows(FROM User TO User, since DATE)` table. An example CSV file would look as follows:
 ```
@@ -78,17 +77,15 @@ Adam,Karissa,2010-01-30
 Karissa,Michelle,2014-01-30
 ...
 ```
-you can use `COPY Follows FROM "follows.csv'` to load this file.
+You can use `COPY Follows FROM "follows.csv'` to load this file.
 
-If either the FROM or TO node have multiple labels, then you need an additional column before the primary key column 
-of those nodes to specify the label of those nodes. For example, consider `CREATE REL TABLE Likes(FROM User|Admin TO User)`
-table. Then the columns of the CSV files would be
-   - 1st column: NodeLabel of FROM node. If your CSV file has a header, make the name of the column `fromType`. 
-   - 2nd column: Primary key of FROM Node.
-
-Similarly, you would add an additional `toType` before the TO column, if the TO nodes have multiple labels.
-
-An example CSV file (with optional headers) for the Follows would be:
-
+As another example, consider `CREATE REL TABLE Likes(FROM User|Pet TO User) An example CSV file for the Follows would be:
+```
+likes.csv
+User,Adam,Karissa
+Pet,Fluffy,Karissa
+...
+```
+This declares 2 edges: (Adam with label User)-[:Likes]->(Karissa with label User) and (Fluffy with label Pet)-[:Likes]->(Karissa with label User). So, Adam and Fluffy come from different node tables.
 
 [^1]: Removing this constraint is in our immediate roadmap.
