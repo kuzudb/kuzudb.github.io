@@ -17,7 +17,7 @@ the `COPY FROM` command. The following table specifies the parameters and their 
 | ESCAPE | Character within string quotes to escape QUOTE and other characters, e.g., a line break. <br/> See the important note below about line breaks lines below.| '\\' |
 | LIST_BEGIN/LIST_END | For the list data type ([see the data types supported by Kùzu](...)), the delimiters to specify <br/> list begin and list end characters | `[`, `]`|
 
-Here are examples of specifying that there is a header file and changing delimiter from `,` to `|`:
+Here are examples of specifying that there is a header file and changing the delimiter from `,` to `|`:
 ```
 COPY User FROM "user.csv" (HEADER=true)
 
@@ -34,32 +34,48 @@ already in the database (either imported in bulk or inserted through Cypher data
 only appear to start a new row in your CSVs. It cannot appear inside column values, e.g, inside a string column between "...CRLF...". 
 `COPY FROM` commands will fail if this happens. You should instead use '\n' character to specify line breaks inside your strings.
 - **Wrapping strings inside quotes:** Kùzu will accept strings in string columns both with and without quotes. 
+- **Comments in CSV Files:** You can start a sequence of lines at the top of your CSV files with `#`, which will be ignored as comments.
+You cannot have comments after actual lines of your CSV file start.
 
 ## `COPY FROM` a CSV File to Node Tables 
 Let us consider a `User(name STRING, age INT64, reg_date DATE, PRIMARY KEY (name))` node table with the name, age, and reg_date predefined properties.
 
 ### Column Order in Node Tables and Ad-hoc Node Properties.
-With or without a header line, the order of the columns need to match the order of the predefined properties for node tables
+The order of the columns need to match the order of the predefined properties for node tables
 in the catalog. This is the order you used when defining the schema of your node table. 
 
-Example:
+Example CSV file without a header file:
 ```
-TODO: Fill with a sample CSV file.
+user.csv
+Adam, 30, 2020-06-22
+Karissa, 40, 2019-05-12
+...
 ```
+Same file with header would have the following first line:
+```
+name,age,reg_date
+```
+
+TODO: Write about unstructured properties.
 
 ## `COPY FROM` a CSV File to Rel Tables
 
 ### Column Order in Rel Tables 
-If the FROM and TO nodes have a single label (e.g., in `CREATE REL TABLE Follows(FROM User TO User, since DATE)`), then:
+If the FROM and TO nodes have a single label, then:
   - 1st column: Primary key of the FROM node. If your CSV file has a header, make the name of the column `FROM`. 
   - 2nd column: Primary key of the TO node. If your CSV file has a header make the name of the column `TO`. 
   - 3rd, 4th, etc. columns: The predefined properties on the relationship table as defined in your `CREATE REL TABLE` command. 
     If you have a header, make the names of the columns math those in your rel table schema. 
 
-Example:
+Consider the `CREATE REL TABLE Follows(FROM User TO User, since DATE)` table. An example CSV file (with optional headers) would look as follows:
 ```
-TODO: Fill with a sample CSV file
+follows.csv
+FROM, TO, since
+Adam, Karissa, 2010-01-30
+Karissa, Michelle, 2014-01-30
+...
 ```
+you can use `COPY Follows FROM "follows.csv' (HEADER=true)` to load this file.
 
 If either the FROM or TO node have multiple labels, then you need an additional column before the primary key column 
 of those nodes to specify the label of those nodes. For example, consider `CREATE REL TABLE Likes(FROM User|Admin TO User)`
@@ -68,5 +84,8 @@ table. Then the columns of the CSV files would be
    - 2nd column: Primary key of FROM Node.
 
 Similarly, you would add an additional `toType` before the TO column, if the TO nodes have multiple labels.
+
+An example CSV file (with optional headers) for the Follows would be:
+
 
 [^1]: Removing this constraint is in our immediate roadmap.
