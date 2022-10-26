@@ -57,8 +57,6 @@ Same file with header would have the following first line:
 name,age,reg_date
 ```
 
-TODO: Write about unstructured properties.
-
 ## `COPY FROM` a CSV File to Rel Tables
 
 ### Column Order in Rel Tables
