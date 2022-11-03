@@ -1,4 +1,4 @@
-# Example Dataset
+# Example Database
 For the clauses we cover here, we will use the following graph database that
 consists of User and City nodes, Follows relationships between Users,
 and LivesIn relationships between Users and Cities.
@@ -74,3 +74,5 @@ Data import:
 COPY LivesIn FROM "lives-in.csv"
 ```
 ### Graph Visualization
+The above database corresponds visually to the following graph:
+![](running-example.png)
