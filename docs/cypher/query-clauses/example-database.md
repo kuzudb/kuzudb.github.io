@@ -3,9 +3,11 @@ For the clauses we cover here, we will use the following graph database that
 consists of User and City nodes, Follows relationships between Users,
 and LivesIn relationships between Users and Cities.
 
+<img src="running-example.png" width="800">
+
 The DDL statements to define the schema of this database, the csv files containing
-the records of the tables in the database and the data import (`COPY FROM`) commands, 
-and the visualition of this database as a graph are given below.
+the records of the tables in the database and the data import (`COPY FROM`) commands
+are given below.
 
 
 ### User nodes:
@@ -73,7 +75,3 @@ Data import:
 ```
 COPY LivesIn FROM "lives-in.csv"
 ```
-### Graph Visualization
-The above database corresponds visually to the following graph:
-
-<img src="running-example.png" width="800">
