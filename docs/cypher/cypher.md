@@ -21,18 +21,58 @@ Karissa,40
 Zhang,50
 Noura,25
 ```
-Data Import:
+Data import:
 ```
 COPY User From "user.csv"
 ```
 
 ### City nodes:
+Schema:
 ```
+CREATE NODE TABLE City(name STRING, population INT64, PRIMARY KEY (name))
+```
+city.csv
+```
+Waterloo,150000
+Kitchener,200000
+Guelph,75000
+```
+Data import:
+```
+COPY City FROM "city.csv"
 ```
 ### Follows relationships:
-
+Schema:
+```
+CREATE REL TABLE Follows(FROM User TO User, since INT64)
+```
+follows.csv
+```
+Adam,Karissa,2020
+Adam,Zhang,2020
+Karissa,Zhang,2021
+Zhang,Noura,2022
+```
+Data import:
+```
+COPY Follows FROM "follows.csv"
+```
 ### LivesIn relationships:
-
+Schema:
+```
+CREATE REL TABLE LivesIn(FROM User TO City)
+```
+lives-in.csv
+```
+Adam,Waterloo
+Karissa,Waterloo
+Zhang,Kitchener
+Noura,Guelph
+```
+Data import:
+```
+COPY LivesIn FROM "lives-in.csv"
+```
 ### Graph Visualization
 
 # MATCH Clause
