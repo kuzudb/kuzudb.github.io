@@ -74,5 +74,3 @@ Data import:
 COPY LivesIn FROM "lives-in.csv"
 ```
 ### Graph Visualization
-
-# MATCH Clause
