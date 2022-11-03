@@ -22,10 +22,10 @@ Note that there is no comma between the FROM and TO clauses.
 - Relationship primary keys: You do not define a primary key for relationship records. Each relationship gets a unique system-level edge ID, which identifies them. This ID is not exposed to you but you can use the "=" and "!=" operator between two variables that bind to relationships to check if two edges are the same. For example, you can query  `MATCH (n1:User)-[r1:Follows]->(n2:User)<-[r2:Follows]-(n3:User) WHERE r1 != r2 RETURN *` to ensure that the same relationship does not bind to both r1 and r2.
 
 ### Multiple FROM or TO Node Labels
-Relationships can also be defined as being from a set of node tables/labels to a set of node table/labels. As a hypothetical example, suppose we also have Admins nodes in our database, the following indicates that the database has (User)-[Likes]->(User), and (Admin)-[Likes]->(User) edges (so admins can like users but cannote be liked by either users or admins). 
+Relationships can also be defined as being from a set of node tables/labels to a set of node table/labels. As a hypothetical example, suppose we also have Pet nodes in our database, the following indicates that the database has (User)-[Likes]->(User), and (Pet)-[Likes]->(User) edges (so pets can like users but cannot be liked by either users or pets). 
 
 ```
-CREATE REL TABLE Likes(FROM User|Admin TO User)
+CREATE REL TABLE Likes(FROM User|Pet TO User)
 ```
 The Cartesian product of the FROM node labels and TO node labels give the set of combinations of all possible relationships that can exist.
 
@@ -44,9 +44,9 @@ CREATE REL TABLE LivesIn(FROM User TO City, MANY_ONE)
 The above ddl indicates that LivesIn has n-1 multiplicity. This command puts an additional constraint that each User node v might LiveIn at most 1 City node (assuming our database has City nodes). It does not put any constraint in the "backward" direction, i.e., there can be multiple Users living in the same City. As another example to explain the semantics of multiplicity constraints in the presence of multiple node labels, consider this: 
 
 ```
-CREATE REL TABLE Likes(FROM User|Admin TO User, ONE_MANY)
+CREATE REL TABLE Likes(FROM User|Pet TO User, ONE_MANY)
 ```
-The above ddl indicates that LivesIn has 1-to-n multiplicity. This ddl command puts the constraint: that each User node v might be Liked by one node (either User or Admin). It does not put any constraint in the forward direction, i.e., each User node (or Animal) node might know multiple Users.
+The above ddl indicates that Likes has 1-to-n multiplicity. This ddl command puts the constraint: that each User node v might be Liked by one node (either User or Pet). It does not put any constraint in the forward direction, i.e., each User node (or Pet) node might know multiple Users.
 
 In general in a relationship E's multiplicity, if the "source side" is "ONE", then for each node v that can be the destination of E relationships, v can have at most 1 backward edge. If the "destination side" is ONE, then each node v that can be the source of E relationships, v can have at most 1 forward edge. 
 
