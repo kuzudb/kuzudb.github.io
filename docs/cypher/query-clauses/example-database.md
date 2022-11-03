@@ -75,4 +75,5 @@ COPY LivesIn FROM "lives-in.csv"
 ```
 ### Graph Visualization
 The above database corresponds visually to the following graph:
-![](running-example.png)
+
+<img src="running-example.png" width="800">
