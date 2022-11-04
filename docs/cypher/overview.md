@@ -1,9 +1,9 @@
 # Overview
 Cypher is a high-level query language for the property graph datamodel.
-Cypher is very much like SQL. Some of its main differences are: 
+Cypher is similar to SQL in many aspects. Some of its main differences are: 
  - Instead of SQL's SELECT/FROM/WHERE, Cypher has MATCH (equivalent to FROM) WHERE, 
    and RETURN (equivalent to SELECT) as its main query clauses.
- - Instead of SQL's INSERT/UPDATE, Cypher has CREATE and SET data manipulation clauses. 
+ - Instead of SQL's INSERT/UPDATE/DELETE, Cypher has CREATE/SET/REMOVE data manipulation clauses. 
  - Joins between the records of different (node/rel) tables are specified using a graph-syntax.
  - There are special syntax, such as the Kleene star, or min...max, to describe variable-length
    and recursive joins.
