@@ -2,7 +2,7 @@
 # Data Import From CSV Files
 You can load the initial versions of your node and rel tables from CSV files 
 using the `COPY FROM` command. You should use CSV loading if you are ingesting large databases. 
-`COPY FROM` commands can be used when your tables are completely empty[^1]. 
+`COPY FROM` commands can be used when your tables are completely empty. 
 
 ## Configuring CSV Reading
 Kùzu's CSV reader has default configurations for a set of parameters for the CSV file, such as delimiters 
@@ -26,7 +26,7 @@ COPY User FROM "user.csv" (DELIM="|")
 
 ## Several Notes
 Here are several important rules about Kùzu's CSV reader: 
-- **Starting with empty tables:** `COPY FROM` commands can be used when your tables are completely empty[^1]. So you should 
+- **Starting with empty tables:** `COPY FROM` commands can be used when your tables are completely empty. So you should 
 use `COPY FROM` immediately after you define the schemas of your tables. 
 - **Copying Nodes Before Rels:** In order to copy a rel table R from a csv file RFile, the nodes that appear RFile need to be 
 already in the database (either imported in bulk or inserted through Cypher data manipulation commands).
