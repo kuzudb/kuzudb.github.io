@@ -14,12 +14,12 @@ system crashes before committing or rolling back, then none of your updates will
 
 ## Important Properties of Kùzu Transactions: 
 - Each transaction is identified as a write or read transaction (see below for how this is done).
-- At any point in time, there can be multiple read transactions but one write transaction in Kùzu.
+- At any point in time, there can be multiple read transactions but one write transaction.
 - There are two ways to use transactions: (i) manually beginning and committing/rolling back transactions; 
 or (ii) auto-committing. These are reviewed below.
 
 # Manually Beginning and Committing/Rollingback
-When you access Kùzu programmatically through one of its programming language drivers,
+When you access Kùzu programmatically through one of its programming language drivers (but not through its CLI),
 you can start a write transaction, or a read only transaction manually as follows (in C_++:
 
 ```
@@ -62,4 +62,5 @@ automatically wrapped around a transaction that will be executed in a serializab
   auto conn = make_unique<Connection>(database.get());
   auto result = conn->query("CREATE (a:User {name: 5, age: 72})");
 ```
+Note: All queries/commands sent from CLI are in auto-commit mode.
 You do not have to commit at the end of auto-committed transactions (and you cannot rollback).
