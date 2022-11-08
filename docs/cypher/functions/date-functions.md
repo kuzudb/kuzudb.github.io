@@ -1,4 +1,4 @@
-# Date mathematical operations
+# Date operators
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | + | addition of INT64 | DATE(2022-11-12) + 5  | 2022-11-17 (DATE) | 
