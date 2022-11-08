@@ -1,4 +1,4 @@
-# Timestamp mathematical operations
+# Timestamp operators
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | + | addition of INTERVAL | TIMESTAMP(2022-11-12 13:22:17) + INTERVAL(4 minutes, 3 hours, 2 days) | 2022-11-14 17:22:21 (TIMESTAMP) | 
