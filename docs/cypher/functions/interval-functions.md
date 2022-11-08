@@ -1,4 +1,4 @@
-# Interval mathematical operations
+# Interval operators
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | + | addition of INTERVAL | INTERVAL(79 DAYS 32 YEARS) + INTERVAL(20 MILLISECONDS 30 HOURS 20 DAYS)  | 32 years 99 days 30:00:00.02 (INTERVAL) | 
