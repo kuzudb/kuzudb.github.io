@@ -17,3 +17,4 @@
 | datetrunc | alias of date_trunc | datetrunc('year', DATE(2005-12-11)) | 2005-12-01 (DATE) |
 | greatest | returns the later of the given two dates | greatest(DATE(2013-12-11), DATE(2005-11-12)) | 2013-12-11 (DATE) |
 | least | returns the earlier of the given two dates | least(DATE(2013-12-11), DATE(2005-11-12)) | 2005-11-12 (DATE) |
+| make_date | returns the date based on the given parts | make_date(1952,11,22) | 1952-11-22 (DATE) |
