@@ -34,6 +34,7 @@ Unsupported numeric operators:
 | log(x) | returns the 10-log of x | log(2.11) | 0.324282 (DOUBLE) |
 | log2(x) | returns the 2-log of x | log2(3) | 1.584963 (DOUBLE) |
 | log10(x) | alias of log(x) | log10(100) | 2 (INT64) |
+| negate(x) | returns the opposite number of x | negate(100) | -100 (INT64) |
 | pi() | returns the value of pi | pi() | 3.141593 | 
 | pow(x, y) | returns the value of x to the power of y | pow(4, 5) | 1024 (INT64) |
 | radians(x) | converts the degree to radians | radians(89) | 1.553343 (DOUBLE) |
