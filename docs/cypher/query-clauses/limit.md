@@ -4,7 +4,7 @@ We will use the database, whose schema and data import commands are given [here]
 <img src="running-example.png" width="800">
 
 # Limit 
-Limit controls the number of tuples returned from a query. It is often used within in an [ORDER BY](order-by.md) clause to fetch the top N tuples from the query result.
+Limit controls the number of tuples returned from a query. It is often used within in an [ORDER BY](order-by.md) clause to fetch the top N tuples from the query result. Note: skip accepts any expressions that can be evaluated to an integer.
 
 ## Examples:
 1. returns the top three oldest users.
