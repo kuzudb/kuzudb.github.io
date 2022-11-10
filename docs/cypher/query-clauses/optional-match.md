@@ -4,7 +4,7 @@ We will use the database, whose schema and data import commands are given [here]
 <img src="running-example.png" width="800">
 
 # Optional-match
-Optinoal-match is the clause where you define a pattern to find in the database. The difference between match is that if no pattern is found, Optional-match will fill up the missing part of the pattern with NULL. 
+Optional-match is the clause where you define a pattern to find in the database. The difference between match is that if no pattern is found, Optional-match will fill up the missing part of the pattern with NULL.
 
 ## Examples:
 1. returns the followees of each user or NULL if a user doesn't follow anyone.

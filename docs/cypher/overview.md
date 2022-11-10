@@ -7,7 +7,7 @@ Cypher is similar to SQL in many aspects. Some of its main differences are:
  - Joins between the records of different (node/rel) tables are specified using a graph-syntax.
  - There are special syntax, such as the Kleene star, or min...max, to describe variable-length
    and recursive joins.
-There are other differneces between SQL and Cypher. Yet, similar to other high-level database
+There are other differences between SQL and Cypher. Yet, similar to other high-level database
 query languages, it is very much like SQL and most of its semantics can be understood
 as mappings to relational algebra operations of selections, joins, projections, or 
 group-by and aggregations.

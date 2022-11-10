@@ -1,7 +1,7 @@
 This guide provides instructions and examples on how to set up and start working with Kùzu with CLI, Python, and C++ APIs. The CSV files used in this example can be downloaded at: [**TODO: link the files used in this example**].
 
 # CLI
-Kùzu CLI (Command Line Interface) is a single, dependency free executable. It is precompiled for Mac and Linux. The CLI can be downloaded at [**TODO: update the download URL after release**]. After the CLI is downloaded and extracted into a directory, you can navigate the directory from your terminal, and set the execute permissions with `chmod +x graphflowdb`. Then you can run the executable. with `./graphflowdb -i <db_path>` where `<db_path>` is the directory for the database files. This path can point to an existing database or to a directory that does not yet exist and Kùzu will open or create a database at that location as needed. You will see a prompt as below:
+Kùzu CLI (Command Line Interface) is a single, dependency free executable. It is precompiled for Mac and Linux. The CLI can be downloaded at [**TODO: update the download URL after release**]. After the CLI is downloaded and extracted into a directory, you can navigate the directory from your terminal, and set the execute permissions with `chmod +x graphflowdb`. Then you can run the executable with `./graphflowdb -i <db_path>` where `<db_path>` is the directory for the database files. This path can point to an existing database or to a directory that does not yet exist and Kùzu will open or create a database at that location as needed. You will see a prompt as below:
 
 ```
 serializedGraphPath: test
@@ -193,6 +193,6 @@ Expected output:
 ```
 
 # Operating System Compatibility
-Kùzu CLI and C++ API are pre-compiled for macOS >= 10.15 for Intel-based Macs and macOS >= 11.0 for ARM-based Macs. For Linux, Kùzu CLI and C++ API are pre-compiled for x86-64 architecture and supports most mordern Linux distros such as RHEL/CentOS/Rocky Linux/Oracle Linux 7.0 or later and Ubuntu 18.04 or later. For a specific list of Linux distros that we tested on, please refer to [this spreadsheet](https://docs.google.com/spreadsheets/d/13A3MA3IsBJB_CJBSMqWFktIzyb6unJqH0-3njDycDpQ/).
+Kùzu CLI and C++ API are pre-compiled for macOS >= 10.15 for Intel-based Macs and macOS >= 11.0 for ARM-based Macs. For Linux, Kùzu CLI and C++ API are pre-compiled for x86-64 architecture and supports most modern Linux distros such as RHEL/CentOS/Rocky Linux/Oracle Linux 7.0 or later and Ubuntu 18.04 or later. For a specific list of Linux distros that we tested on, please refer to [this spreadsheet](https://docs.google.com/spreadsheets/d/13A3MA3IsBJB_CJBSMqWFktIzyb6unJqH0-3njDycDpQ/).
 
 Kùzu Python API wheels has been pre-compiled for CPython 3.6 to 3.11. For macOS, the OS compatibility is the same as the pre-compiled CLI and C++ API (i.e.  macOS >= 10.15 for Intel-based Macs and macOS >= 11.0 for ARM-based Macs). For Linux, the pre-compiled wheels follows `manylinux2014_x86_64` standard. Please refer to [this link](https://github.com/pypa/manylinux) to check the compatibility with your distro.
