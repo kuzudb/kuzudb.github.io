@@ -16,9 +16,11 @@ Query:
 ```
 MATCH (u1:User)-[:LivesIn]->(c1:City)
 WHERE c1.name = 'Waterloo'
+RETURN u1.name
 UNION ALL
 MATCH (u2:User)-[:LivesIn]->(c2:City)
 WHERE c2.name = 'Kitchener'
+RETURN u2.name
 ```
 Result:
 
