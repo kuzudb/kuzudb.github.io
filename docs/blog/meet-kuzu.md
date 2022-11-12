@@ -37,7 +37,7 @@ which we will present in Amsterdam next January.
 *And most importantly please start using Kùzu, tell us your feature requests, use cases, and report bugs. We can evolve into a
 more stable, usable, and feature-rich system only through your feedback!* 
 
-We are looking forward to a long and exciting journey as we continue developing Kùzu[^1] and look forward to your feedback 🤗. 
+We are looking forward to to your feedback and a long and exciting journey as we continue developing Kùzu[^1] 🤗. 
 
 *by Kùzu team, 11-14-2022*
 [^1]: For interested readers, Kùzu is the Sumerian, the oldest known human language, word for "wisdom". 
