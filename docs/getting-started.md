@@ -5,9 +5,6 @@ Kùzu CLI (Command Line Interface) is a single, dependency free executable. It i
 
 ```
 serializedGraphPath: test
-inMemory: false
-defaultPagedBPSizeInMB: 1024
-largePagedBPSizeInMB: 512
 graphflowdb> 
 ```
 
