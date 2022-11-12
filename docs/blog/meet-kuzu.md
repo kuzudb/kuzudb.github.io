@@ -24,7 +24,7 @@ a user-facing feature-rich system. Some of the primary features of Kùzu's  arch
    - Multi-core query parallelism
    - Serializable ACID transactions
 
-What we are releasing today includes many core features of the core engine and what we
+What we are releasing today includes many of the features of the core engine. This is what we
 called the "Phase 1" of the project. In the next "Phase 2" of the project, as we continue adding 
 more features to the core engine, e.g., better support for ad-hoc properties, string compression,
 and support for new recursive queries, we will also be focusing developing around the core engine
