@@ -11,8 +11,10 @@ go-to open-source system to develop
 graph database applications, e.g., to manage and query your knowledge graphs, 
 and graph analytics pipelines, e.g., in the Python data science ecosystem. 
 
-Kùzu's core architecture is based on 6 years of research we conducted 
-at University of Waterloo. Some of its primary features are:
+Kùzu's core architecture is informed by 6 years of research we conducted 
+at University of Waterloo on an earlier prototype GDBMS called [GraphflowDB](http://graphflow.io/). 
+Unlike GraphflowDB, which was intented to be a prototype for our research, Kùzu aims to be
+a user-facing feature-rich system. Some of the primary features of Kùzu's  architecture are:
    - Flexible Property Graph Data Model and Cypher query language
    - Embeddable, serverless integration into applications
    - Columnar disk-based storage
