@@ -1,4 +1,6 @@
-This guide provides instructions and examples on how to set up and start working with Kùzu with CLI, Python, and C++ APIs. The CSV files used in this example can be downloaded at: [**TODO: link the files used in this example**].
+This guide provides instructions and examples on how to set up and start working with Kùzu with CLI, Python, and C++ APIs. The CSV files used in this example can be downloaded at: 
+
+[**TODO: change to the example dataset/schema here and link to the files used here**](https://github.com/graphflowdb/graphflowdb.github.io/blob/documentation/docs/cypher/query-clauses/example-database.md).
 
 # CLI
 Kùzu CLI (Command Line Interface) is a single, dependency free executable. It is precompiled for Mac and Linux. The CLI can be downloaded at [**TODO: update the download URL after release**]. After the CLI is downloaded and extracted into a directory, you can navigate the directory from your terminal, and set the execute permissions with `chmod +x graphflowdb`. Then you can run the executable with `./graphflowdb -i <db_path>` where `<db_path>` is the directory for the database files. This path can point to an existing database or to a directory that does not yet exist and Kùzu will open or create a database at that location as needed. You will see a prompt as below:
