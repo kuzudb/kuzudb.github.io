@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="/kuzu-logo.png" height="100">
+</div>
+
 ## Kùzu Overview
 Kùzu is an in-process property graph database management system (GDBMS) built for query speed and scalability. Kùzu is optimized for handling complex join-heavy analytical workloads on very large graph databases, with the following core feature set:
 
