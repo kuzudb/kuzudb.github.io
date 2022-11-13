@@ -3,6 +3,10 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="running-example.png" width="800">
 
+You can import this database by copy pasting the comands on that page. 
+
+*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
+
 # Delete Node
 Kùzu allows user to delete a new node from a node table by using the delete node clause.
 
