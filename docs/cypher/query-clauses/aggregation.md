@@ -3,6 +3,10 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="running-example.png" width="800">
 
+You can import this database by copy pasting the comands on that page. 
+
+*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
+
 # Aggregation
 Aggregate is the clause where you can combine multiple rows into a single value. The distinct operator can be used in aggregation to make all values unique before running aggregation on them.
 Supported aggregation functions can be found [here](../functions/aggregate-functions.md).
