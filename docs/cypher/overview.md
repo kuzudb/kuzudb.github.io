@@ -1,5 +1,5 @@
 # Overview
-Cypher is a high-level query language for the property graph datamodel.
+Cypher is a high-level query language for the property graph data model.
 Cypher is similar to SQL in many aspects. Some of its main differences are: 
  - Instead of SQL's SELECT/FROM/WHERE, Cypher has MATCH (equivalent to FROM) WHERE, 
    and RETURN (equivalent to SELECT) as its main query clauses.
