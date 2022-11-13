@@ -37,6 +37,7 @@ only appear to start a new row in your CSVs. It cannot appear inside column valu
 - **Header line:** Header lines, if they exist, are the first lines and ignored by the CSV reader. A header line can be added to your 
    CSV files for your convenience but the CSV reader assumes a fixed order of columns (both for CSV files for nodes as well as relationship 
    tables), so simply ignores the header row.
+- **Extra columns in the csv files:** Kùzu will omit any extra columns that don't match the table schema in the csv file.
   
 ## `COPY FROM` a CSV File to Node Tables 
 For the examples here, let us consider a `User(name STRING, age INT64, reg_date DATE, PRIMARY KEY (name))` 
