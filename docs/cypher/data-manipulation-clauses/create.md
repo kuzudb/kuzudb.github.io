@@ -29,7 +29,7 @@ Kùzu allows user to add a new relationship between nodes by using the create re
 
 ## Important Notes:
 1. Similar to create node, properties which are not specified in the create rel clause will be set to NULL.
-2. If the relationship to insert will violate the complexity constraint, Kùzu will throw an exception.
+2. If the relationship to insert will violate the complexity constraint after insertion, Kùzu will throw an exception.
 ## Example:
 1. Adds a new relationship which describes Adam follows Noura.
 
