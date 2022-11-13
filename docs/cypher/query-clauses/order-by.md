@@ -3,6 +3,10 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="running-example.png" width="800">
 
+You can import this database by copy pasting the comands on that page. 
+
+*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
+
 # Order by
 Order by is the clause where you define the order in which you want the query results to be displayed. The Kùzu currently supports two sorting orders: `ASC`, `DESC`. By default if no sorting orders are specified, the Kùzu sorts rows in ascending order and nulls are placed first. 
 ## Important Notes:
