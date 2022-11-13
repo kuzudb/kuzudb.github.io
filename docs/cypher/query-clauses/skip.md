@@ -3,6 +3,10 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="running-example.png" width="800">
 
+You can import this database by copy pasting the comands on that page. 
+
+*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
+
 # Skip 
 Skip controls the number of tuples to skip from the start of the queryResult. It is often used within in an [ORDER BY](order-by.md) clause to skip the top N tuples from the query result. Note: Skip accepts any expression that can be evaluated to an integer.
 
