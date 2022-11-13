@@ -23,9 +23,9 @@ Karissa,40
 Zhang,50
 Noura,25
 ```
-Data import:
+Data import (You need to give full path to user.csv. We assume ${PATH-TO-DIR} is that directory):
 ```
-COPY User From "user.csv"
+COPY User From "${PATH-TO-DIR}/user.csv"
 ```
 
 ### City nodes:
@@ -41,7 +41,7 @@ Guelph,75000
 ```
 Data import:
 ```
-COPY City FROM "city.csv"
+COPY City FROM "${PATH-TO-DIR}/city.csv"
 ```
 ### Follows relationships:
 Schema:
@@ -57,7 +57,7 @@ Zhang,Noura,2022
 ```
 Data import:
 ```
-COPY Follows FROM "follows.csv"
+COPY Follows FROM "${PATH-TO-DIR}/follows.csv"
 ```
 ### LivesIn relationships:
 Schema:
@@ -73,5 +73,5 @@ Noura,Guelph
 ```
 Data import:
 ```
-COPY LivesIn FROM "lives-in.csv"
+COPY LivesIn FROM "${PATH-TO-DIR}/lives-in.csv"
 ```
