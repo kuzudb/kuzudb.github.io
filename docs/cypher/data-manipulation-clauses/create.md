@@ -28,7 +28,8 @@ Note: since the population of the city is not specified in the create node claus
 Kùzu allows user to add a new relationship between nodes by using the create rel clause.
 
 ## Important Notes:
-Similar to create node, properties which are not specified in the create rel clause will be set to NULL.
+1. Similar to create node, properties which are not specified in the create rel clause will be set to NULL.
+2. If the relationship to insert will violate the complexity constraint, Kùzu will throw an exception.
 ## Example:
 1. Adds a new relationship which describes Adam follows Noura.
 
