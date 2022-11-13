@@ -8,7 +8,7 @@ Aggregate is the clause where you can combine multiple rows into a single value.
 Supported aggregation functions can be found [here](../functions/aggregate-functions.md).
 
 ## Examples:
-1. returns the number of users living in different cities.
+1. returns the number of users living in different cities (the name of the city will be the aggregation key).
 
 Query:
 ```
