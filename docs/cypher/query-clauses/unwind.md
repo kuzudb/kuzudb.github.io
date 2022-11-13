@@ -3,6 +3,10 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="running-example.png" width="800">
 
+You can import this database by copy pasting the comands on that page. 
+
+*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
+
 # UNWIND
 Unwind clause allows user to transform any list to individual rows. Unwind requires the user to specify a new name for the transformed rows.
 
