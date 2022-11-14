@@ -37,17 +37,6 @@ Result:
 -----------
 ```
 
-2. If the user just wants to get random N tuples of the query result, they can run limit without an ORDER BY clause. In this case, the result tuples may be different in each execution since the ordering of tuples are not guaranteed.
+If you omit the ORDER BY, in which case you would get some k tuples in a `LIMIT k` query 
+but you have no guarantee about their properties.
 
-Query:
-```
-MATCH (u:User)
-RETURN u.name
-LIMIT 1;
-```
-Result:
-```
------------
-| Karissa |
------------
-```
