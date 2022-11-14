@@ -1,3 +1,10 @@
+---
+layout: default
+title: Example database
+parent: Query clauses
+grand_parent: Cypher
+---
+
 # Example Database
 For the clauses we cover here, we will use the following graph database that
 consists of User and City nodes, Follows relationships between Users,

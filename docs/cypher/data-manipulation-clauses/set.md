@@ -1,7 +1,14 @@
+---
+layout: default
+title: Set
+parent: Data manipulation clauses
+grand_parent: Cypher
+---
+
 # Database
 We will use the database, whose schema and data import commands are given [here](example-database.md):
 
-<img src="running-example.png" width="800">
+<img src="../query-clauses/running-example.png" width="800">
 
 You can import this database by copy pasting the comands on that page. 
 

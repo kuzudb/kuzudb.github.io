@@ -1,7 +1,15 @@
+---
+layout: default
+title: Casting function
+parent: Expressions
+grand_parent: Cypher
+---
+
 # Casting
 
 ## Explicit casting
 Kùzu supports changing the dataType of an expression to another dataType by explicitly using the casting functions. Kùzu throws an exception if the casting fails.
+
 | Functions | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | date | cast STRING to DATE | DATE('2022-11-12') | 2022-11-12 (DATE) | 

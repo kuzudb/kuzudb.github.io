@@ -1,5 +1,13 @@
+---
+layout: default
+title: Comparison
+parent: Expressions
+grand_parent: Cypher
+---
+
 # Comparison Operators
 The following table describes the standard comparison operators supported by Kùzu. If any of the input arguments is NULL, the comparison result will also be NULL.
+
 | Operator | Description | Example | Result |
 | ----------- | ----------- | ----------- | ----------- |
 | < | less than | 2 < 3 | True (BOOLEAN) | 
@@ -11,6 +19,7 @@ The following table describes the standard comparison operators supported by Kù
 
 # IS(NOT) NULL
 The following table describes all predicates supported by Kùzu. These predicates are often used inside the WHERE statement.
+
 | Predicate | Description |
 | ----------- | ----------- |
 | expression is NULL | True if the expression is NULL |

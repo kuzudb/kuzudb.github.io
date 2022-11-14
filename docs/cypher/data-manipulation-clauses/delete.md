@@ -1,3 +1,10 @@
+---
+layout: default
+title: Delete
+parent: Data manipulation clauses
+grand_parent: Cypher
+---
+
 # Database
 We will use the database, whose schema and data import commands are given [here](example-database.md):
 
@@ -13,6 +20,7 @@ Kùzu allows user to delete a new node from a node table by using the delete nod
 ## Important Notes:
 1. We currently only support deleting a node which doesn't have any incoming or outcoming edges.
 2. Deleting an edge is currently not supported.
+
 ## Example:
 1. Creates a user{Alice, 40} and then deletes that user.
 

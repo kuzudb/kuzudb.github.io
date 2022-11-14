@@ -1,3 +1,10 @@
+---
+layout: default
+title: Expressions
+parent: Cypher
+has_children: true
+---
+
 # Overview
 Within many clauses of high-level database query languages,
 such as WHERE, WITH, and RETURN in openCypher, you can perform

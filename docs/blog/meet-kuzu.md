@@ -1,3 +1,10 @@
+---
+layout: default
+title: Blog
+nav_order: 6
+permalink: /docs/blog
+---
+
 # Meet Kùzu 🤗
 
 Today we are very excited to make an initial version of Kùzu public! Kùzu 

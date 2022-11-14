@@ -1,4 +1,12 @@
+---
+layout: default
+title: Interval function
+parent: Expressions
+grand_parent: Cypher
+---
+
 # Interval operators
+
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | + | addition of INTERVAL | INTERVAL('79 DAYS 32 YEARS') + INTERVAL('20 MILLISECONDS 30 HOURS 20 DAYS')  | 32 years 99 days 30:00:00.02 (INTERVAL) | 
@@ -9,6 +17,7 @@
 | - | substraction of TIMESTAMP | TIMESTAMP('1984-01-01') - INTERVAL('30 HOURS 20 SECONDS') | 1983-12-30 17:59:40 (TIMESTAMP) |
 
 # Interval functions
+
 | Function | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | date_part(part, interval) | returns the subfield of the date | date_part('year', INTERVAL('20 YEARS 367 DAYS')) | 20 (INT64) |

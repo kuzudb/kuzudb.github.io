@@ -1,3 +1,9 @@
+---
+layout: default
+title: DDL
+parent: Cypher
+---
+
 # Defining A Graph Schema: Data Definition Language
 
 As a first step to creating your database, you need to define your node and directed relationships. In the property graph model, nodes and relationships have labels. In Kùzu, every node or relationship can have 1 label. The node and relationships and the predefined properties on them are defined through `CREATE NODE TABLE` and `CREATE REL TABLE` commands. The choice of using the term "table" over "label" is intentional and explained below[^1].
@@ -20,7 +26,7 @@ CREATE REL TABLE Follows(FROM User TO User, since DATE)
 ```
 Note that there is no comma between the FROM and TO clauses. 
 - Relationship directions: Each relationship has a direction following the property graph model. So when Follows relationship records are added, each one has a specific source/from node and a specific destination/to node[^2].
-- Relationship primary keys: You cannot define a primary key for relationship records. Each relationship gets a unique system-level edge ID, which are internally generated and not exposed to you. You can check if two edges are the same, i.e., have the same edge ID, using the "=" and "!=" operator between two variables that bind to relationships. For example, you can query `MATCH (n1:User)-[r1:Follows]->(n2:User)<-[r2:Follows]-(n3:User) WHERE r1 != r2 RETURN *` to ensure that the same relationship does not bind to both r1 and r2.
+- Relationship primary keys: You cannot define a primary key for relationship records. Each relationship gets a unique system-level edge ID, which are internally generated. You can check if two edges are the same, i.e., have the same edge ID, using the "=" and "!=" operator between "ID()" function on two variables that bind to relationships. For example, you can query `MATCH (n1:User)-[r1:Follows]->(n2:User)<-[r2:Follows]-(n3:User) WHERE ID(r1) != ID(r2) RETURN *` to ensure that the same relationship does not bind to both r1 and r2.
 
 ### Multiple FROM or TO Node Labels
 Relationships can also be defined as being from a set of node tables/labels to a set of node table/labels. As a hypothetical example, suppose we also have Pet nodes in our database, the following indicates that the database has (User)-[Likes]->(User), and (Pet)-[Likes]->(User) edges (so pets can like users but cannot be liked by either users or pets). 

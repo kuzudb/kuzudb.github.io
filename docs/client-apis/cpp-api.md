@@ -1,3 +1,9 @@
+---
+layout: default
+title: Cpp api
+parent: Client api
+---
+
 # Cpp API
 
 ## Database creation & configuration

@@ -1,9 +1,19 @@
+---
+layout: default
+title: Text function
+parent: Expressions
+grand_parent: Cypher
+---
+
 # Text operators
+
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | [index] | alias of array extract | STRING("TEXT")[1]  | "T" (STRING) | 
 | [begin:end] | alias of array slice | STRING("TEXT")[1:3] | "TEX" (STRING) |
+
 # Text functions
+
 | Function | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | array_extract(list, index) | extracts a single character from string using 1-based index | array_extract("year", 2) | "e" (STRING) |

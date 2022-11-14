@@ -1,3 +1,10 @@
+---
+layout: default
+title: Union
+parent: Query clauses
+grand_parent: Cypher
+---
+
 # Database
 We will use the database, whose schema and data import commands are given [here](example-database.md):
 
@@ -9,9 +16,11 @@ You can import this database by copy pasting the comands on that page.
 
 # Union
 Union is the clause where you combine multiple query results into a single query result.
+
 ## Important Notes:
 - The number of columns and dataType of each column must be identical in all query results, whereas the name of each column can be different.
 - UNION will remove all duplicates in the output query result. To preserve the duplicates in the query result, users are expected to use UNION ALL.
+
 ## Examples:
 1. returns the user's name who live in Waterloo or Kitchener.
 

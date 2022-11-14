@@ -1,4 +1,12 @@
+---
+layout: default
+title: Numeric function
+parent: Expressions
+grand_parent: Cypher
+---
+
 # Numeric operators
+
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | + | addition | 2 + 3.5  | 5.5 (DOUBLE) | 
@@ -12,6 +20,7 @@ Unsupported numeric operators:
 `**`, `&`, `|`, `<<`, `>>`, `!`
 
 # Numeric functions
+
 | Function | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | abs(x) | returns the absolute value of x | abs(-25.2) | 25.2 (DOUBLE) |

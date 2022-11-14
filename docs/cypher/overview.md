@@ -1,3 +1,11 @@
+---
+layout: default
+title: Cypher
+nav_order: 4
+has_children: true
+permalink: /docs/cypher
+---
+
 # Overview
 Cypher is a high-level query language for the property graph data model.
 Cypher is similar to SQL in many aspects. Some of its main differences are: 

@@ -1,7 +1,15 @@
+---
+layout: default
+title: Logical
+parent: Expressions
+grand_parent: Cypher
+---
+
 # Conjunctions
 Kùzu supports using `AND`/`OR`/`XOR`/`NOT` conjunctions to combine boolean values.
 
 ## Truth table for `AND`:
+
 | left | right | result |
 | --- | --- | --- |
 | TRUE | TRUE | TRUE |
@@ -15,6 +23,7 @@ Kùzu supports using `AND`/`OR`/`XOR`/`NOT` conjunctions to combine boolean valu
 | NULL | NULL | NULL |
 
 ## Truth table for `OR`:
+
 | left | right | result |
 | --- | --- | --- |
 | TRUE | TRUE | TRUE |
@@ -28,6 +37,7 @@ Kùzu supports using `AND`/`OR`/`XOR`/`NOT` conjunctions to combine boolean valu
 | NULL | NULL | NULL |
 
 ## Truth table for `XOR`:
+
 | left | right | result |
 | --- | --- | --- |
 | TRUE | TRUE | FALSE |
@@ -41,6 +51,7 @@ Kùzu supports using `AND`/`OR`/`XOR`/`NOT` conjunctions to combine boolean valu
 | NULL | NULL | NULL |
 
 ## Truth table for `NOT`:
+
 | left | result |
 | --- | --- |
 | TRUE | FALSE |

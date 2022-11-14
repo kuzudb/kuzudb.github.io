@@ -1,3 +1,9 @@
+---
+layout: default
+title: Python api
+parent: Client api
+--- 
+
 # Python API
 
 ## Database instance creation & configuration

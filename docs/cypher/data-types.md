@@ -1,3 +1,9 @@
+---
+layout: default
+title: Data type
+parent: Cypher
+---
+
 # Supported Data Types 
 
 Kùzu supports a set of primitive and nested data types both for node and relationship properties 

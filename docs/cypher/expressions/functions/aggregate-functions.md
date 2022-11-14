@@ -1,4 +1,12 @@
+---
+layout: default
+title: Aggregate function
+parent: Expressions
+grand_parent: Cypher
+---
+
 # Aggregate functions
+
 | Function | Description | Example |
 | ----------- | ----------- |  ----------- |
 | avg(arg) | returns the average value of all tuples in arg | avg(a.length) |
