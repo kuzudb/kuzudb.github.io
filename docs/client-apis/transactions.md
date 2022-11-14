@@ -69,7 +69,7 @@ automatically wrapped around a transaction that will be executed in a serializab
   auto conn = make_unique<Connection>(database.get());
   auto result = conn->query("CREATE (a:User {name: 5, age: 72})");
 ```
-Note: All queries/commands sent from CLI are in auto-commit mode.
+Note: All queries/commands sent from [CLI](cli.md) and [Python API](python-api.md) are in auto-commit mode.
 You do not have to commit at the end of auto-committed transactions (and you cannot rollback).
 
 [^1]: We will be addressing these limitations soon.
