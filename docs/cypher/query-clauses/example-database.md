@@ -32,7 +32,7 @@ Noura,25
 ```
 Data import (You need to give full path to user.csv. We assume ${PATH-TO-DIR} is that directory):
 ```
-COPY User From "${PATH-TO-DIR}/user.csv"
+COPY User FROM "${PATH-TO-DIR}/user.csv"
 ```
 
 ### City nodes:
