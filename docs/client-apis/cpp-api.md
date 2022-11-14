@@ -2,7 +2,7 @@
 
 ## Database creation & configuration
 
-To use Kùzu, you need to first create a database instance with a database config. Although multiple database instances can be created on the directory, it is not recommended since update queries from different database instances.
+To use Kùzu, you need to first create a database instance with a database config. 
 
 ### Example
 ```
