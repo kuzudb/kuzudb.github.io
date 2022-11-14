@@ -1,6 +1,6 @@
-# Kuzu Website
+# Kùzu Website
 
-This repository hosts the source code for [Kuzu website](https://kuzudb.github.io).
+This repository hosts the source code for [Kùzu website](https://kuzudb.github.io).
 
 ## Building
 This website is generated through [Jekyll](https://jekyllrb.com/). 
