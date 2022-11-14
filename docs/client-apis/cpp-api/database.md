@@ -18,16 +18,7 @@ the size of your buffer pool.
 DatabaseConfig databaseConfig("testdb");
 SystemConfig systemConfig(1ull << 31 /* set buffer manager size to 2GB */);
 Database database(databaseConfig, systemConfig);
-
-// Connect to the database.
-auto connection = Connection(&database);
-
-// Create the schema.
-connection.query("MATCH (a:User) RETURN a.name");
-while (result->hasNext()) {
-  auto row = result->getNext();
-  std::cout << row->getResultValue(0)->getStringVal() << std::endl;
-}
+...
 ```
 
 ## Available APIs
