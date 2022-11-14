@@ -81,7 +81,7 @@ output:
 
 ### Interval
 An interval consists of multiple date parts and represents the total time length of
-these date parts. Kùzu follows [DuckDB's implementation]((https://duckdb.org/docs/sql/data_types/interval)) 
+these date parts. Kùzu follows [DuckDB's implementation](https://duckdb.org/docs/sql/data_types/interval)
 for the format of specifying intervals. See DuckDB's documentation for details. Similar
 to dates and timestamps, you need to cast strings to intervals to specify interval literals  
 ```
@@ -94,7 +94,7 @@ output:
 
 ## NULL Values
 NULLs are special values to represent unknown/unavailable data.
-Every node/relationhip property or result of any expression can
+Every node/relationship property or result of any expression can
 be NULL in addition to the non-NULL domain of values they can take.
 For example, boolean expression can be true/false or NULL.
 *Outputs of boolean operators where any of the operands are NULL is NULL*.
