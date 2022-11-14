@@ -6,8 +6,9 @@ grand_parent: Client api
 nav_order: 43
 ---
 
-# Query result, tuple & summary
-QueryResult captures all information related to the execution of a query. Each returned tuple is wrapped into a FlatTuple where each entry is wrapped as a ResultValue.
+# QueryResult, FlatTuple, and QuerySummary
+QueryResult captures all information related to the execution of a query. Each returned tuple is 
+wrapped into a FlatTuple where each entry is wrapped as a ResultValue.
 
 ## Example
 ```
