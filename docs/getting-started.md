@@ -169,7 +169,8 @@ int main()
 {
     // Create an empty database.
     DatabaseConfig databaseConfig("test");
-    Database database(databaseConfig);
+    SystemConfig systemConfig(1ull << 31 /* set buffer manager size to 2GB */);
+    Database database(databaseConfig, systemConfig);
 
     // Connect to the database.
     auto connection = Connection(&database);
@@ -187,13 +188,15 @@ int main()
     connection.query("COPY LivesIn FROM \"lives_in.csv\"");
 
     // Execute a simple query.
-    auto result = connection.query("MATCH (a:User) - [f:Follows] -> (b:User) RETURN a.name, f.since, b.name;");
+    auto result = connection.query("MATCH (a:User)-[f:Follows]->(b:User) RETURN a.name, f.since, b.name;");
     
     // Output query result.
     while (result->hasNext())
     {
         auto row = result->getNext();
-        std::cout << row->getResultValue(0)->getStringVal() << " " << row->getResultValue(1)->getInt64Val() << " " << row->getResultValue(2)->getStringVal() << std::endl;
+        std::cout << row->getResultValue(0)->getStringVal() << " " 
+	          << row->getResultValue(1)->getInt64Val()  << " " 
+		  << row->getResultValue(2)->getStringVal() << std::endl;
     }
     return 0;
 }
