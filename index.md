@@ -21,7 +21,7 @@ Kùzu is an in-process property graph database management system (GDBMS) built f
 - Multi-core query parallelism
 - Serializable ACID transactions
 
-Kùzu is being actively developed at University of Waterloo as a feature-rich and usable GDBMS. Kùzu is available under a permissible license. So try it out and help us make it better! We welcome your feedback and feature requests.
+Kùzu is being actively developed at University of Waterloo as a feature-rich and usable GDBMS. Kùzu is available under a permissible license. So try it out and help us make it better! We welcome your feedback and feature requests!
 
 ## Property Graph Data Model
 Kùzu adopts the property graph data model adopted by other existing GDBMSs, such as Neo4j. In this model users model their databases as a set of labeled nodes and directed relationships, with properties on these nodes and edges. Different from existing GDMBSs, the properties on nodes and relationships in Kùzu are pre-defined in a schema. To support predefined properties, Kùzu extends Cypher with Data Description Language (DDL) clauses, such as CREATE NODE/REL TABLE" clauses, similar to how tables are defined in SQL. See the [documentation here](data-import-and-ddl.md) for how to use the DDL statements to define a graph schema and import data into Kùzu.
