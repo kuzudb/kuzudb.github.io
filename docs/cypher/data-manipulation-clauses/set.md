@@ -28,7 +28,10 @@ Query:
 MATCH (u:User) WHERE u.name = 'Adam' SET u.age = 50 
 ```
 
-# set a property of a relationship
+# Set a property of a relationship
+We currently don't support set/update a property of a relationship.
+
+# Remove a property of a node
 Kùzu allows user to remove a node property using the set command.
 
 ## Example:
