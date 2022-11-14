@@ -1,6 +1,6 @@
 # Overview
 
-Kùzu is a transactional system. Specifically, it implements a transacation management
+Kùzu is a transactional system. Specifically, it implements a transaction management
 sub-system that is atomic, durable and supports serializability (satisfying these
 properties is traditionally known as being ACID-compliant in database terminology). That is, every
 query, data manipulation command, every DDL (i.e., new node/rel table schema definitions),  
@@ -17,10 +17,11 @@ system crashes before committing or rolling back, then none of your updates will
 - At any point in time, there can be multiple read transactions but one write transaction.
 - There are two ways to use transactions: (i) manually beginning and committing/rolling back transactions; 
 or (ii) auto-committing. These are reviewed below.
+- Currently you can only use transactions from the .
 
 # Manually Beginning and Committing/Rollingback
-When you access Kùzu programmatically through one of its programming language drivers (but not through its CLI),
-you can start a write transaction, or a read only transaction manually as follows (in C_++:
+When you access Kùzu programmatically through its [C++ client API](../client-apis/cpp-api.md) (but not through its CLI or Python API[^1]),
+you can start a write transaction, or a read only transaction manually as follows (in C++):
 
 ```
   auto systemConfig = make_unique<SystemConfig>();
@@ -64,3 +65,5 @@ automatically wrapped around a transaction that will be executed in a serializab
 ```
 Note: All queries/commands sent from CLI are in auto-commit mode.
 You do not have to commit at the end of auto-committed transactions (and you cannot rollback).
+
+[^1]: We will be addressing these limitations soon.
