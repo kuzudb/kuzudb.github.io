@@ -12,6 +12,10 @@ You can interact with Kùzu in three ways:
   - [C++ API](cpp-api)
   - [Python API](python-api.md)
 
+Each query to Kùzu through its CLI or client APIs are transactional, 
+satisfying serializability, atomicity and durability.
+This part of the documentation also gives details of Kùzu [transactions](transactions.md). 
+
 ## Note on Connecting to the Same Database Directory From Multiple `Database` Instances
 Each of these three ways ultimately creates a `Database` instance in C++ (Kùzu's CLI is written in C++, so is a C++
 process, and Kùzu's Python API, through which you create a `PyDatabase` instance is a binding to Kùzu's C++ API
