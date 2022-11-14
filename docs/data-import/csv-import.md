@@ -20,7 +20,7 @@ the `COPY FROM` command. The following table specifies the parameters and their 
 | DELIM | Character that separates different columns in a lines. | `,`|
 | QUOTE | Character to start a string quote. | `"` |
 | ESCAPE | Character within string quotes to escape QUOTE and other characters, e.g., a line break. <br/> See the important note below about line breaks lines below.| '\\' |
-| LIST_BEGIN/LIST_END | For the list data type ([see the data types supported by Kùzu](...)), the delimiters to specify <br/> list begin and list end characters | `[`, `]`|
+| LIST_BEGIN/LIST_END | For the [list data type](../cypher/data-types.md), the delimiters to specify <br/> list begin and list end characters | `[`, `]`|
 
 Here are examples of specifying that there is a header file and changing the delimiter from `,` to `|`:
 ```
@@ -37,8 +37,10 @@ use `COPY FROM` immediately after you define the schemas of your tables.
 already in the database (either imported in bulk or inserted through Cypher data manipulation commands).
 - **Line break/new line character (CRLF):** The line break character (one corresponding to the RETURN or Enter on most keyboards) can 
 only appear to start a new row in your CSVs. It cannot appear inside column values, e.g, inside a string column between "...CRLF...". 
-`COPY FROM` commands will fail if this happens. You should instead use '\n' character to specify line breaks inside your strings.
+`COPY FROM` commands will fail if this happens. You should instead use '\n' character or '\r\n' to specify line breaks inside your strings.
 - **Wrapping strings inside quotes:** Kùzu will accept strings in string columns both with and without quotes. 
+- **Leading and trailing spaces**: As per the CSV standard, Kùzu does not ignore the leading and trailing spaces (e.g., if you input ` 213` for 
+  an integer value, that will be read as malformed integer and the corresponding node/rel property will be set to NULL.
 - **Header line:** Header lines, if they exist, are the first lines and ignored by the CSV reader. A header line can be added to your 
    CSV files for your convenience but the CSV reader assumes a fixed order of columns (both for CSV files for nodes as well as relationship 
    tables), so simply ignores the header row.
@@ -56,7 +58,7 @@ Adam,30,2020-06-22
 Karissa,40,2019-05-12
 ...
 ```
-The same file with header could have the following first line if (HEADER = true) was given, which would again be skipped:
+The same file with header could have the following first line if (HEADER = true) was given, which would however be ignored as explained above:
 ```
 name,age,reg_date
 ```
@@ -65,26 +67,26 @@ name,age,reg_date
 The order of the columns are as follows:
   - FROM Node Column(s): There are two cases here:
     1. If the FROM nodes of the relationship can have a single label (as defined the REL TABLE schema), 
-       then the first column is the primary key (PK) of the from nodes.
-    3. If FROM nodes can contain multiple labels, then the first first column specifies the from nodes' 
+       then Kùzu expects only 1 FROM node column and that is the primary key (PK) of the from nodes.
+    3. If FROM nodes can contain multiple labels, then Kùzu expects 2 FROM node columns: first column specifies the from nodes' 
        labels, and the second column specifies their PKs.
   - TO Node Column(s): The next 1 or 2 columns similarly specify either the TO nodes' PK (if TO nodes can take a single label) or their label and then their PKs (if TO nodes can take multiple labels).
   - Rest of the columns: The predefined properties on the relationship table as defined in your `CREATE REL TABLE` command. 
 
 Here are a few examples:
-Consider the `CREATE REL TABLE Follows(FROM User TO User, since DATE)` table. An example CSV file `follows.csv` without a header 
+Consider the CREATE REL TABLE Follows(FROM User TO User, since DATE) table. An example CSV file `follows.csv` without a header 
 can be as follows:
 ```
 Adam,Karissa,2010-01-30
 Karissa,Michelle,2014-01-30
 ...
 ```
-You can use `COPY Follows FROM "follows.csv'` to load this file.
+You can use `COPY Follows FROM "follows.csv"` to load this file.
 
-As another example, consider `CREATE REL TABLE Likes(FROM User|Pet TO User) An example CSV file `likes.csv' for Likes edges can be:
+As another example, consider CREATE REL TABLE Likes(FROM User|Pet TO User) An example CSV file `likes.csv` for Likes edges can be:
 ```
 User,Adam,Karissa
 Pet,Fluffy,Karissa
 ...
 ```
-This declares 2 edges: (User node with PK "Adam")-[:Likes]->(User node with PK Karissa with label User) and (Pet node with PK "Fluffy")-[:Likes]->(User node with PK Karissa). So, Adam and Fluffy come from different node tables.
+This declares 2 edges: (User node with PK "Adam")-[:Likes]->(User node with PK Karissa) and (Pet node with PK "Fluffy")-[:Likes]->(User node with PK Karissa). So, Adam and Fluffy come from different node tables.
