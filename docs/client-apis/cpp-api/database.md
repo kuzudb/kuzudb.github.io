@@ -9,13 +9,25 @@ nav_order: 41
 # Database
 
 To use Kùzu, you need to first create a database instance with a database config. We recommend 
-constructing the Database instance 
+constructing the Database instance by passing in both a `DatabaseConfig` object, which sets 
+the path to the directory of your database and a `SystemConfig` object, which sets 
+the size of your buffer pool.
 
 ## Example
 ```
 DatabaseConfig databaseConfig("testdb");
 SystemConfig systemConfig(1ull << 31 /* set buffer manager size to 2GB */);
 Database database(databaseConfig, systemConfig);
+
+// Connect to the database.
+auto connection = Connection(&database);
+
+// Create the schema.
+connection.query("MATCH (a:User) RETURN a.name");
+while (result->hasNext()) {
+  auto row = result->getNext();
+  std::cout << row->getResultValue(0)->getStringVal() << std::endl;
+}
 ```
 
 ## Available APIs
