@@ -43,13 +43,17 @@ Available APIs:
   ```
 
 ### 3. *PyConnection.execute(query, parameters): executes the query and returns a PyQueryResult*
-  - query: query that you want to execute on Kùzu
-  - parameters: parameters for the query (TODO: explain what types of parameter is supported in the system)
+  - query: a parameterized query which allows user to use dollar symbol `$` to represent a parameter.
+  - parameters: a list of (parameterName, parameterValue) tuple where the first entry is parameter name and second entry is parameter value. Note we currently do not support parameter with LIST type.
   - example:
   ```
-  # query the number of users in database
-  conn->execute("MATCH (:User) return count(*)")
+  # query the number of users in database without using parameterized query
+  conn->execute("MATCH (:User) RETURN count(*)")
+  # query the age of Adam using parameterized query
+  conn->execute("MATCH (u:User) WHERE u.name = $name RETURN u.age", [("name", "Adam")])
   ```
+  
+  
   
 ## QueryResult parsing
 When you issue a query to the database through the `con->execute(query)` API, you are expected to get a queryResult which contains all result tuples for the given query.
