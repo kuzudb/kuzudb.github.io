@@ -1,0 +1,25 @@
+# Database
+We will use the database, whose schema and data import commands are given [here](example-database.md):
+
+<img src="running-example.png" width="800">
+
+You can import this database by copy pasting the comands on that page. 
+
+*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
+
+# Set a property of a node
+Kùzu allows user to set/update node properties using the set command.
+
+## Important Notes:
+We currently don't support a return statment after an update clause.
+
+## Example:
+1. Set Adam's age to 50
+
+Query:
+```
+match (u:User) where u.name = 'Adam' set u.age = 50 
+```
+
+# set a property of a relationship
+We currently don't support set/update a property of a relationship.
