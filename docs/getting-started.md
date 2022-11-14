@@ -4,24 +4,23 @@ title: Getting started
 nav_order: 2
 ---
 
-This guide provides instructions and examples on how to set up and start working with Kùzu with CLI, Python, and C++ APIs. The CSV files used in this example can be found [here](/docs/cypher/query-clauses/example-database.html).
+This guide provides instructions and examples on how to set up and start working with Kùzu with CLI, Python, and C++ APIs. The CSV files used in this example can be found [here](cypher/query-clauses/example-database.md).
 
 [**TODO: for each of CLI, Python, C++ add a link to detailed client-apis docs. We should remove C++ exmaples from here. Let's just keep python and link to C++.**]
 
 [**Chang: the C++ API doc does not seem to have an end-to-end example. I think it might be better to keep an end-to-end example in this guide?**]
 
 # CLI
-Kùzu CLI (Command Line Interface) is a single, dependency free executable. It is precompiled for Mac and Linux. The CLI can be downloaded at [**TODO: update the download URL after release**]. After the CLI is downloaded and extracted into a directory, you can navigate the directory from your terminal, and set the execute permissions with `chmod +x kuzu`. Then you can run the executable with `./kuzu -i <db_path>` where `<db_path>` is the directory for the database files. This path can point to an existing database or to a directory that does not yet exist and Kùzu will open or create a database at that location as needed. You will see a prompt as below:
+Kùzu CLI (Command Line Interface) is a single, dependency free executable. It is precompiled for Mac and Linux. The CLI can be downloaded at [**TODO: update the download URL after release**]. After the CLI is downloaded and extracted into a directory, you can navigate the directory from your terminal, and set the execute permissions with `chmod +x kuzu`. Then you can run the executable with `./kuzu -i <db_path>` where `<db_path>` is the directory for the database files. This path can point to an existing database or to a directory that does not yet exist and Kùzu will create the directory and initialize an empty database for you. You will see a prompt as below if you pass `test` as you `<db_path>`:
 
 ```
-serializedGraphPath: test
+Database path: test
 kuzu> 
 ```
 
-Once the CLI has been opened, enter a Cypher query then hit the enter key to execute it. Results will be displayed in a table in the terminal.
-
-An example use case of loading node and rel tables from CSV files and running a simple Cypher query is shown as below:
-- Creating the schema:
+Once the CLI has been opened, enter a Cypher query then hit the enter key to execute it. ? of how to load node and rel tables from CSV files 
+and run a Cypher query is shown below:
+- Create the schema:
 
 ```
 kuzu> CREATE NODE TABLE User(name STRING, age INT64, PRIMARY KEY (name))
@@ -37,7 +36,7 @@ kuzu> CREATE REL TABLE Follows(FROM User TO User, since INT64)
 ---------------------------------------
 ```
 
-- Load data:
+- Load data (replace `"user.csv"` with the full path to your csv and use quotation marks around the path):
 
 ```
 kuzu> COPY User FROM "user.csv"
@@ -56,7 +55,7 @@ kuzu> COPY Follows FROM "follows.csv"
 - Execute a simple query:
 
 ```
-kuzu> MATCH (a:User) - [f:Follows] -> (b:User) RETURN a.name, b.name, f.since;
+kuzu> MATCH (a:User)-[f:Follows]->(b:User) RETURN a.name, b.name, f.since;
 >> Number of output tuples: 4
 
 -------------------------------
@@ -75,7 +74,8 @@ kuzu> MATCH (a:User) - [f:Follows] -> (b:User) RETURN a.name, b.name, f.since;
 # Python API
 Kùzu Python API can be installed with pip: `pip install [**TODO: update the download URL after release**]`. 
 
-Once the Python API is installed, you can import it in Python and use it to perform Cypher queries. An example use case of loading node and rel tables from CSV files and running a simple Cypher query in Python is shown as below:
+Once the Python API is installed, you can import it in Python and use it to perform Cypher queries. Below is a short example
+of how to get started. Details of the [Python API is here](client-apis/python-api.md).
 
 - Import library:
 
@@ -90,7 +90,7 @@ db = kuzu.database('./test')
 conn = kuzu.connection(db)
 ```
 
-- Creating the schema:
+- Create the schema:
 
 ```
 conn.execute("CREATE NODE TABLE User(name STRING, age INT64, PRIMARY KEY (name))")
@@ -141,10 +141,9 @@ Output:
 
 # C++ API
 Kùzu C++ API is distributed as a so/dylib library file and a set of header files. The C++ API can be downloaded at [**TODO: update the download URL after release**]. After the C++ API is downloaded and extracted into a directory, it can be used without installation by just specifying the library search path for the linker.
-
-An example use case of loading node and rel tables from CSV files and running a simple Cypher query in C++ is shown as below:
+Below is a short example of how to get started. Details of the [C++ API is here](client-apis/cpp-api).
 - Setup:
-In this example, we assume that the so/dylib, the headers, the CSV files, and the cpp code file is under the same directoy for simpalicity:
+In this example, we assume that the so/dylib, the headers, the CSV files, and the cpp code file is under the same directoy:
 
 ```
 ├── include                                    
@@ -158,8 +157,7 @@ In this example, we assume that the so/dylib, the headers, the CSV files, and th
 └── lives_in.csv
 ```
 
-- C++ example:
-We show an example C++ source file for loading node and rel tables from CSV files and running a simple Cypher query (test.cpp) as below:
+- A `test.cpp` program:
 
 ```
 #include <iostream>
@@ -176,7 +174,7 @@ int main()
     // Connect to the database.
     auto connection = Connection(&database);
 
-    // Creating the schema.
+    // Create the schema.
     connection.query("CREATE NODE TABLE User(name STRING, age INT64, PRIMARY KEY (name))");
     connection.query("CREATE NODE TABLE City(name STRING, population INT64, PRIMARY KEY (name))");
     connection.query("CREATE REL TABLE Follows(FROM User TO User, since INT64)");
@@ -201,7 +199,7 @@ int main()
 }
 ```
 
-- Compile and run the C++ program:
+- Compile and run `test.cpp`:
 Since we did not install the `libkuzu` as a system library, we need to override the linker search path to correctly compile the C++ code and run the compiled program.
 
 On Linux:
