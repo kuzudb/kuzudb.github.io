@@ -6,9 +6,11 @@ grand_parent: Client api
 nav_order: 43
 ---
 
-# QueryResult, FlatTuple, and QuerySummary
-QueryResult captures all information related to the execution of a query. Each returned tuple is 
-wrapped into a FlatTuple where each entry is wrapped as a ResultValue.
+# QueryResult, FlatTuple, ResultValue, and QuerySummary
+[QueryResult](#queryresult) captures all information related to the execution of a query. Each returned tuple is 
+wrapped into a [FlatTuple](#flattuple) where each entry is wrapped as a [ResultValue](#resultvalue).
+You can also obtain a [QuerySummary](#querysummary) from a QueryResult, to learn profiling
+information, such as execution time, about the query you executed.
 
 ## Example
 ```
@@ -23,6 +25,8 @@ while (result->hasNext()) {
 ```
 
 ## Available APIs
+
+## QueryResult
 
 ### bool QueryResult.isSuccess()
 ---
@@ -56,10 +60,12 @@ while (result->hasNext()) {
 ---
 - return: a vector of column names.
 
+## FlatTuple
 ### ResultValue* FlatTuple.getResultValue(uint32_t idx)
 ---
 - return: an entry of the tuple.
 
+## ResultValue
 ### bool ResultValue.getBooleanVal()
 ---
 - return: boolean value.
@@ -95,6 +101,8 @@ while (result->hasNext()) {
 ### bool ResultValue.isNullVal()
 ---
 - return: whether ResultValue is null or not.
+
+## QuerySummary
 
 ### double QuerySummary.getCompilingTime()
 ---
