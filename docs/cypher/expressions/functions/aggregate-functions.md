@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Aggregate function
+title: Aggregate Functions
 parent: Expressions
 grand_parent: Cypher
 ---
 
-# Aggregate functions
+# Aggregate Functions
 
 | Function | Description | Example |
 | ----------- | ----------- |  ----------- |
