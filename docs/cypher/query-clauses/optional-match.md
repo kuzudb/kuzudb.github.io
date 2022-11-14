@@ -15,10 +15,14 @@ You can import this database by copy pasting the comands on that page.
 *Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # Optional-match
-Optional-match is the clause where you define a pattern to find in the database. The difference between match is that if no pattern is found, Optional-match will fill up the missing part of the pattern with NULL.
+`OPTIONAL MATCH` is another clause where you define a pattern to find in the database. The difference between `MATCH` is that 
+if the system cannot match a pattern defined by OPTIONAL MATCH, it will set the values in the variables defined only in 
+the OPTIONAL MATCH, to NULL. If you consider the patterns defined in a query that combines `MATCH` and `OPTIONAL MATCH`,
+you can understand the semantics as follows: perform the join inside `MATCH` and store it as an intermediate table L; 
+(ii) perform the join inside the `OPTIONAL MATCH` and store it as an intermediate table R. Then take the left
+outer join of L and R (where L is on the left) on their common variables (i.e., `L ⟕ R` in relational algebra).
 
-## Examples:
-1. returns the followees of each user or NULL if a user doesn't follow anyone.
+For example, the following query returns the followees of each user or NULL if a user doesn't follow anyone.
 
 Query:
 ```
