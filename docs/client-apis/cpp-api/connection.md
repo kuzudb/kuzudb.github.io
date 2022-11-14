@@ -6,9 +6,14 @@ grand_parent: Client api
 nav_order: 42
 ---
 
-# Connection & querying
+# Connection and Querying
 
-To issue a query, you need to create a connection with a database pointer.
+To issue a query, you need to create a connection using a pointer to 
+a [Database](database.md) instance. You can use connections
+to execute queries, ddl statements, begin/commit/rollback transactions.
+You can construct multiple connections that point to the same `Database`
+instance and issue parallel queries through these connections concurrently.
+
 
 ## Example
 ```
