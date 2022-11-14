@@ -8,9 +8,9 @@ permalink: /docs/client-apis
 
 # Overview
 You can interact with Kùzu in three ways:
-  - CLI
-  - C++ API
-  - Python API.
+  - [CLI](cli.md)
+  - [C++ API](cpp-api)
+  - [Python API](python-api.md)
 
 *An important note on connecting to the same database directory from multiple `Database` instances*:
 Each of these three ways ultimately creates a `Database` instance in C++ (Kùzu's CLI is written in C++, so is a C++
