@@ -12,7 +12,7 @@ You can interact with Kùzu in three ways:
   - [C++ API](cpp-api)
   - [Python API](python-api.md)
 
-*An important note on connecting to the same database directory from multiple `Database` instances*:
+## Note on Connecting to the Same Database Directory From Multiple `Database` Instances
 Each of these three ways ultimately creates a `Database` instance in C++ (Kùzu's CLI is written in C++, so is a C++
 process, and Kùzu's Python API, through which you create a `PyDatabase` instance is a binding to Kùzu's C++ API
 and so ultimately creates a `Database` instance). Each database you create is identified by
