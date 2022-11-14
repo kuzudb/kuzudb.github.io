@@ -8,18 +8,29 @@ nav_order: 41
 
 # Database
 
-To use Kùzu, you need to first create a database instance with a database config. We recommend 
-constructing the Database instance by passing in both a `DatabaseConfig` object, which sets 
-the path to the directory of your database and a `SystemConfig` object, which sets 
-the size of your buffer pool.
+To use Kùzu, you need to first create a `Database` instance.
+The `Database` class requires: 
+ 1. a `DatabaseConfig`, which sets  the path to the directory of your database;
+ 2. a `SystemConfig` object, which sets the size of your buffer pool.
 
-## Example
+Both constructors of Database require the DatabaseConfig, so this is mandatory.
+One of the constructors does not require the SystemConfig and uses a default SystemConfig,
+which sets the buffer pool size to 16MB by default.
+We recommend using the second constructor of Database that also requires
+the `SystemConfig` so you can set a larger buffer pool size (e.g., several GBs).
+For example:
 ```
 DatabaseConfig databaseConfig("testdb");
 SystemConfig systemConfig(1ull << 31 /* set buffer manager size to 2GB */);
 Database database(databaseConfig, systemConfig);
 ...
 ```
+
+Also: Do not construct multiple Database instances either within the same process or 
+using multiple separate processes unless you will only issue read-only queries
+through the connections you create from these these Database instances.
+See [this note](../overview.md#note-on-connecting-to-the-same-database-directory-from-multiple-database-instances) for more details.
+
 
 ## Available APIs
 
