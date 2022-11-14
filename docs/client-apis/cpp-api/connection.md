@@ -82,7 +82,7 @@ Query through connection.
 - return: names of all properties of a rel table.
 # PreparedStatement
 
-A prepared statement is a parameterized query which can avoid planning the same query for repeated execution. Parameters are indicated through dollar symbol `$` and are injested as a `std::pair` where the first entry is parameter name and second entry is parameter value. Note we currently do not support parameter with LIST type.
+A prepared statement is a parameterized query which can avoid planning the same query for repeated execution. Parameters are indicated through dollar symbol `$` and are injested as a `std::pair` where the first entry is parameter name and second entry is parameter value.
 
 ## Example
 ```
@@ -104,12 +104,12 @@ while (result->hasNext()) {
 
 ## Available APIs
 
-### std::unique_ptr<PreparedStatement> Connection.prepare(const std::string& statement)
+### std::unique_ptr\<PreparedStatement\> Connection.prepare(const std::string& statement)
 ---
 - statement: cypher statement to prepare.
 - return: a prepared statement.
 
-### std::unique_ptr<QueryResult> Connection.execute(PreparedStatement* preparedStatement, pair<string, Args>... args)
+### std::unique_ptr\<QueryResult\> Connection.execute(PreparedStatement* preparedStatement, pair<string, Args>... args)
 ---
 - preparedStatement: prepared statement to execute.
 - args: parameter pack where each arg is a `std::pair` with the first element being parameter name and second element being parameter value.
