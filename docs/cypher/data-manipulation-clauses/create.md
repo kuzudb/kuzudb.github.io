@@ -1,9 +1,9 @@
 # Database
 We will use the database, whose schema and data import commands are given [here](example-database.md):
 
-<img src="running-example.png" width="800">
+<img src="../query-clauses/running-example.png" width="800">
 
-You can import this database by copy pasting the comands on that page. 
+You can import this database by copying pasting the comands on that page. 
 
 *Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
@@ -13,14 +13,14 @@ Kùzu allows user to add a new node to a node table by using the create node cla
 ## Important Notes:
 The properties which are not specified in the create node clause will be set to NULL.
 ## Example:
-1. Adds a new user(name: Alice, age: 35) to the user node table.
+1. Adds a new User(name: Alice, age: 35) to the user node table.
 
 Query:
 ```
 create (u:User {name: 'Alice', age: 35})
 ```
 
-2. Adds a new city (name: Toronto, population: unknown) to the city node table。
+2. Adds a new City (name: Toronto, population: unknown) to the city node table。
 
 Query:
 ```
