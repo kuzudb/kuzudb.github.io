@@ -51,6 +51,34 @@ The above ddl indicates that Likes has 1-to-n multiplicity. This ddl command put
 
 In general in a relationship E's multiplicity, if the "source side" is "ONE", then for each node v that can be the destination of E relationships, v can have at most 1 backward edge. If the "destination side" is ONE, then each node v that can be the source of E relationships, v can have at most 1 forward edge. 
 
+## DROP TABLE
+You can drop the tables you have created with the `DROP TABLE` command.
+Two important notes:
+  1. You can drop any relationship table any time.
+  2. To drop a node table X, you need to first drop all of the relationship tables 
+     that refer to X in its FROM or TO first.
+
+For example if you have a database with User and Follows tables defined as above and you
+tried to drop User without dropping Follows first, Kùzu will error:
+
+```
+DROP TABLE User
+Error: Binder exception: Cannot delete a node table with edges. It is on the edges of rel: Follows.
+```
+But you can first delete Follows and the User as follows:
+```
+DROP TABLE Follows
+---------------------------------------
+| RelTable: Follows has been dropped. |
+---------------------------------------
+DROP TABLE User
+-------------------------------------
+| NodeTable: User has been dropped. |
+-------------------------------------
+```
+
+
+
 [^1]: We prefer the term "table" instead of "label" because Kùzu, as well as other GDBMSs are ultimately relational systems in the sense that they store and process sets of tuples, i.e., tables or relations. A good way to understand the property graph model is as tagging your tables as "node" and "relationship tables" depending on their roles in your application data. Nodes are generally suitable to represent entities in your applications, while relationships represent the relationships/connections. Relationships are the primary means to join nodes with each other to find paths and patterns in your graph database. So when you define a node label and a set of nodes/relationships, this is equivalent to defining a table or records as nodes or relationships. During querying you can bind node records in syntax like (a:Person), while relationships in sytax like (..)-[e:Knows]->(...). Similar to table definitions in SQL, node and relationship tables have primary keys, a term that is defined in the context of tables: node tables explicitly define primary keys as one of their properties, while the primary keys of relationship tables are implicitly defined by the primary keys of their FROM and TO node records. Further observe that similar to relational systems, properties can be thought equivalently as columns of a table, justifying our choice of using the term table in these definitions.
 
 [^2]: We have currently not decided if Kùzu will support undirected edges or support it in a way similar to Neo4j, which always forces directed edges but allow querying in an undirected way. See [examples here](https://neo4j.com/docs/cypher-manual/current/introduction/uniqueness/) for the details how Neo4j supports "undirected querying", which matches edges from both directions.
