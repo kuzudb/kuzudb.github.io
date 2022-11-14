@@ -1,3 +1,8 @@
+---
+layout: default
+title: Csv import
+parent: Data import
+---
 
 # Data Import From CSV Files
 You can load the initial versions of your node and rel tables from CSV files 
