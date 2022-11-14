@@ -3,7 +3,7 @@
 This repository hosts the source code for [Kuzu website](https://kuzudb.github.io).
 
 ## Building
-This website is generated through [Jekyll](https://jekyllrb.com/). 
+This website is generated through [Jekyll](https://kuzudb.com/). 
 
 - To install Jekyll, follow the documentation [here](https://jekyllrb.com/docs/installation/).
 - To test locally, follow the documentation [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
