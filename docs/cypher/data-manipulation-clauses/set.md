@@ -25,8 +25,19 @@ We currently don't support a return statment after an update clause.
 
 Query:
 ```
-match (u:User) where u.name = 'Adam' set u.age = 50 
+MATCH (u:User) WHERE u.name = 'Adam' SET u.age = 50 
 ```
 
 # set a property of a relationship
-We currently don't support set/update a property of a relationship.
+Kùzu allows user to remove a node property using the set command.
+
+## Example:
+1. Removes Adam's age property
+
+Query:
+```
+MATCH (u:User) WHERE u.name = 'Adam' SET u.age = NULL
+```
+
+
+
