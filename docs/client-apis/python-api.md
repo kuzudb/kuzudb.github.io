@@ -16,7 +16,7 @@ Available APIs:
 ### 2. *PyDatabase.resize_buffer_manager(new_size): resize the buffer to the new size and returns void.*
   - new_size: the new buffer_manager size in bytes that you want to set to.
 
-## Connection creation & query through connection
+## Connection creation & execute through connection
 After the database instance has been created, users are expected to create a connection and issue queries through the connection. Connection can be created by `gdb.connection(db)`.
 
 Available APIs:
@@ -42,11 +42,11 @@ Available APIs:
   - example:
   ```
   # query the number of users in database
-  conn->query("MATCH (:User) return count(*)")
+  conn->execute("MATCH (:User) return count(*)")
   ```
   
 ## QueryResult parsing
-When you issue a query to the database through the `con->query(query)` API, you are expected to get a queryResult which contains all result tuples for the given query.
+When you issue a query to the database through the `con->execute(query)` API, you are expected to get a queryResult which contains all result tuples for the given query.
 We provide variety of APIs for user to fetch the queryResult as their desired format.
 
 Available APIs:
