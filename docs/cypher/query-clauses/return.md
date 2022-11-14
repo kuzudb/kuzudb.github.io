@@ -96,7 +96,7 @@ The semantics is exactly the same as SQL's semantics, which is a
   2) For each group G, compute the (or or more) aggregations in the query.
   3) Output for each group G, G's key(s) and the result of the aggregations. 
 
-You can find the list of aggregation functions supported in Kùzu [here](../functions/aggregate-functions.md).
+You can find the list of aggregation functions supported in Kùzu [here](../expressions/functions/aggregate-functions.md).
 
 ### Note on NULLs 
 The handling of NULLs in group by keys and values also follow the SQL semantics:
