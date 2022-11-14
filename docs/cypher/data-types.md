@@ -23,7 +23,7 @@ and functions on these data types to form expressions.
 | STRING| variable | variable-length character string |
 | TIMESTAMP | 4 bytes | combination of time and date (see below) |
 
-## LIST Data Types
+## LIST Data Type
 List is a nested data type to store a list of values of the same type. 
 Values in a list can themselves be nested lists. A few examples:
 ```
