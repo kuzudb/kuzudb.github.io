@@ -15,7 +15,7 @@ You can import this database by copy pasting the comands on that page.
 *Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # Aggregation
-Aggregate is the clause where you can combine multiple rows into a single value. The distinct operator can be used in aggregation to make all values unique before running aggregation on them.
+Aggregate is the clause where you can combine multiple rows into a single value. Aggregation can either be computed over all the matching tuples or it can be further divided by introducing grouping keys. Grouping keys are non-aggregate expressions, that are used to group the values going into the aggregate functions. The distinct operator can be used in aggregation to make all values unique before running aggregation on them.
 Supported aggregation functions can be found [here](../functions/aggregate-functions.md).
 
 ## Examples:
