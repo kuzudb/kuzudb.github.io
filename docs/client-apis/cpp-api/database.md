@@ -60,7 +60,7 @@ Create a database instance with given database and system config.
 - databaseConfig: database configuration
 - systemConfig: system configuration
 
-### void Database.resize(uint64_t newSize)
+### void Database.resizeBufferManager(uint64_t newSize)
 ---
 Resize buffer manager to a newSize.
 - newSize: new buffer pool size (in bytes).
