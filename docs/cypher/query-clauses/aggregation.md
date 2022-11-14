@@ -15,11 +15,11 @@ You can import this database by copy pasting the comands on that page.
 *Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # Aggregation
-Aggregate is the clause where you can combine multiple rows into a single value. Aggregation can either be computed over all the matching tuples or it can be further divided by introducing grouping keys. Grouping keys are non-aggregate expressions, that are used to group the values going into the aggregate functions. The distinct operator can be used in aggregation to make all values unique before running aggregation on them.
+Aggregate is the clause where you can combine multiple rows into a single value. Aggregation can either be computed over all the matching tuples (we call it simple aggregation) or it can be further divided by introducing grouping keys (we call it hash aggregation). Grouping keys are non-aggregate expressions, that are used to group the values going into the aggregate functions. The distinct operator can be used in aggregation to make all values unique before running aggregation on them.
 Supported aggregation functions can be found [here](../functions/aggregate-functions.md).
 
 ## Examples:
-1. returns the number of users living in different cities (the name of the city will be the aggregation key).
+1. returns the number of users living in different cities (hash regation, the name of the city will be the aggregation key).
 
 Query:
 ```
@@ -53,4 +53,18 @@ Result:
 -------------
 | Guelph    |
 -------------
+```
+
+3. returns the youngest user (simple aggregation, since it doesn't have group by keys)
+
+Query:
+```
+MATCH (u:User)
+RETURN MIN(u.age);
+```
+Result:
+```
+------
+| 25 |
+------
 ```
