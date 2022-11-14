@@ -57,6 +57,7 @@ Available APIs:
 ### 4. *PyQueryResult.close(): destroys the PyQueryResult object in Python.*
   - Note: Python doesn't guarantee objects to be deleted in the reverse order of declaration. Therefore, users are expected to call close() to ensure that the QueryResult is destroyed before database.
 ### 5. *PyQueryResult.getAsDF(): returns the queryResult in the Panda DataFrame format.*
+  - Note: Since this API returns a panda dataframe object, the user should install numpy and panda.
  
   
 
