@@ -8,12 +8,14 @@ nav_order: 41
 
 # Database
 
-To use Kùzu, you need to first create a database instance with a database config. 
+To use Kùzu, you need to first create a database instance with a database config. We recommend 
+constructing the Database instance 
 
 ## Example
 ```
 DatabaseConfig databaseConfig("testdb");
-Database database(databaseConfig);
+SystemConfig systemConfig(1ull << 31 /* set buffer manager size to 2GB */);
+Database database(databaseConfig, systemConfig);
 ```
 
 ## Available APIs
@@ -22,12 +24,16 @@ Database database(databaseConfig);
 ---
 Create a database configutation.
 - databasePath: path to database files. If the path doesn't not exist, a new database will be created at the given path.
-- inMemoryMode: is the database should be created as an in-memory database. Default set to false.
+- inMemoryMode: is the database should be created as an in-memory database. Kùzu is a disk-based system. Setting
+  a database as in memory when constructing DatabaseConfig only ensures that the pages of your database files will be
+  kept in the system's buffer pool.
 
 ### SystemConfig(uint64_t bufferPoolSize = StorageConfig::DEFAULT_BUFFER_POOL_SIZE)
 ---
 Create a system configuration
-- bufferPoolSize: size of buffer pool in bytes. Default set to 16MB.
+- bufferPoolSize: size of buffer pool in bytes. Default set to 16MB. This is set to a
+  very low size to make the tests run faster when developing. You should override
+  this and set to a larger size when working with large databases.
 
 ### Database(const DatabaseConfig& databaseConfig)
 ---
