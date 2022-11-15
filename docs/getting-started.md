@@ -59,7 +59,7 @@ kuzu> MATCH (a:User) - [f:Follows] -> (b:User) RETURN a.name, b.name, f.since;
 -------------------------------
 ```
 # Python API
-Kùzu Python API can be installed with pip: `pip install [**TODO: update the download URL after release**]`. 
+Kùzu Python API can be installed with pip: `pip install kuzu`. 
 
 Once the Python API is installed, you can import it in Python and use it to perform Cypher queries. An example use case of loading node and rel tables from CSV files and running a simple Cypher query in Python is shown as below:
 
