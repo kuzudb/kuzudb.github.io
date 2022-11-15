@@ -14,40 +14,16 @@ You can import this database by copy pasting the comands on that page.
 
 *Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
-# Union
-Union is the clause where you combine multiple query results into a single query result.
+# UNION
+`UNION` is the clause where you combine query result A and query result B 
+that have the same schema but were produced by different queries into a single result C
+by taking their union. Two notes:
 
-## Important Notes:
-- The number of columns and dataType of each column must be identical in all query results, whereas the name of each column can be different.
-- UNION will remove all duplicates in the output query result. To preserve the duplicates in the query result, users are expected to use UNION ALL.
+- The number of columns and dataType of each column must be identical in A and B but their names can be different.
+- UNION will remove all duplicates in the union of A and B. Instead, UNION ALL preserves the duplicates.
 
-## Examples:
-1. returns the user's name who live in Waterloo or Kitchener.
-
-Query:
-
-```
-MATCH (u1:User)-[:LivesIn]->(c1:City)
-WHERE c1.name = 'Waterloo'
-RETURN u1.name
-UNION ALL
-MATCH (u2:User)-[:LivesIn]->(c2:City)
-WHERE c2.name = 'Kitchener'
-RETURN u2.name
-```
-Result:
-
-```
------------
-| Adam    |
------------
-| Karissa |
------------
-| Zhang   |
------------
-```
-
-2. returns the age of the follower of Zhang and Karissa (duplication is allowed)
+For example, the following query returns the age of the follower 
+of Zhang and Karissa without duplicate elimination
 
 Query:
 ```
@@ -68,5 +44,16 @@ Result:
 | 40 |
 ------
 | 30 |
+------
+```
+
+If you changed UNION ALL to UNION in the above query, one of the 30's in the output
+would be removed. So the result would be:
+
+```
+------
+| 30 |
+------
+| 40 |
 ------
 ```
