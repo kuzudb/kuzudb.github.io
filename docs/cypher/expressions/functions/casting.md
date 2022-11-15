@@ -8,7 +8,8 @@ grand_parent: Cypher
 # Casting
 
 ## Explicit casting
-Kùzu supports changing the dataType of an expression to another dataType by explicitly using the casting functions. Kùzu throws an exception if the casting fails.
+Kùzu supports changing the data type of an expression to another data type 
+by explicitly using the casting functions. Kùzu throws an exception if the casting fails.
 
 | Functions | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
