@@ -16,7 +16,7 @@ Available APIs:
 ### `hasNext(self: kuzu._kuzu.result) -> bool`
  returns whether there are tuples to fetch from the PyQueryResult.
  
- Note: Often used together with getNext(). Users are expected to always call hasNext() before calling getNext().
+ note: Often used together with getNext(). Users are expected to always call hasNext() before calling getNext().
 ### `getNext(self: kuzu._kuzu.result) -> list`
  fetchs the next tuple from PyQueryResult.
 ### `writeToCSV(self: kuzu._kuzu.result, arg0: str) -> None`
