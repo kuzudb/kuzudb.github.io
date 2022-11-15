@@ -17,8 +17,7 @@ You can import this database by copy pasting the comands on that page.
 # Limit 
 Limit controls the number of tuples returned from a query. It is often used within in an [ORDER BY](order-by.md) clause to fetch the top N tuples from the query result. Note: Limit accepts any expression that can be evaluated to an integer.
 
-## Examples:
-1. returns the top three oldest users.
+For example, the following query returns the top three oldest users.
 Query:
 ```
 MATCH (u:User)
@@ -37,6 +36,6 @@ Result:
 -----------
 ```
 
-If you omit the ORDER BY, in which case you would get some k tuples in a `LIMIT k` query 
-but you have no guarantee about their properties.
+If you omit the ORDER BY, you would get some k tuples in a `LIMIT k` query 
+but you have no guarantee about which ones will be selected.
 
