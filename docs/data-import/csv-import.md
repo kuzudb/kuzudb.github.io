@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Csv import
+title: CSV import
 parent: Data import
 ---
 
