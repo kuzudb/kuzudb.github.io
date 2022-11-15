@@ -14,7 +14,7 @@ You can import this database by copy pasting the comands on that page.
 
 *Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
-# Limit 
+# LIMIT
 Limit controls the number of tuples returned from a query. It is often used within in an [ORDER BY](order-by.md) 
 clause to fetch the top k tuples from the query result. 
 Note: Limit accepts any expression that can be evaluated to an integer.
