@@ -10,7 +10,7 @@ nav_order: 43
 When you issue a query to the database through the `con->execute(query)` API, you are expected to get a queryResult which contains all result tuples for the given query.
 We provide variety of APIs for user to fetch the queryResult as their desired format.
 
-### Available APIs
+### Available APIs:
 
 #### `__init__(self, /, *args, **kwargs)`
   Construct a QueryResult.
