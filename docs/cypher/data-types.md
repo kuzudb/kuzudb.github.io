@@ -8,8 +8,7 @@ parent: Cypher
 
 Kùzu supports a set of primitive and nested data types both for node and relationship properties 
 as well as for forming expressions whose outputs are in these data types.
-See [expressions](expressions) and  [functions](expressions/functions) for the supported operators 
-and functions on these data types to form expressions. 
+See [expressions and functions](expressions/overview.md) for the supported operators and functions on these data types to form expressions. 
 
 ## Primitive Data Types
 
