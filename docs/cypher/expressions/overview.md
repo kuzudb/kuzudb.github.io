@@ -13,8 +13,3 @@ arbitarily comples. Variables that bind to node and relationship
 properties, aliases from previous parts of the query, literal (i.e., constants),
 are examples of most simples expressions. Using logical or arithmetic operators,
 and functions recursively, you can complex arbitarily complex expressions.
-
-This part of the documentation covers the following operators:
-  - [Logical Operators](casting.md)
-  - [Comparison Operators](comparisons.md)
-  - [Functions](functions/)
