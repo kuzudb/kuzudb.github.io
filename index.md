@@ -5,6 +5,11 @@ nav_order: 1
 permalink: /
 ---
 
+[Get started now](./docs/getting-started.md){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View it on GitHub](https://github.com/kuzudb/kuzu){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+---
+
 <div align="center">
   <img src="/kuzu-logo.png" height="100">
 </div>
