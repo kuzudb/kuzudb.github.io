@@ -15,26 +15,47 @@ You can import this database by copy pasting the comands on that page.
 *Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # UNWIND
-Unwind clause allows user to transform any list to individual rows. Unwind requires the user to specify a new name for the transformed rows.
+`UNWIND` allows you to "unnest" a list L that has k elements in it,
+into a table T with k element. 
+When using UNWIND, you need to specify an alias to refer to the elements
+of the unnested list, i.e., T.
 
-# Example
-1. Transforms a Literal List into multiple rows and return them
+For example, the following unnests a literal "list of strings" into multiple rows 
+and return them:
 
 Query:
 ```
 UNWIND ["Amy", "Bob", "Carol"] AS x
-RETURN 'name' as name, x
+RETURN x
 ```
 
-Result:
+Output:
 ```
-------------------
-| 'name' | x     |
-------------------
-| name   | Amy   |
-------------------
-| name   | Bob   |
-------------------
-| name   | Carol |
-------------------
+---------
+| x     |
+---------
+| Amy   |
+---------
+| Bob   |
+---------
+| Carol |
+---------
+```
+If the unwinded list L contained as elements other lists,
+then the output would be elements with one fewer nesting. For example, if L was a list of 
+list of strings, after unwinding, you'd get a table of list of strings. For example:
+
+```
+UNWIND [["Amy"], ["Bob", "Carol"]] AS x
+RETURN x
+```
+Output:
+```
+---------------
+| x           |
+---------------
+| [Amy]       |
+---------------
+| [Bob,Carol] |
+---------------
 ```
