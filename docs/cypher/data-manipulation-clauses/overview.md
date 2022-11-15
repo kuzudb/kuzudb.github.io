@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Data manipulation clauses
-parent: Cypher
-has_children: true
+title: Create
+parent: Data manipulation clauses
+grand_parent: Cypher
 ---
 
 ### Overview
