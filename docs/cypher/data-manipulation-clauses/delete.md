@@ -8,32 +8,23 @@ grand_parent: Cypher
 # Database
 We will use the database, whose schema and data import commands are given [here](example-database.md):
 
-<img src="../query-clauses/running-example.png" width="800">
+<img src="../../../img/running-example.png" width="800">
 
 You can import this database by copying pasting the comands on that page. 
 
 *Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
-# Delete Node
-Kùzu allows user to delete a new node from a node table by using the delete node clause.
+# DELETE
+You can delete node and relationship records from your tables using the DELETE clause.
+We currently only support deleting singleton node records, i.e., those that don't have
+have any incoming or outcoming relationships. Deleting of relationship records and
+nodes with edges are not yet supported.
 
-## Important Notes:
-1. We currently only support deleting a node which doesn't have any incoming or outcoming edges.
-2. Deleting an edge is currently not supported.
+For example, the following query first creates a User (Alice, 40) node record, 
+without inserting any relationships to that node record, andand then deletes that record
 
-## Example:
-1. Creates a user{Alice, 40} and then deletes that user.
-
-Query:
 ```
 CREATE (u:User {name: 'Alice', age: 35});
-MATCH (u:User) WHERE u.name = 'Alice' DELETE u;
-```
-
-2. Deletes a node who has an incoming or outcoming edge will result in an exception.
-
-Query:
-```
-# Fails because Adam has both incoming and outcoming edges.
-MATCH (u:User) WHERE u.name = 'Adam' DELETE u;
+MATCH (u:User) WHERE u.name = 'Alice' 
+DELETE u;
 ```
