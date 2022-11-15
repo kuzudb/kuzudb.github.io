@@ -5,7 +5,7 @@ parent: Python api
 grand_parent: Client api
 nav_order: 42
 ---
-## Connection creation & execute through connection
+## Connection
 After the database instance has been created, users are expected to create a connection and issue queries through the connection. Connection can be created by `gdb.connection(db)`.
 
 ### Available APIs:
