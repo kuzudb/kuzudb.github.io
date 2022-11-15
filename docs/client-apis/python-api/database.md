@@ -10,7 +10,7 @@ The database class is used to create and manage the Kùzu database instance.
 
 ### Available APIs:
 #### `__init__(self: kuzu._kuzu.database, database_path: str, buffer_pool_size: int = 0) -> None`
-Returns a Kùzu database instance.
+Return a Kùzu database instance.
   - **database_path**: required parameter the path to database file. 
   - **buffer_pool_size**: optional parameter. the size of buffer pool in bytes. it defaults to 1 GB if not set.
 Example: 
