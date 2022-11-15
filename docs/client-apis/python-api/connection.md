@@ -13,7 +13,8 @@ Available APIs:
 Construct a connection to PyDatabase.
   - **database**: the database that you want to connect to.
   - **num_threads**: the max number of threads to execute a query. If the num_threads is not given, the system will set num_threads to the max number of threads in the system.
-  - example:
+  
+  Example:
   ```
   # create a connection to Kùzu, and set thread number to 2
   gdb.connection(db, 2)
@@ -21,7 +22,8 @@ Construct a connection to PyDatabase.
 ### `set_max_threads_for_exec(self: kuzu._kuzu.connection, num_threads: int) -> None`
 Set the max number of threads for execution to `num_threads`.
   - **num_threads**: the max number of threads for execution that you want set to.
-  - example:
+  
+  Example:
   ```
   # set the max num threads for execution to 3:
   con->set_max_num_threads_for_exec(3)
@@ -31,7 +33,8 @@ Set the max number of threads for execution to `num_threads`.
 Executes the query and returns a PyQueryResult.
   - **query**: a parameterized query which allows user to use dollar symbol `$` to represent a parameter.
   - **parameters**: a list of (parameterName, parameterValue) tuple where the first entry is parameter name and second entry is parameter value. Note we currently do not support parameter with LIST type.
-  - example:
+  
+  Example:
   ```
   # query the number of users in database without using parameterized query
   conn->execute("MATCH (:User) RETURN count(*)")
