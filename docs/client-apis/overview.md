@@ -10,7 +10,7 @@ permalink: /docs/client-apis
 You can interact with Kùzu in three ways:
   - [CLI](cli.md)
   - [C++ API](cpp-api)
-  - [Python API](python-api.md)
+  - [Python API](python-api)
 
 Each query to Kùzu through its CLI or client APIs are transactional, 
 satisfying serializability, atomicity and durability.
