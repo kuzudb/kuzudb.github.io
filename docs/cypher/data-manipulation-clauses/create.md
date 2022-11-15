@@ -16,7 +16,7 @@ You can import this database by copy pasting the comands on that page.
 # CREATE
 `CREATE` is similar to the INSERT clause of SQL and lets you insert records into your
 node and relationahip tables. We desribe the generic semantics of the 
-CREATE clause momentarily [below](#inserting-nodes-and-relationships-together). We first start with some simple examples. 
+CREATE clause momentarily [below](#generic-semantics). We first start with some simple examples. 
 
 ## Inserting Nodes
 The following query inserts a single (Alice, 35) node record into the User node table:
@@ -43,7 +43,7 @@ Output:
 ------------------
 ```
 
-Any node properties which are not specified will be set to NULL. 
+Any node property which is not specified will be set to NULL. 
 For example the following query will set the age property
 the inserted node reord to NULL. Note that for node records,
 the primary key property, in our example "name" has to be non-NULL.
@@ -75,28 +75,23 @@ name "Noura".
 MATCH (u1:User), (u2:User) WHERE u1.name = 'Adam' AND u2.name = 'Noura' 
 CREATE (u1)-[:Follows {since: 2011}]->(u2)
 ```
+Similar to inserting node records, any relationship property which is not 
+specified in the query will be set to NULL.
 
-## Inserting Nodes and Relationships Together
-The general sem
+## Generic Semantics
+The general semantics of CREATE is as follows. You can specify
+an arbitrary graph pattern P after the CREATE clause.
+Then for each tuple t that was produced before the CREATE statement, 
+each node n and relationship r that is not bound by t is inserted
+as a new node and relationship. For example the following query
+adds a Follows relationship with since=2022 from User node Zhang 
+to every other User node (including from "Zhang" to "Zhang") 
+in the database:
 
-2. Adds a new City (name: Toronto, population: unknown) to the city node table。
-
-Query:
 ```
-create (c:City {name: 'Toronto'})
+MATCH (a:User), (b:User) 
+WHERE a.name = "Zhang" 
+CREATE (a)-[:Follows {since :  2022}]->(b)
 ```
-Note: since the population of the city is not specified in the create node clause, Kùzu will set the population to NULL.
+This is because the "a" variable matches to User node "Zhang" and there will be 
 
-# Create relationship
-Kùzu allows user to add a new relationship between nodes by using the create rel clause.
-
-## Important Notes:
-1. Similar to create node, properties which are not specified in the create rel clause will be set to NULL.
-2. If the relationship to insert will violate the complexity constraint after insertion, Kùzu will throw an exception.
-## Example:
-1. Adds a new relationship which describes Adam follows Noura.
-
-Query:
-```
-MATCH (u1:User), (u2:User) WHERE u1.name = 'Adam' AND u2.name = 'Noura' CREATE (u1)-[:Follows {since: 2011}]->(u2)
-```
