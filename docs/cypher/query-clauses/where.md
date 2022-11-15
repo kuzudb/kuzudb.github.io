@@ -42,8 +42,8 @@ The booelean predicate/expression specified above can be understood as it reads:
 greater than 45 OR whose names start with "Kar". It combines several means to construct expressions
 in high-level database query languages, such as as boolean operator (OR), a numeric comparison operator (>),
 and a string function (starts_with). You can learn more about the operators and functions Kùzu supports
-in the documentation on [expressions](https://github.com/kuzudb/kuzudb.github.io/tree/documentation/docs/cypher/expressions
-) and [functions](https://github.com/kuzudb/kuzudb.github.io/blob/documentation/docs/cypher/functions) and there. 
+in the documentation on [expressions](../expressions
+) and [functions](../expressions/functions) and there. 
 
 Note on checking if an expression is NULL or not: There is a special syntax, IS NULL or IS NOT NULL,
 in openCypher to check if the result of an expression is NULL. For example, the following
@@ -64,7 +64,7 @@ Output:
 -------------------
 ```
 Please refer to these links for details on query semantics when using 
-[logical operations](../expressions/logical.md) and [comparison operations](../data-types.md#null-values) on NULLs.
+[logical operators](../expressions/logical-operators.md) and [comparison operators on NULLs](../data-types.md#null-values).
 
 # WHERE EXISTS (...) Subqueries
 One special and powerful use of predicates in the WHERE clause is to check
