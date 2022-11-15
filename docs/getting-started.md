@@ -6,10 +6,6 @@ nav_order: 2
 
 This guide provides instructions and examples on how to set up and start working with Kùzu with CLI, Python, and C++ APIs. The CSV files used in this example can be found [here](cypher/query-clauses/example-database.md).
 
-[**TODO: for each of CLI, Python, C++ add a link to detailed client-apis docs. We should remove C++ exmaples from here. Let's just keep python and link to C++.**]
-
-[**Chang: the C++ API doc does not seem to have an end-to-end example. I think it might be better to keep an end-to-end example in this guide?**]
-
 # CLI
 Kùzu CLI (Command Line Interface) is a single, dependency free executable. It is precompiled for Mac and Linux. The CLI can be downloaded at [**TODO: update the download URL after release**]. After the CLI is downloaded and extracted into a directory, you can navigate the directory from your terminal, and set the execute permissions with `chmod +x kuzu`. Then you can run the executable with `./kuzu -i <db_path>` where `<db_path>` is the directory for the database files. This path can point to an existing database or to a directory that does not yet exist and Kùzu will create the directory and initialize an empty database for you. You will see a prompt as below if you pass `test` as you `<db_path>`:
 
