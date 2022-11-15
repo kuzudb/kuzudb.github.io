@@ -47,6 +47,6 @@ more stable, usable, and feature-rich system only through your feedback!*
 
 We are looking forward to to your feedback and a long and exciting journey as we continue developing Kùzu 🤗. 
 
-*by Kùzu team, 11-15-2022, Waterloo, ON*
+*by Kùzu team, 11-15-2022, Waterloo, ON, Canada*
 
 <sub>*ps: For interested readers: the word kù-zu is the Sumerian (the oldest known human language) word for "wisdom".*</sub>
