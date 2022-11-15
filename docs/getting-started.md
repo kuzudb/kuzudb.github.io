@@ -71,7 +71,7 @@ kuzu> MATCH (a:User)-[f:Follows]->(b:User) RETURN a.name, b.name, f.since;
 Kùzu Python API can be installed with pip: `pip install [**TODO: update the download URL after release**]`. 
 
 Once the Python API is installed, you can import it in Python and use it to perform Cypher queries. Below is a short example
-of how to get started. Details of the [Python API is here](client-apis/python-api.md).
+of how to get started. Details of the [Python API is here](client-apis/python-api/overview.md).
 
 - Import library:
 
@@ -137,7 +137,7 @@ Output:
 
 # C++ API
 Kùzu C++ API is distributed as a so/dylib library file and a set of header files. The C++ API can be downloaded at [**TODO: update the download URL after release**]. After the C++ API is downloaded and extracted into a directory, it can be used without installation by just specifying the library search path for the linker.
-Below is a short example of how to get started. Details of the [C++ API is here](client-apis/cpp-api).
+Below is a short example of how to get started. Details of the [C++ API is here](client-apis/cpp-api/overview.md).
 - Setup:
 In this example, we assume that the so/dylib, the headers, the CSV files, and the cpp code file is under the same directoy:
 
