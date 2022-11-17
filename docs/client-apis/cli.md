@@ -19,6 +19,7 @@ kuzu> :help
     :quit     exit from shell
     :thread [num_threads]     set number of threads for query execution
     :buffer_manager_size [bm_size_in_bytes]     set buffer manager size in bytes
+    :logging_level [logging_level]     set logging level of database, available options: debug, info, err
     :list_nodes     list all node tables
     :list_rels     list all rel tables
     :show_node     [table_name] show node table schema
