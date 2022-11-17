@@ -64,3 +64,8 @@ Create a database instance with given database and system config.
 ---
 Resize buffer manager to a newSize.
 - newSize: new buffer pool size (in bytes).
+
+### void Database.setLoggingLevel(spdlog::level::level_enum loggingLevel)
+---
+Set the logging level of the database to the given loggingLevel
+- loggingLevel: new logging level. (Supported logging levels are: info, debug, err)
