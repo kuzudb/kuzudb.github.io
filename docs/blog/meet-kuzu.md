@@ -12,7 +12,7 @@ Kùzu is a new embedddable property graph database management system (GDBMS) tha
 designed for high scalability and very fast querying. We are releasing 
 Kùzu today under a permissible MIT license. Through years of research on GDBMSs, we observed a lack of
 highly efficient GDBMS in the market that adopts state-of-the-art 
-querying and storage techniques and that can very easilyl integrate into applications, 
+querying and storage techniques and that can very easily integrate into applications, 
 similar to DuckDB or SQLite. Kùzu aims to fill this space and evolve into the 
 go-to open-source system to develop
 graph database applications, e.g., to manage and query your knowledge graphs, 
