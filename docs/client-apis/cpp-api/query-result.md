@@ -44,9 +44,12 @@ while (result->hasNext()) {
 ---
 - return: next tuple.
 
-### void QueryResult.writeToCSV(std::string fileName)
+### void QueryResult.writeToCSV(std::string fileName, char delimiter = ',', char escapeCharacter = '"', char newline = '\n')
 ---
 - fileName: output csv file.
+- delimiter: entry delimiter character for the csv file. Default set to `,`
+- escapeCharacter: csv file escape character used. Default set to `"`
+- newline: row delimiter character for the csv file. Default set to `\n`
 
 ### QuerySummary* QueryResult.getQuerySummary()
 ---
