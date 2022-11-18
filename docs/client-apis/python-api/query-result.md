@@ -20,9 +20,12 @@ We provide variety of APIs for user to fetch the queryResult as their desired fo
   Note: Often used together with getNext(). Users are expected to always call hasNext() before calling getNext().
 #### `getNext(self: kuzu._kuzu.result) -> list`
   Fetch the next tuple from the QueryResult.
-#### `writeToCSV(self: kuzu._kuzu.result, arg0: str) -> None`
+#### `writeToCSV(self: kuzu._kuzu.result, arg0: str, delimiter: str, escapeCharacter: str, newline: str) -> None`
   Export the query result to the csv file.
  - arg0 is the output path of the csv file.
+ - delimiter is the character to set as the entry delimiter of the csv file. By default, this is set to comma `,`. This field cannot be more than one character in length.
+ - escapeCharacter is the character to set as the character escape of the csv file. By default, this is set to double-quotes `"`.
+ - newline is the character to set as the row delimiter of the csv file. By default, this is set to newline `\n`. Note that this field cannot be more than one character in length.
 #### `close(self: kuzu._kuzu.result) -> None`
   Destroy the QueryResult object in Python.
  
