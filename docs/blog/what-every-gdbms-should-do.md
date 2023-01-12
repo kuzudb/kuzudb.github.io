@@ -59,7 +59,7 @@ his successors are continuing this tradition very successfully today.
 CWI has created many successful DBMSs, including MonetDB (Martin's legacy), Vectorwise, and 
 most recently DuckDB. People paid their respects to Martin during an emotional memorial 
 on the first night of the conference.
-As a suprise, [MemGraph](https://memgraph.com/) co-founder and CTO  [Marko Budiselić](https://www.linkedin.com/in/markobudiselic/) 
+As a surprise, [MemGraph](https://memgraph.com/) co-founder and CTO  [Marko Budiselić](https://www.linkedin.com/in/markobudiselic/) 
 was also there (it was his first CIDR)! Marko is an extremely friendly 
 and humble person you should meet and it great to share our insights about where GDBMSs make a difference in 
 enterprise applications.
