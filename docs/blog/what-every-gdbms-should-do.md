@@ -5,7 +5,7 @@ permalink: /blog/what-every-gdbms-should-do-and-vision.html
 parent: Blog
 ---
 by Semih Salihoğlu, Jan 12th, 2023
-# What Every Competent GDBMS Should Do <br/> (aka The Goals & Vision of Kùzu)  
+# What Every Competent GDBMS Should Do <br/> (aka The Goals & Vision of [Kùzu](https://github.com/kuzudb/kuzu))  
 As a co-implementor of the Kùzu GDBMS and
 a professor at University of Waterloo,
 I have been thinking of GDBMSs day in and day out for many years now.
@@ -15,7 +15,7 @@ of graph data management ([1](http://www.vldb.org/pvldb/vol12/p1692-mhedhbi.pdf)
 [3](https://www.vldb.org/pvldb/vol15/p1011-jin.pdf),
 [4](https://www.vldb.org/pvldb/vol15/p1533-chen.pdf)),
 we decided to develop 
-[Kùzu](https://kuzudb.com/) as a state-of-the-art modern embeddable GDBMS. 
+[Kùzu](https://github.com/kuzudb/kuzu) as a state-of-the-art modern embeddable GDBMS. 
 This post covers my broad opinions on GDBMSs, and the feature set they should
 optimize for and why. In doing so, it also gives an overall vision of Kùzu!
 
@@ -340,7 +340,7 @@ OK, this is it for now. In the next two blog posts, I will discuss
 factorization and worst-case optimal join algorithms and describe 
 some of the principles that we adopted in Kùzu's query processor.
 Until then, happy new years from the cold but cozy winter of 🇨🇦 
-and `pip install Kùzu`!
+and [pip install kuzu](https://github.com/kuzudb/kuzu)!
 
 [^1]: Interestingly, Bachmann is one of a handful of Turing laureates without any academic career. If you love DBMSs, [listen to this talk](https://youtu.be/iDVsNqFEkB0)  where he remembers his IDS days! Amusingly, he also talks about how he didn't know who Turing was when got the Turing award and how he met Turing's mother in England for tea 😀.
 
