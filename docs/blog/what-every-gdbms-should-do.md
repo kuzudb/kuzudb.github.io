@@ -136,7 +136,7 @@ objectively harder. I'll come to recursive queries later.
 
 
 Now get ready for a blasphemous observation: *GDBMSs are relational at their cores!*[^2]. 
-Well, OK anyone with a formal training in DBMSs knows there is nothing 
+Well, OK anyone who has studied the principles of DBMSs knows there is nothing 
 blasphemous here because GDBMSs actually have to be relational
 because of this simple fact: 
 *the only known practical way to implement declarative high-level
@@ -340,7 +340,9 @@ some of the principles that we adopted in Kùzu's query processor.
 Until then, happy new years from the cold but cozy winter of Canada 
 and `pip install Kùzu`!
 
-[^1]: Interestingly, Bachmann is one of a handful of Turing laureates without any academic career. If you love DBMSs, listen to this talk  where he remembers his IDS days! Amusingly, he also talks about how he didn't know who Turing was when got the Turing award and how he met Turing's mother in England for tea 😀.]
+[^1]: Interestingly, Bachmann is one of a handful of Turing laureates without any academic career. 
+If you love DBMSs, [listen to this talk](https://youtu.be/iDVsNqFEkB0)  where he remembers his IDS days! 
+Amusingly, he also talks about how he didn't know who Turing was when got the Turing award and how he met Turing's mother in England for tea 😀.]
 
 [^2]: When I say GDBMSs here, I'm referring to the core engines that implement the high-level languages of these systems and not the analytics libraries (e.g., [1](https://neo4j.com/product/graph-data-science/), [2](https://memgraph.com/mage)) above these core engines that run iterative graph analytics computations, such as finding connected components, or PageRank, or betweenness centrality. These computations are better understood through either direct graph formalisms or linear algebra (and not relational) operations.
 
