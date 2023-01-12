@@ -3,6 +3,7 @@ layout: default
 title: What Every Competent GDBMS Should Do (aka The Goals & Vision of Kùzu)  
 parent: Blog
 ---
+by Semih Salihoğlu, Jan 12th, 2023
 # What Every Competent GDBMS Should Do <br/> (aka The Goals & Vision of Kùzu)  
 As a co-implementor of the Kùzu GDBMS and
 a professor at University of Waterloo,
@@ -92,8 +93,8 @@ DBMSs based on graph models are anything but new. They have existed even before 
 model: DBMS die-hards love remembering 
 that the [IDS system](https://en.wikipedia.org/wiki/Integrated_Data_Store) from 1960s was based on the "network model",
 which is is just another term for graph. IDS was lead by the amazing 
-Charlie Bachmann ([1](https://amturing.acm.org/award_winners/bachman_9385610.cfm),
-[2](https://youtu.be/iDVsNqFEkB0), [3](https://youtu.be/jByIpJNrm50)),  who is credited for inventing DBMSs[^1].
+Charlie Bachmann <a href="https://csdl-images.ieeecomputer.org/mags/an/2011/04/figures/man20110400701.gif"><img align="left" style="width:380px; padding-right: 10px;" src="../../img/bachmann.png"></a> ([1](https://amturing.acm.org/award_winners/bachman_9385610.cfm), 
+[2](https://youtu.be/iDVsNqFEkB0), [3](https://youtu.be/jByIpJNrm50)), whose photo is shown on the left and who is credited for inventing DBMSs[^1].
 If you click on [this 1962 ad of the IDS system](http://wp.sigmod.org/wp-content/uploads/2012/12/image4.jpg), you will see a graph of node and 
 edge records. Note 1960s are pre-relational times. Ever since, every decade has seen a surge of DBMSs 
 that adopted a graph-based model with mixed levels of adoption success:
