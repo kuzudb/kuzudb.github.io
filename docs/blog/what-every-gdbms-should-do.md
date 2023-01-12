@@ -1,6 +1,6 @@
 ---
 layout: default
-title: What Every Competent GDBMS Should Do (or The Goals & Vision of Kùzu)  
+title: What Every Competent GDBMS Should Do (aka The Goals & Vision of Kùzu)  
 parent: Blog
 ---
 # What Every Competent GDBMS Should Do <br/> (or The Goals & Vision of Kùzu)  
