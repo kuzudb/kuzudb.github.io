@@ -343,73 +343,16 @@ some of the principles that we adopted in Kùzu's query processor.
 Until then, happy new years from the cold but cozy winter of Canada 
 and `pip install Kùzu`!
 
-[^1]: Interestingly, Bachmann is  one of a handful of Turing 
-laureates without any academic career. If you love DBMSs, listen to this talk 
-where he remembers his IDS days! Amusingly, he also talks about how he didn't know who Turing
-was when got the Turing award and how he met Turing's mother in England :)(XXX emoji).]
+[^1]: Interestingly, Bachmann is one of a handful of Turing laureates without any academic career. If you love DBMSs, listen to this talk  where he remembers his IDS days! Amusingly, he also talks about how he didn't know who Turing was when got the Turing award and how he met Turing's mother in England :)(XXX emoji).]
 
-[^2]: When I say GDBMSs here, I'm referring to the core engines 
-that implement the high-level languages of these systems and 
-[not the analytics libraries](1, 2, ...) above these core engines that 
-run iterative graph analytics computations, such as finding connected components,
-or PageRank, or betweenness centrality. These computations are better understood through
-either direct graph formalisms or linear algebra (and not relational) operations.
+[^2]: When I say GDBMSs here, I'm referring to the core engines that implement the high-level languages of these systems and [not the analytics libraries](1, 2, ...) above these core engines that run iterative graph analytics computations, such as finding connected components, or PageRank, or betweenness centrality. These computations are better understood through either direct graph formalisms or linear algebra (and not relational) operations.
 
-[^3]: I am a strong supporter of devoting a few lectures to GDBMSs after covering
-the fundamental topics on the relational model and RDBMSs in core introduction
-to DBMSs courses in undergraduate curriculums. Students should broaden their perspectives
-on the available
-data models and query/programming languages to them when they develop applications.
-GDBMSs is an obvious choice here. So is Datalog and RDF/SparQL.
+[^3]: I am a strong supporter of devoting a few lectures to GDBMSs after covering the fundamental topics on the relational model and RDBMSs in core introduction to DBMSs courses in undergraduate curriculums. Students should broaden their perspectives on the available data models and query/programming languages to them when they develop applications. GDBMSs is an obvious choice here. So is Datalog and RDF/SparQL.
 
-[^4]: We articulated this list of features in our CIDR 2023 paper. Incidentally, 
-[a paper](https://www.cidrdb.org/cidr2023/papers/p66-wolde.pdf) written by CWI 
-on a graph query extension to DuckDB, had a 12-item list of "techniques" that 
-GDBMSs should implement at their cores. Let me call this the CWI list.
-These items are not features in the sense I'm using the word, so I call them
-techniques. As you'll see my features are higher-level 
-system properties from user's perspective.
-Peter Boncz, who is renowned in the field for having written or 
-advised many successful DBMSs that spinned off, presented the CWI paper.
-I highly recommend this as another reading if you want to know more about 
-Peter and his co-authors' technical insights about how GDBMSs should be architected. 
-Importantly, Kùzu has integrated or 
-is in the process of integrating 11 of the 12 techniques in the CWI list
-(bulk path finding is the one we have to do more thinking on)
-and our prior publications had also articulated many of these insights, 
-such as the fact that [GDBMSs should be columnar systems](https://www.vldb.org/pvldb/vol14/p2491-gupta.pdf) doing vectorized
-querying and of course we did a ton of work on [worst-case optimal joins](https://www.vldb.org/pvldb/vol12/p1692-mhedhbi.pdf) and
-[factorization](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf), which are also in the CWI list.
-I should acknowledge that Peter had been advocating for 
-some of the techniques on the CWI list at least since 2018.
-I remember a presentation he gave in 2018 to GDBMSs researchers and 
-developers titled "Why are existing GDBMSs Incompetent?",
-which listed some of the techniques in his list.
+[^4]: We articulated this list of features in our CIDR 2023 paper. Incidentally, [a paper](https://www.cidrdb.org/cidr2023/papers/p66-wolde.pdf) written by CWI on a graph query extension to DuckDB, had a 12-item list of "techniques" that GDBMSs should implement at their cores. Let me call this the CWI list. These items are not features in the sense I'm using the word, so I call them techniques. As you'll see my features are higher-level system properties from user's perspective. Peter Boncz, who is renowned in the field for having written or advised many successful DBMSs that spinned off, presented the CWI paper. I highly recommend this as another reading if you want to know more about Peter and his co-authors' technical insights about how GDBMSs should be architected. Importantly, Kùzu has integrated or is in the process of integrating 11 of the 12 techniques in the CWI list(bulk path finding is the one we have to do more thinking on) and our prior publications had also articulated many of these insights,  such as the fact that [GDBMSs should be columnar systems](https://www.vldb.org/pvldb/vol14/p2491-gupta.pdf) doing vectorized querying and of course we did a ton of work on [worst-case optimal joins](https://www.vldb.org/pvldb/vol12/p1692-mhedhbi.pdf) and [factorization](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf), which are also in the CWI list. I should acknowledge that Peter had been advocating for some of the techniques on the CWI list at least since 2018. I remember a presentation he gave in 2018 to GDBMSs researchers and developers titled "Why are existing GDBMSs Incompetent?", which listed some of the techniques in his list.
 
-[^5]: Although some refer to these as an "adjacency list index" because
-that's a common term in graph terminology but I need to pay my respects
-to the giants in the field: these are plain old [1980s Valduriez join indices](https://dl.acm.org/doi/abs/10.1145/22952.22955).
-And no, they were invented in the context of RDBMSs. That said, they never found much adoption in RDBMSs.
-But they are almost universally adopted in GDBMSs.
+[^5]: Although some refer to these as an "adjacency list index" because that's a common term in graph terminology but I need to pay my respects to the giants in the field: these are plain old [1980s Valduriez join indices](https://dl.acm.org/doi/abs/10.1145/22952.22955). And no, they were invented in the context of RDBMSs. That said, they never found much adoption in RDBMSs. But they are almost universally adopted in GDBMSs.
 
-[^6]: Designing the schema, i.e., defining the types of entities 
-and relationships and class structures and constraints of such complex domains
-can be decades of work. What I'm referring to as schema is
-called an "ontology" in knowledge graph/semantic web space. If you ever thought you modeled
-a hard application domain, take a look at [SNOMED](), which is a decades long effort
-to model and standardize human medical knowledge. Last term, I had a seminar on 
-SNODEM in my graduate course on knowledge graphs
-and students were baffled by the complexity of this "ontology", which  describes
-the types of entities and their relationships.
+[^6]: Designing the schema, i.e., defining the types of entities and relationships and class structures and constraints of such complex domains can be decades of work. What I'm referring to as schema is called an "ontology" in knowledge graph/semantic web space. If you ever thought you modeled a hard application domain, take a look at [SNOMED](), which is a decades long effort to model and standardize human medical knowledge. Last term, I had a seminar on SNODEM in my graduate course on knowledge graphs and students were baffled by the complexity of this "ontology", which  describes the types of entities and their relationships.
 
-[^7]: Before we released Kùzu, we had support for adding
-arbitrary node/edge properties but we removed a large chunk of 
-code out of the system to release a thinner code base. 
-So currently you need to specify a schema for your nodes and 
-relationships in Kùzu.
-We will wait and see
-if/when that demand comes and how strongly it comes. We know from our
-conversations with many users and developers of GDBMSs over the years that
-most datasets in enterprises are not this complex and can
-be structured. At least after a proof of concept phase of applications,
-developers structure their data.
+[^7]: Before we released Kùzu, we had support for adding arbitrary node/edge properties but we removed a large chunk of code out of the system to release a thinner code base. So currently you need to specify a schema for your nodes and relationships in Kùzu. We will wait and see if/when that demand comes and how strongly it comes. We know from our conversations with many users and developers of GDBMSs over the years that most datasets in enterprises are not this complex and can be structured. At least after a proof of concept phase of applications, developers structure their data.
