@@ -342,7 +342,7 @@ and `pip install Kùzu`!
 
 [^1]: Interestingly, Bachmann is one of a handful of Turing laureates without any academic career. If you love DBMSs, listen to this talk  where he remembers his IDS days! Amusingly, he also talks about how he didn't know who Turing was when got the Turing award and how he met Turing's mother in England for tea 😀.]
 
-[^2]: When I say GDBMSs here, I'm referring to the core engines that implement the high-level languages of these systems and [not the analytics libraries](1, 2, ...) above these core engines that run iterative graph analytics computations, such as finding connected components, or PageRank, or betweenness centrality. These computations are better understood through either direct graph formalisms or linear algebra (and not relational) operations.
+[^2]: When I say GDBMSs here, I'm referring to the core engines that implement the high-level languages of these systems and not the analytics libraries (e.g., [1](https://neo4j.com/product/graph-data-science/), [2](https://memgraph.com/mage)) above these core engines that run iterative graph analytics computations, such as finding connected components, or PageRank, or betweenness centrality. These computations are better understood through either direct graph formalisms or linear algebra (and not relational) operations.
 
 [^3]: I am a strong supporter of devoting a few lectures to GDBMSs after covering the fundamental topics on the relational model and RDBMSs in core introduction to DBMSs courses in undergraduate curriculums. Students should broaden their perspectives on the available data models and query/programming languages to them when they develop applications. GDBMSs is an obvious choice here. So is Datalog and RDF/SparQL.
 
