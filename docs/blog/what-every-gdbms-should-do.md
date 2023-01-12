@@ -40,7 +40,7 @@ optimize for and why. In doing so, it also gives an overall vision of Kùzu!
   want to repeat it in graph data science! 
 
 
-This week, I presented Kùzu to the database community at the [CIDR 2023](XXX) 
+This week, I presented Kùzu to the database community at the [CIDR 2023](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) 
 conference in Amsterdam. For those who are not familiar with academic database conferences, 
 CIDR brings together work from academia and industry to discuss recent research on 
 systems aspects of database technology. Our paper was about Kùzu's 
@@ -165,7 +165,7 @@ about GDBMSs[^3].
 Here is a list of features that differentiate GDBMSs from RDBMSs and GDBMS should
 highly optimize for and support.
 
-### Feature 1: Pre-defined/pointer-based Joins: 
+### Feature 1: Pre-defined/pointer-based Joins
 This if perhaps the most ubiquitously adopted technique in GDBMSs that is ubiquitously missing in RDBMSs. 
 Although GDBMSs
 can join arbitrary node records with each other, most common user queries in GDBMSs
@@ -185,7 +185,7 @@ it stores dense system level node record IDs.
 As a result, GDBMSs to be fast on these joins because they can use: (1) the join index;
 and (2) dense integer IDs to joins (instead of, say running string equality conditions). 
 
-### Feature 2: Many-to-many growing joins: 
+### Feature 2: Many-to-many Growing Joins
 In most application data stored on GDBMSs, node records
 have many-to-many relationships with each other. Think of any data as a graph, 
 say a network of financial transactions or who bought which items or
@@ -210,7 +210,7 @@ to be integrated into systems: (i) factorization; and (ii) worst-case optimal jo
 Both of these techniques are specifically designed for 
 many-to-many growing joins and have integrated them in Kùzu. But this needs to wait for my next two blog posts. 
 
-### Feature 3: Recursive Join Queries: 
+### Feature 3: Recursive Join Queries
 This is probably the most obvious feature where GDBMSs should excel in. First, objectively 
 the query languages of GDBMSs have much better support
 for recursive join queries than SQL. Consider this query on our previous financial transaction network
@@ -236,7 +236,7 @@ and optimizing recursive query support and we hope to have first a basic version
 then optimized versions that hopefully works very well and contributes to the principles of how these
 queries should be evaluated.
 
-### Feature 4: Schema Querying: 
+### Feature 4: Schema Querying 
 Another important feature of GDBMSs that cannot be done in
 RDBMSs is that the query languages allow querying the schema of a database in addition
 to the data in the database. Suppose in a modified financial transaction network, 
@@ -259,7 +259,7 @@ elegant way to effectively express such unions of join queries.
 It says: "join a and b nodes over every possible relationship".
 The `type()` function on these variables allows doing querying over the schema.
 
-### Feature 5: Semi-structured data and URI-heavy datasets: 
+### Feature 5: Semi-structured Data and URI-heavy Datasets (e.g., "Knowledge Graphs")
 An important application domain of GDBMSs 
 is "knowledge graphs". This term means different things 
 in different contexts and I'll take it
@@ -287,21 +287,18 @@ the overly ambitious domain the dataset is modeling: all encyclopedic human know
 You need a data model that allows flexibility in what can be associated with entities
 and their types[^6].
 
-2. Those long strings used to identify entities, e.g., htpps:...XXXJustin
+2. Those long strings used to identify entities, e.g., Justin
 Trudea, are called URIs (for universal resource identifiers),
 and queries will frequently access and specify them. So systems should
 be competent on those.
 
-So GDBMSs tend to support semi-structured schemas and certainly RDF systems
+GDBMSs tend to support semi-structured schemas and certainly RDF systems
 have good technique to handle URIs. 
 These applications are directly in the realm of graph-based DBMSs.
-Currently, they are directly targeted by RDF systems but I'm fully convinced 
-GDBMSs should also implement techniques to efficiently store semi-structured
-data and support URIs[^7]. 
- 
+Currently, they are directly targeted by RDF systems but I'm convinced 
+GDBMSs should also implement techniques to efficiently support them[^7]. 
 
-
-**Final note on my feature set:** I referred to several classic applications but 
+**Final note on the above feature set:** I referred to several classic applications but 
 many other applications require and benefit
 from the above feature set.  One can
 think of these as the "beyond relational/SQL" datasets/workloads, which
@@ -343,13 +340,13 @@ some of the principles that we adopted in Kùzu's query processor.
 Until then, happy new years from the cold but cozy winter of Canada 
 and `pip install Kùzu`!
 
-[^1]: Interestingly, Bachmann is one of a handful of Turing laureates without any academic career. If you love DBMSs, listen to this talk  where he remembers his IDS days! Amusingly, he also talks about how he didn't know who Turing was when got the Turing award and how he met Turing's mother in England :)(XXX emoji).]
+[^1]: Interestingly, Bachmann is one of a handful of Turing laureates without any academic career. If you love DBMSs, listen to this talk  where he remembers his IDS days! Amusingly, he also talks about how he didn't know who Turing was when got the Turing award and how he met Turing's mother in England for tea 😀.]
 
 [^2]: When I say GDBMSs here, I'm referring to the core engines that implement the high-level languages of these systems and [not the analytics libraries](1, 2, ...) above these core engines that run iterative graph analytics computations, such as finding connected components, or PageRank, or betweenness centrality. These computations are better understood through either direct graph formalisms or linear algebra (and not relational) operations.
 
 [^3]: I am a strong supporter of devoting a few lectures to GDBMSs after covering the fundamental topics on the relational model and RDBMSs in core introduction to DBMSs courses in undergraduate curriculums. Students should broaden their perspectives on the available data models and query/programming languages to them when they develop applications. GDBMSs is an obvious choice here. So is Datalog and RDF/SparQL.
 
-[^4]: We articulated this list of features in our CIDR 2023 paper. Incidentally, [a paper](https://www.cidrdb.org/cidr2023/papers/p66-wolde.pdf) written by CWI on a graph query extension to DuckDB, had a 12-item list of "techniques" that GDBMSs should implement at their cores. Let me call this the CWI list. These items are not features in the sense I'm using the word, so I call them techniques. As you'll see my features are higher-level system properties from user's perspective. Peter Boncz, who is renowned in the field for having written or advised many successful DBMSs that spinned off, presented the CWI paper. I highly recommend this as another reading if you want to know more about Peter and his co-authors' technical insights about how GDBMSs should be architected. Importantly, Kùzu has integrated or is in the process of integrating 11 of the 12 techniques in the CWI list(bulk path finding is the one we have to do more thinking on) and our prior publications had also articulated many of these insights,  such as the fact that [GDBMSs should be columnar systems](https://www.vldb.org/pvldb/vol14/p2491-gupta.pdf) doing vectorized querying and of course we did a ton of work on [worst-case optimal joins](https://www.vldb.org/pvldb/vol12/p1692-mhedhbi.pdf) and [factorization](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf), which are also in the CWI list. I should acknowledge that Peter had been advocating for some of the techniques on the CWI list at least since 2018. I remember a presentation he gave in 2018 to GDBMSs researchers and developers titled "Why are existing GDBMSs Incompetent?", which listed some of the techniques in his list.
+[^4]: We articulated this list of features in our CIDR 2023 paper. Incidentally, [a paper](https://www.cidrdb.org/cidr2023/papers/p66-wolde.pdf) written by CWI on a graph query extension to DuckDB, had a 12-item list of "techniques" that GDBMSs should implement at their cores. Let me call this the CWI list. These items are not features in the sense I'm using the word, so I call them techniques. As you'll see my features are higher-level system properties from user's perspective. Peter Boncz, who is renowned in the field for having written or advised many successful DBMSs that spinned off, presented the CWI paper. I highly recommend this as another reading if you want to know more about Peter and his co-authors' technical insights about how GDBMSs should be architected. Importantly, Kùzu has integrated or is in the process of integrating 11 of the 12 techniques in the CWI list(bulk path finding is the one we have to do more thinking on) and our prior publications had also articulated many of these insights,  such as the fact that [GDBMSs should be columnar systems](https://www.vldb.org/pvldb/vol14/p2491-gupta.pdf) doing vectorized querying and of course we did a ton of work on [worst-case optimal joins](https://www.vldb.org/pvldb/vol12/p1692-mhedhbi.pdf) and [factorization](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf), which are also in the CWI list. I should acknowledge that Peter had been advocating for some of the techniques on the CWI list at least since 2018. I remember a presentation he gave in 2018 to GDBMSs researchers and developers titled "Why are Existing GDBMSs Incompetent?", which listed some of the techniques in the CWI list and visibly has inspired the title of this blog.
 
 [^5]: Although some refer to these as an "adjacency list index" because that's a common term in graph terminology but I need to pay my respects to the giants in the field: these are plain old [1980s Valduriez join indices](https://dl.acm.org/doi/abs/10.1145/22952.22955). And no, they were invented in the context of RDBMSs. That said, they never found much adoption in RDBMSs. But they are almost universally adopted in GDBMSs.
 
