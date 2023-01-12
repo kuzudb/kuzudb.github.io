@@ -1,6 +1,7 @@
 ---
 layout: default
 title: What Every Competent GDBMS Should Do (aka The Goals & Vision of Kùzu)  
+permalink: /blog/what-every-gdbms-should-do-and-vision.html
 parent: Blog
 ---
 by Semih Salihoğlu, Jan 12th, 2023
