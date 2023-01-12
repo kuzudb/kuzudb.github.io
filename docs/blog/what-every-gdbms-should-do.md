@@ -337,7 +337,7 @@ and suggestions for features we should implement to enable your workloads.
 OK, this is it for now. In the next two blog posts, I will discuss 
 factorization and worst-case optimal join algorithms and describe 
 some of the principles that we adopted in Kùzu's query processor.
-Until then, happy new years from the cold but cozy winter of Canada 
+Until then, happy new years from the cold but cozy winter of 🇨🇦 
 and `pip install Kùzu`!
 
 [^1]: Interestingly, Bachmann is one of a handful of Turing laureates without any academic career. If you love DBMSs, [listen to this talk](https://youtu.be/iDVsNqFEkB0)  where he remembers his IDS days! Amusingly, he also talks about how he didn't know who Turing was when got the Turing award and how he met Turing's mother in England for tea 😀.
