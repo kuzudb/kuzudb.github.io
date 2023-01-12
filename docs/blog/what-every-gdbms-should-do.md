@@ -3,7 +3,7 @@ layout: default
 title: What Every Competent GDBMS Should Do (aka The Goals & Vision of Kùzu)  
 parent: Blog
 ---
-# What Every Competent GDBMS Should Do <br/> (or The Goals & Vision of Kùzu)  
+# What Every Competent GDBMS Should Do <br/> (aka The Goals & Vision of Kùzu)  
 As a co-implementor of the Kùzu GDBMS and
 a professor at University of Waterloo,
 I have been thinking of GDBMSs day in and day out for many years now.
