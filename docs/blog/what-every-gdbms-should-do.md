@@ -1,5 +1,6 @@
 # What Every Competent GDBMS Should Do <br/> (or The Goals & Vision of Kùzu)  
 
+ONGOING WRITING
 As a co-architect and co-implementor of the Kùzu GDBMS and
 a professor at University of Waterloo,
 I have been thinking of GDBMSs day in and day out for many years now.
