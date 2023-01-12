@@ -62,10 +62,10 @@ I want to start a 3-part blog post to cover the contents of our CIDR paper in a 
 - Post 2: Factorization technique for compression
 - Post 3: Worst-case optimal join algorithms
 
-In this Post 1, I will: 
-   (i)   give an overview of GDBMSs.
-   (ii)  discuss the features GDBMSs should optimize  for and why; and 
-   (iii) show an example application domain we are immediately targeting with Kùzu. 
+In this Post 1, I discuss the following: 
+   (i)   [an overview of GDBMSs](#overview-of-gdbms-and-a-bit-of-history).
+   (ii)  [the features GDBMSs should optimize  for and why;](#features-every-competent-gdbms-should-optimize-for-4) and 
+   (iii) [an example application domain (graph data science!) we are immediately targeting with Kùzu. ](#kùzu-as-a-gdbms-for-graph-data-science-pipelines)
 (ii) and (iii) should give you a good idea about the current goals and 
 vision of Kùzu. If you know GDBMSs well, you should skip over (i).
 
