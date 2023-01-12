@@ -170,99 +170,92 @@ So GDBMSs universally exploit this and optimize for these types of joins. For ex
 almost universally they all create a **join index** (aka an adjacency list index)[^5].
 Here's a demonstrative example showing a "forward, i.e., from src to dst, join index:
 
-<img src="../../img/ex-fwd-join-index.png" width="400">
+<p align="center">
+  <img src="../../img/ex-fwd-join-index.png" width="800">
+</p>
 
 Note that the join index does not store the actual data values, which
 are strings (e.g., "Ali", "Noura", etc.) in the example. Instead, 
 it stores dense system level node record IDs.
 As a result, GDBMSs to be fast on these joins because they can use: (1) the join index;
-and (2) dense integer system level IDs (instead of, say string equality conditions). 
+and (2) dense integer IDs to joins (instead of, say running string equality conditions). 
 
-### Feature 2: Many-to-many growing joins: In most application data stored on GDBMSs, node records
-have many-to-many relationships with each other. You can pick your favorite example but
-think of any data as a graph, say a network of financial transactions or who bought which items or
-who is friends with whom. In each of these, an entity/node connects with 
+### Feature 2: Many-to-many growing joins: 
+In most application data stored on GDBMSs, node records
+have many-to-many relationships with each other. Think of any data as a graph, 
+say a network of financial transactions or who bought which items or
+who is friends with whom. In many of these datasets, an entity/node connects with 
 many other nodes. In addition, many of the killer apps of GDBMSs search for complex patterns
 on these relationships. 
-A classic example (and I know this is a bit of a cliche[check spelling]) 
-we have used in many of our papers
-was a Twitter friend recommendation engine that is looking for diamond patterns to implement
+A classic example we like using is a Twitter friend recommendation engine that is looking for diamond patterns to implement
 the following rule: If a user A follows two users B and C, who both follow D, recommend
-D to A. See the pattern below.
-[
-Diamond pattern.
-]
-The whitepapers of existing GDBMSs are full of these patterns, e.g., money laundering "circles",
-"cliques" of customers who watch the same movies, etc.] These correspond to complex
+D to A. This is the pattern.
+
+<p align="center">
+  <img src="../../img/diamond-pattern.png" width="200">
+</p>
+
+The whitepapers of existing GDBMSs are full of these patterns, e.g., branching trees, money laundering circles,
+cliques of customers who buy similar items, etc. These correspond to complex
 many-to-many joins, which by their nature are growing. If on average each of your nodes 
 connect with k other nodes and you have t many relationships in the pattern you are searching,
 you are asking a system to search through k^t many possible combinations and exponential 
-functions are scary. 
-
-Of course systems can do things to both reduce the search space
-and be smart about how they search this space. That said, many GDBMSs (and RDBMSs) do not
-do something very smart here. We have been advocating the integration of 2 specific techniques
+functions are scary. We have been advocating the integration of 2 specific techniques
 to be integrated into systems: (i) factorization; and (ii) worst-case optimal joins.
 Both of these techniques are specifically designed for 
-many-to-many growing joins and have integrated them in Kùzu. 
-My group has done a lot of work
-to make these techniques practical in a previous research prototype GDBMS [1](demo), [2](amine-vldb),
-[3](pranjal-columnar)
-and improved many of these designs in Kùzu. 
-But this needs to wait for my next two blog posts. 
+many-to-many growing joins and have integrated them in Kùzu. But this needs to wait for my next two blog posts. 
 
-Feature 3: Recursive Join Queries: This is probably the most obvious feature where GDBMSs excel 
-(or should excel). First, objectively their query languages have much better support
+### Feature 3: Recursive Join Queries: 
+This is probably the most obvious feature where GDBMSs should excel in. First, objectively 
+the query languages of GDBMSs have much better support
 for recursive join queries than SQL. Consider this query on our previous financial transaction network
-example: "Give me the source IDs of all direct or indirect money flows into Alice's account from Canada." Now
-look at this elegant way to ask this in Cypher using the Kleene star '*':
+example: "Give me all direct or indirect money flows into Alice's account from Canada." Now
+look at this elegant way to ask this in Cypher using the Kleene star '\*':
 ```
 MATCH (a:Account)-[:Transfer*]->(b:Account)
 WHERE a.country = 'Canada' and b.name = 'Alice'
 RETURN a.ID
 ```
-Similar to regexes, the Kleene star represents possible 1 or more repetitions of the Transfer
+
+Similar to regexes, '\*' represents possible 1 or more repetitions of the Transfer
 edge in the join. So the join could be a direct join between (a) and (b) or a 2-hop one,
 or a 3-hop one etc. You can do this with SQL of course, but it's objectively harder. Recursion
-has been an afterthought when standardizing SQL. It came 20 years after SQL started being 
-standardized and is really a hack. This distinction is even much more visible
+has been an afterthought when standardizing SQL. It came 20 years after SQL  
+standardization started and is really a hack. 
+In contrast, recursion has been first-class citizen
+feature in every graph-based DBMS's query language.
+This distinction is even much more visible
 if you want to do other graph-specific recursive computation, such as finding shortest paths.
-In contrast, Cypher dialects have clauses like "SHORTEST PATH" to express such common
-recursive computations very easily.
-
-We are, specifically my student [Anurag Chakraborty] is starting to work on implementing 
+In  Kùzu, we are starting to work on implementing 
 and optimizing recursive query support and we hope to have first a basic version and 
-then optimized versions that hopefully contributes to the state of the art knowledge 
-of the field on these queries.
+then optimized versions that hopefully works very well and contributes to the principles of how these
+queries should be evaluated.
 
-
-Feature 4: Schema Querying: Another important feature of GDBMSs that cannot be done in
+### Feature 4: Schema Querying: 
+Another important feature of GDBMSs that cannot be done in
 RDBMSs is that the query languages allow querying the schema of a database in addition
-to the data in the database. RDF/SPARQL excels here but I don't want to distract this post discussing
-RDF/SPARQL at length but you can read more on this [here](^Find something about
-querying both the data and metadata or schema together). 
-Instead, let me give an example from Cypher, which
-can do a basic form of this. Maybe Cypher designers and implementors can think 
-of a variant that can do more. Suppose in a modified financial transaction network, 
+to the data in the database. Suppose in a modified financial transaction network, 
 there are three relationship types: Wire, Deposit, and ETransfer and you 
 you wanted to search for a path where the first edge and the second edge types
-are different. Note that the predicate is *on the schema*, specifically on the labels
+are different. Note that the predicate is *on the schema*, specifically on the type 
 of the nodes/relations. You can write the following query:
 ```
 MATCH (a:Account)-[e1]->(b:Account)-[e2]->(c:Account)
-WHERE label(e1) != label(e2)
+WHERE type(e1) != type(e2)
 RETURN *
 ```
 
 Something akin to this cannot directly be done in SQL. One would have to write a query
 that unions many sub-queries: one that joins node records over Wire and then Deposit,
 another on Wire and ETransfer, another on Deposit and then Wire etc. This will be 
-messy. Note also the ability to *not* specify a label on relationships, 
-specifically on e1 and e2. This is an
-elegant way to effectively express such unions of join queries. It says:
-"join a and b nodes over every possible relationship".
+messy. The ability to *not* specify a label on relationships, 
+specifically on e1 and e2, is an
+elegant way to effectively express such unions of join queries.
+It says: "join a and b nodes over every possible relationship".
+The `type()` function on these variables allows doing querying over the schema.
 
-Feature 5: Semi-structured data and URI-heavy datasets: An important application domain of GDBMSs 
+### Feature 5: Semi-structured data and URI-heavy datasets: 
+An important application domain of GDBMSs 
 is "knowledge graphs". This term means different things 
 in different contexts and I'll take it
 to refer to highly heterogenous datasets that are
@@ -272,30 +265,24 @@ RDF. RDF is a simple data model where data is represented as (subject, predicate
 triples that represent facts about a domain. A great application is when modeling and
 querying encyclopedic facts, such as those extracted from Wikipedia data.
 For example, the following triple stores the fact
-that Trudeau is married to XXX (X, directed, Y). 
+that Justin Trudeau is married to Sophie Trudeau:
+(http://dbpedia.org/resource/Justin_Trudeau, http://dbpedia.org/ontology/spouse,	
+http://dbpedia.org/resource/Sophie_Grégoire_Trudeau). 
 There are 2 immediate challenges for a DBMS to manage 
 such data: 
-(1) Structuring such datasets is very difficult. Structuring here
+1. Structuring such datasets is very difficult. Structuring here
 refers to designing a relational schema for the data.
-Entities can have many types, e.g., Justin Trudeau is both a "type:person" and
-"type:president". Further, within a single type, entities can have many different
+Entities can have many types, e.g., Justin Trudeau is both a "rdf:type" 
+http://dbpedia.org/ontology/Person as well as
+http://dbpedia.org/ontology/Politician. Further, within a single type, entities can have many different
 and distinct properties, so good luck coming up with and maintaining a relational 
 schema for all that. 
 This is a direct result of
 the overly ambitious domain the dataset is modeling: all encyclopedic human knowledge!
 You need a data model that allows flexibility in what can be associated with entities
-and their types.
-[^Designing the schema, i.e., defining the types of entities 
-and relationships and class structures and constraints of such complex domains
-can be decades of work. What I'm referring to as schema is
-called an "ontology" in knowledge graph/semantic web space. If you ever thought you modeled
-a hard application domain, take a look at [SNOMED](), which is a decades long effort
-to model and standardize human medical knowledge. Last term, I had a seminar on 
-SNODEM in my graduate course on knowledge graphs
-and students were baffled by the complexity of this "ontology", which  describes
-the types of entities and their relationships.] 
+and their types[^6].
 
-(2) Those long strings used to identify entities, e.g., htpps:...XXXJustin
+2. Those long strings used to identify entities, e.g., htpps:...XXXJustin
 Trudea, are called URIs (for universal resource identifiers),
 and queries will frequently access and specify them. So systems should
 be competent on those.
@@ -305,21 +292,12 @@ have good technique to handle URIs.
 These applications are directly in the realm of graph-based DBMSs.
 Currently, they are directly targeted by RDF systems but I'm fully convinced 
 GDBMSs should also implement techniques to efficiently store semi-structured
-data and support URIs. Before we released Kùzu, we had support for adding
-arbitrary node/edge properties but we removed a large chunk of 
-code out of the system to release a thinner code base. 
-So currently you need to specify a schema for your nodes and 
-relationships in Kùzu.
-We will wait and see
-if/when that demand comes and how strongly it comes. We know from our
-conversations with many users and developers of GDBMSs over the years that
-most datasets in enterprises are not this complex and can
-be structured. At least after a proof of concept phase of applications,
-developers structure their data. 
+data and support URIs[^7]. 
  
 
 
-I mentioned several classic applications but many other applications require and benefit
+**Final note on my feature set:** I referred to several classic applications but 
+many other applications require and benefit
 from the above feature set.  One can
 think of these as the "beyond relational/SQL" datasets/workloads, which
 often require modeling and querying in a graph-based DBMS, and
@@ -332,7 +310,9 @@ a particular application domain we are currently excited
 about and we want to see Kùzu used in: graph data science in the python ecosystem!
 The below figure from my CIDR slides explain this vision.
 
-[Insert Image]
+<p align="center">
+  <img src="../../img/kuzu-as-gdbms-of-gds.png" width="600">
+</p>
 
 Suppose you are building a graph analytics, machine learning, or visualization
 pipeline from raw record files on disk. You will want to model your raw records 
@@ -340,10 +320,10 @@ as nodes and edges, clean them, extract features, query them, transform them,
 and then you will extract data to an upstream python library, such as Pytorch Geometric, DGL, 
 NetworkX or a graph visualization library. 
 You might even want a pipeline
-that extracts data regular tables from your graphs to a tabular data science library, 
+that extracts regular tables from your graphs to a tabular data science library, 
 such as NumPy,
-since the outputs of queries in Cypher (and other GDBMSs) are tables of records.
-We want people to use Kùzu, as an embeddable library in your Python script, 
+since the outputs of queries in Cypher are tables of records.
+We want people to use Kùzu as an embeddable library in your Python script, 
 to do your modeling, querying, feature extraction, 
 cleaning, and other transformations, all by benefiting from a high-level query language 
 and state-of-art graph data management techniques
@@ -406,3 +386,25 @@ that's a common term in graph terminology but I need to pay my respects
 to the giants in the field: these are plain old [1980s Valduriez join indices](https://dl.acm.org/doi/abs/10.1145/22952.22955).
 And no, they were invented in the context of RDBMSs. That said, they never found much adoption in RDBMSs.
 But they are almost universally adopted in GDBMSs.
+
+[^6]: Designing the schema, i.e., defining the types of entities 
+and relationships and class structures and constraints of such complex domains
+can be decades of work. What I'm referring to as schema is
+called an "ontology" in knowledge graph/semantic web space. If you ever thought you modeled
+a hard application domain, take a look at [SNOMED](), which is a decades long effort
+to model and standardize human medical knowledge. Last term, I had a seminar on 
+SNODEM in my graduate course on knowledge graphs
+and students were baffled by the complexity of this "ontology", which  describes
+the types of entities and their relationships.
+
+[^7]: Before we released Kùzu, we had support for adding
+arbitrary node/edge properties but we removed a large chunk of 
+code out of the system to release a thinner code base. 
+So currently you need to specify a schema for your nodes and 
+relationships in Kùzu.
+We will wait and see
+if/when that demand comes and how strongly it comes. We know from our
+conversations with many users and developers of GDBMSs over the years that
+most datasets in enterprises are not this complex and can
+be structured. At least after a proof of concept phase of applications,
+developers structure their data.
