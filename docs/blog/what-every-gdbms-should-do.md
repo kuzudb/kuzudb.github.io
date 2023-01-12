@@ -168,14 +168,14 @@ Here is a list of features that differentiate GDBMSs from RDBMSs and GDBMS shoul
 highly optimize for and support.
 
 ### Feature 1: Pre-defined/pointer-based Joins
-This if perhaps the most ubiquitously adopted technique in GDBMSs that is ubiquitously missing in RDBMSs. 
+This is perhaps the most ubiquitously adopted technique in GDBMSs that is ubiquitously missing in RDBMSs. 
 Although GDBMSs
 can join arbitrary node records with each other, most common user queries in GDBMSs
 join node records with their "neighbors". A GDBMS knows about these
 neighbor node records because they are predefined to the system as relationships.
 So GDBMSs universally exploit this and optimize for these types of joins. For example,
 almost universally they all create a **join index** (aka an adjacency list index)[^5].
-Here's a demonstrative example showing a "forward, i.e., from src to dst, join index:
+Here's a demonstrative example showing a "forward", i.e., from src to dst, join index:
 
 <p align="center">
   <img src="../../img/ex-fwd-join-index.png" width="800">
@@ -188,7 +188,7 @@ As a result, GDBMSs to be fast on these joins because they can use: (1) the join
 and (2) dense integer IDs to joins (instead of, say running string equality conditions). 
 
 ### Feature 2: Many-to-many Growing Joins
-In most application data stored on GDBMSs, node records
+In many application data stored on GDBMSs, node records
 have many-to-many relationships with each other. Think of any data as a graph, 
 say a network of financial transactions or who bought which items or
 who is friends with whom. In many of these datasets, an entity/node connects with 
@@ -196,7 +196,7 @@ many other nodes. In addition, many of the killer apps of GDBMSs search for comp
 on these relationships. 
 A classic example we like using is a Twitter friend recommendation engine that is looking for diamond patterns to implement
 the following rule: If a user A follows two users B and C, who both follow D, recommend
-D to A. This is the pattern.
+D to A. This is the pattern:
 
 <p align="center">
   <img src="../../img/diamond-pattern.png" width="200">
@@ -208,9 +208,9 @@ many-to-many joins, which by their nature are growing. If on average each of you
 connect with k other nodes and you have t many relationships in the pattern you are searching,
 you are asking a system to search through k^t many possible combinations and exponential 
 functions are scary. We have been advocating the integration of 2 specific techniques
-to be integrated into systems: (i) factorization; and (ii) worst-case optimal joins.
+into the query processors of GDBMSs: (i) factorization; and (ii) worst-case optimal joins.
 Both of these techniques are specifically designed for 
-many-to-many growing joins and have integrated them in Kùzu. But this needs to wait for my next two blog posts. 
+many-to-many growing joins and we have integrated them in Kùzu. Stay tuned for for my next two posts on this. 
 
 ### Feature 3: Recursive Join Queries
 This is probably the most obvious feature where GDBMSs should excel in. First, objectively 
@@ -227,8 +227,7 @@ RETURN a.ID
 Similar to regexes, '\*' represents possible 1 or more repetitions of the Transfer
 edge in the join. So the join could be a direct join between (a) and (b) or a 2-hop one,
 or a 3-hop one etc. You can do this with SQL of course, but it's objectively harder. Recursion
-has been an afterthought when standardizing SQL. It came 20 years after SQL  
-standardization started and is really a hack. 
+has been an afterthought when standardizing SQL. It came 20 years after SQL standardization started and is really a hack. 
 In contrast, recursion has been first-class citizen
 feature in every graph-based DBMS's query language.
 This distinction is even much more visible
@@ -292,10 +291,10 @@ and their types[^6].
 2. Those long strings used to identify entities, e.g., Justin
 Trudea, are called URIs (for universal resource identifiers),
 and queries will frequently access and specify them. So systems should
-be competent on those.
+be competent in handling those.
 
 GDBMSs tend to support semi-structured schemas and certainly RDF systems
-have good technique to handle URIs. 
+have good techniques to handle URIs. 
 These applications are directly in the realm of graph-based DBMSs.
 Currently, they are directly targeted by RDF systems but I'm convinced 
 GDBMSs should also implement techniques to efficiently support them[^7]. 
@@ -303,16 +302,16 @@ GDBMSs should also implement techniques to efficiently support them[^7].
 **Final note on the above feature set:** I referred to several classic applications but 
 many other applications require and benefit
 from the above feature set.  One can
-think of these as the "beyond relational/SQL" datasets/workloads, which
+think of the dataset and workloads of these applications as the "beyond relational/SQL" datasets/workloads, which
 often require modeling and querying in a graph-based DBMS, and
-we want Kùzu to excel in and represent the state-of-art in this feature set. 
+we want Kùzu to excel in and represent the state-of-art in this feature set! 
 
 ## Kùzu as a GDBMS for Graph Data Science Pipelines
 
 Finally, let me tell you a little bit about 
 a particular application domain we are currently excited
 about and we want to see Kùzu used in: graph data science in the python ecosystem!
-The below figure from my CIDR slides explain this vision.
+This figure from my CIDR slides describes this vision pictorially:
 
 <p align="center">
   <img src="../../img/kuzu-as-gdbms-of-gds.png" width="600">
@@ -327,8 +326,8 @@ You might even want a pipeline
 that extracts regular tables from your graphs to a tabular data science library, 
 such as NumPy,
 since the outputs of queries in Cypher are tables of records.
-We want people to use Kùzu as an embeddable library in your Python script, 
-to do your modeling, querying, feature extraction, 
+We want people to use Kùzu as an embeddable library in their Python scripts, 
+to do their modeling, querying, feature extraction, 
 cleaning, and other transformations, all by benefiting from a high-level query language 
 and state-of-art graph data management techniques
 that we are implementing. This is exactly what DuckDB did for tabular data science/analytics.
