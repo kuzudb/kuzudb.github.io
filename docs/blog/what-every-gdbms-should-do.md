@@ -1,3 +1,8 @@
+---
+layout: default
+title: What Every Competent GDBMS Should Do (or The Goals & Vision of Kùzu)  
+parent: Blog
+---
 # What Every Competent GDBMS Should Do <br/> (or The Goals & Vision of Kùzu)  
 As a co-implementor of the Kùzu GDBMS and
 a professor at University of Waterloo,
@@ -12,14 +17,14 @@ we decided to develop
 This post covers my broad opinions on GDBMSs, and the feature set they should
 optimize for and why. In doing so, it also gives an overall vision of Kùzu!
 
-Tldr: 
-The key takeaways are:
-- **Overview of GDBMSs**: GDBMSs are relational in their cores but offer an elegant graph model
+{: .highlight}
+> **Tldr: The key takeaways are:**
+> - **Overview of GDBMSs**: GDBMSs are relational in their cores but offer an elegant graph model
   to model application data and SQL-like query languages with elegant
   graph-specific syntax. Many applications, e.g., in [fraud detection](https://tinyurl.com/3x89ceum), 
   [recommendations](https://www.tigergraph.com/solutions/recommendation-engine/),
   [personalization](https://tinyurl.com/3z9bckmm), etc. benefit from such modeling and query language features.
-- **Key Feature Set of GDBMSs**: Despite being relational, GDBMS optimize (or at
+> - **Key Feature Set of GDBMSs**: Despite being relational, GDBMS optimize (or at
   least they should!) for a distinct set of
   features/use cases that RDBMSs do not traditionally optimize for: (i) pre-defined/pointer-based joins;
   (ii) growing many-to-many joins;
@@ -28,7 +33,7 @@ The key takeaways are:
   (v) efficient storage of semi-structured data and URIs.
    GDBMSs that want to be competitive in terms of performance
   need to perfect this feature set and that's exactly what Kùzu aims to do!
-- **Kùzu as the GDBMS for Graph Data Science**: 
+> - **Kùzu as the GDBMS for Graph Data Science**: 
   One example application domain the Kùzu team is exited about is 
   to be a usable, efficient, and scalable GDBMS of graph data science in the Python graph analytics ecosystem. 
   Here we are looking at how DuckDB revolutionized tabular data science and
@@ -64,7 +69,7 @@ I want to start a 3-part blog post to cover the contents of our CIDR paper in a 
 
 In this Post 1, I discuss the following: 
    (i)   [an overview of GDBMSs](#overview-of-gdbms-and-a-bit-of-history).
-   (ii)  [the features GDBMSs should optimize  for and why;](#features-every-competent-gdbms-should-optimize-for-4) and 
+   (ii)  [the features GDBMSs should optimize  for and why;](#features-every-competent-gdbms-should-optimize-for-) and 
    (iii) [an example application domain (graph data science!) we are immediately targeting with Kùzu. ](#kùzu-as-a-gdbms-for-graph-data-science-pipelines)
 (ii) and (iii) should give you a good idea about the current goals and 
 vision of Kùzu. If you know GDBMSs well, you should skip over (i).
