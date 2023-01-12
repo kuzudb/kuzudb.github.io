@@ -1,34 +1,39 @@
 # What Every Competent GDBMS Should Do <br/> (or The Goals & Vision of Kùzu)  
-
-ONGOING WRITING
-As a co-architect and co-implementor of the Kùzu GDBMS and
+As a co-implementor of the Kùzu GDBMS and
 a professor at University of Waterloo,
 I have been thinking of GDBMSs day in and day out for many years now.
 After years of understanding and publishing on the architectural principles 
-of graph data management, we decided to develop 
-Kùzu as a state-of-the-art modern embeddable GDBMS. 
+of graph data management ([1](http://www.vldb.org/pvldb/vol12/p1692-mhedhbi.pdf), 
+[2](https://www.vldb.org/pvldb/vol14/p2491-gupta.pdf), 
+[3](https://www.vldb.org/pvldb/vol15/p1011-jin.pdf),
+[4](https://www.vldb.org/pvldb/vol15/p1533-chen.pdf)),
+we decided to develop 
+[Kùzu](https://kuzudb.com/) as a state-of-the-art modern embeddable GDBMS. 
 This post covers my broad opinions on GDBMSs, and the feature set they should
-optimize for (and why). The post also gives you an overall vision of Kùzu as a system!
+optimize for and why. In doing so, it also gives an overall vision of Kùzu!
 
 Tldr: 
 The key takeaways are:
-- Overview of GDBMSs: GDBMSs are relational in their cores but offer: (i) an elegant graph model
+- **Overview of GDBMSs**: GDBMSs are relational in their cores but offer: (i) an elegant graph model
   to model application data; and (ii) a SQL-like query language with elegant
   graph-specific syntax. Many applications, e.g., in fraud detection and recommendations, 
   benefit from such modeling and query language features.
-- Key GDBMS Feature Set: Despite being relational, GDBMS optimize (or at
-  least they should!) for a very different set of
-  features that RDBMSs do not traditionally optimize for: 
-  (i) pre-defined/pointer-based joins; (ii) growing many-to-many
-  joins; (iii) recursive joins; (vi) schema querying; 
-  (iv) storing semi-structured data; and (v) handling URIs and strings.
+- **Key Feature Set of GDBMSs**: Despite being relational, GDBMS optimize (or at
+  least they should!) for a distinct set of
+  features/use cases that RDBMSs do not traditionally optimize for: 
+  1. pre-defined/pointer-based joins;
+  2. growing many-to-many joins;
+  3. recursive joins;
+  4. schema querying; 
+  5. efficient storage of semi-structured data and URIs.
+  
   GDBMSs that want to be competitive in terms of performance and scalability
-  needs to perfect this feature set in 2020s and that's exactly what Kùzu aims to do!
-- Kùzu as the GDBMS for Graph Data Science: 
+  needs to perfect this feature set and that's exactly what Kùzu aims to do!
+- **Kùzu as the GDBMS for Graph Data Science**: 
   Over time, we hope to target many domains that require modeling records
   as a graph, doing querying and analytics over these graphs. But one application 
   domain in our current agenda is 
-  to be the GDBMS of graph data science in the Python graph analytics ecosystem. 
+  to be a usable, efficient, and scalable GDBMS of graph data science in the Python graph analytics ecosystem. 
   Here we are looking at how DuckDB revolutionized tabular data science and
   want to repeat it in graph data science! 
 
@@ -38,44 +43,45 @@ conference in Amsterdam. For those who are not familiar with academic database c
 CIDR brings together work from academia and industry to discuss recent research on 
 systems aspects of database technology. Our paper was about Kùzu's 
 goals and vision and its core query processor design for evaluating complex growing joins.
-We intentionally targeted CIDR when submitting our paper because of its systems 
+We intentionally targeted CIDR for our paper because of its systems 
 focus and we thought many system gurus would be there: the attendees included 
-creators of [MonetDB](), [Vectorwise](), [DuckDB](), [MotherDuck](), 
-[Snowflake](), [Databricks](), amongst others. Sharing our ambitious goal of developing 
-an actually usable GDBMS from an academic setting in this CIDR, which was 
-organized locally by CWI, also meant a lot. The late [Martin Kersten]() founded the CWI 
-database group and was a pioneer of this style of research projects and 
+creators of [MonetDB](https://www.monetdb.org/), [Vectorwise](https://en.wikipedia.org/wiki/Vectorwise), 
+[DuckDB](https://duckdb.org/), 
+[Snowflake](https://www.snowflake.com/en/), [Databricks](https://www.databricks.com/), amongst others. It also meant a lot to share 
+our ambitious goal of developing a usable GDBMS from an academic setting in this CIDR because
+it was  organized locally by CWI. The late [Martin Kersten](https://en.wikipedia.org/wiki/Martin_L._Kersten) 
+founded the CWI database group and was a pioneer of this style of research projects and 
 his successors are continuing this tradition very successfully today. 
 CWI has created many successful DBMSs, including MonetDB (Martin's legacy), Vectorwise, and 
 most recently DuckDB. People paid their respects to Martin during an emotional memorial 
 on the first night of the conference.
 
-Oh, MemGraph's CTO  Marko Budiselić was also there! Marko is an extremely friendly 
+Oh, [MemGraph](https://memgraph.com/) co-founder and CTO  [Marko Budiselić](https://www.linkedin.com/in/markobudiselic/) 
+was also there! Marko is an extremely friendly 
 and humble person you should immediately be friends with.
 It was great to share our technical and market insights about where GDBMSs make a difference in 
 enterprise applications. I'll share some of my thoughts on the needs of these applications 
 below using a rather technical language. If you prefer
 pitches that are full of buzzing business language, here are a few pointers to example popular applications 
-explained in the whitepapers of  existing systems: [fraud detection](neo-link), 
+explained in the whitepapers of  existing systems: [fraud detection](https://tinyurl.com/3x89ceum), 
 [recommendations](https://www.tigergraph.com/solutions/recommendation-engine/), 
-[personalization using graph AI](https://kumo.ai/ns-newsarticle-using-graph-learning-for-personalization-how-gnns-solve-inherent-structural-issues-with-recommender-systems). 
-You will only see technical content here.
+[personalization using graph AI](https://tinyurl.com/3z9bckmm). I will focus on hard technical
+aspects of GDBMSs.
 
 This will be the first of a three-part blog series, where I will discuss: 
-	- Post 1: Kùzu's goals and vision as a system 
-	- Post 2: Factorization technique for compression
-        - Post 3: Worst-case optimal join algorithms
+- Post 1: Kùzu's goals and vision as a system 
+- Post 2: Factorization technique for compression
+- Post 3: Worst-case optimal join algorithms
 
 This is exactly what our CIDR paper covered in an academic language.
 In this Post 1, I will: 
    (i)   give an overview of GDBMSs.
    (ii)  discuss the features GDBMSs should optimize  for and why; and 
    (iii) show an example application domain we are immediately targeting with Kùzu. 
-
 (ii) and (iii) should give you a good idea about the current goals and 
 vision of Kùzu. If you know GDBMSs well, you should skip over (i).
 
-1. What are GDBMS? 
+## What are GDBMS? 
 Here's a good brief description of GDBMSs:
 GDBMSs are read-optimized analytical DBMSs for modeling and querying application 
 data as a graph. As a consequence they are optimized for fast querying of node and 
@@ -89,11 +95,11 @@ that adopt a graph-based model.
 
 Even though I can easily remove this paragraph from this post, here's a side comment that 
 I have to make because I'm a professor and
-[professors are always ready to profess](XXX): 
+professors are always ready to profess.
 If you look at the history of DBMSs since the birth of the field, DBMSs based
 on graph models are anything but new. They have existed even before relational
-model was proposed in 1970s. DBMS diehards(XXXX: check this word) would love to remember 
-that the IDS system from 1960s was based on the "network model". 
+model was proposed in 1970s. DBMS die-hards would love to remember 
+that the [IDS system](https://en.wikipedia.org/wiki/Integrated_Data_Store) from 1960s was based on the "network model". 
 Network is just another term for graph. IDS was lead by the amazing 
 Charlie Bachmann ([1], [2]),  who is credited for inventing DBMSs.
 [^Interestingly, Bachmann is  one of a handful of Turing 
@@ -186,7 +192,7 @@ data models and query/programming languages to them when they develop applicatio
 GDBMSs is an obvious choice here. So is Datalog and RDF/SparQL but I don't have time to get 
 into details here. I hope this becomes a norm within my career.]
 
-Features Every Competent GDBMS Should Optimize For
+## Features Every Competent GDBMS Should Optimize For
 [^We articulated this list of features in our CIDR 2023 paper. Incidentally, 
 [a paper]() written by CWI on a graph query extension to DuckDB,  
 had a 12-item list of "techniques" that GDBMSs should implement at their cores.
@@ -383,7 +389,7 @@ think of these as the "beyond relational/SQL" datasets/workloads, which
 often require modeling and querying in a graph-based DBMS, and
 we want Kùzu to excel in and represent the state-of-art in this feature set. 
 
-3) An Application Domain Kùzu is Targeting: Graph Data Science Pipelines
+## Kùzu as a GDBMS for Graph Data Science Pipelines
 
 Finally, let me tell you a little bit about 
 a particular application domain we are currently excited
