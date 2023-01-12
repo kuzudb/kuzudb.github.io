@@ -156,7 +156,7 @@ But don't worry, I do love GDBMSs and you should too! The fact that at their cor
 GDBMSs are relational doesn't mean they don't offer value beyond RDBMSs.
 DBMSs are very complex software systems and they make a ton of design tradeoffs in terms of
 what they optimize for. There is a very distinctive set of technical features that 
-GDBMSs should optimize for and excel in, where RDBMSs and SQL traditionally don't. Next,
+GDBMSs should optimize for and excel in, where RDBMSs and SQL traditionally don't.
 This feature set is exactly what 
 Kùzu aims to perfect over time, which is what I hope to articulate in this post.
 In short: GDBMSs do offer a ton of value if 
