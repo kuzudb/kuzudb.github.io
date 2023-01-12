@@ -86,37 +86,30 @@ Here's a good brief description of GDBMSs:
 GDBMSs are read-optimized analytical DBMSs for modeling and querying application 
 data as a graph. As a consequence they are optimized for fast querying of node and 
 relationship records. 
-Modern GDBMSs adopt the [property graph data model](xxx)
+Modern GDBMSs adopt the [property graph data model](https://neo4j.com/developer/graph-database/#property-graph)
 (or its variants), where you can model your records as a set of labeled nodes and 
 edges/relationships, and key-value properties on these relationships. When
 I say GDBMSs in this post, I specifically refer to the systems that adopt this
 model but I will also discuss RDF systems here and there, which are also DBMSs
 that adopt a graph-based model.
 
-Even though I can easily remove this paragraph from this post, here's a side comment that 
-I have to make because I'm a professor and
+Here's a side comment that I have to make because I'm a professor and
 professors are always ready to profess.
-If you look at the history of DBMSs since the birth of the field, DBMSs based
-on graph models are anything but new. They have existed even before relational
-model was proposed in 1970s. DBMS die-hards would love to remember 
+DBMSs based on graph models are anything but new. They have existed even before relational
+model: DBMS die-hards would love to remember 
 that the [IDS system](https://en.wikipedia.org/wiki/Integrated_Data_Store) from 1960s was based on the "network model". 
 Network is just another term for graph. IDS was lead by the amazing 
-Charlie Bachmann ([1], [2]),  who is credited for inventing DBMSs.
-[^Interestingly, Bachmann is  one of a handful of Turing 
-laureates without any academic career. If you love DBMSs, listen to this talk 
-where he remembers his IDS days! Amusingly, he also talks about how he didn't know who Turing
-was when got the Turing award and how he met Turing's mother in England :)(XXX emoji).]
-If you click on [this 1962 ad of the IDS system](XXX), you will see a graph of node and 
+Charlie Bachmann ([1](https://amturing.acm.org/award_winners/bachman_9385610.cfm),
+[2](https://youtu.be/iDVsNqFEkB0), [3](https://youtu.be/jByIpJNrm50)),  who is credited for inventing DBMSs[^1].
+If you click on [this 1962 ad of the IDS system](http://wp.sigmod.org/wp-content/uploads/2012/12/image4.jpg), you will see a graph of node and 
 edge records. In 1962, no one was yet talking about relations and graph DBMSs 
 already existed. After the network model, every decade has seen
 a surge of DBMSs, with mixed levels of adoption success, that adopted a graph-based model:
 hierarchical model, XML, RDF, etc.
 In my view, current property GDBMSs is the most generic
-of these graph models in its suitability to 
-appeal to a very broad range of application data.
+of these graph models and suitable to model a very broad range of application data.
 So they have probably established themselves most successfully out of these waves. 
-One can discuss why but I won't do that here.
-But I will note that there is a very fundamental reason why graph-based DBMSs have always existed and will
+There is a very fundamental reason why graph-based DBMSs have always existed and will
 always exist: graphs and tables are the two most natural and generic data structures 
 to model application data. There is no perfect data model, sometimes one looks 
 more suitable than the other (and some other times yet another model is more suitable 
@@ -421,3 +414,9 @@ factorization and worst-case optimal join algorithms and describe
 some of the principles that we adopted in Kùzu's query processor.
 Until then, happy new years from the cold but cozy winter of Canada 
 and `pip install Kùzu`!
+
+[^1]: Interestingly, Bachmann is  one of a handful of Turing 
+laureates without any academic career. If you love DBMSs, listen to this talk 
+where he remembers his IDS days! Amusingly, he also talks about how he didn't know who Turing
+was when got the Turing award and how he met Turing's mother in England :)(XXX emoji).]
+
