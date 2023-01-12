@@ -206,9 +206,9 @@ The whitepapers of existing GDBMSs are full of these patterns, e.g., branching t
 cliques of customers who buy similar items, etc. These correspond to complex
 many-to-many joins, which by their nature are growing. If on average each of your nodes 
 connect with k other nodes and you have t many relationships in the pattern you are searching,
-you are asking a system to search through k^t many possible combinations and exponential 
+you are asking a system to search through k^t many possible combinations and guess what: exponential 
 functions are scary. We have been advocating the integration of 2 specific techniques
-into the query processors of GDBMSs: (i) factorization; and (ii) worst-case optimal joins.
+into the query processors of GDBMSs for several years now: (i) factorization; and (ii) worst-case optimal joins.
 Both of these techniques are specifically designed for 
 many-to-many growing joins and we have integrated them in Kùzu. Stay tuned for for my next two posts on this. 
 
