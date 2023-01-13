@@ -36,7 +36,7 @@ optimize for and why. In doing so, it also gives an overall vision of Kùzu!
    GDBMSs that want to be competitive in terms of performance
   need to perfect this feature set and that's exactly what Kùzu aims to do!
 > - **Kùzu as the GDBMS for Graph Data Science**: 
-  One example application domain the Kùzu team is exited about is 
+  One example application domain the Kùzu team is excited about is 
   to be a usable, efficient, and scalable GDBMS of graph data science in the Python graph analytics ecosystem. 
   Here we are looking at how DuckDB revolutionized tabular data science and
   want to repeat it in graph data science! 
