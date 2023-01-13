@@ -76,7 +76,7 @@ In this Post 1, I discuss the following:
 (ii) and (iii) should give you a good idea about the current goals and 
 vision of Kùzu. If you know GDBMSs well, you should skip over (i).
 
-## Overview of GDBMS and a Bit of History 
+## Overview of GDBMSs and a Bit of History 
 In one sentence, GDBMSs are read-optimized analytical DBMSs for modeling and querying application 
 data as a graph. As a consequence they are optimized for fast querying of node and 
 relationship records. 
