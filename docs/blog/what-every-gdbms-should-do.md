@@ -184,7 +184,7 @@ Here's a demonstrative example showing a "forward", i.e., from src to dst, join 
 Note that the join index does not store the actual data values, which
 are strings (e.g., "Ali", "Noura", etc.) in the example. Instead, 
 it stores dense system level node record IDs.
-As a result, GDBMSs to be fast on these joins because they can use: (1) the join index;
+As a result, GDBMSs can be fast on these joins because they can use: (1) the join index;
 and (2) dense integer IDs to joins (instead of, say running string equality conditions). 
 
 ### Feature 2: Many-to-many Growing Joins
