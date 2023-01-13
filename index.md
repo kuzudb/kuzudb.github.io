@@ -7,6 +7,7 @@ permalink: /
 
 [Get started now](./docs/getting-started.md){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub](https://github.com/kuzudb/kuzu){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Join our Slack workspace](https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
