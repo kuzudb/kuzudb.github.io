@@ -61,7 +61,7 @@ most recently DuckDB. People paid their respects to Martin during an emotional m
 on the first night of the conference.
 As a surprise, [MemGraph](https://memgraph.com/) co-founder and CTO  [Marko Budiselić](https://www.linkedin.com/in/markobudiselic/) 
 was also there (it was his first CIDR)! Marko is an extremely friendly 
-and humble person you should meet and it great to share our insights about where GDBMSs make a difference in 
+and humble person you should meet and it was great to share our insights about where GDBMSs make a difference in 
 enterprise applications.
 
 I want to start a 3-part blog post to cover the contents of our CIDR paper in a less academic language: 
