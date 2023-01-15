@@ -26,7 +26,7 @@ optimize for and why. In doing so, it also gives an overall vision of Kùzu!
   graph-specific syntax. Many applications, e.g., in [fraud detection](https://tinyurl.com/3x89ceum), 
   [recommendations](https://www.tigergraph.com/solutions/recommendation-engine/),
   [personalization](https://tinyurl.com/3z9bckmm), etc. benefit from such modeling and query language features.
-> - **Key Feature Set of GDBMSs**: Despite being relational, GDBMS optimize (or at
+> - **Key Feature Set of GDBMSs**: Despite being relational, GDBMSs optimize (or at
   least they should!) for a distinct set of
   features/use cases that RDBMSs do not traditionally optimize for: (i) pre-defined/pointer-based joins;
   (ii) growing many-to-many joins;
