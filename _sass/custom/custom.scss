@@ -2,7 +2,8 @@ div.footnotes{
     font-size: 11px;
 }
 
-@media (min-width: 50rem)
-body > div.side-bar{
-    max-width: 350px;
+@media (min-width: 50rem){
+    body > div.side-bar{
+        max-width: 350px;
+    }
 }
