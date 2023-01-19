@@ -5,7 +5,7 @@ permalink: /blog/what-every-gdbms-should-do-and-vision.html
 parent: Blog
 ---
 by Semih Salihoğlu, Jan 23rd, 2023
-# Factorized Query Processing & Great Ideas from Database Theory 1
+# Factorization & Great Ideas from Database Theory (Part 1)
 
 Many of the core principles of how to develop DBMSs are well understood.
 For example, a very good query compilation paradigm is to 
@@ -70,3 +70,368 @@ articulated in a series of purely theoretical papers which gave excellent
 practical advise on how to improve DBMS performance. 
 Credit goes to the great theoreticians who pioneered these techniques whom I will cite
 in these posts. Their work should be highly appreciated.
+
+## Traditional Query Processing Using Flat Tuples
+Let me start with a very short background on the basics of
+query processors before I explain factorization. If you know about 
+query plans and how to interpret them,
+you can skip to [here](#factorization-in-a-nutshell). Take the following
+2-hop query on a database shown on the right.
+I'm also showing the SQL version of the query on a set of Account and 
+Transfer tables. 
+[Insert Figure 1 and Figure 2]
+As I tried to articulate in my previous post: same query, slightly different syntax. 
+In the database, "Account" node records L1 and L2 belong to Liz and 
+each has 100 incoming and 100 outgoing "Transfer" edges to other
+accounts.
+
+A standard query plan for this query could look in a simplified form as follows: 
+[Insert HashJoin plan image].
+If you type `Explain` to your SQL or Cypher query above in your favorite systems,
+you might see plans that overall look similar to these. I'm intentionally
+leaving the operators generic. For example, in practice when you type Explain
+on your SQL system for this query, it will most likely pick a HashJoin operator.
+In some GDBMSs, you might see "linear plans" that look as follows:
+[Insert linear plan].
+This is actually a plan similar to our previous GraphflowDB system. Here
+you are seeing an operator called Extend, which joins nodes with their relationships,
+and following the Extend is another Join operator to join the name properties of the neighbors,
+below c.name, and above for a.name. 
+In Neo4j,
+you'll instead see an Expand(All) operator, which does the Extend+Join
+in GraphflowDB in a single operator[^1]. For very good reasons
+we removed these Extend/Expand type operators in Kuzu. I will come back to this.
+
+Now, the interpretation of plans is that tuples are flowing from the bottom to top and
+each operator will take in sets of tuples and produce sets of tuples (often in a pipelined fashion). 
+The key motivation for factorization is that what flows 
+between operators are *flat tuples*. When the joins are many to many, this 
+might lead to many repetitions, which one way or another leads to repeated
+computation in the operators. In our example for example,
+the final projection operator would take a table that looks like the below
+table on the left:
+[Insert flat vs factorized tables]
+Let's call this table OUT. Notice that there are 20K tuples there because of the nature of the many-to-many
+relationships of L1 and L2. However there are many repetitions in this relationship,
+e.g., L1 and L2 or Liz values in what I'm showing. Depending on the actual system implementation,
+what gets replicated may change. Some systems may replicate the actual values,
+some may replicate some indices where these values are stored but overall exactly 20K
+tuples would flow, either one tuple at a time or maybe in batches if your system is vectorized.
+But this redundancy will inevitable trickle down to redundant computation here and there,
+as I will demonstrate.
+
+## Factorization In a Nutshell
+Factorization addresses exactly this problem. The core reason for the redundancy
+is this observation: "given a fixed b value, all a's and c's are conditionally independent".
+More concretely, once L1 is fixed, each incoming neighbor "a" for L1 will join with each outgoing neighbor
+"c" of L1. If you took the first standard undergraduate course in DBMSs at a university
+and you covered the theory of normalization, this is what is referred to as a [multi-valued dependency](XXX)
+in OUT. Factorization argues that when queries depict such conditional independences 
+in the joins they perform (and if those joins are many-to-many), then one can
+compress the intermediate relations
+that query plans generate by representing sets of tuples as Cartesian products. So above,
+I'm showing the same 20K tuples in a compressed factorized format, which uses only 400 values
+(so 2x(100+100) instead of 2*100*100 values). 
+
+That's it! That's the core of the idea. Now of course, this simple observation leads to a ton of 
+hard and non-obvious questions that the entire theory on factorization answers. For example, 
+given a query, what are the "factorization structures", i.e., the Cartesian product structures
+that can be used to compress it? Consider a simple query that counts the number of
+paths that are slightly longer:
+```
+MATCH (a)-[:Wire>(b)-[:Deposit]>(c)-[:ETransfer]->(d)
+RETURN count(*)
+```
+There are many different ways the output (a, b, c, d) tuples 
+can be factorized. Should you condition on b and factor out 
+a's from (c, d)'s or condition on c and factor out (a, b)'s from d's? 
+Or you could condition on (b, c) and factor out (a)'s from (d)'s?
+To make a choice, a system has to reason about the number of Wire, Deposit,
+and ETransfer records in the database and consider alternatives.
+What is a principled way to enumerate correct different possible factorization structures
+and pick a good one? Related to the latter question, suppose instead of count(\*)
+we projected out the a's and d's. Can we even factor our a's from d's in the final output 
+(the answer is no, unless you produce the results in batches and condition on b's and c's) etc.
+etc. The questions researchers can ask are endless but developing the foundation,
+so that these questions can be answered, and providing principled first answers to these (which
+further work improves) is the contribution of the literature on theory of factorization. 
+[Dan Olteanu](XXX) and his 
+colleagues, who lead this field, recently won the ICDT test of time award, which is 
+one of the two academic venues for theoretical work on DBMSs, for an early work
+they did on factorization.
+
+But let's take a step back and appreciate this theory. For people interested in systems
+development, one should appreciate all this literature because it gives an excellent 
+advise to system developers: *factorize your intermediate
+results if your queries contain many-to-many joins!* And the great thing
+is this can all be done by looking at the query during compilation time, without
+assuming anything about the actual database (except that some joins are many-to-many).
+As I said in my previous post, GDBMSs 
+most commonly evaluate many-to-many joins and hence my point that 
+GDBMSs should develop factorized query processors. As I'll next show, keeping these
+results in compressed format can yield orders of magnitude speed ups in performance
+because the factorized formats of intermediate relations can be polynomially smaller 
+than their equivalent flat versions.
+
+
+## Examples When Factorization Significantly Benefits:
+Keeping intermediate results in factorized format leads to less computation
+during query processing for many different ways. Let me just discuss the three most obvious cases.
+
+### Generating compressed outputs: 
+The most obvious case when factorization speeds query performance is 
+that a system can keep final outputs in factorized format and enumerate them one by one 
+when the user starts calling "getNextTuple" function on the ResultSet output of the query. 
+This is what Kuzu does. In the 2-hop query, Kuzu only produces the compressed format
+with 400 values ever written to a ResultSet object (which internally accumulates the results
+in a class called FactorizedTable). So a copy of 20K. And this difference can be much bigger
+if the degrees of nodes are more than 100 or if this was a larger star query (2-hop is also
+the simplest star query). Suppose there were 3 different relationship types: Wire, DirectDeposit,
+and ETransfer and  the query was asking for all incoming and outgoing
+neighborhood of a node along each of these relationships. Suppose there were 100 incoming
+and 100 outgoing edges across each relationship. Then you're looking at 100^6, a hopping
+one trillion, many outputs 
+being produced. No system that uses flat processing will answer that query. In Kuzu,
+all outputs are factorized (if the planner generated a plan that factorizes) and then 
+flattened only if the user enumerates the actual tuples one by one. 
+When we develop a graph visualization frontend to Kuzu, this will be of great benefit. 
+If a query poses a hard star query and only wants to visualize the result as a graph,
+then we can be very efficient in that.
+
+### Reducing Predicate and Expression Evaluations (e.g., when running filters)
+Factorization can decrease the amount of predicate or expression executions the system performs.
+Suppose we modify our 2-hop query a bit and put two additional filters on the query:
+```
+MATCH (a:Account)-[e1:Transfer]->(b:Account)-[e2:Transfer]->(c:Account)
+WHERE b.name = 'Liz' AND a.balance > b.balance AND c.balance > b.balance
+RETURN *
+```
+A common plan for this version of the query would extend the plan in Figure 1.a above,
+with two filter operators: (i) above the second join from the bottom after a and b's are joined,
+so the system can run the `a.balance > b.balance` part of the query; (ii) after the last join
+ to run the predicate 'c.balance > b.balance'. Suppose the first filter did not eliminate any tuples.
+Then, a flat processor would evaluate 20K filter execution in the second filter, simply because there
+are 20K tuples and the filter predicate 'c.balance > b.balance` would execute on each tuple.
+In a factorized processor, the second filter would run only 200 times because there are only
+100 predicates to execute `c.balance > b.balance` once b is matched to Liz. Similarly another 100 predicate
+executions would execute on the 2nd factorized tuple that has 0. The same applies to many
+other computations DBMSs perform that run general expressions, including the computation
+done when performing aggregations, which I will discuss next.
+
+### Aggregations
+This is perhaps where factorization yields largest benefits.
+One can perform several aggregations directly on factorized tuples using
+ algebraic properties of several aggregation functions. Let's
+for instance modify our above query to a count(*) query: Find the number of 2-paths' that Liz is 
+facilitating. A factorized processor can simply count that there are 100*100 flat tuples in the first
+factorized tuple and similarly in the second one to compute that the answer is 20K.
+Or consider doing min/max aggregation on factorized variables:
+```
+MATCH (a:Account)-[e1:Transfer]->(b:Account)-[e2:Transfer]->(c:Account)
+WHERE b.accID = 'L1'
+RETURN max(a.balance), min(c.balance)
+```
+I change the predicate on Liz to directly identify L1 so the query is more meaningful. 
+This is asking: out of all possible 2-path money flows L1 facilitates, find the one that is
+from a source with the highest balance to a destination with the lowest balance (and 
+give me the balances). If a processor 
+processes the 10K 2-paths in factorized form, then with only 100 comparisons (instead
+of 10K), the processor can compute the max and min aggregations. To be more specific,
+the aggregation operator would take a single tuple with factorization structure 
+{a, a.balance} X (L1) X {b, b.balance} and the tuple would exactly be {(S1, 10),..., (S100,1000)}
+X (L1) X {(D1,1),..., (D100,100)}, and the max of the a.balance.could be computed by
+inspecting only 100 values (and similarly for min of c.balance).
+...
+
+You can try some of these queries on Kuzu and compare its performance on large 
+datasets. The benefits of factorizing intermediate results just reduces computation
+and data copies here and there in many cases.
+
+### How Does Kuzu Implement A Factorized Query Processor?
+Now, continue reading if you are interested in actual database implementations
+and want to read about how we implemented factorized query processor in Kuzu.
+The rest will be even more technical and forms part of the technical meat of our CIDR paper. 
+
+When designing the query processor of Kuzu, we had 3 design goals: 
+1. Factorize intermediate growing join results. 
+2. Always perform scans of database files from disk sequentially.
+3. When possible avoid scanning entire disk files when possible.
+
+3. requires some motivation, which I will provide below. Let's go one by one.
+Factorization: Kuzu has a vectorized query processor, which is the common wisdom
+in analytical read-optimized systems. Vectorization, in the context of query processors 
+of DBMSs, refers to the design where operators pass a set of tuples, 1024 or 2048, 
+between each other during processing.[^3]. Needless to say,
+existing vectorized query processors pass a single vector of flat tuples.
+Instead, Kuzu operators pass possibly multiple vectors of tuples between each other.
+We call each vectors of tuples a "Vector group"
+and each vector group can either be flat and represent a single value or unflat.
+For example, the first 10K tuples from my running example would be represented
+with 3 vector groups as follows:
+[Insert Image of 3 vector groups]
+This is for example, what would be passed from the last join operator to the projection
+in the query plan in [Figure 1a](Check).
+The interpretation that what is passed is the Cartesian product of all sets of
+tuples in those vectors. Operators know during compilation time how many vector
+groups they will take in and how many they will output. Importantly, we still
+do vectorization, i.e., each primitive operator operates on a vector of values. 
+Credit where credit's due: this was a design that my PhD student 'Amine
+Mhedhbi] came up with (with some polishing from me and my Master's student 
+Pranjal Gupta) and we directly adopted it in Kuzu.
+
+Ensuring sequential scans: I already told you above that 
+Extend/Expand type join operators that lead to non-sequential scans of database files.
+These operators are not robust and if you are developing a disk-based system,
+non-sequential scans will not scale. That's a mistake. Instead, the more robust (though
+not always the most efficient) join operator is to use HashJoins. I'll give a simulation momentarily.
+
+Avoiding full scans of database files. Although I don't like Extend/Expand type join operators,
+they come with an advantage. If you had a simple 1-hop query that only asked for:
+give me the names of account that Liz has transfered money to. Suppose for simplicity, L1
+has made only 3 transfers to accounts with internal recordIDs (106, 5, 75). Then if you had
+a linear plan like I showed in [Figure 2a](XXX) check. Then a scan operator can first find
+L1's record (and suppose it has internal record ID 7), and using this scan the
+those 3 record IDs of L1's neighbors. Then finally, read the name properties 
+of 106, 5, 75. Since this is happening in a pipelined fashion, if there were more tuples coming
+in to Extend/Expand(All) say L2, with neighbor IDs say 100, 3, 75, the system would again 
+scan the names of these 3 neighbors. Note that the scans of the name properties are happening
+non-sequentially (more over the same name for node with record ID 75 is being scanned twice)
+etc. When a query generates many tuples then the Extend/Expand(All) type operators will degrade.
+But on the positive side, they only scan where they have to scan. They don't scan the whole database
+file, which is a performance advantage. When designing Kuzu's processor, we wanted 
+a mechanism to also avoid scanning only the necessary parts of database files.[^4]
+We do this through modified hash join operators that use a technique in DBMSs called 
+*sideways information passing*. I'll simulate you a simple computation to put all these 
+together.
+
+### A Simple Simulation
+For simplicity, we'll work on a simpler 1-hop query, so the benefits of factorization will not 
+be as impressive but it will allow me to explain an entire query processing pipeline.
+Consider this query:
+```
+MATCH (a:Account)-[:Transfer]->(b:Account)
+WHERE a.accID = L1
+RETURN count(*)
+```
+An annotated query plan we generate is on the right. The figure shows step by step
+the computation that will be performed.
+[Insert query plan with aggregation]. 
+1: The lower Scan operator will scan the accId column and find the recordID of
+nodes with accID=Liz. There is only 1 tuple, so only 1 tuple (7, Liz) will be output.
+2: This tuple will passed to HashJoin's build side, which will create a hash table from it. 
+At this point the processor knows exactly the IDs of nodes, whose Transfer edges need
+to be scanned on the probe side: only 7. This is where we do sideways information passing.
+Specifically, we pass this "nodeID filter" to the probe side Scan operator.
+3. The probe-side scan operator uses the passed node ID filter to only scan
+the edges of 7. That is we can only look up where 7's edges are stored and avoid
+scanning the entire Transfers database file.
+Since Kuzu is a GDBMS, we store the edges of nodes (and their properties) 
+in a graph-optimized format called CSR. Importantly, all of the edges of 7 will be 
+stored consecutively, so we can output them in factorized format. In my simulation:
+(7) X {107, 5, 10}.
+4. Next we will probe the (7) X {107, 5, 10} in the built hash table and join
+7 with L1: (7, L1) X {107, 5, 10}, which will be passed to the group-by-and-aggregate
+operator.
+5. The group by operator takes (7, L1) X {107, 5, 10} and counts the number of neighbors of 7 as
+3 because the size of {107, 5, 10} is 3.
+
+As you see, in the above simulation, the processing was factorized, we only did sequential scans
+but we also avoided scanning the entire Transfer database file, achieving our 3 design goals.
+This is a simple example and there are many queries that are more complex and where we 
+will want some factorization structure that we cannot achieve with the above operator. For those,
+we use yet another join operator (which we currently cal ASPJoin) that is a bit more complex 
+but using the same techniques of using: (1) factorized vector groups; (2) hash joins; (3) sideways
+information passing. 
+
+So how does it all perform? It's quite well. This type of processing is not always the best but 
+there is no technique or optimization in DBMSs that is always the best (you can even
+find scenarios where pushing filters down, which is probably the most common
+optimization across systems may be slower than not.). But it is very robust. Here's 
+an experiment we put on our CIDR paper to give a sense of the behavior of
+using modified hash joins and factorization on a micro benchmark query, that
+does a 2-hop query with aggregations on every node variable. 
+```
+XXX
+``` 
+Needless to say, I'm picking this as it is a simple query that can demonstrate
+the benefits of all of the 3 techniques above. Also needless to say, I could have exaggerated with
+larger stars or branched tree patterns but this will do.
+In the experiment we are changing the selectivity of the predicate on the middle node, which
+changes the output size. What we are comparing is the behavior of Kuzu, which integrates
+the 3 techniques above with (i) Kuzu-INLJ: A configuration of Kuzu that uses factorization but instead of
+our modified HashJoins uses an Extend-like operator. The INLJ stands for
+"index nested loop join", which is the name given to the style of joins Extend-like operators perform;
+and (ii) Umbra, which represents the
+state of the art RDBMS. Umbra is as fast as existing RDBMSs get. It probably integrates
+every known low-level performance technique in the field. You can read all about it in these publications
+if you are interested [1](XXX), [2](XXX), [3](XXX)[^5]. 
+Umbra however does not 
+do factorization or have a mechanism to avoid scanning entire database files, so we
+expect it to perform poorly on the above query. Here's a performance table.
+
+So when the selectivity is very low, Extend-like operators + factorization do quite well
+because they don't yet suffer much from non-sequential scans and they avoid several overheads
+of hash joins: no hash table creation and no semijoin filter mask creation. But they are not robust
+and they degrade quickly. We can also see that even if you're Umbra, without factorization
+or a mechanism to avoid scanning entire files, you will not perform very well on these
+many-to-many queries. 
+
+## Final marks: 
+I am fully convinced that modern GDBMSs have to be factorized systems to remain 
+competitive in performance. If your system assumes that most joins will be growing,
+then this is the only known technique whose principles are relatively well understood
+that one can go and implement it. I am sure different factorized query processors will
+be proposed as more people attempt at it. I was happy to see in CIDR that at least 2 systems
+gurus told me they want to integrate factorization into their systems. 
+If your query requires performing m growing joins and you have IN number 
+of database tuples,  factorization can compress an intermediate result size of IN^{m-1}
+to IN. When you see a technique with such polynomial reduction benefits, it is a good sign
+that for many queries it can make the difference between a system timing out vs providing 
+an actual answer. 
+ 
+Finally  there is much more on the theory of factorization, which I did not cover. From my side, 
+most interestingly, there 
+are even more compressed ways to represent the intermediate results than the 
+vanilla Cartesian product scheme I covered in this post. Just to raise a curiosity, it's called 
+[d-representations] but that will have to wait for another time. For now, let me finish by
+saying that I hope you appreciate the benefits of factorization and the role of theory in advancing
+the state-of-the-art in DBMSs. Thanks for reading!
+
+
+Footnotes
+[^1] If you come from a very graph focused background and/or exposed to a ton of 
+GDBMS marketing, you might react to my statement that what I am showing are standard plans
+that do joins. Maybe you expected to see graph-specific operators, such as
+a BFS or a DFS operator because the data is a graph. Or maybe someone even dared to tell you that
+GDBMSs don't do joins. Instead, they do traversals. Stuff like that. These word tricks
+and confusing jargon really has to stop and helps no one. If joins are in the nature of the computation 
+you are asking a DBMSs to do,  calling it something else won't change the nature of the 
+computation. Joins are joins and every DBMSs needs to join their records with each other.
+
+[^2]  You can take a look at [our CIDR paper on Kuzu](XXX) and
+[this GRainDB work](XXX) to see experiments and in-depth discussion of 
+why Extend/Expand-type operators are not robust operators and perform very poorly in many settings.
+
+[^3]: Vectorization emerged as a design in the context of columnar RDBMSs, 
+which are analytical systems, about 15-20 years old. It is still a very good idea. The prior
+design was to pass a single tuple between operators, which is quite easy to implement,
+but quite inefficient on modern CPUs. You can read all about it from the pioneers 
+of [columnar RDBMSs](XXX).
+
+[^4]: Note that GDBMSs are able to avoid scans of entire files because notice that they do the join
+on internal record IDs, which mean something very specific. If a system needs to scan the name
+property of node with ID 75, it can often arithmetically compute the disk page and offset where
+this is stored, because node IDs are dense (i.e., start from 0, 1, 2...) and so can serve as 
+pointers if the systems storage design exploits this. This is what I was referring to as
+"Predefined/pointer-based joins", which is a good advantage for GDBMS to efficiently
+evaluate the joins of node records that are happening along the "predefined" edges in the database.
+I don't know of a mechanism RDBMSs, where joins are value-based, can do something similar,
+unless they develop a mechanism to convert value-based joins to pointer-based joins. See my
+student [Guodong's work last year in VLDB] of how this can be done. 
+
+[^5]: Umbra is being developed by [Thomas Neumann](XXX) and his group. 
+If Thomas's name does not ring a bell let me explain his weight in the field like this. As the
+joke goes, in the field of DBMSs, the hierarchy of beings goes like this: there are gods 
+at the top, then there is Thomas Neumann, and then other holy creatures, and then
+we mere mortals. 
+
