@@ -446,7 +446,7 @@ for another time. For now, I invite you to check our performance out on large qu
 and let us know if we are slow on some queries! The Kùzu team says hi (👋 🙋‍♀️ 🙋🏽) and 
 is at your service to fix all performance bugs as we continue implementing the system! 
 My next post will be about the novel worst-case optimal join algoriothms, which emerged
-from another theoretical insight on m-n joins!
+from another theoretical insight on m-n joins! Take care until then!
 
 [^1]: If you come from a very graph-focused background and/or exposed to a ton of GDBMS marketing, you might react to my statement that what I am showing are standard plans that do joins. Maybe you expected to see graph-specific operators, such as a BFS or a DFS operator because the data is a graph. Or maybe someone even dared to tell you that GDBMSs don't do joins but they do traversals. Stuff like that. These word tricks and confusing jargon really has to stop and helps no one. If joins are in the nature of the computation  you are asking a DBMSs to do, calling it something else won't change the nature of the computation. Joins are joins. Every DBMSs needs to join their records with each other.
 
