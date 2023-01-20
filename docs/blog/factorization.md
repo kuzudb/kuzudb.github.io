@@ -87,18 +87,19 @@ each have 100 incoming and 100 outgoing Transfer edges.
   <img src="../../img/2-hop-data.png" width="600">
 </p>
 
-Now consider a 2-hop path query in Cypher:
+Now consider a 2-hop path query in Cypher returning the accID's of source
+and destinations of money flows Liz's accounts are facilitating:
 
 ```                                              
 MATCH (a:Account)-[t1:Transfer]->(b:Account)-[t2:Transfer]->(c:Account)
 WHERE b.name = 'Liz' 
-RETURN a.name, c.name
+RETURN a.accID, c.accID
 ```
 
 Here's the SQL version of the query if you modeled your records as relations.
 Same query different syntax:
 ```
-SELECT a.name, c.name
+SELECT a.accID, c.accID
 FROM Account a, Transfer t1, Account b, Transfer t2, Account c
 WHERE b.name = 'Liz' AND
       t1.src = a.accID AND t1.dst = b.accID
@@ -127,15 +128,15 @@ in GraphflowDB in a single operator[^1]. For very good reasons
 we removed these Extend/Expand type operators in Kuzu. I will come back to this.
 
 The interpretation of plans is that tuples are flowing from the bottom to top and
-each operator will take in sets of tuples and produce sets of tuples in a pipelined fashion. 
+each operator will take in sets of tuples and produce sets of tuples (in a pipelined fashion). 
 The key motivation for factorization is that what flows 
 between operators are **flat tuples**. When the joins are m-n, this 
-might lead to many repetitions, which one way or another leads to repeated
-computation in the operators. In our example for example,
-the final projection operator would take the table shown Figure 4 (left).
-<img align="left" style="width:500px; padding-right: 10px;" src="../../img/flat-vs-factorized.png">
-For simplicity, I am omitting the a.name and c.name columns and instead just showing 
-an a and b coluimns with the a.accID and c.accID fields.
+leads to many data repetitions, which one way or another leads to repeated
+computation in the operators. For example,
+the final projection operator in our example would take the table shown in Figure 4 (left).
+<img align="left" style="width:525px; padding-right: 10px;" src="../../img/flat-vs-factorized.png">
+For simplicity, I am omitting the a.name and c.name columns and I am instead just showing 
+an a and b coluimns with the a.accID and c.accID values.
 There are 20K tuples in the flat representation because both L1 and L2 are part of 100 incoming x 100 outgoing=10K
 2-paths. Notice the many repetitions in this relation:
 L1 and L2 or Liz values and the omitted a.name and c.name. 
