@@ -5,7 +5,7 @@ permalink: /blog/factorization.html
 parent: Blog
 ---
 <p align="center">
-  <img src="../../kuzu-logo.png" width="400">
+  <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="400"></a>
 </p>
 
 by Semih Salihoğlu, Jan 20th, 2023
