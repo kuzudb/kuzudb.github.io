@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Factorization & Great Ideas from Database Theory Part 1
+title: Factorization & Great Ideas from Database Theory (1)
 permalink: /blog/factorization.html
 parent: Blog
 ---
@@ -448,8 +448,7 @@ is at your service to fix all performance bugs as we continue implementing the s
 My next post will be about the novel worst-case optimal join algoriothms, which emerged
 from another theoretical insight on m-n joins!
 
-Footnotes
-[^1]: If you come from a very graph-focused background and/or exposed to a ton of GDBMS marketing, you might react to my statement that what I am showing are standard plans that do joins. Maybe you expected to see graph-specific operators, such as a BFS or a DFS operator because the data is a graph. Or maybe someone even dared to tell you that GDBMSs don't do joins but they do traversals. Stuff like that. These word tricks and confusing jargon really has to stop and helps no one. If joins are in the nature of the computation  you are asking a DBMSs to do,  calling it something else won't change the nature of the computation. Joins are joins. Every DBMSs needs to join their records with each other.
+[^1]: If you come from a very graph-focused background and/or exposed to a ton of GDBMS marketing, you might react to my statement that what I am showing are standard plans that do joins. Maybe you expected to see graph-specific operators, such as a BFS or a DFS operator because the data is a graph. Or maybe someone even dared to tell you that GDBMSs don't do joins but they do traversals. Stuff like that. These word tricks and confusing jargon really has to stop and helps no one. If joins are in the nature of the computation  you are asking a DBMSs to do, calling it something else won't change the nature of the computation. Joins are joins. Every DBMSs needs to join their records with each other.
 
 [^2]: Vectorization emerged as a design in the context of columnar RDBMSs, which are analytical systems, about 15-20 years old. It is still a very good idea. The prior design was to pass a single tuple between operators called Volcano-style tuple-at-a-time processing, which is quite easy to implement, but quite inefficient on modern CPUs. If you have access to the following link, you can read all about it from the pioneers of [columnar RDBMSs](https://www.nowpublishers.com/article/Details/DBS-024).
 
