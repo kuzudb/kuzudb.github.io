@@ -5,7 +5,12 @@ permalink: /blog/factorization.html
 parent: Blog
 ---
 <p align="center">
-  <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="400"></a>
+  <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="300"></a>
+</p>
+
+<p align="center">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <a class="github-button" href="https://github.com/kuzudb" data-size="large" aria-label="Follow @kuzudb on GitHub">Follow @kuzudb</a>
 </p>
 
 by Semih Salihoğlu, Jan 20th, 2023
