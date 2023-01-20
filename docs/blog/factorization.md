@@ -84,22 +84,6 @@ Consider a database of Account node and Transfer edge records below.
   <img src="../../img/2-hop-data.png"" width="700">
 </p>
 
-                                                
-```                                                
-MATCH (a:Account)-[t1:Transfer]->(b:Account)-[t2:Transfer]->(c:Account)
-WHERE b.name = 'Liz' 
-RETURN a.name, c.name
-```
-Consider further the database on the left.
-
-Take the following
-2-hop query on a database shown on the right.
-I'm also showing the SQL version of the query on a set of Account and 
-Transfer tables. 
-                                                  
-
-
-
 As I tried to articulate in my previous post: same query, slightly different syntax. 
 In the database, "Account" node records L1 and L2 belong to Liz and 
 each has 100 incoming and 100 outgoing "Transfer" edges to other
