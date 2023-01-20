@@ -9,7 +9,7 @@ parent: Blog
 </p>
 
 by Semih Salihoğlu, Jan 23rd, 2023
-# Factorization & Great Ideas from Database Theory (Part 1)
+# Factorization & Great Ideas from Database Theory Part 1
 Many of the core principles of how to develop DBMSs are well understood.
 For example, a very good query compilation paradigm is to 
 map high-level queries to a logical plan of relational operators, then optimize this plan,
@@ -174,12 +174,12 @@ To make a choice, a system has to reason about the number of Wire, Deposit,
 and ETransfer records in the database.
 How much and on which queries can you benefit from factorization?
 The theoretical questions are endless. 
-The theory of factorization 
-develops the formal foundation so that such questions can be answered and  
+The theory of factorization develops the formal foundation so that such questions can be answered and 
 provides principled first answers to these questions. 
 [Dan Olteanu](https://www.ifi.uzh.ch/en/dast/people/Olteanu.html) and his 
 colleagues, who lead this field, recently won the [ICDT test of time award](https://databasetheory.org/ICDT/test-of-time)
-for their work on factorization. ICDT is one of the two academic venues for theoretical work on DBMSs.
+for their work on factorization. ICDT is one of the two main 
+academic venues for theoretical work on DBMSs.
 
 But let's take a step back and appreciate this theory because it gives an excellent 
 advise to system developers: *factorize your intermediate
@@ -201,9 +201,8 @@ for many different reasons. I will discuss three most obvious ones.
 The most obvious benefit is that factorization reduces
 the amount of data copied between buffers used by operators
 during processing and to final `QueryResult` structure
-that the application gets access to. 
-For example, a very cool feature of Kùzu is that it keeps final outputs in factorized format
-in its `QueryResult` class and 
+that the application gets access to. For example, a very cool feature of Kùzu 
+is that it keeps final outputs in factorized format in its `QueryResult` class and 
 enumerates them one by one only when the user starts calling `QueryResult::getNext()`.
 In our running example, throughout processing Kùzu would do copies of
 400 data values roughly instead of 20K to produce its `QueryResult`. 
@@ -212,31 +211,34 @@ with 6 relationships, and arbitrarily increased the difference in the copies don
 between a flat vs factorized processor.
 
 ### Fewer Predicate and Expression Evaluations
-Factorization can decrease the amount of predicate or expression executions the system performs.
+Factorization can also reduce the amount of predicate or expression executions the system performs.
 Suppose we modify our 2-hop query a bit and put two additional filters on the query:
 ```
 MATCH (a:Account)-[e1:Transfer]->(b:Account)-[e2:Transfer]->(c:Account)
 WHERE b.name = 'Liz' AND a.balance > b.balance AND c.balance > b.balance
 RETURN *
 ```
-A common plan for this version of the query would extend the plan in Figure 1.a above,
-with two filter operators: (i) above the second join from the bottom after a and b's are joined,
-so the system can run the `a.balance > b.balance` part of the query; (ii) after the last join
- to run the predicate 'c.balance > b.balance'. Suppose the first filter did not eliminate any tuples.
-Then, a flat processor would evaluate 20K filter execution in the second filter, simply because there
-are 20K tuples and the filter predicate 'c.balance > b.balance` would execute on each tuple.
-In a factorized processor, the second filter would run only 200 times because there are only
-100 predicates to execute `c.balance > b.balance` once b is matched to Liz. Similarly another 100 predicate
-executions would execute on the 2nd factorized tuple that has 0. The same applies to many
-other computations DBMSs perform that run general expressions, including the computation
-done when performing aggregations, which I will discuss next.
+I'm omitting a plan for this query but a common plan would extend the plan in Figure 2 (or 3) above,
+to also scan the balance properties and more importantly with two filter operators: 
+(i) above the join that joins a's and b's,
+to run the predicate `a.balance > b.balance`; (ii) after the final join in Figure 2
+to run the predicate 'c.balance > b.balance'. Suppose the first filter did not eliminate any tuples.
+Then, a flat processor would evaluate 20K filter execution in the second filter.
+In contrast, the input to the second filer operator in a factorized processor 
+would be the 2 factorized tuples 
+shown in Figure 4 (right) but extended with `balance` properties
+on a, b, and c's. Therefore there would be only 200 filter executions: (i) 
+for the first factorizaed tuple, there are only
+100 comparison to execute `c.balance > b.balance` since b is matched to a single
+value and there are 100 c values.; (ii) similarly for the 2nd factorized tuple.
+We can obtain similar benefits when running other expressions.
 
 ### Aggregations
 This is perhaps where factorization yields largest benefits.
 One can perform several aggregations directly on factorized tuples using
  algebraic properties of several aggregation functions. Let's
-for instance modify our above query to a count(*) query: Find the number of 2-paths' that Liz is 
-facilitating. A factorized processor can simply count that there are 100*100 flat tuples in the first
+for instance modify our above query to a count(\*) query: Find the number of 2-paths that Liz is 
+facilitating. A factorized processor can simply count that there are 100\*100 flat tuples in the first
 factorized tuple and similarly in the second one to compute that the answer is 20K.
 Or consider doing min/max aggregation on factorized variables:
 ```
@@ -244,46 +246,42 @@ MATCH (a:Account)-[e1:Transfer]->(b:Account)-[e2:Transfer]->(c:Account)
 WHERE b.accID = 'L1'
 RETURN max(a.balance), min(c.balance)
 ```
-I change the predicate on Liz to directly identify L1 so the query is more meaningful. 
-This is asking: out of all possible 2-path money flows L1 facilitates, find the one that is
-from a source with the highest balance to a destination with the lowest balance (and 
-give me the balances). If a processor 
-processes the 10K 2-paths in factorized form, then with only 100 comparisons (instead
-of 10K), the processor can compute the max and min aggregations. To be more specific,
-the aggregation operator would take a single tuple with factorization structure 
-{a, a.balance} X (L1) X {b, b.balance} and the tuple would exactly be {(S1, 10),..., (S100,1000)}
-X (L1) X {(D1,1),..., (D100,100)}, and the max of the a.balance.could be computed by
-inspecting only 100 values (and similarly for min of c.balance).
-...
+This is asking: find the 2-path money flow that Liz's L1 account facilitates from the highest
+to lowest balance accounts (and only print the balances). If a processor 
+processes the 10K 2-paths that L1 is part of in factorized form, then 
+the processor can  compute the max and min aggregations
+with only 100 comparisons each (instead of 10K comparisons each). 
 
+In short, the benefits of factorizing intermediate results just 
+reduces computation and data copies here and there in many cases.
 You can try some of these queries on Kuzu and compare its performance on large 
-datasets. The benefits of factorizing intermediate results just reduces computation
-and data copies here and there in many cases.
+datasets with non-factorized systems. 
 
-### How Does Kuzu Implement A Factorized Query Processor?
-Now, continue reading if you are interested in actual database implementations
-and want to read about how we implemented factorized query processor in Kuzu.
-The rest will be even more technical and forms part of the technical meat of our CIDR paper. 
-
-When designing the query processor of Kuzu, we had 3 design goals: 
+## How Does Kùzu Performe Factorized Query Processing?
+The rest will be even more technical and forms part of the technical meat of our CIDR paper; 
+so continue reading if you are interested in database implementations.
+When designing the query processor of Kùzu, we had 3 design goals: 
 1. Factorize intermediate growing join results. 
-2. Always perform scans of database files from disk sequentially.
-3. When possible avoid scanning entire disk files when possible.
+2. Always perform sequential scans of database files from disk.
+3. When possible avoid scanning entire database files from disk.
 
-3. requires some motivation, which I will provide below. Let's go one by one.
-Factorization: Kuzu has a vectorized query processor, which is the common wisdom
-in analytical read-optimized systems. Vectorization, in the context of query processors 
-of DBMSs, refers to the design where operators pass a set of tuples, 1024 or 2048, 
-between each other during processing.[^3]. Needless to say,
-existing vectorized query processors pass a single vector of flat tuples.
-Instead, Kuzu operators pass possibly multiple vectors of tuples between each other.
-We call each vectors of tuples a "Vector group"
-and each vector group can either be flat and represent a single value or unflat.
+
+3rd design goal requires some motivation, which I will provide below. Let's go one by one.
+
+### Factorization 
+Kùzu has a vectorized query processor, which is the common wisdom
+in analytical read-optimized systems. Vectorization, in the context of DBMS query processors 
+refers to the design where operators pass a set of tuples, 1024 or 2048, 
+between each other during processing[^2]. Existing vectorized query processors (in fact 
+processors of all systems I'm aware of) pass *a single vector of flat tuples*.
+Instead, Kùzu's operators pass (possibly) multiple *factorized vectors of tuples* 
+between each other. Each vector  can either be *flat* and represent a single value or 
+*unflat* and represent a set of values, which is marked in a field called `curIdx`.
+associated with each vector.
+<img align="left" style="width:350px; padding-right: 10px;" src="../../img/factorized-vectors.png">.
 For example, the first 10K tuples from my running example would be represented
-with 3 vector groups as follows:
-[Insert Image of 3 vector groups]
-This is for example, what would be passed from the last join operator to the projection
-in the query plan in [Figure 1a](Check).
+with 3 factorized vectors as on the left and would be passed to the final projection
+in the query plan in Figure 2.
 The interpretation that what is passed is the Cartesian product of all sets of
 tuples in those vectors. Operators know during compilation time how many vector
 groups they will take in and how many they will output. Importantly, we still
@@ -292,13 +290,15 @@ Credit where credit's due: this was a design that my PhD student 'Amine
 Mhedhbi] came up with (with some polishing from me and my Master's student 
 Pranjal Gupta) and we directly adopted it in Kuzu.
 
-Ensuring sequential scans: I already told you above that 
+### Ensuring Sequential Scans
+I already told you above that 
 Extend/Expand type join operators that lead to non-sequential scans of database files.
 These operators are not robust and if you are developing a disk-based system,
 non-sequential scans will not scale. That's a mistake. Instead, the more robust (though
 not always the most efficient) join operator is to use HashJoins. I'll give a simulation momentarily.
 
-Avoiding full scans of database files. Although I don't like Extend/Expand type join operators,
+### Avoiding Full Scans of Database Files
+Although I don't like Extend/Expand type join operators,
 they come with an advantage. If you had a simple 1-hop query that only asked for:
 give me the names of account that Liz has transfered money to. Suppose for simplicity, L1
 has made only 3 transfers to accounts with internal recordIDs (106, 5, 75). Then if you had
@@ -312,7 +312,7 @@ non-sequentially (more over the same name for node with record ID 75 is being sc
 etc. When a query generates many tuples then the Extend/Expand(All) type operators will degrade.
 But on the positive side, they only scan where they have to scan. They don't scan the whole database
 file, which is a performance advantage. When designing Kuzu's processor, we wanted 
-a mechanism to also avoid scanning only the necessary parts of database files.[^4]
+a mechanism to also avoid scanning only the necessary parts of database files.[^3]
 We do this through modified hash join operators that use a technique in DBMSs called 
 *sideways information passing*. I'll simulate you a simple computation to put all these 
 together.
@@ -421,17 +421,14 @@ and confusing jargon really has to stop and helps no one. If joins are in the na
 you are asking a DBMSs to do,  calling it something else won't change the nature of the 
 computation. Joins are joins. Every DBMSs needs to join their records with each other.
 
-[^2]: You can take a look at [our CIDR paper on Kuzu](XXX) and
-[this GRainDB work](XXX) to see experiments and in-depth discussion of 
-why Extend/Expand-type operators are not robust operators and perform very poorly in many settings.
-
-[^3]: Vectorization emerged as a design in the context of columnar RDBMSs, 
+[^2]: Vectorization emerged as a design in the context of columnar RDBMSs, 
 which are analytical systems, about 15-20 years old. It is still a very good idea. The prior
-design was to pass a single tuple between operators, which is quite easy to implement,
-but quite inefficient on modern CPUs. You can read all about it from the pioneers 
-of [columnar RDBMSs](XXX).
+design was to pass a single tuple between operators called Volcano-style tuple-at-a-time
+processing, which is quite easy to implement,
+but quite inefficient on modern CPUs. If you have access to the following link,
+you can read all about it from the pioneers of [columnar RDBMSs](https://www.nowpublishers.com/article/Details/DBS-024).
 
-[^4]: Note that GDBMSs are able to avoid scans of entire files because notice that they do the join
+[^3]: Note that GDBMSs are able to avoid scans of entire files because notice that they do the join
 on internal record IDs, which mean something very specific. If a system needs to scan the name
 property of node with ID 75, it can often arithmetically compute the disk page and offset where
 this is stored, because node IDs are dense (i.e., start from 0, 1, 2...) and so can serve as 
