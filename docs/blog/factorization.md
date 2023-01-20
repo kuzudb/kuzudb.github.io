@@ -75,33 +75,59 @@ Credit goes to the great theoreticians who pioneered these techniques whom I wil
 in these posts. Their work should be highly appreciated.
 
 ## Traditional Query Processing Using Flat Tuples
+Let me start with a very short background on the basics of
+query processors before I explain factorization. If you know about 
+query plans and how to interpret them,
+you can skip to [here](#factorization-in-a-nutshell).
+Consider a database of Account node and Transfer edge records below:
+<p align="left">
+  <img src="../../img/2-hop-data.png" width="650">
+</p>
+The two Accounts with `accID` fields L1 and L2 are owned by Liz
+and each have 100 incoming and 100 outgoing Transfer edges.
+Now consider a 2-hop path query in Cypher:
 
-A standard query plan for this query could look in a simplified form as follows: 
-[Insert HashJoin plan image].
-If you type `Explain` to your SQL or Cypher query above in your favorite systems,
-you might see plans that overall look similar to these. I'm intentionally
-leaving the operators generic. For example, in practice when you type Explain
-on your SQL system for this query, it will most likely pick a HashJoin operator.
-In some GDBMSs, you might see "linear plans" that look as follows:
-[Insert linear plan].
-This is actually a plan similar to our previous GraphflowDB system. Here
-you are seeing an operator called Extend, which joins nodes with their relationships,
-and following the Extend is another Join operator to join the name properties of the neighbors,
-below c.name, and above for a.name. 
-In Neo4j,
-you'll instead see an Expand(All) operator, which does the Extend+Join
+```                                              
+MATCH (a:Account)-[t1:Transfer]->(b:Account)-[t2:Transfer]->(c:Account)
+WHERE b.name = 'Liz' 
+RETURN a.name, c.name
+```
+
+Here's the SQL version of the query if you modeled your records as relations.
+Same query different syntax:
+```
+SELECT a.name, c.name
+FROM Account a, Transfer t1, Account b, Transfer t2, Account c
+WHERE b.name = 'Liz' AND
+      t1.src = a.accID AND t1.dst = b.accID
+      t2.src = b.accID AND t2.dst = c.accID
+```
+
+<img align="left" style="width:500px; padding-right: 10px;" src="../../img/2-hop-query-plan-hash-join.png">
+A standard query plan for this query is shown on the left in Fig. 2. 
+The plan contains some Scan operators to scan the raw node or edge records (edges could be 
+scanned from a join index) and some hash join operators to perform the joins, and 
+a final projection operator.
+In some GDBMSs, you might see "linear plans" that look as in Fig. 3.
+<img align="left" style="width:500px; padding-right: 10px;" src="../../img/2-hop-query-plan-extend.png">
+The linear plan is from our previous GraphflowDB system. Here
+you are seeing an operator called Extend, which joins node records with their Transfer relationships to 
+read the system-level IDs of the neighbors of those node records. 
+Following the Extend is another Join operator to join the name properties of those neighbors c.name and a.name. 
+In Neo4j, you'll instead see an Expand(All) operator, which does the Extend+Join
 in GraphflowDB in a single operator[^1]. For very good reasons
 we removed these Extend/Expand type operators in Kuzu. I will come back to this.
 
-Now, the interpretation of plans is that tuples are flowing from the bottom to top and
-each operator will take in sets of tuples and produce sets of tuples (often in a pipelined fashion). 
+The interpretation of plans is that tuples are flowing from the bottom to top and
+each operator will take in sets of tuples and produce sets of tuples in a pipelined fashion. 
 The key motivation for factorization is that what flows 
-between operators are *flat tuples*. When the joins are many to many, this 
+between operators are **flat tuples**. When the joins are m-n, this 
 might lead to many repetitions, which one way or another leads to repeated
 computation in the operators. In our example for example,
 the final projection operator would take a table that looks like the below
 table on the left:
-[Insert flat vs factorized tables]
+<img align="left" style="width:500px; padding-right: 10px;" src="../../img/flat-vs-factorized.png">
+
 Let's call this table OUT. Notice that there are 20K tuples there because of the nature of the many-to-many
 relationships of L1 and L2. However there are many repetitions in this relationship,
 e.g., L1 and L2 or Liz values in what I'm showing. Depending on the actual system implementation,
