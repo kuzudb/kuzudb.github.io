@@ -18,7 +18,7 @@ Similarly, if you want updates to a DBMS to be atomic and durable,
 a good paradigm is to use a write-ahead log that serves as a source of truth
 and can be used to undo or redo operations. Many systems adopt such common wisdom paradigms. 
 As core DBMS researcher, once in a while however, you run into a very simple idea 
-that deviates from the norm and is not currently adopted that gets you very excited. 
+that deviates from the norm that gets you very excited. 
 Today, I want to write about one such idea called [factorization](https://www.cs.ox.ac.uk/dan.olteanu/papers/os-sigrec16.pdf). 
 
 {: .highlight}
@@ -36,13 +36,15 @@ Today, I want to write about one such idea called [factorization](https://www.cs
 > - **How Kùzu Implements Factorization:** Kùzu's query processor
     is designed to achieve 3 design goals: (i) factorize intermediate results;
     (ii) always perform sequential scans of database files; and (iii) avoid
-    scanning large chunks of database files when possible. In addition the processor is 
+    scanning large chunks of database files when possible. In addition, the processor is 
     vectorized as in modern columnar DBMSs. These design goals are achieved by passing 
     multiple *factorized vectors* between each other and using modified HashJoin operators 
     that do *sideways information passing* to avoid scans of entire files.
 
 
-Factorization is a very
+This is a quite technical blog post and will appeal more to people who are interested
+in internals of DBMSs. It's about a technique that's quite dear to my heart called factorization,
+which is a very
 simple data compression technique. Probably all 
 compression techniques you know are designed to compress database files that 
 are stored on disk. Think of run-length encoding, dictionary compression, or bitpacking.
@@ -53,7 +55,7 @@ data that are generated when query processors of DBMSs evaluate
 many-to-many (m-n) growing joins. If you have read [my previous blog](https://kuzudb.com/blog/what-every-gdbms-should-do-and-vision.html),
 efficiently handling m-n joins was one of the items on my list of properties 
 that competent GDBMSs should excel in. This is because 
-the workloads that GDBMSs commonly handle contain m-n joins
+the workloads of GDBMSs commonly contain m-n joins
 across node records. Each user in a social network or an account in a financial transaction network
 or will have thousands of connections and if you want
 a GDBMS to find patterns on your graphs, you are 
@@ -164,7 +166,7 @@ given a query, what are the "factorization structures", i.e., the Cartesian prod
 that can be used to compress it? Consider a simple query that counts the number of
 paths that are slightly longer:
 ```
-MATCH (a:Account)-[:Wire>(b:Account)-[:Deposit]>(c:Account)-[:ETransfer]->(d:Account)
+MATCH (a:Account)-[:Wire]>(b:Account)-[:Deposit]>(c:Account)-[:ETransfer]->(d:Account)
 RETURN count(*)
 ```
 Should you condition on b and factor out 
@@ -183,12 +185,14 @@ academic venues for theoretical work on DBMSs.
 
 But let's take a step back and appreciate this theory because it gives an excellent 
 advise to system developers: *factorize your intermediate
-results if your queries contain many-to-many joins!* The great thing
-is that this can all be done by static analysis of the query 
-during compilation time, without assuming anything about the actual database.
+results if your queries contain many-to-many joins!* 
 Recall that GDBMSs most commonly evaluate many-to-many joins. So hence my point that 
 GDBMSs should develop factorized query processors.
-
+The great thing this theory shows us is that this can all be done by static analysis of the query 
+during compilation time by only inspecting the dependencies between variables in
+the query! I won't cover the exact rules but at least in my running example,
+I hope it's clear that because there is no predicate between a's and c's, once
+b is fixed, we can factor out a's from c's.
 
 ## Examples When Factorization Significantly Benefits:
 Factorized intermediate relations can be exponentially smaller
@@ -203,7 +207,8 @@ the amount of data copied between buffers used by operators
 during processing and to final `QueryResult` structure
 that the application gets access to. For example, a very cool feature of Kùzu 
 is that it keeps final outputs in factorized format in its `QueryResult` class and 
-enumerates them one by one only when the user starts calling `QueryResult::getNext()`.
+enumerates them one by one only when the user starts calling `QueryResult::getNext()`
+to read the tuples.
 In our running example, throughout processing Kùzu would do copies of
 400 data values roughly instead of 20K to produce its `QueryResult`. 
 Needless to say, I could have picked a more exaggerated query, say a "star" query
@@ -218,11 +223,11 @@ MATCH (a:Account)-[e1:Transfer]->(b:Account)-[e2:Transfer]->(c:Account)
 WHERE b.name = 'Liz' AND a.balance > b.balance AND c.balance > b.balance
 RETURN *
 ```
-I'm omitting a plan for this query but a common plan would extend the plan in Figure 2 (or 3) above,
-to also scan the balance properties and more importantly with two filter operators: 
+I'm omitting a plan for this query but a common plan would extend the plan in Figure 2 (or 3) above
+to also scan the balance properties and to run two filter operations: 
 (i) above the join that joins a's and b's,
 to run the predicate `a.balance > b.balance`; (ii) after the final join in Figure 2
-to run the predicate 'c.balance > b.balance'. Suppose the first filter did not eliminate any tuples.
+to run the predicate `c.balance > b.balance`. Suppose the first filter did not eliminate any tuples.
 Then, a flat processor would evaluate 20K filter execution in the second filter.
 In contrast, the input to the second filer operator in a factorized processor 
 would be the 2 factorized tuples 
@@ -254,7 +259,7 @@ with only 100 comparisons each (instead of 10K comparisons each).
 
 In short, the benefits of factorizing intermediate results just 
 reduces computation and data copies here and there in many cases.
-You can try some of these queries on Kuzu and compare its performance on large 
+You can try some of these queries on Kùzu and compare its performance on large 
 datasets with non-factorized systems. 
 
 ## How Does Kùzu Performe Factorized Query Processing?
@@ -270,14 +275,14 @@ When designing the query processor of Kùzu, we had 3 design goals:
 ### 1. Factorization 
 Kùzu has a vectorized query processor, which is the common wisdom
 in analytical read-optimized systems. 
-<img align="left" style="width:350px; padding-right: 10px;" src="../../img/factorized-vectors.png">.
+<img align="left" style="width:350px; padding-right: 10px;" src="../../img/factorized-vectors.png">
 Vectorization, in the context of DBMS query processors 
 refers to the design where operators pass a set of tuples, 1024 or 2048, 
 between each other during processing[^2]. Existing vectorized query processors (in fact 
 processors of all systems I'm aware of) pass *a single vector of flat tuples*.
 Instead, Kùzu's operators pass (possibly) multiple *factorized vectors of tuples* 
 between each other. Each vector  can either be *flat* and represent a single value or 
-*unflat* and represent a set of values, which is marked in a field called `curIdx`.
+*unflat* and represent a set of values, which is marked in a field called `curIdx`
 associated with each vector.
 For example, the first 10K tuples from my running example would be represented
 with 3 factorized vectors as on the left and would be passed to the final projection
@@ -285,12 +290,14 @@ in the query plan in Figure 2.
 The interpretation is this: what is passed is the Cartesian product of all sets of
 tuples in those vectors. Operators know during compilation time how many vector
 groups they will take in and how many they will output. Importantly, we still
-do vectorization, i.e., each primitive operator operates on a vector of values
+do vectorized processing, i.e., each primitive operator operates on a vector of values
 inside tight for loops. 
 Credit where credit's due: this simple-to-implement design was proposed 
 by my PhD student [Amine Mhedhbi](http://amine.io/) with some feedback from 
 me and my ex-Master's student 
-[Pranjal Gupta](https://www.linkedin.com/in/g31pranjal/?originalSubdomain=in). 
+[Pranjal Gupta](https://www.linkedin.com/in/g31pranjal/?originalSubdomain=in)
+and [Xiyang Feng](https://www.linkedin.com/in/xingyang-feng-14198491/?originalSubdomain=ca), 
+who is now a core developer of Kùzu. 
 And we directly adopted it in Kùzu. Amine has continued doing other excellent
 work on factorization, which we have not yet integrated, and you
 will need to wait until his PhD thesis is out.
@@ -331,14 +338,14 @@ from memory.
 However, if your query is accessing the neighborhoods of a few nodes,
 then avoiding the scan of entire database file is an advantage.
 In Kùzu, we wanted to use HashJoins but we also wanted a mechanism to scan 
-only the necessary parts of database files, which we
-do through a technique called *sideways information passing*[^3]. 
+only the necessary parts of database files. We
+do this through a technique called *sideways information passing*[^3]. 
 I'll simulate this below.
 
 ### A Simple Simulation
 For simplicity, we'll work on a simpler 1-hop query, so the benefits of factorization will not 
 be impressive but it will allow me to explain an entire query processing pipeline.
-Consider this query:
+Consider this count(\*) query that counts the number of transfers the L1 account has made:
 ```
 MATCH (a:Account)-[t1:Transfer]->(b:Account)
 WHERE a.accID = L1
@@ -348,7 +355,7 @@ An annotated query plan we generate is shown below. The figure shows step by ste
 the computation that will be performed and the data that will be passed between operators.
 For this simulation, I am assuming that the record/nodeIDs of Accounts are as in 
 Figure 1a above.
-<img align="left" style="width:500px; padding-right: 10px;" src="../../img/factorized-execution-simulation.png">.
+<img align="left" style="width:500px; padding-right: 10px;" src="../../img/factorized-execution-simulation.png">
 
 1. A Scan operator will scan the accId column and find the records of
 nodes with accID=L1. There is only 1 tuple (199, Liz) that will be output.
@@ -356,16 +363,15 @@ nodes with accID=L1. There is only 1 tuple (199, Liz) that will be output.
 3. At this point the processor knows exactly the IDs of nodes, whose Transfer edges need
 to be scanned on the probe side: only the edges of node with ID 199! This is where we 
 do sideways information passing.
-Specifically, we pass this "nodeID filter", which is a bitmap, to the probe 
-side Scan operator. Here, I'm assuming the database has 1M Accounts but as you 
+Specifically, the HashJoin constructs and passes a "nodeID filter" (effectively a bitmap) 
+to the probe side Scan operator. Here, I'm assuming the database has 1M Accounts but as you 
 can see only the position 199 is 1 and others are 0.
 4. The probe-side Scan uses the filter to only scan
 the edges of 199 and avoids
 scanning the entire Transfers file.
 Since Kùzu is a GDBMS, we store the edges of nodes (and their properties) 
 in a graph-optimized format called [CSR](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_(CSR,_CRS_or_Yale_format)). 
-Importantly, all of the edges of 199 are  
-stored consecutively and we output them in factorized format as:
+Importantly, all of the edges of 199 are stored consecutively and we output them in factorized format as:
 [(199) X {201, 202, ..., 300}].
 5. Next step can be skipped in an optimized system but currently we will probe the [(199) X {201, 202, ..., 300}]
    tuple in the hash table and produce [(199, L1) X {201, 202, ..., 300}], which is passed to the 
@@ -378,16 +384,16 @@ but we also avoided scanning the entire Transfer database file, achieving our 3 
 This is a simplifid example and there are many queries that are more complex and where we 
 have more advanced modified hash join operators. But the simulation presents all core techniques
 in the system. You can read our [CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) 
-if you are curious about the details.
+if you are curious about the details!
 
 ### Example Experiment
-So how does it all perform? Quite well! Specifically this type of processing is quite robust. 
+How does it all perform? Quite well! Specifically this type of processing is quite robust. 
 Here's an experiment from our CIDR paper to give a sense of the behavior of
 using modified hash joins and factorization on a micro benchmark query. This query 
 does a 2-hop query with aggregations on every node variable. This is on 
 an [LDBC](https://ldbcouncil.org/benchmarks/snb/)
 social network benchmark (SNB) dataset at scale factor 100 (so ~100GB of database). LDBC SNB 
-models a social network where user posst comments and react to these comments. 
+models a social network where user post comments and react to these comments. 
 ```
 MATCH (a:Comment)<-[:Likes]-(b:Person)-[:Likes]->(c:Comment)
 WHERE b.ID < X
@@ -398,10 +404,10 @@ the benefits of all of the 3 techniques above. Also needless to say, we could ha
 the benefits by picking
 larger stars or branched tree patterns but this will do.
 In the experiment we are changing the selectivity of the predicate on the middle node, which
-changes the output size. What we will compare is the behavior of Kuzu, which integrates
-the 3 techniques above with (i) Kuzu-Extend: A configuration of Kuzu that uses factorization but instead of
+changes the output size. What we will compare is the behavior of Kùzu, which integrates
+the 3 techniques above with (i) Kùzu-Extend: A configuration of Kùzu that uses factorization but instead of
 our modified HashJoins uses an Extend-like operator;
-and (ii) [Umbra](https://umbra-db.com/), which represents the
+and (ii) [Umbra](https://umbra-db.com/)[^4], which represents the
 state of the art RDBMS. Umbra is as fast as existing RDBMSs get. It probably integrates
 every known low-level performance technique in the field.
 Umbra however does not 
@@ -413,33 +419,35 @@ Here's the performance table.
 When the selectivity is very low, Extend-like operators + factorization do quite well
 because they don't yet suffer much from non-sequential scans and they avoid several overheads
 of our modified hash joins: no hash table creation and no semijoin filter mask creation. 
-But they are not robustand they degrade quickly. We can also see that even if you're Umbra, 
+But they are not robust and degrade quickly. We can also see that even if you're Umbra, 
 without factorization or a mechanism to avoid scanning entire files, 
 you will not perform very well on these queries with m-n joins (even if there is only 2 of them here). 
-More experiments can be found on [our CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf).
+We conducted several other experiments all demonstrating the robustness and scalability
+of factorized processing using modifid hash join operators. I won't cover them but
+they are all in [our CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf).
 
 ## Final marks: 
-I am fully convinced that modern GDBMSs have to be factorized systems to remain 
+I am convinced that modern GDBMSs have to be factorized systems to remain 
 competitive in performance. If your system assumes that most joins will be growing,
-this is one of a handful of modern technique whose principles are relatively well understood
-and one can implement in a system. I am sure different factorized query processors will
+factorization is one of a handful of modern technique for such workloads 
+whose principles are relatively well understood
+and one can actually implement in a system. I am sure different factorized query processors will
 be proposed as more people attempt at it. I was happy to see in CIDR that at least 2 systems
 gurus told me they want to integrate factorization into their systems. 
 If someone proposes a technique that can on some queries
 lead to exponential computation reductions even in a pen-and-paper theory, it is a good sign
 that for many queries it can make the difference between a system timing out vs providing 
-an actual answer. If analytical DBMS community has learned one thing from years of usage, 
-it's that analytical queries are ad hoc and highly varied. 
-No doubt many queries will benefit from factorized processing.
+an actual answer.
  
 Finally  there is much more on the theory of factorization, which I did not cover. From my side, 
 most interestingly, there 
 are even more compressed ways to represent the intermediate results than the 
-vanilla Cartesian product scheme I covered in this post. Just to raise a curiosity, it's called 
+vanilla Cartesian product scheme I covered in this post. Just to raise some curiosity, what I have 
+in mind is called 
 [d-representations](https://fdbresearch.github.io/principles.html) but that will have to wait 
 for another time. For now, I invite you to check our performance out on large queries 
-and let us know if we are slow on some queries! The Kùzu team say hi (👋 🙋‍♀️ 🙋🏽) and 
-is at your service to fix all performance bugs! 
+and let us know if we are slow on some queries! The Kùzu team says hi (👋 🙋‍♀️ 🙋🏽) and 
+is at your service to fix all performance bugs as we continue implementing the system! 
 My next post will be about the novel worst-case optimal join algoriothms, which emerged
 from another theoretical insight on m-n joins!
 
@@ -473,7 +481,7 @@ unless they develop a mechanism to convert value-based joins to pointer-based jo
 student [Guodong's work last year in VLDB](https://www.vldb.org/pvldb/vol15/p1011-jin.pdf) of how this can be done.
 In Kùzu, our sideways information passing technique follows Guodong's design in this work.
 
-[^5]: Umbra is being developed by [Thomas Neumann](XXX) and his group. 
+[^4]: Umbra is being developed by [Thomas Neumann](XXX) and his group. 
 If Thomas's name does not ring a bell let me explain his weight in the field like this. As the
 joke goes, in the field of DBMSs: there are gods at the top, then there is Thomas Neumann, 
 and then other holy people, and then we mere mortals. 
