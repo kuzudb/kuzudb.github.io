@@ -79,21 +79,28 @@ Let me start with a very short background on the basics of
 query processors before I explain factorization. If you know about 
 query plans and how to interpret them,
 you can skip to [here](#factorization-in-a-nutshell).
-Consider as a running example a 2-hop Cypher path query on a
-database of Account nodes and Transfer edges on a database shown
-below:
-```
+Consider a database of Account node and Transfer edge records below.
+<p align="center">
+  <img src="../../img/2-hop-data.png"" width="700">
+</p>
+
+                                                
+```                                                
 MATCH (a:Account)-[t1:Transfer]->(b:Account)-[t2:Transfer]->(c:Account)
 WHERE b.name = 'Liz' 
 RETURN a.name, c.name
 ```
+
+                                                  ```
+
+
 Consider further the database on the left.
-<img align="left" style="width:600px; padding-right: 10px;" src="../../img/2-hop-data.png">.
 
 Take the following
 2-hop query on a database shown on the right.
 I'm also showing the SQL version of the query on a set of Account and 
 Transfer tables. 
+                                                  
 
 
 
