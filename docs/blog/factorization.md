@@ -74,8 +74,8 @@ practical advise on how to improve DBMS performance.
 Credit goes to the great theoreticians who pioneered these techniques whom I will cite
 in these posts. Their work should be highly appreciated.
 
-## Traditional Query Processing Using Flat Tuples
-Let me start with a very short background on the basics of
+## A Quick Background: Traditional Query Processing Using Flat Tuples
+Here is a short background on the basics of
 query processors before I explain factorization. If you know about 
 query plans and how to interpret them,
 you can skip to [here](#factorization-in-a-nutshell) after reading
@@ -121,8 +121,8 @@ In some GDBMSs, you might see "linear plans" that look as in Fig. 3.
 The linear plan is from our previous GraphflowDB system. Here
 you are seeing an operator called Extend, which joins node records with their Transfer relationships to 
 read the system-level IDs of the neighbors of those node records. 
-Following the Extend is another Join operator to join the name properties of those neighbors 
-(specifically c.name and a.name). 
+Following the Extend is another Join operator to join the accID properties of those neighbors 
+(specifically c.accID and a.accID). 
 In Neo4j, you'll instead see an Expand(All) operator, which does the Extend+Join
 in GraphflowDB in a single operator[^1]. For very good reasons
 we removed these Extend/Expand type operators in Kuzu. I will come back to this.
@@ -134,97 +134,84 @@ between operators are **flat tuples**. When the joins are m-n, this
 leads to many data repetitions, which one way or another leads to repeated
 computation in the operators. For example,
 the final projection operator in our example would take the table shown in Figure 4 (left).
-<img align="left" style="width:525px; padding-right: 10px;" src="../../img/flat-vs-factorized.png">
-For simplicity, I am omitting the a.name and c.name columns and I am instead just showing 
-an a and b coluimns with the a.accID and c.accID values.
-There are 20K tuples in the flat representation because both L1 and L2 are part of 100 incoming x 100 outgoing=10K
-2-paths. Notice the many repetitions in this relation:
-L1 and L2 or Liz values and the omitted a.name and c.name. 
-Depending on the actual system implementation,
-what gets replicated may change. Some systems may replicate the actual values,
-some may replicate some indices where these values are stored but overall exactly 20K
-tuples with a lot of repeated values would flow to the final project operator. 
-As I will demonstrate, this redundancy will inevitable trickle down to redundant computation here and there.
+<p align="center">
+  <img src="../../img/flat-vs-factorized.png" width="700">
+</p>
+There are 20K tuples in the flat representation because both L1 and L2 are part of 
+100 incoming x 100 outgoing=10K many 2-paths. Notice the many repetitions in this relation:
+L1, L2, or Liz values, or the values in a.accID and c.accID. 
+What gets replicated may change across systems. Some may replicate the actual values,
+some may replicate indices where these values are stored but overall exactly 20K
+tuples would be generated. This redundancy leads to redundant computation here and there
+during query processing.
 
 ## Factorization In a Nutshell
 Factorization addresses exactly this problem. The core reason for the redundancy
-is this observation: "given a fixed b value, all a's and c's are conditionally independent".
-More concretely, once L1 is fixed, each incoming neighbor "a" for L1 will join with each outgoing neighbor
-"c" of L1. If you took the first standard undergraduate course in DBMSs at a university
-and you covered the theory of normalization, this is what is referred to as a [multi-valued dependency](XXX)
-in OUT. Factorization argues that when queries depict such conditional independences 
-in the joins they perform (and if those joins are many-to-many), then one can
-compress the intermediate relations
-that query plans generate by representing sets of tuples as Cartesian products. So above,
-I'm showing the same 20K tuples in a compressed factorized format, which uses only 400 values
-(so 2x(100+100) instead of 2*100*100 values). 
+is this observation: *given a fixed b value, all a's and c's are conditionally independent*.
+More concretely, once b is bound to node L1, each incoming neighbor `a` for L1 will join 
+with each outgoing neighbor `c` of L1. If you took the first standard undergraduate course in DBMSs at a university
+and you covered the theory of normalization, this is what is 
+called a [multi-valued dependency](https://en.wikipedia.org/wiki/Multivalued_dependency)
+in relations. Factorization exploits such dependencies to compress
+relations using Cartesian products.
+Above in Figure 4 (right),
+I'm showing the same 20K tuples in a factorized format using only 400 values
+(so 2\*(100+100) instead of 2\*100\*100 values). 
 
-That's it! That's the core of the idea. Now of course, this simple observation leads to a ton of 
+That's it! That's the core of the idea! Now of course, this simple observation leads to a ton of 
 hard and non-obvious questions that the entire theory on factorization answers. For example, 
 given a query, what are the "factorization structures", i.e., the Cartesian product structures
 that can be used to compress it? Consider a simple query that counts the number of
 paths that are slightly longer:
 ```
-MATCH (a)-[:Wire>(b)-[:Deposit]>(c)-[:ETransfer]->(d)
+MATCH (a:Account)-[:Wire>(b:Account)-[:Deposit]>(c:Account)-[:ETransfer]->(d:Account)
 RETURN count(*)
 ```
-There are many different ways the output (a, b, c, d) tuples 
-can be factorized. Should you condition on b and factor out 
+Should you condition on b and factor out 
 a's from (c, d)'s or condition on c and factor out (a, b)'s from d's? 
 Or you could condition on (b, c) and factor out (a)'s from (d)'s?
 To make a choice, a system has to reason about the number of Wire, Deposit,
-and ETransfer records in the database and consider alternatives.
-What is a principled way to enumerate correct different possible factorization structures
-and pick a good one? Related to the latter question, suppose instead of count(\*)
-we projected out the a's and d's. Can we even factor our a's from d's in the final output 
-(the answer is no, unless you produce the results in batches and condition on b's and c's) etc.
-etc. The questions researchers can ask are endless but developing the foundation,
-so that these questions can be answered, and providing principled first answers to these (which
-further work improves) is the contribution of the literature on theory of factorization. 
-[Dan Olteanu](XXX) and his 
-colleagues, who lead this field, recently won the ICDT test of time award, which is 
-one of the two academic venues for theoretical work on DBMSs, for an early work
-they did on factorization.
+and ETransfer records in the database.
+How much and on which queries can you benefit from factorization?
+The theoretical questions are endless. 
+The theory of factorization 
+develops the formal foundation so that such questions can be answered and  
+provides principled first answers to these questions. 
+[Dan Olteanu](https://www.ifi.uzh.ch/en/dast/people/Olteanu.html) and his 
+colleagues, who lead this field, recently won the [ICDT test of time award](https://databasetheory.org/ICDT/test-of-time)
+for their work on factorization. ICDT is one of the two academic venues for theoretical work on DBMSs.
 
-But let's take a step back and appreciate this theory. For people interested in systems
-development, one should appreciate all this literature because it gives an excellent 
+But let's take a step back and appreciate this theory because it gives an excellent 
 advise to system developers: *factorize your intermediate
-results if your queries contain many-to-many joins!* And the great thing
-is this can all be done by looking at the query during compilation time, without
-assuming anything about the actual database (except that some joins are many-to-many).
-As I said in my previous post, GDBMSs 
-most commonly evaluate many-to-many joins and hence my point that 
-GDBMSs should develop factorized query processors. As I'll next show, keeping these
-results in compressed format can yield orders of magnitude speed ups in performance
-because the factorized formats of intermediate relations can be polynomially smaller 
-than their equivalent flat versions.
+results if your queries contain many-to-many joins!* The great thing
+is that this can all be done by static analysis of the query 
+during compilation time, without assuming anything about the actual database.
+Recall that GDBMSs most commonly evaluate many-to-many joins. So hence my point that 
+GDBMSs should develop factorized query processors.
 
 
 ## Examples When Factorization Significantly Benefits:
-Keeping intermediate results in factorized format leads to less computation
-during query processing for many different ways. Let me just discuss the three most obvious cases.
+Factorized intermediate relations can be exponentially smaller
+(in terms of the number of joins in the query)
+than their flat versions, which 
+can yield orders of magnitude speed ups in query performance 
+for many different reasons. I will discuss three most obvious ones.
 
-### Generating compressed outputs: 
-The most obvious case when factorization speeds query performance is 
-that a system can keep final outputs in factorized format and enumerate them one by one 
-when the user starts calling "getNextTuple" function on the ResultSet output of the query. 
-This is what Kuzu does. In the 2-hop query, Kuzu only produces the compressed format
-with 400 values ever written to a ResultSet object (which internally accumulates the results
-in a class called FactorizedTable). So a copy of 20K. And this difference can be much bigger
-if the degrees of nodes are more than 100 or if this was a larger star query (2-hop is also
-the simplest star query). Suppose there were 3 different relationship types: Wire, DirectDeposit,
-and ETransfer and  the query was asking for all incoming and outgoing
-neighborhood of a node along each of these relationships. Suppose there were 100 incoming
-and 100 outgoing edges across each relationship. Then you're looking at 100^6, a hopping
-one trillion, many outputs 
-being produced. No system that uses flat processing will answer that query. In Kuzu,
-all outputs are factorized (if the planner generated a plan that factorizes) and then 
-flattened only if the user enumerates the actual tuples one by one. 
-When we develop a graph visualization frontend to Kuzu, this will be of great benefit. 
-If a query poses a hard star query and only wants to visualize the result as a graph,
-then we can be very efficient in that.
+### Less Data Copies/Movement 
+The most obvious benefit is that factorization reduces
+the amount of data copied between buffers used by operators
+during processing and to final `QueryResult` structure
+that the application gets access to. 
+For example, a very cool feature of Kùzu is that it keeps final outputs in factorized format
+in its `QueryResult` class and 
+enumerates them one by one only when the user starts calling `QueryResult::getNext()`.
+In our running example, throughout processing Kùzu would do copies of
+400 data values roughly instead of 20K to produce its `QueryResult`. 
+Needless to say, I could have picked a more exaggerated query, say a "star" query
+with 6 relationships, and arbitrarily increased the difference in the copies done 
+between a flat vs factorized processor.
 
-### Reducing Predicate and Expression Evaluations (e.g., when running filters)
+### Fewer Predicate and Expression Evaluations
 Factorization can decrease the amount of predicate or expression executions the system performs.
 Suppose we modify our 2-hop query a bit and put two additional filters on the query:
 ```
