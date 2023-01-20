@@ -42,7 +42,7 @@ Today, I want to write about one such idea called [factorization](https://www.cs
     that do *sideways information passing* to avoid scans of entire files.
 
 
-This is a quite technical blog post and will appeal more to people who are interested
+This is a quite technical and long blog post and will appeal more to people who are interested
 in internals of DBMSs. It's about a technique that's quite dear to my heart called factorization,
 which is a very
 simple data compression technique. Probably all 
