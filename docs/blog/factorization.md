@@ -113,12 +113,12 @@ The plan contains some Scan operators to scan the raw node or edge records (edge
 scanned from a join index) and some hash join operators to perform the joins, and 
 a final projection operator.
 In some GDBMSs, you might see "linear plans" that look as in Fig. 3.
-<table>
+<!-- <table>
   <tr>
     <td><img style="width:475px" src="../../img/2-hop-query-plan-hash-join.png"></td>
     <td><img style="width:425px" src="../../img/2-hop-query-plan-extend.png"></td>
   <tr>
-</table>
+</table> -->
 
 The linear plan is from our previous GraphflowDB system. Here
 you are seeing an operator called Extend, which joins node records with their Transfer relationships to 
