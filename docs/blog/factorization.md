@@ -75,19 +75,6 @@ Credit goes to the great theoreticians who pioneered these techniques whom I wil
 in these posts. Their work should be highly appreciated.
 
 ## Traditional Query Processing Using Flat Tuples
-Let me start with a very short background on the basics of
-query processors before I explain factorization. If you know about 
-query plans and how to interpret them,
-you can skip to [here](#factorization-in-a-nutshell).
-Consider a database of Account node and Transfer edge records below.
-<p align="center">
-  <img src="../../img/2-hop-data.png"" width="700">
-</p>
-
-As I tried to articulate in my previous post: same query, slightly different syntax. 
-In the database, "Account" node records L1 and L2 belong to Liz and 
-each has 100 incoming and 100 outgoing "Transfer" edges to other
-accounts.
 
 A standard query plan for this query could look in a simplified form as follows: 
 [Insert HashJoin plan image].
