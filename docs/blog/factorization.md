@@ -4,9 +4,12 @@ title: What Every Competent GDBMS Should Do (aka The Goals & Vision of Kùzu)
 permalink: /blog/what-every-gdbms-should-do-and-vision.html
 parent: Blog
 ---
+<p align="center">
+  <img src="../../kuzu-logo.png" width="400">
+</p>
+
 by Semih Salihoğlu, Jan 23rd, 2023
 # Factorization & Great Ideas from Database Theory (Part 1)
-
 Many of the core principles of how to develop DBMSs are well understood.
 For example, a very good query compilation paradigm is to 
 map high-level queries to a logical plan of relational operators, then optimize this plan,
@@ -75,11 +78,25 @@ in these posts. Their work should be highly appreciated.
 Let me start with a very short background on the basics of
 query processors before I explain factorization. If you know about 
 query plans and how to interpret them,
-you can skip to [here](#factorization-in-a-nutshell). Take the following
+you can skip to [here](#factorization-in-a-nutshell).
+Consider as a running example a 2-hop Cypher path query on a
+database of Account nodes and Transfer edges on a database shown
+below:
+```
+MATCH (a:Account)-[t1:Transfer]->(b:Account)-[t2:Transfer]->(c:Account)
+WHERE b.name = 'Liz' 
+RETURN a.name, c.name
+```
+Consider further the database on the left.
+<img align="left" style="width:600px; padding-right: 10px;" src="../../img/2-hop-data.png">.
+
+Take the following
 2-hop query on a database shown on the right.
 I'm also showing the SQL version of the query on a set of Account and 
 Transfer tables. 
-[Insert Figure 1 and Figure 2]
+
+
+
 As I tried to articulate in my previous post: same query, slightly different syntax. 
 In the database, "Account" node records L1 and L2 belong to Liz and 
 each has 100 incoming and 100 outgoing "Transfer" edges to other
@@ -408,7 +425,7 @@ and confusing jargon really has to stop and helps no one. If joins are in the na
 you are asking a DBMSs to do,  calling it something else won't change the nature of the 
 computation. Joins are joins and every DBMSs needs to join their records with each other.
 
-[^2]  You can take a look at [our CIDR paper on Kuzu](XXX) and
+[^2]: You can take a look at [our CIDR paper on Kuzu](XXX) and
 [this GRainDB work](XXX) to see experiments and in-depth discussion of 
 why Extend/Expand-type operators are not robust operators and perform very poorly in many settings.
 
@@ -431,7 +448,6 @@ student [Guodong's work last year in VLDB] of how this can be done.
 
 [^5]: Umbra is being developed by [Thomas Neumann](XXX) and his group. 
 If Thomas's name does not ring a bell let me explain his weight in the field like this. As the
-joke goes, in the field of DBMSs, the hierarchy of beings goes like this: there are gods 
-at the top, then there is Thomas Neumann, and then other holy creatures, and then
-we mere mortals. 
+joke goes, in the field of DBMSs: there are gods at the top, then there is Thomas Neumann, 
+and then other holy people, and then we mere mortals. 
 
