@@ -8,7 +8,7 @@ parent: Blog
   <img src="../../kuzu-logo.png" width="400">
 </p>
 
-by Semih Salihoğlu, Jan 23rd, 2023
+by Semih Salihoğlu, Jan 20th, 2023
 # Factorization & Great Ideas from Database Theory Part 1
 Many of the core principles of how to develop DBMSs are well understood.
 For example, a very good query compilation paradigm is to 
