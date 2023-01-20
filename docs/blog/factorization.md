@@ -449,37 +449,10 @@ My next post will be about the novel worst-case optimal join algoriothms, which 
 from another theoretical insight on m-n joins!
 
 Footnotes
-[^1]: If you come from a very graph-focused background and/or exposed to a ton of 
-GDBMS marketing, you might react to my statement that what I am showing are standard plans
-that do joins. Maybe you expected to see graph-specific operators, such as
-a BFS or a DFS operator because the data is a graph. Or maybe someone even dared to tell you that
-GDBMSs don't do joins but they do traversals. Stuff like that. These word tricks
-and confusing jargon really has to stop and helps no one. If joins are in the nature of the computation 
-you are asking a DBMSs to do,  calling it something else won't change the nature of the 
-computation. Joins are joins. Every DBMSs needs to join their records with each other.
+[^1]: If you come from a very graph-focused background and/or exposed to a ton of GDBMS marketing, you might react to my statement that what I am showing are standard plans that do joins. Maybe you expected to see graph-specific operators, such as a BFS or a DFS operator because the data is a graph. Or maybe someone even dared to tell you that GDBMSs don't do joins but they do traversals. Stuff like that. These word tricks and confusing jargon really has to stop and helps no one. If joins are in the nature of the computation  you are asking a DBMSs to do,  calling it something else won't change the nature of the computation. Joins are joins. Every DBMSs needs to join their records with each other.
 
-[^2]: Vectorization emerged as a design in the context of columnar RDBMSs, 
-which are analytical systems, about 15-20 years old. It is still a very good idea. The prior
-design was to pass a single tuple between operators called Volcano-style tuple-at-a-time
-processing, which is quite easy to implement,
-but quite inefficient on modern CPUs. If you have access to the following link,
-you can read all about it from the pioneers of [columnar RDBMSs](https://www.nowpublishers.com/article/Details/DBS-024).
+[^2]: Vectorization emerged as a design in the context of columnar RDBMSs, which are analytical systems, about 15-20 years old. It is still a very good idea. The prior design was to pass a single tuple between operators called Volcano-style tuple-at-a-time processing, which is quite easy to implement, but quite inefficient on modern CPUs. If you have access to the following link, you can read all about it from the pioneers of [columnar RDBMSs](https://www.nowpublishers.com/article/Details/DBS-024).
 
-[^3]: Note that GDBMSs are able to avoid scans of entire files because notice that they do the join
-on internal record/node IDs, which mean something very specific. If a system needs to scan the name
-property of node with record/node ID 75, it can often arithmetically compute the disk page and offset where
-this is stored, because record IDs are dense, i.e., start from 0, 1, 2..., and so can serve as 
-pointers if the system's storage design exploits this. This is what I was referring to as
-"Predefined/pointer-based joins" in my [previous blog post](https://kuzudb.com/blog/what-every-gdbms-should-do-and-vision.html).
-This is a good feature of GDBMSs that allows them to efficiently
-evaluate the joins of node records that are happening along the "predefined" edges in the database.
-I don't know of a mechanism where RDBMSs can do something similar,
-unless they develop a mechanism to convert value-based joins to pointer-based joins. See my
-student [Guodong's work last year in VLDB](https://www.vldb.org/pvldb/vol15/p1011-jin.pdf) of how this can be done.
-In Kùzu, our sideways information passing technique follows Guodong's design in this work.
+[^3]: Note that GDBMSs are able to avoid scans of entire files because notice that they do the join on internal record/node IDs, which mean something very specific. If a system needs to scan the name property of node with record/node ID 75, it can often arithmetically compute the disk page and offset where this is stored, because record IDs are dense, i.e., start from 0, 1, 2..., and so can serve as  pointers if the system's storage design exploits this. This is what I was referring to as "Predefined/pointer-based joins" in my [previous blog post](https://kuzudb.com/blog/what-every-gdbms-should-do-and-vision.html). This is a good feature of GDBMSs that allows them to efficiently evaluate the joins of node records that are happening along the "predefined" edges in the database. I don't know of a mechanism where RDBMSs can do something similar, unless they develop a mechanism to convert value-based joins to pointer-based joins. See my student [Guodong's work last year in VLDB](https://www.vldb.org/pvldb/vol15/p1011-jin.pdf) of how this can be done. In Kùzu, our sideways information passing technique follows Guodong's design in this work.
 
-[^4]: Umbra is being developed by [Thomas Neumann](XXX) and his group. 
-If Thomas's name does not ring a bell let me explain his weight in the field like this. As the
-joke goes, in the field of DBMSs: there are gods at the top, then there is Thomas Neumann, 
-and then other holy people, and then we mere mortals. 
-
+[^4]: Umbra is being developed by [Thomas Neumann](XXX) and his group. If Thomas's name does not ring a bell let me explain his weight in the field like this. As the joke goes, in the field of DBMSs: there are gods at the top, then there is Thomas Neumann, and then other holy people, and then we mere mortals. 
