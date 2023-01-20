@@ -90,10 +90,6 @@ MATCH (a:Account)-[t1:Transfer]->(b:Account)-[t2:Transfer]->(c:Account)
 WHERE b.name = 'Liz' 
 RETURN a.name, c.name
 ```
-
-                                                  ```
-
-
 Consider further the database on the left.
 
 Take the following
