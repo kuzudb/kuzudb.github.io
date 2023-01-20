@@ -1,7 +1,7 @@
 ---
 layout: default
-title: What Every Competent GDBMS Should Do (aka The Goals & Vision of Kùzu)  
-permalink: /blog/what-every-gdbms-should-do-and-vision.html
+title: Factorization & Great Ideas from Database Theory Part 1
+permalink: /blog/factorization.html
 parent: Blog
 ---
 <p align="center">
