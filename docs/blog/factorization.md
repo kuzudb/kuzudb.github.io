@@ -77,7 +77,7 @@ using a language that is accessible to general software engineers.
 Second, is to make people appreciate the role of 
 pen-and-paper theory in advancing the field of DBMSs. Both of these techniques were first 
 articulated in a series of purely theoretical papers which gave excellent 
-practical advise on how to improve DBMS performance. 
+practical advice on how to improve DBMS performance. 
 Credit goes to the great theoreticians who pioneered these techniques whom I will cite
 in these posts. Their work should be highly appreciated.
 
@@ -109,7 +109,7 @@ Same query different syntax:
 SELECT a.accID, c.accID
 FROM Account a, Transfer t1, Account b, Transfer t2, Account c
 WHERE b.name = 'Liz' AND
-      t1.src = a.accID AND t1.dst = b.accID
+      t1.src = a.accID AND t1.dst = b.accID AND
       t2.src = b.accID AND t2.dst = c.accID
 ```
 
@@ -131,7 +131,7 @@ Following the Extend is another Join operator to join the accID properties of th
 (specifically c.accID and a.accID). 
 In Neo4j, you'll instead see an Expand(All) operator, which does the Extend+Join
 in GraphflowDB in a single operator[^1]. For very good reasons
-we removed these Extend/Expand type operators in Kuzu. I will come back to this.
+we removed these Extend/Expand type operators in Kùzu. I will come back to this.
 
 The interpretation of plans is that tuples are flowing from the bottom to top and
 each operator will take in sets of tuples and produce sets of tuples (in a pipelined fashion). 
@@ -170,7 +170,7 @@ given a query, what are the "factorization structures", i.e., the Cartesian prod
 that can be used to compress it? Consider a simple query that counts the number of
 paths that are slightly longer:
 ```
-MATCH (a:Account)-[:Wire]>(b:Account)-[:Deposit]>(c:Account)-[:ETransfer]->(d:Account)
+MATCH (a:Account)-[:Wire]->(b:Account)-[:Deposit]>(c:Account)-[:ETransfer]->(d:Account)
 RETURN count(*)
 ```
 Should you condition on b and factor out 
@@ -188,7 +188,7 @@ for their work on factorization. ICDT is one of the two main
 academic venues for theoretical work on DBMSs.
 
 But let's take a step back and appreciate this theory because it gives an excellent 
-advise to system developers: *factorize your intermediate
+advice to system developers: *factorize your intermediate
 results if your queries contain many-to-many joins!* 
 Recall that GDBMSs most commonly evaluate many-to-many joins. So hence my point that 
 GDBMSs should develop factorized query processors.
@@ -232,12 +232,12 @@ to also scan the balance properties and to run two filter operations:
 (i) above the join that joins a's and b's,
 to run the predicate `a.balance > b.balance`; (ii) after the final join in Figure 2
 to run the predicate `c.balance > b.balance`. Suppose the first filter did not eliminate any tuples.
-Then, a flat processor would evaluate 20K filter execution in the second filter.
-In contrast, the input to the second filer operator in a factorized processor 
+Then, a flat processor would evaluate 20K filter executions in the second filter.
+In contrast, the input to the second filter operator in a factorized processor 
 would be the 2 factorized tuples 
 shown in Figure 4 (right) but extended with `balance` properties
 on a, b, and c's. Therefore there would be only 200 filter executions: (i) 
-for the first factorizaed tuple, there are only
+for the first factorized tuple, there are only
 100 comparison to execute `c.balance > b.balance` since b is matched to a single
 value and there are 100 c values.; (ii) similarly for the 2nd factorized tuple.
 We can obtain similar benefits when running other expressions.
@@ -266,7 +266,7 @@ reduces computation and data copies here and there in many cases.
 You can try some of these queries on Kùzu and compare its performance on large 
 datasets with non-factorized systems. 
 
-## How Does Kùzu Performe Factorized Query Processing?
+## How Does Kùzu Perform Factorized Query Processing?
 The rest will be even more technical and forms part of the technical meat of our CIDR paper; 
 so continue reading if you are interested in database implementations.
 When designing the query processor of Kùzu, we had 3 design goals: 
@@ -419,7 +419,7 @@ do factorization or have a mechanism to avoid scanning entire database files, so
 expect it to perform poorly on the above query. 
 
 Here's the performance table.
-<img align="right" style="width:350px; padding-right: 10px;" src="../../img/2-hop-factorization-experiment.png">.
+<img align="right" style="width:350px; padding-right: 10px;" src="../../img/2-hop-factorization-experiment.png">
 When the selectivity is very low, Extend-like operators + factorization do quite well
 because they don't yet suffer much from non-sequential scans and they avoid several overheads
 of our modified hash joins: no hash table creation and no semijoin filter mask creation. 
@@ -452,7 +452,7 @@ in mind is called
 for another time. For now, I invite you to check our performance out on large queries 
 and let us know if we are slow on some queries! The Kùzu team says hi (👋 🙋‍♀️ 🙋🏽) and 
 is at your service to fix all performance bugs as we continue implementing the system! 
-My next post will be about the novel worst-case optimal join algoriothms, which emerged
+My next post will be about the novel worst-case optimal join algorithms, which emerged
 from another theoretical insight on m-n joins! Take care until then!
 
 [^1]: If you come from a very graph-focused background and/or exposed to a ton of GDBMS marketing, you might react to my statement that what I am showing are standard plans that do joins. Maybe you expected to see graph-specific operators, such as a BFS or a DFS operator because the data is a graph. Or maybe someone even dared to tell you that GDBMSs don't do joins but they do traversals. Stuff like that. These word tricks and confusing jargon really has to stop and helps no one. If joins are in the nature of the computation  you are asking a DBMSs to do, calling it something else won't change the nature of the computation. Joins are joins. Every DBMSs needs to join their records with each other.
