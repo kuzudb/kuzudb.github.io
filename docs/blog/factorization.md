@@ -238,7 +238,7 @@ would be the 2 factorized tuples
 shown in Figure 4 (right) but extended with `balance` properties
 on a, b, and c's. Therefore there would be only 200 filter executions: (i) 
 for the first factorized tuple, there are only
-100 comparison to execute `c.balance > b.balance` since b is matched to a single
+100 comparisons to execute `c.balance > b.balance` since b is matched to a single
 value and there are 100 c values.; (ii) similarly for the 2nd factorized tuple.
 We can obtain similar benefits when running other expressions.
 
@@ -320,7 +320,7 @@ Although I don't like Extend/Expand-type join operators,
 they have a performance advantage. Suppose you had a simple 1-hop query that only asked for
 the names of accounts that Liz's L1 account has transfered money to:
 ```
-MATCH (a:Account-[:Transfer]->(b:Account)
+MATCH (a:Account)-[:Transfer]->(b:Account)
 WHERE a.accID = 'L1'
 RETURN b.name
 ```
