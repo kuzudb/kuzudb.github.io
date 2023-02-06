@@ -80,32 +80,43 @@ DROP TABLE User
 You can change the schema of a table by using the `ALTER TABLE` command.<br />
 Supported operations:
 ### 1. Add a column:
-`ADD COLUMN` allows the user to add a new column to a node/rel table filled with default value, or NULL if the default value is not specified.
+`ADD COLUMN` allows the user to add a new column to a node/rel table filled with default value, or NULL if the default value is not specified.<br />
+Note: column name must be unique within a node/rel table. If the column name has already been used in the table, `ADD COLUMN` command will fail.<br />
+For example: the following query will fail since the age column already exists in the User table.
 ```
-ALTER TABLE User ADD COLUMN grade INT64;
+ALTER TABLE User ADD age INT64;
+```
+Will throw the error:
+```
+"Binder exception: Property: age already exists."
+```
+Examples:
+```
+ALTER TABLE User ADD grade INT64;
 ```
 This adds a new column with default value NULL to the User table.
 
 The user can also define the default value of the new column.
-For example:
 ```
-ALTER TABLE User ADD COLUMN grade INT64 DEFAULT 40;
+ALTER TABLE User ADD grade INT64 DEFAULT 40;
 ```
 This adds a new column grade with default value 40 to the User table.
 ### 2. Drop a column:
-`DROP COLUMN` allows the user to remove a column from a node/rel table.
+`DROP COLUMN` allows the user to remove a column from a node/rel table.<br />
 ```
 ALTER TABLE User DROP age;
 ```
 This drops the age column from the User table.
 ### 3. Rename a node/rel table:
-`RENAME TABLE` allows the user to rename a table.
+`RENAME TABLE` allows the user to rename a table.<br />
+Note: table name must be unique. 
 ```
 ALTER TABLE User RENAME TO Student;
 ```
 This renames the table User to Student.
 ### 4. Rename a column of a node/rel table:
-`RENAME COLUMN` allows the user to rename a column of a table.
+`RENAME COLUMN` allows the user to rename a column of a table.<br />
+Note: column name must be unique within a node/rel table. Different node/rel tables can have columns with the same name.
 ```
 ALTER TABLE User RENAME age TO grade;
 ```
