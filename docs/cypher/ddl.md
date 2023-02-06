@@ -27,14 +27,7 @@ CREATE REL TABLE Follows(FROM User TO User, since DATE)
 Note that there is no comma between the FROM and TO clauses. 
 - Relationship directions: Each relationship has a direction following the property graph model. So when Follows relationship records are added, each one has a specific source/from node and a specific destination/to node[^2].
 - Relationship primary keys: You cannot define a primary key for relationship records. Each relationship gets a unique system-level edge ID, which are internally generated. You can check if two edges are the same, i.e., have the same edge ID, using the "=" and "!=" operator between "ID()" function on two variables that bind to relationships. For example, you can query `MATCH (n1:User)-[r1:Follows]->(n2:User)<-[r2:Follows]-(n3:User) WHERE ID(r1) != ID(r2) RETURN *` to ensure that the same relationship does not bind to both r1 and r2.
-
-### Multiple FROM or TO Node Labels
-Relationships can also be defined as being from a set of node tables/labels to a set of node table/labels. As a hypothetical example, suppose we also have Pet nodes in our database, the following indicates that the database has (User)-[Likes]->(User), and (Pet)-[Likes]->(User) edges (so pets can like users but cannot be liked by either users or pets). 
-
-```
-CREATE REL TABLE Likes(FROM User|Pet TO User)
-```
-The Cartesian product of the FROM node labels and TO node labels give the set of combinations of all possible relationships that can exist.
+- Relationship can only be defined as being from one node table/label to one node table/label.
 
 ### Relationship Multiplicities
 
@@ -58,7 +51,7 @@ The above ddl indicates that Likes has 1-to-n multiplicity. This ddl command put
 In general in a relationship E's multiplicity, if the "source side" is "ONE", then for each node v that can be the destination of E relationships, v can have at most 1 backward edge. If the "destination side" is ONE, then each node v that can be the source of E relationships, v can have at most 1 forward edge. 
 
 ## DROP TABLE
-You can drop the tables you have created with the `DROP TABLE` command.
+You can drop the tables you have created with the `DROP TABLE` command.<br />
 Two important notes:
   1. You can drop any relationship table any time.
   2. To drop a node table X, you need to first drop all of the relationship tables 
@@ -83,6 +76,40 @@ DROP TABLE User
 -------------------------------------
 ```
 
+## ALTER TABLE
+You can change the schema of a table by using the `ALTER TABLE` command.<br />
+Supported operations:
+### 1. Add a column:
+`ADD COLUMN` allows the user to add a new column to a node/rel table filled with default value, or NULL if the default value is not specified.
+```
+ALTER TABLE User ADD COLUMN grade INT64;
+```
+This adds a new column with default value NULL to the User table.
+
+The user can also define the default value of the new column.
+For example:
+```
+ALTER TABLE User ADD COLUMN grade INT64 DEFAULT 40;
+```
+This adds a new column grade with default value 40 to the User table.
+### 2. Drop a column:
+`DROP COLUMN` allows the user to remove a column from a node/rel table.
+```
+ALTER TABLE User DROP age;
+```
+This drops the age column from the User table.
+### 3. Rename a node/rel table:
+`RENAME TABLE` allows the user to rename a table.
+```
+ALTER TABLE User RENAME TO Student;
+```
+This renames the table User to Student.
+### 4. Rename a column of a node/rel table:
+`RENAME COLUMN` allows the user to rename a column of a table.
+```
+ALTER TABLE User RENAME age TO grade;
+```
+This renames the age column to grade.
 
 
 [^1]: We prefer the term "table" instead of "label" because Kùzu, as well as other GDBMSs are ultimately relational systems in the sense that they store and process sets of tuples, i.e., tables or relations. A good way to understand the property graph model is as tagging your tables as "node" and "relationship tables" depending on their roles in your application data. Nodes are generally suitable to represent entities in your applications, while relationships represent the relationships/connections. Relationships are the primary means to join nodes with each other to find paths and patterns in your graph database. So when you define a node label and a set of nodes/relationships, this is equivalent to defining a table or records as nodes or relationships. During querying you can bind node records in syntax like (a:Person), while relationships in sytax like (..)-[e:Knows]->(...). Similar to table definitions in SQL, node and relationship tables have primary keys, a term that is defined in the context of tables: node tables explicitly define primary keys as one of their properties, while the primary keys of relationship tables are implicitly defined by the primary keys of their FROM and TO node records. Further observe that similar to relational systems, properties can be thought equivalently as columns of a table, justifying our choice of using the term table in these definitions.
