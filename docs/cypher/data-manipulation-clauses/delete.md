@@ -30,7 +30,7 @@ DELETE u;
 ```
 
 # Delete Relationship
-You can delete arbitrary relationship records from your tables using the DELETE clause.
+You can delete arbitrary relationship records from your tables using the DELETE clause.<br />
 For example, the following query deletes the `Follows` relationship between `Adam` and `Karissa`:
 ```
 MATCH (u:User)-[f:Follows]->(u1:User)
