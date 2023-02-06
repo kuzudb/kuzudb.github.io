@@ -12,6 +12,8 @@ We will use the database, whose schema and data import commands are given [here]
 
 You can import this database by copy pasting the comands on that page. 
 
+*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
+
 # MATCH
 MATCH is the clause where you define a "graph pattern", i.e., a join of node or relationhip records,
 to find in the database.[^1]. There are several different ways to match patterns and we go through them
@@ -24,7 +26,7 @@ openCypher allows you to omit these variables, if you do not need to reference t
 - Node/Rel table names in Kùzu are case sensitive. So you need to specify the labels of nodes/rels
 using the same letter cases you used in your node/rel table schema definitions. 
 
-## Match all Nodes With a Label
+## Match Nodes With a Label
 Below query matches variable "a" to nodes with label User and returns "a", which 
 is a shortcut in openCypher to return all properties of the node together with label and internal ID that the variable "a" matches.
 ```
@@ -46,7 +48,7 @@ Output:
 ---------------------------------------------
 ```
 
-## Match all Nodes With Multiple Labels
+## Match Nodes With Multiple Labels
 Below query matches variable "a" to nodes with label User or label City. "Return a" will return all properties of the node together with label and internal ID. Properties not exist in a label will be returned as NULL value (e.g. "population" not exists in "User"). Properties exists in multiple labels are expected to have the same data type (e.g. "name" has STRING data type in "User" and "City" ).
 ```
 MATCH (a:User:City)
@@ -73,7 +75,7 @@ Output:
 ----------------------------------------------------------------
 ```
 
-## Match all Nodes With Any Label
+## Match Nodes With Any Label
 Below query matches variable "a" to nodes with any label. In example database, it is equivalent to `MATCH (a:User:City) RETURN a;`.
 ```
 MATCH (a)
@@ -101,7 +103,7 @@ Output:
 ```
 
 ## Match Relationships With a Label
-Similar to binding variables to node records, you can bind variables to relationship records and return them. The following finds all "a" Users that follow a "b" User, and returns name of a, the properties of e, and name of b, where e will match the relationship from "a" to "b".
+Similar to binding variables to node records, you can bind variables to relationship records and return them. The following finds all "a" Users that follow a "b" User, and returns name of "a", the properties of "e", and name of "b", where "e" will match the relationship from "a" to "b".
 ```
 MATCH (a:User)-[e:Follows]->(b:User)
 RETURN a.name, e, b.name;

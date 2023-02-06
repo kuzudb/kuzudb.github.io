@@ -26,7 +26,49 @@ Returning variables in the query that are bound to node and relationsips in the 
 is a syntactic sugar to return all propeties of those variables. For example:
 ```
 MATCH (a:User)-[e:Follows]->(b:User)
-RETURN a, e
+RETURN a, e;
+```
+Output:
+```
+---------------------------------------------------------------------------------------------------
+| a                                         | e                                                   |
+---------------------------------------------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30})    | (0:0)-[label:Follows, {_id:2:0, since:2020}]->(0:1) |
+---------------------------------------------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30})    | (0:0)-[label:Follows, {_id:2:1, since:2020}]->(0:2) |
+---------------------------------------------------------------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) | (0:1)-[label:Follows, {_id:2:2, since:2021}]->(0:2) |
+---------------------------------------------------------------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50})   | (0:2)-[label:Follows, {_id:2:3, since:2022}]->(0:3) |
+---------------------------------------------------------------------------------------------------
+```
+
+## Returning All Variables
+Returning all vairables in the query can be written as `RETURN *` as a syntactic sugar. Below query returns "a" and "b", relationship is omitted because no variable binds to it.
+```
+MATCH (a:User)-[:Follows]->(b:User)
+RETURN *;
+```
+Output:
+```
+-----------------------------------------------------------------------------------------
+| b                                         | a                                         |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) | (label:User, 0:0, {name:Adam, age:30})    |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50})   | (label:User, 0:0, {name:Adam, age:30})    |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50})   | (label:User, 0:1, {name:Karissa, age:40}) |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:3, {name:Noura, age:25})   | (label:User, 0:2, {name:Zhang, age:50})   |
+-----------------------------------------------------------------------------------------
+```
+
+## Returning Node and Relationship Properties
+You can also return properties of variables by explicitly specifing properties in the `RETURN` clause.
+```
+MATCH (a:User)-[e:Follows]->(b:User)
+RETURN a.name, a.age, e.since;
 ```
 Output:
 ```
@@ -42,20 +84,13 @@ Output:
 | Zhang   | 50    | 2022    |
 -----------------------------
 ```
-Above, a gets replaced with a.name, a.age, which are the 2 properties in the schema of
-User node table. Similarly e is replaced with e.since, which is the only property of the Follows 
-relationship table.
-
-Note: If a variable x is bound to a relationship, e.g., LivesIn, in our example database, 
-and x is returned, then it is ommitted from the output.
-
-## Using Distinct for Duplicate Eliminatio
+## Using Distinct for Duplicate Elimination
 You can use RETURN DISTINCT to do duplicate elimination of the returned tuples.
 For example, if we instead wrote `RETURN DISTINCT` in the above query, we would
 eliminate one of the 2 (Adam, 30, 2020) tuples above:
 ```
 MATCH (a:User)-[e:Follows]->(b:User)
-RETURN DISTINCT a, e
+RETURN DISTINCT a.name, a.age, e.since;
 ```
 Output:
 ```
@@ -75,18 +110,19 @@ You can group by one or more expression and perform one or more aggregations
 in a RETURN clause. For example:
 ```
 MATCH (a:User)-[:Follows]->(b:User)
-RETURN a, avg(b.age) as avgFriendAge
+RETURN a, avg(b.age) as avgFriendAge;
 ```
 Output:
 ```
-| a.name  | a.age | avgFriendAge |
-----------------------------------
-| Adam    | 30    | 45.000000    |
-----------------------------------
-| Karissa | 40    | 50.000000    |
-----------------------------------
-| Zhang   | 50    | 25.000000    |
-----------------------------------
+------------------------------------------------------------
+| a                                         | avgFriendAge |
+------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30})    | 45.000000    |
+------------------------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) | 50.000000    |
+------------------------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50})   | 25.000000    |
+------------------------------------------------------------
 ```
 The semantics is exactly the same as SQL's semantics, which is a 
 3-step process: 

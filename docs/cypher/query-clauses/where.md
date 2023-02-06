@@ -30,13 +30,13 @@ RETURN *;
 ```
 Output:
 ```
--------------------
-| a.name  | a.age |
--------------------
-| Karissa | 40    |
--------------------
-| Zhang   | 50    |
--------------------
+---------------------------------------------
+| a                                         |
+---------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) |
+---------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50})   |
+---------------------------------------------
 ```
 The booelean predicate/expression specified above can be understood as it reads: Users "a" whose ages are
 greater than 45 OR whose names start with "Kar". It combines several means to construct expressions
@@ -57,11 +57,11 @@ RETURN *;
 ```
 Output:
 ```
--------------------
-| a.name  | a.age |
--------------------
-| Karissa | 40    |
--------------------
+---------------------------------------------
+| a                                         |
+---------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) |
+---------------------------------------------
 ```
 Please refer to these links for details on query semantics when using 
 [logical operators](../expressions/logical-operators.md) and [comparison operators on NULLs](../data-types.md#null-values).
@@ -77,7 +77,7 @@ for paths of length exact 3 hops) .
 ```
 MATCH (a:User)
 WHERE a.age < 100 AND EXISTS { MATCH (a)-[:Follows*3..3]->(b:User)} 
-RETURN *;
+RETURN a.name, a.age;
 ```
 Output:
 ```
@@ -95,7 +95,7 @@ You can also form nested sub-queries, i.e., a WHERE EXISTS sub-query inside anot
 ```
 MATCH (a:User)
 WHERE a.age < 100 AND EXISTS { MATCH (a)-[:Follows*3..3]->(b:User) WHERE EXISTS {MATCH (b)-[:Follows]->(c:User)} } 
-RETURN *;
+RETURN a.name, a.age;
 ```
 Output:
 ```
@@ -112,7 +112,7 @@ of the relationhip in the inner `(b)-[:Follows]->(c:User)` pattern to (b)<-[:Fol
 ```
 MATCH (a:User)
 WHERE a.age < 100 AND EXISTS { MATCH (a)-[:Follows*3..3]->(b:User) WHERE EXISTS {MATCH (b)<-[:Follows]-(c:User)} } 
-RETURN *;
+RETURN a.name, a.age;
 ```
 Output:
 ```

@@ -31,17 +31,17 @@ MATCH (a:User)
 WITH avg(a.age) as avgAge 
 MATCH (b:User) 
 WHERE b.age > avgAge 
-RETURN *
+RETURN *;
 ```
 Output:
 ```
--------------------------------
-| b.name  | b.age | avgAge    |
--------------------------------
-| Karissa | 40    | 36.250000 |
--------------------------------
-| Zhang   | 50    | 36.250000 |
--------------------------------
+---------------------------------------------------------
+| b                                         | avgAge    |
+---------------------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) | 36.250000 |
+---------------------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50})   | 36.250000 |
+---------------------------------------------------------
 ```
 
 ## Using WITH for Top-k Computations
@@ -54,15 +54,15 @@ WITH a
 ORDER BY a.age DESC 
 LIMIT 1 
 MATCH (a)-[:Follows]->(b:User) 
-RETURN * 
+RETURN *;
 ```
 Output:
 ```
------------------------------------
-| b.name | b.age | a.name | a.age |
------------------------------------
-| Noura  | 25    | Zhang  | 50    |
------------------------------------
+-------------------------------------------------------------------------------------
+| b                                       | a                                       |
+-------------------------------------------------------------------------------------
+| (label:User, 0:3, {name:Noura, age:25}) | (label:User, 0:2, {name:Zhang, age:50}) |
+-------------------------------------------------------------------------------------
 ```
 The part of the query until LIMIT computes the oldest user Zhang (aged 50) and then the last `MATCH (a)-[:Follows]->(b:User) RETURN *` returns
 the Users that Zhang follows (there is only one such User, who is Noura.) 

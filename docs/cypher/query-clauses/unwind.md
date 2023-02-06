@@ -26,7 +26,7 @@ and return them:
 Query:
 ```
 UNWIND ["Amy", "Bob", "Carol"] AS x
-RETURN x
+RETURN x;
 ```
 
 Output:
@@ -47,7 +47,7 @@ list of strings, after unwinding, you'd get a table of list of strings. For exam
 
 ```
 UNWIND [["Amy"], ["Bob", "Carol"]] AS x
-RETURN x
+RETURN x;
 ```
 Output:
 ```

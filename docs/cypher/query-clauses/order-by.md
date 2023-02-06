@@ -70,7 +70,7 @@ queries first by `b.age` and then by `a.name` both in descending order.
 ```
 MATCH (a:User)-[:Follows]->(b:User)
 RETURN b.age, a.name 
-ORDER BY b.age DESC, a.name DESC
+ORDER BY b.age DESC, a.name DESC;
 ```
 Output:
 ```
