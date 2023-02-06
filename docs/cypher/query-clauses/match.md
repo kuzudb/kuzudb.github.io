@@ -12,8 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 
 You can import this database by copy pasting the comands on that page. 
 
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
-
 # MATCH
 MATCH is the clause where you define a "graph pattern", i.e., a join of node or relationhip records,
 to find in the database.[^1]. There are several different ways to match patterns and we go through them
@@ -23,117 +21,203 @@ on the patterns that are matched.
 - Similar to other high-level database query languages, nodes and relationships in the patterns 
 are bound to variables, which can be referenced in other clauses (e.g., WHERE or RETURN) of the query.
 openCypher allows you to omit these variables, if you do not need to reference them.
-- Different from the original openCypher, Kùzu requires the labels of all 
-nodes and relationships in the patterns to be specified. In addition, we only support
-specifying a single label for each node/relationship in the patterns.
 - Node/Rel table names in Kùzu are case sensitive. So you need to specify the labels of nodes/rels
 using the same letter cases you used in your node/rel table schema definitions. 
 
-## MATCH a Node With a Label and Return All Its Properties.
+## Match all Nodes With a Label
 Below query matches variable "a" to nodes with label User and returns "a", which 
-is a shortcut in openCypher to return all properties of the node that the 
-variable "a" matches.
+is a shortcut in openCypher to return all properties of the node together with label and internal ID that the variable "a" matches.
 ```
 MATCH (a:User)
-RETURN a
+RETURN a;
 ```
 Output:
 ```
--------------------
-| a.name  | a.age |
--------------------
-| Adam    | 30    |
--------------------
-| Karissa | 40    |
--------------------
-| Zhang   | 50    |
--------------------
-| Noura   | 25    |
--------------------
+---------------------------------------------
+| a                                         |
+---------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30})    |
+---------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) |
+---------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50})   |
+---------------------------------------------
+| (label:User, 0:3, {name:Noura, age:25})   |
+---------------------------------------------
 ```
 
-## MATCH a Relationship With a Label
-Similar to binding variables to node records, you can bind variables to relationship records and 
-return them. The following finds all "a" Users that follow a "b" User, and returns the properties
-of a, e, b, where e will match the relationship from "a" to "b".
+## Match all Nodes With Multiple Labels
+Below query matches variable "a" to nodes with label User or label City. "Return a" will return all properties of the node together with label and internal ID. Properties not exist in a label will be returned as NULL value (e.g. "population" not exists in "User"). Properties exists in multiple labels are expected to have the same data type (e.g. "name" has STRING data type in "User" and "City" ).
+```
+MATCH (a:User:City)
+RETURN a;
+```
+Output:
+```
+----------------------------------------------------------------
+| a                                                            |
+----------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30, population:})          |
+----------------------------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40, population:})       |
+----------------------------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50, population:})         |
+----------------------------------------------------------------
+| (label:User, 0:3, {name:Noura, age:25, population:})         |
+----------------------------------------------------------------
+| (label:City, 1:0, {name:Waterloo, age:, population:150000})  |
+----------------------------------------------------------------
+| (label:City, 1:1, {name:Kitchener, age:, population:200000}) |
+----------------------------------------------------------------
+| (label:City, 1:2, {name:Guelph, age:, population:75000})     |
+----------------------------------------------------------------
+```
+
+## Match all Nodes With Any Label
+Below query matches variable "a" to nodes with any label. In example database, it is equivalent to `MATCH (a:User:City) RETURN a;`.
+```
+MATCH (a)
+RETURN a;
+```
+Output:
+```
+----------------------------------------------------------------
+| a                                                            |
+----------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30, population:})          |
+----------------------------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40, population:})       |
+----------------------------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50, population:})         |
+----------------------------------------------------------------
+| (label:User, 0:3, {name:Noura, age:25, population:})         |
+----------------------------------------------------------------
+| (label:City, 1:0, {name:Waterloo, age:, population:150000})  |
+----------------------------------------------------------------
+| (label:City, 1:1, {name:Kitchener, age:, population:200000}) |
+----------------------------------------------------------------
+| (label:City, 1:2, {name:Guelph, age:, population:75000})     |
+----------------------------------------------------------------
+```
+
+## Match Relationships With a Label
+Similar to binding variables to node records, you can bind variables to relationship records and return them. The following finds all "a" Users that follow a "b" User, and returns name of a, the properties of e, and name of b, where e will match the relationship from "a" to "b".
 ```
 MATCH (a:User)-[e:Follows]->(b:User)
-RETURN a, e, b
+RETURN a.name, e, b.name;
 ```
 Output:
 ```
------------------------------------------------
-| a.name  | a.age | e.since | b.name  | b.age |
------------------------------------------------
-| Adam    | 30    | 2020    | Karissa | 40    |
------------------------------------------------
-| Adam    | 30    | 2020    | Zhang   | 50    |
------------------------------------------------
-| Karissa | 40    | 2021    | Zhang   | 50    |
------------------------------------------------
-| Zhang   | 50    | 2022    | Noura   | 25    |
------------------------------------------------
+---------------------------------------------------------------------------
+| a.name  | e                                                   | b.name  |
+---------------------------------------------------------------------------
+| Adam    | (0:0)-[label:Follows, {_id:2:0, since:2020}]->(0:1) | Karissa |
+---------------------------------------------------------------------------
+| Adam    | (0:0)-[label:Follows, {_id:2:1, since:2020}]->(0:2) | Zhang   |
+---------------------------------------------------------------------------
+| Karissa | (0:1)-[label:Follows, {_id:2:2, since:2021}]->(0:2) | Zhang   |
+---------------------------------------------------------------------------
+| Zhang   | (0:2)-[label:Follows, {_id:2:3, since:2022}]->(0:3) | Noura   |
+---------------------------------------------------------------------------
 ```
 
-Relationships can be specified in the right-to-left direction as well. For example, the following
-query will now match all the relationships from "b" to "a" (so we expect "a" and "b" and properties
-to be swapped in the above output:
+Relationships can be specified in the right-to-left direction as well. For example, the following query will now match all the relationships from "b" to "a" (so we expect "a" and "b" and properties to be swapped in the above output:
 ```
 MATCH (a:User)<-[e:Follows]-(b:User)
-RETURN a, e, b
+RETURN a.name, e, b.name;
 ```
 Output:
 ```
------------------------------------------------
-| a.name  | a.age | e.since | b.name  | b.age |
------------------------------------------------
-| Karissa | 40    | 2020    | Adam    | 30    |
------------------------------------------------
-| Zhang   | 50    | 2020    | Adam    | 30    |
------------------------------------------------
-| Zhang   | 50    | 2021    | Karissa | 40    |
------------------------------------------------
-| Noura   | 25    | 2022    | Zhang   | 50    |
------------------------------------------------
+---------------------------------------------------------------------------
+| a.name  | e                                                   | b.name  |
+---------------------------------------------------------------------------
+| Karissa | (0:0)-[label:Follows, {_id:2:0, since:2020}]->(0:1) | Adam    |
+---------------------------------------------------------------------------
+| Zhang   | (0:0)-[label:Follows, {_id:2:1, since:2020}]->(0:2) | Adam    |
+---------------------------------------------------------------------------
+| Zhang   | (0:1)-[label:Follows, {_id:2:2, since:2021}]->(0:2) | Karissa |
+---------------------------------------------------------------------------
+| Noura   | (0:2)-[label:Follows, {_id:2:3, since:2022}]->(0:3) | Zhang   |
+---------------------------------------------------------------------------
 ```
 
-Note: If you match a variable, e.g., "x" to a relationship variable that does not have any properties,
-and use x in RETURN, Kùzu might remove x from the RETURN. For example, in our example
-dataset, LivesIn relationships don't have any properties. So if you queried:
+## Match Relationships With Multi Labels
+Similar to matching nodes with multiple labels, you can bind variables to relationships with multiple labels. Below query finds all "a" User that Follows "b" User or LivesIn "b" City.
 ```
-MATCH (a:User)-[x:LivesIn]->(c:City)
-WHERE a.name = "Adam"
-RETURN a, x, c
+MATCH (a:User)-[e:Follows|:LivesIn]->(b:User:City)
+RETURN a.name, e, b.name;
 ```
 Output:
 ```
---------------------------------------------
-| a.name | a.age | c.name   | c.population |
---------------------------------------------
-| Adam   | 30    | Waterloo | 150000       |
---------------------------------------------
+-----------------------------------------------------------------------------
+| a.name  | e                                                   | b.name    |
+-----------------------------------------------------------------------------
+| Adam    | (0:0)-[label:Follows, {_id:2:0, since:2020}]->(0:1) | Karissa   |
+-----------------------------------------------------------------------------
+| Adam    | (0:0)-[label:Follows, {_id:2:1, since:2020}]->(0:2) | Zhang     |
+-----------------------------------------------------------------------------
+| Adam    | (0:0)-[label:LivesIn, {_id:3:0, since:}]->(1:0)     | Waterloo  |
+-----------------------------------------------------------------------------
+| Karissa | (0:1)-[label:Follows, {_id:2:2, since:2021}]->(0:2) | Zhang     |
+-----------------------------------------------------------------------------
+| Karissa | (0:1)-[label:LivesIn, {_id:3:1, since:}]->(1:0)     | Waterloo  |
+-----------------------------------------------------------------------------
+| Zhang   | (0:2)-[label:Follows, {_id:2:3, since:2022}]->(0:3) | Noura     |
+-----------------------------------------------------------------------------
+| Zhang   | (0:2)-[label:LivesIn, {_id:3:2, since:}]->(1:1)     | Kitchener |
+-----------------------------------------------------------------------------
+| Noura   | (0:3)-[label:LivesIn, {_id:3:3, since:}]->(1:2)     | Guelph    |
+-----------------------------------------------------------------------------
+```
+
+## Match Relationships With Any Label
+Simialr to matching nodes with any label, you can bind variables to relationships with any label by not specifying a label. Below query finds all relationships in the database.
+```
+MATCH ()-[e]->()
+RETURN e;
+```
+Output:
+```
+-------------------------------------------------------
+| e                                                   |
+-------------------------------------------------------
+| (0:0)-[label:Follows, {_id:2:0, since:2020}]->(0:1) |
+-------------------------------------------------------
+| (0:0)-[label:Follows, {_id:2:1, since:2020}]->(0:2) |
+-------------------------------------------------------
+| (0:0)-[label:LivesIn, {_id:3:0, since:}]->(1:0)     |
+-------------------------------------------------------
+| (0:1)-[label:Follows, {_id:2:2, since:2021}]->(0:2) |
+-------------------------------------------------------
+| (0:1)-[label:LivesIn, {_id:3:1, since:}]->(1:0)     |
+-------------------------------------------------------
+| (0:2)-[label:Follows, {_id:2:3, since:2022}]->(0:3) |
+-------------------------------------------------------
+| (0:2)-[label:LivesIn, {_id:3:2, since:}]->(1:1)     |
+-------------------------------------------------------
+| (0:3)-[label:LivesIn, {_id:3:3, since:}]->(1:2)     |
+-------------------------------------------------------
 ```
 
 ## Omitting Binding Variables to Nodes or Relationships
 You can also omit binding a variable to a node or relationship in your graph patterns if 
-you will not use them in somewhere else in your query (e.g., WHERE or RETURN). For example,
-below, we query for 2-hop paths searching for "the cities that Users that "a" Users follows".
+you will not use them in somewhere else in your query (e.g., WHERE or RETURN). For example, below, we query for 2-hop paths searching for "the cities that Users that "a" Users follows".
 Because we do not need to return the Users that "a" Users follows or the properties
 of the Follows and LivesIn edges that form these 2-paths, we can omit giving variable names to them.
 
 ```
 MATCH (a:User)-[:Follows]->(:User)-[:LivesIn]->(c:City)
 WHERE a.name = "Adam"
-RETURN a, c
+RETURN a, c.name, c.population;
 ```
 ```
-----------------------------------------------
-| a.name  | a.age | c.name    | c.population |
-----------------------------------------------
-| Adam    | 30    | Kitchener | 200000       |
-----------------------------------------------
-| Adam    | 30    | Waterloo  | 150000       |
-----------------------------------------------
+---------------------------------------------------------------------
+| a                                      | c.name    | c.population |
+---------------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30}) | Waterloo  | 150000       |
+---------------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30}) | Kitchener | 200000       |
+---------------------------------------------------------------------
 ```
 
 ## Specifying Multiple Patterns, Separated By Comma (e.g., when Matching Cyclic Patterns)
@@ -144,15 +228,15 @@ query and returns the only triangle in the database between Adam, Karissa, and Z
 
 ```
 MATCH (a:User)-[:Follows]->(b:User)-[:Follows]->(c:User), (a)-[:Follows]->(c)
-RETURN a, b, c
+RETURN a.name, b.name, c.name;
 ```
 Output:
 ```
------------------------------------------------------
-| a.name | a.age | b.name  | b.age | c.name | c.age |
------------------------------------------------------
-| Adam   | 30    | Karissa | 40    | Zhang  | 50    |
------------------------------------------------------
+-----------------------------
+| a.name | b.name  | c.name |
+-----------------------------
+| Adam   | Karissa | Zhang  |
+-----------------------------
 ```
 Note that in the query node variables a and c appear twice, once on each of the 2 paths
 in the query. In such cases, their labels need to specified *only the first time they appear
@@ -160,28 +244,27 @@ in the pattern*. In the above query a and c's labels are defined on the first/le
 so you don't have to specify them on the right path (though you still can).
 
 ## Adding Equality Predicates on Node/Rel Properties
-The [WHERE clause](where.md) is the main clause to specify arbitary predicates on the nodes and
-relationships in your patters (e.g., a.age < b.age in where "a" and "b" bind to User nodes). 
+The [WHERE clause](where.md) is the main clause to specify arbitary predicates on the nodes and relationships in your patters (e.g., a.age < b.age in where "a" and "b" bind to User nodes). 
 As a syntactic sugar openCypher allows *equality predicates* to be matched on
 nodes and edges using the `{prop1 : value1, prop2 : value2, ...}` syntax. For example: 
 ```
 MATCH (a:User)-[e:Follows {since: 2020}]->(b:User {name: "Zhang"})
-RETURN a, e, b
+RETURN a, e.since, b.name;
 ```
 is a syntactic sugar for:
 
 ```
 MATCH (a:User)-[e:Follows]->(b:User)
 WHERE e.since = 2020 AND b.name = "Zhang"
-RETURN a, e, b
+RETURN a, e.since, b.name;
 ```
 and both queries output:
 ```
----------------------------------------------
-| a.name | a.age | e.since | b.name | b.age |
----------------------------------------------
-| Adam   | 30    | 2020    | Zhang  | 50    |
----------------------------------------------
+-------------------------------------------------------------
+| a                                      | e.since | b.name |
+-------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30}) | 2020    | Zhang  |
+-------------------------------------------------------------
 ```
 ## Matching Variable-length Relationships
 You can also find paths/joins that are variable-length between node records. Specifically,
@@ -192,32 +275,34 @@ For example, the following query finds all 1- and 2-hop
 Follows paths in a database and returns the source and destination nodes of these paths.
 ```
 MATCH (a:User)-[:Follows*1..2]->(b:User)
-RETURN a, b
+RETURN a, b;
 ```
 Output:
 ```
--------------------------------------
-| a.name  | a.age | b.name  | b.age |
--------------------------------------
-| Adam    | 30    | Karissa | 40    |
--------------------------------------
-| Adam    | 30    | Zhang   | 50    |
--------------------------------------
-| Adam    | 30    | Zhang   | 50    |
--------------------------------------
-| Adam    | 30    | Noura   | 25    |
--------------------------------------
-| Karissa | 40    | Zhang   | 50    |
--------------------------------------
-| Karissa | 40    | Noura   | 25    |
--------------------------------------
-| Zhang   | 50    | Noura   | 25    |
--------------------------------------
+-----------------------------------------------------------------------------------------
+| a                                         | b                                         |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30})    | (label:User, 0:1, {name:Karissa, age:40}) |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30})    | (label:User, 0:2, {name:Zhang, age:50})   |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30})    | (label:User, 0:2, {name:Zhang, age:50})   |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:0, {name:Adam, age:30})    | (label:User, 0:3, {name:Noura, age:25})   |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) | (label:User, 0:2, {name:Zhang, age:50})   |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) | (label:User, 0:3, {name:Noura, age:25})   |
+-----------------------------------------------------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50})   | (label:User, 0:3, {name:Noura, age:25})   |
+-----------------------------------------------------------------------------------------
 ```
 Similar to relationships, you can give right-to-left direction to your variable-length paths. 
-2 ruther notes on variable-length paths:
+3 ruther notes on variable-length paths:
 - You currently cannot bind variables to variable length paths.
+- You currently cannot issue multi-labeled or any-labeled variable length path query.
 - The maximum length of variable-length paths you can search is 30. 
+
 
 [^1]: MATCH is similar to the FROM clause of SQL, where the list of tables that need to be joined are specified. 
 [^2]: openCypher also supports variable-length patterns where either or both of min and max bounds can be
