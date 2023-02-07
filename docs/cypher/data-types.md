@@ -22,6 +22,20 @@ See [expressions and functions](expressions/overview.md) for the supported opera
 | STRING| variable | variable-length character string |
 | TIMESTAMP | 4 bytes | combination of time and date (see below) |
 
+## STRING Data Type
+UTF-8 encoding is supported for STRING data type.
+```
+RETURN 'Зарегистрируйтесь, σπαθιοῦ, Yen [jɛn], kΩ' AS str;
+```
+Output:
+```
+---------------------------------------------
+| str                                       |
+---------------------------------------------
+| Зарегистрируйтесь, σπαθιοῦ, Yen [jɛn], kΩ |
+---------------------------------------------
+```
+
 ## LIST Data Type
 List is a nested data type to store a list of values of the same type. 
 Values in a list can themselves be nested lists. A few examples:
