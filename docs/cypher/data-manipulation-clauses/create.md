@@ -93,5 +93,5 @@ MATCH (a:User), (b:User)
 WHERE a.name = "Zhang" 
 CREATE (a)-[:Follows {since :  2022}]->(b)
 ```
-This is because the "a" variable matches to User node "Zhang" and the "b" variable matches to any node in the "User" table. As a result, this query creates a Follows relationship from User node Zhang to every other User node.
+This is because the "a" variable matches to User node "Zhang" and the "b" variable matches to any node in the "User" table. As a result, this query creates a Follows relationship from User node Zhang to every other User nodes.
 
