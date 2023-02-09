@@ -12,7 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 
 You can import this database by copy pasting the comands on that page. 
 
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 # CREATE
 `CREATE` is similar to the INSERT clause of SQL and lets you insert records into your
 node and relationahip tables. We desribe the generic semantics of the 
@@ -66,8 +65,8 @@ Output:
 
 ## Inserting Relationships
 You can insert records to your relationship tables by
-first binding two variables s and t to nodes, and then
-"drawing" a relationship pattern between s and t. 
+first binding two variables `s` and `t` to nodes, and then
+"drawing" a relationship pattern between `s` and `t`. 
 For example, the following creates a Follows relationship
 from the User node with name "Adam" to the User node with
 name "Noura". 

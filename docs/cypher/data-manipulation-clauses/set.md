@@ -12,8 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 
 You can import this database by copy pasting the comands on that page. 
 
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
-
 # SET 
 SET is similar to SQL's SET clause, and allows updating properties of node or relationship
 records to new values (possibly NULL).

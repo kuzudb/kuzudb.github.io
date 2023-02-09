@@ -3,6 +3,7 @@ layout: default
 title: Match
 parent: Query clauses
 grand_parent: Cypher
+nav_order: 1
 ---
 
 # Database
@@ -11,8 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 <img src="../../../img/running-example.png" width="800">
 
 You can import this database by copy pasting the comands on that page. 
-
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # MATCH
 MATCH is the clause where you define a "graph pattern", i.e., a join of node or relationhip records,
@@ -30,7 +29,7 @@ openCypher allows you to omit these variables, if you do not need to reference t
 using the same letter cases you used in your node/rel table schema definitions. 
 
 ## Match Nodes With a Label
-Below query matches variable "a" to nodes with label User and returns "a", which 
+The query below matches variable "a" to nodes with label User and returns "a", which 
 is a shortcut in openCypher to return all properties of the node together with label and internal ID that the variable "a" matches.
 ```
 MATCH (a:User)
@@ -52,7 +51,7 @@ Output:
 ```
 
 ## Match Nodes With Multiple Labels
-Below query matches variable "a" to nodes with label User or label City. "Return a" will return all properties of the node together with label and internal ID. Properties not exist in a label will be returned as NULL value (e.g. "population" not exists in "User"). Properties exists in multiple labels are expected to have the same data type (e.g. "name" has STRING data type in "User" and "City" ).
+The query below matches variable "a" to nodes with label User or label City. "Return a" will return all properties of the node together with label and internal ID. Properties not exist in a label will be returned as NULL value (e.g. "population" not exists in "User"). Properties exists in multiple labels are expected to have the same data type (e.g. "name" has STRING data type in "User" and "City" ).
 ```
 MATCH (a:User:City)
 RETURN a;

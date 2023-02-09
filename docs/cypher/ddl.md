@@ -9,7 +9,7 @@ parent: Cypher
 As a first step to creating your database, you need to define your node and directed relationships. In the property graph model, nodes and relationships have labels. In Kùzu, every node or relationship can have 1 label. The node and relationships and the predefined properties on them are defined through `CREATE NODE TABLE` and `CREATE REL TABLE` commands. The choice of using the term "table" over "label" is intentional and explained below[^1].
 
 ## Defining Node Tables
-For example, the following defines a table of User nodes. 
+For example, the following statement defines a table of User nodes. 
 ```
 CREATE NODE TABLE User(name STRING, age INT64, reg_date DATE, PRIMARY KEY (name))
 ```
@@ -20,11 +20,12 @@ You need to define the primary key of nodes as one of the string or int64 proper
 Here are some examples of defining tables of relationships.
 
 ### Basic Usage
-The following adds to the catalog a Follows relationship table between User and User nodes with one date property. Several things to note:
+The following adds to the catalog a Follows relationship table between User and User nodes with one date property. 
 ```
 CREATE REL TABLE Follows(FROM User TO User, since DATE)
 ```
-Note that there is no comma between the FROM and TO clauses. 
+There are several things to note:
+- Note that there is no comma between the FROM and TO clauses. 
 - Relationship directions: Each relationship has a direction following the property graph model. So when Follows relationship records are added, each one has a specific source/from node and a specific destination/to node[^2].
 - Relationship primary keys: You cannot define a primary key for relationship records. Each relationship gets a unique system-level edge ID, which are internally generated. You can check if two edges are the same, i.e., have the same edge ID, using the "=" and "!=" operator between "ID()" function on two variables that bind to relationships. For example, you can query `MATCH (n1:User)-[r1:Follows]->(n2:User)<-[r2:Follows]-(n3:User) WHERE ID(r1) != ID(r2) RETURN *` to ensure that the same relationship does not bind to both r1 and r2.
 - Relationship can only be defined as being from one node table/label to one node table/label.
@@ -51,11 +52,11 @@ The above ddl indicates that Likes has 1-to-n multiplicity. This ddl command put
 In general in a relationship E's multiplicity, if the "source side" is "ONE", then for each node v that can be the destination of E relationships, v can have at most 1 backward edge. If the "destination side" is ONE, then each node v that can be the source of E relationships, v can have at most 1 forward edge. 
 
 ## DROP TABLE
-You can drop the tables you have created with the `DROP TABLE` command.<br />
+You can drop tables from the database with the `DROP TABLE` command.<br />
 Two important notes:
-  1. You can drop any relationship table any time.
-  2. To drop a node table X, you need to first drop all of the relationship tables 
+  1. To drop a node table X, you need to first drop all of the relationship tables 
      that refer to X in its FROM or TO first.
+  2. You can drop any relationship table at any time.
 
 For example if you have a database with User and Follows tables defined as above and you
 tried to drop User without dropping Follows first, Kùzu will error:
@@ -77,11 +78,13 @@ DROP TABLE User
 ```
 
 ## ALTER TABLE
-You can change the schema of a table by using the `ALTER TABLE` command.<br />
-Supported operations:
+You can change the schema of a table using the `ALTER TABLE` command.<br />
+
 ### 1. Add a column:
-`ADD COLUMN` allows the user to add a new column to a node/rel table filled with default value, or NULL if the default value is not specified.<br />
-Note: column name must be unique within a node/rel table. If the column name has already been used in the table, `ADD COLUMN` command will fail.<br />
+`ADD COLUMN` allows you to add a new column to a node/rel table.
+By default, if you don't specify a default value, the newly added column is filled with NULLs.
+
+Note: column names must be unique within a node/rel table. If the column name has already been used in the table, `ADD COLUMN` command will fail.<br />
 For example: the following query will fail since the age column already exists in the User table.
 ```
 ALTER TABLE User ADD age INT64;
@@ -94,19 +97,21 @@ Examples:
 ```
 ALTER TABLE User ADD grade INT64;
 ```
-This adds a new column with default value NULL to the User table.
+This adds a new column with the default value NULL to the User table.
 
 The user can also define the default value of the new column.
 ```
 ALTER TABLE User ADD grade INT64 DEFAULT 40;
 ```
 This adds a new column grade with default value 40 to the User table.
+
 ### 2. Drop a column:
-`DROP COLUMN` allows the user to remove a column from a node/rel table.<br />
+`DROP COLUMN` allows you to remove a column from a node/rel table.<br />
 ```
 ALTER TABLE User DROP age;
 ```
 This drops the age column from the User table.
+
 ### 3. Rename a node/rel table:
 `RENAME TABLE` allows the user to rename a table.<br />
 Note: table name must be unique. 
@@ -114,6 +119,7 @@ Note: table name must be unique.
 ALTER TABLE User RENAME TO Student;
 ```
 This renames the table User to Student.
+
 ### 4. Rename a column of a node/rel table:
 `RENAME COLUMN` allows the user to rename a column of a table.<br />
 Note: column name must be unique within a node/rel table. Different node/rel tables can have columns with the same name.

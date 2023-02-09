@@ -3,6 +3,7 @@ layout: default
 title: Example database
 parent: Query clauses
 grand_parent: Cypher
+nav_order: 0
 ---
 
 # Example Database

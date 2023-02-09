@@ -3,6 +3,7 @@ layout: default
 title: Where
 parent: Query clauses
 grand_parent: Cypher
+nav_order: 4
 ---
 
 # Database
@@ -11,8 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 <img src="../../../img/running-example.png" width="800">
 
 You can import this database by copy pasting the comands on that page. 
-
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # WHERE
 `WHERE` clause is where you specify predicates/constraints on a previous part of your query.
