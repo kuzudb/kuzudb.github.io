@@ -68,8 +68,9 @@ Executes the given prepared statement with inputParams and returns the result.
 - `inputParams` The parameter pack where each arg is a std::pair with the first element being parameter name and second element being parameter value. 
 
 **Returns:**
-- the result of the query. 
-- Note:
+- the result of the query.
+
+**Note:**
 - Any call that goes through executeWithParams acquires a lock in the end by calling executeLock(...). 
 
 ---
