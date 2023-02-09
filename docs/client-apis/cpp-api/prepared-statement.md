@@ -7,7 +7,7 @@ nav_order: 44
 ---
 
 # PreparedStatement
-[PreparedStatement](#PreparedStatement) is a parameterized query which can avoid planning the same query for repeated execution.  
+`PreparedStatement` is a parameterized query which can avoid planning the same query for repeated execution.  
 
 ## Example
 ```

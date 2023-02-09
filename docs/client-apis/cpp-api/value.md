@@ -7,7 +7,7 @@ nav_order: 47
 ---
 
 # Value
-[Value](#Value) can hold data of different types.
+`Value` can hold data of different types.
 
 ## Available APIs
 ## class kuzu::common::NodeVal
@@ -853,4 +853,5 @@ KUZU_API std::string toString ()
 
 **Returns:**
 - the current value in string format. 
+
 ---

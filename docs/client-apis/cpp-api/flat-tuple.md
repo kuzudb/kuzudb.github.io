@@ -7,7 +7,7 @@ nav_order: 45
 ---
 
 # FlatTuple
-[FlatTuple](#FlatTuple) stores a vector of values.
+`FlatTuple` stores a vector of values.
 
 
 ## Available APIs

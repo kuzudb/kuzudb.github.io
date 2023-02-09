@@ -6,11 +6,9 @@ grand_parent: Client api
 nav_order: 43
 ---
 
-# QueryResult, FlatTuple, ResultValue, and QuerySummary
-[QueryResult](#queryresult) captures all information related to the execution of a query. Each returned tuple is 
-wrapped into a [FlatTuple](#flattuple) where each entry is wrapped as a [ResultValue](#resultvalue).
-You can also obtain a [QuerySummary](#querysummary) from a QueryResult, to learn profiling
-information, such as execution time, about the query you executed.
+# QueryResult and QuerySummary
+`QueryResult` captures all information related to the execution of a query. Each returned tuple is wrapped into a [FlatTuple](flat-tuple.md) where each entry is wrapped as a [Value](value.md).
+You can also obtain a `QuerySummary` from a QueryResult, to learn profiling information, such as execution time, about the query you executed.
 
 ## Example
 ```
@@ -123,12 +121,6 @@ writes the query result to a csv file.
 - `delimiter` delimiter of the csv file. 
 - `escapeCharacter` escape character of the csv file. 
 - `newline` newline character of the csv file. 
-
----
-
-## class kuzu::main::PreparedSummary
-
-PreparedSummary stores the compiling time and query options of a query.  
 
 ---
 

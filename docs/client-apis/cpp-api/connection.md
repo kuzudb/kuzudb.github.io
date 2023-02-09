@@ -16,9 +16,7 @@ instance and issue parallel queries through these connections concurrently.
 
 You can also use a `Connection` to prepare `PreparedStatement`, which
 is a way to parameterize queries for repeated execution
-and avoid planning the same query. We cover how to prepare
-a statement from `Connection` and the `PreparedStatement` class's API
-[below](#preparedstatement) as well.
+and avoid planning the same query.
 
 
 ## Example
