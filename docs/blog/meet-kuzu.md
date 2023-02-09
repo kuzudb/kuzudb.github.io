@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Meet Kùzu
+permalink: /blog/meet-kuzu.html
 parent: Blog
+nav_order: 1
 ---
 
 # Meet Kùzu 🤗
