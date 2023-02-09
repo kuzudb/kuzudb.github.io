@@ -26,92 +26,121 @@ while (result->hasNext()) {
 
 ## Available APIs
 
-## QueryResult
+## class kuzu::main::QueryResult
 
-### bool QueryResult.isSuccess()
+QueryResult stores the result of a query execution.  
+
 ---
-- return: whether query execution succeeded or not.
 
-### std::string QueryResult.getErrorMessage()
+```c++
+QueryResult (const PreparedSummary & preparedSummary)
+```
+Creates a QueryResult object. 
+
+**Parameters**
+- `preparedSummary` stores compiling time and query options. 
+
 ---
-- return: error message.
 
-### bool QueryResult.hasNext()
+```c++
+KUZU_API std::vector<common::DataType> getColumnDataTypes ()
+```
+
+**Returns:**
+- dataType of each column in query result. 
+
 ---
-- return: whether there is one more tuple or not.
 
-### std::shared_ptr\<processor::FlatTuple\> QueryResult.getNext()
+```c++
+KUZU_API std::vector<std::string> getColumnNames ()
+```
+
+**Returns:**
+- name of each column in query result. 
+
 ---
-- return: next tuple.
 
-### void QueryResult.writeToCSV(std::string fileName)
+```c++
+std::vector<std::unique_ptr<DataTypeInfo> > getColumnTypesInfo ()
+```
+
+**Returns:**
+- dataTypeInfo of each column. 
+
 ---
-- fileName: output csv file.
 
-### QuerySummary* QueryResult.getQuerySummary()
+```c++
+KUZU_API std::string getErrorMessage ()
+```
+
+**Returns:**
+- error message of the query execution if the query fails. 
+
 ---
-- return: query summary containing statistics related to query execution.
 
-### uint64_t QueryResult.getNumTuples()
+```c++
+KUZU_API std::shared_ptr<processor::FlatTuple> getNext ()
+```
+
+**Returns:**
+- next flat tuple in the query result. 
+
 ---
-- return: number of tuples.
 
-### vector\<std::string\> QueryResult.getColumnNames()
+```c++
+KUZU_API size_t getNumColumns ()
+```
+
+**Returns:**
+- number of columns in query result. 
+
 ---
-- return: a vector of column names.
 
-## FlatTuple
-### ResultValue* FlatTuple.getResultValue(uint32_t idx)
+```c++
+KUZU_API uint64_t getNumTuples ()
+```
+
+**Returns:**
+- num of tuples in query result. 
+
 ---
-- return: an entry of the tuple.
 
-## ResultValue
-### bool ResultValue.getBooleanVal()
+```c++
+KUZU_API QuerySummary* getQuerySummary ()
+```
+
+**Returns:**
+- query summary which stores the execution time, compiling time, plan and query options. 
+
 ---
-- return: boolean value.
 
-### int64_t ResultValue.getInt64Val()
+```c++
+KUZU_API bool hasNext ()
+```
+
+**Returns:**
+- whether there are more tuples to read. 
+
 ---
-- return: int64 value.
 
-### double ResultValue.getDoubleVal()
+```c++
+KUZU_API bool isSuccess ()
+```
+
+**Returns:**
+- query is executed successfully or not. 
+
 ---
-- return: double value.
 
-### date_t ResultValue.getDateVal()
+```c++
+KUZU_API void writeToCSV (const std::string & fileName, char delimiter = ',', char escapeCharacter = ''', char newline = 'n')
+```
+writes the query result to a csv file. 
+
+**Parameters**
+- `fileName` name of the csv file. 
+- `delimiter` delimiter of the csv file. 
+- `escapeCharacter` escape character of the csv file. 
+- `newline` newline character of the csv file. 
+
 ---
-- return: date value.
-
-### timestamp_t ResultValue.getTimestampVal()
----
-- return: timestamp value.
-
-### interval_t ResultValue.getIntervalVal()
----
-- return: interval value.
-
-### std::string ResultValue.getStringVal()
----
-- return: string value.
-
-### vector\<ResultValue\> ResultValue.getListVal()
----
-- return: vector of ResultValue.
-
-### bool ResultValue.isNullVal()
----
-- return: whether ResultValue is null or not.
-
-## QuerySummary
-
-### double QuerySummary.getCompilingTime()
----
-- return: compiling time of the query.
-
-### double QuerySummary.getExecutionTime()
----
-- return: execution time of the query.
-
-### std::ostringstream& QuerySummary.getPlanAsOstream()
----
-- return: plan in std string stream format. 
