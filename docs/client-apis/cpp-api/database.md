@@ -35,7 +35,7 @@ See [this note](../overview.md#note-on-connecting-to-the-same-database-directory
 
 ## class kuzu::main::Database
 
-Database class is the main class of the KuzuDB. It manages all database configurations and files.  
+Database class is the main class of the KuzuDB. It manages all database components.  
 
 ---
 
@@ -67,7 +67,8 @@ Resizes the buffer pool size of the database instance.
 
 **Parameters**
 - `newSize` New buffer pool size in bytes. 
-- Exceptions:
+
+**Exceptions**
 - `BufferManagerException` if the new size is smaller than the current buffer manager size. 
 
 ---
@@ -111,7 +112,8 @@ Creates a SystemConfig object.
 
 **Parameters**
 - `bufferPoolSize` Buffer pool size in bytes. 
-- Note:
+
+**Note**
 - defaultPageBufferPoolSize and largePageBufferPoolSize are calculated based on the DEFAULT_PAGES_BUFFER_RATIO and LARGE_PAGES_BUFFER_RATIO constants in StorageConfig. 
 
 ---
