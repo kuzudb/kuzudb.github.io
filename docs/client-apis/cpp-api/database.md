@@ -31,6 +31,7 @@ using multiple separate processes unless you will only issue read-only queries
 through the connections you create from these these Database instances.
 See [this note](../overview.md#note-on-connecting-to-the-same-database-directory-from-multiple-database-instances) for more details.
 
+## Available APIs
 
 ## class kuzu::main::Database
 
@@ -39,9 +40,9 @@ Database class is the main class of the KuzuDB. It manages all database configur
 ---
 
 ```c++
-Database (const DatabaseConfig & databaseConfig)
+KUZU_API Database (DatabaseConfig databaseConfig)
 ```
-Creates a Database object with default buffer pool size and max num threads. 
+Creates a database object with default buffer pool size and max num threads. 
 
 **Parameters**
 - `databaseConfig` Database configurations(database path). 
@@ -49,9 +50,9 @@ Creates a Database object with default buffer pool size and max num threads.
 ---
 
 ```c++
-Database (const DatabaseConfig & databaseConfig, const SystemConfig & systemConfig)
+KUZU_API Database (DatabaseConfig databaseConfig, SystemConfig systemConfig)
 ```
-Creates a Database object. 
+Creates a database object. 
 
 **Parameters**
 - `databaseConfig` Database configurations(database path). 
@@ -60,7 +61,7 @@ Creates a Database object.
 ---
 
 ```c++
-void resizeBufferManager (uint64_t newSize)
+KUZU_API void resizeBufferManager (uint64_t newSize)
 ```
 Resizes the buffer pool size of the database instance. 
 
@@ -72,12 +73,12 @@ Resizes the buffer pool size of the database instance.
 ---
 
 ```c++
-void setLoggingLevel (spdlog::level::level_enum loggingLevel)
+void setLoggingLevel (std::string loggingLevel)
 ```
 Sets the logging level of the database instance. 
 
 **Parameters**
-- `loggingLevel` New logging level. (Supported logging levels are: info, debug, err). 
+- `loggingLevel` New logging level. (Supported logging levels are: 'info', 'debug', 'err'). 
 
 ---
 
@@ -99,12 +100,12 @@ Creates a DatabaseConfig object.
 
 ## class kuzu::main::SystemConfig
 
-Stores buffer pool size and max number of threads.  
+Stores buffer pool size and max number of threads configurations.  
 
 ---
 
 ```c++
-SystemConfig (uint64_t bufferPoolSize = common::StorageConfig::DEFAULT_BUFFER_POOL_SIZE)
+SystemConfig (uint64_t bufferPoolSize)
 ```
 Creates a SystemConfig object. 
 
@@ -114,3 +115,4 @@ Creates a SystemConfig object.
 - defaultPageBufferPoolSize and largePageBufferPoolSize are calculated based on the DEFAULT_PAGES_BUFFER_RATIO and LARGE_PAGES_BUFFER_RATIO constants in StorageConfig. 
 
 ---
+
