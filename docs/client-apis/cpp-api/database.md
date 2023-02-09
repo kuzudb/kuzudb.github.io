@@ -32,40 +32,85 @@ through the connections you create from these these Database instances.
 See [this note](../overview.md#note-on-connecting-to-the-same-database-directory-from-multiple-database-instances) for more details.
 
 
-## Available APIs
+## class kuzu::main::Database
 
-### DatabaseConfig(std::string databasePath, bool inMemoryMode = false)
----
-Create a database configutation.
-- databasePath: path to database files. If the path doesn't not exist, a new database will be created at the given path.
-- inMemoryMode: is the database should be created as an in-memory database. Kùzu is a disk-based system. Setting
-  a database as in memory when constructing DatabaseConfig only ensures that the pages of your database files will be
-  kept in the system's buffer pool.
+Database class is the main class of the KuzuDB. It manages all database configurations and files.  
 
-### SystemConfig(uint64_t bufferPoolSize = StorageConfig::DEFAULT_BUFFER_POOL_SIZE)
 ---
-Create a system configuration
-- bufferPoolSize: size of buffer pool in bytes. Default set to 16MB. This is set to a
-  very low size to make the tests run faster when developing. You should override
-  this and set to a larger size when working with large databases.
 
-### Database(const DatabaseConfig& databaseConfig)
----
-Create a database instance with given database config and default system config.
-- databaseConfig: database configuration
- 
-### Database(const DatabaseConfig& databaseConfig, const SystemConfig& systemConfig)
----
-Create a database instance with given database and system config.
-- databaseConfig: database configuration
-- systemConfig: system configuration
+```c++
+Database (const DatabaseConfig & databaseConfig)
+```
+Creates a Database object with default buffer pool size and max num threads. 
 
-### void Database.resizeBufferManager(uint64_t newSize)
----
-Resize buffer manager to a newSize.
-- newSize: new buffer pool size (in bytes).
+**Parameters**
+- `databaseConfig` Database configurations(database path). 
 
-### void Database.setLoggingLevel(spdlog::level::level_enum loggingLevel)
 ---
-Set the logging level of the database to the given loggingLevel
-- loggingLevel: new logging level. (Supported logging levels are: info, debug, err)
+
+```c++
+Database (const DatabaseConfig & databaseConfig, const SystemConfig & systemConfig)
+```
+Creates a Database object. 
+
+**Parameters**
+- `databaseConfig` Database configurations(database path). 
+- `systemConfig` System configurations(buffer pool size and max num threads). 
+
+---
+
+```c++
+void resizeBufferManager (uint64_t newSize)
+```
+Resizes the buffer pool size of the database instance. 
+
+**Parameters**
+- `newSize` New buffer pool size in bytes. 
+- Exceptions:
+- `BufferManagerException` if the new size is smaller than the current buffer manager size. 
+
+---
+
+```c++
+void setLoggingLevel (spdlog::level::level_enum loggingLevel)
+```
+Sets the logging level of the database instance. 
+
+**Parameters**
+- `loggingLevel` New logging level. (Supported logging levels are: info, debug, err). 
+
+---
+
+## class kuzu::main::DatabaseConfig
+
+Stores databasePath.  
+
+---
+
+```c++
+DatabaseConfig (std::string databasePath)
+```
+Creates a DatabaseConfig object. 
+
+**Parameters**
+- `databasePath` Path to store the database files. 
+
+---
+
+## class kuzu::main::SystemConfig
+
+Stores buffer pool size and max number of threads.  
+
+---
+
+```c++
+SystemConfig (uint64_t bufferPoolSize = common::StorageConfig::DEFAULT_BUFFER_POOL_SIZE)
+```
+Creates a SystemConfig object. 
+
+**Parameters**
+- `bufferPoolSize` Buffer pool size in bytes. 
+- Note:
+- defaultPageBufferPoolSize and largePageBufferPoolSize are calculated based on the DEFAULT_PAGES_BUFFER_RATIO and LARGE_PAGES_BUFFER_RATIO constants in StorageConfig. 
+
+---
