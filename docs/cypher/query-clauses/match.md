@@ -18,7 +18,10 @@ You can import this database by copy pasting the comands on that page.
 MATCH is the clause where you define a "graph pattern", i.e., a join of node or relationhip records,
 to find in the database.[^1]. There are several different ways to match patterns and we go through them
 below. MATCH is often accompanied by [WHERE](where.md) (equivalent to SQL's WHERE clause) to define more predicates
-on the patterns that are matched. 
+on the patterns that are matched.
+
+See examples in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=WWQ2odjxdZWN).
+
 ## Important Notes: 
 - Similar to other high-level database query languages, nodes and relationships in the patterns 
 are bound to variables, which can be referenced in other clauses (e.g., WHERE or RETURN) of the query.
