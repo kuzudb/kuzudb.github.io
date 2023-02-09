@@ -144,3 +144,43 @@ writes the query result to a csv file.
 - `newline` newline character of the csv file. 
 
 ---
+
+## class kuzu::main::PreparedSummary
+
+PreparedSummary stores the compiling time and query options of a query.  
+
+---
+
+## class kuzu::main::QuerySummary
+
+QuerySummary stores the execution time, plan, compiling time and query options of a query.  
+
+---
+
+```c++
+KUZU_API double getCompilingTime ()
+```
+
+**Returns:**
+- query compiling time. 
+
+---
+
+```c++
+KUZU_API double getExecutionTime ()
+```
+
+**Returns:**
+- query execution time. 
+
+---
+
+```c++
+KUZU_API std::string getPlan ()
+```
+
+**Returns:**
+- physical plan for query in string format. 
+
+---
+
