@@ -30,15 +30,17 @@ ORDER BY u.age;
 ```
 Output:
 ```
-----------------
-| Noura   | 25 |
-----------------
-| Adam    | 30 |
-----------------
-| Karissa | 40 |
-----------------
-| Zhang   | 50 |
-----------------
+-------------------
+| u.name  | u.age |
+-------------------
+| Noura   | 25    |
+-------------------
+| Adam    | 30    |
+-------------------
+| Karissa | 40    |
+-------------------
+| Zhang   | 50    |
+-------------------
 ```
 Similarly, the following eturns the users' names who lives in Waterloo ordered by user's age,
 but in descending order.
@@ -46,17 +48,19 @@ but in descending order.
 Query:
 ```
 MATCH (u:User)-[:LivesIn]->(c:City)
-WHERE c.name = Waterloo
+WHERE c.name = 'Waterloo'
 RETURN u.name, u.age
 ORDER BY u.age DESC;
 ```
 Output:
 ```
-----------------
-| Karissa | 40 |
-----------------
-| Adam    | 30 |
-----------------
+-------------------
+| u.name  | u.age |
+-------------------
+| Karissa | 40    |
+-------------------
+| Adam    | 30    |
+-------------------
 ```
 
 ## Ordering Using Multiple Properties/Expressions

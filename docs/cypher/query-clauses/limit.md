@@ -30,6 +30,8 @@ LIMIT 3;
 Result:
 ```
 -----------
+| u.name  |
+-----------
 | Zhang   |
 -----------
 | Karissa |

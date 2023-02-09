@@ -33,6 +33,8 @@ RETURN u.name, u1.name;
 Result:
 ```
 ---------------------
+| u.name  | u1.name |
+---------------------
 | Adam    | Karissa |
 ---------------------
 | Adam    | Zhang   |

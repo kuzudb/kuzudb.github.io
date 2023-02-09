@@ -38,13 +38,15 @@ RETURN u3.age;
 Result:
 
 ```
-------
-| 30 |
-------
-| 40 |
-------
-| 30 |
-------
+----------
+| u1.age |
+----------
+| 30     |
+----------
+| 40     |
+----------
+| 30     |
+----------
 ```
 
 If you changed UNION ALL to UNION in the above query, one of the 30's in the output
