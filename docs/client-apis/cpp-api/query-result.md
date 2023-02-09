@@ -33,16 +33,6 @@ QueryResult stores the result of a query execution.
 ---
 
 ```c++
-QueryResult (const PreparedSummary & preparedSummary)
-```
-Creates a QueryResult object. 
-
-**Parameters**
-- `preparedSummary` stores compiling time and query options. 
-
----
-
-```c++
 KUZU_API std::vector<common::DataType> getColumnDataTypes ()
 ```
 
@@ -57,15 +47,6 @@ KUZU_API std::vector<std::string> getColumnNames ()
 
 **Returns:**
 - name of each column in query result. 
-
----
-
-```c++
-std::vector<std::unique_ptr<DataTypeInfo> > getColumnTypesInfo ()
-```
-
-**Returns:**
-- dataTypeInfo of each column. 
 
 ---
 

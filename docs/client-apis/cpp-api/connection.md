@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Connection & querying
+title: Connection & Querying
 parent: Cpp api
 grand_parent: Client api
 nav_order: 42
 ---
 
-# Connection
+# Connection & Querying
 
 To issue a query, you need to create a `Connection` using a pointer to 
 a [Database](database.md) instance. You can use connections
@@ -24,13 +24,13 @@ a statement from `Connection` and the `PreparedStatement` class's API
 ## Example
 ```
 auto connection = Connection(&database);
-connection.query("create node table person (ID INT64, ColA INT64, PRIMARY KEY (ID));")
+connection.query("CREATE NODE TABLE person (ID INT64, ColA INT64, PRIMARY KEY (ID));")
 ```
 
 ## Available APIs
 ## class kuzu::main::Connection
 
-Connection is used to interact with a Database instance. Each Connection is thread-safe. Multiple connections can connect to the same Database instance in a multi-threaded environment.  
+Connection is used to interact with a Database instance. Each Connection is thread-safe, so you can have multiple connections connecting to the same Database instance in a multi-threaded environment.  
 
 ---
 
@@ -69,9 +69,6 @@ Executes the given prepared statement with inputParams and returns the result.
 
 **Returns:**
 - the result of the query.
-
-**Note:**
-- Any call that goes through executeWithParams acquires a lock in the end by calling executeLock(...). 
 
 ---
 

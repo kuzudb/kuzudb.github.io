@@ -43,15 +43,6 @@ KUZU_API std::string getErrorMessage ()
 ---
 
 ```c++
-std::vector<std::shared_ptr<binder::Expression> > getExpressionsToCollect ()
-```
-
-**Returns:**
-- expressions for generating query results. 
-
----
-
-```c++
 KUZU_API bool isReadOnly ()
 ```
 

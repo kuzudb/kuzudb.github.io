@@ -10,21 +10,23 @@ nav_order: 41
 
 To use Kùzu, you need to first create a `Database` instance.
 The `Database` class requires: 
- 1. a `DatabaseConfig`, which sets  the path to the directory of your database;
- 2. a `SystemConfig` object, which sets the size of your buffer pool.
+ 1. `databasePath`, which sets the path to the directory of your database;
+ 2. a `SystemConfig` object, which sets the size of the buffer pool, and max num of threads.
 
-Both constructors of Database require the DatabaseConfig, so this is mandatory.
-One of the constructors does not require the SystemConfig and uses a default SystemConfig,
-which sets the buffer pool size to 16MB by default.
-We recommend using the second constructor of Database that also requires
-the `SystemConfig` so you can set a larger buffer pool size (e.g., several GBs).
+To construct a Database instance, databasePath is mandatory.
+Currently, we do not support the in-memory mode, thus, each database must point to a directory in the file system.
+
+By default, SystemConfig sets the max size of the buffer pool to 80% of the system physical memory and max num threads to `std::thread::hardware_concurrency();`.
+You can set a customized max buffer pool size (e.g., several GBs) through the constructor of `SystemConfig`.
 For example:
 ```
-DatabaseConfig databaseConfig("testdb");
-SystemConfig systemConfig(1ull << 31 /* set buffer manager size to 2GB */);
-Database database(databaseConfig, systemConfig);
+SystemConfig systemConfig(1ull << 31 /* set max buffer pool size to 2GB */);
+Database database("testdb", systemConfig);
 ...
 ```
+
+By setting a buffer pool size to `x`, Kùzu' buffer pool is limited to use at most `x` amount of memory.
+Instead of grabing all of the memory at the initial startup, Kùzu grabs memory on demand, until hit the size.
 
 Also: Do not construct multiple Database instances either within the same process or 
 using multiple separate processes unless you will only issue read-only queries
@@ -35,28 +37,28 @@ See [this note](../overview.md#note-on-connecting-to-the-same-database-directory
 
 ## class kuzu::main::Database
 
-Database class is the main class of the KuzuDB. It manages all database components.  
+Database class is the main class of KùzuDB. It manages all database components.  
 
 ---
 
 ```c++
-KUZU_API Database (DatabaseConfig databaseConfig)
+KUZU_API Database (std::string databasePath)
 ```
-Creates a database object with default buffer pool size and max num threads. 
+Creates a database object at the given path with the default buffer pool size and max num threads. 
 
 **Parameters**
-- `databaseConfig` Database configurations(database path). 
+- `databasePath` Database path. 
 
 ---
 
 ```c++
-KUZU_API Database (DatabaseConfig databaseConfig, SystemConfig systemConfig)
+KUZU_API Database (std::string databasePath, SystemConfig systemConfig)
 ```
-Creates a database object. 
+Creates a database object at the given path with customized buffer pool size and max num threads.
 
 **Parameters**
-- `databaseConfig` Database configurations(database path). 
-- `systemConfig` System configurations(buffer pool size and max num threads). 
+- `databasePath` Database path. 
+- `systemConfig` System configurations (buffer pool size and max num threads). 
 
 ---
 
@@ -83,22 +85,6 @@ Sets the logging level of the database instance.
 
 ---
 
-## class kuzu::main::DatabaseConfig
-
-Stores databasePath.  
-
----
-
-```c++
-DatabaseConfig (std::string databasePath)
-```
-Creates a DatabaseConfig object. 
-
-**Parameters**
-- `databasePath` Path to store the database files. 
-
----
-
 ## class kuzu::main::SystemConfig
 
 Stores buffer pool size and max number of threads configurations.  
@@ -114,7 +100,7 @@ Creates a SystemConfig object.
 - `bufferPoolSize` Buffer pool size in bytes. 
 
 **Note**
-- defaultPageBufferPoolSize and largePageBufferPoolSize are calculated based on the DEFAULT_PAGES_BUFFER_RATIO and LARGE_PAGES_BUFFER_RATIO constants in StorageConfig. 
+- Currently, we have two internal buffer pools with different frame size of 4KB and 256KB. When a user sets a customized buffer pool size, it is divided into two internal pools based on the DEFAULT_PAGES_BUFFER_RATIO and LARGE_PAGES_BUFFER_RATIO.
 
 ---
 

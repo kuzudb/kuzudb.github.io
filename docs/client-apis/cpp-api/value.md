@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Query result
+title: Value
 parent: Cpp api
 grand_parent: Client api
 nav_order: 47
