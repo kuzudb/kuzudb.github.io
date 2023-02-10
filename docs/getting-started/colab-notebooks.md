@@ -6,7 +6,7 @@ permalink: /docs/getting-started/colab-notebooks
 nav_order: 2
 ---
 
-We provide a list of colab notebooks that demonstrate how Kùzu can be used through Python APIs, and integrated with the Python data science ecosystem:
+We provided a list of colab notebooks that demonstrate how Kùzu can be used through Python APIs, and integrated with the Python data science ecosystem:
 
 - [Introduction: Hands-on Graph Database with Kùzu](https://colab.research.google.com/drive/14oqEC8p7fmkjetnpfDmx40WZoILpSaeL)
 - [Cypher in Kùzu](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf)
