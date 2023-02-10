@@ -41,6 +41,7 @@ Output:
 | (label:User, 0:2, {name:Zhang, age:50})   | (0:2)-[label:Follows, {_id:2:3, since:2022}]->(0:3) |
 ---------------------------------------------------------------------------------------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=gZ7zGvGQ0tZf&line=1&uniqifier=1).
 
 ## Returning All Variables
 Returning all vairables in the query can be written as `RETURN *` as a syntactic sugar. Below query returns "a" and "b", relationship is omitted because no variable binds to it.
@@ -62,6 +63,8 @@ Output:
 | (label:User, 0:3, {name:Noura, age:25})   | (label:User, 0:2, {name:Zhang, age:50})   |
 -----------------------------------------------------------------------------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=N1EK35S419JF&line=1&uniqifier=1).
+
 
 ## Returning Node and Relationship Properties
 You can also return properties of variables by explicitly specifing properties in the `RETURN` clause.
@@ -83,6 +86,8 @@ Output:
 | Zhang   | 50    | 2022    |
 -----------------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=rYG1C5gj2KNA&line=1&uniqifier=1).
+
 ## Using Distinct for Duplicate Elimination
 You can use RETURN DISTINCT to do duplicate elimination of the returned tuples.
 For example, if we instead wrote `RETURN DISTINCT` in the above query, we would
@@ -103,6 +108,7 @@ Output:
 | Zhang   | 50    | 2022    |
 -----------------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=wvkKPDX22Wcl&line=1&uniqifier=1).
 
 ## Group By and Aggregations
 You can group by one or more expression and perform one or more aggregations 
@@ -123,6 +129,8 @@ Output:
 | (label:User, 0:2, {name:Zhang, age:50})   | 25.000000    |
 ------------------------------------------------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=7cPrEPXI4C1e&line=1&uniqifier=1).
+
 The semantics is exactly the same as SQL's semantics, which is a 
 3-step process: 
   1) for each tuple  t in the previous part of the query, i.e., before the RETURN clause, 

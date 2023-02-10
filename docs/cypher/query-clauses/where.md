@@ -37,6 +37,9 @@ Output:
 | (label:User, 0:2, {name:Zhang, age:50})   |
 ---------------------------------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=D_u4RtEbsDv8&line=2&uniqifier=1).
+
+
 The booelean predicate/expression specified above can be understood as it reads: Users "a" whose ages are
 greater than 45 OR whose names start with "Kar". It combines several means to construct expressions
 in high-level database query languages, such as as boolean operator (OR), a numeric comparison operator (>),
@@ -86,6 +89,8 @@ Output:
 | Adam   | 30    |
 ------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=12JMqYmA3Iol&line=1&uniqifier=1).
+
 Note that in openCypher sub-queries are not arbitrary openCypher queries. They can only contain *a single MATCH clause* optionally
 followed by a WHERE clause, e.g., no OPTIONAL MATCH, WITH or RETURN clauses.
 
@@ -121,3 +126,4 @@ Output:
 | Adam   | 30    |
 ------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=iuHDzuVu3g7A&line=1&uniqifier=1).
