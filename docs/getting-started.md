@@ -138,7 +138,7 @@ Output:
 The Python API can also output results in arrow format:
 ```
 results = conn.execute('MATCH (u:User) RETURN u.name, u.age;')
-print(results.get_as_arrow(100 /* chunk size */))
+print(results.get_as_arrow(chunk_size=100))
 ```
 
 Output:
