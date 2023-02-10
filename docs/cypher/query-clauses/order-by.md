@@ -41,6 +41,8 @@ Output:
 | Zhang   | 50    |
 -------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=KQlKQCWZBWzL).
+
 Similarly, the following eturns the users' names who lives in Waterloo ordered by user's age,
 but in descending order.
 
@@ -89,6 +91,8 @@ Output:
 | 25    | Zhang   |
 -------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=KQlKQCWZBWzL).
+
 Noe that there is tie for b.age in first two rows and the order is 
 decided based on a.name (in descending order). If you removed the
 last `DESC` in the above query, the first two tuples in the result
