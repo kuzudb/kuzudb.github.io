@@ -82,8 +82,8 @@ import kuzu
 - Create an empty database and connect to it with Python API:
 
 ```
-db = kuzu.database('./test')
-conn = kuzu.connection(db)
+db = kuzu.Database('./test')
+conn = kuzu.Connection(db)
 ```
 
 - Create the schema:
@@ -133,6 +133,21 @@ Output:
 1	Adam	2020	Zhang
 2	Karissa	2021	Zhang
 3	Zhang	2022	Noura
+```
+
+The Python API can also output results in arrow format:
+```
+results = conn.execute('MATCH (u:User) RETURN u.name, u.age;')
+print(results.get_as_arrow(100 /* chunk size */))
+```
+
+Output:
+```
+u.name: string
+u.age: int64
+----
+u.name: [["Adam","Karissa","Zhang","Noura"]]
+u.age: [[30,40,50,25]]
 ```
 
 # C++ API
