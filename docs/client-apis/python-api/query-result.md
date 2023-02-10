@@ -10,45 +10,31 @@ nav_order: 43
 When you issue a query to the database through the `con->execute(query)` API, you are expected to get a queryResult which contains all result tuples for the given query.
 We provide variety of APIs for user to fetch the queryResult as their desired format.
 
-### Available APIs:
-
 ```python
 class QueryResult()
 ```
 
-Query result.
-
-Methods
+### Available APIs:
 -------
-check_for_query_result_close()    
-> Check if the query result is closed and raise an exception if it is.
+- `check_for_query_result_close()` Check if the query result is closed and raise an exception if it is.
 
-has_next()   
-> Check if there are more rows in the query result.
+- `has_next()` Check if there are more rows in the query result.
 
-get_next()   
-> Get the next row in the query result.
+- `get_next()` Get the next row in the query result.
 
-write_to_csv(filename, delimiter=',', escape_character='"', newline='\n')   
-> Write the query result to a CSV file.
+- `write_to_csv(filename, delimiter=',', escape_character='"', newline='\n')` Write the query result to a CSV file.
 
-close()  
-> Close the query result.
+- `close()` Close the query result.
 
-get_as_df()  
-> Get the query result as a Pandas DataFrame.
+- `get_as_df()` Get the query result as a Pandas DataFrame.
 
-get_as_arrow(chunk_size)  
-> Get the query result as a PyArrow Table.
+- `get_as_arrow(chunk_size)` Get the query result as a PyArrow Table.
 
-get_column_data_types()  
-> Get the data types of the columns in the query result.
+- `get_column_data_types()` Get the data types of the columns in the query result.
 
-get_column_names()  
-> Get the names of the columns in the query result.
+- `get_column_names()` Get the names of the columns in the query result.
 
-get_as_torch_geometric()  
-> Get the query result as a PyTorch Geometric Data object.
+- `get_as_torch_geometric()` Get the query result as a PyTorch Geometric Data object.
 
 ----
 
@@ -58,13 +44,10 @@ get_as_torch_geometric()
 def __init__(connection, query_result)
 ```
 
-Parameters
-----------
-connection : _kuzu.Connection   
-> Connection to the database.
+**Parameters**
+- `connection : _kuzu.Connection` Connection to the database.
 
-query_result : _kuzu.QueryResult  
-> Query result.
+- `query_result : _kuzu.QueryResult` Query result.
 
 ----
 
@@ -76,10 +59,8 @@ def check_for_query_result_close()
 
 Check if the query result is closed and raise an exception if it is.
 
-Raises
-------
-Exception  
-> If the query result is closed.
+**Raises**
+- `Exception` If the query result is closed.
 
 ----
 
@@ -91,10 +72,8 @@ def has_next()
 
 Check if there are more rows in the query result.
 
-Returns
--------
-bool  
-> True if there are more rows in the query result, False otherwise.
+**Returns**
+- `bool` True if there are more rows in the query result, False otherwise.
 
 ----
 
@@ -106,10 +85,8 @@ def get_next()
 
 Get the next row in the query result.
 
-Returns
--------
-list  
-> Next row in the query result.
+**Returns**
+- `list` Next row in the query result.
 
 ----
 
@@ -121,19 +98,14 @@ def write_to_csv(filename, delimiter=',', escape_character='"', newline='\n')
 
 Write the query result to a CSV file.
 
-Parameters
-----------
-filename : str  
-> Name of the CSV file to write to.
+**Parameters**
+- `filename : str` Name of the CSV file to write to.
 
-delimiter : str  
-> Delimiter to use in the CSV file. Defaults to ','.
+- `delimiter : str` Delimiter to use in the CSV file. Defaults to ','.
 
-escape_character : str  
-> Escape character to use in the CSV file. Defaults to '"'.
+- `escape_character : str` Escape character to use in the CSV file. Defaults to '"'.
 
-newline : str  
-> Newline character to use in the CSV file. Defaults to '\n'.
+- `newline : str` Newline character to use in the CSV file. Defaults to '\n'.
 
 ----
 
@@ -155,10 +127,8 @@ def get_as_df()
 
 Get the query result as a Pandas DataFrame.
 
-Returns
--------
-pandas.DataFrame  
-> Query result as a Pandas DataFrame.
+**Returns**
+- `pandas.DataFrame` Query result as a Pandas DataFrame.
 
 ----
 
@@ -170,15 +140,11 @@ def get_as_arrow(chunk_size)
 
 Get the query result as a PyArrow Table.
 
-Parameters
-----------
-chunk_size : int  
-> Number of rows to include in each chunk.
+**Parameters**
+- `chunk_size : int` Number of rows to include in each chunk.
 
-Returns
--------
-pyarrow.Table  
-> Query result as a PyArrow Table.
+**Returns**
+- `pyarrow.Table` Query result as a PyArrow Table.
 
 ----
 
@@ -190,10 +156,8 @@ def get_column_data_types()
 
 Get the data types of the columns in the query result.
 
-Returns
--------
-list  
-> Data types of the columns in the query result.
+**Returns**
+- `list` Data types of the columns in the query result.
 
 ----
 
@@ -205,10 +169,8 @@ def get_column_names()
 
 Get the names of the columns in the query result.
 
-Returns
--------
-list  
-> Names of the columns in the query result.
+**Returns**
+- `list` Names of the columns in the query result.
 
 ----
 
@@ -230,15 +192,11 @@ def get_as_networkx(directed=True)
 
 Get the query result as a NetworkX graph.
 
-Parameters
-----------
-directed : bool  
-> Whether the graph should be directed. Defaults to True.
+**Parameters**
+- `directed : bool` Whether the graph should be directed. Defaults to True.
 
-Returns
--------
-networkx.DiGraph or networkx.Graph  
-> Query result as a NetworkX graph.
+**Returns**
+- `networkx.DiGraph or networkx.Graph` Query result as a NetworkX graph.
 
 ----
 
@@ -250,7 +208,5 @@ def get_as_torch_geometric()
 
 Get the query result as a PyTorch Geometric graph.
 
-Returns
--------
-torch_geometric.data.Data or torch_geometric.data.HeteroData  
-> Query result as a PyTorch Geometric graph.
+**Returns**
+- `torch_geometric.data.Data or torch_geometric.data.HeteroData` Query result as a PyTorch Geometric graph.

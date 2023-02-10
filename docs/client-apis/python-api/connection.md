@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Connection & querying
+title: Connection & Querying
 parent: Python api
 grand_parent: Client api
 nav_order: 42
@@ -8,21 +8,15 @@ nav_order: 42
 ## Connection
 After the database instance has been created, users are expected to create a connection and issue queries through the connection.
 
-### Available APIs:
-
 ```python
 class Connection()
 ```
 
-Connection to a database.
-
-Methods
+### Available APIs:
 -------
-set_max_threads_for_exec(num_threads)  
-> Set the maximum number of threads for executing queries.
+- `set_max_threads_for_exec(num_threads)` Set the maximum number of threads for executing queries.
 
-execute(query, parameters=[])  
-> Execute a query.
+- `execute(query, parameters=[])` Execute a query.
 
 ----
 
@@ -32,13 +26,10 @@ execute(query, parameters=[])
 def __init__(database, num_threads=0)
 ```
 
-Parameters
-----------
-database : _kuzu.Database
-> Database to connect to.
+**Parameters**
+- `database : _kuzu.Database` Database to connect to.
 
-num_threads : int   
-> Maximum number of threads to use for executing queries.
+- `num_threads : int` Maximum number of threads to use for executing queries.
 
 ----
 
@@ -50,10 +41,8 @@ def set_max_threads_for_exec(num_threads)
 
 Set the maximum number of threads for executing queries.
 
-Parameters
-----------
-num_threads : int  
-> Maximum number of threads to use for executing queries.
+**Parameters**
+- `num_threads : int` Maximum number of threads to use for executing queries.
 
 ----
 
@@ -65,15 +54,10 @@ def execute(query, parameters=[])
 
 Execute a query.
 
-Parameters
-----------
-query : str    
-> Query to execute.
+**Parameters**
+- `query : str` Query to execute.
 
-parameters : list    
-> Parameters for the query.
+- `parameters : list` Parameters for the query.
 
-Returns
--------
-QueryResult     
-> Query result.
+**Returns**
+- `QueryResult` Query result.

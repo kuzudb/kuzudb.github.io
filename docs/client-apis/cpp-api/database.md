@@ -40,9 +40,10 @@ See [this note](../overview.md#note-on-connecting-to-the-same-database-directory
 Database class is the main class of KùzuDB. It manages all database components.  
 
 ---
+**Database**
 
 ```c++
-KUZU_API Database (std::string databasePath)
+Database (std::string databasePath)
 ```
 Creates a database object at the given path with the default buffer pool size and max num threads. 
 
@@ -50,9 +51,10 @@ Creates a database object at the given path with the default buffer pool size an
 - `databasePath` Database path. 
 
 ---
+**Database**
 
 ```c++
-KUZU_API Database (std::string databasePath, SystemConfig systemConfig)
+Database (std::string databasePath, SystemConfig systemConfig)
 ```
 Creates a database object at the given path with customized buffer pool size and max num threads.
 
@@ -61,9 +63,10 @@ Creates a database object at the given path with customized buffer pool size and
 - `systemConfig` System configurations (buffer pool size and max num threads). 
 
 ---
+**resizeBufferManager**
 
 ```c++
-KUZU_API void resizeBufferManager (uint64_t newSize)
+void resizeBufferManager (uint64_t newSize)
 ```
 Resizes the buffer pool size of the database instance. 
 
@@ -74,6 +77,7 @@ Resizes the buffer pool size of the database instance.
 - `BufferManagerException` if the new size is smaller than the current buffer manager size. 
 
 ---
+**setLoggingLevel**
 
 ```c++
 void setLoggingLevel (std::string loggingLevel)

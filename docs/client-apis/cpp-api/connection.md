@@ -31,9 +31,10 @@ connection.query("CREATE NODE TABLE person (ID INT64, ColA INT64, PRIMARY KEY (I
 Connection is used to interact with a Database instance. Each Connection is thread-safe, so you can have multiple connections connecting to the same Database instance in a multi-threaded environment.  
 
 ---
+**Connection**
 
 ```c++
-KUZU_API Connection (Database * database)
+Connection (Database * database)
 ```
 Creates a connection to the database. 
 
@@ -41,9 +42,11 @@ Creates a connection to the database.
 - `database` A pointer to the database instance that this connection will be connected to. 
 
 ---
+**execute**
 
 ```c++
-template<typename... Args> KUZU_API std::unique_ptr<QueryResult> execute (PreparedStatement * preparedStatement, std::pair< std::string, Args >... args)
+template<typename... Args> 
+std::unique_ptr<QueryResult> execute (PreparedStatement * preparedStatement, std::pair< std::string, Args >... args)
 ```
 Executes the given prepared statement with args and returns the result. 
 
@@ -55,9 +58,10 @@ Executes the given prepared statement with args and returns the result.
 - the result of the query. 
 
 ---
+**executeWithParams**
 
 ```c++
-KUZU_API std::unique_ptr<QueryResult> executeWithParams (PreparedStatement * preparedStatement, std::unordered_map< std::string, std::shared_ptr< common::Value >> & inputParams)
+std::unique_ptr<QueryResult> executeWithParams (PreparedStatement * preparedStatement, std::unordered_map< std::string, std::shared_ptr< common::Value >> & inputParams)
 ```
 Executes the given prepared statement with inputParams and returns the result. 
 
@@ -69,9 +73,10 @@ Executes the given prepared statement with inputParams and returns the result.
 - the result of the query.
 
 ---
+**getMaxNumThreadForExec**
 
 ```c++
-KUZU_API uint64_t getMaxNumThreadForExec ()
+uint64_t getMaxNumThreadForExec ()
 ```
 Returns the maximum number of threads to use for execution in the current connection. 
 
@@ -79,9 +84,10 @@ Returns the maximum number of threads to use for execution in the current connec
 - the maximum number of threads to use for execution in the current connection. 
 
 ---
+**getNodePropertyNames**
 
 ```c++
-KUZU_API std::string getNodePropertyNames (const std::string & tableName)
+std::string getNodePropertyNames (const std::string & tableName)
 ```
 
 **Parameters**
@@ -91,18 +97,20 @@ KUZU_API std::string getNodePropertyNames (const std::string & tableName)
 - all property names of the given table. 
 
 ---
+**getNodeTableNames**
 
 ```c++
-KUZU_API std::string getNodeTableNames ()
+std::string getNodeTableNames ()
 ```
 
 **Returns:**
 - all node table names in string format. 
 
 ---
+**getRelPropertyNames**
 
 ```c++
-KUZU_API std::string getRelPropertyNames (const std::string & relTableName)
+std::string getRelPropertyNames (const std::string & relTableName)
 ```
 
 **Parameters**
@@ -112,18 +120,20 @@ KUZU_API std::string getRelPropertyNames (const std::string & relTableName)
 - all property names of the given table. 
 
 ---
+**getRelTableNames**
 
 ```c++
-KUZU_API std::string getRelTableNames ()
+std::string getRelTableNames ()
 ```
 
 **Returns:**
 - all rel table names in string format. 
 
 ---
+**prepare**
 
 ```c++
-KUZU_API std::unique_ptr<PreparedStatement> prepare (const std::string & query)
+std::unique_ptr<PreparedStatement> prepare (const std::string & query)
 ```
 Prepares the given query and returns the prepared statement. 
 
@@ -134,9 +144,10 @@ Prepares the given query and returns the prepared statement.
 - the prepared statement. 
 
 ---
+**query**
 
 ```c++
-KUZU_API std::unique_ptr<QueryResult> query (const std::string & query)
+std::unique_ptr<QueryResult> query (const std::string & query)
 ```
 Executes the given query and returns the result. 
 
@@ -147,9 +158,10 @@ Executes the given query and returns the result.
 - the result of the query. 
 
 ---
+**setMaxNumThreadForExec**
 
 ```c++
-KUZU_API void setMaxNumThreadForExec (uint64_t numThreads)
+void setMaxNumThreadForExec (uint64_t numThreads)
 ```
 Sets the maximum number of threads to use for execution in the current connection. 
 

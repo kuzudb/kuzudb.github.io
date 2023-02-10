@@ -16,9 +16,10 @@ nav_order: 45
 Stores a vector of Values.  
 
 ---
+**getValue**
 
 ```c++
-KUZU_API common::Value* getValue (uint32_t idx)
+common::Value* getValue (uint32_t idx)
 ```
 
 **Parameters**
@@ -28,18 +29,20 @@ KUZU_API common::Value* getValue (uint32_t idx)
 - the value stored at idx. 
 
 ---
+**len**
 
 ```c++
-KUZU_API uint32_t len ()
+uint32_t len ()
 ```
 
 **Returns:**
 - number of values in the FlatTuple. 
 
 ---
+**toString**
 
 ```c++
-KUZU_API std::string toString (const std::vector< uint32_t > & colsWidth, const std::string & delimiter = '|', uint32_t maxWidth = -1)
+std::string toString (const std::vector< uint32_t > & colsWidth, const std::string & delimiter = '|', uint32_t maxWidth = -1)
 ```
 
 **Parameters**

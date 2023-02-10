@@ -22,9 +22,10 @@ auto result = conn->execute(preparedStatement.get(), std::make_pair(std::string(
 A prepared statement is a parameterized query which can avoid planning the same query for repeated execution.  
 
 ---
+**allowActiveTransaction**
 
 ```c++
-KUZU_API bool allowActiveTransaction ()
+bool allowActiveTransaction ()
 ```
 DDL and COPY_CSV statements are automatically wrapped in a transaction and committed. As such, they cannot be part of an active transaction. 
 
@@ -32,27 +33,30 @@ DDL and COPY_CSV statements are automatically wrapped in a transaction and commi
 - the prepared statement is allowed to be part of an active transaction. 
 
 ---
+**getErrorMessage**
 
 ```c++
-KUZU_API std::string getErrorMessage ()
+std::string getErrorMessage ()
 ```
 
 **Returns:**
 - the error message if the query is not prepared successfully. 
 
 ---
+**isReadOnly**
 
 ```c++
-KUZU_API bool isReadOnly ()
+bool isReadOnly ()
 ```
 
 **Returns:**
 - the prepared statement is read-only or not. 
 
 ---
+**isSuccess**
 
 ```c++
-KUZU_API bool isSuccess ()
+bool isSuccess ()
 ```
 
 **Returns:**

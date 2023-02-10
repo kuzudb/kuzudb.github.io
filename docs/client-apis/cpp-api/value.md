@@ -15,9 +15,10 @@ nav_order: 47
 NodeVal represents a node in the graph and stores the nodeID, label and properties of that node.  
 
 ---
+**NodeVal**
 
 ```c++
-KUZU_API NodeVal (std::unique_ptr< Value > idVal, std::unique_ptr< Value > labelVal)
+NodeVal (std::unique_ptr< Value > idVal, std::unique_ptr< Value > labelVal)
 ```
 Constructs the NodeVal object with the given idVal and labelVal. 
 
@@ -26,9 +27,10 @@ Constructs the NodeVal object with the given idVal and labelVal.
 - `labelVal` the name of the node. 
 
 ---
+**NodeVal**
 
 ```c++
-KUZU_API NodeVal (const NodeVal & other)
+NodeVal (const NodeVal & other)
 ```
 Constructs the NodeVal object from the other. 
 
@@ -36,9 +38,10 @@ Constructs the NodeVal object from the other.
 - `other` the NodeVal to copy from. 
 
 ---
+**addProperty**
 
 ```c++
-KUZU_API void addProperty (const std::string & key, std::unique_ptr< Value > value)
+void addProperty (const std::string & key, std::unique_ptr< Value > value)
 ```
 Adds a property with the given {key,value} pair to the NodeVal. 
 
@@ -47,63 +50,70 @@ Adds a property with the given {key,value} pair to the NodeVal.
 - `value` the value of the property. 
 
 ---
+**copy**
 
 ```c++
-KUZU_API std::unique_ptr<NodeVal> copy ()
+std::unique_ptr<NodeVal> copy ()
 ```
 
 **Returns:**
 - a copy of the current node. 
 
 ---
+**getLabelName**
 
 ```c++
-KUZU_API std::string getLabelName ()
+std::string getLabelName ()
 ```
 
 **Returns:**
 - the name of the node in string format. 
 
 ---
+**getLabelVal**
 
 ```c++
-KUZU_API Value* getLabelVal ()
+Value* getLabelVal ()
 ```
 
 **Returns:**
 - the name of the node as a Value. 
 
 ---
+**getNodeID**
 
 ```c++
-KUZU_API nodeID_t getNodeID ()
+nodeID_t getNodeID ()
 ```
 
 **Returns:**
 - the nodeID of the node as a nodeID struct. 
 
 ---
+**getNodeIDVal**
 
 ```c++
-KUZU_API Value* getNodeIDVal ()
+Value* getNodeIDVal ()
 ```
 
 **Returns:**
 - the nodeID as a Value. 
 
 ---
+**getProperties**
 
 ```c++
-KUZU_API const std::vector<std::pair<std::string, std::unique_ptr<Value> > >& getProperties ()
+const std::vector<std::pair<std::string, std::unique_ptr<Value> > >& getProperties ()
 ```
 
 **Returns:**
 - all properties of the NodeVal. 
 
 ---
+**toString**
 
 ```c++
-KUZU_API std::string toString ()
+std::string toString ()
 ```
 
 **Returns:**
@@ -116,9 +126,10 @@ KUZU_API std::string toString ()
 RelVal represents a rel in the graph and stores the relID, src/dst nodes and properties of that rel.  
 
 ---
+**RelVal**
 
 ```c++
-KUZU_API RelVal (std::unique_ptr< Value > srcNodeIDVal, std::unique_ptr< Value > dstNodeIDVal, std::unique_ptr< Value > labelVal)
+RelVal (std::unique_ptr< Value > srcNodeIDVal, std::unique_ptr< Value > dstNodeIDVal, std::unique_ptr< Value > labelVal)
 ```
 Constructs the RelVal based on the srcNodeIDVal, dstNodeIDVal and labelVal. 
 
@@ -128,9 +139,10 @@ Constructs the RelVal based on the srcNodeIDVal, dstNodeIDVal and labelVal.
 - `labelVal` the name of the rel. 
 
 ---
+**RelVal**
 
 ```c++
-KUZU_API RelVal (const RelVal & other)
+RelVal (const RelVal & other)
 ```
 Constructs a RelVal from other. 
 
@@ -138,9 +150,10 @@ Constructs a RelVal from other.
 - `other` the RelVal to copy from. 
 
 ---
+**addProperty**
 
 ```c++
-KUZU_API void addProperty (const std::string & key, std::unique_ptr< Value > value)
+void addProperty (const std::string & key, std::unique_ptr< Value > value)
 ```
 Adds a property with the given {key,value} pair to the RelVal. 
 
@@ -149,72 +162,80 @@ Adds a property with the given {key,value} pair to the RelVal.
 - `value` the value of the property. 
 
 ---
+**copy**
 
 ```c++
-KUZU_API std::unique_ptr<RelVal> copy ()
+std::unique_ptr<RelVal> copy ()
 ```
 
 **Returns:**
 - a copy of the RelVal. 
 
 ---
+**getDstNodeID**
 
 ```c++
-KUZU_API nodeID_t getDstNodeID ()
+nodeID_t getDstNodeID ()
 ```
 
 **Returns:**
 - the dst nodeID value of the RelVal as nodeID struct. 
 
 ---
+**getDstNodeIDVal**
 
 ```c++
-KUZU_API Value* getDstNodeIDVal ()
+Value* getDstNodeIDVal ()
 ```
 
 **Returns:**
 - the dst nodeID value of the RelVal in Value. 
 
 ---
+**getLabelName**
 
 ```c++
-KUZU_API std::string getLabelName ()
+std::string getLabelName ()
 ```
 
 **Returns:**
 - the name of the RelVal. 
 
 ---
+**getProperties**
 
 ```c++
-KUZU_API const std::vector<std::pair<std::string, std::unique_ptr<Value> > >& getProperties ()
+const std::vector<std::pair<std::string, std::unique_ptr<Value> > >& getProperties ()
 ```
 
 **Returns:**
 - all properties of the RelVal. 
 
 ---
+**getSrcNodeID**
 
 ```c++
-KUZU_API nodeID_t getSrcNodeID ()
+nodeID_t getSrcNodeID ()
 ```
 
 **Returns:**
 - the src nodeID value of the RelVal as nodeID struct. 
 
 ---
+**getSrcNodeIDVal**
 
 ```c++
-KUZU_API Value* getSrcNodeIDVal ()
+Value* getSrcNodeIDVal ()
 ```
 
 **Returns:**
 - the src nodeID value of the RelVal in Value. 
 
 ---
+**toString**
 
 ```c++
-KUZU_API std::string toString ()
+std::string toString ()
 ```
 
 **Returns:**
@@ -227,9 +248,10 @@ KUZU_API std::string toString ()
 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (bool val_)
+Value (bool val_)
 ```
 
 **Parameters**
@@ -239,9 +261,10 @@ KUZU_API Value (bool val_)
 - a Value with BOOL type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (int32_t val_)
+Value (int32_t val_)
 ```
 
 **Parameters**
@@ -251,9 +274,10 @@ KUZU_API Value (int32_t val_)
 - a Value with INT64 type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (int64_t val_)
+Value (int64_t val_)
 ```
 
 **Parameters**
@@ -263,9 +287,10 @@ KUZU_API Value (int64_t val_)
 - a Value with INT64 type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (double val_)
+Value (double val_)
 ```
 
 **Parameters**
@@ -275,9 +300,9 @@ KUZU_API Value (double val_)
 - a Value with DOUBLE type and val_ value. 
 
 ---
-
+**Value**
 ```c++
-KUZU_API Value (date_t val_)
+Value (date_t val_)
 ```
 
 **Parameters**
@@ -287,9 +312,10 @@ KUZU_API Value (date_t val_)
 - a Value with DATE type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (timestamp_t val_)
+Value (timestamp_t val_)
 ```
 
 **Parameters**
@@ -299,9 +325,10 @@ KUZU_API Value (timestamp_t val_)
 - a Value with timestamp type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (interval_t val_)
+Value (interval_t val_)
 ```
 
 **Parameters**
@@ -311,9 +338,10 @@ KUZU_API Value (interval_t val_)
 - a Value with INTERVAL type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (internalID_t val_)
+Value (internalID_t val_)
 ```
 
 **Parameters**
@@ -323,9 +351,10 @@ KUZU_API Value (internalID_t val_)
 - a Value with INTERNAL_ID type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (const char * val_)
+Value (const char * val_)
 ```
 
 **Parameters**
@@ -335,9 +364,10 @@ KUZU_API Value (const char * val_)
 - a Value with STRING type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (const std::string & val_)
+Value (const std::string & val_)
 ```
 
 **Parameters**
@@ -347,9 +377,10 @@ KUZU_API Value (const std::string & val_)
 - a Value with STRING type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (DataType dataType, std::vector< std::unique_ptr< Value >> vals)
+Value (DataType dataType, std::vector< std::unique_ptr< Value >> vals)
 ```
 
 **Parameters**
@@ -359,9 +390,10 @@ KUZU_API Value (DataType dataType, std::vector< std::unique_ptr< Value >> vals)
 - a Value with dataType type and vals value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (std::unique_ptr< NodeVal > val_)
+Value (std::unique_ptr< NodeVal > val_)
 ```
 
 **Parameters**
@@ -371,9 +403,10 @@ KUZU_API Value (std::unique_ptr< NodeVal > val_)
 - a Value with NODE type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (std::unique_ptr< RelVal > val_)
+Value (std::unique_ptr< RelVal > val_)
 ```
 
 **Parameters**
@@ -383,9 +416,10 @@ KUZU_API Value (std::unique_ptr< RelVal > val_)
 - a Value with REL type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (DataType dataType, const uint8_t * val_)
+Value (DataType dataType, const uint8_t * val_)
 ```
 
 **Parameters**
@@ -395,9 +429,10 @@ KUZU_API Value (DataType dataType, const uint8_t * val_)
 - a Value with dataType type and val_ value. 
 
 ---
+**Value**
 
 ```c++
-KUZU_API Value (const Value & other)
+Value (const Value & other)
 ```
 
 **Parameters**
@@ -407,18 +442,20 @@ KUZU_API Value (const Value & other)
 - a Value with the same value as other. 
 
 ---
+**copy**
 
 ```c++
-KUZU_API std::unique_ptr<Value> copy ()
+std::unique_ptr<Value> copy ()
 ```
 
 **Returns:**
 - a copy of the current value. 
 
 ---
+**copyValueFrom**
 
 ```c++
-KUZU_API void copyValueFrom (const uint8_t * value)
+void copyValueFrom (const uint8_t * value)
 ```
 Copies from the value. 
 
@@ -426,9 +463,10 @@ Copies from the value.
 - `value` value to copy from. 
 
 ---
+**copyValueFrom**
 
 ```c++
-KUZU_API void copyValueFrom (const Value & other)
+void copyValueFrom (const Value & other)
 ```
 Copies from the other. 
 
@@ -436,9 +474,10 @@ Copies from the other.
 - `other` value to copy from. 
 
 ---
+**createDefaultValue**
 
 ```c++
-static KUZU_API Value createDefaultValue (const DataType & dataType)
+static Value createDefaultValue (const DataType & dataType)
 ```
 
 **Parameters**
@@ -448,18 +487,20 @@ static KUZU_API Value createDefaultValue (const DataType & dataType)
 - a default non-NULL value of the given type. 
 
 ---
+**createNullValue**
 
 ```c++
-static KUZU_API Value createNullValue ()
+static Value createNullValue ()
 ```
 
 **Returns:**
 - a NULL value of ANY type. 
 
 ---
+**createNullValue**
 
 ```c++
-static KUZU_API Value createNullValue (DataType dataType)
+static Value createNullValue (DataType dataType)
 ```
 
 **Parameters**
@@ -469,9 +510,10 @@ static KUZU_API Value createNullValue (DataType dataType)
 - a NULL value of the given type. 
 
 ---
+**createValue**
 
 ```c++
-template<class T > static KUZU_API Value createValue (T value)
+template<class T > static Value createValue (T value)
 ```
 
 **Parameters**
@@ -481,9 +523,10 @@ template<class T > static KUZU_API Value createValue (T value)
 - a Value object based on value. 
 
 ---
+**createValue**
 
 ```c++
-template<> KUZU_API Value createValue (bool val)
+template<> Value createValue (bool val)
 ```
 
 **Parameters**
@@ -493,9 +536,10 @@ template<> KUZU_API Value createValue (bool val)
 - a Value with BOOL type and val value. 
 
 ---
+**createValue**
 
 ```c++
-template<> KUZU_API Value createValue (int64_t val)
+template<> Value createValue (int64_t val)
 ```
 
 **Parameters**
@@ -505,9 +549,10 @@ template<> KUZU_API Value createValue (int64_t val)
 - a Value with INT64 type and val value. 
 
 ---
+**createValue**
 
 ```c++
-template<> KUZU_API Value createValue (double val)
+template<> Value createValue (double val)
 ```
 
 **Parameters**
@@ -517,9 +562,10 @@ template<> KUZU_API Value createValue (double val)
 - a Value with DOUBLE type and val value. 
 
 ---
+**createValue**
 
 ```c++
-template<> KUZU_API Value createValue (date_t val)
+template<> Value createValue (date_t val)
 ```
 
 **Parameters**
@@ -529,9 +575,10 @@ template<> KUZU_API Value createValue (date_t val)
 - a Value with DATE type and val value. 
 
 ---
+**createValue**
 
 ```c++
-template<> KUZU_API Value createValue (timestamp_t val)
+template<> Value createValue (timestamp_t val)
 ```
 
 **Parameters**
@@ -541,9 +588,10 @@ template<> KUZU_API Value createValue (timestamp_t val)
 - a Value with TIMESTAMP type and val value. 
 
 ---
+**createValue**
 
 ```c++
-template<> KUZU_API Value createValue (interval_t val)
+template<> Value createValue (interval_t val)
 ```
 
 **Parameters**
@@ -553,9 +601,10 @@ template<> KUZU_API Value createValue (interval_t val)
 - a Value with INTERVAL type and val value. 
 
 ---
+**createValue**
 
 ```c++
-template<> KUZU_API Value createValue (nodeID_t val)
+template<> Value createValue (nodeID_t val)
 ```
 
 **Parameters**
@@ -565,9 +614,10 @@ template<> KUZU_API Value createValue (nodeID_t val)
 - a Value with NODE_ID type and val value. 
 
 ---
+**createValue**
 
 ```c++
-template<> KUZU_API Value createValue (std::string val)
+template<> Value createValue (std::string val)
 ```
 
 **Parameters**
@@ -577,9 +627,10 @@ template<> KUZU_API Value createValue (std::string val)
 - a Value with STRING type and val value. 
 
 ---
+**createValue**
 
 ```c++
-template<> KUZU_API Value createValue (const std::string & val)
+template<> Value createValue (const std::string & val)
 ```
 
 **Parameters**
@@ -589,9 +640,10 @@ template<> KUZU_API Value createValue (const std::string & val)
 - a Value with STRING type and val value. 
 
 ---
+**createValue**
 
 ```c++
-template<> KUZU_API Value createValue (const char * value)
+template<> Value createValue (const char * value)
 ```
 
 **Parameters**
@@ -601,234 +653,260 @@ template<> KUZU_API Value createValue (const char * value)
 - a Value with STRING type and val value. 
 
 ---
+**getDataType**
 
 ```c++
-KUZU_API DataType getDataType ()
+DataType getDataType ()
 ```
 
 **Returns:**
 - the dataType of the value. 
 
 ---
+**getListValReference**
 
 ```c++
-KUZU_API const std::vector<std::unique_ptr<Value> >& getListValReference ()
+const std::vector<std::unique_ptr<Value> >& getListValReference ()
 ```
 
 **Returns:**
 - a reference to the list value. 
 
 ---
+**getValue**
 
 ```c++
-template<class T > KUZU_API T getValue ()
+template<class T > T getValue ()
 ```
 
 **Returns:**
 - the value of the given type. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API bool getValue ()
+template<> bool getValue ()
 ```
 
 **Returns:**
 - boolean value. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API int64_t getValue ()
+template<> int64_t getValue ()
 ```
 
 **Returns:**
 - int64 value. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API double getValue ()
+template<> double getValue ()
 ```
 
 **Returns:**
 - double value. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API date_t getValue ()
+template<> date_t getValue ()
 ```
 
 **Returns:**
 - date_t value. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API timestamp_t getValue ()
+template<> timestamp_t getValue ()
 ```
 
 **Returns:**
 - timestamp_t value. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API interval_t getValue ()
+template<> interval_t getValue ()
 ```
 
 **Returns:**
 - interval_t value. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API internalID_t getValue ()
+template<> internalID_t getValue ()
 ```
 
 **Returns:**
 - internal_t value. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API std::string getValue ()
+template<> std::string getValue ()
 ```
 
 **Returns:**
 - string value. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API NodeVal getValue ()
+template<> NodeVal getValue ()
 ```
 
 **Returns:**
 - NodeVal value. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API RelVal getValue ()
+template<> RelVal getValue ()
 ```
 
 **Returns:**
 - RelVal value. 
 
 ---
+**getValueReference**
 
 ```c++
-template<class T > KUZU_API T& getValueReference ()
+template<class T > T& getValueReference ()
 ```
 
 **Returns:**
 - a reference to the value of the given type. 
 
 ---
+**getValueReference**
 
 ```c++
-template<> KUZU_API bool& getValueReference ()
+template<> bool& getValueReference ()
 ```
 
 **Returns:**
 - the reference to the boolean value. 
 
 ---
+**getValueReference**
 
 ```c++
-template<> KUZU_API int64_t& getValueReference ()
+template<> int64_t& getValueReference ()
 ```
 
 **Returns:**
 - the reference to the int64 value. 
 
 ---
+**getValueReference**
 
 ```c++
-template<> KUZU_API double& getValueReference ()
+template<> double& getValueReference ()
 ```
 
 **Returns:**
 - the reference to the double value. 
 
 ---
+**getValue**
 
 ```c++
-template<> KUZU_API date_t& getValueReference ()
+template<> date_t& getValueReference ()
 ```
 
 **Returns:**
 - the reference to the date value. 
 
 ---
+**getValueReference**
 
 ```c++
-template<> KUZU_API timestamp_t& getValueReference ()
+template<> timestamp_t& getValueReference ()
 ```
 
 **Returns:**
 - the reference to the timestamp value. 
 
 ---
+**getValueReference**
 
 ```c++
-template<> KUZU_API interval_t& getValueReference ()
+template<> interval_t& getValueReference ()
 ```
 
 **Returns:**
 - the reference to the interval value. 
 
 ---
+**getValueReference**
 
 ```c++
-template<> KUZU_API nodeID_t& getValueReference ()
+template<> nodeID_t& getValueReference ()
 ```
 
 **Returns:**
 - the reference to the internal_id value. 
 
 ---
+**getValueReference**
 
 ```c++
-template<> KUZU_API std::string& getValueReference ()
+template<> std::string& getValueReference ()
 ```
 
 **Returns:**
 - the reference to the string value. 
 
 ---
+**getValueReference**
 
 ```c++
-template<> KUZU_API NodeVal& getValueReference ()
+template<> NodeVal& getValueReference ()
 ```
 
 **Returns:**
 - the reference to the NodeVal value. 
 
 ---
+**getValueReference**
 
 ```c++
-template<> KUZU_API RelVal& getValueReference ()
+template<> RelVal& getValueReference ()
 ```
 
 **Returns:**
 - the reference to the RelVal value. 
 
 ---
+**isNull**
 
 ```c++
-KUZU_API bool isNull ()
+bool isNull ()
 ```
 
 **Returns:**
 - whether the Value is null or not. 
 
 ---
+**setDataType**
 
 ```c++
-KUZU_API void setDataType (const DataType & dataType_)
+void setDataType (const DataType & dataType_)
 ```
 Sets the data type of the Value. 
 
@@ -836,9 +914,10 @@ Sets the data type of the Value.
 - `dataType_` the data type to set to. 
 
 ---
+**setNull**
 
 ```c++
-KUZU_API void setNull (bool flag)
+void setNull (bool flag)
 ```
 Sets the null flag of the Value. 
 
@@ -846,9 +925,10 @@ Sets the null flag of the Value.
 - `flag` null value flag to set. 
 
 ---
+**toString**
 
 ```c++
-KUZU_API std::string toString ()
+std::string toString ()
 ```
 
 **Returns:**

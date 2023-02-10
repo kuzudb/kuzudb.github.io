@@ -29,63 +29,70 @@ while (result->hasNext()) {
 QueryResult stores the result of a query execution.  
 
 ---
+**getColumnDataTypes**
 
 ```c++
-KUZU_API std::vector<common::DataType> getColumnDataTypes ()
+std::vector<common::DataType> getColumnDataTypes ()
 ```
 
 **Returns:**
 - dataType of each column in query result. 
 
 ---
+**getColumnNames**
 
 ```c++
-KUZU_API std::vector<std::string> getColumnNames ()
+std::vector<std::string> getColumnNames ()
 ```
 
 **Returns:**
 - name of each column in query result. 
 
 ---
+**getErrorMessage**
 
 ```c++
-KUZU_API std::string getErrorMessage ()
+std::string getErrorMessage ()
 ```
 
 **Returns:**
 - error message of the query execution if the query fails. 
 
 ---
+**getNext**
 
 ```c++
-KUZU_API std::shared_ptr<processor::FlatTuple> getNext ()
+std::shared_ptr<processor::FlatTuple> getNext ()
 ```
 
 **Returns:**
 - next flat tuple in the query result. 
 
 ---
+**getNumColumns**
 
 ```c++
-KUZU_API size_t getNumColumns ()
+size_t getNumColumns ()
 ```
 
 **Returns:**
 - number of columns in query result. 
 
 ---
+**getNumTuples**
 
 ```c++
-KUZU_API uint64_t getNumTuples ()
+uint64_t getNumTuples ()
 ```
 
 **Returns:**
 - num of tuples in query result. 
 
 ---
+**getQuerySummary**
 
 ```c++
-KUZU_API QuerySummary* getQuerySummary ()
+QuerySummary* getQuerySummary ()
 ```
 
 **Returns:**
@@ -94,25 +101,27 @@ KUZU_API QuerySummary* getQuerySummary ()
 ---
 
 ```c++
-KUZU_API bool hasNext ()
+bool hasNext ()
 ```
 
 **Returns:**
 - whether there are more tuples to read. 
 
 ---
+**isSuccess**
 
 ```c++
-KUZU_API bool isSuccess ()
+bool isSuccess ()
 ```
 
 **Returns:**
 - query is executed successfully or not. 
 
 ---
+**writeToCSV**
 
 ```c++
-KUZU_API void writeToCSV (const std::string & fileName, char delimiter = ',', char escapeCharacter = ''', char newline = 'n')
+void writeToCSV (const std::string & fileName, char delimiter = ',', char escapeCharacter = ''', char newline = 'n')
 ```
 writes the query result to a csv file. 
 
@@ -129,27 +138,30 @@ writes the query result to a csv file.
 QuerySummary stores the execution time, plan, compiling time and query options of a query.  
 
 ---
+**getCompilingTime**
 
 ```c++
-KUZU_API double getCompilingTime ()
+double getCompilingTime ()
 ```
 
 **Returns:**
 - query compiling time. 
 
 ---
+**getExecutionTime**
 
 ```c++
-KUZU_API double getExecutionTime ()
+double getExecutionTime ()
 ```
 
 **Returns:**
 - query execution time. 
 
 ---
+**getPlan**
 
 ```c++
-KUZU_API std::string getPlan ()
+std::string getPlan ()
 ```
 
 **Returns:**
