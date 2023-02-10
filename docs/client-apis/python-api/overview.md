@@ -17,7 +17,7 @@ Currently Kùzu doesn't support manually begin a transaction.
 ```
 import kuzu
 # create database
-db = kuzu.database('./testdb')
+db = kuzu.Database('./testdb')
 # create connection
 conn = kuzu.connection(db)
 
