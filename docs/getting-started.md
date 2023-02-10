@@ -14,7 +14,7 @@ Database path: test
 kuzu> 
 ```
 
-Once the CLI has been opened, enter a Cypher query then hit the enter key to execute it. ? of how to load node and rel tables from CSV files 
+Once the CLI has opened, enter a Cypher query then hit the enter key to execute it. Instructions of how to load nodes and rels from CSV files 
 and run a Cypher query is shown below:
 - Create the schema:
 
@@ -157,9 +157,10 @@ In this example, we assume that the so/dylib, the headers, the CSV files, and th
 
 ```
 #include <iostream>
-#include "include/kuzu.h"
+#include "kuzu.h"
 
 using namespace kuzu::main;
+using namespace std;
 
 int main()
 {
@@ -190,9 +191,9 @@ int main()
     while (result->hasNext())
     {
         auto row = result->getNext();
-        std::cout << row->getResultValue(0)->getStringVal() << " " 
-	          << row->getResultValue(1)->getInt64Val()  << " " 
-		  << row->getResultValue(2)->getStringVal() << std::endl;
+        std::cout << row->getValue(0)->getValue<string>() << " " 
+	          << row->getValue(1)->getValue<int64_t>()  << " " 
+		  << row->getValue(2)->getValue<string>() << std::endl;
     }
     return 0;
 }
