@@ -20,7 +20,7 @@ class Connection()
 
 ----
 
-#### \_\_init\_\_
+**\_\_init\_\_**
 
 ```python
 def __init__(database, num_threads=0)
@@ -33,7 +33,7 @@ def __init__(database, num_threads=0)
 
 ----
 
-#### set\_max\_threads\_for\_exec
+**set\_max\_threads\_for\_exec**
 
 ```python
 def set_max_threads_for_exec(num_threads)
@@ -46,7 +46,7 @@ Set the maximum number of threads for executing queries.
 
 ----
 
-#### execute
+**execute**
 
 ```python
 def execute(query, parameters=[])

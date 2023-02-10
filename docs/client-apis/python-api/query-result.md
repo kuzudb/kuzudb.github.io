@@ -38,7 +38,7 @@ class QueryResult()
 
 ----
 
-#### \_\_init\_\_
+**\_\_init\_\_**
 
 ```python
 def __init__(connection, query_result)
@@ -51,7 +51,7 @@ def __init__(connection, query_result)
 
 ----
 
-#### check\_for\_query\_result\_close
+**check\_for\_query\_result\_close**
 
 ```python
 def check_for_query_result_close()
@@ -64,7 +64,7 @@ Check if the query result is closed and raise an exception if it is.
 
 ----
 
-#### has\_next
+**has\_next**
 
 ```python
 def has_next()
@@ -77,7 +77,7 @@ Check if there are more rows in the query result.
 
 ----
 
-#### get\_next
+**get\_next**
 
 ```python
 def get_next()
@@ -90,7 +90,7 @@ Get the next row in the query result.
 
 ----
 
-#### write\_to\_csv
+**write\_to\_csv**
 
 ```python
 def write_to_csv(filename, delimiter=',', escape_character='"', newline='\n')
@@ -109,7 +109,7 @@ Write the query result to a CSV file.
 
 ----
 
-#### close
+**close**
 
 ```python
 def close()
@@ -119,7 +119,7 @@ Close the query result.
 
 ----
 
-#### get\_as\_df
+**get\_as\_df**
 
 ```python
 def get_as_df()
@@ -132,7 +132,7 @@ Get the query result as a Pandas DataFrame.
 
 ----
 
-#### get\_as\_arrow
+**get\_as\_arrow**
 
 ```python
 def get_as_arrow(chunk_size)
@@ -148,7 +148,7 @@ Get the query result as a PyArrow Table.
 
 ----
 
-#### get\_column\_data\_types
+**get\_column\_data\_types**
 
 ```python
 def get_column_data_types()
@@ -161,7 +161,7 @@ Get the data types of the columns in the query result.
 
 ----
 
-#### get\_column\_names
+**get\_column\_names**
 
 ```python
 def get_column_names()
@@ -174,7 +174,7 @@ Get the names of the columns in the query result.
 
 ----
 
-#### reset\_iterator
+**reset\_iterator**
 
 ```python
 def reset_iterator()
@@ -184,7 +184,7 @@ Reset the iterator of the query result.
 
 ----
 
-#### get\_as\_networkx
+**get\_as\_networkx**
 
 ```python
 def get_as_networkx(directed=True)
@@ -200,7 +200,7 @@ Get the query result as a NetworkX graph.
 
 ----
 
-#### get\_as\_torch\_geometric
+**get\_as\_torch\_geometric**
 
 ```python
 def get_as_torch_geometric()
