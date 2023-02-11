@@ -34,6 +34,10 @@ class QueryResult()
 
 - `get_column_names()` Get the names of the columns in the query result.
 
+- `reset_iterator()` Reset the iterator of the query result.
+
+- `get_as_networkx(directed=True)` Get the query result as a NetworkX graph. By default, it returns a directed graph.
+
 - `get_as_torch_geometric()` Get the query result as a PyTorch Geometric Data object.
 
 ----
