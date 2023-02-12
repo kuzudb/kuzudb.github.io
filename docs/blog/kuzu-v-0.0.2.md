@@ -32,10 +32,10 @@ For installing the new version, please visit the [installation guide](https://ku
 the full
 [release notes are here](https://github.com/kuzudb/kuzu/releases). If you are eager to play with
 a few Colab notebooks, here are several links: 
-- [General Kùzu Demo](https://colab.research.google.com/drive/14oqEC8p7fmkjetnpfDmx40WZoILpSaeL?usp=sharing#scrollTo=vKj5lBSDxgaT)
-- [Export Query Results to Pytorch Geometric: Node Property Prediction Example](https://colab.research.google.com/drive/1fzcwBwTY-M19p7OOTIaynfgHFcAQo9NK?usp=sharing#scrollTo=nyXPXQ2dMesl) 
-- [Export Query Results to Pytorch Geometric: Link Prediction Example](https://colab.research.google.com/drive/1QdX7CDdajIAb04lqaO5PfJlpKG-ljG28?usp=sharing#scrollTo=KIZPfDBkVJSB)
-- [Export Query Results to NetworkX](https://colab.research.google.com/drive/1NDsnFDWcSGoaOl-mOgG0zrPG2VAr8Q6H?usp=sharing#scrollTo=AkpBul7ZpUM5)
+- [General Kùzu Demo](https://colab.research.google.com/drive/15OLPggnRSBmR_K9yzq6iAGE5MDzNwqoN)
+- [Export Query Results to Pytorch Geometric: Node Property Prediction Example](https://colab.research.google.com/drive/1fzcwBwTY-M19p7OOTIaynfgHFcAQo9NK)
+- [Export Query Results to Pytorch Geometric: Link Prediction Example](https://colab.research.google.com/drive/1QdX7CDdajIAb04lqaO5PfJlpKG-ljG28)
+- [Export Query Results to NetworkX](https://colab.research.google.com/drive/1NDsnFDWcSGoaOl-mOgG0zrPG2VAr8Q6H)
 
 ## Exporting Query Results to Pytorch Geometric and NetworkX
 Perhaps most excitingly, we have added the first capabilities to integrate with 2 popular 
@@ -59,8 +59,8 @@ want to manually put them into the `Data/HeteroData` objects.
 **Colab Demonstrations:**
 Here are 2 Colab notebooks that you can play around with to see how you can develop graph learning
 pipelines using Kùzu as your GDBMSs:
-1. [Node property prediction](https://colab.research.google.com/drive/1fzcwBwTY-M19p7OOTIaynfgHFcAQo9NK?usp=sharing#scrollTo=nyXPXQ2dMesl)
-2. [Link prediction](https://colab.research.google.com/drive/1QdX7CDdajIAb04lqaO5PfJlpKG-ljG28?usp=sharing#scrollTo=KIZPfDBkVJSB)
+1. [Node property prediction](https://colab.research.google.com/drive/1fzcwBwTY-M19p7OOTIaynfgHFcAQo9NK)
+2. [Link prediction](https://colab.research.google.com/drive/1QdX7CDdajIAb04lqaO5PfJlpKG-ljG28)
 
 The examples demonstrate how to extract a subgraph,
 train graph convolutional or neural networks (GCNs or GNNs), make some node property
