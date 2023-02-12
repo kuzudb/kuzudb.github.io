@@ -46,7 +46,7 @@ graph analytics, including visualization.
 
 ### Pytorch Geometric: `QueryResult.get_as_torch_geometric()` function
 Our [Python API](https://kuzudb.com/docs/client-apis/python-api/overview.html) now has a 
-new `QueryResult.get_as_torch_geometric()` function that 
+new [`QueryResult.get_as_torch_geometric()`](../client-apis/python-api/query-result.md#query_result.QueryResult.get_as_torch_geometric) function that 
 converts results of queries to PyG's in-memory graph representation 
 [`torch_geometric.data`](https://pytorch-geometric.readthedocs.io/en/latest/modules/data.html).
 If your query results contains nodes and relationship objects, then the function uses 
@@ -68,7 +68,7 @@ or link predictions and save them back in Kùzu so you can query these predictio
 
 ### NetworkX: `QueryResult.get_as_networkx()` function
 Our [Python API](https://kuzudb.com/docs/client-apis/python-api/overview.html) now has a 
-new `QueryResult.get_as_networkx()` function that can convert query results
+new [`QueryResult.get_as_networkx()`](../client-apis/python-api/query-result.md#query_result.QueryResult.get_as_networkx) function that can convert query results
 that contain nodes and relationships into NetworkX directed or undirected graphs.  
 Using this function, you can build pipelines
 that benefits from Kùzu's DBMS functionalities (e.g., querying, data extraction and transformations,
@@ -86,8 +86,8 @@ We have removed our own CSV reader and instead now use [Arrow](https://arrow.apa
 as our default library when bulk importing data through [`COPY FROM` statements](https://kuzudb.com/docs/data-import/csv-import.html). 
 Using Arrow, we can not only bulk import
 from CSV files but also from arrow IPC and parquet files. We detect the file type
-from the suffix of the file; so if the query says `COPY user FROM `./user.parquet`,
-we infer that this is a parquet file and parse it so. See the details [here](xxx).
+from the suffix of the file; so if the query says `COPY user FROM ./user.parquet`,
+we infer that this is a parquet file and parse it so. See the details [here](../cypher/../data-import/parquet-import.md).
 
 ## Multi-labeled or Unlabeled Queries
 A very useful feature of the query languages of GDBMSs is their
