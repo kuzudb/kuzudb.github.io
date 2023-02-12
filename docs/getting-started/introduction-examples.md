@@ -6,12 +6,12 @@ permalink: /docs/getting-started/introduction-examples
 nav_order: 1
 ---
 
-This guide provides hand-on instructions and examples on how to set up and start working with Kùzu with CLI, Python, and C++ APIs. The CSV files used in this example can be found [here](cypher/query-clauses/example-database.md).
+This guide provides hand-on instructions and examples on how to set up and start working with Kùzu with CLI, Python, and C++ APIs. The CSV files used in this example can be found [here](../cypher/query-clauses/example-database.md).
 
 We introduce how Kùzu can be used with CLI, Python, and C++ APIs through examples.
 
 # CLI
-Kùzu CLI (Command Line Interface) is a single, dependency free executable. It is precompiled for Mac and Linux. The CLI can be downloaded [here](https://github.com/kuzudb/kuzu/releases/tag/0.0.1). After the CLI is downloaded and extracted into a directory, you can navigate the directory from your terminal, and set the execute permissions with `chmod +x kuzu`. Then you can run the executable with `./kuzu -i <db_path>` where `<db_path>` is the directory for the database files. This path can point to an existing database or to a directory that does not yet exist and Kùzu will create the directory and initialize an empty database for you. You will see a prompt as below if you pass `test` as you `<db_path>`:
+Kùzu CLI (Command Line Interface) is a single, dependency free executable. It is precompiled for Mac and Linux. The CLI can be downloaded [here](https://github.com/kuzudb/kuzu/releases/tag/v0.0.2). After the CLI is downloaded and extracted into a directory, you can navigate the directory from your terminal, and set the execute permissions with `chmod +x kuzu`. Then you can run the executable with `./kuzu -i <db_path>` where `<db_path>` is the directory for the database files. This path can point to an existing database or to a directory that does not yet exist and Kùzu will create the directory and initialize an empty database for you. You will see a prompt as below if you pass `test` as you `<db_path>`:
 
 ```
 Database path: test
@@ -75,7 +75,7 @@ kuzu> MATCH (a:User)-[f:Follows]->(b:User) RETURN a.name, b.name, f.since;
 Kùzu Python API can be installed with pip: `pip install kuzu`. 
 
 Once the Python API is installed, you can import it in Python and use it to perform Cypher queries. Below is a short example
-of how to get started. Details of the [Python API is here](client-apis/python-api/overview.md).
+of how to get started. Details of the [Python API is here](../client-apis/python-api/overview.md).
 
 - Import library:
 
@@ -155,8 +155,8 @@ u.age: [[30,40,50,25]]
 ```
 
 # C++ API
-Kùzu C++ API is distributed as a so/dylib library file and a set of header files. The C++ API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/tag/0.0.1). After the C++ API is downloaded and extracted into a directory, it can be used without installation by just specifying the library search path for the linker.
-Below is a short example of how to get started. Details of the [C++ API is here](client-apis/cpp-api/overview.md).
+Kùzu C++ API is distributed as a so/dylib library file and a set of header files. The C++ API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/tag/v0.0.2). After the C++ API is downloaded and extracted into a directory, it can be used without installation by just specifying the library search path for the linker.
+Below is a short example of how to get started. Details of the [C++ API is here](../client-apis/cpp-api/overview.md).
 - Setup:
 In this example, we assume that the so/dylib, the headers, the CSV files, and the cpp code file is under the same directoy:
 

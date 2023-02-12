@@ -6,7 +6,7 @@ parent: Client api
 
 # Kùzu CLI
 
-Please see the [getting started page](../getting-started.md#cli) for instructions on how
+Please see the [getting started page](../getting-started/introduction-examples.md#cli) for instructions on how
 to install Kùzu's command line interface and how to make it point to a database folder.
 Once in the CLI, you can issue Cypher queries on your database as well as use CLI
 commands to explore your database and configure the Kùzu instance CLI is running (e.g., set
@@ -25,5 +25,5 @@ kuzu> :help
     :show_node     [table_name] show node table schema
     :show_rel     [table_name] show rel table schema
 ```
-The [getting started page](../getting-started.md#cli) provides examples of running
+The [getting started page](../getting-started/introduction-examples.md#cli) provides examples of running
 Cypher commands through the CLI. 

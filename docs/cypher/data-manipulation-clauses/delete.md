@@ -6,7 +6,7 @@ grand_parent: Cypher
 ---
 
 # Database
-We will use the database, whose schema and data import commands are given [here](example-database.md):
+We will use the database, whose schema and data import commands are given [here](../query-clauses/example-database.md):
 
 <img src="../../../img/running-example.png" width="800">
 
