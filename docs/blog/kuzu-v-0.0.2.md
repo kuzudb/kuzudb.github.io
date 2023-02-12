@@ -16,7 +16,7 @@ in Syria and Türkiye.
 There will be a very difficult winter for all those who survived so everyone needs to help. 
 Here are two pointers for trustworthy organizations we know of that are trying to help
 victims on the ground. For Türkiye (where Semih is from), you can donate to [Ahbap](https://ahbap.org/bagis-kategorisi/5)
-(put a large number because the donation currency is in TL and 1 CAD = 14 TL; 1 USD = 19TL); and for Syria 
+(Please be aware that the donation currency is in TL and 1 CAD = 14 TL; 1 USD = 19TL); and for Syria 
 you can donate to the [White Helmets](https://www.whitehelmets.org/en/). Be generous! We'll leave pointers to several 
 other organizations below in this footnote[^1].
 
