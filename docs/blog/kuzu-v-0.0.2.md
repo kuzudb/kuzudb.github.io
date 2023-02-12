@@ -53,7 +53,7 @@ If your query results contains nodes and relationship objects, then the function
 those nodes and relationships to construct either `torch_geometric.data.Data` or 
 `torch_geometric.data.HeteroData` objects. The function also auto-converts any numeric or boolean property 
 on the nodes into tensors on the nodes that can be used as features in the `Data/HeteroData` objects.
-Any property that cannot be auto-converted, or edge properties are also returned in case you need
+Any property that cannot be auto-converted and the edge properties are also returned in case you need
 want to manually put them into the `Data/HeteroData` objects.
 
 **Colab Demonstrations:**
@@ -69,8 +69,7 @@ or link predictions and save them back in Kùzu so you can query these predictio
 ### NetworkX: `QueryResult.get_as_networkx()` function
 Our [Python API](https://kuzudb.com/docs/client-apis/python-api/overview.html) now has a 
 new [`QueryResult.get_as_networkx()`](../client-apis/python-api/query-result.md#query_result.QueryResult.get_as_networkx) function that can convert query results
-that contain nodes and relationships into NetworkX directed or undirected graphs.  
-Using this function, you can build pipelines
+that contain nodes and relationships into NetworkX directed or undirected graphs. Using this function, you can build pipelines
 that benefits from Kùzu's DBMS functionalities (e.g., querying, data extraction and transformations,
 using a high-level query language with very fast performance), and NetworkX's rich library of 
 graph analytics algorithms.
@@ -103,7 +102,7 @@ MATCH (a:User)-[e]->(b)
 WHERE a.name = 'Karissa'
 RETURN a, e, b
 ```
-Thsi query asks for all types of relationships that Karissa can have to any possible other
+This query asks for all types of relationships that Karissa can have to any possible other
 node (not necessarily of label `User`) in the query. So if the database contains 
 `Likes` relationships from `Users` to `Comments`, `Follows` relationships
 from `Users` to `Users`, and `LivesIn` relationships from `Users` and `Cities`, 
@@ -111,7 +110,7 @@ variables e and b can bind to records from all of these
 relationship and node labels, respectively. 
 
 You can also restrict the labels of nodes/rels to a fixed set that contains
-more than one label.
+more than one label using the `|` syntax.
 For example you can do:
 
 ```
@@ -120,13 +119,14 @@ WHERE a.name = 'Karissa'
 RETURN a, e, b
 ```
 This forces e to match to only Likes relationship or Follows relationship records (so
-excludes the `LivesIn` records we mentioned above).
+excludes the `LivesIn` records we mentioned above). The `|` is a syntax adapted from
+regexes originrally and is also used in query languages that support `regular path queries`. 
 
 Kùzu now supports such queries. Our query execution
 is based on performing scans of each possible node/rel table and index
 and when a variable `x` can bind to multiple node/rel tables, `L1, L2, ..., Lk`,
 we reserve one vector for each possible property of each node/rel table.  
-If anyeone has any optimizations to do something smarter, it would be very interesting
+If anyone has any optimizations to do something smarter, it would be very interesting
 to hear!
 
 ## Other Important Changes
@@ -134,8 +134,9 @@ to hear!
 ### Enhanced String Features
 We've added two important features to enhance Kùzu's ability to store and process strings:
 
-1) the support of UTF-8 characters. With the help of [utf8proc](https://github.com/JuliaStrings/utf8proc), Kùzu now can support UTF-8 strings;
-2) the support of [pattern matching](../cypher/expressions/functions/pattern-matching.md) with strings. Kùzu supports regular expression with Cypher's `=~` operator, which will return true if its pattern mathces the entire input string. For example: `RETURN 'abc' =~ '.*(b|d).*';`.
+1) Support of UTF-8 characters. With the help of [utf8proc](https://github.com/JuliaStrings/utf8proc), you can now store string node/relationship
+   properties in Kùzu that has UTF-8 characters;
+3) Support of [regex pattern matching](../cypher/expressions/functions/pattern-matching.md) with strings. Kùzu now supports Cypher's `=~` operator for regex searches, which will return true if its pattern mathces the entire input string. For example: `RETURN 'abc' =~ '.*(b|d).*';`.
 
 ### CASE Expression
 We've added [CASE](../cypher/expressions/case-expression.md) for conditional expressions.
@@ -143,7 +144,8 @@ Two forms ([Simple Form](../cypher/expressions/case-expression.md#simple-form) a
 
 ### ALTER/DROP/SET/DELETE
 We added [ALTER TABLE](../cypher/ddl.md#alter-table) and [DROP TABLE](../cypher/ddl.md#drop-table) DDL statements.
-After creating a new table, you can now drop it, rename it, and alter it by adding new columns, renaming or dropping existing columns.
+After creating a new node or relatinship table, you can now drop it, rename it, and alter it by adding new columns/properties, 
+renaming or dropping existing columns/properties.
 
 Besides schema level changes, you can change properties of existing nodes/rels with [SET](../cypher/data-manipulation-clauses/set.md) statements, and remove existing nodes/rels with [DELETE](../cypher/data-manipulation-clauses/delete.md) statements.
 
