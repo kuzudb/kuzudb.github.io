@@ -9,7 +9,7 @@ grand_parent: Cypher
 `CASE` is used for conditional expression. There are two variants of conditional expression in Cypher. A simple form which compares an expression against multiple expressions and a general form with multiple conditional statements.
 
 ## Simple Form
-In the simple form, input is compared against each `WHEN` in order until a match is found. If no match is found, the expression in the `ELSE` is retuned. If there is no `ELSE`, `NULL` is returned.
+In the simple form, input is compared against each `WHEN` in order until a match is found. If no match is found, the expression in the `ELSE` is returned. If there is no `ELSE`, `NULL` is returned.
 
 Syntax
 ```

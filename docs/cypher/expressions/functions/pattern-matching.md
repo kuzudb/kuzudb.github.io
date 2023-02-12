@@ -24,7 +24,7 @@ RETURN 'abc' =~ '(b|c).*';
 False
 ```
 
-### Escaping in Regualr Expressions
+### Escaping in Regular Expressions
 
 To use special characters (e.g. `.`, `*`) without special meaning, escape them with backslash (`\`).
 
