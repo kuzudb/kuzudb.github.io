@@ -3,7 +3,7 @@ layout: default
 title: Factorization & Great Ideas from Database Theory (1)
 permalink: /blog/factorization.html
 parent: Blog
-nav_order: 3
+nav_order: 2
 ---
 <p align="center">
   <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="300"></a>

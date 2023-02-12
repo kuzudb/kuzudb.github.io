@@ -1,6 +1,14 @@
+---
+layout: default
+title: Kùzu 0.0.2 Release
+permalink: /blog/kuzu-0.0.2-release.html
+parent: Blog
+nav_order: 1
+---
+
 # Kùzu 0.0.2 Release
-This post is about the second release of Kùzu. However, we want to start with something much more
-important:
+
+This post is about the second release of Kùzu. However, we want to start with something much more important:
 
 ### Donate to the Victims of [Türkiye-Syria Earthquake](https://www.bbc.com/news/world-middle-east-64590946):
 Our hearts, thoughts, and prayers go to all the victims, those who survived and those who passed,
@@ -18,9 +26,9 @@ have worked quite hard since the last release to integrate Kùzu to import data 
 different formats and export data to different formats. There are also several important 
 features in the new Cypher clauses and queries we support,  additional string 
 processing capabilities, and new DDL statement support. We will give a summary of each 
-of these below. 
+of these below.
 
-For installing new version, please visit the [installation guide](https://kuzudb.com/docs/getting-started.html) and
+For installing the new version, please visit the [installation guide](https://kuzudb.com/docs/getting-started.html) and
 the full
 [release notes are here](https://github.com/kuzudb/kuzu/releases). If you are eager to play with
 a few Colab notebooks, here are several links: 
@@ -121,24 +129,30 @@ we reserve one vector for each possible property of each node/rel table.
 If anyeone has any optimizations to do something smarter, it would be very interesting
 to hear!
 
+## Other Important Changes
 
+### Enhanced String Features
+We've added two important features to enhance Kùzu's ability to store and process strings:
 
-## Other Features: 
-TODO(Guodong): Write better
-- CASE
-- Enhancements to Strings: regexes and UTF-8..
-- XYZ
-- Removal of relationships that can be between multiple source or destionation labels.
-- 
+1) the support of UTF-8 characters. With the help of [utf8proc](https://github.com/JuliaStrings/utf8proc), Kùzu now can support UTF-8 strings;
+2) the support of [pattern matching](../cypher/expressions/functions/pattern-matching.md) with strings. Kùzu supports regular expression with Cypher's `=~` operator, which will return true if its pattern mathces the entire input string. For example: `RETURN 'abc' =~ '.*(b|d).*';`.
 
+### CASE Expression
+We've added [CASE](../cypher/expressions/case-expression.md) for conditional expressions.
+Two forms ([Simple Form](../cypher/expressions/case-expression.md#simple-form) and [General Form](../cypher/expressions/case-expression.md#general-form)) of CASE expression are supported.
+
+### ALTER/DROP/SET/DELETE
+We added [ALTER TABLE](../cypher/ddl.md#alter-table) and [DROP TABLE](../cypher/ddl.md#drop-table) DDL statements.
+After creating a new table, you can now drop it, rename it, and alter it by adding new columns, renaming or dropping existing columns.
+
+Besides schema level changes, you can change properties of existing nodes/rels with [SET](../cypher/data-manipulation-clauses/set.md) statements, and remove existing nodes/rels with [DELETE](../cypher/data-manipulation-clauses/delete.md) statements.
+
+### Disable Relationships with Multiple Source or Destination Labels
+We now no longer support defining a relationship between multiple source or destination labels.
+This is to simplify our storage. But please let us know if you have strong use cases on this.
 
 Enjoy our new release and don't forget to donate to the earthquake victims.
 
+*by Kùzu team, 02-13-2023, Waterloo, ON, Canada*
 
-*by Kùzu team, 02-13-2023, Waterloo, ON, Canada**
-
-
-[^1]: For Türkiye two other organizations are [AFAD](https://en.afad.gov.tr/earthquake-campaign), which is the public
-institute for coordinating natural disaster response and [Akut](https://www.akut.org.tr/en/donation), a volunteer-based
-and highly organized search and rescue group. For Syria, another campaign I can
-recommend is [Molham Team](https://molhamteam.com/en/campaigns/439?fbclid=IwAR3_t443XME9Gh0r75KM4VpQ58WLNPd8w8tyMV2JprdObwecPwhWAdX2FOQ), which is an organization founded by Syrian refugee students.
+[^1]: For Türkiye two other organizations are [AFAD](https://en.afad.gov.tr/earthquake-campaign), which is the public institute for coordinating natural disaster response and [Akut](https://www.akut.org.tr/en/donation), a volunteer-based and highly organized search and rescue group. For Syria, another campaign I can recommend is [Molham Team](https://molhamteam.com/en/campaigns/439?fbclid=IwAR3_t443XME9Gh0r75KM4VpQ58WLNPd8w8tyMV2JprdObwecPwhWAdX2FOQ), which is an organization founded by Syrian refugee students.
