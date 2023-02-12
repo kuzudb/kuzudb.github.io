@@ -18,29 +18,19 @@ class QueryResult()
 
 ### Available APIs:
 -------
-- `check_for_query_result_close()` Check if the query result is closed and raise an exception if it is.
-
-- `has_next()` Check if there are more rows in the query result.
-
-- `get_next()` Get the next row in the query result.
-
-- `write_to_csv(filename, delimiter=',', escape_character='"', newline='\n')` Write the query result to a CSV file.
-
-- `close()` Close the query result.
-
-- `get_as_df()` Get the query result as a Pandas DataFrame.
-
-- `get_as_arrow(chunk_size)` Get the query result as a PyArrow Table.
-
-- `get_column_data_types()` Get the data types of the columns in the query result.
-
-- `get_column_names()` Get the names of the columns in the query result.
-
-- `reset_iterator()` Reset the iterator of the query result.
-
-- `get_as_networkx(directed=True)`  Converts the nodes and rels in query result into a NetworkX graph representation.
-
-- `get_as_torch_geometric()`Converts the nodes and rels in query result into a PyTorch Geometric graph representation torch_geometric.data.Data or torch_geometric.data.HeteroData.
+* [\_\_init\_\_](#query_result.QueryResult.__init__)
+* [check\_for\_query\_result\_close](#query_result.QueryResult.check_for_query_result_close) Check if the query result is closed and raise an exception if it is.
+* [has\_next](#query_result.QueryResult.has_next) Check if there are more rows in the query result. 
+* [get\_next](#query_result.QueryResult.get_next) Get the next row in the query result.
+* [write\_to\_csv](#query_result.QueryResult.write_to_csv) Write the query result to a CSV file.
+* [close](#query_result.QueryResult.close) Close the query result.
+* [get\_as\_df](#query_result.QueryResult.get_as_df) Get the query result as a Pandas DataFrame.
+* [get\_as\_arrow](#query_result.QueryResult.get_as_arrow) Get the query result as a PyArrow Table.
+* [get\_column\_data\_types](#query_result.QueryResult.get_column_data_types) Get the data types of the columns in the query result.
+* [get\_column\_names](#query_result.QueryResult.get_column_names) Get the names of the columns in the query result.
+* [reset\_iterator](#query_result.QueryResult.reset_iterator) Reset the iterator of the query result.
+* [get\_as\_networkx](#query_result.QueryResult.get_as_networkx) Converts the nodes and rels in query result into a NetworkX graph representation.
+* [get\_as\_torch\_geometric](#query_result.QueryResult.get_as_torch_geometric) Converts the nodes and rels in query result into a PyTorch Geometric graph representation torch_geometric.data.Data or torch_geometric.data.HeteroData.
 
 ----
 

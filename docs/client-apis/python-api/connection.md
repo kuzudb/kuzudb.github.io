@@ -17,9 +17,10 @@ class Connection()
 
 ### Available APIs:
 -------
-- `set_max_threads_for_exec(num_threads)` Set the maximum number of threads for executing queries.
 
-- `execute(query, parameters=[])` Execute a query.
+* [\_\_init\_\_](#connection.Connection.__init__)
+* [set\_max\_threads\_for\_exec](#connection.Connection.set_max_threads_for_exec) Set the maximum number of threads for executing queries.
+* [execute](#connection.Connection.execute) Execute a query.
 
 ----
 

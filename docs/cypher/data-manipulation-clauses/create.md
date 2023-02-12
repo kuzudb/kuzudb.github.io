@@ -78,12 +78,12 @@ Similar to inserting node records, any relationship property which is not
 specified in the query will be set to NULL.
 
 ## Generic Semantics
-The general semantics of CREATE is as follows. You can specify
-an arbitrary graph pattern P after the CREATE clause.
-Then for each tuple t that was produced before the CREATE statement, 
-each node n and relationship r that is not bound by t is inserted
+The general semantics of `CREATE` is as follows. You can specify
+an arbitrary graph pattern `P` after the `CREATE` clause.
+Then for each tuple `t` that was produced before the `CREATE` statement, 
+each node `n` and relationship `r` that is not bound by `t` is inserted
 as a new node and relationship. For example the following query
-adds a Follows relationship with since=2022 from User node Zhang 
+adds a Follows relationship with `since=2022` from User node "Zhang" 
 to every other User node (including from "Zhang" to "Zhang") 
 in the database:
 
@@ -92,5 +92,5 @@ MATCH (a:User), (b:User)
 WHERE a.name = "Zhang" 
 CREATE (a)-[:Follows {since :  2022}]->(b)
 ```
-This is because the "a" variable matches to User node "Zhang" and the "b" variable matches to any node in the "User" table. As a result, this query creates a Follows relationship from User node Zhang to every other User nodes.
+This is because the "a" variable matches to User node "Zhang" and the "b" variable matches to any node in the "User" table. As a result, this query creates a Follows relationship from User node "Zhang" to every other User nodes.
 

@@ -16,7 +16,8 @@ class Database()
 ```
 
 ### Available APIs:
-- `resize_buffer_manager(new_size)` Resize the mamimum size of buffer pool.
+* [\_\_init\_\_](#database.Database.__init__)
+* [resize\_buffer\_manager](#database.Database.resize_buffer_manager) Resize the mamimum size of buffer pool.
 
 ----
 
