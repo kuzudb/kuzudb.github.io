@@ -5,6 +5,9 @@ parent: Python api
 grand_parent: Client api
 nav_order: 41
 ---
+
+<a id="database.Database"></a>
+
 ## Database
 The database class is used to create and manage the Kùzu database instance.
 
@@ -16,6 +19,8 @@ class Database()
 - `resize_buffer_manager(new_size)` Resize the mamimum size of buffer pool.
 
 ----
+
+<a id="database.Database.__init__"></a>
 
 **\_\_init\_\_**
 
@@ -29,6 +34,8 @@ def __init__(database_path, buffer_pool_size)
 - `buffer_pool_size : int` The maximum size of buffer pool in bytes (Optional). Default to 80% of system memory.
 
 ----
+
+<a id="database.Database.resize_buffer_manager"></a>
 
 **resize\_buffer\_manager**
 
