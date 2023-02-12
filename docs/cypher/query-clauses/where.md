@@ -37,7 +37,7 @@ Output:
 | (label:User, 0:2, {name:Zhang, age:50})   |
 ---------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=D_u4RtEbsDv8&line=2&uniqifier=1).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=D_u4RtEbsDv8).
 
 
 The booelean predicate/expression specified above can be understood as it reads: Users "a" whose ages are
@@ -89,7 +89,7 @@ Output:
 | Adam   | 30    |
 ------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=12JMqYmA3Iol&line=1&uniqifier=1).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=12JMqYmA3Iol).
 
 Note that in openCypher sub-queries are not arbitrary openCypher queries. They can only contain *a single MATCH clause* optionally
 followed by a WHERE clause, e.g., no OPTIONAL MATCH, WITH or RETURN clauses.
@@ -126,4 +126,4 @@ Output:
 | Adam   | 30    |
 ------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=iuHDzuVu3g7A&line=1&uniqifier=1).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=iuHDzuVu3g7A).

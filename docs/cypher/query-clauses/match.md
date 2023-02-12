@@ -47,7 +47,7 @@ Output:
 | (label:User, 0:3, {name:Noura, age:25})   |
 ---------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=xjiF39SzeCb7).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=xjiF39SzeCb7).
 
 ## Match Nodes With Multiple Labels
 The query below matches variable "a" to nodes with label User or label City. "Return a" will return all properties of the node together with label and internal ID. Properties not exist in a label will be returned as NULL value (e.g. "population" not exists in "User"). Properties exists in multiple labels are expected to have the same data type (e.g. "name" has STRING data type in "User" and "City" ).
@@ -75,7 +75,7 @@ Output:
 | (label:City, 1:2, {name:Guelph, age:, population:75000})     |
 ----------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=3yO3HHwNeBy3).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=3yO3HHwNeBy3).
 
 ## Match Nodes With Any Label
 Below query matches variable "a" to nodes with any label. In example database, it is equivalent to `MATCH (a:User:City) RETURN a;`.
@@ -103,7 +103,7 @@ Output:
 | (label:City, 1:2, {name:Guelph, age:, population:75000})     |
 ----------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=4NBsUUP_evvh).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=4NBsUUP_evvh).
 
 ## Match Relationships With a Label
 Similar to binding variables to node records, you can bind variables to relationship records and return them. The following finds all "a" Users that follow a "b" User, and returns name of "a", the properties of "e", and name of "b", where "e" will match the relationship from "a" to "b".
@@ -145,7 +145,7 @@ Output:
 | Noura   | (0:2)-[label:Follows, {_id:2:3, since:2022}]->(0:3) | Zhang   |
 ---------------------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=Djpu4aDafG5U).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=Djpu4aDafG5U).
 
 ## Match Relationships With Multi Labels
 Similar to matching nodes with multiple labels, you can bind variables to relationships with multiple labels. Below query finds all "a" User that Follows "b" User or LivesIn "b" City.
@@ -175,7 +175,7 @@ Output:
 | Noura   | (0:3)-[label:LivesIn, {_id:3:3, since:}]->(1:2)     | Guelph    |
 -----------------------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=ylYHrLeQfLao).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=ylYHrLeQfLao).
 
 ## Match Relationships With Any Label
 Simialr to matching nodes with any label, you can bind variables to relationships with any label by not specifying a label. Below query finds all relationships in the database.
@@ -205,7 +205,7 @@ Output:
 | (0:3)-[label:LivesIn, {_id:3:3, since:}]->(1:2)     |
 -------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=lEZAboFLfLku).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=lEZAboFLfLku).
 
 ## Omitting Binding Variables to Nodes or Relationships
 You can also omit binding a variable to a node or relationship in your graph patterns if 
@@ -246,7 +246,7 @@ Output:
 | Adam   | Karissa | Zhang  |
 -----------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=NQIITQTloYO_).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=NQIITQTloYO_).
 
 Note that in the query node variables a and c appear twice, once on each of the 2 paths
 in the query. In such cases, their labels need to specified *only the first time they appear
@@ -276,7 +276,7 @@ and both queries output:
 | (label:User, 0:0, {name:Adam, age:30}) | 2020    | Zhang  |
 -------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=1frFFis4onqw).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=1frFFis4onqw).
 
 ## Matching Variable-length Relationships
 You can also find paths/joins that are variable-length between node records. Specifically,
@@ -309,7 +309,7 @@ Output:
 | (label:User, 0:2, {name:Zhang, age:50})   | (label:User, 0:3, {name:Noura, age:25})   |
 -----------------------------------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=ZDGcvjYtrG8K&line=2&uniqifier=1).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=ZDGcvjYtrG8K&line=2&uniqifier=1).
 
 Similar to relationships, you can give right-to-left direction to your variable-length paths. 
 3 ruther notes on variable-length paths:

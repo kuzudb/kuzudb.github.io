@@ -40,7 +40,7 @@ Output:
 | Carol |
 ---------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=jDbutdTaDZsB).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=jDbutdTaDZsB).
 
 If the unwinded list L contained as elements other lists,
 then the output would be elements with one fewer nesting. For example, if L was a list of 
@@ -60,4 +60,4 @@ Output:
 | [Bob,Carol] |
 ---------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=jDbutdTaDZsB).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=jDbutdTaDZsB).

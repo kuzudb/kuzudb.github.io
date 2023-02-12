@@ -42,7 +42,7 @@ Output:
 | (label:User, 0:2, {name:Zhang, age:50})   | 36.250000 |
 ---------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=1E87c7Bx4fJN).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=1E87c7Bx4fJN).
 
 ## Using WITH for Top-k Computations
 Suppose you want to return the Users that the oldest Users in your database follows. This can be done
@@ -64,7 +64,7 @@ Output:
 | (label:User, 0:3, {name:Noura, age:25}) | (label:User, 0:2, {name:Zhang, age:50}) |
 -------------------------------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=1E87c7Bx4fJN).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=1E87c7Bx4fJN).
 
 The part of the query until LIMIT computes the oldest user Zhang (aged 50) and then the last `MATCH (a)-[:Follows]->(b:User) RETURN *` returns
 the Users that Zhang follows (there is only one such User, who is Noura.) 

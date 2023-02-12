@@ -41,7 +41,7 @@ Output:
 |                                    |
 --------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=8rdkQnwQOG2J).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=8rdkQnwQOG2J).
 
 ## General Form
 In the general form, conditional statements are evaluated in order until a `true` statement is found. If no match is found, the expression in the `ELSE` is returned. If there is no `ELSE`, `NULL` is returned.
@@ -77,4 +77,4 @@ Ouput:
 | Noura                                                              |
 ----------------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=8rdkQnwQOG2J).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=8rdkQnwQOG2J).

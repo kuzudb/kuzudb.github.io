@@ -38,7 +38,7 @@ Result:
 | Adam    |
 -----------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=9FHlBkwxCWSc).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=9FHlBkwxCWSc).
 
 If you omit the ORDER BY, you would get some k tuples in a `LIMIT k` query 
 but you have no guarantee about which ones will be selected.

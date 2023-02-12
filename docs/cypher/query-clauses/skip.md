@@ -37,7 +37,7 @@ Result:
 | Zhang   |
 -----------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=V1r5jFPJB5Nk).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=V1r5jFPJB5Nk).
 
 If you omit the ORDER BY, you would skip some k tuples in a SKIP k query 
 but you have no guarantee about which ones will be skipped.

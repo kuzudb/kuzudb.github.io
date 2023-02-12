@@ -41,7 +41,7 @@ Output:
 | (label:User, 0:2, {name:Zhang, age:50})   | (0:2)-[label:Follows, {_id:2:3, since:2022}]->(0:3) |
 ---------------------------------------------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=gZ7zGvGQ0tZf&line=1&uniqifier=1).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=gZ7zGvGQ0tZf).
 
 ## Returning All Variables
 Returning all vairables in the query can be written as `RETURN *` as a syntactic sugar. Below query returns "a" and "b", relationship is omitted because no variable binds to it.
@@ -63,7 +63,7 @@ Output:
 | (label:User, 0:3, {name:Noura, age:25})   | (label:User, 0:2, {name:Zhang, age:50})   |
 -----------------------------------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=N1EK35S419JF&line=1&uniqifier=1).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=N1EK35S419JF).
 
 
 ## Returning Node and Relationship Properties
@@ -86,7 +86,7 @@ Output:
 | Zhang   | 50    | 2022    |
 -----------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=rYG1C5gj2KNA&line=1&uniqifier=1).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=rYG1C5gj2KNA).
 
 ## Using Distinct for Duplicate Elimination
 You can use RETURN DISTINCT to do duplicate elimination of the returned tuples.
@@ -108,7 +108,7 @@ Output:
 | Zhang   | 50    | 2022    |
 -----------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=wvkKPDX22Wcl&line=1&uniqifier=1).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=wvkKPDX22Wcl).
 
 ## Group By and Aggregations
 You can group by one or more expression and perform one or more aggregations 
@@ -129,7 +129,7 @@ Output:
 | (label:User, 0:2, {name:Zhang, age:50})   | 25.000000    |
 ------------------------------------------------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=7cPrEPXI4C1e&line=1&uniqifier=1).
+View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=7cPrEPXI4C1e).
 
 The semantics is exactly the same as SQL's semantics, which is a 
 3-step process: 

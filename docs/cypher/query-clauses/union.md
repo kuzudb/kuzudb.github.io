@@ -47,7 +47,7 @@ Result:
 | 30     |
 ----------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=dVrgccftCpd5).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=dVrgccftCpd5).
 
 If you changed UNION ALL to UNION in the above query, one of the 30's in the output
 would be removed. So the result would be:

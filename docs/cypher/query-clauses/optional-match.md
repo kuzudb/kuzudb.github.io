@@ -45,4 +45,4 @@ Result:
 | Noura   |         |
 ---------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1kA0jFcPGSVLSE6B1FeNDs6htsAQ6jZXf#scrollTo=UeWUW2GLreNx&line=2&uniqifier=1).
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=UeWUW2GLreNx&line=2&uniqifier=1).
