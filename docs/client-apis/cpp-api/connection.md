@@ -11,12 +11,10 @@ nav_order: 42
 To issue a query, you need to create a `Connection` using a pointer to 
 a [Database](database.md) instance. You can use connections
 to execute queries, ddl statements, begin/commit/rollback [transactions](../transactions.md).
-You can construct multiple connections that point to the same `Database`
-instance and issue parallel queries through these connections concurrently.
+You can construct multiple connections that connect to the same `Database` instance and issue parallel queries through these connections concurrently.
 
 You can also use a `Connection` to prepare `PreparedStatement`, which
-is a way to parameterize queries for repeated execution
-and avoid planning the same query.
+is a way to parameterize queries for repeated execution and avoid planning the same query.
 
 
 ## Example
@@ -28,7 +26,7 @@ connection.query("CREATE NODE TABLE person (ID INT64, ColA INT64, PRIMARY KEY (I
 ## Available APIs
 ## class kuzu::main::Connection
 
-Connection is used to interact with a Database instance. Each Connection is thread-safe, so you can have multiple connections connecting to the same Database instance in a multi-threaded environment.  
+Connection is used to interact with a Database instance. Each Connection is thread-safe, so you can have multiple concurrent connections connecting to the same Database instance in a multi-threaded environment.
 
 ---
 **Connection**
@@ -36,7 +34,7 @@ Connection is used to interact with a Database instance. Each Connection is thre
 ```c++
 Connection (Database * database)
 ```
-Creates a connection to the database. 
+Creates a Connection to the database. 
 
 **Parameters**
 - `database` A pointer to the database instance that this connection will be connected to. 
