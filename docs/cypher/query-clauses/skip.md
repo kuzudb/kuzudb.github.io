@@ -3,6 +3,7 @@ layout: default
 title: Skip
 parent: Query clauses
 grand_parent: Cypher
+nav_order: 7
 ---
 
 # Database
@@ -11,8 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 <img src="../../../img/running-example.png" width="800">
 
 You can import this database by copy pasting the comands on that page. 
-
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # SKIP
 `SKIP` controls the number of tuples to skip from the start of the queryResult. It is often used within in an [ORDER BY](order-by.md) 
@@ -31,11 +30,14 @@ SKIP 2;
 Result:
 ```
 -----------
+| u.name  |
+-----------
 | Karissa |
 -----------
 | Zhang   |
 -----------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=V1r5jFPJB5Nk).
 
 If you omit the ORDER BY, you would skip some k tuples in a SKIP k query 
 but you have no guarantee about which ones will be skipped.

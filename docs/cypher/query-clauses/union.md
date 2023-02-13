@@ -3,6 +3,7 @@ layout: default
 title: Union
 parent: Query clauses
 grand_parent: Cypher
+nav_order: 9
 ---
 
 # Database
@@ -11,8 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 <img src="../../../img/running-example.png" width="800">
 
 You can import this database by copy pasting the comands on that page. 
-
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # UNION
 `UNION` is the clause where you combine query result A and query result B 
@@ -33,19 +32,22 @@ RETURN u1.age
 UNION ALL
 MATCH (u3:User)-[:Follows]->(u4:User)
 WHERE u4.name = 'Karissa'
-RETURN u3.age
+RETURN u3.age;
 ```
 Result:
 
 ```
-------
-| 30 |
-------
-| 40 |
-------
-| 30 |
-------
+----------
+| u1.age |
+----------
+| 30     |
+----------
+| 40     |
+----------
+| 30     |
+----------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=dVrgccftCpd5).
 
 If you changed UNION ALL to UNION in the above query, one of the 30's in the output
 would be removed. So the result would be:

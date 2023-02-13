@@ -5,23 +5,46 @@ parent: Python api
 grand_parent: Client api
 nav_order: 41
 ---
+
+<a id="database.Database"></a>
+
 ## Database
 The database class is used to create and manage the Kùzu database instance.
 
+```python
+class Database()
+```
+
 ### Available APIs:
-#### `__init__(self: kuzu._kuzu.database, database_path: str, buffer_pool_size: int = 0) -> None`
-Return a Kùzu database instance.
-  - **database_path**: required parameter the path to database file. 
-  - **buffer_pool_size**: optional parameter. the size of buffer pool in bytes. it defaults to 1 GB if not set.
-Example: 
-```
-db = kuzu.database('./test')
+* [\_\_init\_\_](#database.Database.__init__)
+* [resize\_buffer\_manager](#database.Database.resize_buffer_manager) Resize the mamimum size of buffer pool.
+
+----
+
+<a id="database.Database.__init__"></a>
+
+**\_\_init\_\_**
+
+```python
+def __init__(database_path, buffer_pool_size)
 ```
 
-#### `resize_buffer_manager(self: kuzu._kuzu.database, new_size: int) -> None`
-Resize buffer manager to a newSize.
-  - **new_size**: new buffer pool size (in bytes).
+**Parameters**
+- `database_path : _kuzu.Database` The path to database files
 
-#### `set_logging_level(self: kuzu._kuzu.database, logging_level: kuzu._kuzu.loggingLevel) -> None`
-Set the logging level of the database to logging_level.
-  - **logging_level**: new logging level. (Supported logging levels are: debug, info, err).
+- `buffer_pool_size : int` The maximum size of buffer pool in bytes (Optional). Default to 80% of system memory.
+
+----
+
+<a id="database.Database.resize_buffer_manager"></a>
+
+**resize\_buffer\_manager**
+
+```python
+def resize_buffer_manager(new_size)
+```
+
+Resize the mamimum size of buffer pool.
+
+**Parameters**
+- `new_size: int` New maximum size of buffer pool (in bytes).

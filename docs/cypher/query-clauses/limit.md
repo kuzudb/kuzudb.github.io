@@ -3,6 +3,7 @@ layout: default
 title: Limit
 parent: Query clauses
 grand_parent: Cypher
+nav_order: 8
 ---
 
 # Database
@@ -11,8 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 <img src="../../../img/running-example.png" width="800">
 
 You can import this database by copy pasting the comands on that page. 
-
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # LIMIT
 `LIMIT` controls the number of tuples returned from a query. It is often used within in an [ORDER BY](order-by.md) 
@@ -30,6 +29,8 @@ LIMIT 3;
 Result:
 ```
 -----------
+| u.name  |
+-----------
 | Zhang   |
 -----------
 | Karissa |
@@ -37,6 +38,7 @@ Result:
 | Adam    |
 -----------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=9FHlBkwxCWSc).
 
 If you omit the ORDER BY, you would get some k tuples in a `LIMIT k` query 
 but you have no guarantee about which ones will be selected.

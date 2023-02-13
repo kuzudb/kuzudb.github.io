@@ -22,13 +22,30 @@ See [expressions and functions](expressions/overview.md) for the supported opera
 | STRING| variable | variable-length character string |
 | TIMESTAMP | 4 bytes | combination of time and date (see below) |
 
+## STRING Data Type
+UTF-8 encoding is supported for STRING data type.
+```
+RETURN 'Зарегистрируйтесь, σπαθιοῦ, Yen [jɛn], kΩ' AS str;
+```
+Output:
+```
+---------------------------------------------
+| str                                       |
+---------------------------------------------
+| Зарегистрируйтесь, σπαθιοῦ, Yen [jɛn], kΩ |
+---------------------------------------------
+```
+
 ## LIST Data Type
 List is a nested data type to store a list of values of the same type. 
 Values in a list can themselves be nested lists. A few examples:
 ```
 UNWIND [[1,2], [3], [4, 5]] AS x
-RETURN x
+RETURN x;
 output:
+---------
+| x     |
+---------
 | [1,2] |
 ---------
 | [3]   |
@@ -38,8 +55,10 @@ output:
 
 UNWIND [[1,2], [3], [4, 5]] AS x 
 UNWIND x as y 
-RETURN y
+RETURN y;
 output:
+-----
+| y |
 -----
 | 1 |
 -----
@@ -50,7 +69,7 @@ output:
 | 4 |
 -----
 | 5 |
-----
+-----
 ```
 
 ## Temporal Data Types
@@ -62,8 +81,10 @@ Dates are specified in ISO 8601 format (`YYYY-MM-DD`).
 You need to cast strings to dates using the `date(...)` function to construct literal dates. 
 Below is an example:
 ```
-RETURN date('2022-06-06') as x
+RETURN date('2022-06-06') as x;
 output:
+--------------
+| x          |
 --------------
 | 2022-06-06 |
 --------------
@@ -77,8 +98,10 @@ Only the Date part is mandatory. If time is specified, then the milliesecond [.z
 and the time offset are optional. Similar to dates, you need to cast strings to timestamps
 using the `timestamp(...)` function to construct literal timestamps. Below is an example:
 ```
-RETURN timestamp("1970-01-01 00:00:00.004666-10") as x
+RETURN timestamp("1970-01-01 00:00:00.004666-10") as x;
 output:
+------------------------------
+| x                          |
 ------------------------------
 | 1970-01-01 10:00:00.004666 |
 ------------------------------
@@ -90,8 +113,10 @@ these date parts. Kùzu follows [DuckDB's implementation](https://duckdb.org/doc
 for the format of specifying intervals. See DuckDB's documentation for details. Similar
 to dates and timestamps, you need to cast strings to intervals to specify interval literals  
 ```
-RETURN interval("1 year 2 days") as x
+RETURN interval("1 year 2 days") as x;
 output:
+-----------------
+| x             |
 -----------------
 | 1 year 2 days |
 -----------------
@@ -106,22 +131,28 @@ For example, boolean expression can be true/false or NULL.
 The NULL (in any of its case variations, such as Null or null) can be
 used to specify a null literal. Below ares some examples:
 ```
-RETURN 3 = 3
+RETURN 3 = 3;
 output:
---------
-| True |
---------
+---------
+| 3 = 3 |
+---------
+| True  |
+---------
 
-RETURN 3 = null
+RETURN 3 = null;
 output:
---------
-|     |
---------
+------------
+| 3 = null |
+------------
+|          |
+------------
 
-RETURN null = null
+RETURN null = null;
 output:
---------
-|     |
---------
+---------------
+| null = null |
+---------------
+|             |
+---------------
 ```
 Kùzu's CLI returns an empty cell to indicate nulls.

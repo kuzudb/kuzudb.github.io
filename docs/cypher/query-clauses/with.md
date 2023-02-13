@@ -3,6 +3,7 @@ layout: default
 title: With
 parent: Query clauses
 grand_parent: Cypher
+nav_order: 3
 ---
 
 # Database
@@ -11,8 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 <img src="../../../img/running-example.png" width="800">
 
 You can import this database by copy pasting the comands on that page. 
-
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # WITH
 
@@ -31,18 +30,19 @@ MATCH (a:User)
 WITH avg(a.age) as avgAge 
 MATCH (b:User) 
 WHERE b.age > avgAge 
-RETURN *
+RETURN *;
 ```
 Output:
 ```
--------------------------------
-| b.name  | b.age | avgAge    |
--------------------------------
-| Karissa | 40    | 36.250000 |
--------------------------------
-| Zhang   | 50    | 36.250000 |
--------------------------------
+---------------------------------------------------------
+| b                                         | avgAge    |
+---------------------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) | 36.250000 |
+---------------------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50})   | 36.250000 |
+---------------------------------------------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=1E87c7Bx4fJN).
 
 ## Using WITH for Top-k Computations
 Suppose you want to return the Users that the oldest Users in your database follows. This can be done
@@ -54,15 +54,17 @@ WITH a
 ORDER BY a.age DESC 
 LIMIT 1 
 MATCH (a)-[:Follows]->(b:User) 
-RETURN * 
+RETURN *;
 ```
 Output:
 ```
------------------------------------
-| b.name | b.age | a.name | a.age |
------------------------------------
-| Noura  | 25    | Zhang  | 50    |
------------------------------------
+-------------------------------------------------------------------------------------
+| b                                       | a                                       |
+-------------------------------------------------------------------------------------
+| (label:User, 0:3, {name:Noura, age:25}) | (label:User, 0:2, {name:Zhang, age:50}) |
+-------------------------------------------------------------------------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=1E87c7Bx4fJN).
+
 The part of the query until LIMIT computes the oldest user Zhang (aged 50) and then the last `MATCH (a)-[:Follows]->(b:User) RETURN *` returns
 the Users that Zhang follows (there is only one such User, who is Noura.) 

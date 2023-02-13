@@ -3,6 +3,7 @@ layout: default
 title: Where
 parent: Query clauses
 grand_parent: Cypher
+nav_order: 4
 ---
 
 # Database
@@ -11,8 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 <img src="../../../img/running-example.png" width="800">
 
 You can import this database by copy pasting the comands on that page. 
-
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # WHERE
 `WHERE` clause is where you specify predicates/constraints on a previous part of your query.
@@ -30,14 +29,17 @@ RETURN *;
 ```
 Output:
 ```
--------------------
-| a.name  | a.age |
--------------------
-| Karissa | 40    |
--------------------
-| Zhang   | 50    |
--------------------
+---------------------------------------------
+| a                                         |
+---------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) |
+---------------------------------------------
+| (label:User, 0:2, {name:Zhang, age:50})   |
+---------------------------------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=D_u4RtEbsDv8).
+
+
 The booelean predicate/expression specified above can be understood as it reads: Users "a" whose ages are
 greater than 45 OR whose names start with "Kar". It combines several means to construct expressions
 in high-level database query languages, such as as boolean operator (OR), a numeric comparison operator (>),
@@ -57,11 +59,11 @@ RETURN *;
 ```
 Output:
 ```
--------------------
-| a.name  | a.age |
--------------------
-| Karissa | 40    |
--------------------
+---------------------------------------------
+| a                                         |
+---------------------------------------------
+| (label:User, 0:1, {name:Karissa, age:40}) |
+---------------------------------------------
 ```
 Please refer to these links for details on query semantics when using 
 [logical operators](../expressions/logical-operators.md) and [comparison operators on NULLs](../data-types.md#null-values).
@@ -77,7 +79,7 @@ for paths of length exact 3 hops) .
 ```
 MATCH (a:User)
 WHERE a.age < 100 AND EXISTS { MATCH (a)-[:Follows*3..3]->(b:User)} 
-RETURN *;
+RETURN a.name, a.age;
 ```
 Output:
 ```
@@ -87,6 +89,8 @@ Output:
 | Adam   | 30    |
 ------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=12JMqYmA3Iol).
+
 Note that in openCypher sub-queries are not arbitrary openCypher queries. They can only contain *a single MATCH clause* optionally
 followed by a WHERE clause, e.g., no OPTIONAL MATCH, WITH or RETURN clauses.
 
@@ -95,7 +99,7 @@ You can also form nested sub-queries, i.e., a WHERE EXISTS sub-query inside anot
 ```
 MATCH (a:User)
 WHERE a.age < 100 AND EXISTS { MATCH (a)-[:Follows*3..3]->(b:User) WHERE EXISTS {MATCH (b)-[:Follows]->(c:User)} } 
-RETURN *;
+RETURN a.name, a.age;
 ```
 Output:
 ```
@@ -112,7 +116,7 @@ of the relationhip in the inner `(b)-[:Follows]->(c:User)` pattern to (b)<-[:Fol
 ```
 MATCH (a:User)
 WHERE a.age < 100 AND EXISTS { MATCH (a)-[:Follows*3..3]->(b:User) WHERE EXISTS {MATCH (b)<-[:Follows]-(c:User)} } 
-RETURN *;
+RETURN a.name, a.age;
 ```
 Output:
 ```
@@ -122,3 +126,4 @@ Output:
 | Adam   | 30    |
 ------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=iuHDzuVu3g7A).

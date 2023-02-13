@@ -3,6 +3,7 @@ layout: default
 title: Order by
 parent: Query clauses
 grand_parent: Cypher
+nav_order: 6
 ---
 
 # Database
@@ -11,8 +12,6 @@ We will use the database, whose schema and data import commands are given [here]
 <img src="../../../img/running-example.png" width="800">
 
 You can import this database by copy pasting the comands on that page. 
-
-*Note: When using the CLI, please modify any multi-line query in the documenation to be in a single line.*
 
 # ORDER BY
 Order by is the clause where you define the order in which you want the query results to be displayed 
@@ -30,33 +29,39 @@ ORDER BY u.age;
 ```
 Output:
 ```
-----------------
-| Noura   | 25 |
-----------------
-| Adam    | 30 |
-----------------
-| Karissa | 40 |
-----------------
-| Zhang   | 50 |
-----------------
+-------------------
+| u.name  | u.age |
+-------------------
+| Noura   | 25    |
+-------------------
+| Adam    | 30    |
+-------------------
+| Karissa | 40    |
+-------------------
+| Zhang   | 50    |
+-------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=KQlKQCWZBWzL).
+
 Similarly, the following eturns the users' names who lives in Waterloo ordered by user's age,
 but in descending order.
 
 Query:
 ```
 MATCH (u:User)-[:LivesIn]->(c:City)
-WHERE c.name = Waterloo
+WHERE c.name = 'Waterloo'
 RETURN u.name, u.age
 ORDER BY u.age DESC;
 ```
 Output:
 ```
-----------------
-| Karissa | 40 |
-----------------
-| Adam    | 30 |
-----------------
+-------------------
+| u.name  | u.age |
+-------------------
+| Karissa | 40    |
+-------------------
+| Adam    | 30    |
+-------------------
 ```
 
 ## Ordering Using Multiple Properties/Expressions
@@ -70,7 +75,7 @@ queries first by `b.age` and then by `a.name` both in descending order.
 ```
 MATCH (a:User)-[:Follows]->(b:User)
 RETURN b.age, a.name 
-ORDER BY b.age DESC, a.name DESC
+ORDER BY b.age DESC, a.name DESC;
 ```
 Output:
 ```
@@ -86,6 +91,8 @@ Output:
 | 25    | Zhang   |
 -------------------
 ```
+View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=KQlKQCWZBWzL).
+
 Noe that there is tie for b.age in first two rows and the order is 
 decided based on a.name (in descending order). If you removed the
 last `DESC` in the above query, the first two tuples in the result

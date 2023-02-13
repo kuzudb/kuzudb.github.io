@@ -7,7 +7,7 @@ has_children: true
 
 # C++ API
 You can use Kùzu's C++ API to interact with the database in C++. Please
-see the [getting started instructions](../../getting-started.md#c++-api) for
+see the [getting started instructions](../../getting-started/introduction-examples.md#c-api) for
 details on how to install the C++ API and set up your environment. This part
 of the documentation gives details about the different classes in the C++
 API and their functions. Here is a short example on a small program that

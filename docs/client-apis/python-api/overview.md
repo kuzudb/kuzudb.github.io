@@ -7,7 +7,7 @@ has_children: true
 
 # Python API
 You can use Kùzu's Python API to interact with the database in Python. Please
-see the [getting started instructions](../../getting-started.md#python-api) for
+see the [getting started instructions](../../getting-started/introduction-examples.md#python-api) for
 details on how to install the Python API and set up your environment. Below is an example that demonstrates how to create a database and issue a query.
 
 Currently Kùzu doesn't support manually begin a transaction.
@@ -17,7 +17,7 @@ Currently Kùzu doesn't support manually begin a transaction.
 ```
 import kuzu
 # create database
-db = kuzu.database('./testdb')
+db = kuzu.Database('./testdb')
 # create connection
 conn = kuzu.connection(db)
 
