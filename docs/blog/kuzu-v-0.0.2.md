@@ -8,7 +8,7 @@ nav_order: 1
 
 # Kùzu 0.0.2 Release
 
-[View it on GitHub](https://github.com/kuzudb/kuzu){: .btn .fs-5 .mb-4 .mb-md-0 }
+[View Kùzu on GitHub](https://github.com/kuzudb/kuzu){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 [Join our Slack workspace](https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg){: .btn .fs-5 .mb-4 .mb-md-0 }
 
