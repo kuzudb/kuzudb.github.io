@@ -140,7 +140,7 @@ We've added two important features to enhance Kùzu's ability to store and proce
 
 1) Support of UTF-8 characters. With the help of [utf8proc](https://github.com/JuliaStrings/utf8proc), you can now store string node/relationship
    properties in Kùzu that has UTF-8 characters;
-3) Support of [regex pattern matching](../cypher/expressions/functions/pattern-matching.md) with strings. Kùzu now supports Cypher's `=~` operator for regex searches, which will return true if its pattern mathces the entire input string. For example: `RETURN 'abc' =~ '.*(b|d).*';`.
+2) Support of [regex pattern matching](../cypher/expressions/functions/pattern-matching.md) with strings. Kùzu now supports Cypher's `=~` operator for regex searches, which will return true if its pattern mathces the entire input string. For example: `RETURN 'abc' =~ '.*(b|d).*';`.
 
 ### CASE Expression
 We've added [CASE](../cypher/expressions/case-expression.md) for conditional expressions.
