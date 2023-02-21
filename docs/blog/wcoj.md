@@ -45,14 +45,18 @@ recommendation applications. As such, they should be integrated into every graph
     "worst-case optimal" a bit confusing. See my [anecdote on this]. It basically means that the 
     worst-case runtimes of  these algorithms are asymptotically optimal.
 
-## Joins, A Running Example & Traditional Table-at-a-time Joins
+## Joins, a Running Example & Traditional Table-at-a-time Joins
 Joins are objectively the most expensive and powerful operation in DBMSs.
 In SQL, you indicate them in the FROM clause by listing
 a set of table names, in Cypher in the MATCH clause, where you draw a graph pattern
-to match, describing how to join node records with each other.
-As a running example, consider a simple social network of who follows whom, 
+to describe how to join node records with each other.
+As a running example, consider a simple social network of users and followers, 
 whose node-link diagram is shown below. I am also showing the table that contains these records 
-in a `Follows` table and a simple `User` table.
+in a `User` (ignore the `name` property for now) and `Follows` tables.
+
+<p align="center">
+  <img src="../../img/wcoj-running-ex-data.png" width="800">
+</p>
 
 Consider finding triangles, which is one of the simplest 
 forms of cycles and cliques, in this network. The SQL and Cypher 
@@ -61,7 +65,7 @@ versions of this query are shown below.
 ```
 SQL:
 SELECT *
-FROM Follows f1, Follows f2, Follows f3
+FROM  Follows f1, Follows f2, Follows f3
 WHERE f1.dst=f2.src AND f2.dst=f3.src AND
       f3.dst = f1.src
 
@@ -72,11 +76,11 @@ RETURN  *
 That long MATCH clause "draws" a triangle and for our case here is equivalent
 to joining three copies of the Follows table. 
 
-Now ever since the System R days & [Patricia Selinger's seminal paper](https://courses.cs.duke.edu/compsci516/cps216/spring03/papers/selinger-etal-1979.pdf) that 
+Now ever since the System R days and [Patricia Selinger's 1979 seminal paper](https://courses.cs.duke.edu/compsci516/cps216/spring03/papers/selinger-etal-1979.pdf) that 
 described how System R compiled and optimized SQL queries, there has been an 
 unchallenged dogma in DBMSs that the joins specified in the query would be 
-evaluated pairwise, table at a time. For those interested in the history
-of DBMSs, here's a blurb from Selinger's paper, where one can see this 
+evaluated pairwise, table at a time. 
+Here's a blurb from Selinger's paper, where one can see this 
 assumption: 
 "*In System R a user need not know how the
 tuples are physically stored ... Nor does a user 
@@ -86,17 +90,19 @@ To this day, this is the norm. DBMSs pick a "join order" which is the order in
 which the tables should be joined iteratively 2 at a time. 
 In the above example, for example 
 there are three possible join orders: 
-- (i) $((F1 \bowtie F2) \bowtie F3)$; (ii) $(F1 \bowtie (F2) \bowtie F3))$; 
+- (i) $((F1 \bowtie F2) \bowtie F3)$; (ii) $(F1 \bowtie (F2 \bowtie F3))$; 
   and (iii) $((F1 \bowtie F3) \bowtie F2)$. 
 
-The optimization is of course more complex than that because these orders do not specify which
-binary join algorithm to use when joining each pair of tables, e.g., hash joins, index nested loop joins, merge joins, etc. But they
-all follow the same paradigm of joining 2 base or intermediate tables iteratively, until all tables are joined (all in all they will use exactly n-1 join operators
-to join n tables): hence the term "binary joins" to describe
-the plans of these existing systems.
+The optimization is of course more complex than this ordering because the system
+also has to choose which
+binary join algorithm to use when joining each pair of tables, e.g., hash joins, 
+index nested loop joins, merge joins, etc. But they all follow the same paradigm of 
+joining 2 base or intermediate tables iteratively, until all tables are joined 
+(all in all they will use exactly n-1 join operators to join n tables): 
+hence the term *binary joins* to describe the plans of these existing systems.
 
 
-A Math Puzzle That Started it All 
+## A Math Puzzle That Started it All 
 
 So, what's the problem with binary join plans? When join queries are cyclic
 and the relationships are many-to-many, they can generate provably large amounts
@@ -104,38 +110,58 @@ of (so unnecessary in a formal sense) intermediate results. First, cyclicity for
 join queries has formal (and a bit intimidating) definitions but if you think of
 graph patterns, it simply means that the searched pattern's undirected version has
 cycles. Why do binary joins generate unnecessarily large intermediate results? I'll
-get to this below but a bit of history on the origins of this insight because I think it is fascinating.
-The whole topic of "worst-case optimal joins" in fact started with 2 papers, a 2007 SODA and a 2008 FOCS paper, which are top venues in algorithms and theory by 
-theoreticians who solved a fundamental open question/puzzle 
-about join queries (the SODA paper was on the related constraint satisfaction problem). The question in its simplified form is this:
+get to this below but first a bit of history on the origins of this insight.
+The whole topic of "worst-case optimal joins" started with 2 papers, a [2007 SODA](https://arxiv.org/abs/1711.04506) 
+and a [2008 FOCS](https://arxiv.org/abs/1711.03860) 
+paper, which are top venues in algorithms and theory. In these papers
+several theoreticians solved a fundamental open question 
+about join queries. Suppose I give you:
 
-Suppose I give you: (i) an arbitrary "natural" join query of $m$ relations. In DBMS literature we denote it with Q=R1(a11, ..., a_{r1}) \bowtie ... \bowtie Rm(a1, ..., a_{rm}). Natural means that the join predicates are equality predicates on identical column names; and (ii) the sizes of R1, ..., Rm, e.g., for simplicity assume they 
-all have $IN$ many tuples. But you are allowed to pick the values and the question is: how large can you make the final output. So for example, if I told you that there are
-$IN$ many tuples in the `Follows` tables, what is the maximum number of triangle outputs can there be. The question is interesting in the set semantics when you cannot pick every tuple (x,x), in which case the answer is trivially $IN^3$, because every
-triple-combination of tuples successfully join.
+1. An arbitrary natural join query of $m$ relations. In DBMS literature we denote such queries with $Q=R1(a_{11}, ..., a_{r1}) \bowtie ... \bowtie Rm(a_{m1}, ..., a_{rm})$.
+2. Sizes of R1, ..., Rm, e.g., for simplicity assume they all have $IN$ many tuples. 
 
-It still surprises me that the answer to this question was not known until circa 2008.
+"Natural" here means that the join predicates are equality predicates on identical column 
+names. You, as the second person in this puzzle, are allowed to pick the values inside the relations. 
+**The open question was: how large can you make the final output?** So for example, if I told you that there are
+$IN$ many tuples in the `Follows` tables, what is the maximum number of triangle outputs there can  be?[^1]
+
+<p align="center">
+  <img src="../../img/wcoj-edge-covers.png" width="800">
+</p>
+
+It still surprises me that the answer to this question was not known until 2008.
+It just looks like a fundamental question someone in databases must have answered before. 
 Now excuse me for bombarding your brains with some necessary math definitions, but
 this might be of interest to some of you and a good thing to write about so that
-people appreciate the role of pure pen-and-paper theoretical work in systems.
-These two papers answered this question. The answer is: $IN^{\rho^*}$, where $\rho^*$ is a property of $Q$ called the `fractional edge cover number` of $Q$. 
-Don't be intimidated and continue. It is essentially the solution to
-an optimization problem and best explained in graph terms. The optimization problem is this: put a weight between [0, 1] to
+people appreciate the role of pen-and-paper theoretical work in systems.
+These two papers showed that the answer is: $IN^{\rho^\*}$, where $\rho^\*$ is a property 
+of $Q$ called the *fractional edge cover number* of $Q$. 
+This is the solution to
+an optimization problem and best explained by thinking about the "join query graph",
+which for our purposes is the triangle graph pattern (ignoring the edge directions), shown
+in Fig 2a and 2b.
+
+The optimization problem is this: 
+put a weight between [0, 1] to
 each "query edge" such that each "query node" is "covered", i.e., the sum of
-the query edges touching each node is > 1. Each such solution is called a an
+the query edges touching each query node is > 1. Each such solution is called an
 edge cover; find the edge cover whose total weight is the minimum. That is 
 called the fractional edge cover number of the query. For the triangle query, 
-one cover is [1, 1, 0], which has
-a total weight of 1 + 1 + 0 = 2, but 
-the fractional edge cover number is [1/2, 1/2, 1/2] with a total weight number of 1.5.
-In general, each edge cover is an upper bound but the SODA and FOCS papers showed
+one edge cover, shown in Fig 2a, is [1, 1, 0], which has
+a total weight of 1 + 1 + 0 = 2. 
+The minimum weight edge cover is [1/2, 1/2, 1/2], shown in Fig 2b, 
+with a total weight  of 1.5. Therefore, the fractional edge cover number $\rho^\*$
+of the triangle query is 1.5.
+In general, each edge cover is an upper bound but the FOCS paper showed
 that the fractional edge cover number is the tight upper bound.
-So the maximum number of triangles there can be on a graph with $IN$ edges is \Theta(IN^{1.5}) and there are such graphs. Very nice scientific progress!
-Nowadays, the quantity $IN^{\rho^*}$ is known as the `AGM bound` of a query,
-after the first letters of the last names of the authors of the FOCS paper.
+So the maximum number of triangles there can be on a graph with $IN$ edges is $\Theta(IN^{1.5})$ 
+and this is tight, i.e., there are such graphs. Nice scientific progress!
+Nowadays, the quantity $IN^{\rho^\*}$ is known as the `AGM bound` of a query,
+after the first letters of the last names of the authors of the FOCS paper. OK,
+no more frying of brains. The rest of the post won't contain many math definitions and notations.
 
 
-Problem With Table-at-a-time/Binary Joins
+## Problem With Table-at-a-time/Binary Joins
 Now this immediately made the same researchers that binary join plans are 
 sub-optimal because they can generate polynomially more intermediate results
 than this. This happens because the strategy of joining tables
@@ -156,7 +182,7 @@ the joins were primary-foreign key non-growing joins
 or for example each node in the graph had 1 or 2 outgoing and incoming edge, then
 binary join plans will work just fine. 
 
-Solution: Column-at-a-time "Worst-case Optimal" Join Algorithms
+## Solution: Column-at-a-time "Worst-case Optimal" Join Algorithms
 
 So the immediate
 next question is: are there algorithms whose runtimes can be bounded by 
@@ -217,7 +243,7 @@ the triangles to joins. This type of multiway intersections is the necessary
 algorithmic step to be efficient on cyclic queries (if the relationships are many-to-many).
 
 
-How Kùzu Performs Worst-case Optimal Join Algorithms:
+## How Kùzu Performs Worst-case Optimal Join Algorithms:
 
 Our [CIDR paper]() describes this in detail, so I will be brief here. 
 First, Kùzu mixes binary joins and wcoj-like multiway intersections
@@ -342,3 +368,8 @@ and other technical topics. If there are things you'd like us to write about,
 please reach out to us! Also please give Kùzu a try, prototype applications with it,
 break it, let us know of your performance or other bugs, so we can continue improving
 it. Give us a github star too and take care until the next posts!
+
+
+[^1]: The question is interesting in the set semantics when you cannot pick every tuple (x,x), in which case 
+the answer is trivially $IN^3$, because every
+triple-combination of tuples successfully join.
