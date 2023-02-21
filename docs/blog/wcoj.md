@@ -89,7 +89,7 @@ R optimizer chooses both join order and ...*"
 To this day, this is the norm. DBMSs pick a "join order" which is the order in 
 which the tables should be joined iteratively 2 at a time. 
 In the above example, for example 
-there are three possible join orders: 
+there are three possible join orders, corresponding to different paranthesizations: 
 - (i) $((F1 \bowtie F2) \bowtie F3)$; (ii) $(F1 \bowtie (F2 \bowtie F3))$; 
   and (iii) $((F1 \bowtie F3) \bowtie F2)$. 
 
@@ -157,50 +157,58 @@ that the fractional edge cover number is the tight upper bound.
 So the maximum number of triangles there can be on a graph with $IN$ edges is $\Theta(IN^{1.5})$ 
 and this is tight, i.e., there are such graphs. Nice scientific progress!
 Nowadays, the quantity $IN^{\rho^\*}$ is known as the `AGM bound` of a query,
-after the first letters of the last names of the authors of the FOCS paper. OK,
-no more frying of brains. The rest of the post won't contain many math definitions and notations.
+after the first letters of the last names of the authors of the FOCS paper.
 
 
 ## Problem With Table-at-a-time/Binary Joins
-Now this immediately made the same researchers that binary join plans are 
-sub-optimal because they can generate polynomially more intermediate results
-than this. This happens because the strategy of joining tables
-2 at a time leads to intermediate computations, where some acyclic sub-joins is unnecessarily evaluated. For example, in the triangle query, this plan
-((F1 \bowtie F2) \bowtie F3), first finds the  (F1 \bowtie F2) 2-paths.
+Now this immediately made the same researchers realize that binary join plans are 
+provably sub-optimal because they can generate polynomially more intermediate results
+than the AGM bound of the query. This happens because on cyclic queries, 
+the strategy of joining tables
+2 at a time may lead to unnecesariy computing some acyclic sub-joins. 
+For example, in the triangle query, the plan
+$((F1 \bowtie F2) \bowtie F3)$, first computes $(F1 \bowtie F2)$ sub-join,
+which in graph terms computes the 2-paths in the graph.
 This is a problem because often there can be many more of these acyclic sub-joins
-than there can be outputs for the the cyclic join. For this plan, there can
-be $IN^2$ many 2-paths which is polynomially larger than $IN^1.5$. 
-For example in our running example, there are 1000*1000 = 1M many 2 paths,
+than there can be outputs for the the cyclic join. 
+For this plan, there can
+be $IN^2$ many 2-paths (which is the AGM bound of 2-paths),
+which is polynomially larger than $IN^{1.5}$. 
+For example in our running example, there are 1000\*1000 = 1M many 2 paths,
 but on a graph with 2001 edges there can be at most 89.5K triangles (well ours
 has only 1 for demonstration purposes).
   
 Any other plan in this case would have generated $IN^2$ many 2-paths, 
 so there is no good binary join plan here. I want to emphasize that this sub-optimality does not occur 
 when the queries are acyclic or when the dataset does not have 
-many-to-many relationships. If the input dataset had the property that 
-the joins were primary-foreign key non-growing joins 
-or for example each node in the graph had 1 or 2 outgoing and incoming edge, then
+many-to-many relationships. If the joins were primary-foreign key non-growing joins 
+or for example each node in the graph had 1 or 2 outgoing and incoming edges, then
 binary join plans will work just fine. 
 
 ## Solution: Column-at-a-time "Worst-case Optimal" Join Algorithms
 
 So the immediate
 next question is: are there algorithms whose runtimes can be bounded by 
-$O(IN^1.5)$? If so, how are they different? The answer to this question
-is a bit anti-climactic. The core idea existed in the 2007-8 SODA and FOCS papers,
+$O(IN^{1.5})$? If so, how are they different? The answer to this question
+is a bit anti-climactic. The core idea existed in the 2007 SODA and 2008 FOCS papers,
 though it was refined more ~4 years later in some theoretical papers
-in the database fields [PODS]() and [SIGMOD Record](). The answer is simply
+by [Hung Ngo](https://hung-q-ngo.github.io/), [Ely Porat](https://u.cs.biu.ac.il/~porat/), 
+[Chris Ré](https://cs.stanford.edu/~chrismre/), and [Atri Rudra](https://cse.buffalo.edu/faculty/atri/) 
+in the database fields [PODS](https://dl.acm.org/doi/10.1145/2213556.2213565) and 
+[SIGMOD Record](https://dl.acm.org/doi/10.1145/2590989.2590991). The answer is simply
 to perform the join column at a time, using multiway 
 intersections. "Intersections of what?" you should be asking. We will be
-intersecting binding of a particular column value, given a prefix of bindings.
-So we will need some indices, either pre-existing ones or ones that we
+intersecting sets of values in a column $a_i$ of relations that have 
+the same set of values for a prefix of values $a_1, ..., a_{i-1}$. I will clarify
+this with an example. 
+For now, know that we will need some indices, either pre-existing ones or ones that we
 need to construct on the fly. In the context of GDBMSs, GDBMSs already
 have join indices (aka adjacency list indices) and for the common joins
-they perform, this is enough.
+they perform, this will be enough.
 
 Here is what we will do. I will here demonstrate a wcoj 
-algorithm known as "Generic Join" from this paper. It can be seen
-as the core and simplest wcoj algorithm.
+algorithm known as "Generic Join" from the [SIGMOD Record paper]((https://dl.acm.org/doi/10.1145/2590989.2590991). 
+It can be seen as the core and simplest wcoj algorithm.
 As "join order", we will pick a "column order"
 instead of Selinger-style table order. So in our triangle query,
 the order could be a,b,c. Then we will build indices over each relation
@@ -298,7 +306,7 @@ can play around and do more examples.
 
 A Thank You & a Fun Side Story About Don Knuth's Reaction to the Term "Worst-case Optimal"
  
-Before, wrapping up, I want to say a thank you to [Chris R`e](), who is a
+Before, wrapping up, I want to say a thank you to [Chris Ré](), who is a
 co-inventor of earliest of these algorithms. 
 Back in the day, Chris had introduced me to this area in the 5th year of 
 my PhD and we had written a paper on the topic in the space of evaluating
