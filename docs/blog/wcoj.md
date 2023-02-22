@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Why (Graph) DBMSs Need Novel Join Algorithms: The Story of Worst-case Optimal Join Algorithms
+title: "Why (Graph) DBMSs Need Novel Join Algorithms: The Story of Worst-case Optimal Join Algorithms"
 permalink: /blog/wcoj.html
 parent: Blog
 nav_order: 2
