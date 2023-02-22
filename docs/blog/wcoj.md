@@ -99,13 +99,12 @@ writing different paranthesizations of the joins:
 - (i) $((F1 \bowtie F2) \bowtie F3)$; (ii) $(F1 \bowtie (F2 \bowtie F3))$; 
   and (iii) $((F1 \bowtie F3) \bowtie F2)$. 
 
-The optimization problem for a system is of course more complex than this 
-ordering because the system also has to choose which
-binary join algorithm to use when joining each pair of tables, e.g., hash joins, 
-index nested loop joins, merge joins, etc. But most existing systems all follow the same paradigm of 
-joining 2 base or intermediate tables iteratively, until all tables are joined 
-(all in all they will use exactly n-1 join operators to join n tables): 
-hence the term *binary joins* to describe the plans of these existing systems.
+The optimization problem for a system is of course more complex than just 
+ordering tables because the system also has to choose which
+binary join algorithm to use when joining each pair of tables, e.g., hash joins vs merge joins. 
+But take any system you want, and they will all follow the same paradigm of 
+joining 2 base or intermediate tables iteratively, until all tables are joined: 
+hence the term *binary joins* to describe the plans of existing systems.
 
 
 ## A Math Puzzle That Started it All 
@@ -124,13 +123,15 @@ several theoreticians solved a fundamental open question
 about join queries. Suppose I give you:
 
 1. An arbitrary natural join query, say of $m$ relations. In DBMS literature we denote such 
-   queries with $Q=R1(a_{11}, ..., a_{r1}) \bowtie ... \bowtie Rm(a_{m1}, ..., a_{rm})$.
+   queries as $Q=R1(a_{11}, ..., a_{r1}) \bowtie ... \bowtie Rm(a_{m1}, ..., a_{rm})$.
 2. Sizes of R1, ..., Rm, e.g., for simplicity assume they all have $IN$ many tuples. 
 
 "Natural" here means that the join predicates are equality predicates on identical column 
 names. You, as the second person in this puzzle, are allowed to set the values inside these relations. 
 **The open question was: how large can you make the final output?** So for example, if I told you that there are
 $IN$ many tuples in the `Follows` tables, what is the maximum number of triangle outputs there can  be?[^1]
+Even more concretely for the triangle query, the question is: out of all possible graphs with $IN$ many edges, 
+what is the maximum number of triangles they contain?
 
 <p align="center">
   <img src="../../img/wcoj-edge-covers.png" width="800">
@@ -175,7 +176,7 @@ For example, in the triangle query, the plan
 $((F1 \bowtie F2) \bowtie F3)$ first computes $(F1 \bowtie F2)$ sub-join,
 which in graph terms computes the 2-paths in the graph.
 This is a problem because often there can be many more of these acyclic sub-joins
-than there can be outputs for the the cyclic join. 
+than there can be outputs for the cyclic join. 
 For this plan, there can
 be $IN^2$ many 2-paths (which is the AGM bound of 2-paths),
 which is polynomially larger than $IN^{1.5}$. 
@@ -219,7 +220,7 @@ that is consistent with this order. In our case there are conceptually three (id
 relations: `Follows1(a, b)`, `Follows2(b, c)`, `Follows3(c, a)`. For `Follows1`,
 we need to be able to read all `b` values for a given `a` value (e.g., `a=5`).
 In graph terms, this just means that we need "forward join index".
-For `Follows2`, because `a` comes earlier than `c`, we will want an index
+For `Follows3`, because `a` comes earlier than `c`, we will want an index
 that gives us `c` values for a given `a` value. This is equivalent to a
 "backward join index". In graphs, because joins happen through the
 relationship records, which can, for the purpose of the joins, 
@@ -235,15 +236,15 @@ that can be in the final triangles; (ii) all `ab`'s that be in the final
 triangles; and (iii) all `abc`'s, which are the triangles. Let's simulate the computation:
  - Step 1: Find all `a`'s. Here we will just take
 all nodes as possible a valujes. This is shown under "Step 1" in the above figure.
-- Step 2: For each a value, e.g., a=0, we extend it to find all `ab`'s that 
+- Step 2: For each a value, e.g., a=1, we extend it to find all `ab`'s that 
 can be part of triangles: Here we use the forward index to look up all
-`b` values for node with ID 0. So on and so forth. This will generate the 
+`b` values for node with ID 1. So on and so forth. This will generate the 
 second intermediate relation.
-- Step 3: For each `ab` value, e.g., the first tuple (a=0, b=1001), we will
-intersect all `c`'s with `a`=0, and all `c`'s with `b`=1001. That is, we will intersect
-the backward adjacency list of the node with ID 0, and forward adjacency list of 
-the node with ID 1001. If the intersection is non-empty, we produce some triangles.
-In this case, we will produce the triangle (`a`=0, `b`=1001, `c`=1)
+- Step 3: For each `ab` value, e.g., the tuple (a=1 b=0), we will
+intersect all `c`'s with `a`=1, and all `c`'s with `b`=0. That is, we will intersect
+the backward adjacency list of the node with ID 1, and forward adjacency list of 
+the node with ID 0. If the intersection is non-empty, we produce some triangles.
+In this case, we will produce the triangle (`a`=1, `b`=0, `c`=1001)
 The result of this computation will produce the third and final 
 output table in the figure.
 
@@ -255,7 +256,7 @@ For example on the 4-clique query shown on the right, suppose the
 column order is abcd, then given abc triangles, we would do a 3-way intersection of
 forward index of a's, backward index of b's, and forward index of c's, to complete
 the triangles to joins. This type of multiway intersections is the necessary 
-algorithmic step to be efficient on cyclic queries (if the relationships are many-to-many).
+algorithmic step to be efficient on cyclic queries.
 
 
 ## How Kùzu Performs Worst-case Optimal Join Algorithms:
@@ -267,8 +268,9 @@ had worked quite hard on early in his PhD. I recommend these two papers,
 one by [Amine and me](https://www.vldb.org/pvldb/vol12/p1692-mhedhbi.pdf)
 and one by the [Umbra group](https://db.in.tum.de/~freitag/papers/p1891-freitag.pdf) 
 on several different ways people have proposed for mixing binary and wcoj algorithms in query plans. 
-Unless the query has a very cyclic component where
-multiway intersections can help, systems should just use binary joins.
+Overall message of these studies is that, wcoj are critical when the query has a very cyclic component
+and multiway intersections can help. If the query does not have this property, 
+systems should just use binary joins. 
 So wcoj-like computations should be seen as complementing binary join plans.
 
 <p align="center">
@@ -282,17 +284,17 @@ an intersection to produce outputs as I will simulate.
 Let me change the query a little and add a filter on `a.name = Noura`,
 where `name` is the primary key of `User` records. You can see from Fig 1a
 that Noura is the primary key of node with ID 1. In my simulation,
-the Multiway HashJoin operator wll take `ab` tuples and extend them 
+the Multiway HashJoin operator will take `ab` tuples and extend them 
 to `abc` tuples through a 2-way intersection. In general multiway HashJoin
-has k steps: 1 accumulate ste, k-2 build steps, 
-and 1 probe step. Here are the steps: 
-- Step 1 Accumulate step: The operator receives the `ab` tuples which will be extended
-to triangles. This accumulation phase is an overhead but allows the system to see exactly
-the forward/backward lists of which nodes will be intersected and through sideways information
-passing only scan those. In this case,
+has 3 phases: 1 accumulate phase, build phases to build k-2 hash tables, 
+and a probe phase. Here are the steps.
+- Step 1 - Accumulate Phase: The operator receives the `ab` tuples which will be extended
+to triangles. This allows the system to see exactly
+the forward/backward lists of which nodes will be intersected. Then, the operator passes 
+this information sideways to only scan those lists. In this case,
 because there is a primary key filter on Noura, the only `ab` tuple that will be read
 is (a=1,b=0). This is stored in a temporary buffer that we call "Factorized Table" in the system.
-- Step 2 - Build Step 1: In the first build step, Multway HashJoin will pass a nodeID filter
+- Step 2 - Build Phase 1: In the first build step, Multway HashJoin will pass a nodeID filter
 to the `Scan Follows (a)<-(c)` operator with only 1=true for node ID 1, and 0 for every other node ID.
 The operator can do this because at this stage the operator knows exactly which backward
 adjacency lists will be needed when we extend the tuple (in this case only node with ID 1's
@@ -301,10 +303,10 @@ backward list is needed. The Scan opertor uses this node ID filter to scan only 
 scanning the rest of the file that stores the backwards Follows edges. This list is first sorted
 based on the IDs of the neighbor IDs and stored in a hash table, denoted as "Hash Table (a)<-(c)"
 in the figure.
-- Step 3: Build step 2: This is similar to Build step 1. Using a semijoin filter
+- Step 3 - Build Phase 2: This is similar to Build step 1. Using a semijoin filter
 with node 0's ID, we scan only node 2's forward `Follows` list {1001, 1002, ..., 2000}, 
 sort it, and then store in a hash table "Hash Table (b)->(c)".
-- Step 4: Probe phase: We re-scan the accumulated `ab` tuples from the factorized table.
+- Step 4 - Probe: We re-scan the accumulated `ab` tuples from the factorized table.
 For each tuple (there is only one tuple (a=1, b=0)), we first probe "Hash Table (a)<-(c)" 
 and then "Hash Table (b)->(c)" to fetch a=1's backward list and b=0's forwrad list,
 then intersect these lists, which produces the triangle (a=1, b=0, c=1001).
