@@ -23,32 +23,32 @@ Today, I will discuss another such idea, worst-case optimal join (wcoj) algorith
 Wcoj algorithms and the theory around it in one sentence says this:
 
   - Queries involving complex "cyclic joins" over many-to-many relationships should be 
-    evaluated column at a time instead of the norm table at a time. 
+    evaluated column at a time instead of table at a time, which is the norm. 
 Wcoj algorithms find their best applications when finding cyclic patterns on graphs, 
 such as cliques or cycles, which is common in the workloads of fraud detection and
 recommendation applications. As such, they should be integrated into every graph DBMS 
-and many RDBMSs and I am convinced that they eventually will.
+(and possibly to RDBMSs) and I am convinced that they eventually will.
 
 
 {: .highlight}
 > **Tldr: The key takeaways are:**
 > - **History of Wcoj Algorithms:** Research on wcoj algorithms started with a solution to open question 
-     about the maximum sizes of join queries. This made researchers realize this: the traditional 
+     about the maximum sizes of join queries. This result made researchers realize this: the traditional 
      "binary join plans" paradigm of generating query plans that join 2 tables a time
      until all of the tables in the query are joined is provably
      suboptimal for some queries. Specifically, when join queries are
      cyclic, which in graph terms means when the searched graph pattern has cycles
      in it, and the relationships between records are many-to-many, then this 
      paradigm can generate unnecessarily large amounts of intermediate results.
-> - **Core Algorithmic Step of Wcoj Algorithms:**:  Wcoj algorithms fix this sub-optimality by 
+> - **Core Algorithmic Step of Wcoj Algorithms:**  Wcoj algorithms fix this sub-optimality by 
     performing the joins one column at a time (instead of 2 tables at a time) using multiway intersections.
 > - **How Kùzu Integrates Wcoj Algorithms:** Kùzu generates plans that seamlessly mix binary joins 
     and wcoj-style multiway intersections. Multiway intersections are performed by an operator called 
-    "multiway ASP Join", which has a build phase that creates sorted indices on the fly; and a 
-    probe phase that performs multi-way intersections using the built indices.
-> - **Yes, the Term "Worst-case Optimal" Is Confusing, Even to Don Knuth:** I know, Don Knuth also found the term
+    "multiway HashJoin", which has one or more build phases that creates one or more hash tables that stores
+    sorted adjacency lists; and a probe phase that performs multi-way intersections using the sorted lists.
+> - **Yes, the Term "Worst-case Optimal" Is Confusing Even to Don Knuth:** I know, Don Knuth also found the term
     "worst-case optimal" a bit confusing. See my [anecdote on this](#a-thank-you--a-story-about-knuths-reaction-to-the-term-worst-case-optimal). 
-    It basically means that the worst-case runtimes of  these algorithms are asymptotically optimal.
+    It basically means that the worst-case runtimes of these algorithms are asymptotically optimal.
 
 ## Joins, Running Example & Traditional Table-at-a-time Joins
 Joins are objectively the most expensive and powerful operation in DBMSs.
@@ -271,113 +271,143 @@ Unless the query has a very cyclic component where
 multiway intersections can help, systems should just use binary joins.
 So wcoj-like computations should be seen as complementing binary join plans.
 
-Second, Kùzu performs multiway intersections in its
-"multiway ASP join" operator. To simulate the computation this operator
-performs, let me change the query a little and add a filter on a.name = "Alice",
-where suppose name is the primary key of `User` records. Suppose
-further that Alice is the primary key of node with ID 1. I will only simulate a part
-of the query plan in which we take
-ab tuples and extend them to abc tuples through a 2-way intersection. ASPJoin
-is a hash join-like operator with k phases: 1 accumulate phase, k-2 build phases, and 1 probe phase. In our example: 
-- Step 1: Accumulate phase receives the ab tuples which will be extended.
-This accumulation phase is an overhead but allows the system to see exactly
-the forward/backward lists of which nodes will be intersected. In this case,
-because there is a primary key filter on Alice, the only ab tuple that will be read
-is (a=1,b=2).
-- Step 2: Build phase 1: In the first build phase, ASPJoin will pass a semijoin filter
-that only contains node 1's ID 
-to the scan operator of the `Follows` table. The Scan uses this information only scan this list (and avoids
-scanning the rest of the file that stores Follows edges). The list
-contains { TODO fill } in an arbitrary order. This list is first sorted
-based on the IDs of the neighbor IDs in the list stored
-in a hash table HTa.
-- Step 3: Build phase 2: This is similar to Build phase 1. Using a semijoin filter
-with node 2's ID, we scan only node 2's forward list { TODO fill }, sort it, and then store in a hash table HTb.
-- Step 4: Probe phase: We re-scan the accumulated ab tuples and for each one,
-first probe HTa to fetch a=1's backward list, then probe HTb to fetch b=2's forward
-list, then intersect these lists, which produces the triangle (a=1, b=2, c=TODO).
- 
-Therefore, the sideways passing of the semijoin filter ensures that each necessary 
-adjacency list is scanned and sorted exactly once. Then the probe stage takes
-sorted lists, intersects them and produces outputs. For k-way intersections, where
-k > 2, we do a sequence of binary intersections.
+<p align="center">
+  <img src="../../img/wcoj-kuzu-multiway-hash-join.png" width="600">
+</p>
 
-This performs quite well. Our CIDR paper has some performance numbers but if there
-are filters on the nodes such that semijoins can benefit a lot, then 
-it outperforms Umbra's wcoj implementation. When there are no filters or the selectivity is low Umbra is faster. But although we did not compare in the paper,
-both are incomparably faster than binary joins for highly cyclic queries. 
-We prepared this codelab for you try the performance difference between
-Kùzu's binary
-join plans, which you can currently manually generate, and Kùzu's default plans
-that use multiway ASP joins on highly cyclic triangle and 4-clique queries. You
-can play around and do more examples.
+Second, Kùzu performs multiway intersections in a *Multiway HashJoin* operator.
+In our CIDR paper we call this operator Multiway ASPJoin. It can be thought 
+of a modified hash-join operator where we use multiple hash tables and do 
+an intersection to produce outputs as I will simulate. 
+Let me change the query a little and add a filter on `a.name = Noura`,
+where `name` is the primary key of `User` records. You can see from Fig 1a
+that Noura is the primary key of node with ID 1. In my simulation,
+the Multiway HashJoin operator wll take `ab` tuples and extend them 
+to `abc` tuples through a 2-way intersection. In general multiway HashJoin
+has k steps: 1 accumulate ste, k-2 build steps, 
+and 1 probe step. Here are the steps: 
+- Step 1 Accumulate step: The operator receives the `ab` tuples which will be extended
+to triangles. This accumulation phase is an overhead but allows the system to see exactly
+the forward/backward lists of which nodes will be intersected and through sideways information
+passing only scan those. In this case,
+because there is a primary key filter on Noura, the only `ab` tuple that will be read
+is (a=1,b=0). This is stored in a temporary buffer that we call "Factorized Table" in the system.
+- Step 2 - Build Step 1: In the first build step, Multway HashJoin will pass a nodeID filter
+to the `Scan Follows (a)<-(c)` operator with only 1=true for node ID 1, and 0 for every other node ID.
+The operator can do this because at this stage the operator knows exactly which backward
+adjacency lists will be needed when we extend the tuple (in this case only node with ID 1's
+backward list is needed. The Scan opertor uses this node ID filter to scan only this backward list, 
+{1001}, and avoids
+scanning the rest of the file that stores the backwards Follows edges. This list is first sorted
+based on the IDs of the neighbor IDs and stored in a hash table, denoted as "Hash Table (a)<-(c)"
+in the figure.
+- Step 3: Build step 2: This is similar to Build step 1. Using a semijoin filter
+with node 0's ID, we scan only node 2's forward `Follows` list {1001, 1002, ..., 2000}, 
+sort it, and then store in a hash table "Hash Table (b)->(c)".
+- Step 4: Probe phase: We re-scan the accumulated `ab` tuples from the factorized table.
+For each tuple (there is only one tuple (a=1, b=0)), we first probe "Hash Table (a)<-(c)" 
+and then "Hash Table (b)->(c)" to fetch a=1's backward list and b=0's forwrad list,
+then intersect these lists, which produces the triangle (a=1, b=0, c=1001).
+
+This performs quite well. Our [CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) has some performance numbers
+comparing against other types of WCO joins implementations (see 
+the experiments in Table 3). Since I did not cover other ways to implement
+wco join algorithms inside DBMSs, these experiments would be difficult to explain here.
+Instead, let me just demonstrate some simple comparisons between using binary joins and wco joins
+in Kùzu on a simple triangle query. On larger cyclic queries, e.g., 4- or 5- cliques, 
+the differences are much larger and often binary join operator do not finish on time.
+You can try this experiment too. Here is the configuration. The dataset I'm using
+is a popular web graph that is used in academic papers called [web-BerkStan](https://snap.stanford.edu/data/web-BerkStan.html).
+It has 685K nodes and 7.6M edges. I modeled these as a simple `Page` nodes and `Links` edges.
+I am using 8 threads and running these two queries:
+
+```
+MATCH (a:Page)-[e1:Links]->(b:Page)-[e2:Links]->(c:Page)-[e3:Links]->(a)
+RETURN count(*)
+```
+This will compile plan that uses a wco Multiway HashJoin operator. I will refer to this
+plan as Kùzu-WCO below. I am also running the following query:
+```
+MATCH (a:Page)-[e1:Links]->(b:Page)
+WITH *
+MATCH (b:Page)-[e2:Links]->(c:Page)
+WIH *
+MATCH (c)-[e3:Links]->(a)
+RETURN count(*)
+```
+Current Kùzu compiles each MATCH/WITH block separately so this is hack to force the system
+to use binary join plan. The plan will join `e1` `Links` with `e2` `Links` and then
+join the result of that with `e3` `Links`, all using binary HashJoin operator. Here are the
+results:
+
+| Configuration |  Time  |
+|----------|:-------------:|
+| Kùzu-WCO |  175ms |
+| Kùzu-BJ |    5871ms   |
+
+So we see 33.5x performance improvement in this simplest query. In larger densely cyclic queries, binary
+join plans just don't work.
 
 ## A Thank You & a Story About Knuth's Reaction to the Term "Worst-case Optimal"
  
-Before, wrapping up, I want to say thank you to [Chris Ré](), who is a
-co-inventor of earliest of these algorithms. 
-Back in the day, Chris had introduced me to this area in the 5th year of 
-my PhD and we had written a paper on the topic in the space of evaluating
+Before wrapping up, I want to say thank you to [Chris Ré](https://cs.stanford.edu/~chrismre/), who is a
+co-inventor of earliest of wcoj algorithms. 
+In the 5th year of my PhD, Chris had introduced me to this area and 
+we had written a paper together on the topic in the context of evaluating
 joins in distributed systems like MapReduce/Spark. I ended up working on
 these algorithms and trying to make them performant in actual systems
-for more years than I predicted. 
-I also want to say thank you to Hung Ngo and Atri Rudra,
+for many more years than I predicted. 
+I also want to say thank you to [Hung Ngo](https://hung-q-ngo.github.io/) and [Atri Rudra](https://cse.buffalo.edu/faculty/atri/),
 with whom I have had several conversations during those years on these algorithms.
 
-Finally, let me end with a fun side story about the term "worst-case optimal": 
+Finally, let me end with a fun story about the term "worst-case optimal": 
 Several years ago [Don Knuth](https://uwaterloo.ca/computer-science/events/dls-donald-knuth-all-questions-answered) was visiting UWaterloo
 to give a Distinguished Lecture Seminar (our department's most prestigious 
 lecture series). A colleague of mine and I had a 1-1 meeting with him. 
-Knuth is known to anyone with CS education but importantly he is
-credited for founding the field of algorithm analysis. He asked me what I was working on
+Knuth must be known to anyone with a CS degree but importantly he is
+credited for founding the field of algorithm analysis (e.g., for popularizing
+the use of big-oh notation for analyzing algorithms' performances). 
+In our meeting, he asked me what I was working on
 and I told him about these new algorithms called "worst-case optimal join algorithms".
-The term was confusing to him and his immediate interpretation 
-was: "Does that mean they are so good that they are optimal even in their worst-case performances?" 
+The term was so confusing to him and his immediate interpretation 
+was: "Are they so good that they are optimal even in their worst-case performances?" 
 
 The term actually means that the worst-case runtime of these algorithms
 meets a known lower bound for the worst-case runtime of any join algorithm,
-which is  $Omega(IN^{\rho^*})$. This lower bound is immediately implied
-by the AGM bound: since there are $Omega(IN^{\rho^*})$ outputs in the worst-case,
-any algorithm needs to take at least that much time. 
-Probably a more standard term could be to call these algorithms 
-"asymptotically optimal", just like people call sortmerge an asymptotically optimal sorting algorithm under the comparison model.
+which is  $Omega(IN^{\rho^\*})$.
+Probably a more standard term would be to call them 
+"asymptotically optimal", just like people call sortmerge an asymptotically optimal 
+sorting algorithm under the comparison model.
 
 
-
-Final Words:
-A couple things before I wrap up. First, as I said before, because the workloads
-of applications in fraud, recommendations, or risk analysis in 
-different type of networks are more likely to contain cyclic joins over
-many-to-many relationships,
-I am convinced operators that can perform wcoj-like join processing
-need to exist in every competent GDBMS.
-
-Second, what's other fundamental algorithmic developments have
-been made in the field? It is surprising but there are still main gaps
-in the field's 
-understanding of joins and how fast joins can be processed. 
+## Final Words:
+What other fundamental algorithmic developments have
+been made in the field on join processing? It is surprising but there are still main gaps
+in the field's understanding of joins and how fast joins can be processed. 
 There has been some very interesting 
-work in an area called "beyond worst-case optimal join algorithms", 
-that ask very fundamental questions, whose answers are not well understood. 
-For example: how can we prove that a join algorithm
+work in an area called *beyond worst-case optimal join algorithms*. These papers
+ask very fundamental questions about joins, such as how can we prove that a join algorithm
 is correct, i.e., it produces the correct output given its input? 
-The high-level answer is that each join algorithm must be producing a proof,
-through the comparison operations it makes, that its output is correct.
-The goal of this line of research is to design practical algorithms that have 
-the guarantee that the proofs they implicitly produce are optimal. This is 
+The high-level answer is that each join algorithm must be producing a proof that its output is correct,
+through the comparison operations it makes.
+The goal of this line of research is to design practical algorithms whose implicit proofs are optimal,
+i.e., as small as possible. This is 
 probably the most ambitious level of optimality one can go for in algorithm design.
-There are already some algorithms, e.g., an algorithm called [Tetris](). The area
+There are already some algorithms, e.g., an algorithm called [Tetris](https://dl.acm.org/doi/pdf/10.1145/2967101). The area
 is fascinating and has deep connections to computational geometry. I
-advised a [Master's thesis]() on the topic once and learned quite a bit about
+advised a [Master's thesis](https://arxiv.org/abs/1909.12102) on the topic once and learned quite a bit about
 computational geometry that I never thought could be relevant to my work. The current
 beyond worst-case optimal join algorithms however are currently not practical. 
-Some brave souls need to get into the space and think hard about whether practical versions of these algorithms can be developed. That would be very exciting.
+Some brave souls need to get into the space and think hard about whether 
+practical versions of these algorithms can be developed. That would be very exciting.
 
 This completes my 3-part blog on the contents of our CIDR paper and 2 core techniques:
 factorization and worst-case optimal join algorithms that we have integrated into
 Kùzu to optimize for many-to-many joins. My goal in these blog
 posts was to explain these ideas to a general CS/software engineering audience and
-I hope these posts have made this material more approachable. 
+I hope these posts have made this material more approachable. As I said many times,
+I'm convinced that among many other techniques, these techniques need to be integral
+to any GDBMS that wants to be competitive in performance. 
 
 We will keep writing more blog posts in the later months about our new releases,
 and other technical topics. If there are things you'd like us to write about,
