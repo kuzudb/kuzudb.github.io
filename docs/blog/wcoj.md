@@ -298,26 +298,27 @@ is (a=1,b=0). This is stored in a temporary buffer that we call "Factorized Tabl
 to the `Scan Follows (a)<-(c)` operator with only 1=true for node ID 1, and 0 for every other node ID.
 The operator can do this because at this stage the operator knows exactly which backward
 adjacency lists will be needed when we extend the tuple (in this case only node with ID 1's
-backward list is needed. The Scan opertor uses this node ID filter to scan only this backward list, 
+backward list is needed). The Scan operator uses this node ID filter to scan only this backward list, 
 {1001}, and avoids
 scanning the rest of the file that stores the backwards Follows edges. This list is first sorted
 based on the IDs of the neighbor IDs and stored in a hash table, denoted as "Hash Table (a)<-(c)"
 in the figure.
-- Step 3 - Build Phase 2: This is similar to Build step 1. Using a semijoin filter
+- Step 3 - Build Phase 2: This is similar to Build phase 1. Using a semijoin filter
 with node 0's ID, we scan only node 2's forward `Follows` list {1001, 1002, ..., 2000}, 
 sort it, and then store in a hash table "Hash Table (b)->(c)".
 - Step 4 - Probe: We re-scan the accumulated `ab` tuples from the factorized table.
-For each tuple (there is only one tuple (a=1, b=0)), we first probe "Hash Table (a)<-(c)" 
-and then "Hash Table (b)->(c)" to fetch a=1's backward list and b=0's forwrad list,
-then intersect these lists, which produces the triangle (a=1, b=0, c=1001).
+For each tuple, we first probe "Hash Table (a)<-(c)" 
+and then "Hash Table (b)->(c)" to fetch two lists, intersect them, and produce outputs.
+In this case there is only one tuple (a=1, b=0), so we will fetch a=1's backward list and b=0's forwrad list,
+intersect these lists, and produce the triangle (a=1, b=0, c=1001).
 
-This performs quite well. Our [CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) has some performance numbers
+*** (Guodong: From here till the rest of the section requires editing.) This performs quite well. Our [CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) has some performance numbers
 comparing against other types of WCO joins implementations (see 
 the experiments in Table 3). Since I did not cover other ways to implement
 wco join algorithms inside DBMSs, these experiments would be difficult to explain here.
 Instead, let me just demonstrate some simple comparisons between using binary joins and wco joins
 in Kùzu on a simple triangle query. On larger cyclic queries, e.g., 4- or 5- cliques, 
-the differences are much larger and often binary join operator do not finish on time.
+the differences are much larger and often binary join plans do not finish on time.
 You can try this experiment too. Here is the configuration. The dataset I'm using
 is a popular web graph that is used in academic papers called [web-BerkStan](https://snap.stanford.edu/data/web-BerkStan.html).
 It has 685K nodes and 7.6M edges. I modeled these as a simple `Page` nodes and `Links` edges.
@@ -339,36 +340,36 @@ RETURN count(*)
 ```
 Current Kùzu compiles each MATCH/WITH block separately so this is hack to force the system
 to use binary join plan. The plan will join `e1` `Links` with `e2` `Links` and then
-join the result of that with `e3` `Links`, all using binary HashJoin operator. Here are the
-results:
+join the result of that with `e3` `Links`, all using binary HashJoin operator. I will
+refer to this as Kùzu-BJ. Here are the results:
 
 | Configuration |  Time  |
 |----------|:-------------:|
 | Kùzu-WCO |  175ms |
 | Kùzu-BJ |    5871ms   |
 
-So we see 33.5x performance improvement in this simplest query. In larger densely cyclic queries, binary
-join plans just don't work.
+We see 33.5x performance improvement in this simplest query. In larger densely cyclic queries, binary
+join plans just don't work.***
 
-## A Thank You & a Story About Knuth's Reaction to the Term "Worst-case Optimal"
+## A Thank You & an Anecdote About Knuth's Reaction to the Term "Worst-case Optimal"
  
 Before wrapping up, I want to say thank you to [Chris Ré](https://cs.stanford.edu/~chrismre/), who is a
 co-inventor of earliest of wcoj algorithms. 
 In the 5th year of my PhD, Chris had introduced me to this area and 
 we had written a paper together on the topic in the context of evaluating
-joins in distributed systems like MapReduce/Spark. I ended up working on
+joins in distributed systems, such as MapReduce and Spark. I ended up working on
 these algorithms and trying to make them performant in actual systems
-for many more years than I predicted. 
+for many more years than I initially predicted. 
 I also want to say thank you to [Hung Ngo](https://hung-q-ngo.github.io/) and [Atri Rudra](https://cse.buffalo.edu/faculty/atri/),
 with whom I have had several conversations during those years on these algorithms.
 
 Finally, let me end with a fun story about the term "worst-case optimal": 
 Several years ago [Don Knuth](https://uwaterloo.ca/computer-science/events/dls-donald-knuth-all-questions-answered) was visiting UWaterloo
-to give a Distinguished Lecture Seminar (our department's most prestigious 
-lecture series). A colleague of mine and I had a 1-1 meeting with him. 
+to give a Distinguished Lecture Seminar, which is our department's most prestigious 
+lecture series. A colleague of mine and I had a 1-1 meeting with him. 
 Knuth must be known to anyone with a CS degree but importantly he is
 credited for founding the field of algorithm analysis (e.g., for popularizing
-the use of big-oh notation for analyzing algorithms' performances). 
+the big-oh notation for analyzing algorithms' performances). 
 In our meeting, he asked me what I was working on
 and I told him about these new algorithms called "worst-case optimal join algorithms".
 The term was so confusing to him and his immediate interpretation 
@@ -376,16 +377,16 @@ was: "Are they so good that they are optimal even in their worst-case performanc
 
 The term actually means that the worst-case runtime of these algorithms
 meets a known lower bound for the worst-case runtime of any join algorithm,
-which is  $Omega(IN^{\rho^\*})$.
+which is  $\Omega(IN^{\rho^\*})$.
 Probably a more standard term would be to call them 
 "asymptotically optimal", just like people call sortmerge an asymptotically optimal 
 sorting algorithm under the comparison model.
 
 
-## Final Words:
+## Final Words
 What other fundamental algorithmic developments have
 been made in the field on join processing? It is surprising but there are still main gaps
-in the field's understanding of joins and how fast joins can be processed. 
+in the field's understanding of how fast joins can be processed. 
 There has been some very interesting 
 work in an area called *beyond worst-case optimal join algorithms*. These papers
 ask very fundamental questions about joins, such as how can we prove that a join algorithm
@@ -407,9 +408,12 @@ This completes my 3-part blog on the contents of our CIDR paper and 2 core techn
 factorization and worst-case optimal join algorithms that we have integrated into
 Kùzu to optimize for many-to-many joins. My goal in these blog
 posts was to explain these ideas to a general CS/software engineering audience and
-I hope these posts have made this material more approachable. As I said many times,
-I'm convinced that among many other techniques, these techniques need to be integral
-to any GDBMS that wants to be competitive in performance. 
+I hope these posts have made this material more approachable. My other goal
+was to show the role of theory in advancing systems. Both of these ideas emerged from
+pen-and-paper theory papers that theoreticians wrote but gave clear advice to DBMS developers.
+As I said many times, I'm convinced that among many other techniques, these two 
+techniques need to be integral to any GDBMS that wants to be competitive in performance,
+because queries with many-to-many joins are first-class-citizens in the workloads of these systems.
 
 We will keep writing more blog posts in the later months about our new releases,
 and other technical topics. If there are things you'd like us to write about,
