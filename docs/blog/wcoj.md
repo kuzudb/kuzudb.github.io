@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Factorization & Great Ideas from Database Theory (1)
-permalink: /blog/factorization.html
+title: Why (Graph) DBMSs Need Novel Join Algorithms: The Story of Worst-case Optimal Join Algorithms
+permalink: /blog/wcoj.html
 parent: Blog
 nav_order: 2
 ---
@@ -422,5 +422,4 @@ break it, let us know of your performance or other bugs, so we can continue impr
 it. Give us a github star too and take care until the next posts!
 
 
-[^1]: The question is interesting in the set semantics when you cannot pick every column value of every tuple the
-same value, which forces a Cartesian product of all the relations.
+[^1]: The question is interesting in the set semantics when you cannot pick every column value of every tuple the same value, which forces a Cartesian product of all the relations.
