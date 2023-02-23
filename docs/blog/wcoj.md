@@ -312,25 +312,30 @@ and then "Hash Table (b)->(c)" to fetch two lists, intersect them, and produce o
 In this case there is only one tuple (a=1, b=0), so we will fetch a=1's backward list and b=0's forwrad list,
 intersect these lists, and produce the triangle (a=1, b=0, c=1001).
 
-*** (Guodong: From here till the rest of the section requires editing.) This performs quite well. Our [CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) has some performance numbers
-comparing against other types of WCO joins implementations (see 
-the experiments in Table 3). Since I did not cover other ways to implement
+This performs quite well. Our [CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) has some performance numbers
+comparing against other types of WCO joins implementations (see the experiments in Table 3). Since I did not cover other ways to implement
 wco join algorithms inside DBMSs, these experiments would be difficult to explain here.
 Instead, let me just demonstrate some simple comparisons between using binary joins and wco joins
 in Kùzu on a simple triangle query. On larger cyclic queries, e.g., 4- or 5- cliques, 
 the differences are much larger and often binary join plans do not finish on time.
-You can try this experiment too. Here is the configuration. The dataset I'm using
+You can try this experiment too. 
+
+Here is the configuration. The dataset I'm using
 is a popular web graph that is used in academic papers called [web-BerkStan](https://snap.stanford.edu/data/web-BerkStan.html).
-It has 685K nodes and 7.6M edges. I modeled these as a simple `Page` nodes and `Links` edges.
-I am using 8 threads and running these two queries:
+It has 685K nodes and 7.6M edges.
+I modeled these as a simple `Page` nodes and `Links` edges.
+
+I start Kùzu on my own laptop, which is a Macbook Air 2020 with Apple M1 chip, 16G memory, and 512GB SSD, and run the following two queries (by default, Kùzu uses all thread available):
 
 ```
+- Q1: Kùzu-WCO
 MATCH (a:Page)-[e1:Links]->(b:Page)-[e2:Links]->(c:Page)-[e3:Links]->(a)
 RETURN count(*)
 ```
 This will compile plan that uses a wco Multiway HashJoin operator. I will refer to this
 plan as Kùzu-WCO below. I am also running the following query:
 ```
+- Q2: Kùzu-BJ
 MATCH (a:Page)-[e1:Links]->(b:Page)
 WITH *
 MATCH (b:Page)-[e2:Links]->(c:Page)
@@ -338,18 +343,30 @@ WIH *
 MATCH (c)-[e3:Links]->(a)
 RETURN count(*)
 ```
-Current Kùzu compiles each MATCH/WITH block separately so this is hack to force the system
+
+Currently Kùzu compiles each MATCH/WITH block separately so this is hack to force the system
 to use binary join plan. The plan will join `e1` `Links` with `e2` `Links` and then
 join the result of that with `e3` `Links`, all using binary HashJoin operator. I will
 refer to this as Kùzu-BJ. Here are the results:
 
 | Configuration |  Time  |
 |----------|:-------------:|
-| Kùzu-WCO |  175ms |
-| Kùzu-BJ |    5871ms   |
+| Kùzu-WCO |  1.62s |
+| Kùzu-BJ |    51.17s   |
 
-We see 33.5x performance improvement in this simplest query. In larger densely cyclic queries, binary
-join plans just don't work.***
+We see 31.6x performance improvement in this simple query. In larger densely cyclic queries, binary
+join plans just don't work.
+
+To try this locally, you can download our prepared CSV files from [here](https://github.com/kuzudb/kuzudb.github.io/tree/main/data/web-berkstan), and compile from our [latest master](https://github.com/kuzudb/kuzu) (`make clean && make release NUM_THREADS=8`).
+Then start Kùzu's shell, and load data into Kùzu:
+```
+./build/release/tools/shell/kuzu_shell -i web.db
+kuzu> CREATE NODE TABLE Page (id INT64, PRIMARY KEY(INT64));
+kuzu> CREATE REL TABLE Links (FROM Page TO Page, MANY_MANY);
+kuzu> COPY Page FROM 'web-node.csv';
+kuzu> COPY Links FROM 'web-edge.csv';
+```
+Now, run those two queries (Kùzu-WCO and Kùzu-BJ) to feel the difference!
 
 ## A Thank You & an Anecdote About Knuth's Reaction to the Term "Worst-case Optimal"
  
