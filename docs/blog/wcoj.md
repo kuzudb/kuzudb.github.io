@@ -3,7 +3,7 @@ layout: default
 title: "Why (Graph) DBMSs Need Novel Join Algorithms: The Story of Worst-case Optimal Join Algorithms"
 permalink: /blog/wcoj.html
 parent: Blog
-nav_order: 2
+nav_order: 1
 ---
 <p align="center">
   <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="300"></a>
@@ -95,7 +95,7 @@ To this day, this is the norm. DBMSs pick a "join order" which is the order in
 which the tables should be joined iteratively 2 at a time. 
 In the above example, for example 
 there are three possible join orders. One way to represent these orders is by 
-writing different paranthesizations of the joins: 
+writing different parenthesization of the joins: 
 - (i) $((F1 \bowtie F2) \bowtie F3)$; (ii) $(F1 \bowtie (F2 \bowtie F3))$; 
   and (iii) $((F1 \bowtie F3) \bowtie F2)$. 
 

@@ -3,7 +3,7 @@ layout: default
 title: Meet Kùzu
 permalink: /blog/meet-kuzu.html
 parent: Blog
-nav_order: 4
+nav_order: 5
 ---
 
 # Meet Kùzu 🤗
