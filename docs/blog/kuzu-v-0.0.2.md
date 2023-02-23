@@ -6,11 +6,17 @@ parent: Blog
 nav_order: 2
 ---
 
+<p align="center">
+  <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="300"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/kuzudb/kuzu" class="btn fs-5 mb-4 mb-md-0">View it on GitHub</a>
+  <a href="https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg" class="btn fs-5 mb-4 mb-md-0">Join our Slack workspace</a>
+</p>
+
+
 # Kùzu 0.0.2 Release
-
-[View Kùzu on GitHub](https://github.com/kuzudb/kuzu){: .btn .fs-5 .mb-4 .mb-md-0 }
-
-[Join our Slack workspace](https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 This post is about the second release of Kùzu. However, we want to start with something much more important:
 

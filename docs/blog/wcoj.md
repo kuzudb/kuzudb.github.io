@@ -17,7 +17,7 @@ nav_order: 1
 by Semih Salihoğlu, Feb 22nd, 2023
 # Why (Graph) DBMSs Need Novel Join Algorithms: The Story of Worst-case Optimal Join Algorithms
 Joins of a sets of records is objectively the most expensive operation in DBMSs.
-In my previous post on factorization, I said that in the field of databases, once 
+In my previous post on [factorization](factorization.md), I said that in the field of databases, once 
 in a while you run into a very simple idea that deviates from the norm that gets you very excited. 
 Today, I will discuss another such idea, worst-case optimal join (wcoj) algorithms. 
 Wcoj algorithms and the theory around it in one sentence says this:
@@ -261,7 +261,7 @@ algorithmic step to be efficient on cyclic queries.
 
 ## How Kùzu Performs Worst-case Optimal Join Algorithms:
 
-Our [CIDR paper]() describes this in detail, so I will be brief here. 
+Our [CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) describes this in detail, so I will be brief here. 
 First, Kùzu mixes binary joins and wcoj-like multiway intersections
 following some principles that my PhD student [Amine Mhedhbi](http://amine.io/)
 had worked quite hard on early in his PhD. I recommend these two papers, 
@@ -354,8 +354,8 @@ refer to this as Kùzu-BJ. Here are the results:
 | Kùzu-WCO |  1.62s |
 | Kùzu-BJ |    51.17s   |
 
-We see 31.6x performance improvement in this simple query. In larger densely cyclic queries, binary
-join plans just don't work.
+We see **31.6x** performance improvement in this simple query. 
+In larger densely cyclic queries, binary join plans just don't work.
 
 To try this locally, you can download our prepared CSV files from [here](https://github.com/kuzudb/kuzudb.github.io/tree/main/data/web-berkstan), and compile from our [latest master](https://github.com/kuzudb/kuzu) (`make clean && make release NUM_THREADS=8`).
 Then start Kùzu's shell, and load data into Kùzu:
@@ -371,7 +371,7 @@ Now, run those two queries (Kùzu-WCO and Kùzu-BJ) to feel the difference!
 ## A Thank You & an Anecdote About Knuth's Reaction to the Term "Worst-case Optimal"
  
 Before wrapping up, I want to say thank you to [Chris Ré](https://cs.stanford.edu/~chrismre/), who is a
-co-inventor of earliest of wcoj algorithms. 
+co-inventor of earliest wcoj algorithms. 
 In the 5th year of my PhD, Chris had introduced me to this area and 
 we had written a paper together on the topic in the context of evaluating
 joins in distributed systems, such as MapReduce and Spark. I ended up working on
@@ -396,7 +396,7 @@ The term actually means that the worst-case runtime of these algorithms
 meets a known lower bound for the worst-case runtime of any join algorithm,
 which is  $\Omega(IN^{\rho^\*})$.
 Probably a more standard term would be to call them 
-"asymptotically optimal", just like people call sortmerge an asymptotically optimal 
+"asymptotically optimal", just like people call sort merge an asymptotically optimal 
 sorting algorithm under the comparison model.
 
 
@@ -422,7 +422,7 @@ Some brave souls need to get into the space and think hard about whether
 practical versions of these algorithms can be developed. That would be very exciting.
 
 This completes my 3-part blog on the contents of our CIDR paper and 2 core techniques:
-factorization and worst-case optimal join algorithms that we have integrated into
+[factorization](factorization.md) and worst-case optimal join algorithms that we have integrated into
 Kùzu to optimize for many-to-many joins. My goal in these blog
 posts was to explain these ideas to a general CS/software engineering audience and
 I hope these posts have made this material more approachable. My other goal

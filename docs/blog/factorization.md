@@ -5,14 +5,16 @@ permalink: /blog/factorization.html
 parent: Blog
 nav_order: 3
 ---
+
 <p align="center">
   <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="300"></a>
 </p>
 
 <p align="center">
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <a class="github-button" href="https://github.com/kuzudb" data-size="large" aria-label="Follow @kuzudb on GitHub">Follow @kuzudb</a>
+  <a href="https://github.com/kuzudb/kuzu" class="btn fs-5 mb-4 mb-md-0">View it on GitHub</a>
+  <a href="https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg" class="btn fs-5 mb-4 mb-md-0">Join our Slack workspace</a>
 </p>
+
 
 by Semih Salihoğlu, Jan 20th, 2023
 # Factorization & Great Ideas from Database Theory (1)
@@ -58,7 +60,7 @@ In contrast, you can't use factorization to compress your raw database files.
 Factorization has a very unique property:
 it is designed to compress the intermediate 
 data that are generated when query processors of DBMSs evaluate 
-many-to-many (m-n) growing joins. If you have read [my previous blog](https://kuzudb.com/blog/what-every-gdbms-should-do-and-vision.html),
+many-to-many (m-n) growing joins. If you have read [my previous blog](what-every-gdbms-should-do.md),
 efficiently handling m-n joins was one of the items on my list of properties 
 that competent GDBMSs should excel in. This is because 
 the workloads of GDBMSs commonly contain m-n joins
@@ -453,7 +455,7 @@ in mind is called
 for another time. For now, I invite you to check our performance out on large queries 
 and let us know if we are slow on some queries! The Kùzu team says hi (👋 🙋‍♀️ 🙋🏽) and 
 is at your service to fix all performance bugs as we continue implementing the system! 
-My next post will be about the novel worst-case optimal join algorithms, which emerged
+My next post will be about the novel [worst-case optimal join algorithms](wcoj.md), which emerged
 from another theoretical insight on m-n joins! Take care until then!
 
 [^1]: If you come from a very graph-focused background and/or exposed to a ton of GDBMS marketing, you might react to my statement that what I am showing are standard plans that do joins. Maybe you expected to see graph-specific operators, such as a BFS or a DFS operator because the data is a graph. Or maybe someone even dared to tell you that GDBMSs don't do joins but they do traversals. Stuff like that. These word tricks and confusing jargon really has to stop and helps no one. If joins are in the nature of the computation  you are asking a DBMSs to do, calling it something else won't change the nature of the computation. Joins are joins. Every DBMSs needs to join their records with each other.
