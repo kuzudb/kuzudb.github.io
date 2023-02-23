@@ -357,7 +357,7 @@ refer to this as Kùzu-BJ. Here are the results:
 We see **31.6x** performance improvement in this simple query. 
 In larger densely cyclic queries, binary join plans just don't work.
 
-To try this locally, you can download our prepared CSV files from [here](https://github.com/kuzudb/kuzudb.github.io/tree/main/data/web-berkstan), and compile from our [latest master](https://github.com/kuzudb/kuzu) (`make clean && make release NUM_THREADS=8`).
+To try this locally, you can download our prepared CSV files from [here](https://github.com/kuzudb/kuzudb.github.io/tree/main/data/web-berkstan), and compile from our [latest master](https://github.com/kuzudb/kuzu)[^2] (`make clean && make release NUM_THREADS=8`).
 Then start Kùzu's shell, and load data into Kùzu:
 ```
 ./build/release/tools/shell/kuzu_shell -i web.db
@@ -366,7 +366,7 @@ kuzu> CREATE REL TABLE Links (FROM Page TO Page, MANY_MANY);
 kuzu> COPY Page FROM 'web-node.csv';
 kuzu> COPY Links FROM 'web-edge.csv';
 ```
-Now, run those two queries (Kùzu-WCO and Kùzu-BJ) to feel the difference!
+Now, run those two queries (Kùzu-WCO and Kùzu-BJ) to see the difference!
 
 ## A Thank You & an Anecdote About Knuth's Reaction to the Term "Worst-case Optimal"
  
@@ -440,3 +440,4 @@ it. Give us a [GitHub star](https://github.com/kuzudb/kuzu) too and take care un
 
 
 [^1]: The question is interesting in the set semantics when you cannot pick every column value of every tuple the same value, which forces a Cartesian product of all the relations.
+[^2]: We found a minor bug in the latest release 0.0.2 when a node has a very large number of edges, which is fixed in the master branch, that's why we suggest using the master branch.
