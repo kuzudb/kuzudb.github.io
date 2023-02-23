@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Factorization & Great Ideas from Database Theory (1)
+title: Factorization & Great Ideas from Database Theory
 permalink: /blog/factorization.html
 parent: Blog
 nav_order: 3
@@ -17,7 +17,9 @@ nav_order: 3
 
 
 by Semih Salihoğlu, Jan 20th, 2023
-# Factorization & Great Ideas from Database Theory (1)
+
+# Factorization & Great Ideas from Database Theory
+
 Many of the core principles of how to develop DBMSs are well understood.
 For example, a very good query compilation paradigm is to 
 map high-level queries to a logical plan of relational operators, then optimize this plan,
