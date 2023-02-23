@@ -9,15 +9,10 @@ nav_order: 2
   <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="300"></a>
 </p>
 
-<span>
-  <span>
-    [View it on GitHub](https://github.com/kuzudb/kuzu){: .btn .fs-5 .mb-4 .mb-md-0 }
-  </span>
-
-  <span>
-    [Join our Slack workspace](https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg){: .btn .fs-5 .mb-4 .mb-md-0 }
-  </span>
-</span>
+<p align="center">
+  <a href="https://github.com/kuzudb/kuzu" class="btn fs-5 mb-4 mb-md-0">View it on GitHub</a>
+  <a href="https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg" class="btn fs-5 mb-4 mb-md-0">Join our Slack workspace</a>
+</p>
 
 by Semih Salihoğlu, Feb 22nd, 2023
 # Why (Graph) DBMSs Need Novel Join Algorithms: The Story of Worst-case Optimal Join Algorithms
