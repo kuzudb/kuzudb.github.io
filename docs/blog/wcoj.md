@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Why (Graph) DBMSs Need Novel Join Algorithms: The Story of Worst-case Optimal Join Algorithms"
+title: "Why (Graph) DBMSs Need New Join Algorithms: The Story of Worst-case Optimal Join Algorithms"
 permalink: /blog/wcoj.html
 parent: Blog
 nav_order: 1
@@ -15,7 +15,7 @@ nav_order: 1
 </p>
 
 by Semih Salihoğlu, Feb 22nd, 2023
-# Why (Graph) DBMSs Need Novel Join Algorithms: The Story of Worst-case Optimal Join Algorithms
+# Why (Graph) DBMSs Need New Join Algorithms: The Story of Worst-case Optimal Join Algorithms
 Joins of a sets of records is objectively the most expensive operation in DBMSs.
 In my previous post on [factorization](factorization.md), I said that in the field of databases, once 
 in a while you run into a very simple idea that deviates from the norm that gets you very excited. 
