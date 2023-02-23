@@ -9,10 +9,8 @@ nav_order: 2
   <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="300"></a>
 </p>
 
-<p align="center">
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <a class="github-button" href="https://github.com/kuzudb" data-size="large" aria-label="Follow @kuzudb on GitHub">Follow @kuzudb</a>
-</p>
+[View it on GitHub](https://github.com/kuzudb/kuzu){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Join our Slack workspace](https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 by Semih Salihoğlu, Feb 22nd, 2023
 # Why (Graph) DBMSs Need Novel Join Algorithms: The Story of Worst-case Optimal Join Algorithms
@@ -419,7 +417,7 @@ We will keep writing more blog posts in the later months about our new releases,
 and other technical topics. If there are things you'd like us to write about,
 please reach out to us! Also please give Kùzu a try, prototype applications with it,
 break it, let us know of your performance or other bugs, so we can continue improving
-it. Give us a github star too and take care until the next posts!
+it. Give us a [GitHub star](https://github.com/kuzudb/kuzu) too and take care until the next posts!
 
 
 [^1]: The question is interesting in the set semantics when you cannot pick every column value of every tuple the same value, which forces a Cartesian product of all the relations.
