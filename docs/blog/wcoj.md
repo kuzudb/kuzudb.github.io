@@ -47,7 +47,7 @@ recommendation applications. As such, they should be integrated into every graph
     "multiway HashJoin", which has one or more build phases that creates one or more hash tables that stores
     sorted adjacency lists; and a probe phase that performs multi-way intersections using the sorted lists.
 > - **Yes, the Term "Worst-case Optimal" Is Confusing Even to Don Knuth:** I know, Don Knuth also found the term
-    "worst-case optimal" a bit confusing. See my [anecdote on this](#a-thank-you--a-story-about-knuths-reaction-to-the-term-worst-case-optimal). 
+    "worst-case optimal" a bit confusing. See my [anecdote on this](#a-thank-you--an-anecdote-about-knuths-reaction-to-the-term-worst-case-optimal). 
     It basically means that the worst-case runtimes of these algorithms are asymptotically optimal.
 
 ## Joins, Running Example & Traditional Table-at-a-time Joins
