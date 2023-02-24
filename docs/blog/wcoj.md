@@ -325,7 +325,8 @@ is a popular web graph that is used in academic papers called [web-BerkStan](htt
 It has 685K nodes and 7.6M edges.
 I modeled these as a simple `Page` nodes and `Links` edges.
 
-I start Kùzu on my own laptop, which is a Macbook Air 2020 with Apple M1 chip, 16G memory, and 512GB SSD, and run the following two queries (by default, Kùzu uses all thread available):
+I start Kùzu on my own laptop, which is a Macbook Air 2020 with Apple M1 chip, 16G memory,
+and 512GB SSD, and run the following two queries (by default, Kùzu uses all thread available, which is 8 in this case):
 
 ```
 - Q1: Kùzu-WCO
@@ -354,7 +355,7 @@ refer to this as Kùzu-BJ. Here are the results:
 | Kùzu-WCO |  1.62s |
 | Kùzu-BJ |    51.17s   |
 
-We see **31.6x** performance improvement in this simple query. 
+There are ~41M triangles in the output. We see **31.6x** performance improvement in this simple query. 
 In larger densely cyclic queries, binary join plans just don't work.
 
 To try this locally, you can download our prepared CSV files from [here](https://github.com/kuzudb/kuzudb.github.io/tree/main/data/web-berkstan), and compile from our [latest master](https://github.com/kuzudb/kuzu)[^2] (`make clean && make release NUM_THREADS=8`).
