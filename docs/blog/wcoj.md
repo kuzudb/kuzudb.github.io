@@ -235,7 +235,7 @@ We will iteratively find: (i) all `a` values
 that can be in the final triangles; (ii) all `ab`'s that be in the final
 triangles; and (iii) all `abc`'s, which are the triangles. Let's simulate the computation:
  - Step 1: Find all `a`'s. Here we will just take
-all nodes as possible a valujes. This is shown under "Step 1" in the above figure.
+all nodes as possible a values. This is shown under "Step 1" in the above figure.
 - Step 2: For each a value, e.g., a=1, we extend it to find all `ab`'s that 
 can be part of triangles: Here we use the forward index to look up all
 `b` values for node with ID 1. So on and so forth. This will generate the 
