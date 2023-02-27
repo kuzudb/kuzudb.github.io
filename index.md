@@ -5,10 +5,20 @@ nav_order: 1
 permalink: /
 ---
 
-[Get started now](./docs/getting-started/overview.md){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+<p align="center">
+  <a href="/docs/getting-started" class="btn btn-primary fs-5 mb-4 mb-md-0 mr-2">Getting started</a>
+  <a href="https://github.com/kuzudb/kuzu" class="btn fs-5 mb-4 mb-md-0"><i class="fa-brands fa-github"></i></a>
+  <a href="https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg" class="btn fs-5 mb-4 mb-md-0"><i class="fa-brands fa-slack"></i></a>
+  <a href="https://twitter.com/kuzudb" class="btn fs-5 mb-4 mb-md-0"><i class="fa-brands fa-twitter"></i></a>
+</p>
+
+
+<!-- [Get started now](./docs/getting-started/overview.md){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub](https://github.com/kuzudb/kuzu){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 [Join our Slack workspace](https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+[Follow us on Twitter](https://twitter.com/kuzudb) {: .btn .fs-5 .mb-4 .mb-md-0 } -->
 
 ---
 
