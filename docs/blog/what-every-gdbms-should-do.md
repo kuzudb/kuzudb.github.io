@@ -11,10 +11,10 @@ nav_order: 4
 </p>
 
 <p align="center">
-  <a href="https://github.com/kuzudb/kuzu" class="btn fs-5 mb-4 mb-md-0">View it on GitHub</a>
-  <a href="https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg" class="btn fs-5 mb-4 mb-md-0">Join our Slack workspace</a>
+  <a href="https://github.com/kuzudb/kuzu" class="btn fs-5 mb-4 mb-md-0"><i class="fa-brands fa-github"></i></a>
+  <a href="https://join.slack.com/t/kuzudb/shared_invite/zt-1n67h736q-E3AFGSI4w~ljlFMYr3_Sjg" class="btn fs-5 mb-4 mb-md-0"><i class="fa-brands fa-slack"></i></a>
+  <a href="https://twitter.com/kuzudb" class="btn fs-5 mb-4 mb-md-0"><i class="fa-brands fa-twitter"></i></a>
 </p>
-
 
 by Semih Salihoğlu, Jan 12th, 2023
 # What Every Competent GDBMS Should Do <br/> (aka The Goals & Vision of [Kùzu](https://github.com/kuzudb/kuzu))  
