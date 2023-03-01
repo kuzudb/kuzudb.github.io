@@ -6,7 +6,7 @@ parent: Blog
 nav_order: 1
 ---
 <p align="center">
-  <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="300"></a>
+  <a href="https://github.com/kuzudb/kuzu"><img src="/img/kuzu-logo.png" width="300"></a>
 </p>
 
 <p align="center">
@@ -135,7 +135,7 @@ Even more concretely for the triangle query, the question is: out of all possibl
 what is the maximum number of triangles they contain?
 
 <p align="center">
-  <img src="../../img/wcoj-edge-covers.png" width="800">
+  <img src="/img/wcoj-edge-covers.png" width="800">
 </p>
 
 It still surprises me that the answer to this question was not known until 2008.

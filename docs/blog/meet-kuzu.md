@@ -7,7 +7,7 @@ nav_order: 5
 ---
 
 <p align="center">
-  <a href="https://github.com/kuzudb/kuzu"><img src="../../kuzu-logo.png" width="300"></a>
+  <a href="https://github.com/kuzudb/kuzu"><img src="/img/kuzu-logo.png" width="300"></a>
 </p>
 
 <p align="center">
