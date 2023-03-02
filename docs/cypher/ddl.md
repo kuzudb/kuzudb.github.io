@@ -45,9 +45,9 @@ CREATE REL TABLE LivesIn(FROM User TO City, MANY_ONE)
 The above ddl indicates that LivesIn has n-1 multiplicity. This command puts an additional constraint that each User node v might LiveIn at most 1 City node (assuming our database has City nodes). It does not put any constraint in the "backward" direction, i.e., there can be multiple Users living in the same City. As another example to explain the semantics of multiplicity constraints in the presence of multiple node labels, consider this: 
 
 ```
-CREATE REL TABLE Likes(FROM User|Pet TO User, ONE_MANY)
+CREATE REL TABLE Likes(FROM Pet TO User, ONE_MANY)
 ```
-The above ddl indicates that Likes has 1-to-n multiplicity. This ddl command puts the constraint: that each User node v might be Liked by one node (either User or Pet). It does not put any constraint in the forward direction, i.e., each User node (or Pet) node might know multiple Users.
+The above ddl indicates that Likes has 1-to-n multiplicity. This ddl command puts the constraint: that each User node v might be Liked by one Pet node. It does not put any constraint in the forward direction, i.e., each Pet node might know multiple Users.
 
 In general in a relationship E's multiplicity, if the "source side" is "ONE", then for each node v that can be the destination of E relationships, v can have at most 1 backward edge. If the "destination side" is ONE, then each node v that can be the source of E relationships, v can have at most 1 forward edge. 
 
