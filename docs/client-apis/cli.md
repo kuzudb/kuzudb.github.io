@@ -18,12 +18,12 @@ kuzu> :help
     :clear     clear shell
     :quit     exit from shell
     :thread [num_threads]     set number of threads for query execution
-    :buffer_manager_size [bm_size_in_bytes]     set buffer manager size in bytes
     :logging_level [logging_level]     set logging level of database, available options: debug, info, err
+    :timeout [query_timeout]     set query timeout in ms
     :list_nodes     list all node tables
     :list_rels     list all rel tables
-    :show_node     [table_name] show node table schema
-    :show_rel     [table_name] show rel table schema
+    :show_node     [table_name] show node schema
+    :show_rel     [table_name] show rel schema
 ```
 The [getting started page](../getting-started/introduction-examples.md#cli) provides examples of running
 Cypher commands through the CLI. 
