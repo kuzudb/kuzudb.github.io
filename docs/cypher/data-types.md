@@ -18,6 +18,8 @@ See [expressions and functions](expressions/overview.md) for the supported opera
 | DATE| 4 bytes | year, month, day|
 | DOUBLE | 8 bytes | double precision floating-point number |
 | INT64| 8 bytes | signed eight-byte integer |
+| INT32| 4 bytes | signed four-byte integer |
+| INT16| 2 bytes | signed two-byte integer |
 | INTERVAL| 4 bytes | date/time difference (see below) | 
 | STRING| variable | variable-length character string |
 | TIMESTAMP | 4 bytes | combination of time and date (see below) |
@@ -36,8 +38,8 @@ Output:
 ---------------------------------------------
 ```
 
-## LIST Data Type
-List is a nested data type to store a list of values of the same type. 
+## VAR-LIST Data Type
+VAR-List is a nested data type to store a list of arbitrary number of values of the same type. 
 Values in a list can themselves be nested lists. A few examples:
 ```
 UNWIND [[1,2], [3], [4, 5]] AS x
@@ -71,6 +73,10 @@ output:
 | 5 |
 -----
 ```
+
+## FIXED-LIST Data Type (TENSOR)
+FIXED-List is a nested data type to store a list of fixed number of values of the same type. 
+Values in FIXED-LIST must have the same type and should be numerical types.
 
 ## Temporal Data Types
 Kùzu supports three temporal data types: Date, Timestamp, and Interval.
