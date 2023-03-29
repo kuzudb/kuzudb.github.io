@@ -50,4 +50,4 @@ COPY Follows FROM "follows.parquet";
 ```
 
 ## `COPY FROM` Multiple Parquet Files to a Single Table
-Please refer to the [COPY FROM MULTIPLE CSV FILES](csv-import.md#copy-from-multiple-csv-files-to-a-single-table) section as both syntaxes are exactly the same.
+Please refer to the [COPY FROM MULTIPLE CSV FILES](csv-import.md#copy-from-multiple-csv-files-to-a-single-table) section for details.
