@@ -27,3 +27,18 @@ kuzu> :help
 ```
 The [getting started page](../getting-started/introduction-examples.md#cli) provides examples of running
 Cypher commands through the CLI. 
+
+## Interrupt
+To interrupt a running query, use `ctrl + C` in CLI. Note: currently we don't support interrupting COPY statement.
+
+## Non-interactive usage
+To read and process a file in non-interactive mode, pipe the file content to CLI.
+```
+./kuzu_shell testdb < tinysnb/schema.cypher
+---------------------------------------
+| outputMsg                           |
+---------------------------------------
+| NodeTable: person has been created. |
+---------------------------------------
+
+``` 
