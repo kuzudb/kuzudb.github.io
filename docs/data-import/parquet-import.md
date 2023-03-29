@@ -4,7 +4,7 @@ title: Parquet import
 parent: Data import
 ---
 
-# Data Import From Parquet Files
+# Data Import from Parquet Files
 Apache Parquet is an open source, column-oriented data file format designed for efficient data storage and retrieval. We support data import from parquet files through `COPY FROM` command.
 
 ## Notes

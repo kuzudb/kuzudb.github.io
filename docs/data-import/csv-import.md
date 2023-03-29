@@ -4,7 +4,7 @@ title: CSV import
 parent: Data import
 ---
 
-# Data Import From CSV Files
+# Data Import from CSV Files
 You can load the initial versions of your node and rel tables from CSV files 
 using the `COPY FROM` command. You should use CSV loading if you are ingesting large databases. 
 `COPY FROM` commands can be used when your tables are completely empty. 
