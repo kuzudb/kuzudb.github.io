@@ -74,7 +74,7 @@ output:
 -----
 ```
 
-## FIXED-LIST Data Type (TENSOR)
+## FIXED-LIST Data Type (TENSOR) (**Experimental**)
 FIXED-List is a nested data type to store a list of fixed number of values of the same type. 
 Values in FIXED-LIST must have the same type and should be numerical types.
 
