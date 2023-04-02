@@ -77,6 +77,7 @@ output:
 ## FIXED-LIST Data Type (TENSOR) (**Experimental**)
 FIXED-List is a nested data type to store a list of fixed number of values of the same type. 
 Values in FIXED-LIST must have the same type and should be numerical types.
+Note: This is an experimental feature, only loading and reading TENSOR is supported.
 
 ## Temporal Data Types
 Kùzu supports three temporal data types: Date, Timestamp, and Interval.
