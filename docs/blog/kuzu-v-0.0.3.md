@@ -25,8 +25,9 @@ TODO
 
 ## Data Ingestion Improvements
 - Ingest from multiple files
-  - file list
-  - glob pattern matching 
+  This release provides the user with the capability to load data from numerous files of the same type into a node/rel table. There are two ways that users can specify multiple csv file paths:
+  - file list: `["vPerson0.csv", "vPerson1.csv", "vPerson2.csv"]`
+  - glob pattern matching: Similar to Linux [Glob](https://man7.org/linux/man-pages/man7/glob.7.html), Kùzu allows user to specify file paths that matches the glob pattern.
 - Ingest from npy files
 - Reduce peak memory consumption when ingesting to node table.
 
@@ -39,11 +40,31 @@ TODO
 
 ## New Data Types
 - Add INT32, INT16, FLOAT data type
-- Add FIX-LIST data type
+
+| Data Type | Size | Description | Aliases |
+| --- | --- | --- | --- | 
+| INT32| 4 bytes | signed four-byte integer | INT |
+| INT16| 2 bytes | signed two-byte integer | |
+| FLOAT | 4 bytes | single precision floating-point number | |
+
+- Add FIX-LIST(Tensor) data type 
+
+| Data Type | Description | DDL definition |
+| --- | --- | --- | 
+| FIXED-LIST | a list of fixed number of values of the same numerical type | INT64[8] |
+
+Note: FIXED-LIST is an experimental feature. Only bulk loading(e.g. `COPY` statement) and reading(e.g. `match` statement) is supported.
 
 ## System Functionalities
-- Interrupt
-- Query timeout
+- Interrupt: User can stop or halt a database query before it is fully completed by firing an interrupt. Kùzu offers two methods for query interruption:
+  - 1. C++ API: `Connection::interrupt()`: interrupts all running queries within the current connection.
+  - 2. CLI: Users can interrupt a query using `CTRL+C`
+- Query Timeout: The default query timeout value is set to -1, which signifies that the query timeout feature is initially disabled. Users can activate the query timeout by configuring a positive timeout value through:
+  - 1. C++ API: `Connection::setQueryTimeOut(uint64_t timeoutInMS)`
+  - 2. CLI: `:timeout [timeoutValue]`
+  - Kùzu will automatically halt any query that exceeds the specified timeout value by sending an interrupt signal. 
+
+Note: The Interruption and Query Timeout features are not applicable to `COPY` commands in this release.
 
 ## Buffer Manager Improvements
 - Unify physical memory usage of BM and MM
