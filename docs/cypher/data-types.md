@@ -46,6 +46,8 @@ Kùzu supports two nested data types: variable-size LIST and fixed-size LIST
 | VAR-LIST | a list of arbitrary number of values of the same type | INT64[] |
 | FIXED-LIST | a list of fixed number of values of the same numerical type | INT64[5] |
 
+**Note**: FIXED-LIST is an **experimental** feature. Kùzu only supports bulk loading (i.e. `COPY` statement) and reading for FIXED_LIST data type.
+
 Examples:
 ```
 UNWIND [[1,2], [3], [4, 5]] AS x
