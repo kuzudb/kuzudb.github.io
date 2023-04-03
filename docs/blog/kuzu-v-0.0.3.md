@@ -67,6 +67,7 @@ Note: FIXED-LIST is an experimental feature. Only bulk loading(e.g. `COPY` state
 Note: The Interruption and Query Timeout features are not applicable to `COPY` commands in this release.
 
 ## Buffer Manager Improvements
+
 - Unify physical memory usage of BM and MM
 - vmcache: optimistic reads
 - Remove resize interface?
