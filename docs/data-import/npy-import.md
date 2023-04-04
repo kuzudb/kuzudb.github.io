@@ -5,10 +5,10 @@ parent: Data import
 ---
 
 # Data Import from NPY Files (**Experimental**)
-The npy format is the standard binary file format in NumPy for persisting a single arbitrary numpy array on disk. Kùzu supports `NPY COPY FROM` statement to import a set of npy files into a node table.
+The npy format is the standard binary file format in NumPy for persisting a single arbitrary numpy array on disk. Kùzu supports `COPY FROM BY COLUMN` statement to import a set of npy files into a node table.
 
 ## Notes
-This feature is an experimental feature and will evolve. The primary use case is to load large node features that are stored in npy format. Currently we have the following constraints:
+This feature is an experimental feature and will evolve. We are exploring how to enable bulk loading in a column by column manner. The primary use case is to load large node features that are stored in npy format. Currently we have the following constraints:
 - **Starting with empty tables**: see [notes in CSV import](csv-import.md#several-notes) for details.
 - **NPY file to column**: An npy file will be loaded as a node table column. So in the copy statement, the number of npy files should be euqal to the number of columns defined in DDL.
 - **Numerical type only**: An npy file must contain numerical values only.
@@ -25,7 +25,7 @@ node_id.npy", "node_feat_f32.npy", "node_year.npy", "node_label.npy"
 ```
 We can copy these four files with the following statement
 ```
-NPY COPY Paper FROM ("node_id.npy", "node_feat_f32.npy", "node_year.npy", "node_label.npy");
+COPY Paper FROM ("node_id.npy", "node_feat_f32.npy", "node_year.npy", "node_label.npy") BY COLUMN;
 ```
 
 Note that the number of npy files euqals to the number of columns and are presented in the same order as they are defined in the DDL.
