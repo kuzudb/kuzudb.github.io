@@ -63,16 +63,13 @@ Storing the graph topology takes around 48GB[^1] and the features takes 53 GBs. 
 we can reduce 53 GB to something much smaller (we will limit it to as low as 10GB).
 We used a machine with one RTX 4090 GPU with 24 GB of memory, two Xeon Platinum 8175M CPUs, and 384 GB RAM, which 
 is enough for PyG's in-memory store to store the entire graph and all features in memory.
-We will give Kùzu's buffer manager  GB memory, which allows us to compare the memory and performance trade-off
-you can expect. 
-<!-- During training, we use the `NeighborLoader` of PyG with batch size of 1024 and sets the `num_neighbors` to `[30] * 2`, which means at each epoch roughly 60 neighbor nodes of 1024 nodes will be sampled from the `GraphStore` and the features of those nodes will be scanned
-from Kùzu's storage. The peak GPU memory usage during the training is approximately 22 GB. 16 cores[^2] are used during the sampling process. -->
-During training, we use the `NeighborLoader` of PyG with batch size of 48000 and sets the `num_neighbors` to `[30] * 2`, which means at each epoch roughly 60 neighbor nodes of 48000 nodes will be sampled from the `GraphStore` and the features of those nodes will be scanned
+
+During training, we use the `NeighborLoader` of PyG with batch size of 48000 and sets the `num_neighbors` to `[30] * 2`, which means at each batch roughly 60 neighbor nodes of 48000 nodes will be sampled from the `GraphStore` and the features of those nodes will be scanned
 from Kùzu's storage. We picked this sample size because this gives us a peak GPU memory usage of approximately 22 GB, i.e.,
 we can saturate the GPU memory. We used 16 cores[^2] during the sampling process. We run each experiment in a Docker instance
 and limit the memory systematically from 110GB, which is enough for PyG to run completely in memory, down to 90, 70, and 60GB.
 At each memory level we run the same experiment by using Kùzu as a Remote Backend, where we 
-have to spend about 48GB to store the topology, and give the remaining to Kùzu's buffer manager.
+have to use about 48GB to store the topology and give the remaining memory to Kùzu's buffer manager.
 For example when the memory is 60GB, we can only give ~10GB to Kùzu.
 
 | Configuration                 | End to End Time (s) | Per Batch Time (s)  | Time Spent on Training (s) | Time Spent on Copying to GPU (s) | Docker Memory | 
@@ -84,11 +81,12 @@ For example when the memory is 60GB, we can only give ~10GB to Kùzu.
 | Kùzu Remote Backend (bm=10GB) |     1121.92     |      11.21      |          6.88          |             35.03            | 60 GB   |         
 
 So, when have enough memory, there is about 2.8x slow down (from 1.4s to 3.93s per batch). This
-is the cost of going through Kùzu's buffer manager to access the features even though the features
-are in memory. Then as we lower the memory, Kùzu can hold only part 
-of the 53GB of node features in its buffer manager, so
-we force Kùzu to do more and more I/O. The per batch time increase to 5.89s, then seems to stabilize
-aroun 11.5s (so around 8.2x slowdown). 
+is the case when Kùzu has enough buffer memory (60GB) to store the 53GB of features but we still incur the cost of 
+scanning them through Kùzu's buffer manager. So no or very little disk I/O happens (except the first time
+the features are scanned to the buffer manager). Then as we lower the memory, Kùzu can hold only part 
+of the of node features in its buffer manager, so
+we force Kùzu to do more and more I/O. The per batch time increase to 5.89s at 40GB of buffer manager size, 
+then seems to stabilize around 11s (so around 8.2x slowdown). 
 
 The slow down is better if you use smaller batch sizes but for the end to end training time, you
 should probably still prefer to use larger batch sizes. This is a place where we would need to
