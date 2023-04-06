@@ -17,11 +17,64 @@ nav_order: 2
 </p>
 
 # Kùzu 0.0.3 Release
+We are happy to release Kùzu 0.0.3 today. This release comes with the following new features and improvements:
+- Pytorch Geometric (PyG)'s Remote Backend: You can now train PyG GNNs and other models directly using graphs (and node features) stored on Kùzu.  
+- Optimizer improvements: See below for details
+- Data ingestion improvements: See below for details
+- Buffer Manager: A new state-of-art buffer manager based on [VMCache](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/_my_direct_uploads/vmcache.pdf).
+- INT32, INT16, FLOAT, and FIXED LIST data types (the latter is particularly suitable to store node features in graph ML applications)
+- Query timeout mechanism and interrupting queries from CLI.
 
-## Overview of Kùzu 0.0.3
+For installing the new version, 
+please visit the [download section of our website](https://kuzudb.com/#download) 
+and [getting started guide](https://kuzudb.com/docs/getting-started.html) and the full
+[release notes are here](https://github.com/kuzudb/kuzu/releases). Please visit
+the [Colab Notebooks](https://kuzudb.com/docs/getting-started/colab-notebooks) section of our
+documentation website to play with our [Colab notebooks](https://kuzudb.com/docs/getting-started/colab-notebooks).
+With this release we are adding [a new Colab notebook](https://colab.research.google.com/drive/12fOSqPm1HQTz_m9caRW7E_92vaeD9xq6)
+to demonstrate Kùzu-PyG Remote Backend integration. 
 
-## Using Kùzu as a PyG Remote Backend
-TODO(Semih)
+## Kùzu as a PyG Remote Backend
+Kùzu now implements PyG's Remote Backend interface. What this means is that you can directly 
+train GNNs using Kùzu as your backend. Quoting [PyG documentation's](https://pytorch-geometric.readthedocs.io/en/latest/advanced/remote.html) description
+of the Remote Backend feature, this feature:
+
+> ...[enables] users to train GNNs on graphs far larger than the size of their
+machine’s available memory. It does so by introducing simple, easy-to-use, and extensible abstractions of a `torch_geometric.data.FeatureStore` and a   `torch_geometric.data.GraphStore` that plug directly into existing familiar PyG interfaces.
+
+With our current release, once you store your graph and features in Kùzu,
+PyG's samplers work seamlessly using Kùzu's implementation of `FeatureStore` and `GraphStore` interfaces. This
+enables for examples your existing GNN models to work seamlessly by fetching data, both subgraph samples as
+well as node features, from Kùzu instead of PyG's in-memory storage. 
+Therefore you can train graphs that do not
+fit into your memory since Kùzu, as a DBMS, stores its data on disk. Try this demonstrative [Colab notebook](https://colab.research.google.com/drive/12fOSqPm1HQTz_m9caRW7E_92vaeD9xq6) to 
+see an example of how to do this. The current release comes with a limitation that we only truly implement the `FeatureStore` interface
+and for `GraphStore` use PyG's in-memory graph storage. What this means is that
+when training GNN models using the Kùzu Remote Backend, your graph topology will be stored 
+in memory and features will be stored on disk. We plan to extend the feature to store the graph topology
+on disk as well later on. 
+
+Here is also a demonstrative experiment (but certainly not comprehensive study) for the type of training performance 
+vs memory usage tradeoff you can expect. 
+We trained the XYZ model on XYZ dataset, which contains X many nodes
+with X dimensional node features and Y many edges. 
+This dataset comes off the shelf from XYZ. 
+Storing the graph topology roughly takes XGB and the features YGBs. Given our current limitation,
+we can reduce YGB to something much smaller (we will limit it to 10GB).
+We used a machine with X amount of GPU memory and Y amount RAM with CPU, which 
+is enough for PyG's in-memory store to store the entire graph and all features in memory.
+We will give Kùzu's buffer manager 10GB memory, which allows us to compare the memory and performance trade-off
+you can expect. During training, we use mini-batch size of X, which means at each epoch the X-degree neighborhood
+of X many nodes will be sampled from the `Graph Store` and the features of those nodes will be scanned
+from Kùzu's storage. The below table gives the memory/performance comparison: 
+
+TODO(Chang): Add the table
+
+So we can limit the memory usage to X GB instead of YGB with Xx slow down. Note YGB is already the 
+in-memory graph storage, so we are handling the XGB of features with only 10GB of RAM. If you have 
+large datasets that don't fit on your current systems' memories and would like to easily train your PyG models 
+off of disk (plus get all the usability features of a GDBMS as you prepare your datasets for training), 
+we hope this feature can be very useful for you!
 
 ## Data Ingestion Improvements
 
