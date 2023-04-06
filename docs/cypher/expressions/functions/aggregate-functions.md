@@ -14,3 +14,4 @@ grand_parent: Cypher
 | min(arg) | returns the minimum value of arg | min(a.legnth) | 
 | max(arg) | returns the maximum value of arg | max(a.length) | 
 | sum(arg) | returns the sum value of all tuples in arg | sum(a.length) |
+| collect(arg) | returns a list containing values returned by arg expression | collect(a.age) |

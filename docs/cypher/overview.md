@@ -20,5 +20,5 @@ query languages, it is very much like SQL and most of its semantics can be under
 as mappings to relational algebra operations of selections, joins, projections, or 
 group-by and aggregations.
 
-Kùzu's query langugage is based on the openCypher variant of the Cypher query language. 
+Kùzu's query language is based on the openCypher variant of the Cypher query language. 
 In this part of the documentation, we cover those clauses that are implemented in Kùzu. 

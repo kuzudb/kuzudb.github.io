@@ -26,7 +26,7 @@ Database database("testdb", systemConfig);
 ```
 
 By setting a buffer pool size to `x`, Kùzu' buffer pool is limited to use at most `x` amount of memory.
-Instead of grabing all of the memory at the initial startup, Kùzu grabs memory on demand, until hit the size.
+Instead of grabbing all of the memory at the initial startup, Kùzu grabs memory on demand, until hit the size.
 
 Also: Do not construct multiple Database instances either within the same process or 
 using multiple separate processes unless you will only issue read-only queries
@@ -63,20 +63,6 @@ Creates a database object at the given path with customized buffer pool size and
 - `systemConfig` System configurations (buffer pool size and max num threads). 
 
 ---
-**resizeBufferManager**
-
-```c++
-void resizeBufferManager (uint64_t newSize)
-```
-Resizes the buffer pool size of the database instance. 
-
-**Parameters**
-- `newSize` New buffer pool size in bytes. 
-
-**Exceptions**
-- `BufferManagerException` if the new size is smaller than the current buffer manager size. 
-
----
 **setLoggingLevel**
 
 ```c++
@@ -102,9 +88,3 @@ Creates a SystemConfig object.
 
 **Parameters**
 - `bufferPoolSize` Buffer pool size in bytes. 
-
-**Note**
-- Currently, we have two internal buffer pools with different frame size of 4KB and 256KB. When a user sets a customized buffer pool size, it is divided into two internal pools based on the DEFAULT_PAGES_BUFFER_RATIO and LARGE_PAGES_BUFFER_RATIO.
-
----
-

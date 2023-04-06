@@ -33,18 +33,3 @@ def __init__(database_path, buffer_pool_size)
 - `database_path : _kuzu.Database` The path to database files
 
 - `buffer_pool_size : int` The maximum size of buffer pool in bytes (Optional). Default to 80% of system memory.
-
-----
-
-<a id="database.Database.resize_buffer_manager"></a>
-
-**resize\_buffer\_manager**
-
-```python
-def resize_buffer_manager(new_size)
-```
-
-Resize the mamimum size of buffer pool.
-
-**Parameters**
-- `new_size: int` New maximum size of buffer pool (in bytes).

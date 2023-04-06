@@ -10,12 +10,12 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="../../../img/running-example.png" width="800">
 
-You can import this database by copying pasting the comands on that page. 
+You can import this database by copying pasting the commands on that page. 
 
 # Delete Node
 You can delete node records from your tables using the DELETE clause.
 We currently only support deleting singleton node records, i.e., those that don't have
-have any incoming or outcoming relationships. Deleting of relationship records and
+have any incoming or outgoing relationships. Deleting of relationship records and
 nodes with edges are not yet supported
 
 For example, the following query first creates a User (Alice, 40) node record, 

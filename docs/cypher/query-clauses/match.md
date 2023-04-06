@@ -11,10 +11,10 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="../../../img/running-example.png" width="800">
 
-You can import this database by copy pasting the comands on that page. 
+You can import this database by copy pasting the commands on that page. 
 
 # MATCH
-MATCH is the clause where you define a "graph pattern", i.e., a join of node or relationhip records,
+MATCH is the clause where you define a "graph pattern", i.e., a join of node or relationship records,
 to find in the database.[^1]. There are several different ways to match patterns and we go through them
 below. MATCH is often accompanied by [WHERE](where.md) (equivalent to SQL's WHERE clause) to define more predicates
 on the patterns that are matched.
@@ -178,7 +178,7 @@ Output:
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=ylYHrLeQfLao).
 
 ## Match Relationships With Any Label
-Simialr to matching nodes with any label, you can bind variables to relationships with any label by not specifying a label. Below query finds all relationships in the database.
+Similar to matching nodes with any label, you can bind variables to relationships with any label by not specifying a label. Below query finds all relationships in the database.
 ```
 MATCH ()-[e]->()
 RETURN e;

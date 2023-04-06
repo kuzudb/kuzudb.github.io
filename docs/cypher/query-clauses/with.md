@@ -11,14 +11,14 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="../../../img/running-example.png" width="800">
 
-You can import this database by copy pasting the comands on that page. 
+You can import this database by copy pasting the commands on that page. 
 
 # WITH
 
 `WITH` can be used to project some expressions, and possibly compute some aggregations, from what your query has computed up 
 to a point before starting the next part of your query. Although there are other common use cases
 two very common cases of using WITH is: (1) to compute a numeric result, often through an aggregation, 
-that can be used as a predicate in the following parts; and (2) perfoming a "top-k" computation on a
+that can be used as a predicate in the following parts; and (2) performing a "top-k" computation on a
 some query, before performing other querying on those top-k. We give examples of each.
 
 ### Using WITH with Aggregations

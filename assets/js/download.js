@@ -3,37 +3,37 @@ const data = [
   {
     language: "CLI",
     platform: "macOS (Apple Silicon)",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.2/kuzu_cli-0.0.2-osx-arm64.zip",
+    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.3/kuzu_cli-0.0.3-osx-arm64.zip",
     isLinkAnchor: true,
   },
   {
     language: "CLI",
     platform: "macOS (Intel)",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.2/kuzu_cli-0.0.2-osx-x86_64.zip",
+    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.3/kuzu_cli-0.0.3-osx-x86_64.zip",
     isLinkAnchor: true,
   },
   {
     language: "CLI",
     platform: "Linux",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.2/kuzu_cli-0.0.2-linux-x86_64.zip",
+    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.3/kuzu_cli-0.0.3-linux-x86_64.zip",
     isLinkAnchor: true,
   },
   {
     language: "C++",
     platform: "macOS (Apple Silicon)",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.2/libkuzu-0.0.2-osx-arm64.zip",
+    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.3/libkuzu-0.0.3-osx-arm64.zip",
     isLinkAnchor: true,
   },
   {
     language: "C++",
     platform: "macOS (Intel)",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.2/libkuzu-0.0.2-osx-x86_64.zip",
+    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.3/libkuzu-0.0.3-osx-x86_64.zip",
     isLinkAnchor: true,
   },
   {
     language: "C++",
     platform: "Linux",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.2/libkuzu-0.0.2-linux-x86_64.zip",
+    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.3/libkuzu-0.0.3-linux-x86_64.zip",
     isLinkAnchor: true,
   },
 ];

@@ -4,7 +4,7 @@ title: CSV import
 parent: Data import
 ---
 
-# Data Import From CSV Files
+# Data Import from CSV Files
 You can load the initial versions of your node and rel tables from CSV files 
 using the `COPY FROM` command. You should use CSV loading if you are ingesting large databases. 
 `COPY FROM` commands can be used when your tables are completely empty. 
@@ -78,3 +78,27 @@ Karissa,Michelle,2014-01-30
 ...
 ```
 You can use `COPY Follows FROM "follows.csv"` to load this file.
+
+## `COPY FROM` Multiple CSV Files to a Single Table
+It is a common practice to divide a voluminous CSV file into several smaller CSV files for the sake of convenience in storage. Kùzu can read multiple files of the same format (csv or parquet), and consolidating their data into a single node or relational table. User can load multiple files in the following ways:
+
+- **Glob**: Similar to Linux [Glob](https://man7.org/linux/man-pages/man7/glob.7.html), Kùzu allows user to specify file paths that matches the glob pattern.
+
+Wildcard rules:
+
+| Wildcard | description |
+| ----------- | ----------- |
+| * | match any number of any characters (including none) |
+| ?	| match any single character |
+| [abc] | match any one of the characters enclosed within the brackets |
+| [a-z] | match any one of the characters within the range |
+
+```
+COPY person FROM "vPerson*.csv"
+```
+
+- **List of files**:
+
+```
+COPY person FROM ["vPerson0.csv", "vPerson1.csv", "vPerson2.csv"]
+```

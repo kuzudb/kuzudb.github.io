@@ -131,7 +131,7 @@ RETURN a, e, b
 ```
 This forces e to match to only Likes relationship or Follows relationship records (so
 excludes the `LivesIn` records we mentioned above). The `|` is a syntax adapted from
-regexes originrally and is also used in query languages that support `regular path queries`. 
+regexes originally and is also used in query languages that support `regular path queries`. 
 
 Kùzu now supports such queries. Our query execution
 is based on performing scans of each possible node/rel table and index
@@ -155,7 +155,7 @@ Two forms ([Simple Form](../cypher/expressions/case-expression.md#simple-form) a
 
 ### ALTER/DROP/SET/DELETE
 We added [ALTER TABLE](../cypher/ddl.md#alter-table) and [DROP TABLE](../cypher/ddl.md#drop-table) DDL statements.
-After creating a new node or relatinship table, you can now drop it, rename it, and alter it by adding new columns/properties, 
+After creating a new node or relationship table, you can now drop it, rename it, and alter it by adding new columns/properties, 
 renaming or dropping existing columns/properties.
 
 Besides schema level changes, you can change properties of existing nodes/rels with [SET](../cypher/data-manipulation-clauses/set.md) statements, and remove existing nodes/rels with [DELETE](../cypher/data-manipulation-clauses/delete.md) statements.

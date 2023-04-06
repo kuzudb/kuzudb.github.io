@@ -11,7 +11,7 @@ This guide provides hand-on instructions and examples on how to set up and start
 We introduce how Kùzu can be used with CLI, Python, and C++ APIs through examples.
 
 # CLI
-Kùzu CLI (Command Line Interface) is a single, dependency free executable. It is precompiled for Mac and Linux. The CLI can be downloaded [here](https://github.com/kuzudb/kuzu/releases/tag/v0.0.2). After the CLI is downloaded and extracted into a directory, you can navigate the directory from your terminal, and set the execute permissions with `chmod +x kuzu`. Then you can run the executable with `./kuzu -i <db_path>` where `<db_path>` is the directory for the database files. This path can point to an existing database or to a directory that does not yet exist and Kùzu will create the directory and initialize an empty database for you. You will see a prompt as below if you pass `test` as you `<db_path>`:
+Kùzu CLI (Command Line Interface) is a single, dependency free executable. It is precompiled for Mac and Linux. The CLI can be downloaded [here](https://github.com/kuzudb/kuzu/releases/latest). After the CLI is downloaded and extracted into a directory, you can navigate the directory from your terminal, and set the execute permissions with `chmod +x kuzu`. Then you can run the executable with `./kuzu <db_path>` where `<db_path>` is the directory for the database files. This path can point to an existing database or to a directory that does not yet exist and Kùzu will create the directory and initialize an empty database for you. You will see a prompt as below if you pass `test` as you `<db_path>`:
 
 ```
 Database path: test
@@ -124,7 +124,7 @@ Output:
 ['Noura', 25]
 ```
 
-Alternatively, the Python API can also output results as a Pandas dataframe:
+Alternatively, the Python API can also output results as a Pandas data frame:
 ```
 results = conn.execute('MATCH (a:User)-[f:Follows]->(b:User) RETURN a.name, f.since, b.name;').getAsDF()
 print(results)
@@ -155,10 +155,10 @@ u.age: [[30,40,50,25]]
 ```
 
 # C++ API
-Kùzu C++ API is distributed as a so/dylib library file and a set of header files. The C++ API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/tag/v0.0.2). After the C++ API is downloaded and extracted into a directory, it can be used without installation by just specifying the library search path for the linker.
+Kùzu C++ API is distributed as a so/dylib library file and a set of header files. The C++ API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/latest). After the C++ API is downloaded and extracted into a directory, it can be used without installation by just specifying the library search path for the linker.
 Below is a short example of how to get started. Details of the [C++ API is here](../client-apis/cpp-api/overview.md).
 - Setup:
-In this example, we assume that the so/dylib, the headers, the CSV files, and the cpp code file is under the same directoy:
+In this example, we assume that the so/dylib, the headers, the CSV files, and the cpp code file is under the same directory:
 
 ```
 ├── include                                    

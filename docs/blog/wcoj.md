@@ -172,7 +172,7 @@ Now this immediately made the same researchers realize that binary join plans ar
 provably sub-optimal because they can generate polynomially more intermediate results
 than the AGM bound of the query. This happens because on cyclic queries, 
 the strategy of joining tables
-2 at a time may lead to unnecesarily computing some acyclic sub-joins. 
+2 at a time may lead to unnecessarily computing some acyclic sub-joins. 
 For example, in the triangle query, the plan
 $((F1 \bowtie F2) \bowtie F3)$ first computes $(F1 \bowtie F2)$ sub-join,
 which in graph terms computes the 2-paths in the graph.
@@ -310,7 +310,7 @@ sort it, and then store in a hash table "Hash Table (b)->(c)".
 - Step 4 - Probe: We re-scan the accumulated `ab` tuples from the factorized table.
 For each tuple, we first probe "Hash Table (a)<-(c)" 
 and then "Hash Table (b)->(c)" to fetch two lists, intersect them, and produce outputs.
-In this case there is only one tuple (a=1, b=0), so we will fetch a=1's backward list and b=0's forwrad list,
+In this case there is only one tuple (a=1, b=0), so we will fetch a=1's backward list and b=0's forward list,
 intersect these lists, and produce the triangle (a=1, b=0, c=1001).
 
 This performs quite well. Our [CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) has some performance numbers
