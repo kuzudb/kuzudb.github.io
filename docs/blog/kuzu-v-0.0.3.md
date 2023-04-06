@@ -48,9 +48,11 @@ This release allows direct copy from npy files where each file is loaded to a co
 COPY Paper FROM ("node_id.npy", "node_feat_f32.npy", "node_year.npy", "node_label.npy") BY COLUMN;
 ```
 
-**Reduce memory consumption when ingesting to node table**
+**Reduce memory consumption when ingesting data into node tables**
 
-TODO(Guodong)
+This release optimizes the memory consumption during data ingestion of node tables. 
+We no longer keep the whole node table in memory before flushing it to disk in a whole, instead, each thread processing a chunk of a column in the node table allocates its own memory buffer, flushes the buffer to disk when done with its processing, and releases its memory buffer after flushing.
+This can greatly reduce memory usage when the node table is very large.
 
 ## Query Optimizer Improvements
 
@@ -117,7 +119,14 @@ Kùzu will automatically stop any query that exceeds the specified timeout value
 
 Note: The Interruption and Query Timeout features are not applicable to `COPY` commands in this release.
 
-## Buffer Manager Improvements
-- Unify physical memory usage of BM and MM
-- vmcache: optimistic reads
-- Remove resize interface?
+## Changes in Buffer Manager
+
+Before this release, we have two internal buffer pools with different frame sizes of 4KB and 256KB, the former one is mostly used when scanning pages from disk, while the latter one is for in-memory data structures, such as hash tables during hash joins. When a user sets a customized buffer pool size, it is divided into two internal pools based on the DEFAULT_PAGES_BUFFER_RATIO and LARGE_PAGES_BUFFER_RATIO.
+This can cause problems as it is impossible to have a configuration of these two frame sizes that can fits all use cases.
+
+In this release, we reworked our buffer manager:
+- removed the division of two internal buffer pools, and unified Kùzu's internal memory management into the buffer manager.
+- switched to the mmap-based approach, and introduced optimistic reads following [vmcache](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/_my_direct_uploads/vmcache.pdf).
+
+Additionally, we removed the support of resizing buffer manager at runtime.
+To change the size of the buffer manager, users need to close the current database, and start a new one with the desired buffer manager size.
