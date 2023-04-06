@@ -65,7 +65,7 @@ We used a machine with one RTX 4090 GPU with 24 GB of memory, two Xeon Platinum 
 is enough for PyG's in-memory store to store the entire graph and all features in memory.
 We will give Kùzu's buffer manager 10 GB memory, which allows us to compare the memory and performance trade-off
 you can expect. During training, we use the `NeighborLoader` of PyG with batch size of 48,000 and sets the `num_neighbors` to `[30] * 2`, which means at each epoch roughly 60 neighbor nodes
-of 48,000 nodes will be sampled from the `Graph Store` and the features of those nodes will be scanned
+of 48,000 nodes will be sampled from the `GraphStore` and the features of those nodes will be scanned
 from Kùzu's storage. The peak GPU memory usage during the training is approximately 22 GB. 16 cores[^1] are used during the sampling process.
 
 The below table gives the peak and stable memory/performance comparison (we measured 
