@@ -78,7 +78,7 @@ the memory consumption every second of the experiment using Linux's `top` comman
 
 So we can limit the memory usage to 70 GB instead of 130 GB with 8x slow down. Note we already take 48 GB [^2] memory
 to store the graph topology, so what the experiment shows is that we are handling the 
-XGB of features with only 10 GB of RAM. 
+53 GB of features with only 10 GB of RAM. 
 
 If you have 
 large datasets that don't fit on your current systems' memories and would like to easily train your PyG models 
