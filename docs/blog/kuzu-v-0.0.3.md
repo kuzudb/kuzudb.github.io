@@ -34,7 +34,8 @@ the [Colab Notebooks](https://kuzudb.com/docs/getting-started/colab-notebooks) s
 documentation website to play with our [Colab notebooks](https://kuzudb.com/docs/getting-started/colab-notebooks).
 
 
-Enjoy! Please give us a try, [a Github ⭐](https://github.com/kuzudb/kuzu) and your feedback and feature requests!
+Enjoy! Please give us a try, [a Github ⭐](https://github.com/kuzudb/kuzu) and your feedback and feature requests! Also follow
+us on [Twitter](https://twitter.com/kuzudb)!
 
 ## Kùzu as a PyG Remote Backend
 Kùzu now implements PyG's Remote Backend interface. So you can directly 
