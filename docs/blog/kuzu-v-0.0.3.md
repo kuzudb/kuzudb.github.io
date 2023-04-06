@@ -64,8 +64,10 @@ we can reduce 53 GB to something much smaller (we will limit it to 10GB).
 We used a machine with one RTX 4090 GPU with 24 GB of memory, two Xeon Platinum 8175M CPUs, and 384 GB RAM, which 
 is enough for PyG's in-memory store to store the entire graph and all features in memory.
 We will give Kùzu's buffer manager 10 GB memory, which allows us to compare the memory and performance trade-off
-you can expect. During training, we use the `NeighborLoader` of PyG with batch size of 1024 and sets the `num_neighbors` to `[30] * 2`, which means at each epoch roughly 60 neighbor nodes
-of 1024 nodes will be sampled from the `GraphStore` and the features of those nodes will be scanned
+you can expect. 
+<!-- During training, we use the `NeighborLoader` of PyG with batch size of 1024 and sets the `num_neighbors` to `[30] * 2`, which means at each epoch roughly 60 neighbor nodes of 1024 nodes will be sampled from the `GraphStore` and the features of those nodes will be scanned
+from Kùzu's storage. The peak GPU memory usage during the training is approximately 22 GB. 16 cores[^1] are used during the sampling process. -->
+During training, we use the `NeighborLoader` of PyG with batch size of 48000 and sets the `num_neighbors` to `[30] * 2`, which means at each epoch roughly 60 neighbor nodes of 48000 nodes will be sampled from the `GraphStore` and the features of those nodes will be scanned
 from Kùzu's storage. The peak GPU memory usage during the training is approximately 22 GB. 16 cores[^1] are used during the sampling process.
 
 The below table gives the peak and stable memory/performance comparison (we measured 
@@ -73,10 +75,14 @@ the memory consumption every second of the experiment using Linux's `top` comman
 
 | Configuration                 | End to End Time | Per Batch Time  | Time Spent on Training | Time Spent on Copying to GPU | Peak Memory | Stable Memory |
 |-------------------------------|-----------------|-----------------|------------------------|------------------------------|-------------|---------------|
-|         PyG In-memory         |      48.06     |      0.24       |          2.51          |             1.85            | 130 GB      | 105 GB        |
-| Kùzu Remote Backend (bm=10GB) |     171.48     |      0.86      |          2.65          |             1.96            | 70 GB       | 60 GB         
+|         PyG In-memory         |      140.17     |      1.4       |          6.62          |             31.25            | 130 GB      | 105 GB        |
+| Kùzu Remote Backend (bm=80GB) |     237.16     |      2.37      |          6.4          |             37.31            | xx GB       | xx GB         
+| Kùzu Remote Backend (bm=60GB) |     xx     |      xx      |          xx          |             xx            | xx GB       | xx GB         
+| Kùzu Remote Backend (bm=40GB) |     589.0     |      5.89      |          6.8          |             32.6            | xx GB       | xx GB         
+| Kùzu Remote Backend (bm=20GB) |     1156.1     |      11.5      |          6.0          |             36            | xx GB       | xx GB         
+| Kùzu Remote Backend (bm=10GB) |     1121.92     |      11.21      |          6.88          |             35.03            | xx GB       | xx GB         
 
-So we can limit the memory usage to 70 GB instead of 130 GB with 3.6x slow down. Note we already take 48 GB [^2] memory
+So we can limit the memory usage to 70 GB instead of 130 GB with 8x slow down. Note we already take 48 GB [^2] memory
 to store the graph topology, so what the experiment shows is that we are handling the 
 53 GB of features with only 10 GB of RAM. 
 
