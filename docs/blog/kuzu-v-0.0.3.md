@@ -95,7 +95,7 @@ this feature can be very useful for you!
 ```
 CREATE NODE TABLE Paper(id INT64, feat FLOAT[768], year INT64, label DOUBLE, PRIMARY KEY(id));
 ```
-Suppoe your raw data is stored in npy formats where each column is represented as a numpy array on disk:
+Suppose your raw data is stored in npy formats where each column is represented as a numpy array on disk:
 "node_id.npy", "node_feat_f32.npy", "node_year.npy", "node_label.npy".
 You can now directly copy from npy files where each file is loaded to a column in `Paper` table as follows:
 ```
@@ -130,7 +130,7 @@ are evaluated first, several improvements to cardinality estimator, and improved
 in our core join operator, which we called  ASP-Joins in our [CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf), we would blindly
 perform sideways information passing (sip) from build to probe (or vice versa; 
 see [our paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) for details). Sometimes if there is no 
-filters on the probe and build sides, this is just an onverhead as it won't decrease the amount of scans on either side. 
+filters on the probe and build sides, this is just an overhead as it won't decrease the amount of scans on either side. 
 In cases where we think sip won't help reduce scans, we do vanilla Hash Joins now.
 
 ## New Buffer Manager
@@ -184,12 +184,12 @@ You can activate the query timeout by configuring a positive timeout value throu
   - 1. C++ API: `Connection::setQueryTimeOut(uint64_t timeoutInMS)`
   - 2. CLI: `:timeout [timeoutValue]`
 
-**Interrupt:** You can also interrupt your queries and can stop your long runing queries manually. There
+**Interrupt:** You can also interrupt your queries and can stop your long running queries manually. There
 are two ways to do this:
   - C++ API: `Connection::interrupt()`: interrupt all running queries within the current connection.
   - CLI: interrupt through `CTRL + C`
 
 Note: The Interruption and Query Timeout features are not applicable to `COPY` commands in this release.
 
-[^1]: We set `num_workers` to 16 when running the PyG in-memory setup. Since Kùzu does not currently work with multiple workers in Python, we limit `num_workers` to 1 when sampling from Kùzu but internally Kùzu scans in parellel with 16 threads.
+[^1]: We set `num_workers` to 16 when running the PyG in-memory setup. Since Kùzu does not currently work with multiple workers in Python, we limit `num_workers` to 1 when sampling from Kùzu but internally Kùzu scans in parallel with 16 threads.
 [^2]: Internally, PyG coverts the edge list to CSC format for sampling, which duplicates the graph structures in memory.
