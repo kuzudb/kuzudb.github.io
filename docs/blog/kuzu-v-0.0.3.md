@@ -59,14 +59,14 @@ Here is also a demonstrative experiment (but certainly not comprehensive study) 
 vs memory usage tradeoff you can expect. 
 We trained a simple 3-layers Graph Convolutional Network (GCN) model on [ogbn-papers100M](https://ogb.stanford.edu/docs/nodeprop/#ogbn-papers100M) dataset, which contains about 111 million nodes
 with 128 dimensional node features and about 1.6 billion edges. 
-Storing the graph topology roughly takes 28 GB and the features 53 GBs. Given our current limitation,
+Storing the graph topology roughly takes 24 GB and the features 53 GBs. Given our current limitation,
 we can reduce 53 GB to something much smaller (we will limit it to 10GB).
-We used a machine with one RTX 4090 GPU with 24 GB of memory and 384 GB RAM with CPU, which 
+We used a machine with one RTX 4090 GPU with 24 GB of memory, two Xeon Platinum 8175M CPUs, and 384 GB RAM, which 
 is enough for PyG's in-memory store to store the entire graph and all features in memory.
 We will give Kùzu's buffer manager 10 GB memory, which allows us to compare the memory and performance trade-off
 you can expect. During training, we use the `NeighborLoader` of PyG with batch size of 48,000 and sets the `num_neighbors` to `[30] * 2`, which means at each epoch roughly 60 neighbor nodes
 of 48,000 nodes will be sampled from the `Graph Store` and the features of those nodes will be scanned
-from Kùzu's storage. The peak GPU memory usage during the training is approximately 22 GB.
+from Kùzu's storage. The peak GPU memory usage during the training is approximately 22 GB. 16 cores[^1] are used during the sampling process.
 
 The below table gives the peak and stable memory/performance comparison (we measured 
 the memory consumption every second of the experiment using Linux's `top` command): 
@@ -74,12 +74,11 @@ the memory consumption every second of the experiment using Linux's `top` comman
 | Configuration                 | End to End Time | End to End Time | Time Spent on Training | Time Spent on Copying to GPU | Peak Memory | Stable Memory |
 |-------------------------------|-----------------|-----------------|------------------------|------------------------------|-------------|---------------|
 |         PyG In-memory         |      140.17     |       1.4       |          6.62          |             31.25            | 130 GB      | 110 GB        |
-| Kuzu Remote Backend (bm=80GB) |      237.16     |       2.37      |           6.4          |             37.31            | 140 GB      | 129 GB        |
-| Kuzu Remote Backend (bm=10GB) |     1121.92     |      11.21      |          6.88          |             35.03            | 70 GB       | 60 GB         |
+| Kùzu Remote Backend (bm=10GB) |     1121.92     |      11.21      |          6.88          |             35.03            | 70 GB       | 60 GB         
 
-So we can limit the memory usage to X GB instead of YGB with Xx slow down. Note we already take YGB memory
+So we can limit the memory usage to 70 GB instead of 130 GB with 8x slow down. Note we already take 48 GB [^2] memory
 to store the graph topology, so what the experiment shows is that we are handling the 
-XGB of features with only 10GB of RAM. 
+XGB of features with only 10 GB of RAM. 
 
 If you have 
 large datasets that don't fit on your current systems' memories and would like to easily train your PyG models 
@@ -191,3 +190,6 @@ are two ways to do this:
   - CLI: interrupt through `CTRL + C`
 
 Note: The Interruption and Query Timeout features are not applicable to `COPY` commands in this release.
+
+[^1]: We set `num_workers` to 16 when running the PyG in-memory setup. Since Kùzu does not currently work with multiple workers in Python, we limit `num_workers` to 1 when sampling from Kùzu but internally Kùzu scans in parellel with 16 threads.
+[^2]: Internally, PyG coverts the edge list to CSC format for sampling, which duplicates the graph structures in memory.
