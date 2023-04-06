@@ -11,7 +11,7 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="../../../img/running-example.png" width="800">
 
-You can import this database by copy pasting the comands on that page. 
+You can import this database by copy pasting the commands on that page. 
 
 # RETURN
 `RETURN` is similar to the `SELECT` clause of SQL. RETURN is where the final results of the
@@ -21,8 +21,8 @@ for performing group-by and aggregations as well as duplication removing (using 
 We discuss several common expressions used in RETURN.
 
 ## Returning Node and Relationship Variables
-Returning variables in the query that are bound to node and relationsips in the query 
-is a syntactic sugar to return all propeties of those variables. For example:
+Returning variables in the query that are bound to node and relationships in the query 
+is a syntactic sugar to return all properties of those variables. For example:
 ```
 MATCH (a:User)-[e:Follows]->(b:User)
 RETURN a, e;
@@ -44,7 +44,7 @@ Output:
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=gZ7zGvGQ0tZf).
 
 ## Returning All Variables
-Returning all vairables in the query can be written as `RETURN *` as a syntactic sugar. Below query returns "a" and "b", relationship is omitted because no variable binds to it.
+Returning all variables in the query can be written as `RETURN *` as a syntactic sugar. Below query returns "a" and "b", relationship is omitted because no variable binds to it.
 ```
 MATCH (a:User)-[:Follows]->(b:User)
 RETURN *;
@@ -67,7 +67,7 @@ View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgb
 
 
 ## Returning Node and Relationship Properties
-You can also return properties of variables by explicitly specifing properties in the `RETURN` clause.
+You can also return properties of variables by explicitly specifying properties in the `RETURN` clause.
 ```
 MATCH (a:User)-[e:Follows]->(b:User)
 RETURN a.name, a.age, e.since;

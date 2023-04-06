@@ -20,7 +20,7 @@ nav_order: 5
 # Meet Kùzu 🤗
 
 Today we are very excited to make an initial version of [Kùzu public on github](https://github.com/kuzudb/kuzu)! 
-Kùzu is a new embedddable property graph database management system (GDBMS) that is 
+Kùzu is a new embeddable property graph database management system (GDBMS) that is 
 designed for high scalability and very fast querying. We are releasing 
 Kùzu today under a permissible MIT license. Through years of research on GDBMSs, we observed a lack of
 highly efficient GDBMS in the market that adopts state-of-the-art 
@@ -33,7 +33,7 @@ e.g., in the Python data science ecosystem.
 
 Kùzu's core architecture is informed by 6 years of research we conducted 
 at University of Waterloo on an earlier prototype GDBMS called [GraphflowDB](http://graphflow.io/). 
-Unlike GraphflowDB, which was intented to be a prototype for our research, Kùzu aims to be
+Unlike GraphflowDB, which was intended to be a prototype for our research, Kùzu aims to be
 a usable feature-rich system. Some of the primary features of Kùzu's  architecture are:
    - Flexible Property Graph Data Model and Cypher query language
    - Embeddable, serverless integration into applications

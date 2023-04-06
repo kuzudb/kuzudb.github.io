@@ -11,7 +11,7 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="../../../img/running-example.png" width="800">
 
-You can import this database by copy pasting the comands on that page. 
+You can import this database by copy pasting the commands on that page. 
 
 # ORDER BY
 Order by is the clause where you define the order in which you want the query results to be displayed 
@@ -43,7 +43,7 @@ Output:
 ```
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=KQlKQCWZBWzL).
 
-Similarly, the following eturns the users' names who lives in Waterloo ordered by user's age,
+Similarly, the following returns the users' names who lives in Waterloo ordered by user's age,
 but in descending order.
 
 Query:

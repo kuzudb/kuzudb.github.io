@@ -10,7 +10,7 @@ grand_parent: Cypher
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | + | addition | 2 + 3.5  | 5.5 (DOUBLE) | 
-| - | substraction | 4.5 - 2 | 2.5 (DOUBLE) |
+| - | subtraction | 4.5 - 2 | 2.5 (DOUBLE) |
 | * | multiplication | 3.2 * 2 | 6.4 (DOUBLE) |
 | / | division | 9 / 5 | 1 (INT64) |
 | % | module(remainder) | 9 % 5 | 4 (INT64) |

@@ -28,4 +28,4 @@ We can copy these four files with the following statement
 COPY Paper FROM ("node_id.npy", "node_feat_f32.npy", "node_year.npy", "node_label.npy") BY COLUMN;
 ```
 
-Note that the number of npy files euqals to the number of columns and are presented in the same order as they are defined in the DDL.
+Note that the number of npy files equals to the number of columns and are presented in the same order as they are defined in the DDL.

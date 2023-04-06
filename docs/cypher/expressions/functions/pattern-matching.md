@@ -7,7 +7,7 @@ grand_parent: Cypher
 
 # Pattern Matching Operator =~
 
-Cypher supports regular expression with `=~` operator. The `=~` opeartor succeeds only if its pattern matches the entire string.
+Cypher supports regular expression with `=~` operator. The `=~` operator succeeds only if its pattern matches the entire string.
 
 Examples
 ```

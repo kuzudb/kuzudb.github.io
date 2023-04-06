@@ -10,11 +10,11 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="../../../img/running-example.png" width="800">
 
-You can import this database by copy pasting the comands on that page. 
+You can import this database by copy pasting the commands on that page. 
 
 # CREATE
 `CREATE` is similar to the INSERT clause of SQL and lets you insert records into your
-node and relationahip tables. We desribe the generic semantics of the 
+node and relationship tables. We describe the generic semantics of the 
 CREATE clause momentarily [below](#generic-semantics). We first start with some simple examples. 
 
 ## Inserting Nodes
@@ -44,7 +44,7 @@ Output:
 
 Any node property which is not specified will be set to NULL. 
 For example the following query will set the age property
-the inserted node reord to NULL. Note that for node records,
+the inserted node record to NULL. Note that for node records,
 the primary key property, in our example "name" has to be non-NULL.
 ```
 CREATE (u:User {name: 'Dimitri'})

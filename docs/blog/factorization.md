@@ -432,7 +432,7 @@ But they are not robust and degrade quickly. We can also see that even if you're
 without factorization or a mechanism to avoid scanning entire files, 
 you will not perform very well on these queries with m-n joins (even if there is only 2 of them here). 
 We conducted several other experiments all demonstrating the robustness and scalability
-of factorized processing using modifid hash join operators. I won't cover them but
+of factorized processing using modified hash join operators. I won't cover them but
 they are all in [our CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf).
 
 ## Final marks: 

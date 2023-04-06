@@ -11,7 +11,7 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="../../../img/running-example.png" width="800">
 
-You can import this database by copy pasting the comands on that page. 
+You can import this database by copy pasting the commands on that page. 
 
 # WHERE
 `WHERE` clause is where you specify predicates/constraints on a previous part of your query.
@@ -40,7 +40,7 @@ Output:
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=D_u4RtEbsDv8).
 
 
-The booelean predicate/expression specified above can be understood as it reads: Users "a" whose ages are
+The boolean predicate/expression specified above can be understood as it reads: Users "a" whose ages are
 greater than 45 OR whose names start with "Kar". It combines several means to construct expressions
 in high-level database query languages, such as as boolean operator (OR), a numeric comparison operator (>),
 and a string function (starts_with). You can learn more about the operators and functions Kùzu supports
@@ -110,7 +110,7 @@ Output:
 This query returns an empty result because in our example database, only User node Adam has a 3-hop Follows path and the destination
 "b" node of that path is the User node Noura. However, Noura does not have an outgoing Follows relationship, which is the predicate in the 
 inner WHERE EXISTS sub-query. If we instead specified that the destination b node has an incoming edge, by swapping the direction
-of the relationhip in the inner `(b)-[:Follows]->(c:User)` pattern to (b)<-[:Follows]-(c:User)`, we would get the
+of the relationship in the inner `(b)-[:Follows]->(c:User)` pattern to (b)<-[:Follows]-(c:User)`, we would get the
 `(Adam, 30)` tuple back because Noura has incoming Follows relationships.
 
 ```

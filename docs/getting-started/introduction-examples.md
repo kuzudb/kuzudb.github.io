@@ -124,7 +124,7 @@ Output:
 ['Noura', 25]
 ```
 
-Alternatively, the Python API can also output results as a Pandas dataframe:
+Alternatively, the Python API can also output results as a Pandas data frame:
 ```
 results = conn.execute('MATCH (a:User)-[f:Follows]->(b:User) RETURN a.name, f.since, b.name;').getAsDF()
 print(results)
@@ -158,7 +158,7 @@ u.age: [[30,40,50,25]]
 Kùzu C++ API is distributed as a so/dylib library file and a set of header files. The C++ API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/tag/v0.0.2). After the C++ API is downloaded and extracted into a directory, it can be used without installation by just specifying the library search path for the linker.
 Below is a short example of how to get started. Details of the [C++ API is here](../client-apis/cpp-api/overview.md).
 - Setup:
-In this example, we assume that the so/dylib, the headers, the CSV files, and the cpp code file is under the same directoy:
+In this example, we assume that the so/dylib, the headers, the CSV files, and the cpp code file is under the same directory:
 
 ```
 ├── include                                    

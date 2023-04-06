@@ -11,7 +11,7 @@ We will use the database, whose schema and data import commands are given [here]
 
 <img src="../../../img/running-example.png" width="800">
 
-You can import this database by copy pasting the comands on that page. 
+You can import this database by copy pasting the commands on that page. 
 
 # Optional-match
 `OPTIONAL MATCH` is another clause where you define a pattern to find in the database. The difference between `MATCH` is that 

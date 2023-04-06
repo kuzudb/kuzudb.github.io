@@ -61,7 +61,7 @@ Consider the following query
 ```
 MATCH (a:person) WHERE a.age > 35 RETURN a.salary AS s ORDER BY s;
 ```
-Both column `age` and `salary` are scanned but only `salary` is need to be materialzied for `ORDER BY`.
+Both column `age` and `salary` are scanned but only `salary` is need to be materialized for `ORDER BY`.
 
 **Prune unnecessary joins**
 
@@ -78,7 +78,7 @@ When the statistics of a column is not available, we heuristically reorder filte
 
 **Improve sideway information passing for join**
 
-This release fully implements S-Join, ASP-Join and Multiway WCO ASP-Join as decribed in our previous publication `KÙZU Graph Database Management System`. We further improve their planning based on cardinality estimation. Specifically, we avoid ASP-Joins if the cardinlity of probe side is much bigger than build side, in which the cost of materializing will dominate the gain of sideway information passing.
+This release fully implements S-Join, ASP-Join and Multiway WCO ASP-Join as described in our previous publication `KÙZU Graph Database Management System`. We further improve their planning based on cardinality estimation. Specifically, we avoid ASP-Joins if the cardinality of probe side is much bigger than build side, in which the cost of materializing will dominate the gain of sideway information passing.
 
 **Improve cardinality estimation**
 This release improves number of factorized tuple based cardinality estimation.
@@ -105,7 +105,7 @@ Note: FIXED-LIST is an experimental feature. Currently only bulk loading(e.g. `C
 
 **Interrupt** 
 
-User can stop a query before it compltes. Kùzu offers two methods for query interruption:
+User can stop a query before it completes. Kùzu offers two methods for query interruption:
   - C++ API: `Connection::interrupt()`: interrupt all running queries within the current connection.
   - CLI: interrupt through `CTRL + C`
 

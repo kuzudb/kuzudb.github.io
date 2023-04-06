@@ -109,7 +109,7 @@ output:
 Timestamps combine date and a time (hour, minute, second, millisecond) and are formatted
 according to the ISO 8601 format (YYYY-MM-DD hh:mm:ss[.zzzzzz][+-TT[:tt]]),
 which specifies the date (YYYY-MM-DD), time (hh:mm:ss[.zzzzzz]) and a time offset [+-TT[:tt]].
-Only the Date part is mandatory. If time is specified, then the milliesecond [.zzzzzz] part
+Only the Date part is mandatory. If time is specified, then the millisecond [.zzzzzz] part
 and the time offset are optional. Similar to dates, you need to cast strings to timestamps
 using the `timestamp(...)` function to construct literal timestamps. Below is an example:
 ```
