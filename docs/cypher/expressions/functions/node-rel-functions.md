@@ -9,5 +9,6 @@ grand_parent: Cypher
 
 | Function | Description | Example |
 | ----------- | ----------- |  ----------- |
-| ID(arg) | returns the internal ID of the given NODE/REL | ID(a) |
-| LABEL(arg) | returns the label name of the given NODE/REL | LABEL(a) |
+| ID(node/rel) | returns the internal ID of the given NODE/REL | ID(a) |
+| LABEL(node/rel) | returns the label name of the given NODE/REL | LABEL(a) |
+| OFFSET(internal_ID) | returns the offset of internal ID | OFFSET(ID(a)) | 
