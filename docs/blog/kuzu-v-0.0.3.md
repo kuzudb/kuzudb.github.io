@@ -165,7 +165,7 @@ which we verified improves our query performance a lot.
 
 We now support several additional data types that were missing.
 
-**FIXED-LIST data type:** This is important if you're doing graph ML and storing node features
+**[FIXED-LIST](https://kuzudb.com/docs/cypher/data-types.html#fixed-list-data-type-tensor-experimental) data type:** This is important if you're doing graph ML and storing node features
 in Kùzu. It is the efficient way to store fixed-length vectors. Here's the summary of how
 to declare a node or rel property in your schemas to use the fixed-list data type.
 
