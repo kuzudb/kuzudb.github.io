@@ -19,7 +19,7 @@ nav_order: 2
 # Kùzu 0.0.3 Release
 We are happy to release Kùzu 0.0.3 today. This release comes with the following new features and improvements:
 - [Kùzu as a Pytorch Geometric (PyG) Remote Backend](#kùzu-as-a-pyg-remote-backend): You can now train PyG GNNs and other models directly using graphs (and node features) stored on Kùzu.  
-- [Data ingestion improvements](#data-ingestion-improvements): See below for details
+- [Data ingestion from multiple files and numpy files](#data-ingestion-improvements): See below for details
 - [Query optimizer improvements](#query-optimizer-improvements): See below for details
 - [New buffer manager](#new-buffer-manager): A new state-of-art buffer manager based on [VMCache](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/_my_direct_uploads/vmcache.pdf).
 - [INT32, INT16, FLOAT, and FIXED LIST data types](#new-data-types) (the latter is particularly suitable to store node features in graph ML applications)
@@ -34,6 +34,8 @@ documentation website to play with our [Colab notebooks](https://kuzudb.com/docs
 With this release we are adding [a new Colab notebook](https://colab.research.google.com/drive/12fOSqPm1HQTz_m9caRW7E_92vaeD9xq6)
 to demonstrate Kùzu-PyG Remote Backend integration. 
 
+Enjoy! Please give us a try, [a Github ⭐](https://github.com/kuzudb/kuzu) and your feedback and feature requests!
+
 ## Kùzu as a PyG Remote Backend
 Kùzu now implements PyG's Remote Backend interface. What this means is that you can directly 
 train GNNs using Kùzu as your backend. Quoting [PyG documentation's](https://pytorch-geometric.readthedocs.io/en/latest/advanced/remote.html) description
@@ -44,15 +46,13 @@ machine’s available memory. It does so by introducing simple, easy-to-use, and
 
 With our current release, once you store your graph and features in Kùzu,
 PyG's samplers work seamlessly using Kùzu's implementation of `FeatureStore` and `GraphStore` interfaces. This
-enables for examples your existing GNN models to work seamlessly by fetching data, both subgraph samples as
-well as node features, from Kùzu instead of PyG's in-memory storage. 
+enables for examples your existing GNN models to work seamlessly by fetching both subgraph samples and node features
+from Kùzu instead of PyG's in-memory storage. 
 Therefore you can train graphs that do not
 fit into your memory since Kùzu, as a DBMS, stores its data on disk. Try this demonstrative [Colab notebook](https://colab.research.google.com/drive/12fOSqPm1HQTz_m9caRW7E_92vaeD9xq6) to 
-see an example of how to do this. The current release comes with a limitation that we only truly implement the `FeatureStore` interface
-and for `GraphStore` use PyG's in-memory graph storage. What this means is that
-when training GNN models using the Kùzu Remote Backend, your graph topology will be stored 
-in memory and features will be stored on disk. We plan to extend the feature to store the graph topology
-on disk as well later on. 
+see an example of how to do this. The current release comes with a limitation that we only truly implement the `FeatureStore` interface.
+Inside `GraphStore` we still store the graph topology in memory. 
+So in reality only the features are stored and scanned from disk. We plan to address this limitation later on.
 
 Here is also a demonstrative experiment (but certainly not comprehensive study) for the type of training performance 
 vs memory usage tradeoff you can expect. 
@@ -66,7 +66,9 @@ is enough for PyG's in-memory store to store the entire graph and all features i
 We will give Kùzu's buffer manager 10GB memory, which allows us to compare the memory and performance trade-off
 you can expect. During training, we use mini-batch size of X, which means at each epoch the X-degree neighborhood
 of X many nodes will be sampled from the `Graph Store` and the features of those nodes will be scanned
-from Kùzu's storage. The below table gives the memory/performance comparison: 
+from Kùzu's storage. 
+
+The below table gives the memory/performance comparison: 
 
 TODO(Chang): Add the table
 
@@ -80,15 +82,13 @@ we hope this feature can be very useful for you!
 
 **Ingest from multiple files**
 
-This release provides the user with the capability to load data from multiple files of the same type into a node/rel table. There are two ways that users can specify multiple csv file paths:
+You can now load data from multiple files of the same type into a node/rel table in two ways:
   - **file list**: `["vPerson0.csv", "vPerson1.csv", "vPerson2.csv"]`
-  - **glob pattern matching**: Similar to Linux [Glob](https://man7.org/linux/man-pages/man7/glob.7.html), Kùzu allows user to specify file paths that matches the glob pattern.
+  - **glob pattern matching**: Similar to Linux [Glob](https://man7.org/linux/man-pages/man7/glob.7.html), this will load files that matches the glob pattern.
 
 **Ingest from npy files**
 
-We start exploring how to enable data ingesting in column by column fashion. This feature is our first step of exploration and might evolve in the future. 
-
-Consider a Paper table defined in the following DDL.
+We start exploring how to enable data ingesting in column by column fashion. Consider a `Paper` table defined in the following DDL.
 ```
 CREATE NODE TABLE Paper(id INT64, feat FLOAT[768], year INT64, label DOUBLE, PRIMARY KEY(id));
 ```
@@ -96,64 +96,76 @@ The raw data is stored in npy formats where each column is represented as a nump
 ```
 node_id.npy", "node_feat_f32.npy", "node_year.npy", "node_label.npy"
 ```
-This release allows direct copy from npy files where each file is loaded to a column in Paper table.
+You can now directly copy from npy files where each file is loaded to a column in `Paper` table.
 ```
 COPY Paper FROM ("node_id.npy", "node_feat_f32.npy", "node_year.npy", "node_label.npy") BY COLUMN;
 ```
 
 **Reduce memory consumption when ingesting data into node tables**
 
-This release optimizes the memory consumption during data ingestion of node tables. 
-We no longer keep the whole node table in memory before flushing it to disk in a whole, instead, each thread processing a chunk of a column in the node table allocates its own memory buffer, flushes the buffer to disk when done with its processing, and releases its memory buffer after flushing.
-This can greatly reduce memory usage when the node table is very large.
+This release furtehr optimizes the memory consumption during data ingestion of node tables.
+We no longer keep the whole node table in memory before flushing it to disk as a whole. Instead, we process a chunk of a file
+and flush its corresponding pages, so incur only the memory cost of ingesting a chunk (or as many chunks as there are threads running).
+This greatly reduces memory usage when the node table is very large.
 
 ## Query Optimizer Improvements
 
 **Projection push down for sink operator**
 
-This release adds projection push down optimizer. We project away columns that won't be used in further processing before we materialize. This leads to a smaller memory footprint and better performance.
+We now push down projections down to the first sink operator 
+above the last point in a query plan they are needed.
 Consider the following query
 ```
 MATCH (a:person) WHERE a.age > 35 RETURN a.salary AS s ORDER BY s;
 ```
-Both column `age` and `salary` are scanned but only `salary` is need to be materialized for `ORDER BY`.
+This query's (simplified) plan is:  `Scan->Filter->OrderBY->ResultCollector`, where both 
+`ORDER BY` and the final `ResultCollector` are sink operators. 
+ResultCollector` is where we accumulate the expressions in the `RETURN` clause. 
+This is simplified because `ORDER BY` actually consists of several physical operators. `
+Both column `age` and `salary` are scanned initially but only `salary` is needed in `ResultCollector`. 
+`age`, which is needed by `Filter` is projected out in the `ResultCollector`. We now push the projection of `age`
+to `ORDER BY`, so `ORDER BY` does not have to materialize it.
 
-**Prune unnecessary joins**
-
-A graph pattern defined in Cypher grammar contains two nodes (a src node and a dst node) and a rel in the form of `(a)-[e]->(b)`. This pattern is translated as two joins in our system, one between `a` and `e` and another one between `e` and `b`. However, if a query is not accessing any column of a table, the corresponding join can be omitted. 
-Consider the following query
-```
-MATCH (a:person)-[e:knows]->(b:person) RETURN a.ID, COUNT(*)
-```
-Since we are not scanning column from `b`, the join between `e` and `b` can be pruned.
-
-**Heuristic filter reordering**
-
-When the statistics of a column is not available, we heuristically reorder filters to evaluate equality predicate first.
-
-**Improve sideway information passing for join**
-
-This release fully implements S-Join, ASP-Join and Multiway WCO ASP-Join as described in our previous publication `KÙZU Graph Database Management System`. We further improve their planning based on cardinality estimation. Specifically, we avoid ASP-Joins if the cardinality of probe side is much bigger than build side, in which the cost of materializing will dominate the gain of sideway information passing.
-
-**Improve cardinality estimation**
-This release improves number of factorized tuple based cardinality estimation.
+**Other optimizations:** We implemented several other optimizations, such as we reorder the filter expressions so equality conditions
+are evaluated first, several improvements to cardinality estimator and improved sideway information passing for joins. For the latter, 
+in our core join operator, which we called  ASP-Joins in our [CIDR paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf), we would blindly
+perform sideways information passing (sip) from build to probe (or vice versa; 
+see [our paper](https://www.cidrdb.org/cidr2023/papers/p48-jin.pdf) for details). Sometimes if there is no 
+filters on the probe and build sides, this is just an onverhead as it won't decrease the amount of scans on either side. 
+In cases where we think sip won't help reduce scans, we do regular HashJoins now.
 
 ## New Buffer Manager
 
-Before this release, we have two internal buffer pools with different frame sizes of 4KB and 256KB, the former one is mostly used when scanning pages from disk, while the latter one is for in-memory data structures, such as hash tables during hash joins. When a user sets a customized buffer pool size, it is divided into two internal pools based on the DEFAULT_PAGES_BUFFER_RATIO and LARGE_PAGES_BUFFER_RATIO.
-This can cause problems as it is impossible to have a configuration of these two frame sizes that can fits all use cases.
+Before this release, we had two internal buffer pools with 2 different frame sizes of 4KB and 256KB,
+so operators could only grab buffers of these two sizes. Plus when you loaded your DB and wanted to allocate
+say 10GB buffer pool, we manually gave a fixed percentage to 4KB pool and the rest to 256KB pool. 
+This didn't give any flexibility for storing large objects and complicated code to manage 
+buffers when operators needed them.  Terrible design; 
+just don't do this!
 
-In this release, we reworked our buffer manager:
-- removed the division of two internal buffer pools, and unified Kùzu's internal memory management into the buffer manager.
-- switched to the mmap-based approach, and introduced optimistic reads following [vmcache](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/_my_direct_uploads/vmcache.pdf).
-
-Additionally, we removed the support of resizing buffer manager at runtime.
-To change the size of the buffer manager, users need to close the current database, and start a new one with the desired buffer manager size.
-
+We bit the bullet and decided to read the literature and pick a state-of-art buffer manager design that is
+also practical. We switched to the mmap-based approach described in VMCache design from [this recent paper](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/_my_direct_uploads/vmcache.pdf) by Leis et al.. 
+This is a very nice design 
+and makes it very easy to support multiple buffer sizes very easily and only uses hardware locks (we used 
+software locks in our previous buffer manager). It also supports using optimistic reading,
+which we verified improves our query performance a lot.
 
 ## New Data Types
 
-**Add INT32, INT16, FLOAT data type**
+We now support several additional data types that were missing.
+
+**FIXED-LIST data type:** This is important if you're doing graph ML and storing node features
+in Kùzu. It is the efficient way to store fixed-length vectors. Here's the summary of how
+to declare a node or rel property in your schemas to use the fixed-list data type.
+
+| Data Type | Description | DDL definition |
+| --- | --- | --- | 
+| FIXED-LIST | a list of fixed number of values of the same numerical type | INT64[8] |
+
+
+FIXED-LIST is an experimental feature. Currently only bulk loading(e.g. `COPY` statement) and reading is supported.
+
+**INT32, INT16, FLOAT data types:** The release also comes with the following data types.
 
 | Data Type | Size | Description |
 | --- | --- | --- |
@@ -161,25 +173,18 @@ To change the size of the buffer manager, users need to close the current databa
 | INT16| 2 bytes | signed two-byte integer |
 | FLOAT | 4 bytes | single precision floating-point number |
 
-**Add FIXED-LIST data type** 
+For our next release, our focus on data types will be on complex ones, STRUCT and MAP. So stay tuned for those!
 
-| Data Type | Description | DDL definition |
-| --- | --- | --- | 
-| FIXED-LIST | a list of fixed number of values of the same numerical type | INT64[8] |
+## Other System Functionalities
 
-Note: FIXED-LIST is an experimental feature. Currently only bulk loading(e.g. `COPY` statement) and reading is supported.
-
-## System Functionalities
-
-**Interrupt** 
-
-User can stop a query before it completes. Kùzu offers two methods for query interruption:
+**Interrupt:** You can now interrupt your queries and can stop your long runing queries manually. There
+are two ways to do this:
   - C++ API: `Connection::interrupt()`: interrupt all running queries within the current connection.
   - CLI: interrupt through `CTRL + C`
 
-**Query timeout** 
-
-Kùzu will automatically stop any query that exceeds the specified timeout value by sending an interrupt signal. The default query timeout value is set to -1, which signifies that the query timeout feature is initially disabled. Users can activate the query timeout by configuring a positive timeout value through:
+**Query timeout**: Kùzu will now automatically stop any query that exceeds the specified timeout value. 
+The default query timeout value is set to -1, which signifies that the query timeout feature is initially disabled. 
+You can activate the query timeout by configuring a positive timeout value through:
   - 1. C++ API: `Connection::setQueryTimeOut(uint64_t timeoutInMS)`
   - 2. CLI: `:timeout [timeoutValue]`
 
