@@ -71,7 +71,7 @@ from Kùzu's storage. The peak GPU memory usage during the training is approxima
 The below table gives the peak and stable memory/performance comparison (we measured 
 the memory consumption every second of the experiment using Linux's `top` command): 
 
-| Configuration                 | End to End Time | End to End Time | Time Spent on Training | Time Spent on Copying to GPU | Peak Memory | Stable Memory |
+| Configuration                 | End to End Time | Per Batch Time  | Time Spent on Training | Time Spent on Copying to GPU | Peak Memory | Stable Memory |
 |-------------------------------|-----------------|-----------------|------------------------|------------------------------|-------------|---------------|
 |         PyG In-memory         |      140.17     |       1.4       |          6.62          |             31.25            | 130 GB      | 110 GB        |
 | Kùzu Remote Backend (bm=10GB) |     1121.92     |      11.21      |          6.88          |             35.03            | 70 GB       | 60 GB         
