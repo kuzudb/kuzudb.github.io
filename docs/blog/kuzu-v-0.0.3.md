@@ -57,22 +57,25 @@ So in reality only the features are stored and scanned from disk. We plan to add
 
 Here is also a demonstrative experiment (but certainly not comprehensive study) for the type of training performance 
 vs memory usage tradeoff you can expect. 
-We trained the XYZ model on XYZ dataset, which contains X many nodes
-with X dimensional node features and Y many edges. 
-This dataset comes off the shelf from XYZ. 
-Storing the graph topology roughly takes XGB and the features YGBs. Given our current limitation,
-we can reduce YGB to something much smaller (we will limit it to 10GB).
-We used a machine with X amount of GPU memory and Y amount RAM with CPU, which 
+We trained a simple 3-layers Graph Convolutional Network (GCN) model on [ogbn-papers100M](https://ogb.stanford.edu/docs/nodeprop/#ogbn-papers100M) dataset, which contains about 111 million nodes
+with 128 dimensional node features and about 1.6 billion edges. 
+Storing the graph topology roughly takes 28 GB and the features 53 GBs. Given our current limitation,
+we can reduce 53 GB to something much smaller (we will limit it to 10GB).
+We used a machine with one RTX 4090 GPU with 24 GB of memory and 384 GB RAM with CPU, which 
 is enough for PyG's in-memory store to store the entire graph and all features in memory.
-We will give Kùzu's buffer manager 10GB memory, which allows us to compare the memory and performance trade-off
-you can expect. During training, we use mini-batch size of X, which means at each epoch the X-degree neighborhood
-of X many nodes will be sampled from the `Graph Store` and the features of those nodes will be scanned
-from Kùzu's storage. 
+We will give Kùzu's buffer manager 10 GB memory, which allows us to compare the memory and performance trade-off
+you can expect. During training, we use the `NeighborLoader` of PyG with batch size of 48,000 and sets the `num_neighbors` to `[30] * 2`, which means at each epoch roughly 60 neighbor nodes
+of 48,000 nodes will be sampled from the `Graph Store` and the features of those nodes will be scanned
+from Kùzu's storage. The peak GPU memory usage during the training is approximately 22 GB.
 
 The below table gives the peak and stable memory/performance comparison (we measured 
 the memory consumption every second of the experiment using Linux's `top` command): 
 
-TODO(Chang): Add the table
+| Configuration                 | End to End Time | End to End Time | Time Spent on Training | Time Spent on Copying to GPU | Peak Memory | Stable Memory |
+|-------------------------------|-----------------|-----------------|------------------------|------------------------------|-------------|---------------|
+|         PyG In-memory         |      140.17     |       1.4       |          6.62          |             31.25            | 130 GB      | 110 GB        |
+| Kuzu Remote Backend (bm=80GB) |      237.16     |       2.37      |           6.4          |             37.31            | 140 GB      | 129 GB        |
+| Kuzu Remote Backend (bm=10GB) |     1121.92     |      11.21      |          6.88          |             35.03            | 70 GB       | 60 GB         |
 
 So we can limit the memory usage to X GB instead of YGB with Xx slow down. Note we already take YGB memory
 to store the graph topology, so what the experiment shows is that we are handling the 
