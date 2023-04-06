@@ -103,7 +103,7 @@ COPY Paper FROM ("node_id.npy", "node_feat_f32.npy", "node_year.npy", "node_labe
 ```
 
 **Reduce memory consumption when ingesting data into node tables:**
-This release furtehr optimizes the memory consumption during data ingestion of node tables.
+This release further optimizes the memory consumption during data ingestion of node tables.
 We no longer keep the whole node table in memory before flushing it to disk as a whole. Instead, we process a chunk of a file
 and flush its corresponding pages, so incur only the memory cost of ingesting a chunk (or as many chunks as there are threads running).
 This greatly reduces memory usage when the node table is very large.
