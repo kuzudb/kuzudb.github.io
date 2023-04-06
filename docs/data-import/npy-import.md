@@ -14,7 +14,7 @@ This feature is an experimental feature and will evolve. We are exploring how to
 - **Numerical type only**: An npy file must contain numerical values only.
 - **Importing to node table only**: Kùzu only supports loading npy files into a node table.
 
-## `NPY COPY FROM` NPY Files to a Node Table
+## COPY NPY Files to a Node Table
 Consider a Paper table with an id column, a feature column of embedded vector of size 768, a year column and a label column as ground truth. We first define it's schema with the following statement.
 ```
 CREATE NODE TABLE Paper(id INT64, feat FLOAT[768], year INT64, label DOUBLE, PRIMARY KEY(id));

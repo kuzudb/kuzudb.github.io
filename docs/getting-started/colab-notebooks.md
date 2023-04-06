@@ -13,3 +13,4 @@ We provided a list of colab notebooks that demonstrate how Kùzu can be used thr
 - [Export Query Results to PyTorch Geometric: Node Property Prediction Example](https://colab.research.google.com/drive/1fzcwBwTY-M19p7OOTIaynfgHFcAQo9NK)
 - [Export Query Results to PyTorch Geometric: Link Prediction Example](https://colab.research.google.com/drive/1QdX7CDdajIAb04lqaO5PfJlpKG-ljG28)
 - [Export Query Results to NetworkX](https://colab.research.google.com/drive/1NDsnFDWcSGoaOl-mOgG0zrPG2VAr8Q6H)
+- [Using Kùzu as PyTorch Geometric Remote Backend](https://colab.research.google.com/drive/12fOSqPm1HQTz_m9caRW7E_92vaeD9xq6)

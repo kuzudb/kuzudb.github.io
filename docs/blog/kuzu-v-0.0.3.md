@@ -1,10 +1,10 @@
----
-layout: default
-title: Kùzu 0.0.3 Release
-permalink: /blog/kuzu-0.0.3-release.html
-parent: Blog
-nav_order: 2
----
+#---
+#layout: default
+#title: Kùzu 0.0.3 Release
+#permalink: /blog/kuzu-0.0.3-release.html
+#parent: Blog
+#nav_order: 2
+#---
 
 <p align="center">
   <a href="https://github.com/kuzudb/kuzu"><img src="/img/kuzu-logo.png" width="300"></a>
