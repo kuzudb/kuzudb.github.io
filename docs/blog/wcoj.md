@@ -3,7 +3,7 @@ layout: default
 title: "Why (Graph) DBMSs Need New Join Algorithms: The Story of Worst-case Optimal Join Algorithms"
 permalink: /blog/wcoj.html
 parent: Blog
-nav_order: 1
+nav_order: 2
 ---
 <p align="center">
   <a href="https://github.com/kuzudb/kuzu"><img src="/img/kuzu-logo.png" width="300"></a>
