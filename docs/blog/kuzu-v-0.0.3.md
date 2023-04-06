@@ -18,12 +18,12 @@ nav_order: 2
 
 # Kùzu 0.0.3 Release
 We are happy to release Kùzu 0.0.3 today. This release comes with the following new features and improvements:
-- Pytorch Geometric (PyG)'s Remote Backend: You can now train PyG GNNs and other models directly using graphs (and node features) stored on Kùzu.  
-- Optimizer improvements: See below for details
-- Data ingestion improvements: See below for details
-- Buffer Manager: A new state-of-art buffer manager based on [VMCache](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/_my_direct_uploads/vmcache.pdf).
-- INT32, INT16, FLOAT, and FIXED LIST data types (the latter is particularly suitable to store node features in graph ML applications)
-- Query timeout mechanism and interrupting queries from CLI.
+- [Kùzu as a Pytorch Geometric (PyG) Remote Backend](#kùzu-as-a-pyg-remote-backend): You can now train PyG GNNs and other models directly using graphs (and node features) stored on Kùzu.  
+- [Data ingestion improvements](#data-ingestion-improvements): See below for details
+- [Query optimizer improvements](#query-optimizer-improvements): See below for details
+- [New buffer manager](#new-buffer-manager): A new state-of-art buffer manager based on [VMCache](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/_my_direct_uploads/vmcache.pdf).
+- [INT32, INT16, FLOAT, and FIXED LIST data types](#new-data-types) (the latter is particularly suitable to store node features in graph ML applications)
+- [Query timeout mechanism and interrupting queries from CLI](#system-functionalities).
 
 For installing the new version, 
 please visit the [download section of our website](https://kuzudb.com/#download) 
@@ -138,6 +138,19 @@ This release fully implements S-Join, ASP-Join and Multiway WCO ASP-Join as desc
 **Improve cardinality estimation**
 This release improves number of factorized tuple based cardinality estimation.
 
+## New Buffer Manager
+
+Before this release, we have two internal buffer pools with different frame sizes of 4KB and 256KB, the former one is mostly used when scanning pages from disk, while the latter one is for in-memory data structures, such as hash tables during hash joins. When a user sets a customized buffer pool size, it is divided into two internal pools based on the DEFAULT_PAGES_BUFFER_RATIO and LARGE_PAGES_BUFFER_RATIO.
+This can cause problems as it is impossible to have a configuration of these two frame sizes that can fits all use cases.
+
+In this release, we reworked our buffer manager:
+- removed the division of two internal buffer pools, and unified Kùzu's internal memory management into the buffer manager.
+- switched to the mmap-based approach, and introduced optimistic reads following [vmcache](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/_my_direct_uploads/vmcache.pdf).
+
+Additionally, we removed the support of resizing buffer manager at runtime.
+To change the size of the buffer manager, users need to close the current database, and start a new one with the desired buffer manager size.
+
+
 ## New Data Types
 
 **Add INT32, INT16, FLOAT data type**
@@ -171,15 +184,3 @@ Kùzu will automatically stop any query that exceeds the specified timeout value
   - 2. CLI: `:timeout [timeoutValue]`
 
 Note: The Interruption and Query Timeout features are not applicable to `COPY` commands in this release.
-
-## Changes in Buffer Manager
-
-Before this release, we have two internal buffer pools with different frame sizes of 4KB and 256KB, the former one is mostly used when scanning pages from disk, while the latter one is for in-memory data structures, such as hash tables during hash joins. When a user sets a customized buffer pool size, it is divided into two internal pools based on the DEFAULT_PAGES_BUFFER_RATIO and LARGE_PAGES_BUFFER_RATIO.
-This can cause problems as it is impossible to have a configuration of these two frame sizes that can fits all use cases.
-
-In this release, we reworked our buffer manager:
-- removed the division of two internal buffer pools, and unified Kùzu's internal memory management into the buffer manager.
-- switched to the mmap-based approach, and introduced optimistic reads following [vmcache](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/_my_direct_uploads/vmcache.pdf).
-
-Additionally, we removed the support of resizing buffer manager at runtime.
-To change the size of the buffer manager, users need to close the current database, and start a new one with the desired buffer manager size.
