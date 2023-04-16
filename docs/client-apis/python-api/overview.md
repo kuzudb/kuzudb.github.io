@@ -19,7 +19,7 @@ import kuzu
 # create database
 db = kuzu.Database('./testdb')
 # create connection
-conn = kuzu.connection(db)
+conn = kuzu.Connection(db)
 
 # create schema
 conn.execute("CREATE NODE TABLE User(name STRING, age INT64, PRIMARY KEY (name))")
@@ -29,6 +29,6 @@ conn.execute('COPY User FROM "user.csv"')
 # issue a query
 results = conn.execute('MATCH (u:User) RETURN u.name;')
 # iterate result
-while results.hasNext():
-    print(results.getNext())
+while results.has_next():
+    print(results.get_next())
 ```
