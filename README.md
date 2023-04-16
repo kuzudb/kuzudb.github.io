@@ -11,3 +11,6 @@ This website is generated through [Jekyll](https://jekyllrb.com/).
 
 ## Add content
 We use [Just The Doc](https://github.com/just-the-docs/just-the-docs) as our theme. Example usage can be found on their github. To add content, modify existing markdown files or create new ones under `docs/`.
+
+## Contributing
+We welcome contributions to Kùzu website. If you are interested in contributing to Kùzu website, please read our [Contributing Guide](CONTRIBUTING.md).
