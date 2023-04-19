@@ -222,12 +222,12 @@ Since we did not install the `libkuzu` as a system library, we need to override 
 
 On Linux:
 ```
-env LIBRARY_PATH=. LD_LIBRARY_PATH=. gcc test.cpp -lkuzu -lpthread
+env LIBRARY_PATH=. LD_LIBRARY_PATH=. g++ test.cpp -std=c++2a -lkuzu -lpthread -D_GLIBCXX_USE_CXX11_ABI=0
 env LIBRARY_PATH=. LD_LIBRARY_PATH=. ./a.out
 ```
 On macOS:
 ```
-env DYLD_LIBRARY_PATH=. LIBRARY_PATH=. clang test.c -lkuzu
+env DYLD_LIBRARY_PATH=. LIBRARY_PATH=. clang++ test.cpp -std=c++20 -lkuzu
 env DYLD_LIBRARY_PATH=. LIBRARY_PATH=. ./a.out
 ```
 Expected output:
@@ -330,7 +330,7 @@ Since we did not install the `libkuzu` as a system library, we need to override 
 
 On Linux:
 ```
-env LIBRARY_PATH=. LD_LIBRARY_PATH=. g++ test.cpp -std=c++2a -lkuzu -lpthread -D_GLIBCXX_USE_CXX11_ABI=0
+env LIBRARY_PATH=. LD_LIBRARY_PATH=. gcc test.c -lkuzu
 env LIBRARY_PATH=. LD_LIBRARY_PATH=. ./a.out
 ```
 On macOS:
