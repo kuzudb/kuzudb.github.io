@@ -203,5 +203,7 @@ are two ways to do this:
 
 Note: The Interruption and Query Timeout features are not applicable to `COPY` commands in this release.
 
+*by Kùzu team, 04-06-2023, Waterloo, ON, Canada*
+
 [^1]: Internally, PyG coverts the edge list to CSC format for sampling, which duplicates the graph structures in memory. When you download the graph topology it actually takes about 24GB.
 [^2]: We set `num_workers` to 16 when running the PyG in-memory setup. Since Kùzu does not currently work with multiple workers in Python, we limit `num_workers` to 1 when sampling from Kùzu but internally Kùzu scans in parallel with 16 threads.
