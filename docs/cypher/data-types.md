@@ -39,6 +39,7 @@ Output:
 ---------------------------------------------
 ```
 
+## LIST Data Type
 Kùzu supports two nested data types: variable-size LIST and fixed-size LIST
 
 | Data Type | Description | DDL definition
