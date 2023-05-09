@@ -20,6 +20,7 @@ class Database()
 * [resize\_buffer\_manager](#database.Database.resize_buffer_manager) Resize the mamimum size of buffer pool.
 * [set\_logging\_level](#database.Database.set_logging_level) Set the logging level.
 * [get\_torch\_geometric\_remote\_backend](#database.Database.get_torch_geometric_remote_backend) Use the database as the remote backend for torch_geometric. 
+
 ----
 
 <a id="database.Database.__init__"></a>
