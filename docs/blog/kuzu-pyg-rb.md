@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Kùzu as a PyG Remote Backend
-permalink: /blog/kuzu-0.0.3-release.html
+permalink: /blog/kuzu-pyg-rg.html
 parent: Blog
 nav_order: 1
 ---
