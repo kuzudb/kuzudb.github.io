@@ -208,7 +208,7 @@ as we lower the BM size.
 | Kùzu Remote Backend (bm=60GB) | 0.380 (1.35x)      | 0.239             | 0.018                   | 0.131                        | ~110 GB      |
 | Kùzu Remote Backend (bm=40GB) | 0.513 (1.81x)      | 0.239             | 0.022                   | 0.244                        | ~90 GB       |
 | Kùzu Remote Backend (bm=20GB) | 1.162 (4.69x)      | 0.238             | 0.022                   | 1.031                        | ~70 GB       |
-| Kùzu Remote Backend (bm=10GB) | 1.190 (3.09x)      | 0.238             | 0.022                   | 0.595                        | ~60 GB       |
+| Kùzu Remote Backend (bm=10GB) | 1.190 (4.23x)      | 0.238             | 0.022                   | 0.595                        | ~60 GB       |
 
 So, when have enough memory, there is about 1.35x slow down (from 0.281s to 0.380s per batch)
 compared to using PyG's default storage. This
