@@ -78,7 +78,7 @@ def get_torch_geometric_remote_backend(num_threads=None):
 Use the database as the remote backend for torch_geometric. 
 
 For the interface of the remote backend, please refer to 
-https://pytorch-geometric.readthedocs.io/en/latest/advanced/remote.html.
+[https://pytorch-geometric.readthedocs.io/en/latest/advanced/remote.html](https://pytorch-geometric.readthedocs.io/en/latest/advanced/remote.html).
 The current implementation is read-only and does not support edge features. The IDs of the nodes are based on the internal IDs (i.e., node offsets). For the remote node IDs to be consistent with the positions in the output tensors, please ensure that no deletion has been performed on the node tables. 
 
 The remote backend can also be plugged into the data loader of torch_geometric, which is useful for mini-batch training. For example:
