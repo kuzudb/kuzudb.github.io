@@ -3,7 +3,7 @@ layout: default
 title: Meet Kùzu
 permalink: /blog/meet-kuzu.html
 parent: Blog
-nav_order: 6
+nav_order: 7
 ---
 
 <p align="center">
