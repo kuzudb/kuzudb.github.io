@@ -18,11 +18,14 @@ nav_order: 1
 
 # Scaling Pytorch Geometric GNNs With Kùzu
 
-In this post, we'll walk through how to use Kùzu as a [Pytorch Geometric (PyG) _Remote Backend_](https://pytorch-geometric.readthedocs.io/en/latest/advanced/remote.html) to train a GNN model on very large graphs that do not fit on your machine's RAM.
+In this post, we'll walk through how to use Kùzu as a [Pytorch Geometric (PyG) _Remote Backend_](https://pytorch-geometric.readthedocs.io/en/latest/advanced/remote.html) to train a GNN model on very large graphs that do not fit on your machine's RAM. 
 
-Here is a quick overview of PyG Remote Backends: PyG Remote Backends are plug-in replacements for PyG's in-memory graph and feature stores, so they can be used seamlessly with the rest of the PyG interfaces to develop your GNN models. If a PyG Remote Backend is a disk-based storage system, such as Kùzu, PyG will fetch subgraphs from Kùzu, which stores and scans its data from disk, allowing you to train models on very large graphs for which PyG's in-memory storage would run out of memory and fail.
+Let's start with a quick overview of PyG Remote Backends: PyG Remote Backends are plug-in replacements for PyG's in-memory graph and feature stores, so they can be used seamlessly with the rest of the PyG interfaces to develop your GNN models. If a PyG Remote Backend is a disk-based storage system, such as Kùzu, PyG will fetch subgraphs from Kùzu, which stores and scans its data from disk, allowing you to train models on very large graphs for which PyG's in-memory storage would run out of memory and fail.
 
-We will follow this [Sample Code](https://github.com/pyg-team/pytorch_geometric/tree/master/examples/kuzu/papers_100M) to demonstrate how to do this.
+As you'll see, if you already have PyG models you have developed in Python, replacing PyG's default storage with Kùzu is extremely simple. ***It 
+consists of loading your graph into Kùzu and then changing 1 line of code in your PyG model***. To demonstrate how simple this is and how it performs,
+se will follow this [Sample Code](https://github.com/pyg-team/pytorch_geometric/tree/master/examples/kuzu/papers_100M) to demonstrate how to do this.
+So let's get to it!
 
 ## Dataset, Predictive Task, and GNN Model
 
@@ -84,7 +87,8 @@ feature_store, graph_store = db.get_torch_geometric_remote_backend(multiprocessi
 ```
 
 This function returns two objects that implement PyG's Remote Backend interfaces: (i) `feature_store` is an instance of [`torch_geometric.data.FeatureStore`](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.data.FeatureStore.html#torch_geometric.data.FeatureStore); and (ii) `graph_store` is an instance of [`torch_geometric.data.GraphStore`](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.data.GraphStore.html#torch_geometric.data.GraphStore). These two handles are your Kùzu Remote Backends that you can pass to your PyG models/subgraph samplers and they will make your existing PyG models work seamllessly with Kùzu! That's all
-you really have to know about how to use Kùzu as a Remote Backend. There is no more Kùzu functions you have to call in the rest of the demonstration.
+you really have to know about how to use Kùzu as a Remote Backend. ***There is no more Kùzu functions you have to call in the rest of the demonstration. You only have
+to do 1 line of code change in your regular PyG code.***
 The rest of the example contains standard code you normally write to develop your PyG models.
 
 ## Step 3: Define & Pass Kùzu's `feature_store` and `graph_store` to your GNN Model
@@ -108,7 +112,7 @@ class SAGE(nn.Module):
         return self.mlp(collect)
 ```
 
-Next, we will enable PyG to use Kùzu's Remote Backend when training. We create a [`torch_geometric.loader.NeighborLoader`](https://pytorch-geometric.readthedocs.io/en/latest/_modules/torch_geometric/loader/neighbor_loader.html), which is the subgraph sampler we will use, and pass the `feature_store` and `graph_store` we obtained from Kùzu to it.
+Next, we will enable PyG to use Kùzu's Remote Backend when training. We create a [`torch_geometric.loader.NeighborLoader`](https://pytorch-geometric.readthedocs.io/en/latest/_modules/torch_geometric/loader/neighbor_loader.html), which is the subgraph sampler we will use, and pass the `feature_store` and `graph_store` we obtained from Kùzu to it. ***This is the 1 line change you have to do!***
 
 ```
 # Plug the graph store and feature store into the NeighborLoader
@@ -216,7 +220,7 @@ is the case when Kùzu has enough buffer memory (60GB) to store the features but
 scanning them through Kùzu's buffer manager. So no disk I/O happens (except the first time
 the features are scanned to the buffer manager). When we use 40GB of buffer pool and below, we start doing some I/O,
 and the average time per batch degrade to 0.513, 1.162, amd 1.190 respectively when using 40GB, 20GB, and 10GB.
-We seem to stabilize around 3-4x degradation at 10GB or 20GB level, where most of the feature scans
+We seem to stabilize around 4x degradation at 10GB or 20GB level, where most of the feature scans
 are now happening from disk. These numbers hopefully look good for many settings!
 
 ## Next Steps
@@ -236,7 +240,7 @@ We are excited to hear about your feedback on Kùzu's PyG integration features a
 how else we can help users who are building GNN pipelines. Please reach out to us over [Kùzu Slack](https://join.slack.com/t/kuzudb/shared_invite/zt-1qgxnn8ed-9LL7rfKozijOtvw5HyWDlQ)
 for your questions and ideas!.
 
-_by Chang Liu and Semih Salihoğlu, 05-09-2023, Waterloo, ON, Canada_
+_by Chang Liu and Semih Salihoğlu, 05-10-2023, Waterloo, ON, Canada_
 
 [^1]:
     If you read our [v0.0.3 blog post](https://kuzudb.com/blog/kuzu-0.0.3-release.html#k%C3%B9zu-as-a-pyg-remote-backend),
