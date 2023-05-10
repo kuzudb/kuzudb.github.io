@@ -154,7 +154,10 @@ for epoch in range(NUM_EPOCHS):
         i += 1
 ```
 
-`for b in kuzu_sampler:` is the exact line where the sampler will end up calling on Kùzu to sample a subgraph and scan the features of the nodes in that subgraph. This all ends up using Kùzu's disk-based storage, allowing you to train GNNs on graphs that don't fit on your RAM. Currently, only the `feature_store` scans data from Kùzu's disk-based storage. For `graph_store`, our current implementation stores the entire graph topology in COO format in memory. This does limit how much you can scale, but in many models trained on large graphs, features take up more space than the graph topology, so scaling node features out of memory should still allow you to scale to very lage graphs that won't fit in your RAM.
+`for b in kuzu_sampler:` is the exact line where the sampler will end up calling on Kùzu to sample a subgraph and scan the features of the nodes in that subgraph. This all ends up using Kùzu's disk-based storage, allowing you to train GNNs on graphs that don't fit on your RAM. One distinct advantage of Kùzu is that, because it is an embeddable DBMS, 
+we can do the conversion of scanned node features from Kùzu into PyG's tensors as a zero-copy operation. We simply write the scanned node features into a buffer array allocated in Python without any additional data transfer between the systems.
+
+Currently, only the `feature_store` scans data from Kùzu's disk-based storage. For `graph_store`, our current implementation stores the entire graph topology in COO format in memory. This does limit how much you can scale, but in many models trained on large graphs, features take up more space than the graph topology, so scaling node features out of memory should still allow you to scale to very lage graphs that won't fit in your RAM.
 
 ### Adjusting Kùzu's Buffer Pool Size
 
