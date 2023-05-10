@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Scaling your PyG GNNs with Kùzu
-permalink: /blog/kuzu-pyg-rg.html
+permalink: /blog/kuzu-pyg-remote-backend.html
 parent: Blog
 nav_order: 1
 ---
