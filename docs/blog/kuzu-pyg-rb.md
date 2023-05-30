@@ -12,7 +12,7 @@ nav_order: 1
 
 <p align="center">
   <a href="https://github.com/kuzudb/kuzu" class="btn fs-5 mb-4 mb-md-0"> Star &nbsp; <i class="fa-brands fa-github"></i></a>
-  <a href="https://join.slack.com/t/kuzudb/shared_invite/zt-1qgxnn8ed-9LL7rfKozijOtvw5HyWDlQ" class="btn fs-5 mb-4 mb-md-0"> Join &nbsp; <i class="fa-brands fa-slack"></i></a>
+  <a href="https://join.slack.com/t/kuzudb/shared_invite/zt-1w0thj6s7-0bLaU8Sb~4fDMKJ~oejG_g" class="btn fs-5 mb-4 mb-md-0"> Join &nbsp; <i class="fa-brands fa-slack"></i></a>
   <a href="https://twitter.com/kuzudb" class="btn fs-5 mb-4 mb-md-0"> Follow &nbsp; <i class="fa-brands fa-twitter"></i> </a>
 </p>
 
@@ -240,7 +240,7 @@ If you are converting a large graph this can be quite slow, and we will be impro
 are much faster!
 
 We are excited to hear about your feedback on Kùzu's PyG integration features and get more ideas about
-how else we can help users who are building GNN pipelines. Please reach out to us over [Kùzu Slack](https://join.slack.com/t/kuzudb/shared_invite/zt-1qgxnn8ed-9LL7rfKozijOtvw5HyWDlQ)
+how else we can help users who are building GNN pipelines. Please reach out to us over [Kùzu Slack](https://join.slack.com/t/kuzudb/shared_invite/zt-1w0thj6s7-0bLaU8Sb~4fDMKJ~oejG_g)
 for your questions and ideas!.
 
 _by Chang Liu and Semih Salihoğlu, 05-10-2023, Waterloo, ON, Canada_
