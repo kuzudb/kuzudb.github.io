@@ -66,7 +66,7 @@ Output:
 ---------------------------------------------
 ```
 Please refer to these links for details on query semantics when using 
-[logical operators](../expressions/logical-operators.md) and [comparison operators on NULLs](../data-types.md#null-values).
+[logical operators](../expressions/logical-operators.md) and [comparison operators on NULLs](../data-types/null.md).
 
 # WHERE EXISTS (...) Subqueries
 One special and powerful use of predicates in the WHERE clause is to check
