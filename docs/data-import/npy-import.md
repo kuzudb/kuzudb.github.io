@@ -1,7 +1,7 @@
 ---
 layout: default
-title: NPY import
-parent: Data import
+title: NPY
+parent: Data Import
 ---
 
 # Data Import from NPY Files (**Experimental**)

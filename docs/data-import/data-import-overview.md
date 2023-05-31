@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Data import
+title: Data Import
 nav_order: 3
 has_children: true
 permalink: /docs/data-import

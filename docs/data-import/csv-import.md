@@ -1,7 +1,7 @@
 ---
 layout: default
-title: CSV import
-parent: Data import
+title: CSV
+parent: Data Import
 ---
 
 # Data Import from CSV Files

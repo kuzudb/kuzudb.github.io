@@ -44,8 +44,7 @@ The boolean predicate/expression specified above can be understood as it reads: 
 greater than 45 OR whose names start with "Kar". It combines several means to construct expressions
 in high-level database query languages, such as as boolean operator (OR), a numeric comparison operator (>),
 and a string function (starts_with). You can learn more about the operators and functions Kùzu supports
-in the documentation on [expressions](../expressions
-) and [functions](../expressions/functions) and there. 
+in the documentation on [functions and expressions](../expressions/overview.md) and there. 
 
 Note on checking if an expression is NULL or not: There is a special syntax, IS NULL or IS NOT NULL,
 in openCypher to check if the result of an expression is NULL. For example, the following
@@ -73,8 +72,7 @@ One special and powerful use of predicates in the WHERE clause is to check
 if a subquery SubQ that depends on the input tuples to WHERE
 is empty or not. You can use the `WHERE EXISTS (SubQ)` syntax. For example,
 the following query searches for all Users's who have at least one 3-hop Follows
-path starting from them (see the [variable-length relationship patterns](match.md#matching-variable-length-relationships) for the `*3..3` syntax that searches
-for paths of length exact 3 hops) .
+path starting from them.
 
 ```
 MATCH (a:User)
