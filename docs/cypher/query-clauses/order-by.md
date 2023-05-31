@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Order by
-parent: Query clauses
+title: Order By
+parent: Query
 grand_parent: Cypher
 nav_order: 6
 ---

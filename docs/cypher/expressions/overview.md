@@ -3,6 +3,7 @@ layout: default
 title: Functions and Expressions 
 parent: Cypher
 has_children: true
+nav_order: 2
 ---
 
 # Overview

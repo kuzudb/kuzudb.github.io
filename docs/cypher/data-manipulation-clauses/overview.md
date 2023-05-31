@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Data manipulation clauses
+title: Data Manipulation
 parent: Cypher
 has_children: true
+nav_order: 5
 ---
 
 ### Overview

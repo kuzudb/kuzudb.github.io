@@ -1,7 +1,8 @@
 ---
 layout: default
-title: DDL
+title: Data Definition
 parent: Cypher
+nav_order: 3
 ---
 
 # Defining A Graph Schema: Data Definition Language

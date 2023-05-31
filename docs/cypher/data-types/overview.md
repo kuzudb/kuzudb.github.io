@@ -3,6 +3,7 @@ layout: default
 title: Data Types
 parent: Cypher
 has_children: true
+nav_order: 1
 ---
 
 # Overview

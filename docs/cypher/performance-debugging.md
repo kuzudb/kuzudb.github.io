@@ -2,6 +2,7 @@
 layout: default
 title: Performance Debugging
 parent: Cypher
+nav_order: 6
 ---
 
 # EXPLAIN and PROFILE

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Match
-parent: Query clauses
+parent: Query
 grand_parent: Cypher
 nav_order: 1
 ---
