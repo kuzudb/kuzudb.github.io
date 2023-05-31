@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Cpp api
-parent: Client api
+title: Cpp
+parent: Client APIs
 has_children: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Python api
-parent: Client api
+title: Python
+parent: Client APIs
 has_children: true
 ---
 

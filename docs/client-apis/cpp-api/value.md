@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Value
-parent: Cpp api
-grand_parent: Client api
+parent: Cpp
+grand_parent: Client APIs
 nav_order: 47
 ---
 

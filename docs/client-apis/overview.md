@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Client api
+title: Client APIs
 nav_order: 5
 has_children: true
 permalink: /docs/client-apis

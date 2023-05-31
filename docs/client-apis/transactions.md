@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Transaction
-parent: Client api
+parent: Client APIs
 ---
 
 # Overview

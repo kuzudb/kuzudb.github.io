@@ -1,7 +1,7 @@
 ---
 layout: default
 title: CLI
-parent: Client api
+parent: Client APIs
 ---
 
 # Kùzu CLI

@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Connection & Querying
-parent: Cpp api
-grand_parent: Client api
+parent: Cpp
+grand_parent: Client APIs
 nav_order: 42
 ---
 

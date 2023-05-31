@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Connection & Querying
-parent: Python api
-grand_parent: Client api
+parent: Python
+grand_parent: Client APIs
 nav_order: 42
 ---
 
