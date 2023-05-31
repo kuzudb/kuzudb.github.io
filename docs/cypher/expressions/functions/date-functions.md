@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Date function
-parent: Expressions
+title: Date Functions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 
-# Date operators
+# Date Operators
 
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
@@ -14,7 +14,7 @@ grand_parent: Cypher
 | - | subtraction of INT64 | DATE('2022-11-12') - DATE(2022-11-11) | 1 (INT64)|
 | - | subtraction of INTERVAL | DATE('2023-10-11') - INTERVAL(10 DAYS) | 2023-10-01 (DATE) |
 
-# Date functions
+# Date Functions
 
 | Function | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |

@@ -1,10 +1,10 @@
 ---
 layout: default
-title: List function
-parent: Expressions
+title: List Functions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
-# List functions
+# List Functions
 
 | Function | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
@@ -32,3 +32,6 @@ grand_parent: Cypher
 | array_has(list, element) | alias of list_contains | array_has([3,4,5], 5) | true (BOOL) |
 | list_slice(list, begin, end) | extracts a sublist using slice conventions and negative values are accepted. | list_slice([3,4,5], 2, 3) | [4] (LIST)|
 | array_slice(list, begin, end) | extracts a sublist using slice conventions and negative values are accepted. | array_slice([6,7,1], 1, 3) | [6,7] (LIST)|
+
+## List_sort Function
+TODO: ziyi

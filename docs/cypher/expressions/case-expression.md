@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Case
-parent: Expressions
+title: Case Expression
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 

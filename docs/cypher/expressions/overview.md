@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Expressions 
+title: Functions and Expressions 
 parent: Cypher
 has_children: true
 ---

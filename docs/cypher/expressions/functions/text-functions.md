@@ -1,18 +1,18 @@
 ---
 layout: default
-title: Text function
-parent: Expressions
+title: Text Functions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 
-# Text operators
+# Text Operators
 
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
 | [index] | alias of array extract | STRING("TEXT")[1]  | "T" (STRING) | 
 | [begin:end] | alias of array slice | STRING("TEXT")[1:3] | "TEX" (STRING) |
 
-# Text functions
+# Text Functions
 
 | Function | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |

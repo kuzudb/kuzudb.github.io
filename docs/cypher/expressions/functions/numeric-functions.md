@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Numeric function
-parent: Expressions
+title: Numeric Functions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 
-# Numeric operators
+# Numeric Operators
 
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
@@ -19,7 +19,7 @@ grand_parent: Cypher
 Unsupported numeric operators: 
 `**`, `&`, `|`, `<<`, `>>`, `!`
 
-# Numeric functions
+# Numeric Functions
 
 | Function | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Pattern matching
-parent: Expressions
+title: Pattern Matching Functions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 

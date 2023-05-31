@@ -1,15 +1,13 @@
 ---
 layout: default
-title: Casting function
-parent: Expressions
+title: Casting Functions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 
-# Casting
+# Casting Functions
 
-## Explicit casting
-Kùzu supports changing the data type of an expression to another data type 
-by explicitly using the casting functions. Kùzu throws an exception if the casting fails.
+Kùzu supports casting  through explicit casting functions. An exception will be thrown if the casting fails.
 
 | Functions | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |

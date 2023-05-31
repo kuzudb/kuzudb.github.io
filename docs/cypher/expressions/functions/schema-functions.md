@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Node/Rel Functions
-parent: Expressions
+title: Schema Functions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 
-# Internal ID Functions
+# Schema Functions
 
 | Function | Description | Example |
 | ----------- | ----------- |  ----------- |
