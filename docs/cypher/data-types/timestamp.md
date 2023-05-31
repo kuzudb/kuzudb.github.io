@@ -3,6 +3,7 @@ layout: default
 title: Timestamp
 parent: Data Types
 grand_parent: Cypher
+nav_order: 4
 ---
 
 # TIMESTAMP

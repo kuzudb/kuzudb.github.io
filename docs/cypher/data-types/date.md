@@ -3,6 +3,7 @@ layout: default
 title: Date
 parent: Data Types
 grand_parent: Cypher
+nav_order: 2
 ---
 
 # DATE

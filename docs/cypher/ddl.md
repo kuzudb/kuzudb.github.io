@@ -14,7 +14,8 @@ For example, the following statement defines a table of User nodes.
 CREATE NODE TABLE User(name STRING, age INT64, reg_date DATE, PRIMARY KEY (name))
 ```
 This adds a User table to the catalog of the system with 3 predefined properties. During querying, the name of the table will serve as the label of the nodes, e.g., `MATCH (a:User) RETURN sum(a.age)` returns the sum of the ages of all User nodes in the system. 
-You need to define the primary key of nodes as one of the `STRING` or `INT64` properties of the node. Kùzu will generate an index to do quick lookups on the primary key (e.g., name in the above example).
+
+Kùzu requires a primary key column for node table which can be either a `STRING` or `INT64` property of the node. Kùzu will generate an index to do quick lookups on the primary key (e.g., name in the above example). Alternativly, you can use [`SERIAL` data type](./data-types/serial.md) to generate an auto-increment column as primary key.
 
 ## Defining Relationship Tables
 Here are some examples of defining tables of relationships.

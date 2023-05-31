@@ -3,6 +3,7 @@ layout: default
 title: Null Value
 parent: Data Types
 grand_parent: Cypher
+nav_order: 9
 ---
 
 # NULL Values

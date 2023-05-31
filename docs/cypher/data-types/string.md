@@ -3,9 +3,10 @@ layout: default
 title: String
 parent: Data Types
 grand_parent: Cypher
+nav_order: 5
 ---
 
-# STRING Data Type
+# STRING
 
 `STRING` data type supports UTF-8 encoding.
 

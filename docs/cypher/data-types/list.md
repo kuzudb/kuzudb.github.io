@@ -3,9 +3,10 @@ layout: default
 title: List
 parent: Data Types
 grand_parent: Cypher
+nav_order: 6
 ---
 
-# LIST Data Type
+# LIST
 Kùzu supports two `LIST` data types: variable-size list `VAR-LIST` and fixed-size `FIXED-LIST`.
 
 A `VAR-LIST` type can contain arbitrary number of values with the same type.
