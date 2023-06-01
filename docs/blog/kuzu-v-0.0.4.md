@@ -17,14 +17,19 @@ nav_order: 497
 </p>
 
 # Kùzu 0.0.4 Release
-We are happy to release Kùzu 0.0.3 today. This release comes with the following new main features and improvements:
-- [Undirected query](#undirected-query)
-- Variable-length and shortest path query
-- `STRUCT` & `SERIAL` data types
-- Node table loading improvement
-- C API
-- NodeJS API
-- Windows compatibility
+We are happy to release Kùzu 0.0.3 today. This release comes with the following new main features and improvements: 
+- [Kùzu 0.0.4 Release](#kùzu-004-release)
+  - [New Cypher Features](#new-cypher-features)
+    - [Undirected Query](#undirected-query)
+    - [Recursive Query](#recursive-query)
+  - [Node Table Loading Improvements](#node-table-loading-improvements)
+  - [New Data Types](#new-data-types)
+    - [`STRUCT`](#struct)
+    - [`SERIAL`](#serial)
+  - [Client APIs](#client-apis)
+    - [Windows compatibility](#windows-compatibility)
+    - [C](#c)
+    - [NodeJS](#nodejs)
 
 ## New Cypher Features
 
@@ -57,13 +62,68 @@ RETURN other;
 ```
 
 ### Recursive Query
+This releases brings in a major change to recursive join architecture (Techniqual details will be discussed in a saperate post). Kùzu now treats recursive relationship in the same way as a non-recursive relationship, meaning one can issue multi-label, undirected recursive relationship and combine recursive and non-recursive relationship in a single query.
+
+**Variable length relationship**
+Instead of writting a long graph traveral pattern, one will find variable length relationship to be much more convinient and expressive. The following query asks all friends of `Alice` or frieds of friends of friends of `Alice` with non-recursive relationship.
+
+```
+MATCH (a:Person)-[:knows]->(b:Person) 
+WHERE a.name = 'Alice' 
+RETURN b
+UNION ALL
+MATCH (a:Person)-[:knows]->(:Person)-[:knows]->(b:Person) 
+WHERE a.name = 'Alice' 
+RETURN b
+```
+
+The same query can be asked with variable length relationship in a much more compact way
+```
+MATCH (a:Person)-[:knows*1..2]->(b:Person)
+WHERE a.name = 'Alice' 
+RETURN b
+```
+
+Kùzu also supports multi-label, undirected recursive relationship just like non-recursive relationship. The following query finds all nodes that are reachable within 1 to 3 hops from `Alice`.
+
+```
+MATCH (a:Person)-[e:*1..3]-(b)
+WHERE a.name = 'Alice'
+RETURN b;
+```
+
+**Single shortest path**
+User can now asks for single shortest path by adding `SHORTEST` keyword to a varible length relationship. The following query asks for a shortest path between `Alice` and all active users that `Alice` follows within 3 hops and return these users as well as the length of shortest path.
+
+```
+MATCH (a:User)-[e:Follows* SHORTEST 1..3]->(b:User)
+WHERE a.name = 'Alice' AND b.state = 'Active'
+RETURN b, length(e)
+```
+
+Single shortset path is also very suitable for reachability problems. For example, one can find all ndoes reachable from Alice with the following query
+```
+MATCH (a:User)-[* SHORTEST 1..30]->(b)
+WHERE a.name = 'Alice'
+RETURN b
+```
+Note that Kùzu requires all recursive relationship to have an upper bound which is capped at 30 to avoid super long-running query.
+
+## Node Table Loading Improvements
+TODO: Guodong
 
 ## New Data Types
 
 ### `STRUCT`
+Kùzu now supports `STRUCT` data type similar  
 
 ### `SERIAL`
+This
 
 ## Client APIs
 
-## 
+### Windows compatibility
+
+### C
+
+### NodeJS
