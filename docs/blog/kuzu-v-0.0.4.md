@@ -115,15 +115,20 @@ TODO: Guodong
 ## New Data Types
 
 ### `STRUCT`
-Kùzu now supports `STRUCT` data type similar  
+Kùzu now supports `STRUCT` data type similar to composite type in postgres. A `STRUCT` value is simplay a row where each entry is associated with an entry name. From the storage point of view, a `STRUCT` column is a single column nested over some other columns;
+
+TODO: give an example here.
 
 ### `SERIAL`
-This
+This release introduces
 
 ## Client APIs
 
 ### Windows compatibility
+Developers can now build Kùzu from scrtach on Windows platform. Together with this release we also provide pre-built libraries and python wheels on Windows.
 
 ### C
+We provide official C language binding in this release. Developers can now embed Kùzu with native C interfaces.
 
 ### NodeJS
+We provide official NodeJS language binding.
