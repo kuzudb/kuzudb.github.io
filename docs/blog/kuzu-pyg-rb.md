@@ -3,7 +3,7 @@ layout: default
 title: Scaling your PyG GNNs with Kùzu
 permalink: /blog/kuzu-pyg-remote-backend.html
 parent: Blog
-nav_order: 1
+nav_order: 994
 ---
 
 <p align="center">

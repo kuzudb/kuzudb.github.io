@@ -3,7 +3,7 @@ layout: default
 title: What Every Competent GDBMS Should Do (aka The Goals & Vision of Kùzu)  
 permalink: /blog/what-every-gdbms-should-do-and-vision.html
 parent: Blog
-nav_order: 6
+nav_order: 999
 ---
 
 <p align="center">

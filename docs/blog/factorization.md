@@ -3,7 +3,7 @@ layout: default
 title: Factorization & Great Ideas from Database Theory
 permalink: /blog/factorization.html
 parent: Blog
-nav_order: 5
+nav_order: 995
 ---
 
 <p align="center">
