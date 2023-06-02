@@ -9,8 +9,8 @@ grand_parent: Cypher
 
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
-| [index] | alias of array extract | STRING("TEXT")[1]  | "T" (STRING) | 
-| [begin:end] | alias of array slice | STRING("TEXT")[1:3] | "TEX" (STRING) |
+| [index] | alias of array extract | STRING("TEXT")[1]  | "T" | 
+| [begin:end] | alias of array slice | STRING("TEXT")[1:3] | "TEX" |
 
 # Text Functions
 
