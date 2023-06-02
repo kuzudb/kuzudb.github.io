@@ -34,10 +34,10 @@ We are happy to release Kùzu 0.0.3 today. This release comes with the following
 ## New Cypher Features
 
 ### Undirected Query
-Kùzu now supports undirected relationship in Cypher query. An undirected relationship is the union of both in-coming and out-going relationship. This feature is mostly useful in the following two cases. 
+Kùzu now supports undirected relationship in Cypher query. An undirected relationship is the union of both in-coming and out-going relationships. This feature is mostly useful in the following two cases. 
 
 **Relationship is undirected by nature**
-Similar to many other graph databases, relationship data is always defined and stored with direction in Kùzu. A relationship file must contain `FROM` and `TO` columns each of which refers a primary key column of a node table. For relationship that is undirected by nature, e.g. `isFriendOf`, user has to store this relationship in a directed way with two records `Alice isFriendOf Bob` and `Bob isFriendOf Alice`. To find all friends of `Alice`, user can issue the following query
+Similar to many other graph databases, relationship data is always defined and stored with direction in Kùzu. A relationship file must contain `FROM` and `TO` columns each of which refers a primary key column of a node table. For relationship that is undirected by nature, e.g. `isFriendOf`, user has to store this relationship in a directed way with two records, e.g. `Alice isFriendOf Bob` and `Bob isFriendOf Alice`. To find all friends of `Alice`, user can issue the following query
 
 ```
 MATCH (a:Person)-[:isFriendOf]->(b:Person)
@@ -62,10 +62,10 @@ RETURN other;
 ```
 
 ### Recursive Query
-This releases brings in a major change to recursive join architecture (Techniqual details will be discussed in a saperate post). Kùzu now treats recursive relationship in the same way as a non-recursive relationship, meaning one can issue multi-label, undirected recursive relationship and combine recursive and non-recursive relationship in a single query.
+This releases brings in a major change to the recursive join architecture (Techniqual details will be discussed in a saperate post). Kùzu now treats recursive relationship in the same way as a non-recursive relationship, meaning one can issue multi-label, undirected recursive relationship and combine recursive and non-recursive relationship in a single query.
 
 **Variable length relationship**
-Instead of writting a long graph traveral pattern, one will find variable length relationship to be much more convinient and expressive. The following query asks all friends of `Alice` or frieds of friends of friends of `Alice` with non-recursive relationship.
+Instead of writting a long graph traveral pattern, one will find variable length relationship to be much more convinient and expressive. The following query asks all friends of `Alice` or frieds of friends of `Alice` with non-recursive relationship.
 
 ```
 MATCH (a:Person)-[:knows]->(b:Person) 
@@ -93,7 +93,7 @@ RETURN b;
 ```
 
 **Single shortest path**
-User can now asks for single shortest path by adding `SHORTEST` keyword to a varible length relationship. The following query asks for a shortest path between `Alice` and all active users that `Alice` follows within 3 hops and return these users as well as the length of shortest path.
+User can now asks for single shortest path by adding `SHORTEST` keyword to a varible length relationship. The following query asks for a shortest path between `Alice` and all active users that `Alice` follows within 3 hops and return these users as well as the length of the shortest path.
 
 ```
 MATCH (a:User)-[e:Follows* SHORTEST 1..3]->(b:User)
@@ -107,7 +107,7 @@ MATCH (a:User)-[* SHORTEST 1..30]->(b)
 WHERE a.name = 'Alice'
 RETURN b
 ```
-Note that Kùzu requires all recursive relationship to have an upper bound which is capped at 30 to avoid super long-running query.
+Note that Kùzu requires all recursive relationship to have an upper bound which is capped at 30 to avoid long-running queries.
 
 ## Node Table Loading Improvements
 TODO: Guodong
@@ -115,7 +115,7 @@ TODO: Guodong
 ## New Data Types
 
 ### `STRUCT`
-Kùzu now supports `STRUCT` data type similar to composite type in postgres. A `STRUCT` value is simplay a row where each entry is associated with an entry name. From the storage point of view, a `STRUCT` column is a single column nested over some other columns;
+Kùzu now supports `STRUCT` data type similar to composite type in postgres. A `STRUCT` value is simplay a row where each entry is associated with an entry name. From the storage point of view, a `STRUCT` column is a single column nested over some other columns.
 
 TODO: give an example here.
 
