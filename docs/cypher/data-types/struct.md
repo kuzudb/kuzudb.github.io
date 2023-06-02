@@ -14,6 +14,34 @@ A `STRUCT` is a dictionary of key-value pairs where keys are of type STRING. `ST
 | STRUCT | STRUCT(a INT64, b INT64) | 
 
 ### `STRUCT` creation
-TODO: fix issue 1596 and then finish this.
+```
+RETURN {first:'Xiyang', last:'Feng'};
+```
+Output:
+```
+-------------------------------
+| STRUCT_PACK(Xiyang,Feng)    |
+-------------------------------
+| {FIRST: Xiyang, LAST: Feng} |
+-------------------------------
+```
 
 ### `STRUCT` extraction
+```
+WITH {first:'Xiyang', last:'Feng'} AS fullName
+RETURN fullName.first AS firstName;
+```
+Output:
+```
+-------------
+| firstName |
+-------------
+| Xiyang    |
+-------------
+```
+
+Alternatively you can use struct_extract() function
+```
+WITH {first:'Xiyang', last:'Feng'} AS fullName
+RETURN struct_extract(fullName, 'first') AS firstName;
+```
