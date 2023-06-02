@@ -385,9 +385,16 @@ RETURN b.name, length(e) AS length;
 ```
 Output:
 ```
-TODO: this query has bug
+----------------------
+| b.name    | length |
+----------------------
+| Waterloo  | 1      |
+----------------------
+| Kitchener | 2      |
+----------------------
+| Guelph    | 3      |
+----------------------
 ```
-
 
 **Further notes on shortest path**
 - All shortest path or weighted shortest path is not yet supported.

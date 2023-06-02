@@ -29,7 +29,7 @@ We are happy to release Kùzu 0.0.3 today. This release comes with the following
   - [Client APIs](#client-apis)
     - [Windows compatibility](#windows-compatibility)
     - [C](#c)
-    - [NodeJS](#nodejs)
+    - [Node.js](#nodejs)
 
 ## New Cypher Features
 
@@ -120,7 +120,12 @@ Kùzu now supports `STRUCT` data type similar to composite type in postgres. A `
 TODO: give an example here.
 
 ### `SERIAL`
-This release introduces
+This release introduces `SERIAL` data type. Similar to `AUTO_INCREMENT` supported by many other databases, `SERIAL` is mainly used to create an incremental sequence of unique identifier column which can serve as a primary key column.
+
+Example:
+```
+CREATE NODE TABLE Person(ID SERIAL, name STRING, PRIMARY KEY(ID));
+```
 
 ## Client APIs
 
@@ -130,5 +135,5 @@ Developers can now build Kùzu from scrtach on Windows platform. Together with t
 ### C
 We provide official C language binding in this release. Developers can now embed Kùzu with native C interfaces.
 
-### NodeJS
-We provide official NodeJS language binding.
+### Node.js
+We provide official Node.js language binding. Node.js is a popular JavaScript runtime environment for building server-side applications. With Node.js API, developer can leverage Kùzu analytical capbility in their Node.js projects.

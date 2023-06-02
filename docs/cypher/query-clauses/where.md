@@ -3,7 +3,7 @@ layout: default
 title: Where
 parent: Query
 grand_parent: Cypher
-nav_order: 4
+nav_order: 3
 ---
 
 # Database
