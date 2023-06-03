@@ -17,11 +17,10 @@ nav_order: 497
 </p>
 
 # Kùzu 0.0.4 Release
-We are happy to release Kùzu 0.0.3 today. This release comes with the following new main features and improvements: 
-- [Kùzu 0.0.4 Release](#kùzu-004-release)
+We are very happy to release Kùzu 0.0.4 today! This release comes with the following new main features and improvements: 
   - [New Cypher Features](#new-cypher-features)
-    - [Undirected Query](#undirected-query)
-    - [Recursive Query](#recursive-query)
+    - [Undirected Relationships in Queries](#undirected-query)
+    - [Shortest Path (new) and Variable-length Queries (improved)](#recursive-query)
   - [Node Table Loading Improvements](#node-table-loading-improvements)
   - [New Data Types](#new-data-types)
     - [`STRUCT`](#struct)
@@ -33,26 +32,38 @@ We are happy to release Kùzu 0.0.3 today. This release comes with the following
 
 ## New Cypher Features
 
-### Undirected Query
-Kùzu now supports undirected relationship in Cypher query. An undirected relationship is the union of both in-coming and out-going relationships. This feature is mostly useful in the following two cases. 
+### Undirected Relationships in Queries
+Kùzu now supports undirected relationships in Cypher queries. An undirected relationship is the union of both in-coming and out-going relationships. This feature is mostly useful in the following two cases. 
 
-**Relationship is undirected by nature**
-Similar to many other graph databases, relationship data is always defined and stored with direction in Kùzu. A relationship file must contain `FROM` and `TO` columns each of which refers a primary key column of a node table. For relationship that is undirected by nature, e.g. `isFriendOf`, user has to store this relationship in a directed way with two records, e.g. `Alice isFriendOf Bob` and `Bob isFriendOf Alice`. To find all friends of `Alice`, user can issue the following query
+**Case 1: Relationship is undirected by nature**
+Relationships between nodes in Kùzu are currently directed (though we are internally debating to add a native undirected relationship type). 
+A relationship file must contain `FROM` and `TO` columns each of which refers to a primary key column of a node table. 
+However, sometimes the nature of the relationships are undirected, e.g., an `isFriendOf` relationships in a social network. 
+Currently, you have two options: (1) you can either store and delete each friendship twice, e.g., `Alice isFriendOf Bob` and `Bob isFriendOf Alice`.
+This is a bad choice because internally Kùzu will index each edge twice (in the forward and backward) edges, so this one fact ends up getting 
+stored 4 times. Or (2) you can store it once, say `Alice isFriendOf Bob`. 
 
+The advantage of option (1) was thatin Kùzu v 0.0.3, if you want to find all friends of `Alice`, you could simply ask this query:
 ```
 MATCH (a:Person)-[:isFriendOf]->(b:Person)
-WHERE a.name = 'Alice'
-RETURN b;
+WHERE a.name = 'Alice' RETURN b;
 ```
+Instead, if you chose option (2), you would have to ask two queries, one to `MATCH (a:Person)-[:isFriendOf]->(b:Person)`
+and the other to `MATCH (a:Person)<-[:isFriendOf]-(b:Person)`, and `UNION` them, which gets messy if you want to do more
+with those neighbors (e.g., find their neighbors etc.). 
 
-Now with undirected query, user can simply insert one record `Alice isFriendOf Bob` and find all friends of `Alice` using the following undirected query
+With undirected edge support, you can now choose option (2) and find `Alice`'s friends with:
 ```
 MATCH (a:Person)-[:isFriendOf]-(b:Person)
 WHERE a.name = 'Alice'
 RETURN b;
 ```
+So if you do not specify a direction in your relationships, Kùzu will automatically query both the forward and backward relationships for you.
 
-**Relationship direction is not of interest**
+*Note from Kùzu developers: As noted above, we are debating a native undirected relationship type. That seems to solve the problem of, in which fake direction
+should an undirected relationship be saved at? Should be a `Alice-[isFriendOf]->Bob` or vice versa. Happy to hear your thoughts on this.*
+
+**Case 2: Relationship direction is not of interest**
 Although relationship is stored in a directed way, its direction may not be of interest in the query. The following query tries to find all comments that have interacted with comment `Kùzu`. These comments could be either replying to or replied by `Kùzu`. The query can be asked naturally in an undirected way.
 
 ```
@@ -61,53 +72,44 @@ WHERE c.author = 'Kùzu'
 RETURN other;
 ```
 
-### Recursive Query
-This releases brings in a major change to the recursive join architecture (Techniqual details will be discussed in a saperate post). Kùzu now treats recursive relationship in the same way as a non-recursive relationship, meaning one can issue multi-label, undirected recursive relationship and combine recursive and non-recursive relationship in a single query.
+### Recursive Queries: Shortest Path Queries and Improved Variable-length Queries
+This release brings in the beginnings of a series of major improvements we will do to recursive joins.
+The two major changes in this release are: 
 
-**Variable length relationship**
-Instead of writting a long graph traveral pattern, one will find variable length relationship to be much more convinient and expressive. The following query asks all friends of `Alice` or frieds of friends of `Alice` with non-recursive relationship.
-
-```
-MATCH (a:Person)-[:knows]->(b:Person) 
-WHERE a.name = 'Alice' 
-RETURN b
-UNION ALL
-MATCH (a:Person)-[:knows]->(:Person)-[:knows]->(b:Person) 
-WHERE a.name = 'Alice' 
-RETURN b
-```
-
-The same query can be asked with variable length relationship in a much more compact way
+**Multilabeled and undirected Variable-length Join Queries**
+Prior to this release we supported variable-length join queries only in the restricted case when the variable-lenght 
+relationship could have a single relationship label and was directed. For example you could write this query:
 ```
 MATCH (a:Person)-[:knows*1..2]->(b:Person)
 WHERE a.name = 'Alice' 
 RETURN b
 ```
-
-Kùzu also supports multi-label, undirected recursive relationship just like non-recursive relationship. The following query finds all nodes that are reachable within 1 to 3 hops from `Alice`.
-
+But you couldn't ask for arbitrary labeled variable-length relationships between Persons `a` and `b` (though you
+could write the non-recurise version of that query: `MATCH (a:Person)-[:knows]->(b:Person) ...`. 
+Simiarly we did not support undirected version of the query: `MATCH (a:Person)-[:knows*1..2]-(b:Person)`.
+Kùzu now supports multi-label as well as undirected variable-length relationships.
+For example, the following query finds all nodes that are reachable within 1 to 3 hops from `Alice`, irrespective
+of the labels on the connections or destination `b` nodes:
 ```
 MATCH (a:Person)-[e:*1..3]-(b)
 WHERE a.name = 'Alice'
 RETURN b;
 ```
 
-**Single shortest path**
-User can now asks for single shortest path by adding `SHORTEST` keyword to a varible length relationship. The following query asks for a shortest path between `Alice` and all active users that `Alice` follows within 3 hops and return these users as well as the length of the shortest path.
+**Shortest path**
+Finally, we got to implementing an initial version of shortest path queries. 
+You can find (one of the) shortest paths between nodes by adding the `SHORTEST` keyword to a varible-length relationship.
+The following query asks for a shortest path between `Alice` and all active users that `Alice` follows within 10 
+hops and return these users, and the length of the shortest path.
 
 ```
-MATCH (a:User)-[e:Follows* SHORTEST 1..3]->(b:User)
+MATCH (a:User)-[p:Follows* SHORTEST 1..10]->(b:User)
 WHERE a.name = 'Alice' AND b.state = 'Active'
-RETURN b, length(e)
+RETURN b, p, length(p)
 ```
 
-Single shortset path is also very suitable for reachability problems. For example, one can find all ndoes reachable from Alice with the following query
-```
-MATCH (a:User)-[* SHORTEST 1..30]->(b)
-WHERE a.name = 'Alice'
-RETURN b
-```
-Note that Kùzu requires all recursive relationship to have an upper bound which is capped at 30 to avoid long-running queries.
+The `p` in the query binds to the sequences of relationship, node, relationship, node, etc.
+Currently we only return the IDs of the relationships and nodes (soon, we will return all their properties).
 
 ## Node Table Loading Improvements
 TODO: Guodong
@@ -115,17 +117,21 @@ TODO: Guodong
 ## New Data Types
 
 ### `STRUCT`
-Kùzu now supports `STRUCT` data type similar to composite type in postgres. A `STRUCT` value is simplay a row where each entry is associated with an entry name. From the storage point of view, a `STRUCT` column is a single column nested over some other columns.
+Kùzu now supports `STRUCT` data type similar to [composite type](https://www.postgresql.org/docs/current/rowtypes.html) in Postgres. 
+A `STRUCT` value is simplay a row where each entry is associated with an entry name. 
+From the storage point of view, a `STRUCT` column is a single column nested over some other columns.
 
 TODO: give an example here.
 
 ### `SERIAL`
-This release introduces `SERIAL` data type. Similar to `AUTO_INCREMENT` supported by many other databases, `SERIAL` is mainly used to create an incremental sequence of unique identifier column which can serve as a primary key column.
+This release introduces `SERIAL` data type. Similar to `AUTO_INCREMENT` supported by many other databases, `SERIAL` is mainly used to create 
+an incremental sequence of unique identifier column which can serve as a primary key column.
 
 Example:
 ```
 CREATE NODE TABLE Person(ID SERIAL, name STRING, PRIMARY KEY(ID));
 ```
+When the primary key of your node tables are already 
 
 ## Client APIs
 
