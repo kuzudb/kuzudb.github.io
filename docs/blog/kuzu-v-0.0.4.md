@@ -23,13 +23,13 @@ We are very happy to release Kùzu 0.0.4 today! This release comes with the foll
     - [Undirected Relationships in Queries](#undirected-relationships-in-queries)
     - [Recursive Queries: Shortest Path Queries and Improved Variable-length Queries](#recursive-queries-shortest-path-queries-and-improved-variable-length-queries)
   - [New Data Types](#new-data-types)
-    - [`STRUCT`](#struct)
     - [`SERIAL`](#serial)
+    - [`STRUCT`](#struct)
   - [Client APIs](#client-apis)
     - [Windows compatibility](#windows-compatibility)
     - [C](#c)
     - [Node.js](#nodejs)
-  - [Data Ingestion Improvements](#data-ingestion-improvements)
+  - [Node Table Loading Improvements](#node-table-loading-improvements)
 
 ## New Cypher Features
 
@@ -37,21 +37,16 @@ We are very happy to release Kùzu 0.0.4 today! This release comes with the foll
 Kùzu now supports undirected relationships in Cypher queries. An undirected relationship is the union of both in-coming and out-going relationships. This feature is mostly useful in the following two cases. 
 
 **Case 1: Relationship is undirected by nature**
-Relationships between nodes in Kùzu are currently directed (though we are internally debating to add a native undirected relationship type). 
-A relationship file must contain `FROM` and `TO` columns each of which refers to a primary key column of a node table. 
-However, sometimes the nature of the relationships are undirected, e.g., an `isFriendOf` relationships in a social network. 
-Currently, you have two options: (1) you can either store and delete each friendship twice, e.g., `Alice isFriendOf Bob` and `Bob isFriendOf Alice`.
-This is a bad choice because internally Kùzu will index each edge twice (in the forward and backward) edges, so this one fact ends up getting 
-stored 4 times. Or (2) you can store it once, say `Alice isFriendOf Bob`. 
+Relationships between nodes in Kùzu are currently directed (though we are internally debating to add a native undirected relationship type). A relationship file must contain `FROM` and `TO` columns each of which refers to a primary key column of a node table. However, sometimes the nature of the relationships are undirected, e.g., an `isFriendOf` relationships in a social network. 
+
+Currently, you have two options: (1) you can either store each friendship twice, e.g., `Alice isFriendOf Bob` and `Bob isFriendOf Alice`. This is a bad choice because internally Kùzu will index each edge twice (in the forward and backward) edges, so this one fact ends up getting stored 4 times. Or (2) you can store it once, say `Alice isFriendOf Bob`. 
 
 The advantage of option (1) was that in Kùzu v 0.0.3, if you want to find all friends of `Alice`, you could simply ask this query:
 ```
 MATCH (a:Person)-[:isFriendOf]->(b:Person)
 WHERE a.name = 'Alice' RETURN b;
 ```
-Instead, if you chose option (2), you would have to ask two queries, one to `MATCH (a:Person)-[:isFriendOf]->(b:Person)`
-and the other to `MATCH (a:Person)<-[:isFriendOf]-(b:Person)`, and `UNION` them, which gets messy if you want to do more
-with those neighbors (e.g., find their neighbors etc.). 
+Instead, if you chose option (2), you would have to ask two queries, one to `MATCH (a:Person)-[:isFriendOf]->(b:Person)` and the other to `MATCH (a:Person)<-[:isFriendOf]-(b:Person)`, and `UNION` them, which gets messy if you want to do more with those neighbors (e.g., find their neighbors etc.). 
 
 With undirected edge support, you can now choose option (2) and find `Alice`'s friends with:
 ```
@@ -61,8 +56,7 @@ RETURN b;
 ```
 So if you do not specify a direction in your relationships, Kùzu will automatically query both the forward and backward relationships for you.
 
-*Note from Kùzu developers: As noted above, we are debating a native undirected relationship type. That seems to solve the problem of, in which fake direction
-should an undirected relationship be saved at? Should be a `Alice-[isFriendOf]->Bob` or vice versa. Happy to hear your thoughts on this.*
+*Note from Kùzu developers: As noted above, we are debating a native undirected relationship type. That seems to solve the problem of, in which fake direction should an undirected relationship be saved at? Should be a `Alice-[isFriendOf]->Bob` or vice versa. Happy to hear your thoughts on this.*
 
 **Case 2: Relationship direction is not of interest**
 Although relationship is stored in a directed way, its direction may not be of interest in the query. The following query tries to find all comments that have interacted with comment `Kùzu`. These comments could be either replying to or replied by `Kùzu`. The query can be asked naturally in an undirected way.
@@ -77,9 +71,8 @@ RETURN other;
 This release brings in the beginnings of a series of major improvements we will do to recursive joins.
 The two major changes in this release are: 
 
-**Multi-labeled and undirected Variable-length Join Queries**
-Prior to this release we supported variable-length join queries only in the restricted case when the variable-length 
-relationship could have a single relationship label and was directed. For example you could write this query:
+**Multilabeled and undirected Variable-length Join Queries**
+Prior to this release we supported variable-length join queries only in the restricted case when the variable-length relationship could have a single relationship label and was directed. For example you could write this query:
 ```
 MATCH (a:Person)-[:knows*1..2]->(b:Person)
 WHERE a.name = 'Alice' 
@@ -98,10 +91,8 @@ RETURN b;
 ```
 
 **Shortest path**
-Finally, we got to implementing an initial version of shortest path queries. 
-You can find (one of the) shortest paths between nodes by adding the `SHORTEST` keyword to a variable-length relationship.
-The following query asks for a shortest path between `Alice` and all active users that `Alice` follows within 10 
-hops and return these users, and the length of the shortest path.
+
+Finally, we got to implementing an initial version of shortest path queries. You can find (one of the) shortest paths between nodes by adding the `SHORTEST` keyword to a varible-length relationship. The following query asks for a shortest path between `Alice` and all active users that `Alice` follows within 10 hops and return these users, and the length of the shortest path.
 
 ```
 MATCH (a:User)-[p:Follows* SHORTEST 1..10]->(b:User)
@@ -109,29 +100,52 @@ WHERE a.name = 'Alice' AND b.state = 'Active'
 RETURN b, p, length(p)
 ```
 
-The `p` in the query binds to the sequences of relationship, node, relationship, node, etc.
-Currently we only return the IDs of the relationships and nodes (soon, we will return all their properties).
+The `p` in the query binds to the sequences of relationship, node, relationship, node, etc. Currently we only return the internal IDs of the relationships and nodes (soon, we will return all their properties).
 
 ## New Data Types
-
-### `STRUCT`
-Kùzu now supports `STRUCT` data type similar to [composite type](https://www.postgresql.org/docs/current/rowtypes.html) in Postgres. 
-A `STRUCT` value is simply a row where each entry is associated with an entry name. 
-From the storage point of view, a `STRUCT` column is a single column nested over some other columns.
-
-TODO: give an example here.
 
 ### `SERIAL`
 This release introduces `SERIAL` data type. Similar to `AUTO_INCREMENT` supported by many other databases, `SERIAL` is mainly used to create 
 an incremental sequence of unique identifier column which can serve as a primary key column.
 
 Example:
+
+`person.csv`
+```
+Alice
+Bob
+Carol
+```
+
 ```
 CREATE NODE TABLE Person(ID SERIAL, name STRING, PRIMARY KEY(ID));
+COPY Person FROM `person.csv`;
+MATCH (a:Person) RETURN a;
 ```
-When the primary key of your node tables are already consecutive integers starting from 0, you should make that primary key a SERIAL type. This
-will improve your loading time significantly. Similarly, your queries that had equality checks on your primary key will get faster.
-That's because internally we will not store a HashIndex and any HashIndex lookup we would do during query processing will be omitted.
+Output:
+**TODO Ziyi: fix**
+
+When the primary key of your node tables are already consecutive integers starting from 0, you should omit the primary key column in the input file and make primary key a SERIAL type. This will improve loading time significantly. Simiarly, queries that need to scan primary key will also get faster. That's because internally we will not store a HashIndex or primary key column so any scan over primary key will not trigger a disk I/O.
+
+### `STRUCT`
+Kùzu now supports `STRUCT` data type similar to [composite type](https://www.postgresql.org/docs/current/rowtypes.html) in Postgres. A `STRUCT` value is simplay a row where each entry is associated with an entry name. 
+From the storage point of view, a `STRUCT` column is a single column nested over some other columns.
+
+Example:
+```
+WITH {name:'University of Waterloo', province:'ON'} AS institution
+RETURN institution.name AS name;
+```
+Output:
+```
+--------------------------
+| name                   |
+--------------------------
+| University of Waterloo |
+--------------------------
+```
+
+**Note**: Updating `STRUCT` column with update statement is not supported in this release but will come soon.
 
 ## Client APIs
 
@@ -145,7 +159,18 @@ We provide official C language binding in this release. Developers can now embed
 We provide official Node.js language binding. With Node.js API, developer can leverage Kùzu analytical capability in their Node.js projects. We will
 soon follow this blog post with one (or a few) blog posts on developing some applications with Node.js.
 
-## Data Ingestion Improvements
-We've started to improve our data ingestion performance. In this release, we introduce improvements over node table loading, which can speed up the loading of ldbc-100 comment and post from 890.3s (last release) to 108.5s, and 304.3s (last release) to 32.3s, respectively, on a MacBook-Pro laptop with the configuration of CPU M1 Max and 32GB of memory.
+## Node Table Loading Improvements
+We continue to improve our loading performance in this release, specifocally over node table loading. Benchmark details are as follow:
 
-Improvements on rel table loading will come soon after this release. Please stay tuned!
+- CPU: MAC M1 MAX
+- System Memory: 32GB
+- Buffer Manager size: 1GB (Maybe we should remove this)
+- Dataset: LDBC-100
+- Number of thread: 10
+
+| CSV | # lines | size | v0.0.3 | v0.0.4
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| comment.csv | | 22.49 GB | 890s | 108s |
+| post.csv | | 7.68 GB | 304s | 32s |
+
+Improvements on rel table loading will come soon. Please stay tuned!

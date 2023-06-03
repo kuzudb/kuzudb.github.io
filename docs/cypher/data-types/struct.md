@@ -13,6 +13,8 @@ A `STRUCT` is a dictionary of key-value pairs where keys are of type STRING. `ST
 | --- | --- | 
 | STRUCT | STRUCT(a INT64, b INT64) | 
 
+**Note**: Updating `STRUCT` with update statement is not yet supported.
+
 ### `STRUCT` creation
 ```
 RETURN {first:'Xiyang', last:'Feng'};
