@@ -131,15 +131,18 @@ Example:
 ```
 CREATE NODE TABLE Person(ID SERIAL, name STRING, PRIMARY KEY(ID));
 ```
-When the primary key of your node tables are already 
+When the primary key of your node tables are already consecutive integers starting from 0, you should make that primary key a SERIAL type. This
+will improve your loading time significantly. Simiarly, your queries that had equality checks on your primary key will get faster.
+That's because internally we will not store a HashIndex and any HashIndex lookup we would do during query processing will be omitted.
 
 ## Client APIs
 
 ### Windows compatibility
-Developers can now build Kùzu from scrtach on Windows platform. Together with this release we also provide pre-built libraries and python wheels on Windows.
+Developers can now build Kùzu from scrtach on Windows platform! Together with this release we also provide pre-built libraries and python wheels on Windows.
 
 ### C
 We provide official C language binding in this release. Developers can now embed Kùzu with native C interfaces.
 
 ### Node.js
-We provide official Node.js language binding. Node.js is a popular JavaScript runtime environment for building server-side applications. With Node.js API, developer can leverage Kùzu analytical capbility in their Node.js projects.
+We provide official Node.js language binding. With Node.js API, developer can leverage Kùzu analytical capbility in their Node.js projects. We will
+soon follow this blog post with one (or a few) blog posts on developing some applications with Node.js.
