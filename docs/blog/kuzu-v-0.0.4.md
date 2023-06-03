@@ -21,7 +21,6 @@ We are very happy to release Kùzu 0.0.4 today! This release comes with the foll
   - [New Cypher Features](#new-cypher-features)
     - [Undirected Relationships in Queries](#undirected-query)
     - [Shortest Path (new) and Variable-length Queries (improved)](#recursive-query)
-  - [Node Table Loading Improvements](#node-table-loading-improvements)
   - [New Data Types](#new-data-types)
     - [`STRUCT`](#struct)
     - [`SERIAL`](#serial)
@@ -29,6 +28,7 @@ We are very happy to release Kùzu 0.0.4 today! This release comes with the foll
     - [Windows compatibility](#windows-compatibility)
     - [C](#c)
     - [Node.js](#nodejs)
+  - [Node Table Loading Improvements](#node-table-loading-improvements)
 
 ## New Cypher Features
 
@@ -111,9 +111,6 @@ RETURN b, p, length(p)
 The `p` in the query binds to the sequences of relationship, node, relationship, node, etc.
 Currently we only return the IDs of the relationships and nodes (soon, we will return all their properties).
 
-## Node Table Loading Improvements
-TODO: Guodong
-
 ## New Data Types
 
 ### `STRUCT`
@@ -146,3 +143,8 @@ We provide official C language binding in this release. Developers can now embed
 ### Node.js
 We provide official Node.js language binding. With Node.js API, developer can leverage Kùzu analytical capbility in their Node.js projects. We will
 soon follow this blog post with one (or a few) blog posts on developing some applications with Node.js.
+
+## Node Table Loading Improvements
+We've started to improve our data ingestion performance. In this release, we introduce improvements over node table loading, which can speed up the loading of ldbc-100 comment and post from 890.3s (last release) to 108.5s, and 304.3s (last release) to 32.3s, respectively, on a Macbook laptop with the configuration of xxx (TODO: Ziyi).
+
+Improvements on rel table loading will come soon after this release. Please stay tuned!
