@@ -7,8 +7,8 @@ nav_order: 4
 ---
 
 # TIMESTAMP
-`TIMESTAMP` combines date and a time (hour, minute, second, millisecond) and is formatted according to the ISO 8601 format (YYYY-MM-DD hh:mm:ss[.zzzzzz][+-TT[:tt]]),
-which specifies the date (YYYY-MM-DD), time (hh:mm:ss[.zzzzzz]) and a time offset [+-TT[:tt]]. Only the Date part is mandatory. If time is specified, then the millisecond [.zzzzzz] part and the time offset are optional. 
+`TIMESTAMP` combines date and a time (hour, minute, second, millisecond) and is formatted according to the ISO 8601 format (`YYYY-MM-DD hh:mm:ss[.zzzzzz][+-TT[:tt]]`),
+which specifies the date (`YYYY-MM-DD`), time (`hh:mm:ss[.zzzzzz]`) and a time offset `[+-TT[:tt]]`. Only the Date part is mandatory. If time is specified, then the millisecond `[.zzzzzz]` part and the time offset are optional. 
 
 
 ### `TIMESTAMP` creation

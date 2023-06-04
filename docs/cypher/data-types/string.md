@@ -10,7 +10,7 @@ nav_order: 5
 
 `STRING` data type supports UTF-8 encoding.
 
-#### Return UTF-8 string
+### Return UTF-8 string
 ```
 RETURN 'Зарегистрируйтесь, σπαθιοῦ, Yen [jɛn], kΩ' AS str;
 ```
