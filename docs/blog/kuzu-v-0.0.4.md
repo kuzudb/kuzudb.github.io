@@ -146,6 +146,6 @@ We provide official Node.js language binding. With Node.js API, developer can le
 soon follow this blog post with one (or a few) blog posts on developing some applications with Node.js.
 
 ## Data Ingestion Improvements
-We've started to improve our data ingestion performance. In this release, we introduce improvements over node table loading, which can speed up the loading of ldbc-100 comment and post from 890.3s (last release) to 108.5s, and 304.3s (last release) to 32.3s, respectively, on a MacBook-Air laptop with the configuration of xxx (TODO: Ziyi).
+We've started to improve our data ingestion performance. In this release, we introduce improvements over node table loading, which can speed up the loading of ldbc-100 comment and post from 890.3s (last release) to 108.5s, and 304.3s (last release) to 32.3s, respectively, on a MacBook-Pro laptop with the configuration of CPU M1 Max and 32GB of memory.
 
 Improvements on rel table loading will come soon after this release. Please stay tuned!
