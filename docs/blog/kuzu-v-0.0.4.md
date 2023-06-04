@@ -18,9 +18,10 @@ nav_order: 497
 
 # Kùzu 0.0.4 Release
 We are very happy to release Kùzu 0.0.4 today! This release comes with the following new main features and improvements: 
+- [Kùzu 0.0.4 Release](#kùzu-004-release)
   - [New Cypher Features](#new-cypher-features)
-    - [Undirected Relationships in Queries](#undirected-query)
-    - [Shortest Path (new) and Variable-length Queries (improved)](#recursive-query)
+    - [Undirected Relationships in Queries](#undirected-relationships-in-queries)
+    - [Recursive Queries: Shortest Path Queries and Improved Variable-length Queries](#recursive-queries-shortest-path-queries-and-improved-variable-length-queries)
   - [New Data Types](#new-data-types)
     - [`STRUCT`](#struct)
     - [`SERIAL`](#serial)
@@ -28,7 +29,7 @@ We are very happy to release Kùzu 0.0.4 today! This release comes with the foll
     - [Windows compatibility](#windows-compatibility)
     - [C](#c)
     - [Node.js](#nodejs)
-  - [Node Table Loading Improvements](#node-table-loading-improvements)
+  - [Data Ingestion Improvements](#data-ingestion-improvements)
 
 ## New Cypher Features
 
@@ -43,7 +44,7 @@ Currently, you have two options: (1) you can either store and delete each friend
 This is a bad choice because internally Kùzu will index each edge twice (in the forward and backward) edges, so this one fact ends up getting 
 stored 4 times. Or (2) you can store it once, say `Alice isFriendOf Bob`. 
 
-The advantage of option (1) was thatin Kùzu v 0.0.3, if you want to find all friends of `Alice`, you could simply ask this query:
+The advantage of option (1) was that in Kùzu v 0.0.3, if you want to find all friends of `Alice`, you could simply ask this query:
 ```
 MATCH (a:Person)-[:isFriendOf]->(b:Person)
 WHERE a.name = 'Alice' RETURN b;
@@ -76,8 +77,8 @@ RETURN other;
 This release brings in the beginnings of a series of major improvements we will do to recursive joins.
 The two major changes in this release are: 
 
-**Multilabeled and undirected Variable-length Join Queries**
-Prior to this release we supported variable-length join queries only in the restricted case when the variable-lenght 
+**Multi-labeled and undirected Variable-length Join Queries**
+Prior to this release we supported variable-length join queries only in the restricted case when the variable-length 
 relationship could have a single relationship label and was directed. For example you could write this query:
 ```
 MATCH (a:Person)-[:knows*1..2]->(b:Person)
@@ -85,8 +86,8 @@ WHERE a.name = 'Alice'
 RETURN b
 ```
 But you couldn't ask for arbitrary labeled variable-length relationships between Persons `a` and `b` (though you
-could write the non-recurise version of that query: `MATCH (a:Person)-[:knows]->(b:Person) ...`. 
-Simiarly we did not support undirected version of the query: `MATCH (a:Person)-[:knows*1..2]-(b:Person)`.
+could write the non-recursive version of that query: `MATCH (a:Person)-[:knows]->(b:Person) ...`. 
+Similarly we did not support undirected version of the query: `MATCH (a:Person)-[:knows*1..2]-(b:Person)`.
 Kùzu now supports multi-label as well as undirected variable-length relationships.
 For example, the following query finds all nodes that are reachable within 1 to 3 hops from `Alice`, irrespective
 of the labels on the connections or destination `b` nodes:
@@ -98,7 +99,7 @@ RETURN b;
 
 **Shortest path**
 Finally, we got to implementing an initial version of shortest path queries. 
-You can find (one of the) shortest paths between nodes by adding the `SHORTEST` keyword to a varible-length relationship.
+You can find (one of the) shortest paths between nodes by adding the `SHORTEST` keyword to a variable-length relationship.
 The following query asks for a shortest path between `Alice` and all active users that `Alice` follows within 10 
 hops and return these users, and the length of the shortest path.
 
@@ -115,7 +116,7 @@ Currently we only return the IDs of the relationships and nodes (soon, we will r
 
 ### `STRUCT`
 Kùzu now supports `STRUCT` data type similar to [composite type](https://www.postgresql.org/docs/current/rowtypes.html) in Postgres. 
-A `STRUCT` value is simplay a row where each entry is associated with an entry name. 
+A `STRUCT` value is simply a row where each entry is associated with an entry name. 
 From the storage point of view, a `STRUCT` column is a single column nested over some other columns.
 
 TODO: give an example here.
@@ -129,22 +130,22 @@ Example:
 CREATE NODE TABLE Person(ID SERIAL, name STRING, PRIMARY KEY(ID));
 ```
 When the primary key of your node tables are already consecutive integers starting from 0, you should make that primary key a SERIAL type. This
-will improve your loading time significantly. Simiarly, your queries that had equality checks on your primary key will get faster.
+will improve your loading time significantly. Similarly, your queries that had equality checks on your primary key will get faster.
 That's because internally we will not store a HashIndex and any HashIndex lookup we would do during query processing will be omitted.
 
 ## Client APIs
 
 ### Windows compatibility
-Developers can now build Kùzu from scrtach on Windows platform! Together with this release we also provide pre-built libraries and python wheels on Windows.
+Developers can now build Kùzu from scratch on Windows platform! Together with this release we also provide pre-built libraries and python wheels on Windows.
 
 ### C
 We provide official C language binding in this release. Developers can now embed Kùzu with native C interfaces.
 
 ### Node.js
-We provide official Node.js language binding. With Node.js API, developer can leverage Kùzu analytical capbility in their Node.js projects. We will
+We provide official Node.js language binding. With Node.js API, developer can leverage Kùzu analytical capability in their Node.js projects. We will
 soon follow this blog post with one (or a few) blog posts on developing some applications with Node.js.
 
-## Node Table Loading Improvements
-We've started to improve our data ingestion performance. In this release, we introduce improvements over node table loading, which can speed up the loading of ldbc-100 comment and post from 890.3s (last release) to 108.5s, and 304.3s (last release) to 32.3s, respectively, on a Macbook laptop with the configuration of xxx (TODO: Ziyi).
+## Data Ingestion Improvements
+We've started to improve our data ingestion performance. In this release, we introduce improvements over node table loading, which can speed up the loading of ldbc-100 comment and post from 890.3s (last release) to 108.5s, and 304.3s (last release) to 32.3s, respectively, on a MacBook-Air laptop with the configuration of xxx (TODO: Ziyi).
 
 Improvements on rel table loading will come soon after this release. Please stay tuned!
