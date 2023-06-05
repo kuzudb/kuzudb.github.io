@@ -154,6 +154,57 @@ u.name: [["Adam","Karissa","Zhang","Noura"]]
 u.age: [[30,40,50,25]]
 ```
 
+# Node.js API
+Kùzu Node.js API can be installed with npm: `npm install kuzu`. 
+
+Once the Node.js API is installed, you can import it in Node.js and use it to perform Cypher queries. Below is a short example
+of how to get started. Details of the [Node.js API is here](../client-apis/nodejs-api/overview.md).
+
+```
+// Import library
+const kuzu = require("kuzu");
+
+(async () => {
+  // Create an empty database and connect to it
+  const db = new kuzu.Database("./test");
+  const conn = new kuzu.Connection(db);
+
+  // Create the tables
+  await conn.query(
+    "CREATE NODE TABLE User(name STRING, age INT64, PRIMARY KEY (name))"
+  );
+  await conn.query(
+    "CREATE NODE TABLE City(name STRING, population INT64, PRIMARY KEY (name))"
+  );
+  await conn.query("CREATE REL TABLE Follows(FROM User TO User, since INT64)");
+  await conn.query("CREATE REL TABLE LivesIn(FROM User TO City)");
+
+  // Load the data
+  await conn.query('COPY User FROM "user.csv"');
+  await conn.query('COPY City FROM "city.csv"');
+  await conn.query('COPY Follows FROM "follows.csv"');
+  await conn.query('COPY LivesIn FROM "lives_in.csv"');
+
+  const queryResult = await conn.query("MATCH (u:User) RETURN u.name, u.age;");
+
+  // Get all rows from the query result
+  const rows = await queryResult.getAll();
+
+  // Print the rows
+  for (const row of rows) {
+    console.log(row);
+  }
+})();
+```
+
+Output:
+```
+{ 'u.name': 'Adam', 'u.age': 30 }
+{ 'u.name': 'Karissa', 'u.age': 40 }
+{ 'u.name': 'Zhang', 'u.age': 50 }
+{ 'u.name': 'Noura', 'u.age': 25 }
+```
+
 # C++ API
 Kùzu C++ API is distributed as a so/dylib library file and a header file (`kuzu.hpp`). The C++ API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/latest). After the C++ API is downloaded and extracted into a directory, it can be used without installation by just specifying the library search path for the linker.
 Below is a short example of how to get started. Details of the [C++ API is here](../client-apis/cpp-api/overview.md).
@@ -243,7 +294,7 @@ Zhang 2022 Noura
 Kùzu C API shares the same so/dylib library file with the C++ API and can be used by including the C header file (`kuzu.h`). The C API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/latest).
 Below is a short example of how to get started.
 - Setup:
-In this example, we assume that the so/dylib, the header file, the CSV files, and the cpp code file is under the same directory:
+In this example, we assume that the so/dylib, the header file, the CSV files, and the C code file is under the same directory:
 
 ```
 ├── include                                    
@@ -347,6 +398,8 @@ Zhang follows Noura since 2022
 ```
 
 # Operating System Compatibility
-Kùzu CLI, C and C++ API are pre-compiled for **macOS >= 10.15 for Intel-based Macs** and **macOS >= 11.0 for ARM-based Macs**. For Linux, Kùzu CLI and C++ API are pre-compiled for x86-64 architecture and supports most modern Linux distros such as **RHEL/CentOS/Rocky Linux/Oracle Linux 7.0 or later and Ubuntu 18.04 or later**. For a specific list of Linux distros that we tested on, please refer to [this spreadsheet](https://docs.google.com/spreadsheets/d/13A3MA3IsBJB_CJBSMqWFktIzyb6unJqH0-3njDycDpQ/).
+Kùzu CLI, C and C++ API are pre-compiled for **macOS >= 10.15 for Intel-based Macs** and **macOS >= 11.0 for ARM-based Macs**. For Linux, Kùzu CLI, C and C++ API are pre-compiled for x86-64 architecture and supports most modern Linux distros such as **RHEL/CentOS/Rocky Linux/Oracle Linux 7.0 or later and Ubuntu 18.04 or later**. For a specific list of Linux distros that we tested on, please refer to [this spreadsheet](https://docs.google.com/spreadsheets/d/13A3MA3IsBJB_CJBSMqWFktIzyb6unJqH0-3njDycDpQ/). For Windows, Kùzu CLI, C and C++ API works on Windows 10 and 11.
 
-Kùzu Python API wheels has been pre-compiled for **CPython 3.7 to 3.11**. For macOS, the OS compatibility is the same as the pre-compiled CLI and C++ API (i.e.  macOS >= 10.15 for Intel-based Macs and macOS >= 11.0 for ARM-based Macs). For Linux, the pre-compiled wheels follows `manylinux2014_x86_64` standard. Please refer to [this link](https://github.com/pypa/manylinux) to check the compatibility with your distro.
+Kùzu Python API wheels has been pre-compiled for **CPython 3.7 to 3.11**. For macOS, the OS compatibility is the same as the pre-compiled CLI, C and C++ API (i.e.  macOS >= 10.15 for Intel-based Macs and macOS >= 11.0 for ARM-based Macs). For Linux, the pre-compiled wheels follows `manylinux2014_x86_64` standard. Please refer to [this link](https://github.com/pypa/manylinux) to check the compatibility with your distro. For Windows, the OS compatibility is the same as the pre-compiled CLI and C++ API (i.e. Windows 10 and 11).
+
+Kùzu Node.js API is based on Node-API version 5. For a list of compatible Node.js versions, please refer to [the official documentation](https://nodejs.org/api/n-api.html#node-api-version-matrix). For macOS, the OS compatibility is the same as the pre-compiled CLI and C++ API (i.e.  macOS >= 10.15 for Intel-based Macs and macOS >= 11.0 for ARM-based Macs). For Linux, the pre-compiled has been tested on [these platforms](https://docs.google.com/spreadsheets/d/13A3MA3IsBJB_CJBSMqWFktIzyb6unJqH0-3njDycDpQ/#gid=1200966755). Note that you may have to install to a newer version of Node.js manually if your distribution comes with an older version of Node.js. The Node.js API is currently not compatible with Windows. 
