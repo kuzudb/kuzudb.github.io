@@ -16,8 +16,23 @@ You can import this database by copy pasting the commands on that page.
 # MATCH
 MATCH is the clause where you define a "graph pattern", i.e., a join of node or relationship records,
 to find in the database.[^1]. There are several different ways to match patterns and we go through them
-below. MATCH is often accompanied by [WHERE](where.md) (equivalent to SQL's WHERE clause) to define more predicates
-on the patterns that are matched.
+below. MATCH is often accompanied by [WHERE](where.md) (equivalent to SQL's WHERE clause) to define more predicates on the patterns that are matched.
+
+- [Match Nodes](#match-nodes)
+  - [Match Nodes With a Single Label](#match-nodes-with-a-single-label)
+  - [Match Nodes With Multiple Labels](#match-nodes-with-multiple-labels)
+  - [Match Nodes With Any Label](#match-nodes-with-any-label)
+- [Match Relationships](#match-relationships)
+  - [Match Directed Relationships With a Label](#match-directed-relationships-with-a-label)
+  - [Match Relationships With Multi Labels](#match-relationships-with-multi-labels)
+  - [Match Relationships With Any Label](#match-relationships-with-any-label)
+  - [Match Undirected Relationships](#match-undirected-relationships)
+  - [Omit Binding Variables to Nodes or Relationships](#omit-binding-variables-to-nodes-or-relationships)
+  - [Match Multiple Patterns](#match-multiple-patterns)
+  - [Equality Predicates on Node/Rel Properties](#equality-predicates-on-noderel-properties)
+  - [Match Variable Length Relationships](#match-variable-length-relationships)
+  - [Returning Variable Length Relationships](#returning-variable-length-relationships)
+  - [Single Shortest Path](#single-shortest-path)
 
 ## Important Notes: 
 - Similar to other high-level database query languages, nodes and relationships in the patterns 
