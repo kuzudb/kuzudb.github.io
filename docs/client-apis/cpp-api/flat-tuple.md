@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Flat tuple
-parent: Cpp
+parent: C++
 grand_parent: Client APIs
 nav_order: 45
 ---
