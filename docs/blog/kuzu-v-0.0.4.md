@@ -31,6 +31,31 @@ We are very happy to release Kùzu 0.0.4 today! This release comes with the foll
     - [Node.js](#nodejs)
   - [Node Table Loading Improvements](#node-table-loading-improvements)
 
+
+## Node Table Loading Improvements
+We continue to improve our loading performance in this release. We are still using
+Apache Arrow to ingest parquet and csv data (so we don't have to write or find separate parsers for them).
+There were several bottlenecks in our earlier implementation. Most importantly we used to have `toString` calls to Arrow when loading
+any field, including primitive data types, e.g., INT64. So these would be converted to a string and then back to primitive types. 
+These are optimized now. 
+In addition, we optimized the population of our HashIndex, which we use to index the nodes on their primary keys. 
+We also now store null bits separately, which simplifies our loading logic and also makes it faster because
+calculating where each read node's fields will be written is simpler when pages now store only data values or nulls.
+
+Here are some benchmark numbers for loading two node tables that only contain primitive types or strings from the LDBC benchmark:
+
+- CPU: MAC M1 MAX
+- System Memory: 32GB
+- Dataset: LDBC-100
+- Number of thread: 10
+
+| CSV | # lines | size | v0.0.3 | v0.0.4
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| comment.csv | 220M | 22.49 GB | 890s | 108s |
+| post.csv | 58M | 7.68 GB | 304s | 32s |
+
+Improvements on rel table loading will come soon. Please stay tuned!
+
 ## New Cypher Features
 
 ### Undirected Relationships in Queries
@@ -135,13 +160,11 @@ Output:
 -------------------------------------------
 ```
 
-When the primary key of your node tables are already consecutive integers starting from 0, you should omit the primary key column in the input file and make primary key a SERIAL type. This will improve loading time significantly. Simiarly, queries that need to scan primary key will also get faster. That's because internally we will not store a HashIndex or primary key column so any scan over primary key will not trigger a disk I/O.
+When the primary key of your node tables are already consecutive integers starting from 0, you should omit the primary key column in the input file and make primary key a SERIAL type. This will improve loading time significantly. Similarly, queries that need to scan primary key will also get faster. That's because internally we will not store a HashIndex or primary key column so any scan over primary key will not trigger a disk I/O.
 
 ### `STRUCT`
-Kùzu now supports `STRUCT` data type similar to [composite type](https://www.postgresql.org/docs/current/rowtypes.html) in Postgres. A `STRUCT` value is simplay a row where each entry is associated with an entry name. 
-From the storage point of view, a `STRUCT` column is a single column nested over some other columns.
+Kùzu now supports `STRUCT` data type similar to [composite type](https://www.postgresql.org/docs/current/rowtypes.html) in Postgres. Here is an example:
 
-Example:
 ```
 WITH {name:'University of Waterloo', province:'ON'} AS institution
 RETURN institution.name AS name;
@@ -154,6 +177,8 @@ Output:
 | University of Waterloo |
 --------------------------
 ```
+We support storing structs as node properties for now. For example you can create: `CREATE NODE TABLE Foo(name STRING, exStruct STRUCT(x INT16, y STRUCT(z INT64, w STRING)), PRIMARY KEY (name))`. We will support storing structs on relationships soon. As shown in the `CREATE NODE` example above, you can store arbitrarily
+nested structs, e.g., structs that contain structs as a field, on nodes. One missing feature we have for now is storing and processing a `LIST<STRUCT>` composite type. 
 
 **Note**: Updating `STRUCT` column with update statement is not supported in this release but will come soon.
 
@@ -168,18 +193,3 @@ We provide official C language binding in this release. Developers can now embed
 ### Node.js
 We provide official Node.js language binding. With Node.js API, developer can leverage Kùzu analytical capability in their Node.js projects. We will
 soon follow this blog post with one (or a few) blog posts on developing some applications with Node.js.
-
-## Node Table Loading Improvements
-We continue to improve our loading performance in this release, specifocally over node table loading. Benchmark details are as follow:
-
-- CPU: MAC M1 MAX
-- System Memory: 32GB
-- Dataset: LDBC-100
-- Number of thread: 10
-
-| CSV | # lines | size | v0.0.3 | v0.0.4
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| comment.csv | 220M | 22.49 GB | 890s | 108s |
-| post.csv | 58M | 7.68 GB | 304s | 32s |
-
-Improvements on rel table loading will come soon. Please stay tuned!
