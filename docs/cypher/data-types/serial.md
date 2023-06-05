@@ -11,9 +11,27 @@ nav_order: 8
 
 
 ### Using `SERIAL` as Primary Key Column
+`person.csv`
 ```
-CREATE NODE TABLE Person(ID SERIAL, name STRING, PRIMARY KEY(ID));
+Alice
+Bob
+Carol
 ```
 
-**Node**
-`SERIAL` column is expected to be used with `COPY` statement. Kùzu currently doesn't support insert/delete on `SERIAL` column.
+```
+CREATE NODE TABLE Person(ID SERIAL, name STRING, PRIMARY KEY(ID));
+COPY Person FROM `person.csv`;
+MATCH (a:Person) RETURN a;
+```
+Output:
+```
+-------------------------------------------
+| a                                       |
+-------------------------------------------
+| (label:Person, 3:0, {ID:0, name:Alice}) |
+-------------------------------------------
+| (label:Person, 3:1, {ID:1, name:Bob})   |
+-------------------------------------------
+| (label:Person, 3:2, {ID:2, name:Carol}) |
+-------------------------------------------
+```

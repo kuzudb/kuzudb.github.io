@@ -123,7 +123,17 @@ COPY Person FROM `person.csv`;
 MATCH (a:Person) RETURN a;
 ```
 Output:
-**TODO Ziyi: fix**
+```
+-------------------------------------------
+| a                                       |
+-------------------------------------------
+| (label:Person, 3:0, {ID:0, name:Alice}) |
+-------------------------------------------
+| (label:Person, 3:1, {ID:1, name:Bob})   |
+-------------------------------------------
+| (label:Person, 3:2, {ID:2, name:Carol}) |
+-------------------------------------------
+```
 
 When the primary key of your node tables are already consecutive integers starting from 0, you should omit the primary key column in the input file and make primary key a SERIAL type. This will improve loading time significantly. Simiarly, queries that need to scan primary key will also get faster. That's because internally we will not store a HashIndex or primary key column so any scan over primary key will not trigger a disk I/O.
 
@@ -164,13 +174,12 @@ We continue to improve our loading performance in this release, specifocally ove
 
 - CPU: MAC M1 MAX
 - System Memory: 32GB
-- Buffer Manager size: 1GB (Maybe we should remove this)
 - Dataset: LDBC-100
 - Number of thread: 10
 
 | CSV | # lines | size | v0.0.3 | v0.0.4
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| comment.csv | | 22.49 GB | 890s | 108s |
-| post.csv | | 7.68 GB | 304s | 32s |
+| comment.csv | 220M | 22.49 GB | 890s | 108s |
+| post.csv | 58M | 7.68 GB | 304s | 32s |
 
 Improvements on rel table loading will come soon. Please stay tuned!
