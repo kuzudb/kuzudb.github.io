@@ -47,12 +47,12 @@ Here are some benchmark numbers for loading two node and two rel tables that onl
 
 | Files | # lines | file size | v0.0.3 | v0.0.4
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| comment.csv | 220M | 22.49 GB | 890s | 108s |
-| post.csv | 58M | 7.68 GB | 304s | 32s |
-| likesComment.csv | 242M | 13 GB | 772s | 142s |
-| knows.csv | 20M | 1.1 GB | 80s | 21s |
+| comment.csv | 220M | 22.49 GB | 890s | **108s (8.2x)** |
+| post.csv | 58M | 7.68 GB | 304s | **32s (9.5x)** |
+| likesComment.csv | 242M | 13 GB | 772s | **142s (5.4x)** |
+| knows.csv | 20M | 1.1 GB | 80s | **21s (3.8x)** |
 
-Besides performance improvement, we now also enables interrupt for `COPY` statements in the shell.
+Besides performance improvement, we now also allow interrupting `COPY` statements in the shell.
 You can interrupt long running `COPY` statements without crashing the shell.
 
 We will continue to improve our data ingestion to make it more efficient and robust as we're moving to the [new storage design](https://github.com/kuzudb/kuzu/issues/1474) in the coming releases. Please stay tuned!
