@@ -112,8 +112,8 @@ conn.execute('COPY LivesIn FROM "lives_in.csv"')
 
 ```
 results = conn.execute('MATCH (u:User) RETURN u.name, u.age;')
-while results.hasNext():
-    print(results.getNext())
+while results.has_next():
+    print(results.get_next())
 ```
 
 Output:
