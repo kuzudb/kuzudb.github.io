@@ -40,6 +40,7 @@ We now also store null bits separately, which simplifies our loading logic and m
 Here are some benchmark numbers for loading two node and two rel tables that only contain primitive types or strings from the LDBC benchmark:
 
 - CPU: MAC M1 MAX
+- Disk: 2TB SSD
 - System Memory: 32GB
 - Dataset: LDBC-100
 - Number of thread: 10
