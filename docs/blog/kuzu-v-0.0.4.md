@@ -19,6 +19,7 @@ nav_order: 497
 # Kùzu 0.0.4 Release
 We are very happy to release Kùzu 0.0.4 today! This release comes with the following new main features and improvements: 
 - [Kùzu 0.0.4 Release](#kùzu-004-release)
+  - [Data Ingestion Improvements](#data-ingestion-improvements)
   - [New Cypher Features](#new-cypher-features)
     - [Undirected Relationships in Queries](#undirected-relationships-in-queries)
     - [Recursive Queries: Shortest Path Queries and Improved Variable-length Queries](#recursive-queries-shortest-path-queries-and-improved-variable-length-queries)
@@ -29,32 +30,31 @@ We are very happy to release Kùzu 0.0.4 today! This release comes with the foll
     - [Windows compatibility](#windows-compatibility)
     - [C](#c)
     - [Node.js](#nodejs)
-  - [Node Table Loading Improvements](#node-table-loading-improvements)
 
+## Data Ingestion Improvements
+We continue to improve our data ingestion in this release. 
+We still rely on Apache Arrow to parse parquet and csv files.
+Several bottlenecks in our earlier implementation are identified and optimized now, including copying from arrow arrays and construction of hash indexes.
+We now also store null bits separately, which simplifies our loading logic and makes it faster.
 
-## Node Table Loading Improvements
-We continue to improve our loading performance in this release. We are still using
-Apache Arrow to ingest parquet and csv data (so we don't have to write or find separate parsers for them).
-There were several bottlenecks in our earlier implementation. Most importantly we used to have `toString` calls to Arrow when loading
-any field, including primitive data types, e.g., INT64. So these would be converted to a string and then back to primitive types. 
-These are optimized now. 
-In addition, we optimized the population of our HashIndex, which we use to index the nodes on their primary keys. 
-We also now store null bits separately, which simplifies our loading logic and also makes it faster because
-calculating where each read node's fields will be written is simpler when pages now store only data values or nulls.
-
-Here are some benchmark numbers for loading two node tables that only contain primitive types or strings from the LDBC benchmark:
+Here are some benchmark numbers for loading two node and two rel tables that only contain primitive types or strings from the LDBC benchmark:
 
 - CPU: MAC M1 MAX
 - System Memory: 32GB
 - Dataset: LDBC-100
 - Number of thread: 10
 
-| CSV | # lines | size | v0.0.3 | v0.0.4
+| Files | # lines | file size | v0.0.3 | v0.0.4
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | comment.csv | 220M | 22.49 GB | 890s | 108s |
 | post.csv | 58M | 7.68 GB | 304s | 32s |
+| likesComment.csv | 
+| knows.csv | 
 
-Improvements on rel table loading will come soon. Please stay tuned!
+Besides performance improvement, we now also enables interrupt for `COPY` statements in the shell.
+You can interrupt long running `COPY` statements without crashing the shell.
+
+We will continue to improve our data ingestion to make it more efficient and robust as we're moving to the [new storage design](https://github.com/kuzudb/kuzu/issues/1474) in the coming releases. Please stay tuned!
 
 ## New Cypher Features
 
