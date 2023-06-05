@@ -2,6 +2,7 @@
 layout: default
 title: CLI
 parent: Client APIs
+nav_order: 1
 ---
 
 # Kùzu CLI

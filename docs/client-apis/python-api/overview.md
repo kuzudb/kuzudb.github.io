@@ -3,6 +3,7 @@ layout: default
 title: Python
 parent: Client APIs
 has_children: true
+nav_order: 2
 ---
 
 # Python API

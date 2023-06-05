@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Cpp
+title: C++
 parent: Client APIs
 has_children: true
+nav_order: 4
 ---
 
 # C++ API
