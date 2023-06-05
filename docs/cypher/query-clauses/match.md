@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Match
-parent: Query clauses
+parent: Query
 grand_parent: Cypher
 nav_order: 1
 ---
@@ -26,9 +26,11 @@ openCypher allows you to omit these variables, if you do not need to reference t
 - Node/Rel table names in Kùzu are case sensitive. So you need to specify the labels of nodes/rels
 using the same letter cases you used in your node/rel table schema definitions. 
 
-## Match Nodes With a Label
+## Match Nodes
+
+### Match Nodes With a Single Label
 The query below matches variable "a" to nodes with label User and returns "a", which 
-is a shortcut in openCypher to return all properties of the node together with label and internal ID that the variable "a" matches.
+is a shortcut in openCypher to return all properties of the node together with label and internal ID that variable "a" matches.
 ```
 MATCH (a:User)
 RETURN a;
@@ -49,7 +51,7 @@ Output:
 ```
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=xjiF39SzeCb7).
 
-## Match Nodes With Multiple Labels
+### Match Nodes With Multiple Labels
 The query below matches variable "a" to nodes with label User or label City. "Return a" will return all properties of the node together with label and internal ID. Properties not exist in a label will be returned as NULL value (e.g. "population" not exists in "User"). Properties exists in multiple labels are expected to have the same data type (e.g. "name" has STRING data type in "User" and "City" ).
 ```
 MATCH (a:User:City)
@@ -77,7 +79,7 @@ Output:
 ```
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=3yO3HHwNeBy3).
 
-## Match Nodes With Any Label
+### Match Nodes With Any Label
 Below query matches variable "a" to nodes with any label. In example database, it is equivalent to `MATCH (a:User:City) RETURN a;`.
 ```
 MATCH (a)
@@ -105,8 +107,10 @@ Output:
 ```
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=4NBsUUP_evvh).
 
-## Match Relationships With a Label
-Similar to binding variables to node records, you can bind variables to relationship records and return them. The following finds all "a" Users that follow a "b" User, and returns name of "a", the properties of "e", and name of "b", where "e" will match the relationship from "a" to "b".
+## Match Relationships
+
+### Match Directed Relationships With a Label
+Similar to binding variables to node records, you can bind variables to relationship records and return them. You can specificy the direction of relationship by `<-` or `->`. The following query finds all "a" Users that follow a "b" User through an outgoing relationship from "a", and returns name of "a", relationship "e", and name of "b", where "e" will match the relationship from "a" to "b".
 ```
 MATCH (a:User)-[e:Follows]->(b:User)
 RETURN a.name, e, b.name;
@@ -126,7 +130,7 @@ Output:
 ---------------------------------------------------------------------------
 ```
 
-Relationships can be specified in the right-to-left direction as well. For example, the following query will now match all the relationships from "b" to "a" (so we expect "a" and "b" and properties to be swapped in the above output:
+The following query matches all the relationships through an incoming relationship from "a" (so "a" and "b" are swapped in output):
 ```
 MATCH (a:User)<-[e:Follows]-(b:User)
 RETURN a.name, e, b.name;
@@ -147,7 +151,7 @@ Output:
 ```
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=Djpu4aDafG5U).
 
-## Match Relationships With Multi Labels
+### Match Relationships With Multi Labels
 Similar to matching nodes with multiple labels, you can bind variables to relationships with multiple labels. Below query finds all "a" User that Follows "b" User or LivesIn "b" City.
 ```
 MATCH (a:User)-[e:Follows|:LivesIn]->(b:User:City)
@@ -177,7 +181,7 @@ Output:
 ```
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=ylYHrLeQfLao).
 
-## Match Relationships With Any Label
+### Match Relationships With Any Label
 Similar to matching nodes with any label, you can bind variables to relationships with any label by not specifying a label. Below query finds all relationships in the database.
 ```
 MATCH ()-[e]->()
@@ -207,7 +211,24 @@ Output:
 ```
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=lEZAboFLfLku).
 
-## Omitting Binding Variables to Nodes or Relationships
+### Match Undirected Relationships
+User can match a relationship in both directions by not specifiying a relationship direction (i.e. `-`). The following query finds all "b" users who either follows or being followed by "Karissa". 
+
+```
+MATCH (a:User)-[e:Follows]-(b:User) Where a.name = 'Karissa' RETURN b.name;
+```
+Output:
+```
+----------
+| b.name |
+----------
+| Adam   |
+----------
+| Zhang  |
+----------
+```
+
+### Omit Binding Variables to Nodes or Relationships
 You can also omit binding a variable to a node or relationship in your graph patterns if 
 you will not use them in somewhere else in your query (e.g., WHERE or RETURN). For example, below, we query for 2-hop paths searching for "the cities that Users that "a" Users follows".
 Because we do not need to return the Users that "a" Users follows or the properties
@@ -228,7 +249,7 @@ RETURN a, c.name, c.population;
 ---------------------------------------------------------------------
 ```
 
-## Specifying Multiple Patterns, Separated By Comma (e.g., when Matching Cyclic Patterns)
+### Match Multiple Patterns
 Although paths can be matched in a single pattern, some patterns, in particular
 cyclic patterns, require specifying multiple patterns/paths that form the pattern.
 These multiple paths are separated by a comma. The following is a (directed) triangle
@@ -249,11 +270,11 @@ Output:
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=NQIITQTloYO_).
 
 Note that in the query node variables a and c appear twice, once on each of the 2 paths
-in the query. In such cases, their labels need to specified *only the first time they appear
+in the query. In such cases, their labels need to be specified *only the first time they appear
 in the pattern*. In the above query a and c's labels are defined on the first/left path, 
 so you don't have to specify them on the right path (though you still can).
 
-## Adding Equality Predicates on Node/Rel Properties
+### Equality Predicates on Node/Rel Properties
 The [WHERE clause](where.md) is the main clause to specify arbitary predicates on the nodes and relationships in your patters (e.g., a.age < b.age in where "a" and "b" bind to User nodes). 
 As a syntactic sugar openCypher allows *equality predicates* to be matched on
 nodes and edges using the `{prop1 : value1, prop2 : value2, ...}` syntax. For example: 
@@ -278,46 +299,105 @@ and both queries output:
 ```
 View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=1frFFis4onqw).
 
-## Matching Variable-length Relationships
-You can also find paths/joins that are variable-length between node records. Specifically,
-you can find variable-hop connections between nodes by specifying in the relationship patterns,
-e.g., `(a:User)-[:Follows*min..max]->(b:User)`, where min and max specify the minimum and 
-the maximum number of hops[^2]. Note you need to use 2 dots between min and max.
-For example, the following query finds all 1- and 2-hop
-Follows paths in a database and returns the source and destination nodes of these paths.
+## Match Variable Length Relationships
+You can also find paths that are variable-length between node records. Specifically, you can find variable-hop connections between nodes by specifying in the relationship patterns,
+e.g., `-[:Label*min..max]->`, where min and max specify the minimum and the maximum number of hops[^2].
+The following query finds all Users that "Adam" follows within 1 to 2 hops and returns their names as well as length of the path.
 ```
-MATCH (a:User)-[:Follows*1..2]->(b:User)
-RETURN a, b;
+MATCH (a:User)-[e:Follows*1..2]->(b:User) 
+WHERE a.name = 'Adam'
+RETURN b.name, length(e) AS length;
 ```
 Output:
 ```
------------------------------------------------------------------------------------------
-| a                                         | b                                         |
------------------------------------------------------------------------------------------
-| (label:User, 0:0, {name:Adam, age:30})    | (label:User, 0:1, {name:Karissa, age:40}) |
------------------------------------------------------------------------------------------
-| (label:User, 0:0, {name:Adam, age:30})    | (label:User, 0:2, {name:Zhang, age:50})   |
------------------------------------------------------------------------------------------
-| (label:User, 0:0, {name:Adam, age:30})    | (label:User, 0:2, {name:Zhang, age:50})   |
------------------------------------------------------------------------------------------
-| (label:User, 0:0, {name:Adam, age:30})    | (label:User, 0:3, {name:Noura, age:25})   |
------------------------------------------------------------------------------------------
-| (label:User, 0:1, {name:Karissa, age:40}) | (label:User, 0:2, {name:Zhang, age:50})   |
------------------------------------------------------------------------------------------
-| (label:User, 0:1, {name:Karissa, age:40}) | (label:User, 0:3, {name:Noura, age:25})   |
------------------------------------------------------------------------------------------
-| (label:User, 0:2, {name:Zhang, age:50})   | (label:User, 0:3, {name:Noura, age:25})   |
------------------------------------------------------------------------------------------
+--------------------
+| b.name  | length |
+--------------------
+| Karissa | 1      |
+--------------------
+| Zhang   | 2      |
+--------------------
+| Zhang   | 1      |
+--------------------
+| Noura   | 2      |
+--------------------
 ```
-View example in [Colab](https://colab.research.google.com/drive/1NcR-xL4Rb7nprgbvk6N2dIP30oqyUucm#scrollTo=ZDGcvjYtrG8K&line=2&uniqifier=1).
+- Karissa is found through `Adam -> Karissa`
+- Zhang is found through `Adam -> Zhang` and `Adam -> Karissa -> Zhang`
+- Noura is found through `Adam -> Zhang -> Noura`
 
-Similar to relationships, you can give right-to-left direction to your variable-length paths. 
-3 ruther notes on variable-length paths:
-- You currently cannot bind variables to variable length paths.
-- You currently cannot issue multi-labeled or any-labeled variable length path query.
-- The maximum length of variable-length paths you can search is 30. 
+Similar to matching relationships, you can match undirected relationships or relationship with multiple labels.
+The following query finds all Nodes excluding "Noura" that connects to "Noura" in both directions through any relationship with 2 hops.
+```
+MATCH (a:User)-[e*2..2]-(b) 
+WHERE a.name = 'Noura' AND b.name <> 'Noura'
+RETURN b.name, length(e) AS length;
+```
+Output:
+```
+----------------------
+| b.name    | length |
+----------------------
+| Adam      | 2      |
+----------------------
+| Karissa   | 2      |
+----------------------
+| Kitchener | 2      |
+----------------------
+```
+- Adam is found through `Noura <- User -> Adam`
+- Karissa is found through `Noura <- User -> Karissa`
+- Kitchener is found through `Noura <- User -> Kitchener`
 
+### Returning Variable Length Relationships
+Current implmentation binds variable length relationships as a `LIST` of `INTERNAL_ID` where entries 0,2,4,... represent node IDs and entries 1,3,5,... represent relationship IDs.
+```
+MATCH (a:User)-[e:Follows*1..2]->(b:User) 
+WHERE a.name = 'Adam'
+RETURN b.name, e;
+```
+Output:
+```
+-----------------------------------
+| b.name  | e                     |
+-----------------------------------
+| Karissa | [0:0,2:0,0:1]         |
+-----------------------------------
+| Zhang   | [0:0,2:0,0:1,2:2,0:2] |
+-----------------------------------
+| Zhang   | [0:0,2:1,0:2]         |
+-----------------------------------
+| Noura   | [0:0,2:1,0:2,2:3,0:3] |
+-----------------------------------
+```
+
+**Fruther notes on variable length relationships**
+- Returning properties of variable length relationships is not yet supported.
+- The maximum length of variable length relationships is capped at 30. 
+
+### Single Shortest Path
+On top of variable length relationships, user can search for single shortest path by specifying `SHORTEST` key word in relationship, e.g. `-[:Label* SHORTEST min..max]`.
+The following query finds all
+```
+MATCH (a:User)-[e* SHORTEST 1..4]->(b:City) 
+WHERE a.name = 'Adam'
+RETURN b.name, length(e) AS length;
+```
+Output:
+```
+----------------------
+| b.name    | length |
+----------------------
+| Waterloo  | 1      |
+----------------------
+| Kitchener | 2      |
+----------------------
+| Guelph    | 3      |
+----------------------
+```
+
+**Further notes on shortest path**
+- All shortest path or weighted shortest path is not yet supported.
 
 [^1]: MATCH is similar to the FROM clause of SQL, where the list of tables that need to be joined are specified. 
-[^2]: openCypher also supports variable-length patterns where either or both of min and max bounds can be
-missing. Kùzu does not yet support this and users need to explicitly indicate both bounds.
+[^2]: openCypher also supports variable-length patterns where either or both of min and max bounds can be missing. Kùzu does not yet support this and users need to explicitly indicate both bounds.

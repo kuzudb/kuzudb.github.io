@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Pattern matching
-parent: Expressions
+title: Pattern Matching Functions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 
@@ -42,3 +42,13 @@ Example
 RETURN 'abc' =~ '(?i)A.*';
 True
 ```
+
+# Regex functions
+
+| Function | Description | Example | Result |
+| ----------- | ----------- |  ----------- |  ----------- |
+| regexp_matches(string, regex) | returns true if a part of string matches the regex. | regexp_matches('aba', '^ab') | true |
+| regexp_replace(string, regex, replacement) | Replaces the first occurrence of regex with the replacement. | regexp_replace('ababbb', 'b.b', 'a') | 'aabb' |
+| regexp_extract(string, regex[, group = 0]) | split the string along the regex and extract first occurrence of group. | regexp_extract('abababab', 'b.b', 0) | 'bab' |
+| regexp_extract_all(string, regex[, group = 0]) | split the string along the regex and extract all occurrences of group. | regexp_extract_all('abababab', 'b.b', 0) | ['bab','bab'] |
+

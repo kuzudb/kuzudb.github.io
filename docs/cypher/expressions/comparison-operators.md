@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Comparison
-parent: Expressions
+title: Comparison Operators
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 
@@ -16,11 +16,3 @@ The following table describes the standard comparison operators supported by Kù
 | >= | greater than or equal to | 4 >= 2 | True (BOOLEAN) |
 | = | equal | NULL = NULL | NULL |
 | <> | not equal | 5 <> NULL | NULL |
-
-# IS(NOT) NULL
-The following table describes all predicates supported by Kùzu. These predicates are often used inside the WHERE statement.
-
-| Predicate | Description |
-| ----------- | ----------- |
-| expression is NULL | True if the expression is NULL |
-| expression is NOT NULL | True if the expression is NOT NULL |

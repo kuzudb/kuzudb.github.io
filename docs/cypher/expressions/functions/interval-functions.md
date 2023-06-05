@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Interval function
-parent: Expressions
+title: Interval Functions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 
-# Interval operators
+# Interval Operators
 
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
@@ -16,7 +16,7 @@ grand_parent: Cypher
 | - | subtraction of DATE | DATE('2025-03-06') - INTERVAL('1 DAYS') | 2025-03-05 (DATE) |
 | - | subtraction of TIMESTAMP | TIMESTAMP('1984-01-01') - INTERVAL('30 HOURS 20 SECONDS') | 1983-12-30 17:59:40 (TIMESTAMP) |
 
-# Interval functions
+# Interval Functions
 
 | Function | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |

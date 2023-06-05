@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Logical
-parent: Expressions
+title: Logical Operators
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 
-# Conjunctions
-Kùzu supports using `AND`/`OR`/`XOR`/`NOT` conjunctions to combine boolean values.
+# Logical Operators
+Kùzu supports using `AND`/`OR`/`XOR`/`NOT` logical operators to combine boolean values.
 
 ## Truth table for `AND`:
 

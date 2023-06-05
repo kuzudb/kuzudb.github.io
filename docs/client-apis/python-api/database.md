@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Database
-parent: Python api
-grand_parent: Client api
+parent: Python
+grand_parent: Client APIs
 nav_order: 41
 ---
 
@@ -17,7 +17,6 @@ class Database()
 
 ### Available APIs:
 * [\_\_init\_\_](#database.Database.__init__)
-* [resize\_buffer\_manager](#database.Database.resize_buffer_manager) Resize the mamimum size of buffer pool.
 * [set\_logging\_level](#database.Database.set_logging_level) Set the logging level.
 * [get\_torch\_geometric\_remote\_backend](#database.Database.get_torch_geometric_remote_backend) Use the database as the remote backend for torch_geometric. 
 
@@ -35,21 +34,6 @@ def __init__(database_path, buffer_pool_size)
 - `database_path : _kuzu.Database` The path to database files
 
 - `buffer_pool_size : int` The maximum size of buffer pool in bytes (Optional). Default to 80% of system memory.
-
--------
-
-<a id="database.Database.resize_buffer_manager"></a>
-
-**resize\_buffer\_manager**
-
-```python
-def resize_buffer_manager(new_size)
-```
-
-Resize the mamimum size of buffer pool.
-
-**Parameters**
-- `new_size : int` New maximum size of buffer pool (in bytes).
 
 -------
 

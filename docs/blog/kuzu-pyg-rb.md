@@ -3,7 +3,7 @@ layout: default
 title: Scaling your PyG GNNs with Kùzu
 permalink: /blog/kuzu-pyg-remote-backend.html
 parent: Blog
-nav_order: 1
+nav_order: 994
 ---
 
 <p align="center">
@@ -76,7 +76,7 @@ conn.execute('COPY cites FROM "%s";' % ('./edge_index.csv'))
 print("All done!")
 ```
 
-The one important note here is that you should store your node features using [Kùzu's FIXED-LIST data type](https://kuzudb.com/docs/cypher/data-types.html#list-data-type) using `FLOAT[128]` syntax (instead of the less efficient VAR-LIST data type, which uses `FLOAT[]` syntax for lists that can have different lengths). FIXED-LIST is a data type that we specifically added to Kùzu to efficiently store node features and embeddings in graph ML applications.
+The one important note here is that you should store your node features using [Kùzu's FIXED-LIST data type](https://kuzudb.com/docs/cypher/data-types/list.html) using `FLOAT[128]` syntax (instead of the less efficient VAR-LIST data type, which uses `FLOAT[]` syntax for lists that can have different lengths). FIXED-LIST is a data type that we specifically added to Kùzu to efficiently store node features and embeddings in graph ML applications.
 
 ## Step 2: Get Kùzu Remote Backend by Calling `db.get_torch_geometric_remote_backend()`
 

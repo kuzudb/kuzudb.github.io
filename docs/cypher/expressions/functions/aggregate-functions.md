@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Aggregate Functions
-parent: Expressions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 

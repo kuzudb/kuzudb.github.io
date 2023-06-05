@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Delete
-parent: Data manipulation clauses
+parent: Data Manipulation
 grand_parent: Cypher
 ---
 

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Timestamp function
-parent: Expressions
+title: Timestamp Functions
+parent: Functions and Expressions 
 grand_parent: Cypher
 ---
 
-# Timestamp operators
+# Timestamp Operators
 
 | Operator | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |
@@ -13,7 +13,7 @@ grand_parent: Cypher
 | - | subtraction of TIMESTAMP | TIMESTAMP('2022-11-22 15:12:22') - TIMESTAMP('2011-10-09 13:00:21') | 4062 days 02:12:01 (INTERVAL)|
 | - | subtraction of INTERVAL | TIMESTAMP('2011-10-21 14:25:13') - INTERVAL('35 days 2 years 3 hours') | 2009-09-16 11:25:13 (TIMESTAMP) |
 
-# Timestamp functions
+# Timestamp Functions
 
 | Function | Description | Example | Result |
 | ----------- | ----------- |  ----------- |  ----------- |

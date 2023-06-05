@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Parquet import
-parent: Data import
+title: Parquet
+parent: Data Import
 ---
 
 # Data Import from Parquet Files

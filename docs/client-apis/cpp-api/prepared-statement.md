@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Prepared statement
-parent: Cpp api
-grand_parent: Client api
+parent: C++
+grand_parent: Client APIs
 nav_order: 44
 ---
 

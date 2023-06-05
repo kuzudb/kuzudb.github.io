@@ -1,7 +1,7 @@
 ---
 layout: default
-title: CSV import
-parent: Data import
+title: CSV
+parent: Data Import
 ---
 
 # Data Import from CSV Files
@@ -20,7 +20,7 @@ the `COPY FROM` command. The following table specifies the parameters and their 
 | DELIM | Character that separates different columns in a lines. | `,`|
 | QUOTE | Character to start a string quote. | `"` |
 | ESCAPE | Character within string quotes to escape QUOTE and other characters, e.g., a line break. <br/> See the important note below about line breaks lines below.| `\` |
-| LIST_BEGIN/LIST_END | For the [list data type](../cypher/data-types.md), the delimiters to specify <br/> list begin and list end characters | `[`, `]`|
+| LIST_BEGIN/LIST_END | For the [list data type](../cypher/data-types/list.md), the delimiters to specify <br/> list begin and list end characters | `[`, `]`|
 
 Here are examples of specifying that there is a header file and changing the delimiter from `,` to `|`:
 ```
