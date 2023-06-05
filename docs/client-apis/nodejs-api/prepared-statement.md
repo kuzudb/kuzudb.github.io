@@ -1,10 +1,18 @@
+---
+layout: default
+title: Prepared Statement
+parent: NodeJS
+grand_parent: Client APIs
+nav_order: 4
+---
+
 ## PreparedStatement
 **Kind**: global class  
 
-* [PreparedStatement](#PreparedStatement)
-    * [new PreparedStatement(connection, preparedStatement)](#new_PreparedStatement_new)
-    * [.isSuccess()](#PreparedStatement+isSuccess) ⇒ <code>Boolean</code>
-    * [.getErrorMessage()](#PreparedStatement+getErrorMessage) ⇒ <code>String</code>
+- [PreparedStatement](#preparedstatement)
+  - [new PreparedStatement(connection, preparedStatement)](#new-preparedstatementconnection-preparedstatement)
+  - [preparedStatement.isSuccess() ⇒ Boolean](#preparedstatementissuccess--boolean)
+  - [preparedStatement.getErrorMessage() ⇒ String](#preparedstatementgeterrormessage--string)
 
 <a name="new_PreparedStatement_new"></a>
 

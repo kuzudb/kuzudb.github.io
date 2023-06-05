@@ -1,10 +1,18 @@
+---
+layout: default
+title: Database
+parent: NodeJS
+grand_parent: Client APIs
+nav_order: 1
+---
+
 ## Database
 **Kind**: global class  
 
-* [Database](#Database)
-    * [new Database(databasePath, bufferManagerSize)](#new_Database_new)
-    * [.init()](#Database+init)
-    * [.setLoggingLevel(loggingLevel)](#Database+setLoggingLevel)
+- [Database](#database)
+  - [new Database(databasePath, bufferManagerSize)](#new-databasedatabasepath-buffermanagersize)
+  - [database.init()](#databaseinit)
+  - [database.setLoggingLevel(loggingLevel)](#databasesetlogginglevellogginglevel)
 
 <a name="new_Database_new"></a>
 

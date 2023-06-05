@@ -1,17 +1,25 @@
+---
+layout: default
+title: Query Result
+parent: NodeJS
+grand_parent: Client APIs
+nav_order: 3
+---
+
 ## QueryResult
 **Kind**: global class  
 
-* [QueryResult](#QueryResult)
-    * [new QueryResult(connection, queryResult)](#new_QueryResult_new)
-    * [.resetIterator()](#QueryResult+resetIterator)
-    * [.hasNext()](#QueryResult+hasNext) ⇒ <code>Boolean</code>
-    * [.getNumTuples()](#QueryResult+getNumTuples) ⇒ <code>Number</code>
-    * [.getNext()](#QueryResult+getNext) ⇒ <code>Promise.&lt;Object&gt;</code>
-    * [.each(resultCallback, doneCallback, errorCallback)](#QueryResult+each)
-    * [.getAll()](#QueryResult+getAll) ⇒ <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code>
-    * [.all(resultCallback, errorCallback)](#QueryResult+all)
-    * [.getColumnDataTypes()](#QueryResult+getColumnDataTypes) ⇒ <code>Promise.&lt;Array.&lt;String&gt;&gt;</code>
-    * [.getColumnNames()](#QueryResult+getColumnNames) ⇒ <code>Promise.&lt;Array.&lt;String&gt;&gt;</code>
+- [QueryResult](#queryresult)
+  - [new QueryResult(connection, queryResult)](#new-queryresultconnection-queryresult)
+  - [queryResult.resetIterator()](#queryresultresetiterator)
+  - [queryResult.hasNext() ⇒ Boolean](#queryresulthasnext--boolean)
+  - [queryResult.getNumTuples() ⇒ Number](#queryresultgetnumtuples--number)
+  - [queryResult.getNext() ⇒ Promise.\<Object\>](#queryresultgetnext--promiseobject)
+  - [queryResult.each(resultCallback, doneCallback, errorCallback)](#queryresulteachresultcallback-donecallback-errorcallback)
+  - [queryResult.getAll() ⇒ Promise.\<Array.\<Object\>\>](#queryresultgetall--promisearrayobject)
+  - [queryResult.all(resultCallback, errorCallback)](#queryresultallresultcallback-errorcallback)
+  - [queryResult.getColumnDataTypes() ⇒ Promise.\<Array.\<String\>\>](#queryresultgetcolumndatatypes--promisearraystring)
+  - [queryResult.getColumnNames() ⇒ Promise.\<Array.\<String\>\>](#queryresultgetcolumnnames--promisearraystring)
 
 <a name="new_QueryResult_new"></a>
 

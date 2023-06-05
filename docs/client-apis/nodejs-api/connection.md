@@ -1,17 +1,25 @@
+---
+layout: default
+title: Connection
+parent: NodeJS
+grand_parent: Client APIs
+nav_order: 2
+---
+
 ## Connection
 **Kind**: global class  
 
-* [Connection](#Connection)
-    * [new Connection(database)](#new_Connection_new)
-    * [.init()](#Connection+init)
-    * [.execute(preparedStatement, params)](#Connection+execute) ⇒ <code>Promise.&lt;kuzu.QueryResult&gt;</code>
-    * [.prepare(statement)](#Connection+prepare) ⇒ <code>Promise.&lt;kuzu.PreparedStatement&gt;</code>
-    * [.query(statement)](#Connection+query) ⇒ <code>Promise.&lt;kuzu.QueryResult&gt;</code>
-    * [.setMaxNumThreadForExec(numThreads)](#Connection+setMaxNumThreadForExec)
-    * [.getNodeTableNames()](#Connection+getNodeTableNames) ⇒ <code>Promise.&lt;Array.&lt;String&gt;&gt;</code>
-    * [.getRelTableNames()](#Connection+getRelTableNames) ⇒ <code>Promise.&lt;Array.&lt;String&gt;&gt;</code>
-    * [.getNodePropertyNames(tableName)](#Connection+getNodePropertyNames) ⇒ <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code>
-    * [.getRelPropertyNames(tableName)](#Connection+getRelPropertyNames) ⇒ <code>Promise.&lt;Object&gt;</code>
+- [Connection](#connection)
+  - [new Connection(database)](#new-connectiondatabase)
+  - [connection.init()](#connectioninit)
+  - [connection.execute(preparedStatement, params) ⇒ Promise.\<kuzu.QueryResult\>](#connectionexecutepreparedstatement-params--promisekuzuqueryresult)
+  - [connection.prepare(statement) ⇒ Promise.\<kuzu.PreparedStatement\>](#connectionpreparestatement--promisekuzupreparedstatement)
+  - [connection.query(statement) ⇒ Promise.\<kuzu.QueryResult\>](#connectionquerystatement--promisekuzuqueryresult)
+  - [connection.setMaxNumThreadForExec(numThreads)](#connectionsetmaxnumthreadforexecnumthreads)
+  - [connection.getNodeTableNames() ⇒ Promise.\<Array.\<String\>\>](#connectiongetnodetablenames--promisearraystring)
+  - [connection.getRelTableNames() ⇒ Promise.\<Array.\<String\>\>](#connectiongetreltablenames--promisearraystring)
+  - [connection.getNodePropertyNames(tableName) ⇒ Promise.\<Array.\<Object\>\>](#connectiongetnodepropertynamestablename--promisearrayobject)
+  - [connection.getRelPropertyNames(tableName) ⇒ Promise.\<Object\>](#connectiongetrelpropertynamestablename--promiseobject)
 
 <a name="new_Connection_new"></a>
 
