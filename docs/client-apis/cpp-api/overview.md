@@ -7,9 +7,8 @@ nav_order: 4
 ---
 
 # C++ API
-You can use Kùzu's C++ API to interact with the database in C++. Please
-see the [getting started instructions](../../getting-started/introduction-examples.md#c-api) for
-details on how to install the C++ API and set up your environment. This part
+This module contains C++ API documentaion. Please
+see the [getting started instructions](../../getting-started/introduction-examples.md#c-api) for details on installation and environment setup. This part
 of the documentation gives details about the different classes in the C++
 API and their functions. Here is a short example on a small program that
 demonstrates how to construct at `Database` instance and issue a query.
