@@ -206,16 +206,16 @@ Output:
 ```
 
 # C++ API
-Kùzu C++ API is distributed as a so/dylib library file and a header file (`kuzu.hpp`). The C++ API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/latest). After the C++ API is downloaded and extracted into a directory, it can be used without installation by just specifying the library search path for the linker.
+Kùzu C++ API is distributed as so/dylib/dll+lib library files and a header file (`kuzu.hpp`). The C++ API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/latest). After the C++ API is downloaded and extracted into a directory, it can be used without installation by just specifying the library search path for the linker.
 Below is a short example of how to get started. Details of the [C++ API is here](../client-apis/cpp-api/overview.md).
 - Setup:
-In this example, we assume that the so/dylib, the header file, the CSV files, and the cpp code file is under the same directory:
+In this example, we assume that the so/dylib/dll+lib, the header file, the CSV files, and the cpp code file is under the same directory:
 
 ```
 ├── include                                    
 │   ├── kuzu.hpp
 │   └── ......
-├── libkuzu.so / libkuzu.dylib
+├── libkuzu.so / libkuzu.dylib / kuzu_shared.dll + kuzu_shared.lib
 ├── test.cpp                                            
 ├── user.csv
 ├── city.csv
@@ -270,7 +270,6 @@ int main() {
 
 - Compile and run `test.cpp`:
 Since we did not install the `libkuzu` as a system library, we need to override the linker search path to correctly compile the C++ code and run the compiled program.
-
 On Linux:
 ```
 env LIBRARY_PATH=. LD_LIBRARY_PATH=. g++ test.cpp -std=c++2a -lkuzu -lpthread -D_GLIBCXX_USE_CXX11_ABI=0
@@ -280,6 +279,11 @@ On macOS:
 ```
 env DYLD_LIBRARY_PATH=. LIBRARY_PATH=. clang++ test.cpp -std=c++20 -lkuzu
 env DYLD_LIBRARY_PATH=. LIBRARY_PATH=. ./a.out
+```
+On Windows the library file is passed to the compiler directly and the current directory is used automatically when searching for `kuzu_shared.dll` at runtime:
+```
+cl /std:c++20 /EHsc test.cpp kuzu_shared.lib
+./test.exe
 ```
 Expected output:
 ```
@@ -291,7 +295,7 @@ Zhang 2022 Noura
 
 
 # C API
-Kùzu C API shares the same so/dylib library file with the C++ API and can be used by including the C header file (`kuzu.h`). The C API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/latest).
+Kùzu C API shares the same so/dylib/dll+lib library files with the C++ API and can be used by including the C header file (`kuzu.h`). The C API can be downloaded [here](https://github.com/kuzudb/kuzu/releases/latest).
 Below is a short example of how to get started.
 - Setup:
 In this example, we assume that the so/dylib, the header file, the CSV files, and the C code file is under the same directory:
@@ -388,6 +392,11 @@ On macOS:
 ```
 env DYLD_LIBRARY_PATH=. LIBRARY_PATH=. clang test.c -lkuzu
 env DYLD_LIBRARY_PATH=. LIBRARY_PATH=. ./a.out
+```
+On Windows the library file is passed to the compiler directly and the current directory is used automatically when searching for `kuzu_shared.dll` at runtime:
+```
+cl test.c kuzu_shared.lib
+./test.exe
 ```
 Expected output:
 ```
