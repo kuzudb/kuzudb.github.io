@@ -17,12 +17,13 @@ parent: Development
 Testing is a crucial part of Kùzu to ensure the correct functioning of the
 system. The general principle for our testing is to avoid testing components individually, 
 instead we should route all tests, when possible, in the end-to-end way through Cypher statements.
-In this way, we developed our own testing framework to perform end-to-end tests using Cypher statements. 
+In this way, we have designed a bespoke testing framework, which facilitates comprehensive end-to-end tests via Cypher statements.
 
-To use the testing framework, the developer must create a `.test` file located
-inside `test/test_files` directory. The test file has two parts, the header and
-the test body. In the header section, the developer specifies the dataset to be
-used, the test group name and other optional parameters such as `BUFFER_POOL_SIZE`.
+In order to use the e2e testing framework, developers are required to generate
+a .test file, which should be placed in the `test/test_files` directory. Each
+test file comprises two key sections: the test header and test body.  In the header section, 
+the developer specifies the dataset to be used, the test group name and other optional 
+parameters such as `BUFFER_POOL_SIZE`.
 
 Here is a basic example of a test:
 
@@ -43,7 +44,7 @@ Here is a basic example of a test:
 The first three lines represents the header, separated by `--`. The testing
 framework will parse the file and register a [GTest
 programatically](http://google.github.io/googletest/advanced.html#registering-tests-programmatically).
-In terms of test case name, the example above will be equivalent to:
+When it comes to the test case name, the provided example above would be equivalent to:
 
 ```
 TEST_F(Basic, BasicTest) {
@@ -56,9 +57,9 @@ statements and assert the result.
 
 ## Running the tests
 
-Use `make test` to build and run all tests. By default, the tests will run in
-paralell on 10 jobs. We use `ctest` as the main utility to generate the test
-list and run. It is also possible to change the number of parallel jobs by
+Our primary tool for generating the test list and executing it is `ctest`. Use the command
+`make test` to build and run all tests. By default, the tests will run 
+concurrently on 10 jobs, but it is also possible to change the number of parallel jobs by
 running `make test TEST_JOBS=<desired number of jobs to run in parallel>`.
 
 ### Running a specific group or test case
@@ -131,14 +132,14 @@ Examples:
 --
 ```
 
-Another optional parameter are `-BUFFER_POOL_SIZE` and `-SKIP`. When including
-`-SKIP` in the header, the whole suite will be disabled but it will still
-appear as disabled tests when running from ctest. 
+Other optional parameters include `-BUFFER_POOL_SIZE` and `-SKIP`. By including 
+`-SKIP` in the header, the entire suite will be deactivated, but the tests 
+will still be displayed as disabled when running through `ctest`.
 
 
 ## Test case
 
-The following example illustrate a basic structure on how to create a test case:
+The following example illustrates a basic structure of how to create a test case:
 
 ```
 -GROUP Test
@@ -154,16 +155,24 @@ The following example illustrate a basic structure on how to create a test case:
 
 In the example above:
 
-`-CASE` is the name of the test case, which will be equivalent to
-`TEST_F(Test, MyTest)` in c++. `-QUERY` is followed by 4 dashes `----` plus the
-expected result (error, success or number of the tuples). When specifying a
-number after the dashes, it's necessary to add the same number of tuples in the
-next following lines. In the example above, `-NAME` is optional and will be
-used only for display purposes when running on verbose mode. If the subsequent
-lines have more statements to validate, they will be part of the same test case
-unless writing a new `-CASE`.
+`-CASE` is the name of the test case, analogous to `TEST_F(Test, MyTest)` in C++.  
+`-NAME` is optional and will be only used for display purposes when running on verbose mode.  
+`-QUERY` is followed by 4 dashes `----` alongside the expected result (error, success or the number of the tuples).   
+
+When specifying a number after the dashes, it's necessary to add the same number of tuples in the
+next following lines.  
+
+If the subsequent lines contain additional statements to validate, they will be incorporated into the same test case
+unless a new `-CASE` is written.
 
 ### Results
+
+There are three ways to specify the expected result:
+- `---- error`
+- `---- ok`
+- `---- [number of expected tuples]`. In this case, the next following lines must be
+  exactly the query results.
+
 
 ```
 # Expects error message 
@@ -196,19 +205,19 @@ inside `test/answers/<name-of-the-file.csv>`.
 
 ### Additional properties 
 
-Inside each test case, it is also possible to use the additional properties:
+It is also possible to use the additional properties inside each test case:
 
 | Property | Parameter | Description |
 |---|---|---|
 | `-NAME` | any string | Define a name for each block for informational purposes |
-| `-SKIP` | none | register the test but skip the whole test case. When a test is skipped, it will display as disabled in the test run |
-| `-PARALLELISM` | integer | the number of threads that will be set by `connection.setMaxNumThreadForExec()` |
-| `-BEGIN_WRITE_TRANSACTION` | none | call `connection.beginWriteTransaction()` before the subsequent statements. |
-| `-CHECK_ORDER` | true | by default, the results are ordered before comparing to ensure reproducibility due to multi-threading. However, in some cases, it is necessary to check the order.|
+| `-SKIP` | none | Register the test but skip the whole test case. When a test is skipped, it will display as disabled in the test run |
+| `-PARALLELISM` | integer | The number of threads that will be set by `connection.setMaxNumThreadForExec()` |
+| `-BEGIN_WRITE_TRANSACTION` | none | Call `connection.beginWriteTransaction()` before the subsequent statements. |
+| `-CHECK_ORDER` | true | By default, the results are ordered before comparing to ensure reproducibility due to multi-threading. However, in some cases, it is necessary to check the order.|
 
 ### Defining variables
 
-A variable can be defined and re-used inside statement, results or error
+A variable can be defined and re-used inside a statement, results or error
 message:
 
 ```
@@ -224,7 +233,7 @@ ${EXPECTED_RESULT}
 ${EXPECTED_RESULT}
 ```
 
-A more useful examples are using functions alongside `-DEFINE`. The framework
+A more practical example is using functions alongside `-DEFINE`. The framework
 currently support the following functions: 
 
 | Function | Description | Example |
@@ -240,9 +249,9 @@ You can insert Kùzu directory path in the test result by writing
 
 ### Defining statement blocks
 
-A statement block can be defined and re-used along the test file.
-`-DEFINE_STATEMENT_BLOCK' define a block that can be used by
-calling `-STATEMENT_BLOCK' in any part of the test case body. It
+A statement block can be defined and re-used along the test file.  
+`-DEFINE_STATEMENT_BLOCK` define a block that can be used by
+calling `-STATEMENT_BLOCK` in any part of the test case body. It
 can be useful to perform checks without having to re-write the same staments
 again.
 
@@ -276,7 +285,7 @@ Full example with comments.
 -GROUP Create
 -TEST CreateRelTest
 -BUFFER_POOL_SIZE 64000000
--DATASET tinysnb
+-DATASET PARQUET CSV_TO_PARQUET(tinysnb)
 
 --
 
@@ -289,52 +298,49 @@ Full example with comments.
                  WHERE a.ID=1 AND b.ID=2
                  CREATE (a)-[e:knows]->(b);
 ---- ok
+]
+
+-CASE TestRelationSet
+
+-NAME CurrentRelTest
+-QUERY MATCH (a:person)-[e:knows]->(b:person) RETURN COUNT(*)
+---- 1
+2
+
+# This is also part of TestRelationSet test case
+-NAME CreateRelSet
+-STATEMENT_BLOCK create_rel_set
+-QUERY MATCH (a:person)-[e:knows]->(b:person) RETURN COUNT(*)
+---- 1
+4
+
+# This is also part of TestRelationSet test case
+-NAME TestDuplicatedPrimaryKey
 -STATEMENT MATCH (a:person), (b:person)
                  WHERE a.ID=1 AND b.ID=20 
                  CREATE (a)-[e:knows]->(b);
 ---- error
 "Exception: Duplicate primary key"
-]
 
--CASE CreateRelRollbackTest
--STATEMENT MATCH (a:person)-[e:knows]->(b:person) RETURN COUNT(*)
----- 1
-14
--STATEMENT BEGIN TRANSACTION
----- ok
--STATEMENT_BLOCK create_rel_set
--QUERY MATCH (a:person)-[e:knows]->(b:person) RETURN COUNT(*)
----- 1
-16
--STATEMENT ROLLBACK
--QUERY MATCH (a:person)-[e:knows]->(b:person) RETURN COUNT(*)
----- 1
-14
 
--CASE CreateRelCommitTest
--STATEMENT MATCH (a:person)-[e:knows]->(b:person)
-RETURN COUNT(*)
----- 1
-14
--STATEMENT BEGIN TRANSACTION
----- ok
--STATEMENT_BLOCK create_rel_set
--QUERY MATCH (a:person)-[e:knows]->(b:person)
-RETURN COUNT(*)
----- 1
-16
--STATEMENT COMMIT
--QUERY MATCH (a:person)-[e:knows]->(b:person)
-RETURN COUNT(*)
----- 1
-16
+# New test case. Start a new database
+-NAME OrderCheck
+-CHECK_ORDER
+-PARALLELISM 1
+-QUERY MATCH (a:person)-[:studyAt]->(b:organisation) 
+             WHERE b.name = "Waterloo"
+             RETURN a.name,
+                    a.age ORDER BY a.age DESC;
+---- 2
+Karissa|40
+Adam|30
 
 # Compare results with a csv file
--CASE MatchTest
--STATEMENT MATCH (a:person)-[e:knows]->(b:person)
+-CASE PersonOrganisationRelTest 
+-STATEMENT MATCH (a:person)-[:studyAt]->(b:organisation)
 RETURN a.ID, b.ID
 ---- 16
-<FILE>:test/tinysnb/match/answers/create_node_test.CSV
+<FILE>:person_study_at_answers.csv
 
 ```
 
