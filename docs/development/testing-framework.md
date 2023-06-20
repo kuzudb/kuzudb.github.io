@@ -6,11 +6,6 @@ parent: Development
 
 # Testing Framework
 ![](https://codecov.io/github/kuzudb/kuzu/branch/master/graph/badge.svg?token=N1AT6H79LM")  
-<p style="text-align:center">
-<img src="/img/testing-framework.png" style="width:380px">
-<i style="display: block">Figure 1: Testing Framework v2</i>
-</p>
-
 
 ## Introduction
 
@@ -20,7 +15,7 @@ instead we should route all tests, when possible, in the end-to-end way through 
 In this way, we have designed a bespoke testing framework, which facilitates comprehensive end-to-end tests via Cypher statements.
 
 In order to use the e2e testing framework, developers are required to generate
-a .test file, which should be placed in the `test/test_files` directory. Each
+a `.test` file, which should be placed in the `test/test_files` directory. Each
 test file comprises two key sections: the test header and test body.  In the header section, 
 the developer specifies the dataset to be used, the test group name and other optional 
 parameters such as `BUFFER_POOL_SIZE`.
@@ -324,7 +319,8 @@ Full example with comments.
 
 
 # New test case. Start a new database
--NAME OrderCheck
+-CASE OrderCheck
+
 -CHECK_ORDER
 -PARALLELISM 1
 -QUERY MATCH (a:person)-[:studyAt]->(b:organisation) 
