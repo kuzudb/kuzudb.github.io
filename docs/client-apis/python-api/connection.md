@@ -71,3 +71,6 @@ Execute a query.
 
 **Returns**
 - `QueryResult` Query result.
+
+**Example**
+- `conn.execute("MATCH (a:person) WHERE a.isStudent = $1 AND a.fName = $k RETURN COUNT(*)", [("1", False), ("k", 'Alice')])`
