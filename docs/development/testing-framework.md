@@ -31,7 +31,7 @@ Here is a basic example of a test:
 --
 
 -CASE BasicTest
--QUERY MATCH (p:person) RETURN COUNT(*);
+-STATEMENT MATCH (p:person) RETURN COUNT(*);
 ---- 1
 6000
 ```
@@ -100,18 +100,17 @@ The `.test` file header contains two required parameters: `-GROUP` and
 `-DATASET`, to specify the test group name and the dataset to be used. If no
 dataset is required, use the keyword 'empty'.
 
-**-DATASET [type] [relative path]**
-- type: CSV, PARQUET, NPY
-- relative path: the name of the folder inside `datasets/` or 'empty'
+### Specifying the Dataset
 
-It is also possible make a conversion from CSV dataset to PARQUET file format
-using `CSV_TO_PARQUET(dataset path)`.
+| Property | Description |
+|---|---|
+| `-DATASET [type] [dataset name]` | **type:** CSV, PARQUET, NPY or empty<br> **dataset name:** the name of the directory inside  `dataset/`. i.e. tinysnb. |
 
 Examples:
 
 ```
 -GROUP MyTest
--DATASET CSV tinsnb
+-DATASET CSV tinysnb
 --
 ```
 
@@ -121,11 +120,27 @@ Examples:
 --
 ```
 
+#### Converting CSV to Parquet
+
+It is also possible to make a conversion from CSV dataset to PARQUET file format
+using `CSV_TO_PARQUET(dataset path)`. This case is especially useful to ensure
+the expected result remains the same for both CSV and PARQUET file format
+without storing the same dataset in the codebase twice.
+
+
 ```
 -GROUP MyTest
 -DATASET PARQUET CSV_TO_PARQUET(tinysnb)
 --
 ```
+
+> **_Note:_** for the conversion, the framework does not match the current schema to
+the parquet files. It relies on arrow to auto detect the datatype when reading
+and convering the CSV to Parquet.
+
+
+### Other properties
+
 
 Other optional parameters include `-BUFFER_POOL_SIZE` and `-SKIP`. By including 
 `-SKIP` in the header, the entire suite will be deactivated, but the tests 
@@ -142,8 +157,8 @@ The following example illustrates a basic structure of how to create a test case
 --
 
 -CASE MyTest
--NAME TestA
--QUERY MATCH (p:person) RETURN COUNT(*);
+-LOG Test A Count
+-STATEMENT MATCH (p:person) RETURN COUNT(*);
 ---- 1
 6000
 ```
@@ -151,8 +166,8 @@ The following example illustrates a basic structure of how to create a test case
 In the example above:
 
 `-CASE` is the name of the test case, analogous to `TEST_F(Test, MyTest)` in C++.  
-`-NAME` is optional and will be only used for display purposes when running on verbose mode.  
-`-QUERY` is followed by 4 dashes `----` alongside the expected result (error, success or the number of the tuples).   
+`-LOG` is optional and will be only used for display purposes when running in verbose mode.  
+`-STATEMENT` is followed by 4 dashes `----` alongside the expected result (error, success or the number of the tuples).   
 
 When specifying a number after the dashes, it's necessary to add the same number of tuples in the
 next following lines.  
@@ -163,25 +178,30 @@ unless a new `-CASE` is written.
 ### Results
 
 There are three ways to specify the expected result:
-- `---- error`
-- `---- ok`
-- `---- [number of expected tuples]`. In this case, the next following lines must be
-  exactly the query results.
+
+| Result | Description |
+|---|---|
+| `---- error` | The following lines must be the expected error message. |
+| `---- ok` | does not require any additional information below the line.  |
+| `---- [number of expected tuples]` | The following lines must be exactly the query results. |
+
+> **_Note:_** By default, the expected result tuples can be written in any
+> order. The framework will sort the actual &amp; expected results before
+> comparing. If you need the results not to be sorted, you can set it by adding
+> `-CHECK_ORDER` before the statement.
 
 
 ```
 # Expects error message 
--QUERY MATCH (p:person) RETURN COUNT(intended-error);
+-STATEMENT MATCH (p:person) RETURN COUNT(intended-error);
 ---- error
 Error: Binder exception: Variable intended is not in scope.
 
 # Success results don't need anything after the dashes
-# note that STATEMENT and QUERY keyword are interchangeable.
-# Both serves the same purpose, but we use different keywords for convention.
 -STATEMENT CREATE NODE TABLE  Person (ID INT64, PRIMARY KEY (ID));
 ---- ok
 
--QUERY MATCH (a:person) RETURN a.fName LIMIT 4
+-STATEMENT MATCH (a:person) RETURN a.fName LIMIT 4
 ---- 4
 Alice
 Bob
@@ -189,13 +209,14 @@ Carol
 Dan
 ```
 
-If you have big result, you can compare to a CSV file. The file must be created
-inside `test/answers/<name-of-the-file.csv>`. 
+Query results can also be stored in a file. By using `<FILE>:`, the testing
+framework reads the results from the file and compare to the actual query
+result. The file must be created inside `test/answers/<name-of-the-file.txt>`. 
 
 ```
--QUERY MATCH (p0:person)-[r:knows]->(p1:person) RETURN ID(r)
+-STATEMENT MATCH (p0:person)-[r:knows]->(p1:person) RETURN ID(r)
 ---- 5001
-<FILE>:file_with_answers.csv
+<FILE>:file_with_answers.txt
 ```
 
 ### Additional properties 
@@ -204,11 +225,11 @@ It is also possible to use the additional properties inside each test case:
 
 | Property | Parameter | Description |
 |---|---|---|
-| `-NAME` | any string | Define a name for each block for informational purposes |
+| `-LOG` | any string | Define a name for each block for informational purposes |
 | `-SKIP` | none | Register the test but skip the whole test case. When a test is skipped, it will display as disabled in the test run |
-| `-PARALLELISM` | integer | The number of threads that will be set by `connection.setMaxNumThreadForExec()` |
+| `-PARALLELISM` | integer | Default: 4. The number of threads that will be set by `connection.setMaxNumThreadForExec()` |
 | `-BEGIN_WRITE_TRANSACTION` | none | Call `connection.beginWriteTransaction()` before the subsequent statements. |
-| `-CHECK_ORDER` | true | By default, the results are ordered before comparing to ensure reproducibility due to multi-threading. However, in some cases, it is necessary to check the order.|
+| `-CHECK_ORDER` | none | By default, the query results and expected results are ordered before asserting comparison. |
 
 ### Defining variables
 
@@ -218,12 +239,12 @@ message:
 ```
 -DEFINE EXPECTED_RESULT "0|1:0|0"
 -CASE Backward
--QUERY MATCH (p0:person)<-[r:knows]-(p1:person) WHERE p0.ID = 0 RETURN p0.ID, ID(r), p1.ID
+-STATEMENT MATCH (p0:person)<-[r:knows]-(p1:person) WHERE p0.ID = 0 RETURN p0.ID, ID(r), p1.ID
 ---- 1
 ${EXPECTED_RESULT}
 
 -CASE Forward
--QUERY MATCH (p0:person)-[r:knows]->(p1:person) WHERE p0.ID = 0 RETURN p0.ID, ID(r), p1.ID
+-STATEMENT MATCH (p0:person)-[r:knows]->(p1:person) WHERE p0.ID = 0 RETURN p0.ID, ID(r), p1.ID
 ---- 1
 ${EXPECTED_RESULT}
 ```
@@ -261,12 +282,12 @@ again.
 
 -CASE TestCaseA
 -STATEMENT_BLOCK CREATE_PERSON_REL
--QUERY ...
+-STATEMENT ...
 ---- ok
 
 -CASE TestCaseB
 -STATEMENT_BLOCK CREATE_PERSON_REL
--QUERY ...
+-STATEMENT ...
 ---- ok
 ```
 
@@ -297,20 +318,20 @@ Full example with comments.
 
 -CASE TestRelationSet
 
--NAME CurrentRelTest
--QUERY MATCH (a:person)-[e:knows]->(b:person) RETURN COUNT(*)
+-LOG Current Relaaation Test
+-STATEMENT MATCH (a:person)-[e:knows]->(b:person) RETURN COUNT(*)
 ---- 1
 2
 
 # This is also part of TestRelationSet test case
--NAME CreateRelSet
+-LOG Create Relation Set
 -STATEMENT_BLOCK create_rel_set
--QUERY MATCH (a:person)-[e:knows]->(b:person) RETURN COUNT(*)
+-STATEMENT MATCH (a:person)-[e:knows]->(b:person) RETURN COUNT(*)
 ---- 1
 4
 
 # This is also part of TestRelationSet test case
--NAME TestDuplicatedPrimaryKey
+-LOG Test Duplicated Primary Key
 -STATEMENT MATCH (a:person), (b:person)
                  WHERE a.ID=1 AND b.ID=20 
                  CREATE (a)-[e:knows]->(b);
@@ -323,7 +344,7 @@ Full example with comments.
 
 -CHECK_ORDER
 -PARALLELISM 1
--QUERY MATCH (a:person)-[:studyAt]->(b:organisation) 
+-STATEMENT MATCH (a:person)-[:studyAt]->(b:organisation) 
              WHERE b.name = "Waterloo"
              RETURN a.name,
                     a.age ORDER BY a.age DESC;
@@ -331,13 +352,32 @@ Full example with comments.
 Karissa|40
 Adam|30
 
-# Compare results with a csv file
+# Read query results from a file to compare 
 -CASE PersonOrganisationRelTest 
 -STATEMENT MATCH (a:person)-[:studyAt]->(b:organisation)
 RETURN a.ID, b.ID
 ---- 16
-<FILE>:person_study_at_answers.csv
+<FILE>:person_study_at_answers.txt
 
+```
+
+Example of `BEGIN_WRITE_TRANSACTION`:
+
+```
+-CASE ParsingErrorRollbackTest
+
+-BEGIN_WRITE_TRANSACTION
+-STATEMENT CREATE (p:person {ID: 100})
+---- ok
+-STATEMENT MATCH (:person) RETURN count(*)
+---- 1
+9
+-STATEMENT RETURN make_date(2011,1,32)
+---- error
+Date out of range: 2011-1-32.
+-STATEMENT MATCH (:person) RETURN count(*)
+---- 1
+8
 ```
 
 | File | Description|
