@@ -94,6 +94,11 @@ $ ./e2e_test long_string_pk/long_string_pk.test
 $ ./e2e_test .
 ```
 
+> **_Note:_** Some test files contain multiple test cases, and sometimes it is not easy 
+to find the output from a failed test. In this situation, parameter
+`--gtest_break_on_failure` might be helpful to break the test on failure.
+
+
 ## Test file header
 
 The `.test` file header contains two required parameters: `-GROUP` and
