@@ -1,3 +1,8 @@
+---
+nav_exclude: true
+---
+
+
 ## Contributor Agreement
 
 Thank you for your interest in contributing to Xiyang Feng's, Guodong Jin's, Chang Liu's, Ziyi Chen's, and Semih Salihoğlu's Kùzu ("We" or "Us").
