@@ -128,9 +128,8 @@ More configuration options can be found at [TODO]().
 
 We add `BLOB` type which represents an arbitrary binary object. The database process binary data as it is without knowing what the actual data (e.g. image, video) it represents.
 
-TODO(Ziyi) The following can not be run from shell.
 ```
-RETURN BLOB('\xBC\xBD\xBA\xAA') as result;
+RETURN BLOB('\\xBC\\xBD\\xBA\\xAA') as result;
 ---------------------------------------------
 | result                                    |
 ---------------------------------------------
