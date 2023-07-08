@@ -19,6 +19,20 @@ nav_order: 496
 # Kùzu 0.0.5 Release
 We are very happy to release Kùzu 0.0.5 today! This release comes with the following new main features and improvements: 
 
+- [Kùzu 0.0.5 Release](#kùzu-005-release)
+  - [Cypher Features](#cypher-features)
+    - [Named Path](#named-path)
+    - [Filter Recursive Pattern](#filter-recursive-pattern)
+    - [All Shortest Path](#all-shortest-path)
+    - [Call Clause](#call-clause)
+  - [Database Configuration](#database-configuration)
+  - [Data Types](#data-types)
+    - [BLOB](#blob)
+  - [Client APIs](#client-apis)
+    - [Jave](#java)
+    - [Rust](#rust)
+  - [Development](#development)
+    - [Testing framework](#testing-framework)
 
 ## Cypher Features
 
@@ -85,23 +99,56 @@ CALL table_info('User') RETURN *;
 ---------------------------------------------
 ```
 
-## Configuration
+`Call` clause can be used together with other clauses in the same way as a reading clause.
+```
+CALL table_info('User') WITH * WHERE name STARTS WITH 'a' RETURN name;
+--------
+| name |
+--------
+| age  |
+--------
+```
+
+More built in procedures can be found at [TODO]().
+
+## Database Configuration
+
+Kùzu now allows modifying database configuration through standalone `Call` statement.
+
+The following statement set maximum number of threads for execution to 5.
+```
+CALL THREADS=5;
+```
+
+More configuration options can be found at [TODO]().
 
 ## Data Types
 
 ### `BLOB`
 
+We add `BLOB` type which represents an arbitrary binary object. The database process binary data as it is without knowing what the actual data (e.g. image, video) it represents.
+
+TODO(Ziyi) The following can not be run from shell.
+```
+RETURN BLOB('\xBC\xBD\xBA\xAA') as result;
+---------------------------------------------
+| result                                    |
+---------------------------------------------
+| \xBC\xBD\xBA\xAA                          |
+---------------------------------------------
+```
+
 ## Client APIs
 
 ### Java
-This release comes with official Java language binding.
+This release comes with official Java language binding. TODO: add more.
 
 ### Rust
-We provide official Rust language binding.
+We provide official Rust language binding. TODO: add more
 
 ## Development
 
 ### Testing framework
-
+TODO(Guodong)
 
 *by Kùzu team, 07-10-2023, Waterloo, ON, Canada*
