@@ -24,13 +24,13 @@ We are very happy to release Kùzu 0.0.5 today! This release comes with the foll
     - [Named Path](#named-path)
     - [Filter Recursive Pattern](#filter-recursive-pattern)
     - [All Shortest Path](#all-shortest-path)
-    - [Call Clause](#call-clause)
+    - [`Call` Clause](#call-clause)
   - [Database Configuration](#database-configuration)
   - [Data Types](#data-types)
-    - [BLOB](#blob)
+    - [`BLOB`](#blob)
   - [Client APIs](#client-apis)
-    - [Jave](#java)
     - [Rust](#rust)
+    - [Java](#java)
   - [Development](#development)
     - [Testing framework](#testing-framework)
 
@@ -138,16 +138,31 @@ RETURN BLOB('\\xBC\\xBD\\xBA\\xAA') as result;
 ```
 
 ## Client APIs
-
-### Java
-This release comes with official Java language binding. TODO: add more.
+In this release, we're expanding the accessibility of Kùzu, bridging the gap with some of the most popular programming languages in the developer community.
 
 ### Rust
-We provide official Rust language binding. TODO: add more
+We've now  integrated support for the Rust programming language.
+Renowned for its performance, reliability, and productivity, Rust has gained significant popularity among developers. It offers the efficiency of low-level languages like C++, but with added benefit of safety through its strong compile-time correctness guarantees. 
+With the introduction of native Rust API support, we're aiming to provide developers with a seamless experience that combines the robust benefits of Rust with the powerful capabilities of Kùzu.
+
+### Java
+In addition to Rust, we're also bringing Kùzu to the world of Java in this release.
+Java is a high-level, class-based, object-oriented programming language, operates under the principle of *write once, run anywhere (WORA)*.
+Its platform independence has made it a favored choice for a wide range of applications, from enterprise systems to client-server web applications.
+By incorporating Java API support into Kùzu, we're amplifying the power of our graph database, enabling a seamless integration of graph data management with application development across various domains.
 
 ## Development
+Starting with this release, we're adding some development guidelines to encourage and facilitate outside contributions from the broader open source community.
+
+Testing is a crucial part of Kùzu to ensure the correct functioning of the system.
+In this release, we've implemented significant changes to our testing framework, the details of which are outlined below.
 
 ### Testing framework
-TODO(Guodong)
+Our approach to testing is rooted in the principle of end-to-end tests rather than individual unit tests.
+Whenever possible, we route all tests in the end-to-end way through Cypher statements. 
+To this end, we've designed a bespoke testing framework that enables thorough end-to-end testing via Cypher statements.
+
+Our testing framework draws inspiration from [SQLLogicTest](https://www.sqlite.org/sqllogictest/doc/trunk/about.wiki), albeit with customized syntax tailored to our needs. .
+For a more detailed overview of our testing framework, please visit [here](https://kuzudb.com/docusaurus/development/testing-framework).
 
 *by Kùzu team, 07-10-2023, Waterloo, ON, Canada*
