@@ -52,7 +52,7 @@ MATCH p1 = (a:User)-[:Follows]->(b:User), p2 = (b)-[:LivesIn]->(:City)
 WHERE a.name = 'Adam' 
 RETURN p1, p2;
 ```
-Internally, a path is processed as a struct with two fields, a nodes field with key `_NODES` and type `LIST[NODE]` and a rels field with key `_RELS` and type `LIST[REL]`. See [TODO fill link]() for details. Users can access nodes and rels field with `nodes(p)` and `rels(p)` function calls as follows:
+Internally, a path is processed as a `STRUCT` with two fields, a nodes field with key `_NODES` and type `LIST[NODE]` and a rels field with key `_RELS` and type `LIST[REL]`. See [TODO fill link]() for details. Users can access nodes and rels field with `nodes(p)` and `rels(p)` function calls as follows:
 ```
 MATCH p = (a:User)-[:Follows*1..2]->(:User) 
 WHERE a.name = 'Adam' 
@@ -70,14 +70,14 @@ RETURN DISTINCT b.name;
 Our filter grammar follows [Memgraph's syntax](https://memgraph.com/docs/memgraph/reference-guide/built-in-graph-algorithms). The first variable `r` in the `(r, _ | WHERE r.since < 2022)` predicate binds to the relationships in the recursive pattern and the `_` binds to the nodes. Since we currently don't allow filters on recursive nodes, the second variable must be `_` for now.
 
 ### All Shortest Paths
-Kùzu now supports all shortest paths semantic with key word `ALL SHORTEST`. The following query finds all shortest paths of up to length 3 between `Zhang` and `Waterloo` considering relationships of all labels (i.e., this is an unlabeled query and you can restrict the labels by adding them as `[:Follows* ALL SHORTEST 1..3]).
+Kùzu now supports all shortest paths semantic with key word `ALL SHORTEST`. The following query finds all shortest paths of up to length 3 between `Zhang` and `Waterloo` considering relationships of all labels (i.e., this is an unlabeled query and you can restrict the labels by adding them as `[:Follows* ALL SHORTEST 1..3]`).
 ```
 MATCH p = (a)-[* ALL SHORTEST 1..3]-(b) 
 WHERE a.name = 'Zhang' AND b.name = 'Waterloo' 
 RETURN p;
 ```
 
-TODO (Xiyang): Comment on the lower bound 1 if we force the lower bound to be one. Otherwise, explain clearly in the documentation the meaning of `[* ALL SHORTEST l..u]` pattern.
+[TODO fill link]()
 
 ### `Call` Clause
 
