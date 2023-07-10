@@ -29,7 +29,7 @@ We are very happy to release Kùzu 0.0.5 today! This release comes with the foll
   - [Data Types](#data-types)
     - [`BLOB`](#blob)
   - [Client APIs: Rust and Java](#client-apis-rust-and-java)
-  - [Development:Testing framework](#development-testing-framework)
+  - [Development:Testing Framework](#development-testing-framework)
 
 ## Cypher Features
 
@@ -52,7 +52,7 @@ MATCH p1 = (a:User)-[:Follows]->(b:User), p2 = (b)-[:LivesIn]->(:City)
 WHERE a.name = 'Adam' 
 RETURN p1, p2;
 ```
-Internally, a path is processed as a `STRUCT` with two fields, a nodes field with key `_NODES` and type `LIST[NODE]` and a rels field with key `_RELS` and type `LIST[REL]`. See [TODO fill link]() for details. Users can access nodes and rels field with `nodes(p)` and `rels(p)` function calls as follows:
+Internally, a path is processed as a `STRUCT` with two fields, a nodes field with key `_NODES` and type `LIST[NODE]` and a rels field with key `_RELS` and type `LIST[REL]`. See [`PATH`](https://kuzudb.com/docusaurus/cypher/data-types/path) for details. Users can access nodes and rels field with `nodes(p)` and `rels(p)` function calls as follows:
 ```
 MATCH p = (a:User)-[:Follows*1..2]->(:User) 
 WHERE a.name = 'Adam' 
@@ -76,8 +76,7 @@ MATCH p = (a)-[* ALL SHORTEST 1..3]-(b)
 WHERE a.name = 'Zhang' AND b.name = 'Waterloo' 
 RETURN p;
 ```
-
-[TODO fill link]()
+See [All Shortest Path](https://kuzudb.com/docusaurus/cypher/query-clauses/match#all-shortest-path) on our documentation for more information.
 
 ### `Call` Clause
 
@@ -103,7 +102,7 @@ CALL table_info('User') WITH * WHERE name STARTS WITH 'a' RETURN name;
 --------
 ```
 
-More built in procedures can be found at [TODO]().
+More built in procedures can be found [here](https://kuzudb.com/docusaurus/cypher/query-clauses/call).
 
 ## Modifying Database Configurations
 
@@ -112,7 +111,7 @@ More built in procedures can be found at [TODO]().
 CALL THREADS=5;
 ```
 
-More configuration options can be found at [TODO]().
+More configuration options can be found [here](https://kuzudb.com/docusaurus/cypher/configuration).
 
 ## Data Types
 
@@ -129,12 +128,12 @@ RETURN BLOB('\\xBC\\xBD\\xBA\\xAA') as result;
 ---------------------------------------------
 ```
 
-More information on the blob data type can be found here: TODO(Xiyang): provide link.
+More information on the blob data type can be found [here](https://kuzudb.com/docusaurus/cypher/data-types/blob).
 
 ## Client APIs: Rust and Java
-In this release, we're expanding the accessibility of Kùzu, bridging the gap with some of the most popular programming languages in the developer community. Specifically, we now have [Rust](xxx) (TODO(link)) and [Java](xxx) (TODO(link)) APIs.
+In this release, we're expanding the accessibility of Kùzu, bridging the gap with some of the most popular programming languages in the developer community. Specifically, we now have [Rust](https://kuzudb.com/docusaurus/client-apis/rust) and [Java](https://kuzudb.com/docusaurus/client-apis/java) APIs.
 
-## Development: Testing framework
+## Development: Testing Framework
 Starting with this release, we're adding some development guidelines to encourage and facilitate outside contributions from the broader open source community.
 
 Testing is a crucial part of Kùzu to ensure the correct functioning of the system.
