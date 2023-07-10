@@ -33,7 +33,7 @@ We are very happy to release Kùzu 0.0.5 today! This release comes with the foll
 
 ## Cypher Features
 
-### Named Path
+### Named Paths
 This releases introduces named paths. Users can now assign a named variable to a connected graph pattern. For example, the following query returns all path between `Adam` and `Karissa`.
 ```
 MATCH p = (a:User)-[:Follows]->(b:User) 
@@ -76,7 +76,7 @@ MATCH p = (a)-[* ALL SHORTEST 1..3]-(b)
 WHERE a.name = 'Zhang' AND b.name = 'Waterloo' 
 RETURN p;
 ```
-See [All Shortest Path](https://kuzudb.com/docusaurus/cypher/query-clauses/match#all-shortest-path) on our documentation for more information.
+See [All Shortest Paths](https://kuzudb.com/docusaurus/cypher/query-clauses/match#all-shortest-path) on our documentation for more information.
 
 ### `Call` Clause
 
