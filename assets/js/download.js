@@ -49,6 +49,8 @@ const data = [
     link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.5/libkuzu-windows-x86_64.zip",
     isLinkAnchor: true,
   },
+  { language: "Rust", link: "cargo add kuzu", isLinkAnchor: false },
+  { language: "Java", link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.5/kuzu_java.jar", isLinkAnchor: true },
 ];
 
 const languages = [...new Set(data.map((item) => item.language))];
