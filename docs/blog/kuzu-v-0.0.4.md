@@ -194,3 +194,5 @@ We provide official C language binding in this release. Developers can now embed
 ### Node.js
 We provide official Node.js language binding. With Node.js API, developer can leverage Kùzu analytical capability in their Node.js projects. We will
 soon follow this blog post with one (or a few) blog posts on developing some applications with Node.js.
+
+*by Kùzu team, 06-05-2023, Waterloo, ON, Canada*
