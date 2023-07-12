@@ -1,5 +1,7 @@
 const htmlName = window.location.pathname.split("/").pop();
-const htmlNameWithoutExt = htmlName.split(".")[0];
+const htmlNameSplit = htmlName.split(".");
+htmlNameSplit.pop();
+const htmlNameWithoutExt = htmlNameSplit.join(".");
 
 const redirectUrl = "/docusaurus/blog/" + htmlNameWithoutExt;
 window.location.replace(redirectUrl);
