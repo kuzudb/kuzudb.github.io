@@ -56,8 +56,8 @@ soon follow this blog post with one (or a few) blog posts on developing some app
     </entry>
     <entry>
         <title type="html"><![CDATA[Scaling Pytorch Geometric GNNs With Kùzu]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-pyg-remote-backend.html</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-pyg-remote-backend.html"/>
+        <id>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-pyg-remote-backend</id>
+        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-pyg-remote-backend"/>
         <updated>2023-05-10T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[In this post, we'll walk through how to use Kùzu as a Pytorch Geometric (PyG) Remote Backend to train a GNN model on very large graphs that do not fit on your machine's RAM.]]></summary>
         <content type="html"><![CDATA[<p>In this post, we'll walk through how to use Kùzu as a <a href="https://pytorch-geometric.readthedocs.io/en/latest/advanced/remote.html" target="_blank" rel="noopener noreferrer">Pytorch Geometric (PyG) <em>Remote Backend</em></a> to train a GNN model on very large graphs that do not fit on your machine's RAM. </p><p>Let's start with a quick overview of PyG Remote Backends: PyG Remote Backends are plug-in replacements for PyG's in-memory graph and feature stores, so they can be used seamlessly with the rest of the PyG interfaces to develop your GNN models. If a PyG Remote Backend is a disk-based storage system, such as Kùzu, PyG will fetch subgraphs from Kùzu, which stores and scans its data from disk, allowing you to train models on very large graphs for which PyG's in-memory storage would run out of memory and fail.</p><p>As you'll see, if you already have PyG models you have developed in Python, replacing PyG's default storage with Kùzu is extremely simple. <strong><em>It
