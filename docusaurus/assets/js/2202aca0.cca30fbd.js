@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkuzu_docs=self.webpackChunkkuzu_docs||[]).push([[9330],{3946:s=>{s.exports=JSON.parse('{"permalink":"/docusaurus/blog/tags/internals","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
