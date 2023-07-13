@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkuzu_docs=self.webpackChunkkuzu_docs||[]).push([[2563],{4614:s=>{s.exports=JSON.parse('{"permalink":"/docusaurus/blog/tags/vision","page":1,"postsPerPage":5,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
