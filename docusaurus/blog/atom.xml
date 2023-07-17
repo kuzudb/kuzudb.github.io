@@ -2,11 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-test-site.com/docusaurus/blog</id>
     <title>Kùzu Blog</title>
-    <updated>2023-07-10T00:00:00.000Z</updated>
+    <updated>2023-07-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-test-site.com/docusaurus/blog"/>
     <subtitle>Kùzu Blog</subtitle>
     <icon>https://your-docusaurus-test-site.com/docusaurus/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Kùzu 0.0.6 Release]]></title>
+        <id>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.6-release</id>
+        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.6-release"/>
+        <updated>2023-07-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We are thrilled to announce the release of Kùzu 0.0.6, which focuses on addressing bugs reported by our users. We addressed the following issues in this bug-fix release:]]></summary>
+        <content type="html"><![CDATA[<p>We are thrilled to announce the release of Kùzu 0.0.6, which focuses on addressing bugs reported by our users. We addressed the following issues in this bug-fix release:</p><ol><li>Resolved a segmentation fault occurring while loading overflow data types with parallelism.</li><li>Fixed an issue of reading out of bound for LIST vector null buffer.</li><li>Implemented several missing data types in C, JAVA, Rust, and Python API bindings.</li></ol><p>For more detailed information about the changes in this release, please visit <a href="https://github.com/kuzudb/kuzu/releases/tag/v0.0.6" target="_blank" rel="noopener noreferrer">this link</a>. </p><p>We extend our sincere gratitude to all our users who reported these bugs, as well as to everyone who supported us throughout this process. Your feedback is instrumental in making Kùzu better!</p>]]></content>
+        <author>
+            <name>Kùzu Team</name>
+            <uri>https://github.com/kuzudb/</uri>
+        </author>
+        <category label="release" term="release"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Kùzu 0.0.5 Release]]></title>
         <id>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.5-release</id>

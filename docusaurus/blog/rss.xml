@@ -4,10 +4,19 @@
         <title>Kùzu Blog</title>
         <link>https://your-docusaurus-test-site.com/docusaurus/blog</link>
         <description>Kùzu Blog</description>
-        <lastBuildDate>Mon, 10 Jul 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 17 Jul 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Kùzu 0.0.6 Release]]></title>
+            <link>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.6-release</link>
+            <guid>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.6-release</guid>
+            <pubDate>Mon, 17 Jul 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[We are thrilled to announce the release of Kùzu 0.0.6, which focuses on addressing bugs reported by our users. We addressed the following issues in this bug-fix release:]]></description>
+            <content:encoded><![CDATA[<p>We are thrilled to announce the release of Kùzu 0.0.6, which focuses on addressing bugs reported by our users. We addressed the following issues in this bug-fix release:</p><ol><li>Resolved a segmentation fault occurring while loading overflow data types with parallelism.</li><li>Fixed an issue of reading out of bound for LIST vector null buffer.</li><li>Implemented several missing data types in C, JAVA, Rust, and Python API bindings.</li></ol><p>For more detailed information about the changes in this release, please visit <a href="https://github.com/kuzudb/kuzu/releases/tag/v0.0.6" target="_blank" rel="noopener noreferrer">this link</a>. </p><p>We extend our sincere gratitude to all our users who reported these bugs, as well as to everyone who supported us throughout this process. Your feedback is instrumental in making Kùzu better!</p>]]></content:encoded>
+            <category>release</category>
+        </item>
         <item>
             <title><![CDATA[Kùzu 0.0.5 Release]]></title>
             <link>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.5-release</link>
