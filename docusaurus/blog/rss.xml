@@ -9,7 +9,7 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[IAMGraphViz: Visualizing AWS IAM Identity Center Permission Data with Kùzu]]></title>
+            <title><![CDATA[IAMGraphViz: Visualizing AWS IAM Permissions with Kùzu]]></title>
             <link>https://your-docusaurus-test-site.com/docusaurus/blog/iamgraphviz</link>
             <guid>https://your-docusaurus-test-site.com/docusaurus/blog/iamgraphviz</guid>
             <pubDate>Wed, 19 Jul 2023 00:00:00 GMT</pubDate>
