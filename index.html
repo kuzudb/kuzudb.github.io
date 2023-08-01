@@ -30,8 +30,8 @@
       <nav id="nav">
         <ul>
           <li><a href="#intro" class="active">Introduction</a></li>
-          <li><a href="#features">Core Features</a></li>
           <li><a href="#download">Download</a></li>
+          <li><a href="#features">Core Features</a></li>
           <li>
             <a href="/docusaurus/getting-started/">Docs</a>
           </li>
@@ -42,70 +42,97 @@
       <!-- Main -->
       <div id="main">
         <!-- Introduction -->
-        <section id="intro" class="main special">
+        <section id="intro" class="main">
+          <header class="major"></header>
+          <div class="spotlight">
+            <div class="spotlight-content">
+              <div>
+                <p class="headline">
+                  Scalable in-process
+                  <br />
+                  graph database
+                </p>
+                <ul class="icons main-buttons">
+                  <li>
+                    <a
+                      href="https://colab.research.google.com/drive/15OLPggnRSBmR_K9yzq6iAGE5MDzNwqoN"
+                      class="button primary large"
+                      >Try Kùzu</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/docusaurus/getting-started/"
+                      class="button large docs-button"
+                      >Docs
+                    </a>
+                  </li>
+                </ul>
+                <ul class="icons main-buttons">
+                  <li></li>
+                </ul>
+                <ul class="icons">
+                  <li>
+                    <a
+                      href="https://github.com/kuzudb/kuzu"
+                      class="icon fa-brands fa-github alt"
+                      ><span class="label">GitHub</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://twitter.com/kuzudb"
+                      class="icon fa-brands fa-twitter alt"
+                      ><span class="label">Twitter</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://join.slack.com/t/kuzudb/shared_invite/zt-1w0thj6s7-0bLaU8Sb~4fDMKJ~oejG_g"
+                      class="icon fa-brands fa-slack alt"
+                      ><span class="label">Dribbble</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/@KuzuDB/"
+                      class="icon fa-brands fa-youtube alt"
+                      ><span class="label">Dribbble</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://space.bilibili.com/410352593"
+                      class="icon fa-brands fa-bilibili alt"
+                      ><span class="label">Dribbble</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="logo-container">
+                <img class="logo" src="/img/kuzu-logo.png" alt="Kùzu Logo" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- download Section -->
+        <section id="download" class="main special">
           <header class="major">
-            <img
-              src="/img/kuzu-logo.png"
-              style="width: 20em"
-              alt="Kùzu Logo"
-            />
+            <h2>Download</h2>
           </header>
-          <p>
-            Kùzu is an in-process property graph database management system
-            built for query speed and scalability.
-          </p>
-          <ul class="icons main-buttons">
-            <li><a href="#download" class="button primary">Download</a></li>
-            <li>
-              <a href="/docusaurus/getting-started/" class="button"
-                >Get Started
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://colab.research.google.com/drive/15OLPggnRSBmR_K9yzq6iAGE5MDzNwqoN"
-                class="button"
-                >Try Kùzu on Colab</a
-              >
-            </li>
-          </ul>
-          <ul class="icons">
-            <li>
-              <a
-                href="https://github.com/kuzudb/kuzu"
-                class="icon fa-brands fa-github alt"
-                ><span class="label">GitHub</span></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/kuzudb"
-                class="icon fa-brands fa-twitter alt"
-                ><span class="label">Twitter</span></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://join.slack.com/t/kuzudb/shared_invite/zt-1w0thj6s7-0bLaU8Sb~4fDMKJ~oejG_g"
-                class="icon fa-brands fa-slack alt"
-                ><span class="label">Dribbble</span></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/@KuzuDB/"
-                class="icon fa-brands fa-youtube alt"
-                ><span class="label">Dribbble</span></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://space.bilibili.com/410352593"
-                class="icon fa-brands fa-bilibili alt"
-                ><span class="label">Dribbble</span></a
-              >
-            </li>
-          </ul>
+          <div>
+            <ul class="actions fit small" id="download-language"></ul>
+          </div>
+          <div id="download-platform-container" style="display: none">
+            <ul class="actions fit small" id="download-platform"></ul>
+          </div>
+          <div id="download-command-container" style="display: none">
+            <pre>
+                <code id="download-command"></code>
+              </pre>
+          </div>
         </section>
 
         <!-- features Section -->
@@ -171,29 +198,14 @@
           <footer class="major">
             <ul class="actions special">
               <li>
-                <a href="/blog/what-every-gdbms-should-do-and-vision.html" class="button">Learn More</a>
+                <a
+                  href="/blog/what-every-gdbms-should-do-and-vision.html"
+                  class="button"
+                  >Learn More</a
+                >
               </li>
             </ul>
           </footer>
-        </section>
-
-        <!-- download Section -->
-        <section id="download" class="main special">
-          <header class="major">
-            <h2>Download</h2>
-            <p>Choose your environment to use for Kùzu</p>
-          </header>
-          <div>
-            <ul class="actions fit small" id="download-language"></ul>
-          </div>
-          <div id="download-platform-container" style="display: none">
-            <ul class="actions fit small" id="download-platform"></ul>
-          </div>
-          <div id="download-command-container" style="display: none">
-            <pre>
-				<code id="download-command"></code>
-			</pre>
-          </div>
         </section>
       </div>
 
@@ -211,6 +223,12 @@
           <br />
           &copy; Kùzu Team. Design:
           <a href="https://html5up.net">HTML5 UP</a>.
+          <br />
+          <a
+            href="https://www.freepik.com/free-vector/white-background-with-low-poly-digital-lines-connection_8562954.htm#query=network&position=22&from_view=search&track=country_rows_v2"
+            >Background image by starline</a
+          >
+          on Freepik
         </p>
       </footer>
     </div>
