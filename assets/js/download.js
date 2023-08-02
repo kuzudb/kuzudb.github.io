@@ -50,7 +50,11 @@ const data = [
     isLinkAnchor: true,
   },
   { language: "Rust", link: "cargo add kuzu", isLinkAnchor: false },
-  { language: "Java", link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/kuzu_java.jar", isLinkAnchor: true },
+  {
+    language: "Java",
+    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/kuzu_java.jar",
+    isLinkAnchor: true,
+  },
 ];
 
 const languages = [...new Set(data.map((item) => item.language))];
@@ -132,3 +136,5 @@ downloadPlatformSelectButtons.on("click", function () {
   downloadPlatformSelectButtons.removeClass("primary");
   $(this).addClass("primary");
 });
+
+$("button#Python").click();
