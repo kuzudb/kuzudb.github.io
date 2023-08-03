@@ -3832,10 +3832,11 @@ div.spotlight {
 
 div.spotlight>div.spotlight-content {
   display: flex;
+  max-width: 1800px;
 }
 
 p.headline {
-  font-size: 78px;
+  font-size: 75px;
   justify-self: unset;
   margin-bottom: 1em;
 }
@@ -3856,15 +3857,26 @@ div.logo-container {
   display: none;
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1800px) {
   p.headline {
-    font-size: 66px;
+    font-size: 60px;
+  }
+}
+
+
+@media screen and (max-width: 1444px) {
+  p.headline {
+    font-size: 50px;
+  }
+
+  .logo {
+    width: 25em;
   }
 }
 
 @media screen and (max-width: 1280px) {
   p.headline {
-    font-size: 54px;
+    font-size: 44px;
   }
 
   .logo {
@@ -3876,17 +3888,35 @@ div.logo-container {
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1060px) {
   p.headline {
-    font-size: 39px;
+    font-size: 36px;
+  }
+
+  .logo {
+    width: 18em;
+  }
+
+  div.logo-container {
+    padding-left: 3em;
+  }
+
+  section#intro {
+    background-position: right;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  p.headline {
+    font-size: 30px;
   }
 
   .logo {
     width: 15em;
   }
 
-  section#intro {
-    background-position: right;
+  div.logo-container {
+    padding-left: 2em;
   }
 }
 
