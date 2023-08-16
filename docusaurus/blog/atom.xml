@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://your-docusaurus-test-site.com/docusaurus/blog</id>
+    <id>https://kuzudb.com/docusaurus/blog</id>
     <title>Kùzu Blog</title>
     <updated>2023-07-19T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://your-docusaurus-test-site.com/docusaurus/blog"/>
+    <link rel="alternate" href="https://kuzudb.com/docusaurus/blog"/>
     <subtitle>Kùzu Blog</subtitle>
-    <icon>https://your-docusaurus-test-site.com/docusaurus/img/favicon.ico</icon>
+    <icon>https://kuzudb.com/docusaurus/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[IAMGraphViz: Visualizing AWS IAM Permissions with Kùzu]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/iamgraphviz</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/iamgraphviz"/>
+        <id>https://kuzudb.com/docusaurus/blog/iamgraphviz</id>
+        <link href="https://kuzudb.com/docusaurus/blog/iamgraphviz"/>
         <updated>2023-07-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[IAMGraphViz Overview]]></summary>
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="iamgraphviz-overview">IAMGraphViz Overview<a href="#iamgraphviz-overview" class="hash-link" aria-label="Direct link to IAMGraphViz Overview" title="Direct link to IAMGraphViz Overview">​</a></h2><p><a href="https://www.commonfate.io/" target="_blank" rel="noopener noreferrer">Common Fate</a>  is a framework for managing complex cloud permissions. They provide tools to simplify access at scale to AWS, Azure, and Google Cloud accounts. You can learn about what you can do with Common Fate on <a href="https://www.commonfate.io/" target="_blank" rel="noopener noreferrer">their website</a>. Here, we will talk about a recent proof of concept graph visualization tool called IAMGraphViz that <a href="https://www.linkedin.com/in/mewim/" target="_blank" rel="noopener noreferrer">Chang Liu</a> (who is coauthoring this post) and I developed using Kùzu! IAMGraphViz is intended for infrastructure engineers to dig deep into the permission assignments in AWS IAM Identity Center using graph visualization. Using IAMGraphViz, one can easily visualize who has what type of access to different accounts on AWS as well as how they have access to these accounts. This is all done by analyzing the paths from users to accounts in a graph visualization, where the nodes and edges model users, accounts, groups, group memberships, permission sets and other entities in the AWS IAM Identity Center system.</p><p>The IAMGraphViz project is designed and implemented as a web application using a graph DBMS (GDBMS) to store and retrieve data. Before landing on Kùzu, we surveyed using several other GDBMSs, such as Neo4j, but they were all harder to use. Neo4j, for example, requires hosting a separate database. We then discovered Kùzu, which only required a <code>pip install</code> and import statement and we could simply embed it into our application. In this project our datasets could fit entirely onto a single compute node,and so Kùzu was far simpler for us to work with than alternatives. Kùzu is also far cheaper and more serverless-friendly than running a separate database.</p><p>This post follows the <a href="https://colab.research.google.com/drive/1fotlNnOj1FGad6skBG7MRrHVdHd3jIl6" target="_blank" rel="noopener noreferrer">Colab</a> that Chang Liu created after we discussed this use case together.</p><p>So let's get to it!</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="quick-aws-iam-overview">Quick AWS IAM Overview<a href="#quick-aws-iam-overview" class="hash-link" aria-label="Direct link to Quick AWS IAM Overview" title="Direct link to Quick AWS IAM Overview">​</a></h2><p>We will use the data model shown in the figure below that faithfully (but partially) models the
@@ -55,8 +55,8 @@ to develop tools like IAMGraphViz is extremely easy and fun 🥳🙌💪!</p>]]>
     </entry>
     <entry>
         <title type="html"><![CDATA[Kùzu 0.0.6 Release]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.6-release</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.6-release"/>
+        <id>https://kuzudb.com/docusaurus/blog/kuzu-0.0.6-release</id>
+        <link href="https://kuzudb.com/docusaurus/blog/kuzu-0.0.6-release"/>
         <updated>2023-07-17T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[We are thrilled to announce the release of Kùzu 0.0.6, which focuses on addressing bugs reported by our users. We addressed the following issues in this bug-fix release:]]></summary>
         <content type="html"><![CDATA[<p>We are thrilled to announce the release of Kùzu 0.0.6, which focuses on addressing bugs reported by our users. We addressed the following issues in this bug-fix release:</p><ol><li>Resolved a segmentation fault occurring while loading overflow data types with parallelism.</li><li>Fixed an issue of reading out of bound for LIST vector null buffer.</li><li>Implemented several missing data types in C, JAVA, Rust, and Python API bindings.</li></ol><p>For more detailed information about the changes in this release, please visit <a href="https://github.com/kuzudb/kuzu/releases/tag/v0.0.6" target="_blank" rel="noopener noreferrer">this link</a>. </p><p>We extend our sincere gratitude to all our users who reported these bugs, as well as to everyone who supported us throughout this process. Your feedback is instrumental in making Kùzu better!</p>]]></content>
@@ -68,8 +68,8 @@ to develop tools like IAMGraphViz is extremely easy and fun 🥳🙌💪!</p>]]>
     </entry>
     <entry>
         <title type="html"><![CDATA[Kùzu 0.0.5 Release]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.5-release</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.5-release"/>
+        <id>https://kuzudb.com/docusaurus/blog/kuzu-0.0.5-release</id>
+        <link href="https://kuzudb.com/docusaurus/blog/kuzu-0.0.5-release"/>
         <updated>2023-07-10T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[We are very happy to release Kùzu 0.0.5 today! This release comes with the following new main features and improvements:]]></summary>
         <content type="html"><![CDATA[<p>We are very happy to release Kùzu 0.0.5 today! This release comes with the following new main features and improvements: </p><ul><li><a href="/docusaurus/blog/kuzu-0.0.5-release#cypher-features">Cypher Features</a><ul><li><a href="/docusaurus/blog/kuzu-0.0.5-release#named-path">Named Path</a></li><li><a href="/docusaurus/blog/kuzu-0.0.5-release#filters-of-relationships-in-recursive-patterns">Filters of Relationships in Recursive Patterns</a></li><li><a href="/docusaurus/blog/kuzu-0.0.5-release#all-shortest-paths">All Shortest Paths</a></li><li><a href="/docusaurus/blog/kuzu-0.0.5-release#call-clause"><code>Call</code> Clause</a></li></ul></li><li><a href="/docusaurus/blog/kuzu-0.0.5-release#modifying-database-configurations">Modifying Database Configuration</a></li><li><a href="/docusaurus/blog/kuzu-0.0.5-release#data-types">Data Types</a><ul><li><a href="/docusaurus/blog/kuzu-0.0.5-release#blob"><code>BLOB</code></a></li></ul></li><li><a href="/docusaurus/blog/kuzu-0.0.5-release#client-apis-rust-and-java">Client APIs: Rust and Java</a></li><li><a href="/docusaurus/blog/kuzu-0.0.5-release#development-testing-framework">Development:Testing Framework</a></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="cypher-features">Cypher Features<a href="#cypher-features" class="hash-link" aria-label="Direct link to Cypher Features" title="Direct link to Cypher Features">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="named-paths">Named Paths<a href="#named-paths" class="hash-link" aria-label="Direct link to Named Paths" title="Direct link to Named Paths">​</a></h3><p>This releases introduces named paths. Users can now assign a named variable to a connected graph pattern. For example, the following query returns all path between <code>Adam</code> and <code>Karissa</code>.</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">MATCH p = (a:User)-[:Follows]-&gt;(b:User) </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WHERE a.name = 'Adam' AND b.name = 'Karissa' </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">RETURN p;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>Named paths can also be assigned to recursive graph patterns as follows:</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">MATCH p = (a:User)-[:Follows*1..2]-&gt;(:User)-[:LivesIn]-&gt;(:City) </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WHERE a.name = 'Adam' </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">RETURN p;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>One can also assign multiple named paths in a <code>MATCH</code> clause</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">MATCH p1 = (a:User)-[:Follows]-&gt;(b:User), p2 = (b)-[:LivesIn]-&gt;(:City) </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WHERE a.name = 'Adam' </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">RETURN p1, p2;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>Internally, a path is processed as a <code>STRUCT</code> with two fields, a nodes field with key <code>_NODES</code> and type <code>LIST[NODE]</code> and a rels field with key <code>_RELS</code> and type <code>LIST[REL]</code>. See <a href="https://kuzudb.com/docusaurus/cypher/data-types/path" target="_blank" rel="noopener noreferrer"><code>PATH</code></a> for details. Users can access nodes and rels field with <code>nodes(p)</code> and <code>rels(p)</code> function calls as follows:</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">MATCH p = (a:User)-[:Follows*1..2]-&gt;(:User) </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WHERE a.name = 'Adam' </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">RETURN nodes(p), (rels(p)[1]).since;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="filters-of-relationships-in-recursive-patterns">Filters of Relationships in Recursive Patterns<a href="#filters-of-relationships-in-recursive-patterns" class="hash-link" aria-label="Direct link to Filters of Relationships in Recursive Patterns" title="Direct link to Filters of Relationships in Recursive Patterns">​</a></h3><p>Users can now put predicates on the relationships that will be "traversed/joined" in recursive patterns.
@@ -86,8 +86,8 @@ For a more detailed overview of our testing framework, please visit <a href="htt
     </entry>
     <entry>
         <title type="html"><![CDATA[Kùzu 0.0.4 Release]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.4-release</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.4-release"/>
+        <id>https://kuzudb.com/docusaurus/blog/kuzu-0.0.4-release</id>
+        <link href="https://kuzudb.com/docusaurus/blog/kuzu-0.0.4-release"/>
         <updated>2023-06-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[We are very happy to release Kùzu 0.0.4 today! This release comes with the following new main features and improvements:]]></summary>
         <content type="html"><![CDATA[<p>We are very happy to release Kùzu 0.0.4 today! This release comes with the following new main features and improvements: </p><ul><li><a href="/docusaurus/blog/kuzu-0.0.4-release#data-ingestion-improvements">Data Ingestion Improvements</a></li><li><a href="/docusaurus/blog/kuzu-0.0.4-release#new-cypher-features">New Cypher Features</a><ul><li><a href="/docusaurus/blog/kuzu-0.0.4-release#undirected-relationships-in-queries">Undirected Relationships in Queries</a></li><li><a href="/docusaurus/blog/kuzu-0.0.4-release#recursive-queries-shortest-path-queries-and-improved-variable-length-queries">Recursive Queries: Shortest Path Queries and Improved Variable-length Queries</a></li></ul></li><li><a href="/docusaurus/blog/kuzu-0.0.4-release#new-data-types">New Data Types</a><ul><li><a href="/docusaurus/blog/kuzu-0.0.4-release#serial"><code>SERIAL</code></a></li><li><a href="/docusaurus/blog/kuzu-0.0.4-release#struct"><code>STRUCT</code></a></li></ul></li><li><a href="/docusaurus/blog/kuzu-0.0.4-release#client-apis">Client APIs</a><ul><li><a href="/docusaurus/blog/kuzu-0.0.4-release#windows-compatibility">Windows compatibility</a></li><li><a href="/docusaurus/blog/kuzu-0.0.4-release#c">C</a></li><li><a href="/docusaurus/blog/kuzu-0.0.4-release#nodejs">Node.js</a></li></ul></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="data-ingestion-improvements">Data Ingestion Improvements<a href="#data-ingestion-improvements" class="hash-link" aria-label="Direct link to Data Ingestion Improvements" title="Direct link to Data Ingestion Improvements">​</a></h2><p>We continue to improve our data ingestion in this release.
@@ -115,8 +115,8 @@ soon follow this blog post with one (or a few) blog posts on developing some app
     </entry>
     <entry>
         <title type="html"><![CDATA[Scaling Pytorch Geometric GNNs With Kùzu]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-pyg-remote-backend</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-pyg-remote-backend"/>
+        <id>https://kuzudb.com/docusaurus/blog/kuzu-pyg-remote-backend</id>
+        <link href="https://kuzudb.com/docusaurus/blog/kuzu-pyg-remote-backend"/>
         <updated>2023-05-10T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[In this post, we'll walk through how to use Kùzu as a Pytorch Geometric (PyG) Remote Backend to train a GNN model on very large graphs that do not fit on your machine's RAM.]]></summary>
         <content type="html"><![CDATA[<p>In this post, we'll walk through how to use Kùzu as a <a href="https://pytorch-geometric.readthedocs.io/en/latest/advanced/remote.html" target="_blank" rel="noopener noreferrer">Pytorch Geometric (PyG) <em>Remote Backend</em></a> to train a GNN model on very large graphs that do not fit on your machine's RAM. </p><p>Let's start with a quick overview of PyG Remote Backends: PyG Remote Backends are plug-in replacements for PyG's in-memory graph and feature stores, so they can be used seamlessly with the rest of the PyG interfaces to develop your GNN models. If a PyG Remote Backend is a disk-based storage system, such as Kùzu, PyG will fetch subgraphs from Kùzu, which stores and scans its data from disk, allowing you to train models on very large graphs for which PyG's in-memory storage would run out of memory and fail.</p><p>As you'll see, if you already have PyG models you have developed in Python, replacing PyG's default storage with Kùzu is extremely simple. <strong><em>It
@@ -184,8 +184,8 @@ and sampled subgraphs from 2 degree neighbors of these batches. Now we use a muc
     </entry>
     <entry>
         <title type="html"><![CDATA[Kùzu 0.0.3 Release]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.3-release</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.3-release"/>
+        <id>https://kuzudb.com/docusaurus/blog/kuzu-0.0.3-release</id>
+        <link href="https://kuzudb.com/docusaurus/blog/kuzu-0.0.3-release"/>
         <updated>2023-04-06T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[We are happy to release Kùzu 0.0.3 today. This release comes with the following new main features and improvements:]]></summary>
         <content type="html"><![CDATA[<p>We are happy to release Kùzu 0.0.3 today. This release comes with the following new main features and improvements:</p><ul><li><a href="/docusaurus/blog/kuzu-0.0.3-release#k%C3%B9zu-as-a-pyg-remote-backend">Kùzu as a Pytorch Geometric (PyG) Remote Backend</a>: You can now train PyG GNNs and other models directly using graphs (and node features) stored on Kùzu.  See this <a href="https://colab.research.google.com/drive/12fOSqPm1HQTz_m9caRW7E_92vaeD9xq6" target="_blank" rel="noopener noreferrer">Colab notebook</a>
@@ -276,8 +276,8 @@ are two ways to do this:</p><ul><li>C++ API: <code>Connection::interrupt()</code
     </entry>
     <entry>
         <title type="html"><![CDATA[Why (Graph) DBMSs Need New Join Algorithms: The Story of Worst-case Optimal Join Algorithms]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/wcoj</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/wcoj"/>
+        <id>https://kuzudb.com/docusaurus/blog/wcoj</id>
+        <link href="https://kuzudb.com/docusaurus/blog/wcoj"/>
         <updated>2023-02-22T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Joins of a sets of records is objectively the most expensive operation in DBMSs.]]></summary>
         <content type="html"><![CDATA[<p>Joins of a sets of records is objectively the most expensive operation in DBMSs.
@@ -551,8 +551,8 @@ it. Give us a <a href="https://github.com/kuzudb/kuzu" target="_blank" rel="noop
     </entry>
     <entry>
         <title type="html"><![CDATA[Kùzu 0.0.2 Release]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.2-release</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/kuzu-0.0.2-release"/>
+        <id>https://kuzudb.com/docusaurus/blog/kuzu-0.0.2-release</id>
+        <link href="https://kuzudb.com/docusaurus/blog/kuzu-0.0.2-release"/>
         <updated>2023-02-13T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[This post is about the second release of Kùzu. However, we want to start with something much more important:]]></summary>
         <content type="html"><![CDATA[<p>This post is about the second release of Kùzu. However, we want to start with something much more important:</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="donate-to-the-victims-of-türkiye-syria-earthquake">Donate to the Victims of <a href="https://www.bbc.com/news/world-middle-east-64590946" target="_blank" rel="noopener noreferrer">Türkiye-Syria Earthquake</a>:<a href="#donate-to-the-victims-of-türkiye-syria-earthquake" class="hash-link" aria-label="Direct link to donate-to-the-victims-of-türkiye-syria-earthquake" title="Direct link to donate-to-the-victims-of-türkiye-syria-earthquake">​</a></h3><p>Our hearts, thoughts, and prayers go to all the victims, those who survived and those who passed,
@@ -637,8 +637,8 @@ This is to simplify our storage. But please let us know if you have strong use c
     </entry>
     <entry>
         <title type="html"><![CDATA[Factorization & Great Ideas from Database Theory]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/factorization</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/factorization"/>
+        <id>https://kuzudb.com/docusaurus/blog/factorization</id>
+        <link href="https://kuzudb.com/docusaurus/blog/factorization"/>
         <updated>2023-01-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Many of the core principles of how to develop DBMSs are well understood.]]></summary>
         <content type="html"><![CDATA[<p>Many of the core principles of how to develop DBMSs are well understood.
@@ -907,8 +907,8 @@ from another theoretical insight on m-n joins! Take care until then!</p><div cla
     </entry>
     <entry>
         <title type="html"><![CDATA[What Every Competent GDBMS Should Do (aka The Goals & Vision of Kùzu]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/what-every-gdbms-should-do-and-vision</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/what-every-gdbms-should-do-and-vision"/>
+        <id>https://kuzudb.com/docusaurus/blog/what-every-gdbms-should-do-and-vision</id>
+        <link href="https://kuzudb.com/docusaurus/blog/what-every-gdbms-should-do-and-vision"/>
         <updated>2023-01-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[As a co-implementor of the Kùzu GDBMS and]]></summary>
         <content type="html"><![CDATA[<p>As a co-implementor of the Kùzu GDBMS and
@@ -1155,8 +1155,8 @@ and <a href="https://github.com/kuzudb/kuzu" target="_blank" rel="noopener noref
     </entry>
     <entry>
         <title type="html"><![CDATA[Meet Kùzu 🤗]]></title>
-        <id>https://your-docusaurus-test-site.com/docusaurus/blog/meet-kuzu</id>
-        <link href="https://your-docusaurus-test-site.com/docusaurus/blog/meet-kuzu"/>
+        <id>https://kuzudb.com/docusaurus/blog/meet-kuzu</id>
+        <link href="https://kuzudb.com/docusaurus/blog/meet-kuzu"/>
         <updated>2022-11-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Today we are very excited to make an initial version of Kùzu public on github!]]></summary>
         <content type="html"><![CDATA[<p>Today we are very excited to make an initial version of <a href="https://github.com/kuzudb/kuzu" target="_blank" rel="noopener noreferrer">Kùzu public on github</a>!
