@@ -1,58 +1,62 @@
+const VERSION = "0.0.7";
+const DOWNLOAD_LINKS_PREFIX =
+  "https://github.com/kuzudb/kuzu/releases/download/v" + VERSION + "/";
+
 const data = [
   { language: "Python", link: "pip install kuzu", isLinkAnchor: false },
   { language: "Node.js", link: "npm i kuzu", isLinkAnchor: false },
   {
     language: "CLI",
     platform: "macOS (Apple Silicon)",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/kuzu_cli-osx-arm64.zip",
+    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-osx-arm64.zip",
     isLinkAnchor: true,
   },
   {
     language: "CLI",
     platform: "macOS (Intel)",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/kuzu_cli-osx-x86_64.zip",
+    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-osx-x86_64.zip",
     isLinkAnchor: true,
   },
   {
     language: "CLI",
     platform: "Linux",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/kuzu_cli-linux-x86_64.zip",
+    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-linux-x86_64.zip",
     isLinkAnchor: true,
   },
   {
     language: "CLI",
     platform: "Windows",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/kuzu_cli-windows-x86_64.zip",
+    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-windows-x86_64.zip",
     isLinkAnchor: true,
   },
   {
     language: "C/C++",
     platform: "macOS (Apple Silicon)",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/libkuzu-osx-arm64.zip",
+    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-osx-arm64.zip",
     isLinkAnchor: true,
   },
   {
     language: "C/C++",
     platform: "macOS (Intel)",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/libkuzu-osx-x86_64.zip",
+    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-osx-x86_64.zip",
     isLinkAnchor: true,
   },
   {
     language: "C/C++",
     platform: "Linux",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/libkuzu-linux-x86_64.zip",
+    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-linux-x86_64.zip",
     isLinkAnchor: true,
   },
   {
     language: "C/C++",
     platform: "Windows",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/libkuzu-windows-x86_64.zip",
+    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-windows-x86_64.zip",
     isLinkAnchor: true,
   },
   { language: "Rust", link: "cargo add kuzu", isLinkAnchor: false },
   {
     language: "Java",
-    link: "https://github.com/kuzudb/kuzu/releases/download/v0.0.6/kuzu_java.jar",
+    link: DOWNLOAD_LINKS_PREFIX + "kuzu_java.jar",
     isLinkAnchor: true,
   },
 ];
