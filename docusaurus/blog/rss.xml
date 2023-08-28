@@ -4,10 +4,19 @@
         <title>Kùzu Blog</title>
         <link>https://kuzudb.com/docusaurus/blog</link>
         <description>Kùzu Blog</description>
-        <lastBuildDate>Wed, 16 Aug 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 28 Aug 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Kùzu 0.0.8 Release]]></title>
+            <link>https://kuzudb.com/docusaurus/blog/kuzu-0.0.8-release</link>
+            <guid>https://kuzudb.com/docusaurus/blog/kuzu-0.0.8-release</guid>
+            <pubDate>Mon, 28 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[We're here to introduce Kùzu 0.0.8, which is a minor bug-fix release together with some performance optimizations:]]></description>
+            <content:encoded><![CDATA[<p>We're here to introduce Kùzu 0.0.8, which is a minor bug-fix release together with some performance optimizations:</p><ul><li>Fixed a major bug in COPY on large datasets. <a href="https://github.com/kuzudb/kuzu/pull/1963" target="_blank" rel="noopener noreferrer">PR 1963</a></li><li>Implemented the <a href="https://github.com/kuzudb/kuzu/pull/1949" target="_blank" rel="noopener noreferrer">TopK optimization</a>, significantly enhancing the performance of queries that involve ORDER BY and LIMIT clauses. We will delve deeper into this optimization in a blog post. <a href="https://github.com/kuzudb/kuzu/pull/1949" target="_blank" rel="noopener noreferrer">PR 1949</a></li><li>WITH clause (CTE) rewriter. We avoid the evaluation of node and rel in CTE projection if it's not needed for further processing. <a href="https://github.com/kuzudb/kuzu/pull/1956" target="_blank" rel="noopener noreferrer">PR 1956</a></li><li>Updated our Rust doc with converting query result to arrow arrays.</li><li>Fixed the size allocated for boolean values to match the size of the bit-packed data. <a href="https://github.com/kuzudb/kuzu/pull/1953/files" target="_blank" rel="noopener noreferrer">PR 1953</a></li></ul><p>For more detailed information about the changes in this release, please see <a href="https://github.com/kuzudb/kuzu/releases/tag/v0.0.8" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content:encoded>
+            <category>release</category>
+        </item>
         <item>
             <title><![CDATA[Kùzu 0.0.7 Release]]></title>
             <link>https://kuzudb.com/docusaurus/blog/kuzu-0.0.7-release</link>
