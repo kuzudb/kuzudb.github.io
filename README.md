@@ -2,14 +2,14 @@
 
 This repository hosts the source code for [Kùzu website](https://kuzudb.github.io).
 
-## Building
-This website is generated through [Jekyll](https://jekyllrb.com/). 
+## Test Locally
+Since this website is a static website, you can test it with any static web server. For example, you can use the one provided by Python:
 
-- To install Jekyll, follow the documentation [here](https://jekyllrb.com/docs/installation/).
-- To test locally, follow the documentation [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
-  - Note: If you are using Ruby 3.0 and Jekyll 4.2.x or older (which should be the case if you follow the installation above), run `bundle add webrick` before running `bundle install` 
+```bash
+python3 -m http.server
+```
 
-## Add content
+## Add Content
 ### Documentations and Blogs
 The documentations and blogs have been migrated to [kuzu-docs](https://github.com/kuzudb/kuzu-docs). Please do not directly edit the files under `docusaurus` in this repository. To make changes to the documentations, please edit the documentations in [kuzu-docs](https://github.com/kuzudb/kuzu-docs). Once the changes have been merged to [kuzu-docs](https://github.com/kuzudb/kuzu-docs), the CI pipeline will automatically build the documentation and create a pull request in this repository. Merging the pull request will automatically deploy the documentation to the server.
 
