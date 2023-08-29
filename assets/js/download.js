@@ -1,4 +1,4 @@
-const VERSION = "0.0.7";
+const VERSION = "0.0.8";
 const DOWNLOAD_LINKS_PREFIX =
   "https://github.com/kuzudb/kuzu/releases/download/v" + VERSION + "/";
 
