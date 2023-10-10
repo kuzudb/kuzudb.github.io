@@ -2694,6 +2694,11 @@ ul.icons {
   padding-left: 0;
 }
 
+ul.icons.icons-social{
+  text-align: center;
+  margin-bottom: 0;
+}
+
 ul.icons li {
   display: inline-block;
   margin-top: 1em;
