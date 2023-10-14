@@ -4,10 +4,19 @@
         <title>Kùzu Blog</title>
         <link>https://kuzudb.com/docusaurus/blog</link>
         <description>Kùzu Blog</description>
-        <lastBuildDate>Mon, 02 Oct 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 14 Oct 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Kùzu 0.0.10 Release]]></title>
+            <link>https://kuzudb.com/docusaurus/blog/kuzu-0.0.10-release</link>
+            <guid>https://kuzudb.com/docusaurus/blog/kuzu-0.0.10-release</guid>
+            <pubDate>Sat, 14 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[We're here to introduce Kùzu 0.0.10, which is a minor release with a bunch of bug fixes and improvements:]]></description>
+            <content:encoded><![CDATA[<p>We're here to introduce Kùzu 0.0.10, which is a minor release with a bunch of bug fixes and improvements:</p><ul><li>Added the frame of reference encoding for integers. <a href="https://github.com/kuzudb/kuzu/pull/2140" target="_blank" rel="noopener noreferrer">PR 2140</a></li><li>Fixed slicing of UTF-8 string. <a href="https://github.com/kuzudb/kuzu/pull/2212" target="_blank" rel="noopener noreferrer">PR 2212</a></li><li>Fixed copying of invalid UTF-8. <a href="https://github.com/kuzudb/kuzu/pull/2208" target="_blank" rel="noopener noreferrer">PR 2208</a></li><li>Added more checks and better error messages during the binding phase. <a href="https://github.com/kuzudb/kuzu/pull/2206" target="_blank" rel="noopener noreferrer">PR 2206</a></li><li>Fixed return list literal with null values. <a href="https://github.com/kuzudb/kuzu/pull/2187" target="_blank" rel="noopener noreferrer">PR 2187</a></li><li>Fixed bugs in scan multi label rel tables. <a href="https://github.com/kuzudb/kuzu/pull/2149" target="_blank" rel="noopener noreferrer">PR 2149</a></li><li>Deprecated all functions for getting the table names and properties from the client APIs and the CLI, instead, <code>CALL</code> is introduced for the same functionality. <a href="https://github.com/kuzudb/kuzu/pull/2199" target="_blank" rel="noopener noreferrer">PR 2199</a>, <a href="https://github.com/kuzudb/kuzu/pull/2207" target="_blank" rel="noopener noreferrer">2207</a></li><li>Added missing data type support in client APIs. <a href="https://github.com/kuzudb/kuzu/pull/2183" target="_blank" rel="noopener noreferrer">PR 2183</a>, <a href="https://github.com/kuzudb/kuzu/pull/2176" target="_blank" rel="noopener noreferrer">PR 2176</a>, <a href="https://github.com/kuzudb/kuzu/pull/2193" target="_blank" rel="noopener noreferrer">PR 2193</a>, <a href="https://github.com/kuzudb/kuzu/pull/2172" target="_blank" rel="noopener noreferrer">PR 2172</a></li></ul><p>For more detailed information about the changes in this release, please see <a href="https://github.com/kuzudb/kuzu/releases/tag/v0.0.10" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content:encoded>
+            <category>release</category>
+        </item>
         <item>
             <title><![CDATA[Kùzu 0.0.9 Release]]></title>
             <link>https://kuzudb.com/docusaurus/blog/kuzu-0.0.9-release</link>
