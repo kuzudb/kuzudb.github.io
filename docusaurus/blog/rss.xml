@@ -4,10 +4,19 @@
         <title>Kùzu Blog</title>
         <link>https://kuzudb.com/docusaurus/blog</link>
         <description>Kùzu Blog</description>
-        <lastBuildDate>Sat, 14 Oct 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 19 Oct 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Kùzu 0.0.11 Release]]></title>
+            <link>https://kuzudb.com/docusaurus/blog/kuzu-0.0.11-release</link>
+            <guid>https://kuzudb.com/docusaurus/blog/kuzu-0.0.11-release</guid>
+            <pubDate>Thu, 19 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[We release Kùzu 0.0.11, another minor release. The main new feature of this release is read-only access mode for the database on Linux. The read-only mode enables the upcoming Kùzu UI to optionally open a database in read-only mode while allowing other applications to access the same database concurrently.]]></description>
+            <content:encoded><![CDATA[<p>We release Kùzu 0.0.11, another minor release. The main new feature of this release is read-only access mode for the database on Linux. The read-only mode enables the upcoming <a href="https://github.com/kuzudb/kuzu-ui" target="_blank" rel="noopener noreferrer">Kùzu UI</a> to optionally open a database in read-only mode while allowing other applications to access the same database concurrently.</p><p>For more detailed information about the changes in this release, please see <a href="https://github.com/kuzudb/kuzu/releases/tag/v0.0.11" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content:encoded>
+            <category>release</category>
+        </item>
         <item>
             <title><![CDATA[Kùzu 0.0.10 Release]]></title>
             <link>https://kuzudb.com/docusaurus/blog/kuzu-0.0.10-release</link>
