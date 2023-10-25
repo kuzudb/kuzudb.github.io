@@ -4,10 +4,53 @@
         <title>Kùzu Blog</title>
         <link>https://kuzudb.com/docusaurus/blog</link>
         <description>Kùzu Blog</description>
-        <lastBuildDate>Thu, 19 Oct 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 25 Oct 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[KùzuExplorer: Visualizing Query Results and Schemas]]></title>
+            <link>https://kuzudb.com/docusaurus/blog/kuzuexplorer</link>
+            <guid>https://kuzudb.com/docusaurus/blog/kuzuexplorer</guid>
+            <pubDate>Wed, 25 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Today, we are happy to release KùzuExplorer, which is Kùzu's browser-based frontend to]]></description>
+            <content:encoded><![CDATA[<p>Today, we are happy to release KùzuExplorer, which is Kùzu's browser-based frontend to
+visualize and explore database schemas and query results in the form of a graph, table, or in JSON.
+This is a very useful tool for exploring databases and debugging applications during prototyping
+phase. This post describes a brief overview of the main features of KùzuExplorer with pointers to
+<a href="/docusaurus/kuzuexplorer">KùzuExplorer documentation</a> for details.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="launching-kùzuexplorer">Launching KùzuExplorer<a href="#launching-kùzuexplorer" class="hash-link" aria-label="Direct link to Launching KùzuExplorer" title="Direct link to Launching KùzuExplorer">​</a></h2><p>KùzuExplorer is a web application that is launched from a deployed Docker image. Assuming you have Docker
+installed before proceeding, you can launch KùzuExplorer on an existing DBMS you have or on an empty database.
+Details about how to launch KùzuExplorer can be found <a href="/docusaurus/kuzuexplorer/#launching-k%C3%B9zuexplorer">here</a>.
+For example, to start KùzuExplorer on an empty
+database, you can simply run the following command on your shell, and then access KùzuExplorer by going to
+<code>http://localhost:8000</code></p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">docker run -p 8000:8000 --rm kuzudb/kuzu-ui:latest</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>KùzuExplorer comes bundled with several pre-existing databases, one of which you can use to get started.
+To load one of these databases, click the <code>Datasets</code> tab on the top right corner on your landing page
+and then the <code>Load Dataset</code> button as shown in the below figure.</p><div class="img-center"><img loading="lazy" src="/docusaurus/assets/images/preexisting-datasets-8a7a9a3ddb979ea5e3e4bd1611c4ebdf.png" width="600" class="img_ev3q"></div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="schema-panel-schema-exploring-and-editing">Schema Panel: Schema Exploring and Editing<a href="#schema-panel-schema-exploring-and-editing" class="hash-link" aria-label="Direct link to Schema Panel: Schema Exploring and Editing" title="Direct link to Schema Panel: Schema Exploring and Editing">​</a></h2><p>One of the two main functionalities of KùzuExplorer is to explore and modify the schema of your database.
+By clicking the <code>Schema</code> tab on the top right corner, you'll get to a page that shows you the
+Node and Relationship tables in your database in a node-link view on the left. Using the right panel,
+you can do several things to explore and modify your tables, such as by adding new properties to your
+node/rel tables, inserting new node/rel tables, or dropping node/rel tables. These changes can all be done
+interactively by clicking buttons, which automatically generate and run the corresponding Cypher queries
+(unless you have launched KùzuExplorer <a href="/docusaurus/kuzuexplorer/#access-mode">in read-only mode</a>).</p><div class="img-center"><img loading="lazy" src="/docusaurus/assets/images/schema-panel-28660c6e189bff43d75bf05de40c1f1b.png" width="600" class="img_ev3q"></div><p>More details
+about what can be done in the Schema panel can be found <a href="/docusaurus/kuzuexplorer/schema-panel">here</a>. </p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="shell-panel-query-result-visualization">Shell Panel: Query Result Visualization<a href="#shell-panel-query-result-visualization" class="hash-link" aria-label="Direct link to Shell Panel: Query Result Visualization" title="Direct link to Shell Panel: Query Result Visualization">​</a></h2><p>Using KùzuExplorer, you can also issue Cypher queries similar to Kùzu's
+<a href="/docusaurus/installation#command-line">command line interface</a>, and
+visualize the results of these queries.
+To issue queries go to the <code>Shell</code> tab on the right corner and you can type a Cypher query.
+As you type your query, KùzuExplorer shell will suggest keyword completions, which can
+help you write your queries. You can then click the green "play" icon  on the left hand
+side of the shell panel, which will execute your queries and display the results. The
+results can be displayed in three different modes: (i) a node-link graph view; (ii) a table; or (iii) as json.
+As an example, the below image presents the results of the following query which retrieves all nodes and edges
+in the database in a node-link graph view:</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">MATCH (a)-[e]-&gt;(b)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">RETURN *</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><div class="img-center"><img loading="lazy" src="/docusaurus/assets/images/query-result-node-link-view-708cf57bf3620a739169dbe5c69e6b4c.png" width="600" class="img_ev3q"></div>You can inspect individual nodes and edge in the query results by clicking on them. More details about what can be done in the Shell panel can be found [here](/kuzuexplorer/shell-panel).<h2 class="anchor anchorWithStickyNavbar_LWe7" id="settings-panel-configuring-visualizations">Settings Panel: Configuring Visualizations<a href="#settings-panel-configuring-visualizations" class="hash-link" aria-label="Direct link to Settings Panel: Configuring Visualizations" title="Direct link to Settings Panel: Configuring Visualizations">​</a></h2><p>There is also a Settings tab on the right hand corner, which can be used for several more advanced
+setting changes, e.g., changing the colors or sizes of nodes of a certain type (e.g., <code>User</code> nodes) or
+the maximum number of nodes to plot on the node-link graph visualizations when visualizing query results.
+Details of these can be found <a href="/docusaurus/kuzuexplorer/settings-panel">here</a>.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="final-words">Final Words<a href="#final-words" class="hash-link" aria-label="Direct link to Final Words" title="Direct link to Final Words">​</a></h2><p>KùzuExplorer should be quite useful especially when developing your applications for exploration and debugging purposes, e.g.,
+you can interactively debug why your queries do not return the results you expect using KùzuExplorer by exploring the
+actual nodes and relationships in your database.</p><p>This is our first version of KùzuExplorer and we will be improving it over time.
+We hope you enjoy using KùzuExplorer and help us make it better! Please send us any feature or documentation requests or
+bug reports by opening an issue in <a href="https://github.com/kuzudb/explorer" target="_blank" rel="noopener noreferrer">KùzuExplorer's github repo</a>!</p>]]></content:encoded>
+            <category>release</category>
+        </item>
         <item>
             <title><![CDATA[Kùzu 0.0.11 Release]]></title>
             <link>https://kuzudb.com/docusaurus/blog/kuzu-0.0.11-release</link>
