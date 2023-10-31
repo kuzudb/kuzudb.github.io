@@ -2,11 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kuzudb.com/docusaurus/blog</id>
     <title>Kùzu Blog</title>
-    <updated>2023-10-25T00:00:00.000Z</updated>
+    <updated>2023-10-31T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kuzudb.com/docusaurus/blog"/>
     <subtitle>Kùzu Blog</subtitle>
     <icon>https://kuzudb.com/docusaurus/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Kùzu 0.0.12 Release]]></title>
+        <id>https://kuzudb.com/docusaurus/blog/kuzu-0.0.12-release</id>
+        <link href="https://kuzudb.com/docusaurus/blog/kuzu-0.0.12-release"/>
+        <updated>2023-10-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We release Kùzu 0.0.12, another minor release. This release fixes a bug that prevents the database to be opened in read-only mode on a read-only file system. It also adds support for INT128 data type.]]></summary>
+        <content type="html"><![CDATA[<p>We release Kùzu 0.0.12, another minor release. This release fixes a bug that prevents the database to be opened in read-only mode on a read-only file system. It also adds support for INT128 data type.</p><p>For more detailed information about the changes in this release, please see <a href="https://github.com/kuzudb/kuzu/releases/tag/v0.0.12" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content>
+        <author>
+            <name>Kùzu Team</name>
+            <uri>https://github.com/kuzudb/</uri>
+        </author>
+        <category label="release" term="release"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[KùzuExplorer: Visualizing Query Results and Schemas]]></title>
         <id>https://kuzudb.com/docusaurus/blog/kuzuexplorer</id>
