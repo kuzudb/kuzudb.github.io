@@ -1,0 +1,27 @@
+var structkuzu_1_1common_1_1ku__string__t =
+[
+    [ "ku_string_t", "structkuzu_1_1common_1_1ku__string__t.html#a6ad87d21d8c9f979e8bcf1bcae5a1adb", null ],
+    [ "ku_string_t", "structkuzu_1_1common_1_1ku__string__t.html#ad2846ef563a5ee2ec6b7ac12ef960f02", null ],
+    [ "getAsShortString", "structkuzu_1_1common_1_1ku__string__t.html#a3ebd404f5c945e991007bf1d2ef52bce", null ],
+    [ "getAsString", "structkuzu_1_1common_1_1ku__string__t.html#a6b8d68ea718c0bc9585833773e98dc9d", null ],
+    [ "getAsStringView", "structkuzu_1_1common_1_1ku__string__t.html#acbbf178a8e68b1bc46cd706a4a15222c", null ],
+    [ "getData", "structkuzu_1_1common_1_1ku__string__t.html#a375e42cd6c23f2cbbbcd54bd134750bb", null ],
+    [ "operator!=", "structkuzu_1_1common_1_1ku__string__t.html#aed56be89eb451984b0aa0223ddde0a76", null ],
+    [ "operator<", "structkuzu_1_1common_1_1ku__string__t.html#a19d630c4a46ee585e4ad5e1b730e6e97", null ],
+    [ "operator<=", "structkuzu_1_1common_1_1ku__string__t.html#af8895cad81e52f196f910dcfe1eaf991", null ],
+    [ "operator==", "structkuzu_1_1common_1_1ku__string__t.html#af501d39a136357c6d9fae7be5c091a58", null ],
+    [ "operator>", "structkuzu_1_1common_1_1ku__string__t.html#a7a923123c45c5d1a699b876177648919", null ],
+    [ "operator>=", "structkuzu_1_1common_1_1ku__string__t.html#a87acd0ee862c387b9ba8861ec62556bd", null ],
+    [ "set", "structkuzu_1_1common_1_1ku__string__t.html#a6044447c4ce58ab82b4572d5aab871db", null ],
+    [ "set", "structkuzu_1_1common_1_1ku__string__t.html#aa5a45fe66e9b1426ca2a72f2b1d65a64", null ],
+    [ "set", "structkuzu_1_1common_1_1ku__string__t.html#a52fdd58d6e5cecfae69c4ac9b0b94311", null ],
+    [ "setFromRawStr", "structkuzu_1_1common_1_1ku__string__t.html#a9db9b0fe4ab1f175a2416e7918ff0855", null ],
+    [ "setLongString", "structkuzu_1_1common_1_1ku__string__t.html#a4bb008d2873ed77771a00f21df117007", null ],
+    [ "setLongString", "structkuzu_1_1common_1_1ku__string__t.html#adefb6d3162c60ab6c9df8e40b98a0f31", null ],
+    [ "setShortString", "structkuzu_1_1common_1_1ku__string__t.html#a2f7a088484c8994d3542293862e2ceaa", null ],
+    [ "setShortString", "structkuzu_1_1common_1_1ku__string__t.html#aba9a2a3277282e95f8c2b75373a3c19b", null ],
+    [ "data", "structkuzu_1_1common_1_1ku__string__t.html#ac2af1e77131916c2e78ee2b3aaf03601", null ],
+    [ "len", "structkuzu_1_1common_1_1ku__string__t.html#a350500a001dff0e3e3df20d84df8c85e", null ],
+    [ "overflowPtr", "structkuzu_1_1common_1_1ku__string__t.html#a14d90e6a6ae915f66132bfabe4114fc9", null ],
+    [ "prefix", "structkuzu_1_1common_1_1ku__string__t.html#afee8844331aaf007800af22ef03a3121", null ]
+];
