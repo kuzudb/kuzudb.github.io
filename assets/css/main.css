@@ -2694,7 +2694,7 @@ ul.icons {
   padding-left: 0;
 }
 
-ul.icons.icons-social{
+ul.icons.icons-social {
   text-align: center;
   margin-bottom: 0;
 }
@@ -3042,6 +3042,86 @@ table.alt tbody tr td {
   .statistics li strong,
   .statistics li b {
     font-size: 2.5em;
+  }
+}
+
+/* Team */
+
+#team-members {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left:10%;
+  margin-right:10%;
+  justify-content:space-between;
+}
+
+#team-members::after {
+  content: "";
+  flex: auto;
+  width: 33%;
+}
+
+.team-member-profile {
+  width: 33%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 24px;
+}
+
+.team-member-profile-wrapper{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-member-profile-text-wrapper {
+  margin-left: 20px;
+  text-align: left;
+}
+
+.team-member-profile-text-wrapper>p {
+  width: 160px;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.team-member-profile-text-wrapper>h4 {
+  margin-bottom: 0.25em;
+}
+
+@media screen and (max-width: 1280px) {
+  #team-members {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #team-members {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .team-member-profile {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #team-members {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    flex-direction: column;
+
+  }
+
+  .team-member-profile {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 }
 
