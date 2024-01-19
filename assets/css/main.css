@@ -3052,6 +3052,7 @@ table.alt tbody tr td {
   flex-wrap: wrap;
   margin-left:10%;
   margin-right:10%;
+  justify-content:space-between;
 }
 
 #team-members::after {
@@ -3066,6 +3067,14 @@ table.alt tbody tr td {
   display: flex;
   flex-direction: row;
   margin-bottom: 24px;
+}
+
+.team-member-profile-wrapper{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .team-member-profile-text-wrapper {

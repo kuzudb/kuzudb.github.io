@@ -45,6 +45,8 @@ const teamMembersDiv = $("#team-members")[0];
 for (const member of members) {
   const memberDiv = document.createElement("div");
   memberDiv.className = "team-member-profile";
+  const memberWrapper = document.createElement("div");
+  memberWrapper.className = "team-member-profile-wrapper";
   const memberImg = document.createElement("img");
   memberImg.src = member.img;
   memberImg.alt = member.name;
@@ -56,7 +58,8 @@ for (const member of members) {
   memberTitle.innerText = member.title;
   textWrapper.appendChild(memberName);
   textWrapper.appendChild(memberTitle);
-  memberDiv.appendChild(memberImg);
-  memberDiv.appendChild(textWrapper);
+  memberWrapper.appendChild(memberImg);
+  memberWrapper.appendChild(textWrapper);
+  memberDiv.appendChild(memberWrapper);
   teamMembersDiv.appendChild(memberDiv);
 }
