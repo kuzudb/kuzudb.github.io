@@ -1556,7 +1556,7 @@ from another theoretical insight on m-n joins! Take care until then!</p><div cla
         <category label="internals" term="internals"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[What Every Competent GDBMS Should Do (aka The Goals & Vision of Kùzu]]></title>
+        <title type="html"><![CDATA[What Every Competent GDBMS Should Do (aka The Goals & Vision of Kùzu)]]></title>
         <id>https://kuzudb.com/docusaurus/blog/what-every-gdbms-should-do-and-vision</id>
         <link href="https://kuzudb.com/docusaurus/blog/what-every-gdbms-should-do-and-vision"/>
         <updated>2023-01-12T00:00:00.000Z</updated>
