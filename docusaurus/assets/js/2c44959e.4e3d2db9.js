@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkkuzu_docs=self.webpackChunkkuzu_docs||[]).push([[6575],{8256:s=>{s.exports=JSON.parse('{"label":"use-case","permalink":"/docusaurus/blog/tags/use-case","allTagsPath":"/docusaurus/blog/tags","count":3}')}}]);
