@@ -24,53 +24,12 @@
 */
 var NAVTREE =
 [
-  [ "Kùzu C++ API", "index.html", [
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
-      [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", "namespacemembers_vars" ],
-        [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
-      ] ]
-    ] ],
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", "functions_vars" ],
-        [ "Enumerations", "functions_enum.html", null ],
-        [ "Related Symbols", "functions_rela.html", null ]
-      ] ]
-    ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
-    ] ]
-  ] ]
+  [ "Kùzu C++ API", "index.html", ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"classkuzu_1_1common_1_1_logical_type.html#a076b364cdc8a82917a6b60df7996402b",
-"classkuzu_1_1common_1_1_value.html#a5bae998fcca8d81115cc956d16ea8702",
-"classkuzu_1_1main_1_1_client_context.html#abab2bbdddbdfd2f8289ae18e20ba9362",
-"dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html",
-"functions_c.html",
-"namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a8e1bde3c3d303163521522cf1d62f21f",
-"namespacekuzu_1_1main.html",
-"structkuzu_1_1common_1_1_rel_type.html",
-"structkuzu_1_1common_1_1list__entry__t.html",
-"types_8h.html#a31f13fc36f32194006ca2989aa87233e"
+"index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

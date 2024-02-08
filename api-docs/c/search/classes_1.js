@@ -12,6 +12,10 @@ var searchData=
   ['kuzu_5fquery_5fresult_9',['kuzu_query_result',['../structkuzu__query__result.html',1,'']]],
   ['kuzu_5fquery_5fsummary_10',['kuzu_query_summary',['../structkuzu__query__summary.html',1,'']]],
   ['kuzu_5fsystem_5fconfig_11',['kuzu_system_config',['../structkuzu__system__config.html',1,'']]],
-  ['kuzu_5ftimestamp_5ft_12',['kuzu_timestamp_t',['../structkuzu__timestamp__t.html',1,'']]],
-  ['kuzu_5fvalue_13',['kuzu_value',['../structkuzu__value.html',1,'']]]
+  ['kuzu_5ftimestamp_5fms_5ft_12',['kuzu_timestamp_ms_t',['../structkuzu__timestamp__ms__t.html',1,'']]],
+  ['kuzu_5ftimestamp_5fns_5ft_13',['kuzu_timestamp_ns_t',['../structkuzu__timestamp__ns__t.html',1,'']]],
+  ['kuzu_5ftimestamp_5fsec_5ft_14',['kuzu_timestamp_sec_t',['../structkuzu__timestamp__sec__t.html',1,'']]],
+  ['kuzu_5ftimestamp_5ft_15',['kuzu_timestamp_t',['../structkuzu__timestamp__t.html',1,'']]],
+  ['kuzu_5ftimestamp_5ftz_5ft_16',['kuzu_timestamp_tz_t',['../structkuzu__timestamp__tz__t.html',1,'']]],
+  ['kuzu_5fvalue_17',['kuzu_value',['../structkuzu__value.html',1,'']]]
 ];
