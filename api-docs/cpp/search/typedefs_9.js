@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['relid_5ft_0',['relID_t',['../namespacekuzu_1_1common.html#ac40f344d1e499d2d6c3b9a92f93ea6f6',1,'kuzu::common']]],
-  ['replace_5ffunc_5ft_1',['replace_func_t',['../namespacekuzu_1_1main.html#a0944a8d8f0036b6b70465618c50ab2d4',1,'kuzu::main']]],
-  ['row_5fidx_5ft_2',['row_idx_t',['../namespacekuzu_1_1common.html#af3c0eb52e573ab0e09d3c2c2c6903b61',1,'kuzu::common']]]
+  ['page_5fgroup_5fidx_5ft_0',['page_group_idx_t',['../namespacekuzu_1_1common.html#ae2f254ecd52c071eecbe5424b5742219',1,'kuzu::common']]],
+  ['page_5fidx_5ft_1',['page_idx_t',['../namespacekuzu_1_1common.html#a436933067016ffbbc3fffbfaea879648',1,'kuzu::common']]],
+  ['page_5foffset_5ft_2',['page_offset_t',['../namespacekuzu_1_1common.html#a0b4670937c0adc2aa7390764ff2dd488',1,'kuzu::common']]],
+  ['partition_5fidx_5ft_3',['partition_idx_t',['../namespacekuzu_1_1common.html#a08d3a6df8cee3188f6a3ba61677c786d',1,'kuzu::common']]],
+  ['property_5fid_5ft_4',['property_id_t',['../namespacekuzu_1_1common.html#a31f13fc36f32194006ca2989aa87233e',1,'kuzu::common']]]
 ];

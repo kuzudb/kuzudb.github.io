@@ -89,9 +89,115 @@ $(document).ready(function(){initNavTree('namespacekuzu_1_1transaction.html','')
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">kuzu::transaction Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1transaction_1_1_transaction.html">Transaction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1transaction_1_1_transaction_context.html">TransactionContext</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a069cf26fb4f925fd7696e1f206a5fb90" id="r_a069cf26fb4f925fd7696e1f206a5fb90"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1transaction.html#a069cf26fb4f925fd7696e1f206a5fb90">TransactionType</a> : uint8_t { <a class="el" href="namespacekuzu_1_1transaction.html#a069cf26fb4f925fd7696e1f206a5fb90a47c7e7cb36a953a8c47e02000036bb44">READ_ONLY</a>
+, <a class="el" href="namespacekuzu_1_1transaction.html#a069cf26fb4f925fd7696e1f206a5fb90ad4b9e47f65b6e79b010582f15785867e">WRITE</a>
+ }</td></tr>
+<tr class="separator:a069cf26fb4f925fd7696e1f206a5fb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae57d6aa64aae1d37681439c63942a807" id="r_ae57d6aa64aae1d37681439c63942a807"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1transaction.html#ae57d6aa64aae1d37681439c63942a807">TransactionMode</a> : uint8_t { <a class="el" href="namespacekuzu_1_1transaction.html#ae57d6aa64aae1d37681439c63942a807ae1f2d5134ed2543d38a0de9751cf75d9">AUTO</a> = 0
+, <a class="el" href="namespacekuzu_1_1transaction.html#ae57d6aa64aae1d37681439c63942a807aa60a6a471c0681e5a49c4f5d00f6bc5a">MANUAL</a> = 1
+ }</td></tr>
+<tr class="separator:ae57d6aa64aae1d37681439c63942a807"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a0f978568208823cd9b41c7bbc6eef775" id="r_a0f978568208823cd9b41c7bbc6eef775"><td class="memItemLeft" align="right" valign="top">constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1transaction.html#a0f978568208823cd9b41c7bbc6eef775">INVALID_TRANSACTION_ID</a> = UINT64_MAX</td></tr>
+<tr class="separator:a0f978568208823cd9b41c7bbc6eef775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ae57d6aa64aae1d37681439c63942a807" name="ae57d6aa64aae1d37681439c63942a807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae57d6aa64aae1d37681439c63942a807">&#9670;&#160;</a></span>TransactionMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespacekuzu_1_1transaction.html#ae57d6aa64aae1d37681439c63942a807">kuzu::transaction::TransactionMode</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>If the connection is in AUTO_COMMIT mode any query over the connection will be wrapped around a transaction and committed (even if the query is READ_ONLY). If the connection is in MANUAL transaction mode, which happens only if an application manually begins a transaction (see below), then an application has to manually commit or rollback the transaction by calling commit() or rollback().</p>
+<p>AUTO_COMMIT is the default mode when a Connection is created. If an application calls begin[ReadOnly/Write]<a class="el" href="classkuzu_1_1transaction_1_1_transaction.html">Transaction</a> at any point, the mode switches to MANUAL. This creates an "active transaction" in the connection. When a connection is in MANUAL mode and the active transaction is rolled back or committed, then the active transaction is removed (so the connection no longer has an active transaction) and the mode automatically switches back to AUTO_COMMIT. Note: When a Connection object is deconstructed, if the connection has an active (manual) transaction, then the active transaction is rolled back. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae57d6aa64aae1d37681439c63942a807ae1f2d5134ed2543d38a0de9751cf75d9" name="ae57d6aa64aae1d37681439c63942a807ae1f2d5134ed2543d38a0de9751cf75d9"></a>AUTO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae57d6aa64aae1d37681439c63942a807aa60a6a471c0681e5a49c4f5d00f6bc5a" name="ae57d6aa64aae1d37681439c63942a807aa60a6a471c0681e5a49c4f5d00f6bc5a"></a>MANUAL&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a069cf26fb4f925fd7696e1f206a5fb90" name="a069cf26fb4f925fd7696e1f206a5fb90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a069cf26fb4f925fd7696e1f206a5fb90">&#9670;&#160;</a></span>TransactionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespacekuzu_1_1transaction.html#a069cf26fb4f925fd7696e1f206a5fb90">kuzu::transaction::TransactionType</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a069cf26fb4f925fd7696e1f206a5fb90a47c7e7cb36a953a8c47e02000036bb44" name="a069cf26fb4f925fd7696e1f206a5fb90a47c7e7cb36a953a8c47e02000036bb44"></a>READ_ONLY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a069cf26fb4f925fd7696e1f206a5fb90ad4b9e47f65b6e79b010582f15785867e" name="a069cf26fb4f925fd7696e1f206a5fb90ad4b9e47f65b6e79b010582f15785867e"></a>WRITE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a0f978568208823cd9b41c7bbc6eef775" name="a0f978568208823cd9b41c7bbc6eef775"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f978568208823cd9b41c7bbc6eef775">&#9670;&#160;</a></span>INVALID_TRANSACTION_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint64_t kuzu::transaction::INVALID_TRANSACTION_ID = UINT64_MAX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

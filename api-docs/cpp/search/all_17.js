@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['year_5finterval_0',['YEAR_INTERVAL',['../classkuzu_1_1common_1_1_date.html#a63556bff0de5c9db604ca84754061e9b',1,'kuzu::common::Date']]]
+  ['xor_0',['XOR',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434ba97675eb3f268048604dc5155511a2a4d',1,'kuzu::common']]]
 ];

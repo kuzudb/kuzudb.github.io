@@ -18,6 +18,6 @@ var classkuzu_1_1main_1_1_query_result =
     [ "isSuccess", "classkuzu_1_1main_1_1_query_result.html#a358791451a2a4c88a5fbc05d57319cfa", null ],
     [ "resetIterator", "classkuzu_1_1main_1_1_query_result.html#adca96bf0eb9ba28997a5a77dda3bc984", null ],
     [ "toString", "classkuzu_1_1main_1_1_query_result.html#a56e7bc908e43d9176ba4d942944d424d", null ],
-    [ "writeToCSV", "classkuzu_1_1main_1_1_query_result.html#a3739ba7454c08ae0e32b0514842c3475", null ],
+    [ "writeToCSV", "classkuzu_1_1main_1_1_query_result.html#a7c6a2fbd54e17c8145b00cef54669d9d", null ],
     [ "Connection", "classkuzu_1_1main_1_1_query_result.html#a54a11fdc71e1679a42fa0c0e3856673d", null ]
 ];

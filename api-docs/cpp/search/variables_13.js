@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ucase_5ffunc_5fname_0',['UCASE_FUNC_NAME',['../namespacekuzu_1_1common.html#a6d5cf3b1db9449faf5d08085e52dd9ef',1,'kuzu::common']]],
+  ['ucase_5ffunc_5fname_0',['UCASE_FUNC_NAME',['../namespacekuzu_1_1common.html#a0fb46f25f374ba0c4e88305d41aaf92b',1,'kuzu::common']]],
   ['uint16_1',['UINT16',['../namespacekuzu_1_1common.html#a36ec849c08045cb5b22520886bdf3266',1,'kuzu::common']]],
   ['uint16val_2',['uint16Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html#a5029c8cc7b85b8a6104ea9816461292e',1,'kuzu::common::Value::Val']]],
   ['uint32_3',['UINT32',['../namespacekuzu_1_1common.html#a79db5a18b91de5d9b9231cc9ce85a53b',1,'kuzu::common']]],
@@ -11,9 +11,11 @@ var searchData=
   ['uint8val_8',['uint8Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html#a203724b76272f320ffe67dcc35b3f629',1,'kuzu::common::Value::Val']]],
   ['undefined_5fcast_5fcost_9',['UNDEFINED_CAST_COST',['../namespacekuzu_1_1common.html#a02ac7f88b0b627766181f4756f78d61b',1,'kuzu::common']]],
   ['union_10',['UNION',['../namespacekuzu_1_1common.html#aa18d891a14598a9231db49a9fccfe89d',1,'kuzu::common']]],
-  ['union_5fextract_5ffunc_5fname_11',['UNION_EXTRACT_FUNC_NAME',['../namespacekuzu_1_1common.html#a6903811414b5e5ad52bd37cafa4e2a05',1,'kuzu::common']]],
-  ['union_5ftag_5ffunc_5fname_12',['UNION_TAG_FUNC_NAME',['../namespacekuzu_1_1common.html#a7b289c58e4e1071059813736b97a6d7b',1,'kuzu::common']]],
-  ['union_5fvalue_5ffunc_5fname_13',['UNION_VALUE_FUNC_NAME',['../namespacekuzu_1_1common.html#a94d349f550b273411b95783fc3f3a9eb',1,'kuzu::common']]],
+  ['union_5fextract_5ffunc_5fname_11',['UNION_EXTRACT_FUNC_NAME',['../namespacekuzu_1_1common.html#a23cfe81e85c24845e58898ab1a6bc072',1,'kuzu::common']]],
+  ['union_5ftag_5ffunc_5fname_12',['UNION_TAG_FUNC_NAME',['../namespacekuzu_1_1common.html#a5fde1c054472c40d7e1b79233a2beefd',1,'kuzu::common']]],
+  ['union_5fvalue_5ffunc_5fname_13',['UNION_VALUE_FUNC_NAME',['../namespacekuzu_1_1common.html#a1eac778cec5c2df9b9e872ed8ea0007b',1,'kuzu::common']]],
   ['uniquename_14',['uniqueName',['../classkuzu_1_1binder_1_1_expression.html#a2228fc01368489a1504c6002f1e3090c',1,'kuzu::binder::Expression']]],
-  ['upper_5ffunc_5fname_15',['UPPER_FUNC_NAME',['../namespacekuzu_1_1common.html#adcae684da561ed4cc5fb9b270b8beb8c',1,'kuzu::common']]]
+  ['upper_5ffunc_5fname_15',['UPPER_FUNC_NAME',['../namespacekuzu_1_1common.html#af502777ab39e34fe4def3b9174456c0a',1,'kuzu::common']]],
+  ['uuid_16',['UUID',['../namespacekuzu_1_1common.html#a28308c4b9af62491f97f8227f23de4d0',1,'kuzu::common']]],
+  ['uuid_5fstring_5flength_17',['UUID_STRING_LENGTH',['../structkuzu_1_1common_1_1uuid__t.html#ad083613d1d405b0cf59e0a01ddf6dc48',1,'kuzu::common::uuid_t']]]
 ];

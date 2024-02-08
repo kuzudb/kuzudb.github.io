@@ -9,6 +9,7 @@ var namespacekuzu_1_1main =
     [ "PreparedSummary", "structkuzu_1_1main_1_1_prepared_summary.html", "structkuzu_1_1main_1_1_prepared_summary" ],
     [ "QueryResult", "classkuzu_1_1main_1_1_query_result.html", "classkuzu_1_1main_1_1_query_result" ],
     [ "QuerySummary", "classkuzu_1_1main_1_1_query_summary.html", "classkuzu_1_1main_1_1_query_summary" ],
+    [ "StorageDriver", "classkuzu_1_1main_1_1_storage_driver.html", "classkuzu_1_1main_1_1_storage_driver" ],
     [ "SystemConfig", "structkuzu_1_1main_1_1_system_config.html", "structkuzu_1_1main_1_1_system_config" ],
     [ "replace_func_t", "namespacekuzu_1_1main.html#a0944a8d8f0036b6b70465618c50ab2d4", null ]
 ];

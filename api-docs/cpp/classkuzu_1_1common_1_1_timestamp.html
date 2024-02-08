@@ -128,8 +128,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a5037015abac58221e20ac1f5c9dd26df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a770ade212ee568834c3b640e1798c106" id="r_a770ade212ee568834c3b640e1798c106"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1common_1_1_timestamp.html#a770ade212ee568834c3b640e1798c106">getEpochNanoSeconds</a> (const <a class="el" href="structkuzu_1_1common_1_1timestamp__t.html">timestamp_t</a> &amp;timestamp)</td></tr>
 <tr class="separator:a770ade212ee568834c3b640e1798c106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754a2d0c36d524e6b0db4ff9819edfa7" id="r_a754a2d0c36d524e6b0db4ff9819edfa7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1common_1_1_timestamp.html#a754a2d0c36d524e6b0db4ff9819edfa7">getEpochMilliSeconds</a> (const <a class="el" href="structkuzu_1_1common_1_1timestamp__t.html">timestamp_t</a> &amp;timestamp)</td></tr>
+<tr class="separator:a754a2d0c36d524e6b0db4ff9819edfa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce4e44a44dc6f5d71ca191344d55767" id="r_a7ce4e44a44dc6f5d71ca191344d55767"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1common_1_1_timestamp.html#a7ce4e44a44dc6f5d71ca191344d55767">getEpochSeconds</a> (const <a class="el" href="structkuzu_1_1common_1_1timestamp__t.html">timestamp_t</a> &amp;timestamp)</td></tr>
+<tr class="separator:a7ce4e44a44dc6f5d71ca191344d55767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eebd4e7334fff93dfa4bd5574bffc0b" id="r_a1eebd4e7334fff93dfa4bd5574bffc0b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1common_1_1_timestamp.html#a1eebd4e7334fff93dfa4bd5574bffc0b">tryParseUTCOffset</a> (const char *str, uint64_t &amp;pos, uint64_t len, int &amp;hour_offset, int &amp;minute_offset)</td></tr>
 <tr class="separator:a1eebd4e7334fff93dfa4bd5574bffc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57159de012324a4c5a1e340d4c47e1b0" id="r_a57159de012324a4c5a1e340d4c47e1b0"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1common_1_1_timestamp.html#a57159de012324a4c5a1e340d4c47e1b0">getTimestampConversionExceptionMsg</a> (const char *str, uint64_t len, const std::string &amp;typeID=&quot;TIMESTAMP&quot;)</td></tr>
+<tr class="separator:a57159de012324a4c5a1e340d4c47e1b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0704eb46b17984f9413aeddd7eb950c" id="r_ad0704eb46b17984f9413aeddd7eb950c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="structkuzu_1_1common_1_1timestamp__t.html">timestamp_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1common_1_1_timestamp.html#ad0704eb46b17984f9413aeddd7eb950c">getCurrentTimestamp</a> ()</td></tr>
+<tr class="separator:ad0704eb46b17984f9413aeddd7eb950c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8c2b4bcaa39350f598ed7bb38d0a3b3f" name="a8c2b4bcaa39350f598ed7bb38d0a3b3f"></a>
@@ -350,6 +358,31 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad0704eb46b17984f9413aeddd7eb950c" name="ad0704eb46b17984f9413aeddd7eb950c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0704eb46b17984f9413aeddd7eb950c">&#9670;&#160;</a></span>getCurrentTimestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="structkuzu_1_1common_1_1timestamp__t.html">timestamp_t</a> kuzu::common::Timestamp::getCurrentTimestamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="abf8679655aa7e9e14ecd1c6d7d219e96" name="abf8679655aa7e9e14ecd1c6d7d219e96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf8679655aa7e9e14ecd1c6d7d219e96">&#9670;&#160;</a></span>getDate()</h2>
 
@@ -363,6 +396,32 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="structkuzu_1_1common_1_1date__t.html">date_t</a> kuzu::common::Timestamp::getDate </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structkuzu_1_1common_1_1timestamp__t.html">timestamp_t</a>&#160;</td>
+          <td class="paramname"><em>timestamp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a754a2d0c36d524e6b0db4ff9819edfa7" name="a754a2d0c36d524e6b0db4ff9819edfa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754a2d0c36d524e6b0db4ff9819edfa7">&#9670;&#160;</a></span>getEpochMilliSeconds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> int64_t kuzu::common::Timestamp::getEpochMilliSeconds </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structkuzu_1_1common_1_1timestamp__t.html">timestamp_t</a> &amp;&#160;</td>
           <td class="paramname"><em>timestamp</em></td><td>)</td>
           <td></td>
         </tr>
@@ -402,6 +461,32 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a7ce4e44a44dc6f5d71ca191344d55767" name="a7ce4e44a44dc6f5d71ca191344d55767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce4e44a44dc6f5d71ca191344d55767">&#9670;&#160;</a></span>getEpochSeconds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> int64_t kuzu::common::Timestamp::getEpochSeconds </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structkuzu_1_1common_1_1timestamp__t.html">timestamp_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>timestamp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7512e73938e94219ee4711de5d1f8bd6" name="a7512e73938e94219ee4711de5d1f8bd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7512e73938e94219ee4711de5d1f8bd6">&#9670;&#160;</a></span>getTime()</h2>
 
@@ -422,6 +507,48 @@ Static Public Member Functions</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57159de012324a4c5a1e340d4c47e1b0" name="a57159de012324a4c5a1e340d4c47e1b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57159de012324a4c5a1e340d4c47e1b0">&#9670;&#160;</a></span>getTimestampConversionExceptionMsg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string kuzu::common::Timestamp::getTimestampConversionExceptionMsg </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>typeID</em> = <code>&quot;TIMESTAMP&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

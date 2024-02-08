@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rdf_5fconfig_2eh_0',['rdf_config.h',['../rdf__config_8h.html',1,'']]],
-  ['runtime_2eh_1',['runtime.h',['../runtime_8h.html',1,'']]]
+  ['query_5fresult_2eh_0',['query_result.h',['../query__result_8h.html',1,'']]],
+  ['query_5fsummary_2eh_1',['query_summary.h',['../query__summary_8h.html',1,'']]]
 ];
