@@ -92,13 +92,13 @@ $(document).ready(function(){initNavTree('constants_8h.html',''); initResizable(
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">constants.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
 </div>
 <p><a href="constants_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -113,6 +113,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_hash_index_constants.html">kuzu::common::HashIndexConstants</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_copy_constants.html">kuzu::common::CopyConstants</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_rdf_constants.html">kuzu::common::RdfConstants</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_logger_constants.html">kuzu::common::LoggerConstants</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,11 +136,6 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacekuzu_1_1common" id="r_namespacekuzu_1_1common"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html">kuzu::common</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:aeb01c921a0f492627f0e94988a0684d5" id="r_aeb01c921a0f492627f0e94988a0684d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="constants_8h.html#aeb01c921a0f492627f0e94988a0684d5">TO_STRING</a>(ARG)&#160;&#160;&#160;#ARG</td></tr>
-<tr class="separator:aeb01c921a0f492627f0e94988a0684d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:aa5ca18c35efd5787484f93d61a48b197" id="r_aa5ca18c35efd5787484f93d61a48b197"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#aa5ca18c35efd5787484f93d61a48b197">kuzu::common::PageSizeClass</a> : uint8_t { <a class="el" href="namespacekuzu_1_1common.html#aa5ca18c35efd5787484f93d61a48b197a17306b0a6093427fd3b778bdcb216cc0">kuzu::common::PAGE_4KB</a> = 0
@@ -148,8 +145,8 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac0e673c06572d5fd0888f8e558d57a86" id="r_ac0e673c06572d5fd0888f8e558d57a86"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#ac0e673c06572d5fd0888f8e558d57a86">kuzu::common::KUZU_VERSION</a> [] = <a class="el" href="constants_8h.html#aeb01c921a0f492627f0e94988a0684d5">TO_STRING</a>(KUZU_CMAKE_VERSION)</td></tr>
-<tr class="separator:ac0e673c06572d5fd0888f8e558d57a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0ba7b31dbe4a7605c66d8f02749eef" id="r_a8a0ba7b31dbe4a7605c66d8f02749eef"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a8a0ba7b31dbe4a7605c66d8f02749eef">kuzu::common::KUZU_VERSION</a></td></tr>
+<tr class="separator:a8a0ba7b31dbe4a7605c66d8f02749eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa3bbfc4c05386a43b31e8f776d2f4a6" id="r_afa3bbfc4c05386a43b31e8f776d2f4a6"><td class="memItemLeft" align="right" valign="top">constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#afa3bbfc4c05386a43b31e8f776d2f4a6">kuzu::common::DEFAULT_VECTOR_CAPACITY_LOG_2</a> = 11</td></tr>
 <tr class="separator:afa3bbfc4c05386a43b31e8f776d2f4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25c5a5d8d890b3d0da2338c831fbdb38" id="r_a25c5a5d8d890b3d0da2338c831fbdb38"><td class="memItemLeft" align="right" valign="top">constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a25c5a5d8d890b3d0da2338c831fbdb38">kuzu::common::DEFAULT_VECTOR_CAPACITY</a> = (uint64_t)1 &lt;&lt; <a class="el" href="namespacekuzu_1_1common.html#afa3bbfc4c05386a43b31e8f776d2f4a6">DEFAULT_VECTOR_CAPACITY_LOG_2</a></td></tr>
@@ -167,25 +164,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a63c7127dbb04705764f052909aca906d" id="r_a63c7127dbb04705764f052909aca906d"><td class="memItemLeft" align="right" valign="top">constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a63c7127dbb04705764f052909aca906d">kuzu::common::CHUNK_RESIZE_RATIO</a> = 2</td></tr>
 <tr class="separator:a63c7127dbb04705764f052909aca906d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="aeb01c921a0f492627f0e94988a0684d5" name="aeb01c921a0f492627f0e94988a0684d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb01c921a0f492627f0e94988a0684d5">&#9670;&#160;</a></span>TO_STRING</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TO_STRING</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ARG</td><td>)</td>
-          <td>&#160;&#160;&#160;#ARG</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

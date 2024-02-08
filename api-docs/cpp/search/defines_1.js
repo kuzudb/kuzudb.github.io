@@ -1,12 +1,14 @@
 var searchData=
 [
-  ['ku_5fassert_0',['KU_ASSERT',['../assert_8h.html#a15c7c828c306c4dbb80e0eb3ba333293',1,'assert.h']]],
-  ['ku_5funreachable_1',['KU_UNREACHABLE',['../assert_8h.html#acd681321d7415a01dffba1ac66d69d6b',1,'assert.h']]],
-  ['kuzu_5fapi_2',['KUZU_API',['../api_8h.html#ae723a6ac7b0cca48a22a501787397769',1,'api.h']]],
-  ['kuzu_5fdeprecated_3',['KUZU_DEPRECATED',['../api_8h.html#ae85d0885246254e4850c00edc395ae72',1,'api.h']]],
-  ['kuzu_5fdeprecated_5fexport_4',['KUZU_DEPRECATED_EXPORT',['../api_8h.html#a43b6fd62ec89753d205101113a612946',1,'api.h']]],
-  ['kuzu_5fhelper_5fdeprecated_5',['KUZU_HELPER_DEPRECATED',['../api_8h.html#a0185f0fff5395fbca574c87479e9b360',1,'api.h']]],
-  ['kuzu_5fhelper_5fdll_5fexport_6',['KUZU_HELPER_DLL_EXPORT',['../api_8h.html#a9f263c943c2491c6730d3b1573ec4d9e',1,'api.h']]],
-  ['kuzu_5fhelper_5fdll_5fimport_7',['KUZU_HELPER_DLL_IMPORT',['../api_8h.html#a457a688de0ddfa269a2c98d7acc0c907',1,'api.h']]],
-  ['kuzu_5fhelper_5fdll_5flocal_8',['KUZU_HELPER_DLL_LOCAL',['../api_8h.html#a5263be3433e103723860b7366bcd3f01',1,'api.h']]]
+  ['default_5fboth_5fmove_0',['DEFAULT_BOTH_MOVE',['../copy__constructors_8h.html#af4ea56480972d4457d444777b2d39809',1,'copy_constructors.h']]],
+  ['default_5fmove_5fassn_1',['DEFAULT_MOVE_ASSN',['../copy__constructors_8h.html#aea6336bf33d996ee8161d1b416e06d9a',1,'copy_constructors.h']]],
+  ['default_5fmove_5fconstruct_2',['DEFAULT_MOVE_CONSTRUCT',['../copy__constructors_8h.html#a2a749602df11a2edef363a8019a1c2ea',1,'copy_constructors.h']]],
+  ['delete_5fboth_5fcopy_3',['DELETE_BOTH_COPY',['../copy__constructors_8h.html#aa0946169b623518876610a273519883e',1,'copy_constructors.h']]],
+  ['delete_5fboth_5fmove_4',['DELETE_BOTH_MOVE',['../copy__constructors_8h.html#a8371269c8731e23c685b75b721b2d3b9',1,'copy_constructors.h']]],
+  ['delete_5fcopy_5fand_5fmove_5',['DELETE_COPY_AND_MOVE',['../copy__constructors_8h.html#ad8015049dc6e27916757e63a641f8d12',1,'copy_constructors.h']]],
+  ['delete_5fcopy_5fassn_6',['DELETE_COPY_ASSN',['../copy__constructors_8h.html#a13852dfe4a81bc4f3a9b62ba1227a1d1',1,'copy_constructors.h']]],
+  ['delete_5fcopy_5fconstruct_7',['DELETE_COPY_CONSTRUCT',['../copy__constructors_8h.html#a17e573387bee362fa104ec3aa842eeed',1,'copy_constructors.h']]],
+  ['delete_5fcopy_5fdefault_5fmove_8',['DELETE_COPY_DEFAULT_MOVE',['../copy__constructors_8h.html#ab1a0a56cbe63a043c64fa34465f312da',1,'copy_constructors.h']]],
+  ['delete_5fmove_5fassn_9',['DELETE_MOVE_ASSN',['../copy__constructors_8h.html#a3f19ec2fbc867282860884708ef67dc4',1,'copy_constructors.h']]],
+  ['delete_5fmove_5fconstruct_10',['DELETE_MOVE_CONSTRUCT',['../copy__constructors_8h.html#a8324339c0d7b988234292cac647d9ff4',1,'copy_constructors.h']]]
 ];

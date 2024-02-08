@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['table_5fid_5fset_5ft_0',['table_id_set_t',['../namespacekuzu_1_1common.html#a023ebdcd3161622aaf4b7e301604b32a',1,'kuzu::common']]],
-  ['table_5fid_5ft_1',['table_id_t',['../namespacekuzu_1_1common.html#a1c37d6440eebc41a6e70a9bc4d46c63a',1,'kuzu::common']]],
-  ['table_5fid_5fvector_5ft_2',['table_id_vector_t',['../namespacekuzu_1_1common.html#a8797af118b83c4dcd99d29d7de2af85d',1,'kuzu::common']]]
+  ['scalar_5fbind_5ffunc_0',['scalar_bind_func',['../namespacekuzu_1_1function.html#a72bd95f9a2bf7e9d8e7fe10905849697',1,'kuzu::function']]],
+  ['scalar_5fcompile_5ffunc_1',['scalar_compile_func',['../namespacekuzu_1_1function.html#a97d0ee17a3ad11a504353bdbb7cf5297',1,'kuzu::function']]],
+  ['scalar_5fexec_5ffunc_2',['scalar_exec_func',['../namespacekuzu_1_1function.html#a69c16f7a36402610a525b53188041014',1,'kuzu::function']]],
+  ['scalar_5fselect_5ffunc_3',['scalar_select_func',['../namespacekuzu_1_1function.html#ac48095cdb57747b255db768a5fee7abb',1,'kuzu::function']]],
+  ['sel_5ft_4',['sel_t',['../namespacekuzu_1_1common.html#a4add1abf88dd89a8f51b212575484cfe',1,'kuzu::common']]],
+  ['struct_5ffield_5fidx_5ft_5',['struct_field_idx_t',['../namespacekuzu_1_1common.html#a1a168f77a9e9e34b916f0829d6321b27',1,'kuzu::common']]]
 ];

@@ -134,6 +134,18 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:ab8858531c966a3bc6cd8b99e0b986fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad650b8453c54fe264f126e64adc18780" id="r_ad650b8453c54fe264f126e64adc18780"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#ad650b8453c54fe264f126e64adc18780">NODE_GROUP_SIZE</a> = (uint64_t)1 &lt;&lt; <a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#ab8858531c966a3bc6cd8b99e0b986fb3">NODE_GROUP_SIZE_LOG2</a></td></tr>
 <tr class="separator:ad650b8453c54fe264f126e64adc18780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba179e9e5ffa38226285e99aa78123d6" id="r_aba179e9e5ffa38226285e99aa78123d6"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#aba179e9e5ffa38226285e99aa78123d6">PACKED_CSR_DENSITY</a> = 0.8</td></tr>
+<tr class="separator:aba179e9e5ffa38226285e99aa78123d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39089608714d3e21632de1abab574bb2" id="r_a39089608714d3e21632de1abab574bb2"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#a39089608714d3e21632de1abab574bb2">LEAF_LOW_CSR_DENSITY</a> = 0.1</td></tr>
+<tr class="separator:a39089608714d3e21632de1abab574bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7aaadd034b98ecc39781a51ab901db1" id="r_ad7aaadd034b98ecc39781a51ab901db1"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#ad7aaadd034b98ecc39781a51ab901db1">LEAF_HIGH_CSR_DENSITY</a> = 1.0</td></tr>
+<tr class="separator:ad7aaadd034b98ecc39781a51ab901db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e70e1ad3c97fea39eb904834288edd" id="r_ad8e70e1ad3c97fea39eb904834288edd"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#ad8e70e1ad3c97fea39eb904834288edd">CSR_SEGMENT_SIZE_LOG2</a> = 10</td></tr>
+<tr class="separator:ad8e70e1ad3c97fea39eb904834288edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e0f61b908fad9705f4be0e9cc83918d" id="r_a1e0f61b908fad9705f4be0e9cc83918d"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#a1e0f61b908fad9705f4be0e9cc83918d">CSR_SEGMENT_SIZE</a> = (uint64_t)1 &lt;&lt; <a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#ad8e70e1ad3c97fea39eb904834288edd">CSR_SEGMENT_SIZE_LOG2</a></td></tr>
+<tr class="separator:a1e0f61b908fad9705f4be0e9cc83918d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941e44a68ea7ed34ed79d2b8ecd19171" id="r_a941e44a68ea7ed34ed79d2b8ecd19171"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#a941e44a68ea7ed34ed79d2b8ecd19171">TRUNCATE_OVER_LARGE_STRINGS</a> = true</td></tr>
+<tr class="separator:a941e44a68ea7ed34ed79d2b8ecd19171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a03440eaac6ec1e7eb98a75cd91e2c03b" name="a03440eaac6ec1e7eb98a75cd91e2c03b"></a>
@@ -180,6 +192,50 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a1e0f61b908fad9705f4be0e9cc83918d" name="a1e0f61b908fad9705f4be0e9cc83918d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e0f61b908fad9705f4be0e9cc83918d">&#9670;&#160;</a></span>CSR_SEGMENT_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint64_t kuzu::common::StorageConstants::CSR_SEGMENT_SIZE = (uint64_t)1 &lt;&lt; <a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#ad8e70e1ad3c97fea39eb904834288edd">CSR_SEGMENT_SIZE_LOG2</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8e70e1ad3c97fea39eb904834288edd" name="ad8e70e1ad3c97fea39eb904834288edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e70e1ad3c97fea39eb904834288edd">&#9670;&#160;</a></span>CSR_SEGMENT_SIZE_LOG2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint64_t kuzu::common::StorageConstants::CSR_SEGMENT_SIZE_LOG2 = 10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aab47b73903f9a5d742e08a86583fba77" name="aab47b73903f9a5d742e08a86583fba77"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab47b73903f9a5d742e08a86583fba77">&#9670;&#160;</a></span>DATA_FILE_NAME</h2>
 
@@ -213,6 +269,50 @@ Static Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">constexpr char kuzu::common::StorageConstants::INDEX_FILE_SUFFIX[] = &quot;.hindex&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad7aaadd034b98ecc39781a51ab901db1" name="ad7aaadd034b98ecc39781a51ab901db1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7aaadd034b98ecc39781a51ab901db1">&#9670;&#160;</a></span>LEAF_HIGH_CSR_DENSITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double kuzu::common::StorageConstants::LEAF_HIGH_CSR_DENSITY = 1.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39089608714d3e21632de1abab574bb2" name="a39089608714d3e21632de1abab574bb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39089608714d3e21632de1abab574bb2">&#9670;&#160;</a></span>LEAF_LOW_CSR_DENSITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double kuzu::common::StorageConstants::LEAF_LOW_CSR_DENSITY = 0.1</td>
         </tr>
       </table>
   </td>
@@ -382,6 +482,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aba179e9e5ffa38226285e99aa78123d6" name="aba179e9e5ffa38226285e99aa78123d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba179e9e5ffa38226285e99aa78123d6">&#9670;&#160;</a></span>PACKED_CSR_DENSITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double kuzu::common::StorageConstants::PACKED_CSR_DENSITY = 0.8</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aab3a15de5d434b34fea697bdde67779d" name="aab3a15de5d434b34fea697bdde67779d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab3a15de5d434b34fea697bdde67779d">&#9670;&#160;</a></span>PAGE_GROUP_SIZE</h2>
 
@@ -481,6 +603,28 @@ Static Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">constexpr char kuzu::common::StorageConstants::RELS_METADATA_FILE_NAME_FOR_WAL[] = &quot;rels.statistics.wal&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a941e44a68ea7ed34ed79d2b8ecd19171" name="a941e44a68ea7ed34ed79d2b8ecd19171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941e44a68ea7ed34ed79d2b8ecd19171">&#9670;&#160;</a></span>TRUNCATE_OVER_LARGE_STRINGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool kuzu::common::StorageConstants::TRUNCATE_OVER_LARGE_STRINGS = true</td>
         </tr>
       </table>
   </td>

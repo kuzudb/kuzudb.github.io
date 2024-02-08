@@ -1,13 +1,20 @@
 var searchData=
 [
-  ['ternaryfunctionexecutor_0',['TernaryFunctionExecutor',['../structkuzu_1_1function_1_1_ternary_function_executor.html',1,'kuzu::function']]],
-  ['ternaryfunctionwrapper_1',['TernaryFunctionWrapper',['../structkuzu_1_1function_1_1_ternary_function_wrapper.html',1,'kuzu::function']]],
-  ['ternarylistfunctionwrapper_2',['TernaryListFunctionWrapper',['../structkuzu_1_1function_1_1_ternary_list_function_wrapper.html',1,'kuzu::function']]],
-  ['ternarystringfunctionwrapper_3',['TernaryStringFunctionWrapper',['../structkuzu_1_1function_1_1_ternary_string_function_wrapper.html',1,'kuzu::function']]],
-  ['ternaryudfexecutor_4',['TernaryUDFExecutor',['../structkuzu_1_1function_1_1_ternary_u_d_f_executor.html',1,'kuzu::function']]],
-  ['ternaryudffunctionwrapper_5',['TernaryUDFFunctionWrapper',['../structkuzu_1_1function_1_1_ternary_u_d_f_function_wrapper.html',1,'kuzu::function']]],
-  ['time_6',['Time',['../classkuzu_1_1common_1_1_time.html',1,'kuzu::common']]],
-  ['timer_7',['Timer',['../classkuzu_1_1common_1_1_timer.html',1,'kuzu::common']]],
-  ['timestamp_8',['Timestamp',['../classkuzu_1_1common_1_1_timestamp.html',1,'kuzu::common']]],
-  ['timestamp_5ft_9',['timestamp_t',['../structkuzu_1_1common_1_1timestamp__t.html',1,'kuzu::common']]]
+  ['tabletypeutils_0',['TableTypeUtils',['../structkuzu_1_1common_1_1_table_type_utils.html',1,'kuzu::common']]],
+  ['ternaryfunctionexecutor_1',['TernaryFunctionExecutor',['../structkuzu_1_1function_1_1_ternary_function_executor.html',1,'kuzu::function']]],
+  ['ternaryfunctionwrapper_2',['TernaryFunctionWrapper',['../structkuzu_1_1function_1_1_ternary_function_wrapper.html',1,'kuzu::function']]],
+  ['ternarylistfunctionwrapper_3',['TernaryListFunctionWrapper',['../structkuzu_1_1function_1_1_ternary_list_function_wrapper.html',1,'kuzu::function']]],
+  ['ternarystringfunctionwrapper_4',['TernaryStringFunctionWrapper',['../structkuzu_1_1function_1_1_ternary_string_function_wrapper.html',1,'kuzu::function']]],
+  ['ternaryudfexecutor_5',['TernaryUDFExecutor',['../structkuzu_1_1function_1_1_ternary_u_d_f_executor.html',1,'kuzu::function']]],
+  ['ternaryudffunctionwrapper_6',['TernaryUDFFunctionWrapper',['../structkuzu_1_1function_1_1_ternary_u_d_f_function_wrapper.html',1,'kuzu::function']]],
+  ['time_7',['Time',['../classkuzu_1_1common_1_1_time.html',1,'kuzu::common']]],
+  ['timer_8',['Timer',['../classkuzu_1_1common_1_1_timer.html',1,'kuzu::common']]],
+  ['timestamp_9',['Timestamp',['../classkuzu_1_1common_1_1_timestamp.html',1,'kuzu::common']]],
+  ['timestamp_5fms_5ft_10',['timestamp_ms_t',['../structkuzu_1_1common_1_1timestamp__ms__t.html',1,'kuzu::common']]],
+  ['timestamp_5fns_5ft_11',['timestamp_ns_t',['../structkuzu_1_1common_1_1timestamp__ns__t.html',1,'kuzu::common']]],
+  ['timestamp_5fsec_5ft_12',['timestamp_sec_t',['../structkuzu_1_1common_1_1timestamp__sec__t.html',1,'kuzu::common']]],
+  ['timestamp_5ft_13',['timestamp_t',['../structkuzu_1_1common_1_1timestamp__t.html',1,'kuzu::common']]],
+  ['timestamp_5ftz_5ft_14',['timestamp_tz_t',['../structkuzu_1_1common_1_1timestamp__tz__t.html',1,'kuzu::common']]],
+  ['transaction_15',['Transaction',['../classkuzu_1_1transaction_1_1_transaction.html',1,'kuzu::transaction']]],
+  ['transactioncontext_16',['TransactionContext',['../classkuzu_1_1transaction_1_1_transaction_context.html',1,'kuzu::transaction']]]
 ];

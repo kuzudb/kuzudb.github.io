@@ -6,6 +6,7 @@ var classkuzu_1_1binder_1_1_expression =
     [ "Expression", "classkuzu_1_1binder_1_1_expression.html#af56885ad5f275de62fdd0472fe86223b", null ],
     [ "~Expression", "classkuzu_1_1binder_1_1_expression.html#a6f7fc8e406251e662eef773595001d6b", null ],
     [ "copy", "classkuzu_1_1binder_1_1_expression.html#a6350826e1e752dabe796861e2475498c", null ],
+    [ "DELETE_COPY_DEFAULT_MOVE", "classkuzu_1_1binder_1_1_expression.html#aa6403f7c0210a607b73cecf78b123a0d", null ],
     [ "getAlias", "classkuzu_1_1binder_1_1_expression.html#a790973d914b9fc3d39dfe993c72f8a55", null ],
     [ "getChild", "classkuzu_1_1binder_1_1_expression.html#a96fd5562dbbe82d36bc3f26e742323fe", null ],
     [ "getChildren", "classkuzu_1_1binder_1_1_expression.html#a8ccfe9e375f41c599dd226004042456a", null ],
