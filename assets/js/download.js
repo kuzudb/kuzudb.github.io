@@ -2,10 +2,28 @@ const VERSION = "0.2.0";
 const DOWNLOAD_LINKS_PREFIX =
   "https://github.com/kuzudb/kuzu/releases/download/v" + VERSION + "/";
 
+const LINUX_VARIANTS = [
+  "Arch",
+  "CentOS",
+  "Debian",
+  "Deepin",
+  "elementary OS",
+  "Fedora",
+  "Gentoo",
+  "GNU",
+  "Linux",
+  "Mageia",
+  "Manjaro",
+  "Mint",
+  "RedHat",
+  "Slackware",
+  "SUSE",
+  "Ubuntu",
+];
+
 const PLATFORMS = {
   mac: "macOS",
-  linux_x64: "Linux (x86-64)",
-  linux_arm64: "Linux (aarch64)",
+  linux: "Linux",
   windows: "Windows",
   unknown: "Unknown",
 };
@@ -15,16 +33,20 @@ const os = uaParser.getOS();
 const cpu = uaParser.getCPU();
 
 let platform = PLATFORMS.unknown;
-if (os.name.includes("Mac OS")) {
+let isLinux = false;
+for (let variant of LINUX_VARIANTS) {
+  if (os.name.includes(variant)) {
+    isLinux = true;
+    break;
+  }
+}
+
+if (isLinux) {
+  platform = PLATFORMS.linux;
+} else if (os.name.includes("Mac OS")) {
   platform = PLATFORMS.mac;
 } else if (os.name.includes("Windows")) {
   platform = PLATFORMS.windows;
-} else if (os.name.includes("Linux")) {
-  if (cpu.architecture === "amd64") {
-    platform = PLATFORMS.linux_x64;
-  } else if (cpu.architecture === "arm64") {
-    platform = PLATFORMS.linux_arm64;
-  }
 } else {
   platform = os.name;
 }
@@ -52,14 +74,18 @@ const data = [
   },
   {
     language: "CLI",
-    platform: PLATFORMS.linux_x64,
-    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-linux-x86_64.tar.gz",
-    isLinkAnchor: true,
-  },
-  {
-    language: "CLI",
-    platform: PLATFORMS.linux_arm64,
-    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-linux-aarch64.tar.gz",
+    platform: PLATFORMS.linux,
+    links: [
+      {
+        arch: "x86-64",
+
+        link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-linux-x86_64.tar.gz",
+      },
+      {
+        arch: "aarch64",
+        link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-linux-aarch64.tar.gz",
+      },
+    ],
     isLinkAnchor: true,
   },
   {
@@ -76,14 +102,17 @@ const data = [
   },
   {
     language: "C/C++",
-    platform: PLATFORMS.linux_x64,
-    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-linux-x86_64.tar.gz",
-    isLinkAnchor: true,
-  },
-  {
-    language: "C/C++",
-    platform: PLATFORMS.linux_arm64,
-    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-linux-aarch64.tar.gz",
+    platform: PLATFORMS.linux,
+    links: [
+      {
+        arch: "x86-64",
+        link: DOWNLOAD_LINKS_PREFIX + "libkuzu-linux-x86_64.tar.gz",
+      },
+      {
+        arch: "aarch64",
+        link: DOWNLOAD_LINKS_PREFIX + "libkuzu-linux-aarch64.tar.gz",
+      },
+    ],
     isLinkAnchor: true,
   },
   {
@@ -159,6 +188,7 @@ downloadLanguageSelectButtons.on("click", function () {
   $(this).addClass("primary");
 
   if (
+    platformData.length > 0 &&
     selectedPlatform &&
     selectedPlatform !== PLATFORMS.unknown &&
     Object.values(PLATFORMS).includes(selectedPlatform)
@@ -185,11 +215,25 @@ downloadPlatformSelectButtons.on("click", function () {
   const item = data.find(
     (item) => item.language === language && item.platform === platform
   );
+  let html = "";
   if (item.isLinkAnchor) {
-    downloadCommand.html(`<a href="${item.link}">${item.link}</a>`);
+    if (item.links) {
+      item.links.forEach((link) => {
+        html += `<span>${link.arch}:</span> <a href="${link.link}">${link.link}</a><br>`;
+      });
+    } else {
+      html += `<a href="${item.link}">${item.link}</a>`;
+    }
   } else {
-    downloadCommand.html(item.link);
+    if (item.links) {
+      item.links.forEach((link) => {
+        html += `<span>${link.arch}:</span> <span>${link.link}</span><br>`;
+      });
+    } else {
+      html += `<span>${item.link}</span>`;
+    }
   }
+  downloadCommand.html(html);
   downloadCommandContainer.show();
   downloadPlatformSelectButtons.removeClass("primary");
   $(this).addClass("primary");
