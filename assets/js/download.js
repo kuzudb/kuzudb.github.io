@@ -2,54 +2,93 @@ const VERSION = "0.2.0";
 const DOWNLOAD_LINKS_PREFIX =
   "https://github.com/kuzudb/kuzu/releases/download/v" + VERSION + "/";
 
+const PLATFORMS = {
+  mac: "macOS",
+  linux_x64: "Linux (x86-64)",
+  linux_arm64: "Linux (aarch64)",
+  windows: "Windows",
+  unknown: "Unknown",
+};
+
+const uaParser = new UAParser();
+const os = uaParser.getOS();
+const cpu = uaParser.getCPU();
+
+let platform = PLATFORMS.unknown;
+if (os.name.includes("Mac OS")) {
+  platform = PLATFORMS.mac;
+} else if (os.name.includes("Windows")) {
+  platform = PLATFORMS.windows;
+} else if (os.name.includes("Linux")) {
+  if (cpu.architecture === "amd64") {
+    platform = PLATFORMS.linux_x64;
+  } else if (cpu.architecture === "arm64") {
+    platform = PLATFORMS.linux_arm64;
+  }
+} else {
+  platform = os.name;
+}
+
+let selectedPlatform = platform;
+
+const detectedPlatformSpan = $("#detected-platform-span");
+if (!Object.values(PLATFORMS).includes(platform)) {
+  detectedPlatformSpan.text(`${platform} (Unsupported)`);
+} else {
+  detectedPlatformSpan.text(platform);
+}
+
+const versionSpan = $("#version-span");
+versionSpan.text(VERSION);
+
 const data = [
   { language: "Python", link: "pip install kuzu", isLinkAnchor: false },
   { language: "Node.js", link: "npm i kuzu", isLinkAnchor: false },
   {
     language: "CLI",
-    platform: "macOS (Apple Silicon)",
-    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-osx-arm64.zip",
+    platform: PLATFORMS.mac,
+    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-osx-universal.tar.gz",
     isLinkAnchor: true,
   },
   {
     language: "CLI",
-    platform: "macOS (Intel)",
-    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-osx-x86_64.zip",
+    platform: PLATFORMS.linux_x64,
+    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-linux-x86_64.tar.gz",
     isLinkAnchor: true,
   },
   {
     language: "CLI",
-    platform: "Linux",
-    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-linux-x86_64.zip",
+    platform: PLATFORMS.linux_arm64,
+    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-linux-aarch64.tar.gz",
     isLinkAnchor: true,
   },
   {
     language: "CLI",
-    platform: "Windows",
+    platform: PLATFORMS.windows,
     link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-windows-x86_64.zip",
     isLinkAnchor: true,
   },
   {
     language: "C/C++",
-    platform: "macOS (Apple Silicon)",
-    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-osx-arm64.zip",
+    platform: PLATFORMS.mac,
+    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-osx-universal.tar.gz",
     isLinkAnchor: true,
   },
   {
     language: "C/C++",
-    platform: "macOS (Intel)",
-    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-osx-x86_64.zip",
+    platform: PLATFORMS.linux_x64,
+    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-linux-x86_64.tar.gz",
     isLinkAnchor: true,
   },
   {
     language: "C/C++",
-    platform: "Linux",
-    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-linux-x86_64.zip",
+    platform: PLATFORMS.linux_arm64,
+    link: DOWNLOAD_LINKS_PREFIX + "libkuzu-linux-aarch64.tar.gz",
     isLinkAnchor: true,
   },
   {
     language: "C/C++",
-    platform: "Windows",
+    platform: PLATFORMS.windows,
     link: DOWNLOAD_LINKS_PREFIX + "libkuzu-windows-x86_64.zip",
     isLinkAnchor: true,
   },
@@ -118,6 +157,20 @@ downloadLanguageSelectButtons.on("click", function () {
 
   downloadLanguageSelectButtons.removeClass("primary");
   $(this).addClass("primary");
+
+  if (
+    selectedPlatform &&
+    selectedPlatform !== PLATFORMS.unknown &&
+    Object.values(PLATFORMS).includes(selectedPlatform)
+  ) {
+    let button;
+    try {
+      button = document.getElementById(selectedPlatform);
+    } catch {}
+    if (button) {
+      $(button).click();
+    }
+  }
 });
 
 downloadPlatformSelectButtons.on("click", function () {
@@ -127,6 +180,7 @@ downloadPlatformSelectButtons.on("click", function () {
     downloadCommandContainer.hide();
     return;
   }
+  selectedPlatform = platform;
   const language = $(".download-language-select.primary").attr("id");
   const item = data.find(
     (item) => item.language === language && item.platform === platform
@@ -141,4 +195,4 @@ downloadPlatformSelectButtons.on("click", function () {
   $(this).addClass("primary");
 });
 
-$("button#Python").click();
+$("button#CLI").click();
