@@ -140,10 +140,17 @@
             <ul class="actions fit small" id="download-platform"></ul>
           </div>
           <div id="download-command-container" style="display: none">
-            <pre>
-                <code id="download-command"></code>
-              </pre>
+            <pre
+              class="download-command-container-pre"
+            ><code id="download-command"></code></pre>
           </div>
+          <small class="detected-platform">
+            <b>Version:</b>
+            <span id="version-span"></span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <b>System detected:</b>
+            <span id="detected-platform-span"></span>
+          </small>
         </section>
 
         <!-- features Section -->
@@ -220,22 +227,23 @@
         </section>
         <!-- Team Members Section -->
         <section id="team" class="main special">
-            <header class="major">
-                <h2>Team</h2>
-            </header>
-            <div class="about">
-                <p>
-                    Kùzu is built by a team of developers at Kùzu Inc, a company based in Waterloo, Ontario, Canada.
-                    <br />
-                    Reach out to us at
-                    <a href="mailto:contact@kuzudb.com">contact@kuzudb.com</a>, or
-                    on <a href="https://discord.gg/VtX2gw9Rug">Discord</a>.
-                </p>
-            </div>
-            <br>
-            <div id="team-members"></div>
+          <header class="major">
+            <h2>Team</h2>
+          </header>
+          <div class="about">
+            <p>
+              Kùzu is built by a team of developers at Kùzu Inc, a company based
+              in Waterloo, Ontario, Canada.
+              <br />
+              Reach out to us at
+              <a href="mailto:contact@kuzudb.com">contact@kuzudb.com</a>, or on
+              <a href="https://discord.gg/VtX2gw9Rug">Discord</a>.
+            </p>
+          </div>
+          <br />
+          <div id="team-members"></div>
         </section>
-    </div>
+      </div>
 
       <!-- Footer -->
       <footer id="footer">
@@ -267,6 +275,7 @@
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/ua-parser.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/download.js"></script>

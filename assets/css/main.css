@@ -4027,3 +4027,17 @@ div.logo-container {
     display: inline-block;
   }
 }
+
+small.detected-platform{
+  font-size: 1em;
+}
+
+@media screen and (max-width: 736px) {
+  small.detected-platform{
+    margin-bottom: 0.8em;
+  }
+}
+
+pre.download-command-container-pre{
+  margin-bottom: 0.8em;
+}
