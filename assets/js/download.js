@@ -29,6 +29,8 @@ if (os.name.includes("Mac OS")) {
   platform = os.name;
 }
 
+let selectedPlatform = platform;
+
 const detectedPlatformSpan = $("#detected-platform-span");
 if (!Object.values(PLATFORMS).includes(platform)) {
   detectedPlatformSpan.text(`${platform} (Unsupported)`);
@@ -156,8 +158,18 @@ downloadLanguageSelectButtons.on("click", function () {
   downloadLanguageSelectButtons.removeClass("primary");
   $(this).addClass("primary");
 
-  if (platform !== PLATFORMS.unknown) {
-    downloadPlatformSelectButtons.filter(`#${platform}`).click();
+  if (
+    selectedPlatform &&
+    selectedPlatform !== PLATFORMS.unknown &&
+    Object.values(PLATFORMS).includes(selectedPlatform)
+  ) {
+    let button;
+    try {
+      button = document.getElementById(selectedPlatform);
+    } catch {}
+    if (button) {
+      $(button).click();
+    }
   }
 });
 
@@ -168,6 +180,7 @@ downloadPlatformSelectButtons.on("click", function () {
     downloadCommandContainer.hide();
     return;
   }
+  selectedPlatform = platform;
   const language = $(".download-language-select.primary").attr("id");
   const item = data.find(
     (item) => item.language === language && item.platform === platform
