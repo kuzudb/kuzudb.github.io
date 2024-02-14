@@ -61,5 +61,7 @@ for (const member of members) {
   memberWrapper.appendChild(memberImg);
   memberWrapper.appendChild(textWrapper);
   memberDiv.appendChild(memberWrapper);
-  teamMembersDiv.appendChild(memberDiv);
+  if (teamMembersDiv) {
+    teamMembersDiv.appendChild(memberDiv);
+  }
 }

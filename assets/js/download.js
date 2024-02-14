@@ -53,6 +53,27 @@ if (isLinux) {
 
 let selectedPlatform = platform;
 
+const showOnlyDownloadSection = () => {
+  /**
+   * This is a hack to show only the download section.
+   * It clones the download section and replaces the entire body with it.
+   */
+  const downloadSection = document.querySelector("section#download");
+  const downloadSectionCopy = downloadSection.cloneNode(true);
+  document.body.innerHTML = `<div id="wrapper"><div id="main"></div></div>`;
+  const main = document.querySelector("#main");
+  main.appendChild(downloadSectionCopy);
+  document.title = "Download Kùzu";
+  downloadSectionCopy.querySelector("header").remove();
+  document.body.style.backgroundColor = "white";
+};
+
+if( window.location.hash === "#download-only" ) {
+  showOnlyDownloadSection();
+}
+
+$("body").show();
+
 const detectedPlatformSpan = $("#detected-platform-span");
 if (!Object.values(PLATFORMS).includes(platform)) {
   detectedPlatformSpan.text(`${platform} (Unsupported)`);
