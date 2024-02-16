@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['val_0',['val',['../unionkuzu_1_1common_1_1_value_1_1_val.html',1,'kuzu::common::Value::Val'],['../unionkuzu_1_1common_1_1_value_1_1_val.html#adb1b6ea30ee3ed36e9d9a412561e0da5',1,'kuzu::common::Value::Val::Val()'],['../classkuzu_1_1common_1_1_value.html#a5363a2d88e205fbd25866fe488ecf5ad',1,'kuzu::common::Value::val']]],
+  ['val_0',['val',['../unionkuzu_1_1common_1_1_value_1_1_val.html',1,'kuzu::common::Value::Val'],['../classkuzu_1_1common_1_1_value.html#a5363a2d88e205fbd25866fe488ecf5ad',1,'kuzu::common::Value::val'],['../unionkuzu_1_1common_1_1_value_1_1_val.html#adb1b6ea30ee3ed36e9d9a412561e0da5',1,'kuzu::common::Value::Val::Val()']]],
   ['validate_5fpredicate_5ffunc_5fname_1',['VALIDATE_PREDICATE_FUNC_NAME',['../namespacekuzu_1_1common.html#a834c4620168269f36d1df289d6b4885c',1,'kuzu::common']]],
   ['validatemanualtransaction_2',['validateManualTransaction',['../classkuzu_1_1transaction_1_1_transaction_context.html#aa295fa26b2e1b41d68e13a6bcb8d3977',1,'kuzu::transaction::TransactionContext']]],
   ['validatetype_3',['validateType',['../structkuzu_1_1function_1_1_u_d_f.html#a4bbc8419e2963872eb542333cfd665c1',1,'kuzu::function::UDF']]],

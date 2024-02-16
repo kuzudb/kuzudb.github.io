@@ -1,11 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"structkuzu_1_1main_1_1_data_type_info.html":[0,0,1,6,4],
-"structkuzu_1_1main_1_1_data_type_info.html#a11071170e4632049ff40c4bcde92f13c":[0,0,1,6,4,4],
-"structkuzu_1_1main_1_1_data_type_info.html#a11071170e4632049ff40c4bcde92f13c":[2,0,0,3,4,4],
-"structkuzu_1_1main_1_1_data_type_info.html#a147649b91abac3b7b8e1869aac50f7c6":[0,0,1,6,4,0],
-"structkuzu_1_1main_1_1_data_type_info.html#a147649b91abac3b7b8e1869aac50f7c6":[2,0,0,3,4,0],
-"structkuzu_1_1main_1_1_data_type_info.html#a3b5bdea1dfea6b08448e61bc8f2a09aa":[2,0,0,3,4,1],
 "structkuzu_1_1main_1_1_data_type_info.html#a3b5bdea1dfea6b08448e61bc8f2a09aa":[0,0,1,6,4,1],
 "structkuzu_1_1main_1_1_data_type_info.html#a94076408a364675b891e2fc4fea95691":[0,0,1,6,4,3],
 "structkuzu_1_1main_1_1_data_type_info.html#a94076408a364675b891e2fc4fea95691":[2,0,0,3,4,3],

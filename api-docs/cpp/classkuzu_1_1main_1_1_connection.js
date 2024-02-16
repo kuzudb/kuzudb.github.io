@@ -2,9 +2,6 @@ var classkuzu_1_1main_1_1_connection =
 [
     [ "Connection", "classkuzu_1_1main_1_1_connection.html#a90b73aef0475cf7513235718754c2888", null ],
     [ "~Connection", "classkuzu_1_1main_1_1_connection.html#a5c92d7da053707b55e89bb6f273d5d49", null ],
-    [ "beginReadOnlyTransaction", "classkuzu_1_1main_1_1_connection.html#a2a712dc6bf417c66117fa27566aa129b", null ],
-    [ "beginWriteTransaction", "classkuzu_1_1main_1_1_connection.html#a0478eec032946cab29d10f7ce1676624", null ],
-    [ "commit", "classkuzu_1_1main_1_1_connection.html#aae55e833a189f9fa669b62e7e3c0b9f8", null ],
     [ "createScalarFunction", "classkuzu_1_1main_1_1_connection.html#ae889858d5014bfe933aca17705d2f6d5", null ],
     [ "createScalarFunction", "classkuzu_1_1main_1_1_connection.html#ad8727b9895adc5e9cd947e8312063017", null ],
     [ "createVectorizedFunction", "classkuzu_1_1main_1_1_connection.html#af9dec41388fa40b14de6d31a2be1f5fb", null ],
@@ -17,7 +14,6 @@ var classkuzu_1_1main_1_1_connection =
     [ "interrupt", "classkuzu_1_1main_1_1_connection.html#a8a1af765376f4a3f65cb8be191b595f6", null ],
     [ "prepare", "classkuzu_1_1main_1_1_connection.html#a8b8db5bf8d9e168e855c32a0e610244c", null ],
     [ "query", "classkuzu_1_1main_1_1_connection.html#afe9576ba328086d4db5b4b20c5911113", null ],
-    [ "rollback", "classkuzu_1_1main_1_1_connection.html#a6a196176e4364c8ec31749ac080081d8", null ],
     [ "setMaxNumThreadForExec", "classkuzu_1_1main_1_1_connection.html#a943baf10cb0856618435d9e59369d4fb", null ],
     [ "setQueryTimeOut", "classkuzu_1_1main_1_1_connection.html#aa6b95be27a0493905e82caaaeefc44a4", null ],
     [ "setReplaceFunc", "classkuzu_1_1main_1_1_connection.html#adb37723f314b922f03569c0366daacca", null ],

@@ -45,7 +45,7 @@ var searchData=
   ['setvalue_42',['setValue',['../classkuzu_1_1common_1_1_value_vector.html#a119ffc41b44d093a852a560cb2dfcd6a',1,'kuzu::common::ValueVector']]],
   ['signaturetostring_43',['signaturetostring',['../structkuzu_1_1function_1_1_function.html#a4625757273b818f685281f1237d7e4b2',1,'kuzu::function::Function::signatureToString()'],['../structkuzu_1_1function_1_1_base_scalar_function.html#a434f6ee84523c24729a77e0e63a7c9c1',1,'kuzu::function::BaseScalarFunction::signatureToString()']]],
   ['slice_44',['slice',['../classkuzu_1_1common_1_1_data_chunk_state.html#a407cf08dc18ba41fd1e617ec238e1975',1,'kuzu::common::DataChunkState']]],
-  ['slicedatavector_45',['sliceDataVector',['../classkuzu_1_1common_1_1_list_vector.html#a14c83d2c11aae583f99ac6e0b55b7443',1,'kuzu::common::ListVector']]],
+  ['slicedatavector_45',['sliceDataVector',['../classkuzu_1_1common_1_1_list_vector.html#a2faa297fdddd8912fe1095148917b3da',1,'kuzu::common::ListVector']]],
   ['splitonand_46',['splitOnAND',['../classkuzu_1_1binder_1_1_expression.html#a2c3eed95edb3d87b516d075d5729bdcb',1,'kuzu::binder::Expression']]],
   ['start_47',['start',['../classkuzu_1_1common_1_1_timer.html#a0a80dd012c6460444328d914bfd0fcad',1,'kuzu::common::Timer']]],
   ['starttimingifenabled_48',['startTimingIfEnabled',['../classkuzu_1_1main_1_1_client_context.html#abab2bbdddbdfd2f8289ae18e20ba9362',1,'kuzu::main::ClientContext']]],

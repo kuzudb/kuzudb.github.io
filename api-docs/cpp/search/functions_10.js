@@ -21,9 +21,9 @@ var searchData=
   ['resetselectortovalueposbuffer_18',['resetSelectorToValuePosBuffer',['../classkuzu_1_1common_1_1_selection_vector.html#a76d33489e033e4a051c34d422f8b8ec3',1,'kuzu::common::SelectionVector']]],
   ['resetselectortovalueposbufferwithsize_19',['resetSelectorToValuePosBufferWithSize',['../classkuzu_1_1common_1_1_selection_vector.html#ad4f2811ce227095523c38971ab9a316c',1,'kuzu::common::SelectionVector']]],
   ['resetsize_20',['resetSize',['../classkuzu_1_1common_1_1_list_auxiliary_buffer.html#aa10a2cf9bf304aff612bd4b16b7c1a6d',1,'kuzu::common::ListAuxiliaryBuffer']]],
-  ['resize_21',['resize',['../classkuzu_1_1common_1_1_list_auxiliary_buffer.html#a2419226610d3096392c48992fe046983',1,'kuzu::common::ListAuxiliaryBuffer::resize()'],['../classkuzu_1_1common_1_1_null_mask.html#ada4b5606420ff766b60ca005bedcc7c7',1,'kuzu::common::NullMask::resize()']]],
+  ['resize_21',['resize',['../classkuzu_1_1common_1_1_null_mask.html#ada4b5606420ff766b60ca005bedcc7c7',1,'kuzu::common::NullMask::resize()'],['../classkuzu_1_1common_1_1_list_auxiliary_buffer.html#a2419226610d3096392c48992fe046983',1,'kuzu::common::ListAuxiliaryBuffer::resize()']]],
   ['resizedatavector_22',['resizeDataVector',['../classkuzu_1_1common_1_1_list_vector.html#a8cf60cb58d4891a0493abfafe43f128c',1,'kuzu::common::ListVector']]],
-  ['rollback_23',['rollback',['../classkuzu_1_1main_1_1_connection.html#a6a196176e4364c8ec31749ac080081d8',1,'kuzu::main::Connection::rollback()'],['../classkuzu_1_1transaction_1_1_transaction_context.html#a77720232141c4a6e92d9e35637c3d577',1,'kuzu::transaction::TransactionContext::rollback()']]],
+  ['rollback_23',['rollback',['../classkuzu_1_1transaction_1_1_transaction_context.html#a77720232141c4a6e92d9e35637c3d577',1,'kuzu::transaction::TransactionContext']]],
   ['rollbackskipcheckpointing_24',['rollbackSkipCheckPointing',['../classkuzu_1_1transaction_1_1_transaction_context.html#a69c6aa7f0fb0f9e612e00f2f62941df3',1,'kuzu::transaction::TransactionContext']]],
   ['runtimeexception_25',['RuntimeException',['../classkuzu_1_1common_1_1_runtime_exception.html#ae72a6d17f2643e121e1f2bcb4b99b033',1,'kuzu::common::RuntimeException']]]
 ];
