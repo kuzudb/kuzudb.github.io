@@ -110,18 +110,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5c92d7da053707b55e89bb6f273d5d49" id="r_a5c92d7da053707b55e89bb6f273d5d49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1main_1_1_connection.html#a5c92d7da053707b55e89bb6f273d5d49">~Connection</a> ()</td></tr>
 <tr class="memdesc:a5c92d7da053707b55e89bb6f273d5d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs the connection.  <br /></td></tr>
 <tr class="separator:a5c92d7da053707b55e89bb6f273d5d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a712dc6bf417c66117fa27566aa129b" id="r_a2a712dc6bf417c66117fa27566aa129b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1main_1_1_connection.html#a2a712dc6bf417c66117fa27566aa129b">beginReadOnlyTransaction</a> ()</td></tr>
-<tr class="memdesc:a2a712dc6bf417c66117fa27566aa129b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually starts a new read-only transaction in the current connection.  <br /></td></tr>
-<tr class="separator:a2a712dc6bf417c66117fa27566aa129b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0478eec032946cab29d10f7ce1676624" id="r_a0478eec032946cab29d10f7ce1676624"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1main_1_1_connection.html#a0478eec032946cab29d10f7ce1676624">beginWriteTransaction</a> ()</td></tr>
-<tr class="memdesc:a0478eec032946cab29d10f7ce1676624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually starts a new write transaction in the current connection.  <br /></td></tr>
-<tr class="separator:a0478eec032946cab29d10f7ce1676624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae55e833a189f9fa669b62e7e3c0b9f8" id="r_aae55e833a189f9fa669b62e7e3c0b9f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1main_1_1_connection.html#aae55e833a189f9fa669b62e7e3c0b9f8">commit</a> ()</td></tr>
-<tr class="memdesc:aae55e833a189f9fa669b62e7e3c0b9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually commits the current transaction.  <br /></td></tr>
-<tr class="separator:aae55e833a189f9fa669b62e7e3c0b9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a196176e4364c8ec31749ac080081d8" id="r_a6a196176e4364c8ec31749ac080081d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1main_1_1_connection.html#a6a196176e4364c8ec31749ac080081d8">rollback</a> ()</td></tr>
-<tr class="memdesc:a6a196176e4364c8ec31749ac080081d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually rollbacks the current transaction.  <br /></td></tr>
-<tr class="separator:a6a196176e4364c8ec31749ac080081d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a943baf10cb0856618435d9e59369d4fb" id="r_a943baf10cb0856618435d9e59369d4fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1main_1_1_connection.html#a943baf10cb0856618435d9e59369d4fb">setMaxNumThreadForExec</a> (uint64_t numThreads)</td></tr>
 <tr class="memdesc:a943baf10cb0856618435d9e59369d4fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum number of threads to use for execution in the current connection.  <br /></td></tr>
 <tr class="separator:a943baf10cb0856618435d9e59369d4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -238,63 +226,6 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2a712dc6bf417c66117fa27566aa129b" name="a2a712dc6bf417c66117fa27566aa129b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a712dc6bf417c66117fa27566aa129b">&#9670;&#160;</a></span>beginReadOnlyTransaction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void kuzu::main::Connection::beginReadOnlyTransaction </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Manually starts a new read-only transaction in the current connection. </p>
-
-</div>
-</div>
-<a id="a0478eec032946cab29d10f7ce1676624" name="a0478eec032946cab29d10f7ce1676624"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0478eec032946cab29d10f7ce1676624">&#9670;&#160;</a></span>beginWriteTransaction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void kuzu::main::Connection::beginWriteTransaction </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Manually starts a new write transaction in the current connection. </p>
-
-</div>
-</div>
-<a id="aae55e833a189f9fa669b62e7e3c0b9f8" name="aae55e833a189f9fa669b62e7e3c0b9f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae55e833a189f9fa669b62e7e3c0b9f8">&#9670;&#160;</a></span>commit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void kuzu::main::Connection::commit </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Manually commits the current transaction. </p>
-
-</div>
-</div>
 <a id="ae889858d5014bfe933aca17705d2f6d5" name="ae889858d5014bfe933aca17705d2f6d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae889858d5014bfe933aca17705d2f6d5">&#9670;&#160;</a></span>createScalarFunction() <span class="overload">[1/2]</span></h2>
 
@@ -689,25 +620,6 @@ template&lt;typename... Args&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of the query. </dd></dl>
-
-</div>
-</div>
-<a id="a6a196176e4364c8ec31749ac080081d8" name="a6a196176e4364c8ec31749ac080081d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a196176e4364c8ec31749ac080081d8">&#9670;&#160;</a></span>rollback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void kuzu::main::Connection::rollback </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Manually rollbacks the current transaction. </p>
 
 </div>
 </div>

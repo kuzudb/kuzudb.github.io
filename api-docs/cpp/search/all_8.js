@@ -82,7 +82,7 @@ var searchData=
   ['istimeoutenabled_79',['isTimeOutEnabled',['../classkuzu_1_1main_1_1_client_context.html#a9270f4234fd3e764aee0ea1661562671',1,'kuzu::main::ClientContext']]],
   ['istransactionstatement_80',['isTransactionStatement',['../classkuzu_1_1main_1_1_prepared_statement.html#af7f447231a04aea4e8858649ec57006a',1,'kuzu::main::PreparedStatement']]],
   ['isunfiltered_81',['isUnfiltered',['../classkuzu_1_1common_1_1_selection_vector.html#a946214dae09737c6b45750228aa70b27',1,'kuzu::common::SelectionVector']]],
-  ['isvalid_82',['isvalid',['../classkuzu_1_1common_1_1_date.html#a928f3d105d4110dc3e3e7ca6976c44bf',1,'kuzu::common::Date::isValid()'],['../classkuzu_1_1common_1_1_time.html#aeada1df62283b02326ceb2cddd7dab02',1,'kuzu::common::Time::IsValid()']]],
+  ['isvalid_82',['isvalid',['../classkuzu_1_1common_1_1_time.html#aeada1df62283b02326ceb2cddd7dab02',1,'kuzu::common::Time::IsValid()'],['../classkuzu_1_1common_1_1_date.html#a928f3d105d4110dc3e3e7ca6976c44bf',1,'kuzu::common::Date::isValid()']]],
   ['isvarlength_83',['isVarLength',['../structkuzu_1_1function_1_1_scalar_function.html#ad003c7364c3dc294aa64a2544bc7f657',1,'kuzu::function::ScalarFunction']]],
   ['iswritetransaction_84',['isWriteTransaction',['../classkuzu_1_1transaction_1_1_transaction.html#a600e341ec7fcaf68ce614701fc8973fa',1,'kuzu::transaction::Transaction']]]
 ];

@@ -69,7 +69,7 @@ var searchData=
   ['size_66',['size',['../structkuzu_1_1common_1_1list__entry__t.html#aa2693d37ac9b045f02b53f71ad93c416',1,'kuzu::common::list_entry_t::size'],['../structkuzu_1_1common_1_1_buffer_block.html#ac0e1d9a01def9873b1291731cfcf1d83',1,'kuzu::common::BufferBlock::size'],['../structkuzu_1_1common_1_1ku__list__t.html#a578871af96d1aecaf639005fa1731762',1,'kuzu::common::ku_list_t::size']]],
   ['size_5ffunc_5fname_67',['SIZE_FUNC_NAME',['../namespacekuzu_1_1common.html#a5ba0dc9f8ee99e7c9931de73d14bf86d',1,'kuzu::common']]],
   ['slice_68',['slice',['../classkuzu_1_1common_1_1_data_chunk_state.html#a407cf08dc18ba41fd1e617ec238e1975',1,'kuzu::common::DataChunkState']]],
-  ['slicedatavector_69',['sliceDataVector',['../classkuzu_1_1common_1_1_list_vector.html#a14c83d2c11aae583f99ac6e0b55b7443',1,'kuzu::common::ListVector']]],
+  ['slicedatavector_69',['sliceDataVector',['../classkuzu_1_1common_1_1_list_vector.html#a2faa297fdddd8912fe1095148917b3da',1,'kuzu::common::ListVector']]],
   ['slot_5fcapacity_5fbytes_70',['SLOT_CAPACITY_BYTES',['../structkuzu_1_1common_1_1_hash_index_constants.html#a46743331f74fb64ef8927c9f5a4a1567',1,'kuzu::common::HashIndexConstants']]],
   ['spdlog_71',['spdlog',['../namespacespdlog.html',1,'']]],
   ['spdlog_3a_3alevel_72',['level',['../namespacespdlog_1_1level.html',1,'spdlog']]],
