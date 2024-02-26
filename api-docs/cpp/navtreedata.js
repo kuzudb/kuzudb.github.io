@@ -65,14 +65,14 @@ var NAVTREEINDEX =
 "classkuzu_1_1common_1_1_list_auxiliary_buffer.html#ae77dca2a19bf5b8bb75e8138a7c86e42",
 "classkuzu_1_1common_1_1_value.html#a31d2e60203ac05bbb9237e4c95b2739f",
 "classkuzu_1_1common_1_1_var_list_type_info.html#a52cb07381f392e82743e0d46443a4193",
-"classkuzu_1_1processor_1_1_flat_tuple.html#a7afbcd4be7a2a0194b5089c71e73e368",
-"expression__type_8h.html#a139d429dccea7e9d299a33e582c9d4f0",
-"functions_func_h.html",
-"namespacekuzu_1_1common.html#a56f2b6c04ba948ae416c4d6fb9bad09c",
-"namespacekuzu_1_1common_1_1string__format__detail.html",
-"structkuzu_1_1common_1_1_parquet_constants.html",
-"structkuzu_1_1common_1_1ku__string__t.html#ad2846ef563a5ee2ec6b7ac12ef960f02",
-"structkuzu_1_1main_1_1_data_type_info.html#a3b5bdea1dfea6b08448e61bc8f2a09aa"
+"classkuzu_1_1parser_1_1_statement.html#a239f91ec51b702013945455de1acdfbf",
+"expression__type_8h.html#a0400ecbb02e350fbd04c95617f19bc78",
+"functions_b.html",
+"namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368aee9d73311ff0658494edfff14c3ec1e3",
+"namespacekuzu_1_1common.html#af4944094c6251b3dc09fc59140a615ba",
+"structkuzu_1_1common_1_1_c_s_v_reader_config.html",
+"structkuzu_1_1common_1_1interval__t.html#ae64d07b0c521d2e7713dbf780b395982",
+"structkuzu_1_1function_1_1_scalar_function.html#ac54c88b6bd6623c7032534793f469d29"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

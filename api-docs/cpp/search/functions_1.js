@@ -12,5 +12,5 @@ var searchData=
   ['blob_9',['BLOB',['../classkuzu_1_1common_1_1_logical_type.html#a39df129e9c1111b43bad22018b7d8669',1,'kuzu::common::LogicalType']]],
   ['bool_10',['BOOL',['../classkuzu_1_1common_1_1_logical_type.html#a8a0a5684314c0480af5a338eb940202a',1,'kuzu::common::LogicalType']]],
   ['bufferblock_11',['BufferBlock',['../structkuzu_1_1common_1_1_buffer_block.html#ae705ad73f47be6a0502ff6347c407b4f',1,'kuzu::common::BufferBlock']]],
-  ['bytetohex_12',['byteToHex',['../structkuzu_1_1common_1_1uuid__t.html#a651edb7d8a2c66d4a58657f510aac405',1,'kuzu::common::uuid_t']]]
+  ['bytetohex_12',['byteToHex',['../structkuzu_1_1common_1_1_u_u_i_d.html#a50a0ac50c1226660896a6bdc53237bb9',1,'kuzu::common::UUID']]]
 ];

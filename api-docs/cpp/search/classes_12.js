@@ -13,5 +13,5 @@ var searchData=
   ['union_5fentry_5ft_10',['union_entry_t',['../structkuzu_1_1common_1_1union__entry__t.html',1,'kuzu::common']]],
   ['uniontype_11',['UnionType',['../structkuzu_1_1common_1_1_union_type.html',1,'kuzu::common']]],
   ['unionvector_12',['UnionVector',['../classkuzu_1_1common_1_1_union_vector.html',1,'kuzu::common']]],
-  ['uuid_5ft_13',['uuid_t',['../structkuzu_1_1common_1_1uuid__t.html',1,'kuzu::common']]]
+  ['uuid_13',['UUID',['../structkuzu_1_1common_1_1_u_u_i_d.html',1,'kuzu::common']]]
 ];

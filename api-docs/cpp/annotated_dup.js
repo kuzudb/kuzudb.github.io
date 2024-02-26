@@ -43,6 +43,7 @@ var annotated_dup =
         [ "interval_t", "structkuzu_1_1common_1_1interval__t.html", "structkuzu_1_1common_1_1interval__t" ],
         [ "ku_list_t", "structkuzu_1_1common_1_1ku__list__t.html", "structkuzu_1_1common_1_1ku__list__t" ],
         [ "ku_string_t", "structkuzu_1_1common_1_1ku__string__t.html", "structkuzu_1_1common_1_1ku__string__t" ],
+        [ "ku_uuid_t", "structkuzu_1_1common_1_1ku__uuid__t.html", "structkuzu_1_1common_1_1ku__uuid__t" ],
         [ "list_entry_t", "structkuzu_1_1common_1_1list__entry__t.html", "structkuzu_1_1common_1_1list__entry__t" ],
         [ "ListAuxiliaryBuffer", "classkuzu_1_1common_1_1_list_auxiliary_buffer.html", "classkuzu_1_1common_1_1_list_auxiliary_buffer" ],
         [ "ListVector", "classkuzu_1_1common_1_1_list_vector.html", null ],
@@ -69,6 +70,7 @@ var annotated_dup =
         [ "RelVal", "classkuzu_1_1common_1_1_rel_val.html", null ],
         [ "RuntimeException", "classkuzu_1_1common_1_1_runtime_exception.html", "classkuzu_1_1common_1_1_runtime_exception" ],
         [ "SelectionVector", "classkuzu_1_1common_1_1_selection_vector.html", "classkuzu_1_1common_1_1_selection_vector" ],
+        [ "StatementTypeUtils", "structkuzu_1_1common_1_1_statement_type_utils.html", null ],
         [ "StorageConstants", "structkuzu_1_1common_1_1_storage_constants.html", null ],
         [ "StringAuxiliaryBuffer", "classkuzu_1_1common_1_1_string_auxiliary_buffer.html", "classkuzu_1_1common_1_1_string_auxiliary_buffer" ],
         [ "StringVector", "classkuzu_1_1common_1_1_string_vector.html", null ],
@@ -90,7 +92,7 @@ var annotated_dup =
         [ "union_entry_t", "structkuzu_1_1common_1_1union__entry__t.html", "structkuzu_1_1common_1_1union__entry__t" ],
         [ "UnionType", "structkuzu_1_1common_1_1_union_type.html", null ],
         [ "UnionVector", "classkuzu_1_1common_1_1_union_vector.html", null ],
-        [ "uuid_t", "structkuzu_1_1common_1_1uuid__t.html", "structkuzu_1_1common_1_1uuid__t" ],
+        [ "UUID", "structkuzu_1_1common_1_1_u_u_i_d.html", null ],
         [ "Value", "classkuzu_1_1common_1_1_value.html", "classkuzu_1_1common_1_1_value" ],
         [ "ValueVector", "classkuzu_1_1common_1_1_value_vector.html", "classkuzu_1_1common_1_1_value_vector" ],
         [ "VarListType", "structkuzu_1_1common_1_1_var_list_type.html", null ],
@@ -143,6 +145,9 @@ var annotated_dup =
         [ "QuerySummary", "classkuzu_1_1main_1_1_query_summary.html", "classkuzu_1_1main_1_1_query_summary" ],
         [ "StorageDriver", "classkuzu_1_1main_1_1_storage_driver.html", "classkuzu_1_1main_1_1_storage_driver" ],
         [ "SystemConfig", "structkuzu_1_1main_1_1_system_config.html", "structkuzu_1_1main_1_1_system_config" ]
+      ] ],
+      [ "parser", "namespacekuzu_1_1parser.html", [
+        [ "Statement", "classkuzu_1_1parser_1_1_statement.html", "classkuzu_1_1parser_1_1_statement" ]
       ] ],
       [ "processor", "namespacekuzu_1_1processor.html", [
         [ "FlatTuple", "classkuzu_1_1processor_1_1_flat_tuple.html", "classkuzu_1_1processor_1_1_flat_tuple" ]

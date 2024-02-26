@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['scalar_0',['SCALAR',['../namespacekuzu_1_1function.html#ac4005c35c2d378c6c0af38944eb68c26a8f3d9a4b6a7b7f2c7afa61ca113d0db9',1,'kuzu::function']]],
-  ['star_1',['STAR',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434ba8ab2630ada18b94a005a0c5399d9d483',1,'kuzu::common']]],
-  ['storage_2',['STORAGE',['../structkuzu_1_1common_1_1_logger_constants.html#a6a50e64f8f910b1952b42711ac982c51a754a5d433173b5ddc7debc2110ac575f',1,'kuzu::common::LoggerConstants']]],
-  ['string_3',['STRING',['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a63b588d5559f64f89a416e656880b949',1,'kuzu::common']]],
-  ['struct_4',['STRUCT',['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368ab8223be2455e0ea5a0e63e8f018d6fc3',1,'kuzu::common']]],
-  ['subquery_5',['SUBQUERY',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434baece5b631ea0b2cdd22da5287e7b1213e',1,'kuzu::common']]]
+  ['rdf_0',['RDF',['../namespacekuzu_1_1common.html#ae5f26ac9013e5c22997afe42c4b23127a07ad13f9a6390b4fe113c14d4d98d25d',1,'kuzu::common']]],
+  ['read_5fonly_1',['READ_ONLY',['../namespacekuzu_1_1transaction.html#a069cf26fb4f925fd7696e1f206a5fb90a47c7e7cb36a953a8c47e02000036bb44',1,'kuzu::transaction']]],
+  ['regular_2',['REGULAR',['../namespacekuzu_1_1common.html#ab86f688b43a46ba46171307589004c0da820ead78f0fa32544c7ba38fe7ff53d9',1,'kuzu::common']]],
+  ['rel_3',['REL',['../namespacekuzu_1_1common.html#ae5f26ac9013e5c22997afe42c4b23127ae76f78a754cd06573b145266a956cfdf',1,'kuzu::common']]],
+  ['rel_5fgroup_4',['REL_GROUP',['../namespacekuzu_1_1common.html#ae5f26ac9013e5c22997afe42c4b23127abcfc84498a2d332880dd9cc7b7e97beb',1,'kuzu::common']]]
 ];

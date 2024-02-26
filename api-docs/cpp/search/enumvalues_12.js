@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['wal_0',['WAL',['../structkuzu_1_1common_1_1_logger_constants.html#a6a50e64f8f910b1952b42711ac982c51afe5782c4a4d8160cf04ff71992b3f0c3',1,'kuzu::common::LoggerConstants']]],
-  ['wal_5fversion_1',['WAL_VERSION',['../namespacekuzu_1_1common.html#a518704891d80325673ccd66956aae7c5a46c4cb6bfc3c106374dad6bb85532b21',1,'kuzu::common']]],
-  ['write_2',['WRITE',['../namespacekuzu_1_1transaction.html#a069cf26fb4f925fd7696e1f206a5fb90ad4b9e47f65b6e79b010582f15785867e',1,'kuzu::transaction']]]
+  ['var_5flist_0',['VAR_LIST',['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a154b64b2b49669302a4ee55d768de2cc',1,'kuzu::common']]],
+  ['variable_1',['VARIABLE',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434bae61ad9b2553a293b4a3f4d3b4fa5ab31',1,'kuzu::common']]]
 ];

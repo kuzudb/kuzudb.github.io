@@ -33,7 +33,7 @@ var searchData=
   ['ceiling_5ffunc_5fname_30',['CEILING_FUNC_NAME',['../namespacekuzu_1_1common.html#a89fef149b9616e90b87bb929e4fde60e',1,'kuzu::common']]],
   ['century_31',['CENTURY',['../namespacekuzu_1_1common.html#ad461620002eaf5807e7bdbb014c7f9c1',1,'kuzu::common']]],
   ['century_5ffunc_5fname_32',['CENTURY_FUNC_NAME',['../namespacekuzu_1_1common.html#ad568dcf7e538606e450be7ac80f3057c',1,'kuzu::common']]],
-  ['children_33',['children',['../struct_arrow_array.html#a4fb07be9899001e57c9ab0509396ffb8',1,'ArrowArray::children'],['../struct_arrow_schema.html#ae0ba059e1e9a6879fc231f3475644c1a',1,'ArrowSchema::children'],['../classkuzu_1_1binder_1_1_expression.html#a528c83291f13e56fa25d7a54f5aac3df',1,'kuzu::binder::Expression::children']]],
+  ['children_33',['children',['../struct_arrow_schema.html#ae0ba059e1e9a6879fc231f3475644c1a',1,'ArrowSchema::children'],['../struct_arrow_array.html#a4fb07be9899001e57c9ab0509396ffb8',1,'ArrowArray::children'],['../classkuzu_1_1binder_1_1_expression.html#a528c83291f13e56fa25d7a54f5aac3df',1,'kuzu::binder::Expression::children']]],
   ['childrentypesinfo_34',['childrenTypesInfo',['../structkuzu_1_1main_1_1_data_type_info.html#a3b5bdea1dfea6b08448e61bc8f2a09aa',1,'kuzu::main::DataTypeInfo']]],
   ['childtype_35',['childType',['../classkuzu_1_1common_1_1_var_list_type_info.html#aadab29c8771158d1ca594fbd016fd2e6',1,'kuzu::common::VarListTypeInfo']]],
   ['chunk_5fresize_5fratio_36',['CHUNK_RESIZE_RATIO',['../namespacekuzu_1_1common.html#a63c7127dbb04705764f052909aca906d',1,'kuzu::common']]],

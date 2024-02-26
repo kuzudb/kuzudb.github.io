@@ -1,7 +1,7 @@
 var searchData=
 [
   ['database_0',['Database',['../classkuzu_1_1main_1_1_database.html#ade599ee8e84a9b8bfe25ffc01db736da',1,'kuzu::main::Database']]],
-  ['datachunkstate_1',['datachunkstate',['../classkuzu_1_1common_1_1_data_chunk_state.html#a6fa8ccc24f63e310bc412c9e07ebedb4',1,'kuzu::common::DataChunkState::DataChunkState()'],['../classkuzu_1_1common_1_1_data_chunk_state.html#aa31ba4dcb962f2c7767628ed2ee71fe3',1,'kuzu::common::DataChunkState::DataChunkState(uint64_t capacity)']]],
+  ['datachunkstate_1',['DataChunkState',['../classkuzu_1_1common_1_1_data_chunk_state.html#a6fa8ccc24f63e310bc412c9e07ebedb4',1,'kuzu::common::DataChunkState::DataChunkState()'],['../classkuzu_1_1common_1_1_data_chunk_state.html#aa31ba4dcb962f2c7767628ed2ee71fe3',1,'kuzu::common::DataChunkState::DataChunkState(uint64_t capacity)']]],
   ['datatypefromstring_2',['dataTypeFromString',['../classkuzu_1_1common_1_1_logical_type_utils.html#a31d20e855e30ccea23c50bdeaa0a6f71',1,'kuzu::common::LogicalTypeUtils']]],
   ['datatypeinfo_3',['DataTypeInfo',['../structkuzu_1_1main_1_1_data_type_info.html#a147649b91abac3b7b8e1869aac50f7c6',1,'kuzu::main::DataTypeInfo']]],
   ['date_4',['DATE',['../classkuzu_1_1common_1_1_logical_type.html#a1359a4f8aa819f8798b66ac2c5a8a854',1,'kuzu::common::LogicalType']]],

@@ -50,6 +50,8 @@ var dir_7f57b1e41c5acd0e859ae5f3a2b075a9 =
     [ "runtime.h", "runtime_8h.html", "runtime_8h" ],
     [ "scalar_function.h", "scalar__function_8h.html", "scalar__function_8h" ],
     [ "sel_vector.h", "sel__vector_8h.html", "sel__vector_8h" ],
+    [ "statement.h", "statement_8h.html", "statement_8h" ],
+    [ "statement_type.h", "statement__type_8h.html", "statement__type_8h" ],
     [ "storage_driver.h", "storage__driver_8h.html", "storage__driver_8h" ],
     [ "string_format.h", "string__format_8h.html", "string__format_8h" ],
     [ "table_type.h", "table__type_8h.html", "table__type_8h" ],
