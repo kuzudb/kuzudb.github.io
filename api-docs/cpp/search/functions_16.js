@@ -13,7 +13,8 @@ var searchData=
   ['_7ememorybuffer_10',['~MemoryBuffer',['../classkuzu_1_1storage_1_1_memory_buffer.html#ac2aa0864c08885653ae871118780c58b',1,'kuzu::storage::MemoryBuffer']]],
   ['_7epreparedstatement_11',['~PreparedStatement',['../classkuzu_1_1main_1_1_prepared_statement.html#a88e21bca711ab5bd45562ea675ac5498',1,'kuzu::main::PreparedStatement']]],
   ['_7equeryresult_12',['~QueryResult',['../classkuzu_1_1main_1_1_query_result.html#ac052771684f8332ffe52f63f061a56e0',1,'kuzu::main::QueryResult']]],
-  ['_7estoragedriver_13',['~StorageDriver',['../classkuzu_1_1main_1_1_storage_driver.html#a48df2d93614859d5f78a10a81cdcfef0',1,'kuzu::main::StorageDriver']]],
-  ['_7etransactioncontext_14',['~TransactionContext',['../classkuzu_1_1transaction_1_1_transaction_context.html#aeb6c3a49209a855cab76df6a3e29075c',1,'kuzu::transaction::TransactionContext']]],
-  ['_7evaluevector_15',['~ValueVector',['../classkuzu_1_1common_1_1_value_vector.html#a631fd679cbd7770d3a5fe3e958ac57d3',1,'kuzu::common::ValueVector']]]
+  ['_7estatement_13',['~Statement',['../classkuzu_1_1parser_1_1_statement.html#a239f91ec51b702013945455de1acdfbf',1,'kuzu::parser::Statement']]],
+  ['_7estoragedriver_14',['~StorageDriver',['../classkuzu_1_1main_1_1_storage_driver.html#a48df2d93614859d5f78a10a81cdcfef0',1,'kuzu::main::StorageDriver']]],
+  ['_7etransactioncontext_15',['~TransactionContext',['../classkuzu_1_1transaction_1_1_transaction_context.html#aeb6c3a49209a855cab76df6a3e29075c',1,'kuzu::transaction::TransactionContext']]],
+  ['_7evaluevector_16',['~ValueVector',['../classkuzu_1_1common_1_1_value_vector.html#a631fd679cbd7770d3a5fe3e958ac57d3',1,'kuzu::common::ValueVector']]]
 ];

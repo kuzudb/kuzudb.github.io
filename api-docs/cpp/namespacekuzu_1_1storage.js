@@ -9,8 +9,8 @@ var namespacekuzu_1_1storage =
     [ "MemoryAllocator", "classkuzu_1_1storage_1_1_memory_allocator.html", "classkuzu_1_1storage_1_1_memory_allocator" ],
     [ "MemoryBuffer", "classkuzu_1_1storage_1_1_memory_buffer.html", "classkuzu_1_1storage_1_1_memory_buffer" ],
     [ "MemoryManager", "classkuzu_1_1storage_1_1_memory_manager.html", "classkuzu_1_1storage_1_1_memory_manager" ],
-    [ "delete_info_t", "namespacekuzu_1_1storage.html#a90320979a9d3795538c06f9afa91035e", null ],
-    [ "offset_set_t", "namespacekuzu_1_1storage.html#a452617112d1fa195a323c2d00d714a0b", null ],
-    [ "offset_to_row_idx_t", "namespacekuzu_1_1storage.html#a2133f8e7ea62fafee0cac73a462ffef6", null ],
-    [ "update_insert_info_t", "namespacekuzu_1_1storage.html#ac05fc9ea71b16475ed47716b511a44b7", null ]
+    [ "delete_info_t", "namespacekuzu_1_1storage.html#a0fd486ca7f87d9296b218843ea6591d1", null ],
+    [ "offset_set_t", "namespacekuzu_1_1storage.html#abfe6867b96f532cbc334c3138d8fe25c", null ],
+    [ "offset_to_row_idx_t", "namespacekuzu_1_1storage.html#ab19a7c8c93e12eefabccf660b67ba37a", null ],
+    [ "update_insert_info_t", "namespacekuzu_1_1storage.html#a9d455b0a01ee60b930c0e529edc503a7", null ]
 ];

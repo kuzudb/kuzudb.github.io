@@ -17,7 +17,8 @@ var classkuzu_1_1main_1_1_query_result =
     [ "hasNext", "classkuzu_1_1main_1_1_query_result.html#af81d9eb02084e51ef686ab435544e340", null ],
     [ "isSuccess", "classkuzu_1_1main_1_1_query_result.html#a358791451a2a4c88a5fbc05d57319cfa", null ],
     [ "resetIterator", "classkuzu_1_1main_1_1_query_result.html#adca96bf0eb9ba28997a5a77dda3bc984", null ],
+    [ "toSingleQueryString", "classkuzu_1_1main_1_1_query_result.html#ad246b1cf63499dad809a39ff44f7d3c3", null ],
     [ "toString", "classkuzu_1_1main_1_1_query_result.html#a56e7bc908e43d9176ba4d942944d424d", null ],
-    [ "writeToCSV", "classkuzu_1_1main_1_1_query_result.html#a7c6a2fbd54e17c8145b00cef54669d9d", null ],
-    [ "Connection", "classkuzu_1_1main_1_1_query_result.html#a54a11fdc71e1679a42fa0c0e3856673d", null ]
+    [ "Connection", "classkuzu_1_1main_1_1_query_result.html#a54a11fdc71e1679a42fa0c0e3856673d", null ],
+    [ "nextQueryResult", "classkuzu_1_1main_1_1_query_result.html#a27c73d1e33c3adf23bc6d5b60ff92cb8", null ]
 ];

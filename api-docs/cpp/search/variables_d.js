@@ -5,5 +5,5 @@ var searchData=
   ['offset_5ffunc_5fname_2',['OFFSET_FUNC_NAME',['../namespacekuzu_1_1common.html#aee12ba3476ab8ac10888b03d0867364d',1,'kuzu::common']]],
   ['option_3',['option',['../structkuzu_1_1common_1_1_c_s_v_reader_config.html#a4d31e5fc56161be43b865fb031b0b513',1,'kuzu::common::CSVReaderConfig']]],
   ['overflow_5ffile_5fsuffix_4',['OVERFLOW_FILE_SUFFIX',['../structkuzu_1_1common_1_1_storage_constants.html#a6ebc5c9fc210033494905271e6e9cbd6',1,'kuzu::common::StorageConstants']]],
-  ['overflowptr_5',['overflowptr',['../structkuzu_1_1common_1_1ku__list__t.html#a700477b14eba9b6fa5a9b12a8eecb4bf',1,'kuzu::common::ku_list_t::overflowPtr'],['../structkuzu_1_1common_1_1ku__string__t.html#a14d90e6a6ae915f66132bfabe4114fc9',1,'kuzu::common::ku_string_t::overflowPtr']]]
+  ['overflowptr_5',['overflowPtr',['../structkuzu_1_1common_1_1ku__list__t.html#a700477b14eba9b6fa5a9b12a8eecb4bf',1,'kuzu::common::ku_list_t::overflowPtr'],['../structkuzu_1_1common_1_1ku__string__t.html#a14d90e6a6ae915f66132bfabe4114fc9',1,'kuzu::common::ku_string_t::overflowPtr']]]
 ];

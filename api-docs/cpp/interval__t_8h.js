@@ -13,5 +13,6 @@ var interval__t_8h =
     [ "MINUTE", "interval__t_8h.html#ac60a1643d3ac8873a72d12b3ad39a658", null ],
     [ "MONTH", "interval__t_8h.html#a4609d7607eb390d483bea9f68ae65457", null ],
     [ "QUARTER", "interval__t_8h.html#ac3f416d18d4911bdc5e5bcac561cd83d", null ],
-    [ "SECOND", "interval__t_8h.html#af0b2bba24a8e2662773d72479a9f60db", null ]
+    [ "SECOND", "interval__t_8h.html#af0b2bba24a8e2662773d72479a9f60db", null ],
+    [ "WEEK", "interval__t_8h.html#ace298104816adc7a889fa914cc8cddb1", null ]
 ];

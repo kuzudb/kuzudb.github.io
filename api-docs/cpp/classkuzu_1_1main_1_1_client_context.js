@@ -8,6 +8,7 @@ var classkuzu_1_1main_1_1_client_context =
     [ "getExtensionDir", "classkuzu_1_1main_1_1_client_context.html#ad88e140cf4061e18d3bef9037da0f664", null ],
     [ "getMemoryManager", "classkuzu_1_1main_1_1_client_context.html#abccdfc7df218d444407ec53defced6be", null ],
     [ "getRandomEngine", "classkuzu_1_1main_1_1_client_context.html#a0e87ca67ffbb013c307c14dea7c84ef8", null ],
+    [ "getStorageManager", "classkuzu_1_1main_1_1_client_context.html#a8f730c214138c6fbdc6498bf5347639f", null ],
     [ "getTimeoutRemainingInMS", "classkuzu_1_1main_1_1_client_context.html#a7dccb1403983067f8fc18f828ec0e8df", null ],
     [ "getTransactionContext", "classkuzu_1_1main_1_1_client_context.html#a2435a77007da678e9f254eafff059618", null ],
     [ "getTx", "classkuzu_1_1main_1_1_client_context.html#ac72401e94309f757320e03df0be95d93", null ],

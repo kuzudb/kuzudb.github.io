@@ -7,6 +7,7 @@ var namespacekuzu =
     [ "extension", "namespacekuzu_1_1extension.html", null ],
     [ "function", "namespacekuzu_1_1function.html", "namespacekuzu_1_1function" ],
     [ "main", "namespacekuzu_1_1main.html", "namespacekuzu_1_1main" ],
+    [ "parser", "namespacekuzu_1_1parser.html", "namespacekuzu_1_1parser" ],
     [ "planner", "namespacekuzu_1_1planner.html", null ],
     [ "processor", "namespacekuzu_1_1processor.html", "namespacekuzu_1_1processor" ],
     [ "storage", "namespacekuzu_1_1storage.html", "namespacekuzu_1_1storage" ],
