@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkkuzu_docs=self.webpackChunkkuzu_docs||[]).push([[4195],{2841:(u,e,t)=>{t.r(e),t.d(e,{default:()=>r});var s=t(7294),c=t(6550);function r(){return s.createElement(c.l_,{to:"/docusaurus/getting-started/"})}}}]);
