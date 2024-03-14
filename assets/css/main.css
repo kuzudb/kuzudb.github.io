@@ -3050,9 +3050,9 @@ table.alt tbody tr td {
 #team-members {
   display: flex;
   flex-wrap: wrap;
-  margin-left:10%;
-  margin-right:10%;
-  justify-content:space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: space-between;
 }
 
 #team-members::after {
@@ -3069,7 +3069,7 @@ table.alt tbody tr td {
   margin-bottom: 24px;
 }
 
-.team-member-profile-wrapper{
+.team-member-profile-wrapper {
   display: flex;
   flex-grow: 1;
   flex-direction: row;
@@ -3104,6 +3104,7 @@ table.alt tbody tr td {
     margin-left: 5%;
     margin-right: 5%;
   }
+
   .team-member-profile {
     width: 50%;
   }
@@ -3446,11 +3447,11 @@ body.is-preload #header.alt .logo {
   box-shadow: inset 0 0 0 1px transparent;
 }
 
-#nav ul li a:hover {
+#nav ul li a.link:hover {
   background-color: rgba(222, 222, 222, 0.25);
 }
 
-#nav ul li a.active {
+#nav ul li a.link.active {
   background-color: #ffffff;
   box-shadow: none;
 }
@@ -3579,8 +3580,10 @@ body.is-preload #header.alt .logo {
 #main input[type="reset"].primary:hover,
 #main input[type="button"].primary:hover,
 #main button.primary:hover,
-#main .button.primary:hover {
+#main .button.primary:hover,
+#nav .button.primary:hover {
   background-color: #dc6428;
+  opacity: 0.9;
 }
 
 #main input[type="submit"].primary:active,
@@ -4028,16 +4031,16 @@ div.logo-container {
   }
 }
 
-small.detected-platform{
+small.detected-platform {
   font-size: 1em;
 }
 
 @media screen and (max-width: 736px) {
-  small.detected-platform{
+  small.detected-platform {
     margin-bottom: 0.8em;
   }
 }
 
-pre.download-command-container-pre{
+pre.download-command-container-pre {
   margin-bottom: 0.8em;
 }
