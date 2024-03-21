@@ -17,5 +17,7 @@ var searchData=
   ['varlengthextendmaxdepthsetting_14',['VarLengthExtendMaxDepthSetting',['../classkuzu_1_1main_1_1_client_context.html#ab67d72f194caec8d0507605d3c161c87',1,'kuzu::main::ClientContext']]],
   ['varlisttype_15',['VarListType',['../structkuzu_1_1common_1_1_var_list_type.html',1,'kuzu::common::VarListType'],['../classkuzu_1_1common_1_1_logical_type.html#a92271b85baacc95572ccd4622cfc45ee',1,'kuzu::common::LogicalType::VarListType']]],
   ['varlisttypeinfo_16',['VarListTypeInfo',['../classkuzu_1_1common_1_1_var_list_type_info.html',1,'kuzu::common::VarListTypeInfo'],['../classkuzu_1_1common_1_1_var_list_type_info.html#a6b6b51f0a85c9f32455dc5d9c5d6b59f',1,'kuzu::common::VarListTypeInfo::VarListTypeInfo()=default'],['../classkuzu_1_1common_1_1_var_list_type_info.html#a1a94a8a42c9051fe10a4f53f17b93f1e',1,'kuzu::common::VarListTypeInfo::VarListTypeInfo(std::unique_ptr&lt; LogicalType &gt; childType)']]],
-  ['vector_5fidx_5ft_17',['vector_idx_t',['../namespacekuzu_1_1common.html#a5db5d45faf643722ba4aae3d12e69c5b',1,'kuzu::common']]]
+  ['vector_5fidx_5ft_17',['vector_idx_t',['../namespacekuzu_1_1common.html#a5db5d45faf643722ba4aae3d12e69c5b',1,'kuzu::common']]],
+  ['version_18',['Version',['../structkuzu_1_1main_1_1_version.html',1,'kuzu::main']]],
+  ['version_2eh_19',['version.h',['../version_8h.html',1,'']]]
 ];

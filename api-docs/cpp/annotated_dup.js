@@ -144,7 +144,8 @@ var annotated_dup =
         [ "QueryResult", "classkuzu_1_1main_1_1_query_result.html", "classkuzu_1_1main_1_1_query_result" ],
         [ "QuerySummary", "classkuzu_1_1main_1_1_query_summary.html", "classkuzu_1_1main_1_1_query_summary" ],
         [ "StorageDriver", "classkuzu_1_1main_1_1_storage_driver.html", "classkuzu_1_1main_1_1_storage_driver" ],
-        [ "SystemConfig", "structkuzu_1_1main_1_1_system_config.html", "structkuzu_1_1main_1_1_system_config" ]
+        [ "SystemConfig", "structkuzu_1_1main_1_1_system_config.html", "structkuzu_1_1main_1_1_system_config" ],
+        [ "Version", "structkuzu_1_1main_1_1_version.html", null ]
       ] ],
       [ "parser", "namespacekuzu_1_1parser.html", [
         [ "Statement", "classkuzu_1_1parser_1_1_statement.html", "classkuzu_1_1parser_1_1_statement" ]

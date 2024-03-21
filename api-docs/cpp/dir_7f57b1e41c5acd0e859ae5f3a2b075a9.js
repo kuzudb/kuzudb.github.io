@@ -65,5 +65,6 @@ var dir_7f57b1e41c5acd0e859ae5f3a2b075a9 =
     [ "unary_function_executor.h", "unary__function__executor_8h.html", "unary__function__executor_8h" ],
     [ "uuid.h", "uuid_8h.html", "uuid_8h" ],
     [ "value.h", "value_8h.html", "value_8h" ],
-    [ "value_vector.h", "value__vector_8h.html", "value__vector_8h" ]
+    [ "value_vector.h", "value__vector_8h.html", "value__vector_8h" ],
+    [ "version.h", "version_8h.html", "version_8h" ]
 ];

@@ -126,5 +126,5 @@ var searchData=
   ['subtract_5ffunc_5fname_123',['SUBTRACT_FUNC_NAME',['../namespacekuzu_1_1common.html#ad322f45fdb58b9f1dc3906a90fca020a',1,'kuzu::common']]],
   ['suffix_5ffunc_5fname_124',['SUFFIX_FUNC_NAME',['../namespacekuzu_1_1common.html#acbe5b0af8273f8315b73e1105451b470',1,'kuzu::common']]],
   ['sum_5ffunc_5fname_125',['SUM_FUNC_NAME',['../namespacekuzu_1_1common.html#aa960e5459d5c116228249eecec69f15a',1,'kuzu::common']]],
-  ['systemconfig_126',['SystemConfig',['../structkuzu_1_1main_1_1_system_config.html',1,'kuzu::main::SystemConfig'],['../structkuzu_1_1main_1_1_system_config.html#a354023b9acdbefc964722b542be7ccb1',1,'kuzu::main::SystemConfig::SystemConfig()']]]
+  ['systemconfig_126',['SystemConfig',['../structkuzu_1_1main_1_1_system_config.html',1,'kuzu::main::SystemConfig'],['../structkuzu_1_1main_1_1_system_config.html#af73f1e8807dc7bfc1de0e0f44409644b',1,'kuzu::main::SystemConfig::SystemConfig()']]]
 ];
