@@ -62,5 +62,5 @@ var searchData=
   ['structtypeinfo_59',['StructTypeInfo',['../classkuzu_1_1common_1_1_struct_type_info.html#a6947ad915f3be99b91394cd7ff87841d',1,'kuzu::common::StructTypeInfo::StructTypeInfo()=default'],['../classkuzu_1_1common_1_1_struct_type_info.html#a4ae040ff8c9b49b9b06f9fb70c69eee9',1,'kuzu::common::StructTypeInfo::StructTypeInfo(std::vector&lt; StructField &gt; &amp;&amp;fields)'],['../classkuzu_1_1common_1_1_struct_type_info.html#acd6712ae8bfc15f5588547b4e8ff9085',1,'kuzu::common::StructTypeInfo::StructTypeInfo(const std::vector&lt; std::string &gt; &amp;fieldNames, const std::vector&lt; std::unique_ptr&lt; LogicalType &gt; &gt; &amp;fieldTypes)']]],
   ['sub_60',['Sub',['../classkuzu_1_1common_1_1_int128__t.html#a8dd11b4495055501dc544ca5f6ab2b0d',1,'kuzu::common::Int128_t']]],
   ['subinplace_61',['subInPlace',['../classkuzu_1_1common_1_1_int128__t.html#ae932e30bf6804ffaca0f7148b83539a9',1,'kuzu::common::Int128_t']]],
-  ['systemconfig_62',['SystemConfig',['../structkuzu_1_1main_1_1_system_config.html#a354023b9acdbefc964722b542be7ccb1',1,'kuzu::main::SystemConfig']]]
+  ['systemconfig_62',['SystemConfig',['../structkuzu_1_1main_1_1_system_config.html#af73f1e8807dc7bfc1de0e0f44409644b',1,'kuzu::main::SystemConfig']]]
 ];

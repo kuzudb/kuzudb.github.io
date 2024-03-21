@@ -4,5 +4,6 @@ var searchData=
   ['value_1',['Value',['../classkuzu_1_1common_1_1_value.html',1,'kuzu::common']]],
   ['valuevector_2',['ValueVector',['../classkuzu_1_1common_1_1_value_vector.html',1,'kuzu::common']]],
   ['varlisttype_3',['VarListType',['../structkuzu_1_1common_1_1_var_list_type.html',1,'kuzu::common']]],
-  ['varlisttypeinfo_4',['VarListTypeInfo',['../classkuzu_1_1common_1_1_var_list_type_info.html',1,'kuzu::common']]]
+  ['varlisttypeinfo_4',['VarListTypeInfo',['../classkuzu_1_1common_1_1_var_list_type_info.html',1,'kuzu::common']]],
+  ['version_5',['Version',['../structkuzu_1_1main_1_1_version.html',1,'kuzu::main']]]
 ];

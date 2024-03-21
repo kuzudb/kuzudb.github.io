@@ -167,5 +167,6 @@ var hierarchy =
     [ "kuzu::common::Value::Val", "unionkuzu_1_1common_1_1_value_1_1_val.html", null ],
     [ "kuzu::common::Value", "classkuzu_1_1common_1_1_value.html", null ],
     [ "kuzu::common::ValueVector", "classkuzu_1_1common_1_1_value_vector.html", null ],
-    [ "kuzu::common::VarListType", "structkuzu_1_1common_1_1_var_list_type.html", null ]
+    [ "kuzu::common::VarListType", "structkuzu_1_1common_1_1_var_list_type.html", null ],
+    [ "kuzu::main::Version", "structkuzu_1_1main_1_1_version.html", null ]
 ];

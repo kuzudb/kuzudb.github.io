@@ -11,5 +11,6 @@ var namespacekuzu_1_1main =
     [ "QuerySummary", "classkuzu_1_1main_1_1_query_summary.html", "classkuzu_1_1main_1_1_query_summary" ],
     [ "StorageDriver", "classkuzu_1_1main_1_1_storage_driver.html", "classkuzu_1_1main_1_1_storage_driver" ],
     [ "SystemConfig", "structkuzu_1_1main_1_1_system_config.html", "structkuzu_1_1main_1_1_system_config" ],
+    [ "Version", "structkuzu_1_1main_1_1_version.html", null ],
     [ "replace_func_t", "namespacekuzu_1_1main.html#a64ddb74b9d0e5d5f64cb2a2b147a9676", null ]
 ];

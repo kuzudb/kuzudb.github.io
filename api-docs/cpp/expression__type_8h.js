@@ -134,6 +134,7 @@ var expression__type_8h =
     [ "LENGTH_FUNC_NAME", "expression__type_8h.html#aa898b996f84267e747e6fb49424d4095", null ],
     [ "LESS_THAN_EQUALS_FUNC_NAME", "expression__type_8h.html#afe34068ff44013c81a36986812559957", null ],
     [ "LESS_THAN_FUNC_NAME", "expression__type_8h.html#af4944094c6251b3dc09fc59140a615ba", null ],
+    [ "LEVENSHTEIN_FUNC_NAME", "expression__type_8h.html#ae7d585b9fbc510fa72988e5b0a68c07f", null ],
     [ "LGAMMA_FUNC_NAME", "expression__type_8h.html#adc606f02c304f7138c179242b5b47b87", null ],
     [ "LIST_ANY_VALUE_FUNC_NAME", "expression__type_8h.html#a6a194186ec6eb13244d276618d66121d", null ],
     [ "LIST_APPEND_FUNC_NAME", "expression__type_8h.html#acabbe3968efe817c4454b5ca8e8ac1a1", null ],
