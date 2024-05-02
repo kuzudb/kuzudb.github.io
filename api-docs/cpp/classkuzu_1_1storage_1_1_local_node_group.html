@@ -94,9 +94,8 @@ $(function(){initNavTree('classkuzu_1_1storage_1_1_local_node_group.html',''); i
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classkuzu_1_1storage_1_1_local_node_group-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">kuzu::storage::LocalNodeGroup Class Reference</div></div>
+  <div class="headertitle"><div class="title">kuzu::storage::LocalNodeGroup Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -104,28 +103,41 @@ $(function(){initNavTree('classkuzu_1_1storage_1_1_local_node_group.html',''); i
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a786668f248ec1db421867be46ba7d514" id="r_a786668f248ec1db421867be46ba7d514"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a786668f248ec1db421867be46ba7d514">LocalNodeGroup</a> (<a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> <a class="el" href="#a927fe05880606a8511784605b861e5ec">nodeGroupStartOffset</a>, std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">common::LogicalType</a> * &gt; dataTypes, <a class="el" href="classkuzu_1_1storage_1_1_memory_manager.html">MemoryManager</a> *mm)</td></tr>
-<tr class="separator:a786668f248ec1db421867be46ba7d514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06d7f84e01e81e3ff5e1e59d6d250592" id="r_a06d7f84e01e81e3ff5e1e59d6d250592"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06d7f84e01e81e3ff5e1e59d6d250592">LocalNodeGroup</a> (<a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> <a class="el" href="#a927fe05880606a8511784605b861e5ec">nodeGroupStartOffset</a>, const std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">common::LogicalType</a> &gt; &amp;dataTypes)</td></tr>
+<tr class="separator:a06d7f84e01e81e3ff5e1e59d6d250592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ee701fa2dc1fc2397aebb8c53e7fc57" id="r_a6ee701fa2dc1fc2397aebb8c53e7fc57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ee701fa2dc1fc2397aebb8c53e7fc57">DELETE_COPY_DEFAULT_MOVE</a> (<a class="el" href="classkuzu_1_1storage_1_1_local_node_group.html">LocalNodeGroup</a>)</td></tr>
+<tr class="separator:a6ee701fa2dc1fc2397aebb8c53e7fc57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36a3dc2151dbc62a9251917202ae3536" id="r_a36a3dc2151dbc62a9251917202ae3536"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36a3dc2151dbc62a9251917202ae3536">~LocalNodeGroup</a> ()=default</td></tr>
 <tr class="separator:a36a3dc2151dbc62a9251917202ae3536"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3dcb12a822029126fd4d9f3ad393eb7" id="r_ab3dcb12a822029126fd4d9f3ad393eb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1storage_1_1_local_vector_collection.html">LocalVectorCollection</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3dcb12a822029126fd4d9f3ad393eb7">getLocalColumnChunk</a> (<a class="el" href="namespacekuzu_1_1common.html#a65a8710761710db02211ccf1d1aaa909">common::column_id_t</a> columnID)</td></tr>
-<tr class="separator:ab3dcb12a822029126fd4d9f3ad393eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2610eeb008fade698f56ef4ceda2db4a" id="r_a2610eeb008fade698f56ef4ceda2db4a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2610eeb008fade698f56ef4ceda2db4a">insert</a> (std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> * &gt; nodeIDVectors, std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> * &gt; propertyVectors)=0</td></tr>
+<tr class="separator:a2610eeb008fade698f56ef4ceda2db4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b68cbfd022009284bda317b9f7c9ee" id="r_a89b68cbfd022009284bda317b9f7c9ee"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89b68cbfd022009284bda317b9f7c9ee">update</a> (std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> * &gt; nodeIDVectors, <a class="el" href="namespacekuzu_1_1common.html#a65a8710761710db02211ccf1d1aaa909">common::column_id_t</a> columnID, <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> *propertyVector)=0</td></tr>
+<tr class="separator:a89b68cbfd022009284bda317b9f7c9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f51be292f2ca357ea287e91175e378e" id="r_a7f51be292f2ca357ea287e91175e378e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f51be292f2ca357ea287e91175e378e">delete_</a> (<a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> *IDVector, <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> *extraVector)=0</td></tr>
+<tr class="separator:a7f51be292f2ca357ea287e91175e378e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83035bac93e956e671685afe0a63ce7f" id="r_a83035bac93e956e671685afe0a63ce7f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classkuzu_1_1storage_1_1_local_chunked_group_collection.html">LocalChunkedGroupCollection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83035bac93e956e671685afe0a63ce7f">getUpdateChunks</a> (<a class="el" href="namespacekuzu_1_1common.html#a65a8710761710db02211ccf1d1aaa909">common::column_id_t</a> columnID) const</td></tr>
+<tr class="separator:a83035bac93e956e671685afe0a63ce7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b92ed4eb11d526aa715b6a3cae19f8" id="r_ac8b92ed4eb11d526aa715b6a3cae19f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1storage_1_1_local_chunked_group_collection.html">LocalChunkedGroupCollection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8b92ed4eb11d526aa715b6a3cae19f8">getUpdateChunks</a> (<a class="el" href="namespacekuzu_1_1common.html#a65a8710761710db02211ccf1d1aaa909">common::column_id_t</a> columnID)</td></tr>
+<tr class="separator:ac8b92ed4eb11d526aa715b6a3cae19f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f86e3bd9f1c11ec98248325c6708b0" id="r_a37f86e3bd9f1c11ec98248325c6708b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1storage_1_1_local_chunked_group_collection.html">LocalChunkedGroupCollection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37f86e3bd9f1c11ec98248325c6708b0">getInsertChunks</a> ()</td></tr>
+<tr class="separator:a37f86e3bd9f1c11ec98248325c6708b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195ff1bcb5f5c6ff612b28a1d6d843a3" id="r_a195ff1bcb5f5c6ff612b28a1d6d843a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a195ff1bcb5f5c6ff612b28a1d6d843a3">hasUpdatesOrDeletions</a> () const</td></tr>
+<tr class="separator:a195ff1bcb5f5c6ff612b28a1d6d843a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a927fe05880606a8511784605b861e5ec" id="r_a927fe05880606a8511784605b861e5ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a927fe05880606a8511784605b861e5ec">nodeGroupStartOffset</a></td></tr>
 <tr class="separator:a927fe05880606a8511784605b861e5ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89b08a66746b915bc4f84b9f450ebd85" id="r_a89b08a66746b915bc4f84b9f450ebd85"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classkuzu_1_1storage_1_1_local_vector_collection.html">LocalVectorCollection</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89b08a66746b915bc4f84b9f450ebd85">chunks</a></td></tr>
-<tr class="separator:a89b08a66746b915bc4f84b9f450ebd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:af3343952955d6cd299171b4496be797b" id="r_af3343952955d6cd299171b4496be797b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3343952955d6cd299171b4496be797b">NodeTableData</a></td></tr>
-<tr class="separator:af3343952955d6cd299171b4496be797b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91fdc15b0b4e3fe563fde54861ba8bc3" id="r_a91fdc15b0b4e3fe563fde54861ba8bc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1storage_1_1_local_chunked_group_collection.html">LocalChunkedGroupCollection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91fdc15b0b4e3fe563fde54861ba8bc3">insertChunks</a></td></tr>
+<tr class="separator:a91fdc15b0b4e3fe563fde54861ba8bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a775e7807f40328afabad1ba4d187962a" id="r_a775e7807f40328afabad1ba4d187962a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1storage_1_1_local_deletion_info.html">LocalDeletionInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a775e7807f40328afabad1ba4d187962a">deleteInfo</a></td></tr>
+<tr class="separator:a775e7807f40328afabad1ba4d187962a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57b51ba67dbd1e00a7a492bec907c7b" id="r_aa57b51ba67dbd1e00a7a492bec907c7b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classkuzu_1_1storage_1_1_local_chunked_group_collection.html">LocalChunkedGroupCollection</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa57b51ba67dbd1e00a7a492bec907c7b">updateChunks</a></td></tr>
+<tr class="separator:aa57b51ba67dbd1e00a7a492bec907c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a786668f248ec1db421867be46ba7d514" name="a786668f248ec1db421867be46ba7d514"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a786668f248ec1db421867be46ba7d514">&#9670;&#160;</a></span>LocalNodeGroup()</h2>
+<a id="a06d7f84e01e81e3ff5e1e59d6d250592" name="a06d7f84e01e81e3ff5e1e59d6d250592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06d7f84e01e81e3ff5e1e59d6d250592">&#9670;&#160;</a></span>LocalNodeGroup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,12 +150,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">common::LogicalType</a> * &gt;</td>          <td class="paramname"><span class="paramname"><em>dataTypes</em>, </span></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classkuzu_1_1storage_1_1_memory_manager.html">MemoryManager</a> *</td>          <td class="paramname"><span class="paramname"><em>mm</em></span>&#160;)</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">common::LogicalType</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dataTypes</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -176,8 +183,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab3dcb12a822029126fd4d9f3ad393eb7" name="ab3dcb12a822029126fd4d9f3ad393eb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3dcb12a822029126fd4d9f3ad393eb7">&#9670;&#160;</a></span>getLocalColumnChunk()</h2>
+<a id="a7f51be292f2ca357ea287e91175e378e" name="a7f51be292f2ca357ea287e91175e378e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f51be292f2ca357ea287e91175e378e">&#9670;&#160;</a></span>delete_()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -186,7 +193,78 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classkuzu_1_1storage_1_1_local_vector_collection.html">LocalVectorCollection</a> * kuzu::storage::LocalNodeGroup::getLocalColumnChunk </td>
+          <td class="memname">virtual bool kuzu::storage::LocalNodeGroup::delete_ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> *</td>          <td class="paramname"><span class="paramname"><em>IDVector</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> *</td>          <td class="paramname"><span class="paramname"><em>extraVector</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ee701fa2dc1fc2397aebb8c53e7fc57" name="a6ee701fa2dc1fc2397aebb8c53e7fc57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ee701fa2dc1fc2397aebb8c53e7fc57">&#9670;&#160;</a></span>DELETE_COPY_DEFAULT_MOVE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">kuzu::storage::LocalNodeGroup::DELETE_COPY_DEFAULT_MOVE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classkuzu_1_1storage_1_1_local_node_group.html">LocalNodeGroup</a></td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37f86e3bd9f1c11ec98248325c6708b0" name="a37f86e3bd9f1c11ec98248325c6708b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f86e3bd9f1c11ec98248325c6708b0">&#9670;&#160;</a></span>getInsertChunks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classkuzu_1_1storage_1_1_local_chunked_group_collection.html">LocalChunkedGroupCollection</a> &amp; kuzu::storage::LocalNodeGroup::getInsertChunks </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8b92ed4eb11d526aa715b6a3cae19f8" name="ac8b92ed4eb11d526aa715b6a3cae19f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8b92ed4eb11d526aa715b6a3cae19f8">&#9670;&#160;</a></span>getUpdateChunks() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classkuzu_1_1storage_1_1_local_chunked_group_collection.html">LocalChunkedGroupCollection</a> &amp; kuzu::storage::LocalNodeGroup::getUpdateChunks </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a65a8710761710db02211ccf1d1aaa909">common::column_id_t</a></td>          <td class="paramname"><span class="paramname"><em>columnID</em></span></td><td>)</td>
           <td></td>
@@ -201,9 +279,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
-<a id="af3343952955d6cd299171b4496be797b" name="af3343952955d6cd299171b4496be797b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3343952955d6cd299171b4496be797b">&#9670;&#160;</a></span>NodeTableData</h2>
+<a id="a83035bac93e956e671685afe0a63ce7f" name="a83035bac93e956e671685afe0a63ce7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83035bac93e956e671685afe0a63ce7f">&#9670;&#160;</a></span>getUpdateChunks() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,12 +289,95 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">friend class NodeTableData</td>
+          <td class="memname">const <a class="el" href="classkuzu_1_1storage_1_1_local_chunked_group_collection.html">LocalChunkedGroupCollection</a> &amp; kuzu::storage::LocalNodeGroup::getUpdateChunks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a65a8710761710db02211ccf1d1aaa909">common::column_id_t</a></td>          <td class="paramname"><span class="paramname"><em>columnID</em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a195ff1bcb5f5c6ff612b28a1d6d843a3" name="a195ff1bcb5f5c6ff612b28a1d6d843a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a195ff1bcb5f5c6ff612b28a1d6d843a3">&#9670;&#160;</a></span>hasUpdatesOrDeletions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool kuzu::storage::LocalNodeGroup::hasUpdatesOrDeletions </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2610eeb008fade698f56ef4ceda2db4a" name="a2610eeb008fade698f56ef4ceda2db4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2610eeb008fade698f56ef4ceda2db4a">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool kuzu::storage::LocalNodeGroup::insert </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> * &gt;</td>          <td class="paramname"><span class="paramname"><em>nodeIDVectors</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> * &gt;</td>          <td class="paramname"><span class="paramname"><em>propertyVectors</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89b68cbfd022009284bda317b9f7c9ee" name="a89b68cbfd022009284bda317b9f7c9ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89b68cbfd022009284bda317b9f7c9ee">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool kuzu::storage::LocalNodeGroup::update </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> * &gt;</td>          <td class="paramname"><span class="paramname"><em>nodeIDVectors</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a65a8710761710db02211ccf1d1aaa909">common::column_id_t</a></td>          <td class="paramname"><span class="paramname"><em>columnID</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_value_vector.html">common::ValueVector</a> *</td>          <td class="paramname"><span class="paramname"><em>propertyVector</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -225,8 +385,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a89b08a66746b915bc4f84b9f450ebd85" name="a89b08a66746b915bc4f84b9f450ebd85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89b08a66746b915bc4f84b9f450ebd85">&#9670;&#160;</a></span>chunks</h2>
+<a id="a775e7807f40328afabad1ba4d187962a" name="a775e7807f40328afabad1ba4d187962a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a775e7807f40328afabad1ba4d187962a">&#9670;&#160;</a></span>deleteInfo</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,7 +395,29 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="classkuzu_1_1storage_1_1_local_vector_collection.html">LocalVectorCollection</a>&gt; &gt; kuzu::storage::LocalNodeGroup::chunks</td>
+          <td class="memname"><a class="el" href="classkuzu_1_1storage_1_1_local_deletion_info.html">LocalDeletionInfo</a> kuzu::storage::LocalNodeGroup::deleteInfo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91fdc15b0b4e3fe563fde54861ba8bc3" name="a91fdc15b0b4e3fe563fde54861ba8bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91fdc15b0b4e3fe563fde54861ba8bc3">&#9670;&#160;</a></span>insertChunks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classkuzu_1_1storage_1_1_local_chunked_group_collection.html">LocalChunkedGroupCollection</a> kuzu::storage::LocalNodeGroup::insertChunks</td>
         </tr>
       </table>
   </td>
@@ -258,6 +440,28 @@ Friends</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> kuzu::storage::LocalNodeGroup::nodeGroupStartOffset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa57b51ba67dbd1e00a7a492bec907c7b" name="aa57b51ba67dbd1e00a7a492bec907c7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa57b51ba67dbd1e00a7a492bec907c7b">&#9670;&#160;</a></span>updateChunks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classkuzu_1_1storage_1_1_local_chunked_group_collection.html">LocalChunkedGroupCollection</a>&gt; kuzu::storage::LocalNodeGroup::updateChunks</td>
         </tr>
       </table>
   </td>

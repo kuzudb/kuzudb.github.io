@@ -1,6 +1,6 @@
 var classkuzu_1_1transaction_1_1_transaction_context =
 [
-    [ "TransactionContext", "classkuzu_1_1transaction_1_1_transaction_context.html#a3d7d454c0d881dd2575c3ff30ce49dd5", null ],
+    [ "TransactionContext", "classkuzu_1_1transaction_1_1_transaction_context.html#a72bfb1005115c120f2b70bd8f089544f", null ],
     [ "~TransactionContext", "classkuzu_1_1transaction_1_1_transaction_context.html#aeb6c3a49209a855cab76df6a3e29075c", null ],
     [ "beginAutoTransaction", "classkuzu_1_1transaction_1_1_transaction_context.html#ace4de018ea2d26778ade8510d18f4a40", null ],
     [ "beginReadTransaction", "classkuzu_1_1transaction_1_1_transaction_context.html#a96719a1f6757f97bf2e524aed2d62877", null ],

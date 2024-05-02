@@ -4,10 +4,10 @@ var classkuzu_1_1common_1_1_logical_type =
     [ "LogicalType", "classkuzu_1_1common_1_1_logical_type.html#a8ef29fc119095a1d6a853244128245c1", null ],
     [ "LogicalType", "classkuzu_1_1common_1_1_logical_type.html#a8ed0e781207012fab63a7a1c1af8b37d", null ],
     [ "LogicalType", "classkuzu_1_1common_1_1_logical_type.html#aa8b41b8f177a46b4d36da2420551d8ac", null ],
-    [ "copy", "classkuzu_1_1common_1_1_logical_type.html#aabae0766efbbfaac2a685439a98cfa53", null ],
+    [ "containsAny", "classkuzu_1_1common_1_1_logical_type.html#adb66257b954734b69618a5d44bba55da", null ],
+    [ "copy", "classkuzu_1_1common_1_1_logical_type.html#a446a5b0d97cf4d79aa4cf3ba9548fc8e", null ],
     [ "getLogicalTypeID", "classkuzu_1_1common_1_1_logical_type.html#a928b50c5a344ced8c364223062e0e53a", null ],
     [ "getPhysicalType", "classkuzu_1_1common_1_1_logical_type.html#a7e1a8695bfc430799d1de63c4f00448d", null ],
-    [ "hasExtraTypeInfo", "classkuzu_1_1common_1_1_logical_type.html#ade11bc2a7401a74d9bcfb8588dd59604", null ],
     [ "operator!=", "classkuzu_1_1common_1_1_logical_type.html#adf9ae016763def6425583469a4077a71", null ],
     [ "operator=", "classkuzu_1_1common_1_1_logical_type.html#a781e9e54ea4aae77939e8251c216f0bb", null ],
     [ "operator=", "classkuzu_1_1common_1_1_logical_type.html#a7ee8b53d64a065fa3b65a736eca7fa2e", null ],
@@ -15,11 +15,11 @@ var classkuzu_1_1common_1_1_logical_type =
     [ "serialize", "classkuzu_1_1common_1_1_logical_type.html#a3d51dae0ff8c49f37a299f0dd7bc2ae3", null ],
     [ "setExtraTypeInfo", "classkuzu_1_1common_1_1_logical_type.html#a2793cdc02eadbe6f09cff82fc0fbd8f9", null ],
     [ "toString", "classkuzu_1_1common_1_1_logical_type.html#a076b364cdc8a82917a6b60df7996402b", null ],
+    [ "ArrayType", "classkuzu_1_1common_1_1_logical_type.html#ad4ef5e859b5b2a70db1a787284b61ff0", null ],
     [ "CAPIHelper", "classkuzu_1_1common_1_1_logical_type.html#aabbbef3a44a42ad0033648e06b7f9489", null ],
-    [ "FixedListType", "classkuzu_1_1common_1_1_logical_type.html#a90d16c654f6adfe87a833bc6fd38dbe9", null ],
     [ "JavaAPIHelper", "classkuzu_1_1common_1_1_logical_type.html#ac55ed9ea25f9cb8dfab6fc656267a6c8", null ],
     [ "kuzu::processor::ParquetReader", "classkuzu_1_1common_1_1_logical_type.html#a09a5ed6a0a3d6dcb118245e8c12893af", null ],
-    [ "LogicalTypeUtils", "classkuzu_1_1common_1_1_logical_type.html#a9a23dcf2afeb1881654508ef87563361", null ],
-    [ "StructType", "classkuzu_1_1common_1_1_logical_type.html#a9d2d66231806003278989f3dbc331c68", null ],
-    [ "VarListType", "classkuzu_1_1common_1_1_logical_type.html#a92271b85baacc95572ccd4622cfc45ee", null ]
+    [ "ListType", "classkuzu_1_1common_1_1_logical_type.html#ae7cc83347e5f65ccdb64094bc2925659", null ],
+    [ "LogicalTypeUtils", "classkuzu_1_1common_1_1_logical_type.html#a79c12ab0090076b1864ca2aaebd2baa0", null ],
+    [ "StructType", "classkuzu_1_1common_1_1_logical_type.html#a9d2d66231806003278989f3dbc331c68", null ]
 ];

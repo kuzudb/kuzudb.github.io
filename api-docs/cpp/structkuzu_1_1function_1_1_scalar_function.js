@@ -1,12 +1,13 @@
 var structkuzu_1_1function_1_1_scalar_function =
 [
-    [ "ScalarFunction", "structkuzu_1_1function_1_1_scalar_function.html#a75184245a20568a2a93cf5b3364935af", null ],
-    [ "ScalarFunction", "structkuzu_1_1function_1_1_scalar_function.html#a6a7d79f51f85b0649b8533edfe39655c", null ],
-    [ "ScalarFunction", "structkuzu_1_1function_1_1_scalar_function.html#a23c5aadb32ec70efb36f2dcfce322cd2", null ],
-    [ "ScalarFunction", "structkuzu_1_1function_1_1_scalar_function.html#a44b50c14b676c6879d4a7a92f3d3419a", null ],
+    [ "ScalarFunction", "structkuzu_1_1function_1_1_scalar_function.html#a886d685d7901a600330f25df77ea4303", null ],
+    [ "ScalarFunction", "structkuzu_1_1function_1_1_scalar_function.html#a23bb96f9cd3ff4d678bf8ab2d99bc09e", null ],
+    [ "ScalarFunction", "structkuzu_1_1function_1_1_scalar_function.html#a331ed8eec4b5af65c505f1273db015f8", null ],
+    [ "ScalarFunction", "structkuzu_1_1function_1_1_scalar_function.html#a58e5dce5596a8f1b6fd6b0ca0738b49e", null ],
+    [ "ScalarFunction", "structkuzu_1_1function_1_1_scalar_function.html#a9d66104f0d4e7a2670054e168ff57c2d", null ],
+    [ "ScalarFunction", "structkuzu_1_1function_1_1_scalar_function.html#ab71f703d54ab5ea8336050e7271b3c32", null ],
     [ "copy", "structkuzu_1_1function_1_1_scalar_function.html#ac54c88b6bd6623c7032534793f469d29", null ],
-    [ "compileFunc", "structkuzu_1_1function_1_1_scalar_function.html#a11540eee86c61367cb3749b4b62d93a0", null ],
-    [ "execFunc", "structkuzu_1_1function_1_1_scalar_function.html#acadef2c4b294b15f225f8a5f2f62b1a9", null ],
-    [ "isVarLength", "structkuzu_1_1function_1_1_scalar_function.html#ad003c7364c3dc294aa64a2544bc7f657", null ],
-    [ "selectFunc", "structkuzu_1_1function_1_1_scalar_function.html#a0fba3faf2bf58f66934188957f63fe02", null ]
+    [ "compileFunc", "structkuzu_1_1function_1_1_scalar_function.html#aa0841c0426d3447f1432818e42326f45", null ],
+    [ "execFunc", "structkuzu_1_1function_1_1_scalar_function.html#a98d19ad1bd3bd4eeff8e3071907771d1", null ],
+    [ "selectFunc", "structkuzu_1_1function_1_1_scalar_function.html#ad942c83753b167ba6a5deca58a5426f8", null ]
 ];

@@ -110,38 +110,41 @@ $(function(){initNavTree('assert_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespacekuzu_1_1common.html">    7</a></span><span class="keyword">namespace </span>common {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespacekuzu_1_1common.html#ad2d9564dd75a88373792a488122962d0">    9</a></span>[[noreturn]] <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacekuzu_1_1common.html#ad2d9564dd75a88373792a488122962d0">kuAssertFailureInternal</a>(</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* condition_name, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keywordtype">int</span> linenr) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespacekuzu_1_1common.html#ad2d9564dd75a88373792a488122962d0">    9</a></span>[[noreturn]] <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacekuzu_1_1common.html#ad2d9564dd75a88373792a488122962d0">kuAssertFailureInternal</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* condition_name, <span class="keyword">const</span> <span class="keywordtype">char</span>* file,</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">int</span> linenr) {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">// LCOV_EXCL_START</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">throw</span> <a class="code hl_class" href="classkuzu_1_1common_1_1_internal_exception.html">InternalException</a>(<a class="code hl_function" href="namespacekuzu_1_1common.html#a36d602568a2046e21d5d1f2a773f283a">stringFormat</a>(</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="stringliteral">&quot;Assertion failed in file \&quot;{}\&quot; on line {}: {}&quot;</span>, file, linenr, condition_name));</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">throw</span> <a class="code hl_class" href="classkuzu_1_1common_1_1_internal_exception.html">InternalException</a>(<a class="code hl_function" href="namespacekuzu_1_1common.html#a36d602568a2046e21d5d1f2a773f283a">stringFormat</a>(<span class="stringliteral">&quot;Assertion failed in file \&quot;{}\&quot; on line {}: {}&quot;</span>, file,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        linenr, condition_name));</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// LCOV_EXCL_STOP</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#if defined(KUZU_RUNTIME_CHECKS) || !defined(NDEBUG)</span></div>
-<div class="foldopen" id="foldopen00018" data-start="" data-end="">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="assert_8h.html#a15c7c828c306c4dbb80e0eb3ba333293">   18</a></span><span class="preprocessor">#define KU_ASSERT(condition)                                                                       \</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">    static_cast&lt;bool&gt;(condition) ?                                                                 \</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">        void(0) :                                                                                  \</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">        kuzu::common::kuAssertFailureInternal(#condition, __FILE__, __LINE__)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="assert_8h.html#a5d7fff39a5a616f75b832c7af0f327d7">   18</a></span><span class="preprocessor">#define RUNTIME_CHECK(code) code</span></div>
+<div class="foldopen" id="foldopen00019" data-start="" data-end="">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="assert_8h.html#a15c7c828c306c4dbb80e0eb3ba333293">   19</a></span><span class="preprocessor">#define KU_ASSERT(condition)                                                                       \</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">    static_cast&lt;bool&gt;(condition) ?                                                                 \</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">        void(0) :                                                                                  \</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">        kuzu::common::kuAssertFailureInternal(#condition, __FILE__, __LINE__)</span></div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define KU_ASSERT(condition) void(0)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="foldopen" id="foldopen00026" data-start="" data-end="">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="assert_8h.html#acd681321d7415a01dffba1ac66d69d6b">   26</a></span><span class="preprocessor">#define KU_UNREACHABLE                                                                             \</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">    [[unlikely]] kuzu::common::kuAssertFailureInternal(&quot;KU_UNREACHABLE&quot;, __FILE__, __LINE__)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define KU_ASSERT(condition) void(0)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define RUNTIME_CHECK(code) void(0)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="" data-end="">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="assert_8h.html#acd681321d7415a01dffba1ac66d69d6b">   28</a></span><span class="preprocessor">#define KU_UNREACHABLE                                                                             \</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">    [[unlikely]] kuzu::common::kuAssertFailureInternal(&quot;KU_UNREACHABLE&quot;, __FILE__, __LINE__)</span></div>
 </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>} <span class="comment">// namespace common</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="assert_8h.html#a528eb606f95c1ca886fc83939ea0de28">   30</a></span><span class="preprocessor">#define KU_UNUSED(expr) (void)(expr)</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>} <span class="comment">// namespace common</span></div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>} <span class="comment">// namespace kuzu</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>} <span class="comment">// namespace kuzu</span></div>
 </div>
 <div class="ttc" id="aclasskuzu_1_1common_1_1_internal_exception_html"><div class="ttname"><a href="classkuzu_1_1common_1_1_internal_exception.html">kuzu::common::InternalException</a></div><div class="ttdef"><b>Definition</b> internal.h:9</div></div>
 <div class="ttc" id="ainternal_8h_html"><div class="ttname"><a href="internal_8h.html">internal.h</a></div></div>
-<div class="ttc" id="anamespacekuzu_1_1common_html_a36d602568a2046e21d5d1f2a773f283a"><div class="ttname"><a href="namespacekuzu_1_1common.html#a36d602568a2046e21d5d1f2a773f283a">kuzu::common::stringFormat</a></div><div class="ttdeci">std::string stringFormat(std::string_view format, Args... args)</div><div class="ttdef"><b>Definition</b> string_format.h:95</div></div>
+<div class="ttc" id="anamespacekuzu_1_1common_html_a36d602568a2046e21d5d1f2a773f283a"><div class="ttname"><a href="namespacekuzu_1_1common.html#a36d602568a2046e21d5d1f2a773f283a">kuzu::common::stringFormat</a></div><div class="ttdeci">std::string stringFormat(std::string_view format, Args... args)</div><div class="ttdef"><b>Definition</b> string_format.h:99</div></div>
 <div class="ttc" id="anamespacekuzu_1_1common_html_ad2d9564dd75a88373792a488122962d0"><div class="ttname"><a href="namespacekuzu_1_1common.html#ad2d9564dd75a88373792a488122962d0">kuzu::common::kuAssertFailureInternal</a></div><div class="ttdeci">void kuAssertFailureInternal(const char *condition_name, const char *file, int linenr)</div><div class="ttdef"><b>Definition</b> assert.h:9</div></div>
 <div class="ttc" id="anamespacekuzu_html"><div class="ttname"><a href="namespacekuzu.html">kuzu</a></div><div class="ttdef"><b>Definition</b> assert.h:6</div></div>
 <div class="ttc" id="astring__format_8h_html"><div class="ttname"><a href="string__format_8h.html">string_format.h</a></div></div>

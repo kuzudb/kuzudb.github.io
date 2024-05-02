@@ -106,9 +106,9 @@ Inheritance diagram for kuzu::common::ExtraTypeInfo:</div>
  <div class="center">
   <img src="classkuzu_1_1common_1_1_extra_type_info.png" usemap="#kuzu::common::ExtraTypeInfo_map" alt=""/>
   <map id="kuzu::common::ExtraTypeInfo_map" name="kuzu::common::ExtraTypeInfo_map">
-<area href="classkuzu_1_1common_1_1_struct_type_info.html" alt="kuzu::common::StructTypeInfo" shape="rect" coords="0,56,195,80"/>
-<area href="classkuzu_1_1common_1_1_var_list_type_info.html" alt="kuzu::common::VarListTypeInfo" shape="rect" coords="205,56,400,80"/>
-<area href="classkuzu_1_1common_1_1_fixed_list_type_info.html" alt="kuzu::common::FixedListTypeInfo" shape="rect" coords="205,112,400,136"/>
+<area href="classkuzu_1_1common_1_1_list_type_info.html" alt="kuzu::common::ListTypeInfo" shape="rect" coords="0,56,178,80"/>
+<area href="classkuzu_1_1common_1_1_struct_type_info.html" alt="kuzu::common::StructTypeInfo" shape="rect" coords="188,56,366,80"/>
+<area href="classkuzu_1_1common_1_1_array_type_info.html" alt="kuzu::common::ArrayTypeInfo" shape="rect" coords="0,112,178,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -118,8 +118,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a70689fa1a2fa834e64199ce613bdfae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad59faca71d52c3b19c14407684cef735" id="r_ad59faca71d52c3b19c14407684cef735"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad59faca71d52c3b19c14407684cef735">serialize</a> (Serializer &amp;serializer) const</td></tr>
 <tr class="separator:ad59faca71d52c3b19c14407684cef735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74c6f1c80b441ade2f32c7fe7f4f668f" id="r_a74c6f1c80b441ade2f32c7fe7f4f668f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74c6f1c80b441ade2f32c7fe7f4f668f">containsAny</a> () const =0</td></tr>
+<tr class="separator:a74c6f1c80b441ade2f32c7fe7f4f668f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1770d76d639dcc75463b36aae4d9fd" id="r_a5b1770d76d639dcc75463b36aae4d9fd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b1770d76d639dcc75463b36aae4d9fd">operator==</a> (const <a class="el" href="classkuzu_1_1common_1_1_extra_type_info.html">ExtraTypeInfo</a> &amp;other) const =0</td></tr>
+<tr class="separator:a5b1770d76d639dcc75463b36aae4d9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f91754e5ca8ee122e30b9c7e97d9851" id="r_a4f91754e5ca8ee122e30b9c7e97d9851"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_extra_type_info.html">ExtraTypeInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f91754e5ca8ee122e30b9c7e97d9851">copy</a> () const =0</td></tr>
 <tr class="separator:a4f91754e5ca8ee122e30b9c7e97d9851"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b4f38efab84f5697a666a47927d0c3" id="r_a52b4f38efab84f5697a666a47927d0c3"><td class="memTemplParams" colspan="2">template&lt;class TARGET &gt; </td></tr>
+<tr class="memitem:a52b4f38efab84f5697a666a47927d0c3"><td class="memTemplItemLeft" align="right" valign="top">const TARGET *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a52b4f38efab84f5697a666a47927d0c3">constPtrCast</a> () const</td></tr>
+<tr class="separator:a52b4f38efab84f5697a666a47927d0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -153,6 +160,60 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a52b4f38efab84f5697a666a47927d0c3" name="a52b4f38efab84f5697a666a47927d0c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b4f38efab84f5697a666a47927d0c3">&#9670;&#160;</a></span>constPtrCast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TARGET &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const TARGET * kuzu::common::ExtraTypeInfo::constPtrCast </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74c6f1c80b441ade2f32c7fe7f4f668f" name="a74c6f1c80b441ade2f32c7fe7f4f668f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c6f1c80b441ade2f32c7fe7f4f668f">&#9670;&#160;</a></span>containsAny()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool kuzu::common::ExtraTypeInfo::containsAny </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_list_type_info.html#a9581306691444a7130fa970aadd8b725">kuzu::common::ListTypeInfo</a>, and <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html#a0b065662b1141746f96649141e0ec37f">kuzu::common::StructTypeInfo</a>.</p>
+
+</div>
+</div>
 <a id="a4f91754e5ca8ee122e30b9c7e97d9851" name="a4f91754e5ca8ee122e30b9c7e97d9851"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f91754e5ca8ee122e30b9c7e97d9851">&#9670;&#160;</a></span>copy()</h2>
 
@@ -176,7 +237,34 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_var_list_type_info.html#a13eab635ab5338c7797831ae87b4b224">kuzu::common::VarListTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_fixed_list_type_info.html#ac59d44130def29309593c56bdf566dc0">kuzu::common::FixedListTypeInfo</a>, and <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html#ab0bb3dec300ee696473da672c069d305">kuzu::common::StructTypeInfo</a>.</p>
+<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_list_type_info.html#aea60adce6dae6601b04ba2b49873341e">kuzu::common::ListTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_array_type_info.html#af43e71d43f36f4b2d36fe8723de29899">kuzu::common::ArrayTypeInfo</a>, and <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html#ab0bb3dec300ee696473da672c069d305">kuzu::common::StructTypeInfo</a>.</p>
+
+</div>
+</div>
+<a id="a5b1770d76d639dcc75463b36aae4d9fd" name="a5b1770d76d639dcc75463b36aae4d9fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1770d76d639dcc75463b36aae4d9fd">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool kuzu::common::ExtraTypeInfo::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classkuzu_1_1common_1_1_extra_type_info.html">ExtraTypeInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_list_type_info.html#a3caeffe735c95f46f496ad0a0a87ec5e">kuzu::common::ListTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_array_type_info.html#af164edb474d9d5224d39e17e56d78fd8">kuzu::common::ArrayTypeInfo</a>, and <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html#ace4b48085ef1d5db9ac7a5769aa6efa8">kuzu::common::StructTypeInfo</a>.</p>
 
 </div>
 </div>
@@ -228,7 +316,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_var_list_type_info.html#a4b2ea0a136ddf8d4197baf3feb1ca3c4">kuzu::common::VarListTypeInfo</a>.</p>
+<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_list_type_info.html#a61d8b44cfca8ec63dfe9eea0accce53a">kuzu::common::ListTypeInfo</a>.</p>
 
 </div>
 </div>

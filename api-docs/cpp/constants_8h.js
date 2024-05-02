@@ -8,10 +8,10 @@ var constants_8h =
     [ "kuzu::common::RdfConstants", "structkuzu_1_1common_1_1_rdf_constants.html", null ],
     [ "kuzu::common::LoggerConstants", "structkuzu_1_1common_1_1_logger_constants.html", "structkuzu_1_1common_1_1_logger_constants" ],
     [ "kuzu::common::PlannerKnobs", "structkuzu_1_1common_1_1_planner_knobs.html", null ],
-    [ "kuzu::common::ClientContextConstants", "structkuzu_1_1common_1_1_client_context_constants.html", null ],
     [ "kuzu::common::OrderByConstants", "structkuzu_1_1common_1_1_order_by_constants.html", null ],
     [ "kuzu::common::ParquetConstants", "structkuzu_1_1common_1_1_parquet_constants.html", null ],
     [ "kuzu::common::CopyToCSVConstants", "structkuzu_1_1common_1_1_copy_to_c_s_v_constants.html", null ],
+    [ "kuzu::common::ImportDBConstants", "structkuzu_1_1common_1_1_import_d_b_constants.html", null ],
     [ "PageSizeClass", "constants_8h.html#aa5ca18c35efd5787484f93d61a48b197", [
       [ "PAGE_4KB", "constants_8h.html#aa5ca18c35efd5787484f93d61a48b197a17306b0a6093427fd3b778bdcb216cc0", null ],
       [ "PAGE_256KB", "constants_8h.html#aa5ca18c35efd5787484f93d61a48b197abc3de979f4b113f0c9b6ac33158fca48", null ]

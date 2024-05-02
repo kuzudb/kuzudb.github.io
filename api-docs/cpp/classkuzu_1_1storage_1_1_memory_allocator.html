@@ -107,8 +107,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6087b73a850ebac315994d3cb899864a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92c5900fc4cce82f108ea175c31e9529" id="r_a92c5900fc4cce82f108ea175c31e9529"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92c5900fc4cce82f108ea175c31e9529">~MemoryAllocator</a> ()</td></tr>
 <tr class="separator:a92c5900fc4cce82f108ea175c31e9529"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad632e5092f545fdde489f4dbb8c750b9" id="r_ad632e5092f545fdde489f4dbb8c750b9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1storage_1_1_memory_buffer.html">MemoryBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad632e5092f545fdde489f4dbb8c750b9">allocateBuffer</a> (bool initializeToZero=false)</td></tr>
-<tr class="separator:ad632e5092f545fdde489f4dbb8c750b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173a000244b906903bfbe4fa15ab0fe8" id="r_a173a000244b906903bfbe4fa15ab0fe8"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1storage_1_1_memory_buffer.html">MemoryBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a173a000244b906903bfbe4fa15ab0fe8">allocateBuffer</a> (bool initializeToZero, uint64_t size)</td></tr>
+<tr class="separator:a173a000244b906903bfbe4fa15ab0fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a720c43445c0b814ba09bfdfc26aa9cd9" id="r_a720c43445c0b814ba09bfdfc26aa9cd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#a88e9bad0619436dae21b7c8f2f404d5f">common::page_offset_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a720c43445c0b814ba09bfdfc26aa9cd9">getPageSize</a> () const</td></tr>
 <tr class="separator:a720c43445c0b814ba09bfdfc26aa9cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -165,8 +165,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad632e5092f545fdde489f4dbb8c750b9" name="ad632e5092f545fdde489f4dbb8c750b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad632e5092f545fdde489f4dbb8c750b9">&#9670;&#160;</a></span>allocateBuffer()</h2>
+<a id="a173a000244b906903bfbe4fa15ab0fe8" name="a173a000244b906903bfbe4fa15ab0fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a173a000244b906903bfbe4fa15ab0fe8">&#9670;&#160;</a></span>allocateBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,8 +174,12 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1storage_1_1_memory_buffer.html">MemoryBuffer</a> &gt; kuzu::storage::MemoryAllocator::allocateBuffer </td>
           <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>initializeToZero</em><span class="paramdefsep"> = </span><span class="paramdefval">false</span></span></td><td>)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>initializeToZero</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

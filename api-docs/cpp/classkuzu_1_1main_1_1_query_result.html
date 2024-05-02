@@ -129,12 +129,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8eed09b3cc6c0f7d75590719e3bc2b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f4ed19963980c3711e59d0b2408c1fa" id="r_a5f4ed19963980c3711e59d0b2408c1fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="classkuzu_1_1main_1_1_query_summary.html">QuerySummary</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f4ed19963980c3711e59d0b2408c1fa">getQuerySummary</a> () const</td></tr>
 <tr class="separator:a5f4ed19963980c3711e59d0b2408c1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a737994dca3497b043a92945a05e5963d" id="r_a737994dca3497b043a92945a05e5963d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="structkuzu_1_1main_1_1_data_type_info.html">DataTypeInfo</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a737994dca3497b043a92945a05e5963d">getColumnTypesInfo</a> () const</td></tr>
-<tr class="separator:a737994dca3497b043a92945a05e5963d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af81d9eb02084e51ef686ab435544e340" id="r_af81d9eb02084e51ef686ab435544e340"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af81d9eb02084e51ef686ab435544e340">hasNext</a> () const</td></tr>
 <tr class="separator:af81d9eb02084e51ef686ab435544e340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad246b1cf63499dad809a39ff44f7d3c3" id="r_ad246b1cf63499dad809a39ff44f7d3c3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad246b1cf63499dad809a39ff44f7d3c3">toSingleQueryString</a> ()</td></tr>
-<tr class="separator:ad246b1cf63499dad809a39ff44f7d3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95c83de6b8807ae199284e558e1d7c4d" id="r_a95c83de6b8807ae199284e558e1d7c4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95c83de6b8807ae199284e558e1d7c4d">hasNextQueryResult</a> () const</td></tr>
+<tr class="separator:a95c83de6b8807ae199284e558e1d7c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ef406cb4827986517fbd3a3bc18bed" id="r_a12ef406cb4827986517fbd3a3bc18bed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="classkuzu_1_1main_1_1_query_result.html">QueryResult</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12ef406cb4827986517fbd3a3bc18bed">getNextQueryResult</a> ()</td></tr>
+<tr class="separator:a12ef406cb4827986517fbd3a3bc18bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e16e4c73b302a38328f860f72e6e2f2" id="r_a9e16e4c73b302a38328f860f72e6e2f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> std::shared_ptr&lt; <a class="el" href="classkuzu_1_1processor_1_1_flat_tuple.html">processor::FlatTuple</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e16e4c73b302a38328f860f72e6e2f2">getNext</a> ()</td></tr>
 <tr class="separator:a9e16e4c73b302a38328f860f72e6e2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56e7bc908e43d9176ba4d942944d424d" id="r_a56e7bc908e43d9176ba4d942944d424d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56e7bc908e43d9176ba4d942944d424d">toString</a> ()</td></tr>
@@ -160,6 +160,8 @@ Public Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr class="memitem:a54a11fdc71e1679a42fa0c0e3856673d" id="r_a54a11fdc71e1679a42fa0c0e3856673d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54a11fdc71e1679a42fa0c0e3856673d">Connection</a></td></tr>
 <tr class="separator:a54a11fdc71e1679a42fa0c0e3856673d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf703640bc2bb6db62ee885a1c9ca4e9" id="r_adf703640bc2bb6db62ee885a1c9ca4e9"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf703640bc2bb6db62ee885a1c9ca4e9">ClientContext</a></td></tr>
+<tr class="separator:adf703640bc2bb6db62ee885a1c9ca4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classkuzu_1_1main_1_1_query_result.html" title="QueryResult stores the result of a query execution.">QueryResult</a> stores the result of a query execution. </p>
@@ -285,23 +287,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a737994dca3497b043a92945a05e5963d" name="a737994dca3497b043a92945a05e5963d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a737994dca3497b043a92945a05e5963d">&#9670;&#160;</a></span>getColumnTypesInfo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::unique_ptr&lt; <a class="el" href="structkuzu_1_1main_1_1_data_type_info.html">DataTypeInfo</a> &gt; &gt; kuzu::main::QueryResult::getColumnTypesInfo </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a6397bf7c35579db0c9a2a668a08d0ade" name="a6397bf7c35579db0c9a2a668a08d0ade"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6397bf7c35579db0c9a2a668a08d0ade">&#9670;&#160;</a></span>getErrorMessage()</h2>
 
@@ -363,6 +348,24 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>An arrow array representation of the next chunkSize tuples of the query result.</dd></dl>
 <p>The <a class="el" href="struct_arrow_array.html">ArrowArray</a> internally stores an arrow struct with fields for each of the columns. This can be converted to a RecordBatch with arrow's ImportRecordBatch function</p>
 <p>It is the caller's responsibility to call the release function to release the underlying data If converting to another arrow type, this this is usually handled automatically. </p>
+
+</div>
+</div>
+<a id="a12ef406cb4827986517fbd3a3bc18bed" name="a12ef406cb4827986517fbd3a3bc18bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ef406cb4827986517fbd3a3bc18bed">&#9670;&#160;</a></span>getNextQueryResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="classkuzu_1_1main_1_1_query_result.html">QueryResult</a> * kuzu::main::QueryResult::getNextQueryResult </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>get next query result to read (for multiple query statements). </dd></dl>
 
 </div>
 </div>
@@ -463,6 +466,24 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a95c83de6b8807ae199284e558e1d7c4d" name="a95c83de6b8807ae199284e558e1d7c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c83de6b8807ae199284e558e1d7c4d">&#9670;&#160;</a></span>hasNextQueryResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> bool kuzu::main::QueryResult::hasNextQueryResult </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>whether there are more query results to read. </dd></dl>
+
+</div>
+</div>
 <a id="a358791451a2a4c88a5fbc05d57319cfa" name="a358791451a2a4c88a5fbc05d57319cfa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a358791451a2a4c88a5fbc05d57319cfa">&#9670;&#160;</a></span>isSuccess()</h2>
 
@@ -500,23 +521,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ad246b1cf63499dad809a39ff44f7d3c3" name="ad246b1cf63499dad809a39ff44f7d3c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad246b1cf63499dad809a39ff44f7d3c3">&#9670;&#160;</a></span>toSingleQueryString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string kuzu::main::QueryResult::toSingleQueryString </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a56e7bc908e43d9176ba4d942944d424d" name="a56e7bc908e43d9176ba4d942944d424d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56e7bc908e43d9176ba4d942944d424d">&#9670;&#160;</a></span>toString()</h2>
 
@@ -531,11 +535,33 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>string of query result. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>string of first query result. </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="adf703640bc2bb6db62ee885a1c9ca4e9" name="adf703640bc2bb6db62ee885a1c9ca4e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf703640bc2bb6db62ee885a1c9ca4e9">&#9670;&#160;</a></span>ClientContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classkuzu_1_1main_1_1_client_context.html">ClientContext</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a54a11fdc71e1679a42fa0c0e3856673d" name="a54a11fdc71e1679a42fa0c0e3856673d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a54a11fdc71e1679a42fa0c0e3856673d">&#9670;&#160;</a></span>Connection</h2>
 

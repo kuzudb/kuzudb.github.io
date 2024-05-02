@@ -108,6 +108,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a239f91ec51b702013945455de1acdfbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab68ffea20ad0e0767640138879bf8e26" id="r_ab68ffea20ad0e0767640138879bf8e26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557">common::StatementType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab68ffea20ad0e0767640138879bf8e26">getStatementType</a> () const</td></tr>
 <tr class="separator:ab68ffea20ad0e0767640138879bf8e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f63b0ac4a1629bc5c30837b573d91b5" id="r_a8f63b0ac4a1629bc5c30837b573d91b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f63b0ac4a1629bc5c30837b573d91b5">requireTx</a> ()</td></tr>
+<tr class="separator:a8f63b0ac4a1629bc5c30837b573d91b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59c4ed0c3fc13cef571e99ac1841d9c6" id="r_a59c4ed0c3fc13cef571e99ac1841d9c6"><td class="memTemplParams" colspan="2">template&lt;class TARGET &gt; </td></tr>
+<tr class="memitem:a59c4ed0c3fc13cef571e99ac1841d9c6"><td class="memTemplItemLeft" align="right" valign="top">const TARGET &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a59c4ed0c3fc13cef571e99ac1841d9c6">constCast</a> () const</td></tr>
+<tr class="separator:a59c4ed0c3fc13cef571e99ac1841d9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41c9777b00c8e571eac8a36d89a82452" id="r_a41c9777b00c8e571eac8a36d89a82452"><td class="memTemplParams" colspan="2">template&lt;class TARGET &gt; </td></tr>
+<tr class="memitem:a41c9777b00c8e571eac8a36d89a82452"><td class="memTemplItemLeft" align="right" valign="top">const TARGET *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a41c9777b00c8e571eac8a36d89a82452">constPtrCast</a> () const</td></tr>
+<tr class="separator:a41c9777b00c8e571eac8a36d89a82452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae486ecda557bcf8a50170151c1ab6db8" name="ae486ecda557bcf8a50170151c1ab6db8"></a>
@@ -161,6 +169,60 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a59c4ed0c3fc13cef571e99ac1841d9c6" name="a59c4ed0c3fc13cef571e99ac1841d9c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59c4ed0c3fc13cef571e99ac1841d9c6">&#9670;&#160;</a></span>constCast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TARGET &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const TARGET &amp; kuzu::parser::Statement::constCast </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41c9777b00c8e571eac8a36d89a82452" name="a41c9777b00c8e571eac8a36d89a82452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41c9777b00c8e571eac8a36d89a82452">&#9670;&#160;</a></span>constPtrCast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TARGET &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const TARGET * kuzu::parser::Statement::constPtrCast </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab68ffea20ad0e0767640138879bf8e26" name="ab68ffea20ad0e0767640138879bf8e26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab68ffea20ad0e0767640138879bf8e26">&#9670;&#160;</a></span>getStatementType()</h2>
 
@@ -175,6 +237,31 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f63b0ac4a1629bc5c30837b573d91b5" name="a8f63b0ac4a1629bc5c30837b573d91b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f63b0ac4a1629bc5c30837b573d91b5">&#9670;&#160;</a></span>requireTx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool kuzu::parser::Statement::requireTx </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>

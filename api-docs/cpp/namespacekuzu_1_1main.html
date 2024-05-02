@@ -92,8 +92,7 @@ $(function(){initNavTree('namespacekuzu_1_1main.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle"><div class="title">kuzu::main Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -101,6 +100,10 @@ $(function(){initNavTree('namespacekuzu_1_1main.html',''); initResizable(); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1main_1_1_active_query.html">ActiveQuery</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1main_1_1_client_config.html">ClientConfig</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1main_1_1_client_config_default.html">ClientConfigDefault</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1main_1_1_client_context.html">ClientContext</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contain client side configuration. We make profiler associated per query, so profiler is not maintained in client context.  <a href="classkuzu_1_1main_1_1_client_context.html#details">More...</a><br /></td></tr>
@@ -110,8 +113,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1main_1_1_database.html">Database</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classkuzu_1_1main_1_1_database.html" title="Database class is the main class of KùzuDB. It manages all database components.">Database</a> class is the main class of KùzuDB. It manages all database components.  <a href="classkuzu_1_1main_1_1_database.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1main_1_1_data_type_info.html">DataTypeInfo</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1main_1_1_prepared_statement.html">PreparedStatement</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A prepared statement is a parameterized query which can avoid planning the same query for repeated execution.  <a href="classkuzu_1_1main_1_1_prepared_statement.html#details">More...</a><br /></td></tr>
@@ -132,27 +133,7 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1main_1_1_version.html">Version</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a64ddb74b9d0e5d5f64cb2a2b147a9676" id="r_a64ddb74b9d0e5d5f64cb2a2b147a9676"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64ddb74b9d0e5d5f64cb2a2b147a9676">replace_func_t</a> = std::function&lt;std::unique_ptr&lt;<a class="el" href="classkuzu_1_1common_1_1_value.html">common::Value</a>&gt;(<a class="el" href="classkuzu_1_1common_1_1_value.html">common::Value</a>*)&gt;</td></tr>
-<tr class="separator:a64ddb74b9d0e5d5f64cb2a2b147a9676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a64ddb74b9d0e5d5f64cb2a2b147a9676" name="a64ddb74b9d0e5d5f64cb2a2b147a9676"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64ddb74b9d0e5d5f64cb2a2b147a9676">&#9670;&#160;</a></span>replace_func_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#a64ddb74b9d0e5d5f64cb2a2b147a9676">kuzu::main::replace_func_t</a> = std::function&lt;std::unique_ptr&lt;<a class="el" href="classkuzu_1_1common_1_1_value.html">common::Value</a>&gt;(<a class="el" href="classkuzu_1_1common_1_1_value.html">common::Value</a>*)&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

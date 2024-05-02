@@ -14,6 +14,10 @@ var statement__type_8h =
       [ "COMMENT_ON", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557accb529db11e654725e747a0fd5f4caf2", null ],
       [ "TRANSACTION", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557ae6bed345f53943469741d7295552fcd4", null ],
       [ "EXTENSION", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557a1d1cd00b7cd275ef0629c38d0eb70b4d", null ],
-      [ "EXPORT_DATABASE", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557acd08a293dd27950b13838f37aed33a40", null ]
+      [ "EXPORT_DATABASE", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557acd08a293dd27950b13838f37aed33a40", null ],
+      [ "IMPORT_DATABASE", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557ad4db107cd1a46fdaddd9cd458696d1c3", null ],
+      [ "ATTACH_DATABASE", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557a06d02998f9c1641e6dd49e065ce19b4f", null ],
+      [ "DETACH_DATABASE", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557ad4e8d9001943525cc6c50b4d5588c521", null ],
+      [ "USE_DATABASE", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557abc152ccc041e70158a9b33e1469ba2f5", null ]
     ] ]
 ];
