@@ -1,7 +1,7 @@
 var searchData=
 [
   ['quarter_0',['QUARTER',['../namespacekuzu_1_1common.html#ac3f416d18d4911bdc5e5bcac561cd83d',1,'kuzu::common']]],
-  ['query_1',['query',['../classkuzu_1_1main_1_1_connection.html#afe9576ba328086d4db5b4b20c5911113',1,'kuzu::main::Connection']]],
+  ['query_1',['query',['../classkuzu_1_1main_1_1_client_context.html#af1412b500627cd48ae6ed5abd23ffd43',1,'kuzu::main::ClientContext::query()'],['../classkuzu_1_1main_1_1_connection.html#afe9576ba328086d4db5b4b20c5911113',1,'kuzu::main::Connection::query()']]],
   ['query_2',['QUERY',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557a5662080872eece1e1ceeec5750198283',1,'kuzu::common']]],
   ['query_5fresult_2eh_3',['query_result.h',['../query__result_8h.html',1,'']]],
   ['query_5fsummary_2eh_4',['query_summary.h',['../query__summary_8h.html',1,'']]],

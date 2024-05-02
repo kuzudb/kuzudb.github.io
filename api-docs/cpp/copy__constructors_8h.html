@@ -120,7 +120,7 @@ Macros</h2></td></tr>
 <tr class="separator:aea6336bf33d996ee8161d1b416e06d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4ea56480972d4457d444777b2d39809" id="r_af4ea56480972d4457d444777b2d39809"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4ea56480972d4457d444777b2d39809">DEFAULT_BOTH_MOVE</a>(Object)</td></tr>
 <tr class="separator:af4ea56480972d4457d444777b2d39809"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74c76f1af42f2f5c1c55d32008c2fcc5" id="r_a74c76f1af42f2f5c1c55d32008c2fcc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74c76f1af42f2f5c1c55d32008c2fcc5">EXPLICIT_COPY_METHOD</a>(Object)&#160;&#160;&#160;    Object copy() const { return *this; }</td></tr>
+<tr class="memitem:a74c76f1af42f2f5c1c55d32008c2fcc5" id="r_a74c76f1af42f2f5c1c55d32008c2fcc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74c76f1af42f2f5c1c55d32008c2fcc5">EXPLICIT_COPY_METHOD</a>(Object)</td></tr>
 <tr class="separator:a74c76f1af42f2f5c1c55d32008c2fcc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2b049680abd93d581a170c9513302f4" id="r_af2b049680abd93d581a170c9513302f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2b049680abd93d581a170c9513302f4">EXPLICIT_COPY_DEFAULT_MOVE</a>(Object)</td></tr>
 <tr class="separator:af2b049680abd93d581a170c9513302f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -362,11 +362,14 @@ Macros</h2></td></tr>
           <td class="memname">#define EXPLICIT_COPY_METHOD</td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname">Object</span></td><td>)</td>
-          <td>&#160;&#160;&#160;    Object copy() const { return *this; }</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line">    Object copy()<span class="keyword"> const </span>{                                                                          \</div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;                                                                              \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

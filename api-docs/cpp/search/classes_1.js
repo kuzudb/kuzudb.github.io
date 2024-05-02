@@ -12,9 +12,13 @@ var searchData=
   ['binaryudfexecutor_9',['BinaryUDFExecutor',['../structkuzu_1_1function_1_1_binary_u_d_f_executor.html',1,'kuzu::function']]],
   ['binaryudffunctionwrapper_10',['BinaryUDFFunctionWrapper',['../structkuzu_1_1function_1_1_binary_u_d_f_function_wrapper.html',1,'kuzu::function']]],
   ['binderexception_11',['BinderException',['../classkuzu_1_1common_1_1_binder_exception.html',1,'kuzu::common']]],
-  ['blob_12',['Blob',['../structkuzu_1_1common_1_1_blob.html',1,'kuzu::common']]],
-  ['blob_5ft_13',['blob_t',['../structkuzu_1_1common_1_1blob__t.html',1,'kuzu::common']]],
-  ['blobvector_14',['BlobVector',['../structkuzu_1_1common_1_1_blob_vector.html',1,'kuzu::common']]],
-  ['bufferblock_15',['BufferBlock',['../structkuzu_1_1common_1_1_buffer_block.html',1,'kuzu::common']]],
-  ['bufferpoolconstants_16',['BufferPoolConstants',['../structkuzu_1_1common_1_1_buffer_pool_constants.html',1,'kuzu::common']]]
+  ['bitpackheader_12',['BitpackHeader',['../structkuzu_1_1storage_1_1_bitpack_header.html',1,'kuzu::storage']]],
+  ['blob_13',['Blob',['../structkuzu_1_1common_1_1_blob.html',1,'kuzu::common']]],
+  ['blob_5ft_14',['blob_t',['../structkuzu_1_1common_1_1blob__t.html',1,'kuzu::common']]],
+  ['blobvector_15',['BlobVector',['../structkuzu_1_1common_1_1_blob_vector.html',1,'kuzu::common']]],
+  ['bmfilehandle_16',['BMFileHandle',['../classkuzu_1_1storage_1_1_b_m_file_handle.html',1,'kuzu::storage']]],
+  ['boolcolumnchunk_17',['BoolColumnChunk',['../classkuzu_1_1storage_1_1_bool_column_chunk.html',1,'kuzu::storage']]],
+  ['booleanbitpacking_18',['BooleanBitpacking',['../classkuzu_1_1storage_1_1_boolean_bitpacking.html',1,'kuzu::storage']]],
+  ['bufferblock_19',['BufferBlock',['../structkuzu_1_1common_1_1_buffer_block.html',1,'kuzu::common']]],
+  ['bufferpoolconstants_20',['BufferPoolConstants',['../structkuzu_1_1common_1_1_buffer_pool_constants.html',1,'kuzu::common']]]
 ];

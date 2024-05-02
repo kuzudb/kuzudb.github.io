@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pagesizeclass_0',['PageSizeClass',['../namespacekuzu_1_1common.html#aa5ca18c35efd5787484f93d61a48b197',1,'kuzu::common']]],
-  ['physicaltypeid_1',['PhysicalTypeID',['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368',1,'kuzu::common']]]
+  ['notexistaction_0',['NotExistAction',['../classkuzu_1_1storage_1_1_local_storage.html#a4f1270dd91a0f621e784b3f1e58dfac5',1,'kuzu::storage::LocalStorage']]]
 ];

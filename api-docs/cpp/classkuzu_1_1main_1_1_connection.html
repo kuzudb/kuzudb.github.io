@@ -118,6 +118,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adf39e9feb74fe4475a425bf5095b8112" id="r_adf39e9feb74fe4475a425bf5095b8112"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf39e9feb74fe4475a425bf5095b8112">getMaxNumThreadForExec</a> ()</td></tr>
 <tr class="memdesc:adf39e9feb74fe4475a425bf5095b8112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum number of threads to use for execution in the current connection.  <br /></td></tr>
 <tr class="separator:adf39e9feb74fe4475a425bf5095b8112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65a7f7d6c729072774b0391b63dd1cb5" id="r_a65a7f7d6c729072774b0391b63dd1cb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65a7f7d6c729072774b0391b63dd1cb5">setProgressBarPrinting</a> (bool enable)</td></tr>
+<tr class="separator:a65a7f7d6c729072774b0391b63dd1cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe9576ba328086d4db5b4b20c5911113" id="r_afe9576ba328086d4db5b4b20c5911113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> std::unique_ptr&lt; <a class="el" href="classkuzu_1_1main_1_1_query_result.html">QueryResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe9576ba328086d4db5b4b20c5911113">query</a> (std::string_view query)</td></tr>
 <tr class="memdesc:afe9576ba328086d4db5b4b20c5911113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the given query and returns the result.  <br /></td></tr>
 <tr class="separator:afe9576ba328086d4db5b4b20c5911113"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,15 +146,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8727b9895adc5e9cd947e8312063017"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad8727b9895adc5e9cd947e8312063017">createScalarFunction</a> (std::string name, TR(*udfFunc)(Args...))</td></tr>
 <tr class="separator:ad8727b9895adc5e9cd947e8312063017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae889858d5014bfe933aca17705d2f6d5" id="r_ae889858d5014bfe933aca17705d2f6d5"><td class="memTemplParams" colspan="2">template&lt;typename TR , typename... Args&gt; </td></tr>
-<tr class="memitem:ae889858d5014bfe933aca17705d2f6d5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae889858d5014bfe933aca17705d2f6d5">createScalarFunction</a> (std::string name, std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#a9721c1572ae2612a91b86b0785a7b69e">common::LogicalTypeID</a> &gt; parameterTypes, <a class="el" href="namespacekuzu_1_1common.html#a9721c1572ae2612a91b86b0785a7b69e">common::LogicalTypeID</a> returnType, TR(*udfFunc)(Args...))</td></tr>
+<tr class="memitem:ae889858d5014bfe933aca17705d2f6d5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae889858d5014bfe933aca17705d2f6d5">createScalarFunction</a> (std::string name, std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">common::LogicalTypeID</a> &gt; parameterTypes, <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">common::LogicalTypeID</a> returnType, TR(*udfFunc)(Args...))</td></tr>
 <tr class="separator:ae889858d5014bfe933aca17705d2f6d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9dec41388fa40b14de6d31a2be1f5fb" id="r_af9dec41388fa40b14de6d31a2be1f5fb"><td class="memTemplParams" colspan="2">template&lt;typename TR , typename... Args&gt; </td></tr>
-<tr class="memitem:af9dec41388fa40b14de6d31a2be1f5fb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af9dec41388fa40b14de6d31a2be1f5fb">createVectorizedFunction</a> (std::string name, <a class="el" href="namespacekuzu_1_1function.html#aeb692ad6a52f4f58a7c2a767cdde231c">function::scalar_exec_func</a> scalarFunc)</td></tr>
-<tr class="separator:af9dec41388fa40b14de6d31a2be1f5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd61082b40c25dd45b05db8822e4402a" id="r_afd61082b40c25dd45b05db8822e4402a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd61082b40c25dd45b05db8822e4402a">createVectorizedFunction</a> (std::string name, std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#a9721c1572ae2612a91b86b0785a7b69e">common::LogicalTypeID</a> &gt; parameterTypes, <a class="el" href="namespacekuzu_1_1common.html#a9721c1572ae2612a91b86b0785a7b69e">common::LogicalTypeID</a> returnType, <a class="el" href="namespacekuzu_1_1function.html#aeb692ad6a52f4f58a7c2a767cdde231c">function::scalar_exec_func</a> scalarFunc)</td></tr>
-<tr class="separator:afd61082b40c25dd45b05db8822e4402a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb37723f314b922f03569c0366daacca" id="r_adb37723f314b922f03569c0366daacca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb37723f314b922f03569c0366daacca">setReplaceFunc</a> (<a class="el" href="namespacekuzu_1_1main.html#a64ddb74b9d0e5d5f64cb2a2b147a9676">replace_func_t</a> replaceFunc)</td></tr>
-<tr class="separator:adb37723f314b922f03569c0366daacca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf237cd082645cf871371ad00dce4df8" id="r_abf237cd082645cf871371ad00dce4df8"><td class="memTemplParams" colspan="2">template&lt;typename TR , typename... Args&gt; </td></tr>
+<tr class="memitem:abf237cd082645cf871371ad00dce4df8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abf237cd082645cf871371ad00dce4df8">createVectorizedFunction</a> (std::string name, <a class="el" href="namespacekuzu_1_1function.html#a85dea526ec46a7fa6e6bacbde1f902cb">function::scalar_func_exec_t</a> scalarFunc)</td></tr>
+<tr class="separator:abf237cd082645cf871371ad00dce4df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c66848620ddc917a338edfd671a65f2" id="r_a4c66848620ddc917a338edfd671a65f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c66848620ddc917a338edfd671a65f2">createVectorizedFunction</a> (std::string name, std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">common::LogicalTypeID</a> &gt; parameterTypes, <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">common::LogicalTypeID</a> returnType, <a class="el" href="namespacekuzu_1_1function.html#a85dea526ec46a7fa6e6bacbde1f902cb">function::scalar_func_exec_t</a> scalarFunc)</td></tr>
+<tr class="separator:a4c66848620ddc917a338edfd671a65f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd3dce836c46d89693185f87eb93d021" id="r_acd3dce836c46d89693185f87eb93d021"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1main_1_1_client_context.html">ClientContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd3dce836c46d89693185f87eb93d021">getClientContext</a> ()</td></tr>
 <tr class="separator:acd3dce836c46d89693185f87eb93d021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -246,12 +246,12 @@ template&lt;typename TR , typename... Args&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#a9721c1572ae2612a91b86b0785a7b69e">common::LogicalTypeID</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>parameterTypes</em>, </span></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">common::LogicalTypeID</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>parameterTypes</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a9721c1572ae2612a91b86b0785a7b69e">common::LogicalTypeID</a></td>          <td class="paramname"><span class="paramname"><em>returnType</em>, </span></td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">common::LogicalTypeID</a></td>          <td class="paramname"><span class="paramname"><em>returnType</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -299,8 +299,8 @@ template&lt;typename TR , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="af9dec41388fa40b14de6d31a2be1f5fb" name="af9dec41388fa40b14de6d31a2be1f5fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9dec41388fa40b14de6d31a2be1f5fb">&#9670;&#160;</a></span>createVectorizedFunction() <span class="overload">[1/2]</span></h2>
+<a id="abf237cd082645cf871371ad00dce4df8" name="abf237cd082645cf871371ad00dce4df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf237cd082645cf871371ad00dce4df8">&#9670;&#160;</a></span>createVectorizedFunction() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -318,7 +318,7 @@ template&lt;typename TR , typename... Args&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1function.html#aeb692ad6a52f4f58a7c2a767cdde231c">function::scalar_exec_func</a></td>          <td class="paramname"><span class="paramname"><em>scalarFunc</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1function.html#a85dea526ec46a7fa6e6bacbde1f902cb">function::scalar_func_exec_t</a></td>          <td class="paramname"><span class="paramname"><em>scalarFunc</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -330,8 +330,8 @@ template&lt;typename TR , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="afd61082b40c25dd45b05db8822e4402a" name="afd61082b40c25dd45b05db8822e4402a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd61082b40c25dd45b05db8822e4402a">&#9670;&#160;</a></span>createVectorizedFunction() <span class="overload">[2/2]</span></h2>
+<a id="a4c66848620ddc917a338edfd671a65f2" name="a4c66848620ddc917a338edfd671a65f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c66848620ddc917a338edfd671a65f2">&#9670;&#160;</a></span>createVectorizedFunction() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,17 +347,17 @@ template&lt;typename TR , typename... Args&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#a9721c1572ae2612a91b86b0785a7b69e">common::LogicalTypeID</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>parameterTypes</em>, </span></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">common::LogicalTypeID</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>parameterTypes</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a9721c1572ae2612a91b86b0785a7b69e">common::LogicalTypeID</a></td>          <td class="paramname"><span class="paramname"><em>returnType</em>, </span></td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">common::LogicalTypeID</a></td>          <td class="paramname"><span class="paramname"><em>returnType</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1function.html#aeb692ad6a52f4f58a7c2a767cdde231c">function::scalar_exec_func</a></td>          <td class="paramname"><span class="paramname"><em>scalarFunc</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1function.html#a85dea526ec46a7fa6e6bacbde1f902cb">function::scalar_func_exec_t</a></td>          <td class="paramname"><span class="paramname"><em>scalarFunc</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -601,6 +601,31 @@ template&lt;typename... Args&gt; </div>
 
 </div>
 </div>
+<a id="a65a7f7d6c729072774b0391b63dd1cb5" name="a65a7f7d6c729072774b0391b63dd1cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65a7f7d6c729072774b0391b63dd1cb5">&#9670;&#160;</a></span>setProgressBarPrinting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void kuzu::main::Connection::setProgressBarPrinting </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enable</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa6b95be27a0493905e82caaaeefc44a4" name="aa6b95be27a0493905e82caaaeefc44a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6b95be27a0493905e82caaaeefc44a4">&#9670;&#160;</a></span>setQueryTimeOut()</h2>
 
@@ -617,31 +642,6 @@ template&lt;typename... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>sets the query timeout value of the current connection. A value of zero (the default) disables the timeout. </p>
-
-</div>
-</div>
-<a id="adb37723f314b922f03569c0366daacca" name="adb37723f314b922f03569c0366daacca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb37723f314b922f03569c0366daacca">&#9670;&#160;</a></span>setReplaceFunc()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void kuzu::main::Connection::setReplaceFunc </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1main.html#a64ddb74b9d0e5d5f64cb2a2b147a9676">replace_func_t</a></td>          <td class="paramname"><span class="paramname"><em>replaceFunc</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

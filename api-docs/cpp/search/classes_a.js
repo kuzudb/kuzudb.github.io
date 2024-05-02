@@ -5,5 +5,6 @@ var searchData=
   ['mapvector_2',['MapVector',['../classkuzu_1_1common_1_1_map_vector.html',1,'kuzu::common']]],
   ['memoryallocator_3',['MemoryAllocator',['../classkuzu_1_1storage_1_1_memory_allocator.html',1,'kuzu::storage']]],
   ['memorybuffer_4',['MemoryBuffer',['../classkuzu_1_1storage_1_1_memory_buffer.html',1,'kuzu::storage']]],
-  ['memorymanager_5',['MemoryManager',['../classkuzu_1_1storage_1_1_memory_manager.html',1,'kuzu::storage']]]
+  ['memorymanager_5',['MemoryManager',['../classkuzu_1_1storage_1_1_memory_manager.html',1,'kuzu::storage']]],
+  ['metric_6',['Metric',['../classkuzu_1_1common_1_1_metric.html',1,'kuzu::common']]]
 ];

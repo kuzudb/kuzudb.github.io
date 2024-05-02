@@ -6,6 +6,7 @@ var structkuzu_1_1common_1_1ku__string__t =
     [ "getAsString", "structkuzu_1_1common_1_1ku__string__t.html#a6b8d68ea718c0bc9585833773e98dc9d", null ],
     [ "getAsStringView", "structkuzu_1_1common_1_1ku__string__t.html#acbbf178a8e68b1bc46cd706a4a15222c", null ],
     [ "getData", "structkuzu_1_1common_1_1ku__string__t.html#a375e42cd6c23f2cbbbcd54bd134750bb", null ],
+    [ "getDataUnsafe", "structkuzu_1_1common_1_1ku__string__t.html#a3b868a5b941ee65055403b2136d87276", null ],
     [ "operator!=", "structkuzu_1_1common_1_1ku__string__t.html#aed56be89eb451984b0aa0223ddde0a76", null ],
     [ "operator<", "structkuzu_1_1common_1_1ku__string__t.html#a19d630c4a46ee585e4ad5e1b730e6e97", null ],
     [ "operator<=", "structkuzu_1_1common_1_1ku__string__t.html#af8895cad81e52f196f910dcfe1eaf991", null ],

@@ -107,10 +107,10 @@ $(function(){initNavTree('classkuzu_1_1common_1_1_value_vector.html',''); initRe
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad54828f3ac96ee44ebed2d5fbf9eba8d" id="r_ad54828f3ac96ee44ebed2d5fbf9eba8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad54828f3ac96ee44ebed2d5fbf9eba8d">ValueVector</a> (<a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> <a class="el" href="#a8fc0e9a1a4e8c3cb87281be11efc6ae0">dataType</a>, <a class="el" href="classkuzu_1_1storage_1_1_memory_manager.html">storage::MemoryManager</a> *memoryManager=nullptr)</td></tr>
 <tr class="separator:ad54828f3ac96ee44ebed2d5fbf9eba8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a29cb86934e8e6875eef5ff99fbc9f8" id="r_a8a29cb86934e8e6875eef5ff99fbc9f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a29cb86934e8e6875eef5ff99fbc9f8">ValueVector</a> (<a class="el" href="namespacekuzu_1_1common.html#a9721c1572ae2612a91b86b0785a7b69e">LogicalTypeID</a> dataTypeID, <a class="el" href="classkuzu_1_1storage_1_1_memory_manager.html">storage::MemoryManager</a> *memoryManager=nullptr)</td></tr>
+<tr class="memitem:a8a29cb86934e8e6875eef5ff99fbc9f8" id="r_a8a29cb86934e8e6875eef5ff99fbc9f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a29cb86934e8e6875eef5ff99fbc9f8">ValueVector</a> (<a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a> dataTypeID, <a class="el" href="classkuzu_1_1storage_1_1_memory_manager.html">storage::MemoryManager</a> *memoryManager=nullptr)</td></tr>
 <tr class="separator:a8a29cb86934e8e6875eef5ff99fbc9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a631fd679cbd7770d3a5fe3e958ac57d3" id="r_a631fd679cbd7770d3a5fe3e958ac57d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a631fd679cbd7770d3a5fe3e958ac57d3">~ValueVector</a> ()=default</td></tr>
-<tr class="separator:a631fd679cbd7770d3a5fe3e958ac57d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd996f1ff4d88de1072069c6a8d2b7e6" id="r_acd996f1ff4d88de1072069c6a8d2b7e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd996f1ff4d88de1072069c6a8d2b7e6">~ValueVector</a> ()=default</td></tr>
+<tr class="separator:acd996f1ff4d88de1072069c6a8d2b7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fad7688f90829aa828834134f5ba2d7" id="r_a3fad7688f90829aa828834134f5ba2d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fad7688f90829aa828834134f5ba2d7">setState</a> (const std::shared_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_data_chunk_state.html">DataChunkState</a> &gt; &amp;state_)</td></tr>
 <tr class="separator:a3fad7688f90829aa828834134f5ba2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9d79923d14e4c321c682cf97c5da223" id="r_ab9d79923d14e4c321c682cf97c5da223"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9d79923d14e4c321c682cf97c5da223">setAllNull</a> ()</td></tr>
@@ -121,24 +121,27 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab7739fee18ef97d03799caf39b30c5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5ec1571cb5d681d9ef5fa7707986cf3" id="r_ad5ec1571cb5d681d9ef5fa7707986cf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5ec1571cb5d681d9ef5fa7707986cf3">setNullRange</a> (uint32_t startPos, uint32_t len, bool value)</td></tr>
 <tr class="separator:ad5ec1571cb5d681d9ef5fa7707986cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49caea869fc2d1649b20f2002ee81ea7" id="r_a49caea869fc2d1649b20f2002ee81ea7"><td class="memItemLeft" align="right" valign="top">const uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49caea869fc2d1649b20f2002ee81ea7">getNullMaskData</a> ()</td></tr>
-<tr class="separator:a49caea869fc2d1649b20f2002ee81ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57d104086ca9fdee34d0631bd7a8874c" id="r_a57d104086ca9fdee34d0631bd7a8874c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57d104086ca9fdee34d0631bd7a8874c">setNull</a> (uint32_t pos, bool <a class="el" href="#a80662809ebd4a4e5e92f3aa89c812eae">isNull</a>)</td></tr>
-<tr class="separator:a57d104086ca9fdee34d0631bd7a8874c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1757a06b6fd7afa8dde312687c4e429" id="r_ab1757a06b6fd7afa8dde312687c4e429"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classkuzu_1_1common_1_1_null_mask.html">NullMask</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1757a06b6fd7afa8dde312687c4e429">getNullMask</a> () const</td></tr>
+<tr class="separator:ab1757a06b6fd7afa8dde312687c4e429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adff0525b9a9d01f900b5b82424df2451" id="r_adff0525b9a9d01f900b5b82424df2451"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adff0525b9a9d01f900b5b82424df2451">setNull</a> (uint32_t pos, bool <a class="el" href="#a80662809ebd4a4e5e92f3aa89c812eae">isNull</a>)</td></tr>
+<tr class="separator:adff0525b9a9d01f900b5b82424df2451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80662809ebd4a4e5e92f3aa89c812eae" id="r_a80662809ebd4a4e5e92f3aa89c812eae"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80662809ebd4a4e5e92f3aa89c812eae">isNull</a> (uint32_t pos) const</td></tr>
 <tr class="separator:a80662809ebd4a4e5e92f3aa89c812eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1e1ace2c052f9cbec432c5672404a2d" id="r_ac1e1ace2c052f9cbec432c5672404a2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1e1ace2c052f9cbec432c5672404a2d">setAsSingleNullEntry</a> ()</td></tr>
 <tr class="separator:ac1e1ace2c052f9cbec432c5672404a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41a3243ee63845647171af29cbf301c1" id="r_a41a3243ee63845647171af29cbf301c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41a3243ee63845647171af29cbf301c1">setNullFromBits</a> (const uint64_t *srcNullEntries, uint64_t srcOffset, uint64_t dstOffset, uint64_t numBitsToCopy)</td></tr>
-<tr class="separator:a41a3243ee63845647171af29cbf301c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33d9dff4f9d0ded9616d274d1054b0e" id="r_ad33d9dff4f9d0ded9616d274d1054b0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad33d9dff4f9d0ded9616d274d1054b0e">setNullFromBits</a> (const uint64_t *srcNullEntries, uint64_t srcOffset, uint64_t dstOffset, uint64_t numBitsToCopy, bool invert=false)</td></tr>
+<tr class="separator:ad33d9dff4f9d0ded9616d274d1054b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abebdb5b7072436a33fd5fd1ac6acaaa2" id="r_abebdb5b7072436a33fd5fd1ac6acaaa2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abebdb5b7072436a33fd5fd1ac6acaaa2">getNumBytesPerValue</a> () const</td></tr>
 <tr class="separator:abebdb5b7072436a33fd5fd1ac6acaaa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a467f5637ffd1437d0b4dbce178b628f3" id="r_a467f5637ffd1437d0b4dbce178b628f3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a467f5637ffd1437d0b4dbce178b628f3"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a467f5637ffd1437d0b4dbce178b628f3">getValue</a> (uint32_t pos) const</td></tr>
-<tr class="separator:a467f5637ffd1437d0b4dbce178b628f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a119ffc41b44d093a852a560cb2dfcd6a" id="r_a119ffc41b44d093a852a560cb2dfcd6a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a119ffc41b44d093a852a560cb2dfcd6a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a119ffc41b44d093a852a560cb2dfcd6a">setValue</a> (uint32_t pos, T val)</td></tr>
-<tr class="separator:a119ffc41b44d093a852a560cb2dfcd6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e6b422ea350d54333604390215c8cb6" id="r_a8e6b422ea350d54333604390215c8cb6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8e6b422ea350d54333604390215c8cb6"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8e6b422ea350d54333604390215c8cb6">getValue</a> (uint32_t pos) const</td></tr>
+<tr class="separator:a8e6b422ea350d54333604390215c8cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab938da46016592637223115fe4225ec0" id="r_ab938da46016592637223115fe4225ec0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab938da46016592637223115fe4225ec0"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab938da46016592637223115fe4225ec0">getValue</a> (uint32_t pos)</td></tr>
+<tr class="separator:ab938da46016592637223115fe4225ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac98f5c561b5b55fb681d0f8e089173e7" id="r_ac98f5c561b5b55fb681d0f8e089173e7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac98f5c561b5b55fb681d0f8e089173e7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac98f5c561b5b55fb681d0f8e089173e7">setValue</a> (uint32_t pos, T val)</td></tr>
+<tr class="separator:ac98f5c561b5b55fb681d0f8e089173e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f7cb6056e758470398c7b6c0219a4a7" id="r_a1f7cb6056e758470398c7b6c0219a4a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f7cb6056e758470398c7b6c0219a4a7">copyFromRowData</a> (uint32_t pos, const uint8_t *rowData)</td></tr>
 <tr class="separator:a1f7cb6056e758470398c7b6c0219a4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24027db98e18daf1a40a5bd4515181e7" id="r_a24027db98e18daf1a40a5bd4515181e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24027db98e18daf1a40a5bd4515181e7">copyToRowData</a> (uint32_t pos, uint8_t *rowData, <a class="el" href="classkuzu_1_1common_1_1_in_mem_overflow_buffer.html">InMemOverflowBuffer</a> *rowOverflowBuffer) const</td></tr>
@@ -149,8 +152,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa09a74b50a273f372b00e966ae9c512d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a470aaadce61b12af622fa9a467826380" id="r_a470aaadce61b12af622fa9a467826380"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a470aaadce61b12af622fa9a467826380">copyFromValue</a> (uint64_t pos, const <a class="el" href="classkuzu_1_1common_1_1_value.html">Value</a> &amp;value)</td></tr>
 <tr class="separator:a470aaadce61b12af622fa9a467826380"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12a4b77a7ea3d0f9ba89d4a54db6ad40" id="r_a12a4b77a7ea3d0f9ba89d4a54db6ad40"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value.html">Value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12a4b77a7ea3d0f9ba89d4a54db6ad40">getAsValue</a> (uint64_t pos)</td></tr>
-<tr class="separator:a12a4b77a7ea3d0f9ba89d4a54db6ad40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a976aaf185dfd0afc82cc211b8edeb2" id="r_a4a976aaf185dfd0afc82cc211b8edeb2"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value.html">Value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a976aaf185dfd0afc82cc211b8edeb2">getAsValue</a> (uint64_t pos) const</td></tr>
+<tr class="separator:a4a976aaf185dfd0afc82cc211b8edeb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c1651c945f1a523ca72b7054a3c05a6" id="r_a1c1651c945f1a523ca72b7054a3c05a6"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c1651c945f1a523ca72b7054a3c05a6">getData</a> () const</td></tr>
 <tr class="separator:a1c1651c945f1a523ca72b7054a3c05a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1fcf8b2993565d5fe0ca2851e75f10e" id="r_ad1fcf8b2993565d5fe0ca2851e75f10e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">offset_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1fcf8b2993565d5fe0ca2851e75f10e">readNodeOffset</a> (uint32_t pos) const</td></tr>
@@ -159,8 +162,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3d8ec1a71e4a8c05b7c6687c75172b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dfe4d1f0f50b7216cee9c254fe5a96a" id="r_a1dfe4d1f0f50b7216cee9c254fe5a96a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dfe4d1f0f50b7216cee9c254fe5a96a">isSequential</a> () const</td></tr>
 <tr class="separator:a1dfe4d1f0f50b7216cee9c254fe5a96a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6686fbbbf6a60f1c1f512652ca51d9b5" id="r_a6686fbbbf6a60f1c1f512652ca51d9b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6686fbbbf6a60f1c1f512652ca51d9b5">resetAuxiliaryBuffer</a> ()</td></tr>
-<tr class="separator:a6686fbbbf6a60f1c1f512652ca51d9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2836651b97f1805a06ba83b77aa900a6" id="r_a2836651b97f1805a06ba83b77aa900a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2836651b97f1805a06ba83b77aa900a6">resetAuxiliaryBuffer</a> ()</td></tr>
+<tr class="separator:a2836651b97f1805a06ba83b77aa900a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -178,8 +181,6 @@ Public Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr class="memitem:a9908c75ef2a6f81445c79435d9ad8519" id="r_a9908c75ef2a6f81445c79435d9ad8519"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9908c75ef2a6f81445c79435d9ad8519">ListVector</a></td></tr>
 <tr class="separator:a9908c75ef2a6f81445c79435d9ad8519"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e525787bbbf5f721173363c35b9edae" id="r_a5e525787bbbf5f721173363c35b9edae"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e525787bbbf5f721173363c35b9edae">FixedListVector</a></td></tr>
-<tr class="separator:a5e525787bbbf5f721173363c35b9edae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fce5706f3ac8d488321d3de498fdcba" id="r_a9fce5706f3ac8d488321d3de498fdcba"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fce5706f3ac8d488321d3de498fdcba">ListAuxiliaryBuffer</a></td></tr>
 <tr class="separator:a9fce5706f3ac8d488321d3de498fdcba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab51ea3b50838381b1e3160b44b1c1a4d" id="r_ab51ea3b50838381b1e3160b44b1c1a4d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab51ea3b50838381b1e3160b44b1c1a4d">StructVector</a></td></tr>
@@ -233,7 +234,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">kuzu::common::ValueVector::ValueVector </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a9721c1572ae2612a91b86b0785a7b69e">LogicalTypeID</a></td>          <td class="paramname"><span class="paramname"><em>dataTypeID</em>, </span></td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a></td>          <td class="paramname"><span class="paramname"><em>dataTypeID</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -250,8 +251,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a631fd679cbd7770d3a5fe3e958ac57d3" name="a631fd679cbd7770d3a5fe3e958ac57d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a631fd679cbd7770d3a5fe3e958ac57d3">&#9670;&#160;</a></span>~ValueVector()</h2>
+<a id="acd996f1ff4d88de1072069c6a8d2b7e6" name="acd996f1ff4d88de1072069c6a8d2b7e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd996f1ff4d88de1072069c6a8d2b7e6">&#9670;&#160;</a></span>~ValueVector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -260,7 +261,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> kuzu::common::ValueVector::~ValueVector </td>
+          <td class="memname">kuzu::common::ValueVector::~ValueVector </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -421,8 +422,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a12a4b77a7ea3d0f9ba89d4a54db6ad40" name="a12a4b77a7ea3d0f9ba89d4a54db6ad40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12a4b77a7ea3d0f9ba89d4a54db6ad40">&#9670;&#160;</a></span>getAsValue()</h2>
+<a id="a4a976aaf185dfd0afc82cc211b8edeb2" name="a4a976aaf185dfd0afc82cc211b8edeb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a976aaf185dfd0afc82cc211b8edeb2">&#9670;&#160;</a></span>getAsValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -431,7 +432,7 @@ Friends</h2></td></tr>
           <td class="memname">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value.html">Value</a> &gt; kuzu::common::ValueVector::getAsValue </td>
           <td>(</td>
           <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -463,8 +464,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a49caea869fc2d1649b20f2002ee81ea7" name="a49caea869fc2d1649b20f2002ee81ea7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49caea869fc2d1649b20f2002ee81ea7">&#9670;&#160;</a></span>getNullMaskData()</h2>
+<a id="ab1757a06b6fd7afa8dde312687c4e429" name="ab1757a06b6fd7afa8dde312687c4e429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1757a06b6fd7afa8dde312687c4e429">&#9670;&#160;</a></span>getNullMask()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -473,10 +474,10 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint64_t * kuzu::common::ValueVector::getNullMaskData </td>
+          <td class="memname">const <a class="el" href="classkuzu_1_1common_1_1_null_mask.html">NullMask</a> &amp; kuzu::common::ValueVector::getNullMask </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -513,8 +514,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a467f5637ffd1437d0b4dbce178b628f3" name="a467f5637ffd1437d0b4dbce178b628f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a467f5637ffd1437d0b4dbce178b628f3">&#9670;&#160;</a></span>getValue()</h2>
+<a id="ab938da46016592637223115fe4225ec0" name="ab938da46016592637223115fe4225ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab938da46016592637223115fe4225ec0">&#9670;&#160;</a></span>getValue() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,6 +527,33 @@ template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">T &amp; kuzu::common::ValueVector::getValue </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8e6b422ea350d54333604390215c8cb6" name="a8e6b422ea350d54333604390215c8cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e6b422ea350d54333604390215c8cb6">&#9670;&#160;</a></span>getValue() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; kuzu::common::ValueVector::getValue </td>
           <td>(</td>
           <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
           <td> const</td>
@@ -640,14 +668,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a6686fbbbf6a60f1c1f512652ca51d9b5" name="a6686fbbbf6a60f1c1f512652ca51d9b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6686fbbbf6a60f1c1f512652ca51d9b5">&#9670;&#160;</a></span>resetAuxiliaryBuffer()</h2>
+<a id="a2836651b97f1805a06ba83b77aa900a6" name="a2836651b97f1805a06ba83b77aa900a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2836651b97f1805a06ba83b77aa900a6">&#9670;&#160;</a></span>resetAuxiliaryBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void kuzu::common::ValueVector::resetAuxiliaryBuffer </td>
+          <td class="memname">void kuzu::common::ValueVector::resetAuxiliaryBuffer </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -732,14 +760,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a57d104086ca9fdee34d0631bd7a8874c" name="a57d104086ca9fdee34d0631bd7a8874c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57d104086ca9fdee34d0631bd7a8874c">&#9670;&#160;</a></span>setNull()</h2>
+<a id="adff0525b9a9d01f900b5b82424df2451" name="adff0525b9a9d01f900b5b82424df2451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adff0525b9a9d01f900b5b82424df2451">&#9670;&#160;</a></span>setNull()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void kuzu::common::ValueVector::setNull </td>
+          <td class="memname">void kuzu::common::ValueVector::setNull </td>
           <td>(</td>
           <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>pos</em>, </span></td>
         </tr>
@@ -753,8 +781,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a41a3243ee63845647171af29cbf301c1" name="a41a3243ee63845647171af29cbf301c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41a3243ee63845647171af29cbf301c1">&#9670;&#160;</a></span>setNullFromBits()</h2>
+<a id="ad33d9dff4f9d0ded9616d274d1054b0e" name="ad33d9dff4f9d0ded9616d274d1054b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33d9dff4f9d0ded9616d274d1054b0e">&#9670;&#160;</a></span>setNullFromBits()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -777,7 +805,12 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>numBitsToCopy</em></span>&#160;)</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>numBitsToCopy</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>invert</em><span class="paramdefsep"> = </span><span class="paramdefval">false</span></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -860,8 +893,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a119ffc41b44d093a852a560cb2dfcd6a" name="a119ffc41b44d093a852a560cb2dfcd6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a119ffc41b44d093a852a560cb2dfcd6a">&#9670;&#160;</a></span>setValue()</h2>
+<a id="ac98f5c561b5b55fb681d0f8e089173e7" name="ac98f5c561b5b55fb681d0f8e089173e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac98f5c561b5b55fb681d0f8e089173e7">&#9670;&#160;</a></span>setValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -869,7 +902,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void kuzu::common::ValueVector::setValue </td>
+          <td class="memname">void kuzu::common::ValueVector::setValue </td>
           <td>(</td>
           <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>pos</em>, </span></td>
         </tr>
@@ -895,28 +928,6 @@ template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">friend class ArrowColumnVector</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5e525787bbbf5f721173363c35b9edae" name="a5e525787bbbf5f721173363c35b9edae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e525787bbbf5f721173363c35b9edae">&#9670;&#160;</a></span>FixedListVector</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="classkuzu_1_1common_1_1_fixed_list_vector.html">FixedListVector</a></td>
         </tr>
       </table>
   </td>

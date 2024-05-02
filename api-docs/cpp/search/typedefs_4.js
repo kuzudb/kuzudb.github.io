@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['frame_5fgroup_5fidx_5ft_0',['frame_group_idx_t',['../namespacekuzu_1_1common.html#a1378dc850fe3eb31d9a45fde7389360b',1,'kuzu::common']]],
-  ['frame_5fidx_5ft_1',['frame_idx_t',['../namespacekuzu_1_1common.html#a27412672ca883c1d93881f1ba421f530',1,'kuzu::common']]],
-  ['function_5fset_2',['function_set',['../namespacekuzu_1_1function.html#a0bb13703cbecbf1b553841b9c98496c9',1,'kuzu::function']]]
+  ['hash_5ft_0',['hash_t',['../namespacekuzu_1_1common.html#a1ef37c85b88e38b6c47a64752b2be358',1,'kuzu::common']]]
 ];

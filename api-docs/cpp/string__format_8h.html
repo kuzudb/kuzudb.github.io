@@ -116,9 +116,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a92801706210d98650d4b44ed688638ca" id="r_a92801706210d98650d4b44ed688638ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92801706210d98650d4b44ed688638ca">MAP_STD_TO_STRING</a>(typ)&#160;&#160;&#160;    inline std::string map(typ v) { return std::to_string(v); }</td></tr>
+<tr class="memitem:a92801706210d98650d4b44ed688638ca" id="r_a92801706210d98650d4b44ed688638ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92801706210d98650d4b44ed688638ca">MAP_STD_TO_STRING</a>(typ)</td></tr>
 <tr class="separator:a92801706210d98650d4b44ed688638ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4c68f2d1720a8f5732eb44c2481bdf0" id="r_af4c68f2d1720a8f5732eb44c2481bdf0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c68f2d1720a8f5732eb44c2481bdf0">MAP_SELF</a>(typ)&#160;&#160;&#160;    inline typ map(typ v) { return v; }</td></tr>
+<tr class="memitem:af4c68f2d1720a8f5732eb44c2481bdf0" id="r_af4c68f2d1720a8f5732eb44c2481bdf0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c68f2d1720a8f5732eb44c2481bdf0">MAP_SELF</a>(typ)</td></tr>
 <tr class="separator:af4c68f2d1720a8f5732eb44c2481bdf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -150,11 +150,14 @@ Functions</h2></td></tr>
           <td class="memname">#define MAP_SELF</td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname">typ</span></td><td>)</td>
-          <td>&#160;&#160;&#160;    inline typ map(typ v) { return v; }</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">inline</span> typ map(typ v) {                                                                        \</div>
+<div class="line">        <span class="keywordflow">return</span> v;                                                                                  \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a92801706210d98650d4b44ed688638ca" name="a92801706210d98650d4b44ed688638ca"></a>
@@ -167,11 +170,14 @@ Functions</h2></td></tr>
           <td class="memname">#define MAP_STD_TO_STRING</td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname">typ</span></td><td>)</td>
-          <td>&#160;&#160;&#160;    inline std::string map(typ v) { return std::to_string(v); }</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">inline</span> std::string map(typ v) {                                                                \</div>
+<div class="line">        <span class="keywordflow">return</span> std::to_string(v);                                                                  \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

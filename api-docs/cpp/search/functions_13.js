@@ -10,6 +10,12 @@ var searchData=
   ['unaryexecnestedtypefunction_7',['UnaryExecNestedTypeFunction',['../structkuzu_1_1function_1_1_scalar_function.html#a5da8e78f68397c36576ff204bf6c589b',1,'kuzu::function::ScalarFunction']]],
   ['unaryrdfvariantcastexecfunction_8',['UnaryRdfVariantCastExecFunction',['../structkuzu_1_1function_1_1_scalar_function.html#a6e5041ecfd62077c72b41873fc5a4e9d',1,'kuzu::function::ScalarFunction']]],
   ['unarystringexecfunction_9',['UnaryStringExecFunction',['../structkuzu_1_1function_1_1_scalar_function.html#a3e1c1d3891de8b465a347533a403ee93',1,'kuzu::function::ScalarFunction']]],
-  ['union_10',['UNION',['../classkuzu_1_1common_1_1_logical_type.html#a38fcddad64b92a7ed67f332e69064d85',1,'kuzu::common::LogicalType']]],
-  ['uuid_11',['UUID',['../classkuzu_1_1common_1_1_logical_type.html#aeb69eccc9db697c5db18276ab709243b',1,'kuzu::common::LogicalType']]]
+  ['uncompressed_10',['Uncompressed',['../classkuzu_1_1storage_1_1_uncompressed.html#aeba10e71acae8d4f54a1350d79bfc17c',1,'kuzu::storage::Uncompressed::Uncompressed(const common::LogicalType &amp;logicalType)'],['../classkuzu_1_1storage_1_1_uncompressed.html#a5ab27d80520cbd1efb8e20db0d6d959f',1,'kuzu::storage::Uncompressed::Uncompressed(uint8_t numBytesPerValue)'],['../classkuzu_1_1storage_1_1_uncompressed.html#af9efcef34ec892355f2aacb0bd08df22',1,'kuzu::storage::Uncompressed::Uncompressed(const Uncompressed &amp;)=default']]],
+  ['union_11',['UNION',['../classkuzu_1_1common_1_1_logical_type.html#a38fcddad64b92a7ed67f332e69064d85',1,'kuzu::common::LogicalType']]],
+  ['unlock_12',['unlock',['../classkuzu_1_1storage_1_1_page_state.html#ae2789d7f33238f5ed65d6671abf0d6f2',1,'kuzu::storage::PageState']]],
+  ['update_13',['update',['../classkuzu_1_1storage_1_1_local_chunked_group_collection.html#a6c43760251325a8d7bdc3c2ea2e9c42b',1,'kuzu::storage::LocalChunkedGroupCollection::update()'],['../classkuzu_1_1storage_1_1_local_node_group.html#a89b68cbfd022009284bda317b9f7c9ee',1,'kuzu::storage::LocalNodeGroup::update()'],['../classkuzu_1_1storage_1_1_local_table_data.html#a2244a613378b4a407eb7eb2540459afd',1,'kuzu::storage::LocalTableData::update()'],['../classkuzu_1_1storage_1_1_local_table.html#ae8516a902d5ad561771c5be8717afd54',1,'kuzu::storage::LocalTable::update()']]],
+  ['updateprogress_14',['updateProgress',['../classkuzu_1_1common_1_1_progress_bar.html#a7c8ec68a7a9ff851f76a338d2b36e19d',1,'kuzu::common::ProgressBar']]],
+  ['updatestateandincrementversion_15',['updateStateAndIncrementVersion',['../classkuzu_1_1storage_1_1_page_state.html#a27dadfb7ebdc6122ca2307563be8873c',1,'kuzu::storage::PageState']]],
+  ['updatestatewithsameversion_16',['updateStateWithSameVersion',['../classkuzu_1_1storage_1_1_page_state.html#a6bbfeda2f7c2163531b52762ea380d8b',1,'kuzu::storage::PageState']]],
+  ['uuid_17',['UUID',['../classkuzu_1_1common_1_1_logical_type.html#aeb69eccc9db697c5db18276ab709243b',1,'kuzu::common::LogicalType']]]
 ];

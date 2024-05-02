@@ -5,5 +5,5 @@ var classkuzu_1_1main_1_1_query_summary =
     [ "isExplain", "classkuzu_1_1main_1_1_query_summary.html#a70a3ce52c4c096d93ae22b2fc6f0cca6", null ],
     [ "setPreparedSummary", "classkuzu_1_1main_1_1_query_summary.html#a810414800c53b49b82ad4b053c11b13a", null ],
     [ "benchmark::Benchmark", "classkuzu_1_1main_1_1_query_summary.html#a85726f686c5cf3cca562f9b2e7ae2050", null ],
-    [ "Connection", "classkuzu_1_1main_1_1_query_summary.html#a54a11fdc71e1679a42fa0c0e3856673d", null ]
+    [ "ClientContext", "classkuzu_1_1main_1_1_query_summary.html#adf703640bc2bb6db62ee885a1c9ca4e9", null ]
 ];

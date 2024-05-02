@@ -106,6 +106,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a6ebc5c9fc210033494905271e6e9cbd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45bc7b9f26e68e35666f839df5ad595e" id="r_a45bc7b9f26e68e35666f839df5ad595e"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45bc7b9f26e68e35666f839df5ad595e">WAL_FILE_SUFFIX</a> [] = &quot;.wal&quot;</td></tr>
 <tr class="separator:a45bc7b9f26e68e35666f839df5ad595e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b3da996d42f833d8799733d921a994" id="r_aa7b3da996d42f833d8799733d921a994"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7b3da996d42f833d8799733d921a994">SHADOWING_SUFFIX</a> [] = &quot;.shadow&quot;</td></tr>
+<tr class="separator:aa7b3da996d42f833d8799733d921a994"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9d3a62ba09588f3bd44c06cc9e56926" id="r_ab9d3a62ba09588f3bd44c06cc9e56926"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9d3a62ba09588f3bd44c06cc9e56926">INDEX_FILE_SUFFIX</a> [] = &quot;.hindex&quot;</td></tr>
 <tr class="separator:ab9d3a62ba09588f3bd44c06cc9e56926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75e8304c7d4d657515d2c84bc75c03ca" id="r_a75e8304c7d4d657515d2c84bc75c03ca"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75e8304c7d4d657515d2c84bc75c03ca">NODES_STATISTICS_AND_DELETED_IDS_FILE_NAME</a> []</td></tr>
@@ -146,8 +148,6 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:ad8e70e1ad3c97fea39eb904834288edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e0f61b908fad9705f4be0e9cc83918d" id="r_a1e0f61b908fad9705f4be0e9cc83918d"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e0f61b908fad9705f4be0e9cc83918d">CSR_SEGMENT_SIZE</a> = (uint64_t)1 &lt;&lt; <a class="el" href="#ad8e70e1ad3c97fea39eb904834288edd">CSR_SEGMENT_SIZE_LOG2</a></td></tr>
 <tr class="separator:a1e0f61b908fad9705f4be0e9cc83918d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a941e44a68ea7ed34ed79d2b8ecd19171" id="r_a941e44a68ea7ed34ed79d2b8ecd19171"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a941e44a68ea7ed34ed79d2b8ecd19171">TRUNCATE_OVER_LARGE_STRINGS</a> = true</td></tr>
-<tr class="separator:a941e44a68ea7ed34ed79d2b8ecd19171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a03440eaac6ec1e7eb98a75cd91e2c03b" name="a03440eaac6ec1e7eb98a75cd91e2c03b"></a>
@@ -616,8 +616,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a941e44a68ea7ed34ed79d2b8ecd19171" name="a941e44a68ea7ed34ed79d2b8ecd19171"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a941e44a68ea7ed34ed79d2b8ecd19171">&#9670;&#160;</a></span>TRUNCATE_OVER_LARGE_STRINGS</h2>
+<a id="aa7b3da996d42f833d8799733d921a994" name="aa7b3da996d42f833d8799733d921a994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b3da996d42f833d8799733d921a994">&#9670;&#160;</a></span>SHADOWING_SUFFIX</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -626,7 +626,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool kuzu::common::StorageConstants::TRUNCATE_OVER_LARGE_STRINGS = true</td>
+          <td class="memname">constexpr char kuzu::common::StorageConstants::SHADOWING_SUFFIX[] = &quot;.shadow&quot;</td>
         </tr>
       </table>
   </td>

@@ -103,8 +103,8 @@ $(function(){initNavTree('classkuzu_1_1storage_1_1_memory_buffer.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa9179d7ed3cafe6999fa5acc30966aa0" id="r_aa9179d7ed3cafe6999fa5acc30966aa0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9179d7ed3cafe6999fa5acc30966aa0">MemoryBuffer</a> (<a class="el" href="classkuzu_1_1storage_1_1_memory_allocator.html">MemoryAllocator</a> *<a class="el" href="#ad350dadab4b4584bbeefa2e4228eb5c4">allocator</a>, <a class="el" href="namespacekuzu_1_1common.html#aba97173866c2460aba081473237ea36a">common::page_idx_t</a> blockIdx, uint8_t *<a class="el" href="#a01bc74e5f8fc1e7022dbcb23fcb80da7">buffer</a>)</td></tr>
-<tr class="separator:aa9179d7ed3cafe6999fa5acc30966aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4718ca6b8c543d896475cf1b7370cfa" id="r_ac4718ca6b8c543d896475cf1b7370cfa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4718ca6b8c543d896475cf1b7370cfa">MemoryBuffer</a> (<a class="el" href="classkuzu_1_1storage_1_1_memory_allocator.html">MemoryAllocator</a> *<a class="el" href="#ad350dadab4b4584bbeefa2e4228eb5c4">allocator</a>, <a class="el" href="namespacekuzu_1_1common.html#aba97173866c2460aba081473237ea36a">common::page_idx_t</a> blockIdx, uint8_t *<a class="el" href="#a01bc74e5f8fc1e7022dbcb23fcb80da7">buffer</a>, uint64_t <a class="el" href="#a878ab443892225c5232f39d06f0dcb39">size</a>=<a class="el" href="structkuzu_1_1common_1_1_buffer_pool_constants.html#a83662944e97ad76b9ea0a1ea282b58a0">common::BufferPoolConstants::PAGE_256KB_SIZE</a>)</td></tr>
+<tr class="separator:ac4718ca6b8c543d896475cf1b7370cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2aa0864c08885653ae871118780c58b" id="r_ac2aa0864c08885653ae871118780c58b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2aa0864c08885653ae871118780c58b">~MemoryBuffer</a> ()</td></tr>
 <tr class="separator:ac2aa0864c08885653ae871118780c58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -116,10 +116,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a6ec24587792038bc2ea9312b9589b8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad350dadab4b4584bbeefa2e4228eb5c4" id="r_ad350dadab4b4584bbeefa2e4228eb5c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1storage_1_1_memory_allocator.html">MemoryAllocator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad350dadab4b4584bbeefa2e4228eb5c4">allocator</a></td></tr>
 <tr class="separator:ad350dadab4b4584bbeefa2e4228eb5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a878ab443892225c5232f39d06f0dcb39" id="r_a878ab443892225c5232f39d06f0dcb39"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a878ab443892225c5232f39d06f0dcb39">size</a></td></tr>
+<tr class="separator:a878ab443892225c5232f39d06f0dcb39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa9179d7ed3cafe6999fa5acc30966aa0" name="aa9179d7ed3cafe6999fa5acc30966aa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9179d7ed3cafe6999fa5acc30966aa0">&#9670;&#160;</a></span>MemoryBuffer()</h2>
+<a id="ac4718ca6b8c543d896475cf1b7370cfa" name="ac4718ca6b8c543d896475cf1b7370cfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4718ca6b8c543d896475cf1b7370cfa">&#9670;&#160;</a></span>MemoryBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,7 +139,12 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>&#160;)</td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>buffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>size</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="structkuzu_1_1common_1_1_buffer_pool_constants.html#a83662944e97ad76b9ea0a1ea282b58a0">common::BufferPoolConstants::PAGE_256KB_SIZE</a></span></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -198,6 +205,20 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacekuzu_1_1common.html#aba97173866c2460aba081473237ea36a">common::page_idx_t</a> kuzu::storage::MemoryBuffer::pageIdx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a878ab443892225c5232f39d06f0dcb39" name="a878ab443892225c5232f39d06f0dcb39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a878ab443892225c5232f39d06f0dcb39">&#9670;&#160;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t kuzu::storage::MemoryBuffer::size</td>
         </tr>
       </table>
 </div><div class="memdoc">

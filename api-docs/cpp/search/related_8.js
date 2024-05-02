@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['listauxiliarybuffer_0',['ListAuxiliaryBuffer',['../classkuzu_1_1common_1_1_value_vector.html#a9fce5706f3ac8d488321d3de498fdcba',1,'kuzu::common::ValueVector']]],
-  ['listvector_1',['ListVector',['../classkuzu_1_1common_1_1_list_auxiliary_buffer.html#a9908c75ef2a6f81445c79435d9ad8519',1,'kuzu::common::ListAuxiliaryBuffer::ListVector'],['../classkuzu_1_1common_1_1_value_vector.html#a9908c75ef2a6f81445c79435d9ad8519',1,'kuzu::common::ValueVector::ListVector']]],
-  ['logicaltypeutils_2',['LogicalTypeUtils',['../classkuzu_1_1common_1_1_logical_type.html#a9a23dcf2afeb1881654508ef87563361',1,'kuzu::common::LogicalType']]]
+  ['nestedval_0',['NestedVal',['../classkuzu_1_1common_1_1_value.html#a54a9b01ab0b18777683864ec7bd6056d',1,'kuzu::common::Value']]],
+  ['nodetabledata_1',['NodeTableData',['../classkuzu_1_1storage_1_1_local_table_data.html#af3343952955d6cd299171b4496be797b',1,'kuzu::storage::LocalTableData']]],
+  ['nodeval_2',['NodeVal',['../classkuzu_1_1common_1_1_value.html#aa974a30a7bf3aa9df757f3db3c1d9249',1,'kuzu::common::Value']]]
 ];
