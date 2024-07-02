@@ -45,6 +45,7 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", "functions_vars" ],
+        [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
       ] ]
@@ -62,20 +63,20 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classkuzu_1_1common_1_1_int128__t.html#a79bd2dc3181a5bbfe081aca631d36659",
-"classkuzu_1_1common_1_1_struct_field.html#af066482249426b5a91079cb50b153ec9",
-"classkuzu_1_1common_1_1_value.html#acdd73381bd4073eb433761a24cebbb05",
-"classkuzu_1_1main_1_1_database.html#a0659b0fbab6582db16f1e0e774401296",
-"classkuzu_1_1storage_1_1_chunked_node_group.html#a388416ebfc8fe112512c70cc4b7e02d8",
-"classkuzu_1_1storage_1_1_integer_bitpacking.html#aa5661da67b0c1c89ea19921829039c92",
-"classkuzu_1_1storage_1_1_read_compressed_values_from_page.html",
-"file__info_8h_source.html",
-"namespacekuzu_1_1common.html#aba0f2d59d72d1d04828cb2e3195fd3e9",
-"string__format_8h.html#a92801706210d98650d4b44ed688638ca",
-"structkuzu_1_1common_1_1dtime__t.html#a08360fb45114104d58bcccc77d5a66b2",
-"structkuzu_1_1common_1_1timestamp__t.html#a38d03887b1eb82cf8b0c199202278a0c",
-"structkuzu_1_1function_1_1_table_function_init_input.html#a775e30f44dcef79db786b8edacf3d802",
-"types_8h.html#ae13725cc7f400e324b5f2bc1f53da741a48d8f1a723d44ff4a87db1bb6c551c62"
+"classkuzu_1_1common_1_1_int128__t.html#a1aa8079f0790efb84d45e2470e4fbe25",
+"classkuzu_1_1common_1_1_selection_vector.html#aec7e5cb590063d225885efbd52608326",
+"classkuzu_1_1common_1_1_value.html#a8eafa65e2a6efad34e923ad78635928e",
+"classkuzu_1_1main_1_1_client_context.html#ad95505c6380637ffeb819c1c6d9dcf0c",
+"classkuzu_1_1storage_1_1_bool_chunk_data.html#a29140e917a8a9957590ffd851d5adebc",
+"classkuzu_1_1storage_1_1_constant_compression.html#a8d0741eb63919edd835d6a5af3328a9d",
+"classkuzu_1_1storage_1_1_undo_buffer.html",
+"expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434babf1d4bbf6ed8626603df4a7cac94ee8c",
+"namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0e",
+"query__summary_8h.html",
+"structkuzu_1_1common_1_1date__t.html#a556d3283bda8b79f0d998a57abc8a93d",
+"structkuzu_1_1common_1_1list__entry__t.html#ac1f8fe83a20a2dca19c7653a99a3d537",
+"structkuzu_1_1function_1_1_table_func_bind_input.html#a73a7d5473a8bdb49aba092b7e2b66a60",
+"structkuzu_1_1storage_1_1_compression_metadata.html#a32e4b4c22f4a7e9760b9901426274bb4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

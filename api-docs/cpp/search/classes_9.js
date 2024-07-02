@@ -11,7 +11,6 @@ var searchData=
   ['localstorage_8',['LocalStorage',['../classkuzu_1_1storage_1_1_local_storage.html',1,'kuzu::storage']]],
   ['localtable_9',['LocalTable',['../classkuzu_1_1storage_1_1_local_table.html',1,'kuzu::storage']]],
   ['localtabledata_10',['LocalTableData',['../classkuzu_1_1storage_1_1_local_table_data.html',1,'kuzu::storage']]],
-  ['loggerconstants_11',['LoggerConstants',['../structkuzu_1_1common_1_1_logger_constants.html',1,'kuzu::common']]],
-  ['logicaltype_12',['LogicalType',['../classkuzu_1_1common_1_1_logical_type.html',1,'kuzu::common']]],
-  ['logicaltypeutils_13',['LogicalTypeUtils',['../structkuzu_1_1common_1_1_logical_type_utils.html',1,'kuzu::common']]]
+  ['logicaltype_11',['LogicalType',['../classkuzu_1_1common_1_1_logical_type.html',1,'kuzu::common']]],
+  ['logicaltypeutils_12',['LogicalTypeUtils',['../structkuzu_1_1common_1_1_logical_type_utils.html',1,'kuzu::common']]]
 ];

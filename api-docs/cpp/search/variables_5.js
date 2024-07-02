@@ -1,15 +1,21 @@
 var searchData=
 [
-  ['fhsharedmutex_0',['fhSharedMutex',['../classkuzu_1_1storage_1_1_file_handle.html#aee3acce4f8e9e1409793c9e6caefdbaa',1,'kuzu::storage::FileHandle']]],
-  ['fileinfo_1',['fileInfo',['../classkuzu_1_1storage_1_1_file_handle.html#a5323d00d662c040e70bc7960f800e975',1,'kuzu::storage::FileHandle']]],
-  ['filepaths_2',['filePaths',['../structkuzu_1_1common_1_1_reader_config.html#a735a87838c255ff6ae13e28eb9216c35',1,'kuzu::common::ReaderConfig']]],
-  ['filesearchpath_3',['fileSearchPath',['../structkuzu_1_1main_1_1_client_config.html#ab47f537f7d1cf5fdc589321fc5d1e4ee',1,'kuzu::main::ClientConfig']]],
-  ['filesystem_4',['fileSystem',['../structkuzu_1_1common_1_1_file_info.html#a980ff58b628cac2a8eb81676d75dc590',1,'kuzu::common::FileInfo']]],
-  ['filetype_5',['fileType',['../structkuzu_1_1common_1_1_reader_config.html#afd285db9d7c48da1714e4d204d9e8cf2',1,'kuzu::common::ReaderConfig']]],
-  ['first_5fbyte_5fpos_6',['FIRST_BYTE_POS',['../structkuzu_1_1common_1_1_hex_format_constants.html#a91f4139b8a100f589985f965bfffcf7f',1,'kuzu::common::HexFormatConstants']]],
-  ['flags_7',['flags',['../struct_arrow_schema.html#a15b2e390fc6708b23ad29c69e136163c',1,'ArrowSchema::flags'],['../classkuzu_1_1storage_1_1_file_handle.html#ae0d62ad7cbc3a02b83eda0795777385c',1,'kuzu::storage::FileHandle::flags']]],
-  ['floatval_8',['floatVal',['../unionkuzu_1_1common_1_1_value_1_1_val.html#ad4f5aaad0bff2b870cb3c35c990db45b',1,'kuzu::common::Value::Val']]],
-  ['flushbufferfunction_9',['flushBufferFunction',['../classkuzu_1_1storage_1_1_column_chunk.html#a526ee1f58212fc02a0773ef497651c1f',1,'kuzu::storage::ColumnChunk']]],
-  ['format_10',['format',['../struct_arrow_schema.html#ab5d0127ee66cd298683f2a2d2aae5788',1,'ArrowSchema']]],
-  ['func_11',['func',['../structkuzu_1_1function_1_1_scan_replacement_data.html#ac2b32bb3a35be3768bb25f0d8e528c08',1,'kuzu::function::ScanReplacementData']]]
+  ['enable_5fprogress_5fbar_0',['ENABLE_PROGRESS_BAR',['../structkuzu_1_1main_1_1_client_config_default.html#a0dd82b97d44951ff355d6ff0f7d4bca7',1,'kuzu::main::ClientConfigDefault']]],
+  ['enable_5fsemi_5fmask_1',['ENABLE_SEMI_MASK',['../structkuzu_1_1main_1_1_client_config_default.html#ae3722fde4e557f5d07e43f3de744114f',1,'kuzu::main::ClientConfigDefault']]],
+  ['enable_5fzone_5fmap_2',['ENABLE_ZONE_MAP',['../structkuzu_1_1main_1_1_client_config_default.html#aa5240ac5c97f219a4f26da06596a1d5b',1,'kuzu::main::ClientConfigDefault']]],
+  ['enablecompression_3',['enableCompression',['../classkuzu_1_1storage_1_1_column_chunk_data.html#a5c27ff801d540e087bd099f7a3afb780',1,'kuzu::storage::ColumnChunkData::enableCompression'],['../structkuzu_1_1main_1_1_system_config.html#af080c4d6720efb909ce5979771cdc0f2',1,'kuzu::main::SystemConfig::enableCompression'],['../classkuzu_1_1main_1_1_d_b_config.html#ae455fc2ef32133729d56a2b7205e61fc',1,'kuzu::main::DBConfig::enableCompression']]],
+  ['enabled_4',['enabled',['../classkuzu_1_1common_1_1_metric.html#a15e3089d7abbc0f37417a1dfb99e108f',1,'kuzu::common::Metric']]],
+  ['enablemultiwrites_5',['enableMultiWrites',['../classkuzu_1_1main_1_1_d_b_config.html#adbb2a3e9b2174fe4a973eddb5965de88',1,'kuzu::main::DBConfig']]],
+  ['enableprogressbar_6',['enableProgressBar',['../structkuzu_1_1main_1_1_client_config.html#ac204d7d4c5f709b789845798cd9ee010',1,'kuzu::main::ClientConfig']]],
+  ['enablesemimask_7',['enableSemiMask',['../structkuzu_1_1main_1_1_client_config.html#a135cd7ce0afd885ca5630f6ca3a2be08',1,'kuzu::main::ClientConfig']]],
+  ['enablezonemap_8',['enableZoneMap',['../structkuzu_1_1main_1_1_client_config.html#a687616154df1907c9c9d8523cfa9d2ee',1,'kuzu::main::ClientConfig']]],
+  ['entry_9',['entry',['../structkuzu_1_1common_1_1map__entry__t.html#ad61361d7fdc56cb32d3b678b6fe91b38',1,'kuzu::common::map_entry_t::entry'],['../structkuzu_1_1common_1_1union__entry__t.html#aaafd5b4f1f32dddc7dc7dfc1556c6a2b',1,'kuzu::common::union_entry_t::entry']]],
+  ['epoch_5fyear_10',['EPOCH_YEAR',['../classkuzu_1_1common_1_1_date.html#a950b4c6763bd32379072c6bd12b7284e',1,'kuzu::common::Date']]],
+  ['equality_5fpredicate_5fselectivity_11',['EQUALITY_PREDICATE_SELECTIVITY',['../structkuzu_1_1common_1_1_planner_knobs.html#a0c4f5162517941ee617c89a37ab7937f',1,'kuzu::common::PlannerKnobs']]],
+  ['escapechar_12',['escapeChar',['../structkuzu_1_1common_1_1_c_s_v_option.html#a0ca6761bac3fd837f3b471a3855e787e',1,'kuzu::common::CSVOption']]],
+  ['eviction_5fqueue_5fpurging_5finterval_13',['EVICTION_QUEUE_PURGING_INTERVAL',['../structkuzu_1_1common_1_1_buffer_pool_constants.html#a8faf26f2ee9d7c336053da6b6a7935ea',1,'kuzu::common::BufferPoolConstants']]],
+  ['execfunc_14',['execFunc',['../structkuzu_1_1function_1_1_scalar_function.html#a98d19ad1bd3bd4eeff8e3071907771d1',1,'kuzu::function::ScalarFunction']]],
+  ['expectedcolumnnames_15',['expectedColumnNames',['../structkuzu_1_1function_1_1_scan_table_func_bind_input.html#a80822496f406ddaeb5d5d6ce0751e72b',1,'kuzu::function::ScanTableFuncBindInput']]],
+  ['expectedcolumntypes_16',['expectedColumnTypes',['../structkuzu_1_1function_1_1_scan_table_func_bind_input.html#ab8ccc44b657d38338f95c1092b7e865e',1,'kuzu::function::ScanTableFuncBindInput']]],
+  ['expressiontype_17',['expressionType',['../classkuzu_1_1binder_1_1_expression.html#a3a271fd7eac58552c9a14f37b5472512',1,'kuzu::binder::Expression']]]
 ];

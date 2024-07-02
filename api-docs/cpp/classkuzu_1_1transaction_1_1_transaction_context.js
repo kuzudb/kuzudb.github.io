@@ -13,5 +13,5 @@ var classkuzu_1_1transaction_1_1_transaction_context =
     [ "isAutoTransaction", "classkuzu_1_1transaction_1_1_transaction_context.html#a22f2f8f4c42d86081b0ffa0bbd1f3013", null ],
     [ "rollback", "classkuzu_1_1transaction_1_1_transaction_context.html#a77720232141c4a6e92d9e35637c3d577", null ],
     [ "rollbackSkipCheckPointing", "classkuzu_1_1transaction_1_1_transaction_context.html#a69c6aa7f0fb0f9e612e00f2f62941df3", null ],
-    [ "validateManualTransaction", "classkuzu_1_1transaction_1_1_transaction_context.html#aa295fa26b2e1b41d68e13a6bcb8d3977", null ]
+    [ "validateManualTransaction", "classkuzu_1_1transaction_1_1_transaction_context.html#a03cdc76c5734cb35ac6b0049e1512ed0", null ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['valuevector_0',['ValueVector',['../classkuzu_1_1common_1_1_value.html#a219327732548bf2cbdd3d308739ecbc8',1,'kuzu::common::Value']]]
+  ['undobufferiterator_0',['UndoBufferIterator',['../classkuzu_1_1storage_1_1_undo_buffer.html#abc4854b4a29a570c68f555250cb8e48a',1,'kuzu::storage::UndoBuffer']]]
 ];

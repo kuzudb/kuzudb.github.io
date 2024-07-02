@@ -8,7 +8,7 @@ var searchData=
   ['chunked_5fnode_5fgroup_5fcollection_2eh_5',['chunked_node_group_collection.h',['../chunked__node__group__collection_8h.html',1,'']]],
   ['client_5fconfig_2eh_6',['client_config.h',['../client__config_8h.html',1,'']]],
   ['client_5fcontext_2eh_7',['client_context.h',['../client__context_8h.html',1,'']]],
-  ['column_5fchunk_2eh_8',['column_chunk.h',['../column__chunk_8h.html',1,'']]],
+  ['column_5fchunk_5fdata_2eh_8',['column_chunk_data.h',['../column__chunk__data_8h.html',1,'']]],
   ['column_5fdata_5fformat_2eh_9',['column_data_format.h',['../column__data__format_8h.html',1,'']]],
   ['compression_2eh_10',['compression.h',['../compression_8h.html',1,'']]],
   ['connection_2eh_11',['connection.h',['../connection_8h.html',1,'']]],

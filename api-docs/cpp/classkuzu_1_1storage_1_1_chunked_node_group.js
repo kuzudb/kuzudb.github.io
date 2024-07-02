@@ -1,6 +1,6 @@
 var classkuzu_1_1storage_1_1_chunked_node_group =
 [
-    [ "ChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html#aead4ed014b5367efc2a4cefb8ae02773", null ],
+    [ "ChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html#a820941471f1f51a0b7ae9c8f44e0786a", null ],
     [ "ChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html#a83f4946b495a2be0654378f0549fed04", null ],
     [ "ChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html#a8076029f6f52e21ec484c857f3ed2ea3", null ],
     [ "~ChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html#a14cc559132f4abd535208e52744f3ab7", null ],
@@ -8,11 +8,11 @@ var classkuzu_1_1storage_1_1_chunked_node_group =
     [ "append", "classkuzu_1_1storage_1_1_chunked_node_group.html#a50bb54749a35a16da8be3f7b9acbead9", null ],
     [ "DELETE_COPY_DEFAULT_MOVE", "classkuzu_1_1storage_1_1_chunked_node_group.html#ac11509857681eda765727ceb26a92646", null ],
     [ "finalize", "classkuzu_1_1storage_1_1_chunked_node_group.html#a0b5024d8e3ad4949149b4d7cd7faa64e", null ],
-    [ "getColumnChunk", "classkuzu_1_1storage_1_1_chunked_node_group.html#a632ca56a60cbeaac6862bb9dbbf01e66", null ],
-    [ "getColumnChunksUnsafe", "classkuzu_1_1storage_1_1_chunked_node_group.html#a6df2cd586a365b3af3ecaa5040aeb0aa", null ],
-    [ "getColumnChunkUnsafe", "classkuzu_1_1storage_1_1_chunked_node_group.html#a5d813732df803d37e30721faab474ada", null ],
+    [ "getColumnChunk", "classkuzu_1_1storage_1_1_chunked_node_group.html#a8bed8c0ed82faae44be8b3084fdeec24", null ],
+    [ "getColumnChunksUnsafe", "classkuzu_1_1storage_1_1_chunked_node_group.html#a456e91bc3936a93b461c11f2c2514c35", null ],
+    [ "getColumnChunkUnsafe", "classkuzu_1_1storage_1_1_chunked_node_group.html#a3e4157257556817aeb505df4d7635345", null ],
     [ "getNodeGroupIdx", "classkuzu_1_1storage_1_1_chunked_node_group.html#abf8eb280375cb98a3982e9b1a6848373", null ],
-    [ "getNumColumns", "classkuzu_1_1storage_1_1_chunked_node_group.html#ac8e3d4c499d493c1f0b5089fd9f31aaa", null ],
+    [ "getNumColumns", "classkuzu_1_1storage_1_1_chunked_node_group.html#a6036c32d95bdc9019c77ecbe06ac3bfd", null ],
     [ "getNumRows", "classkuzu_1_1storage_1_1_chunked_node_group.html#a6b14cfc41b84cdf8bc3455530df138e6", null ],
     [ "isFull", "classkuzu_1_1storage_1_1_chunked_node_group.html#abbb80691df43e0691d2d013f55d64298", null ],
     [ "resetToEmpty", "classkuzu_1_1storage_1_1_chunked_node_group.html#a388416ebfc8fe112512c70cc4b7e02d8", null ],
@@ -20,7 +20,7 @@ var classkuzu_1_1storage_1_1_chunked_node_group =
     [ "setAllNull", "classkuzu_1_1storage_1_1_chunked_node_group.html#a5392a7c923e474427a3924e613ee4594", null ],
     [ "setNumRows", "classkuzu_1_1storage_1_1_chunked_node_group.html#ab74a97391950b8524c382fb3049c5f66", null ],
     [ "write", "classkuzu_1_1storage_1_1_chunked_node_group.html#a867f4c0fa450f15578ad1796a770129a", null ],
-    [ "write", "classkuzu_1_1storage_1_1_chunked_node_group.html#adeaaeec4f383ef9c238b5dbecc03147d", null ],
-    [ "writeToColumnChunk", "classkuzu_1_1storage_1_1_chunked_node_group.html#a7671e0ac915a68bbd88833f3c854f93f", null ],
-    [ "chunks", "classkuzu_1_1storage_1_1_chunked_node_group.html#a1e84af8fe2803737417fe1879384a4cf", null ]
+    [ "write", "classkuzu_1_1storage_1_1_chunked_node_group.html#ac78ce9af16fa2906075999e422a88b4f", null ],
+    [ "writeToColumnChunk", "classkuzu_1_1storage_1_1_chunked_node_group.html#ac10f1d0dbaaf3e7f38a19975c12597c4", null ],
+    [ "chunks", "classkuzu_1_1storage_1_1_chunked_node_group.html#a7fd981e6418c5b24c77c94e6ae7705ae", null ]
 ];

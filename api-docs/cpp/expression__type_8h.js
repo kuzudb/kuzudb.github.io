@@ -1,5 +1,6 @@
 var expression__type_8h =
 [
+    [ "kuzu::common::ExpressionTypeUtil", "structkuzu_1_1common_1_1_expression_type_util.html", null ],
     [ "ExpressionType", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434b", [
       [ "OR", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434ba1d00e7dce692e8dc3f6877f035e3a616", null ],
       [ "XOR", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434ba97675eb3f268048604dc5155511a2a4d", null ],
@@ -24,15 +25,6 @@ var expression__type_8h =
       [ "AGGREGATE_FUNCTION", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434ba9e276958874fe64759494a3be193c303", null ],
       [ "SUBQUERY", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434baece5b631ea0b2cdd22da5287e7b1213e", null ],
       [ "CASE_ELSE", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434ba1b96299f53e8dc6fa6a9cdf93d3deacb", null ],
-      [ "MACRO", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434ba0342ec3f70786edd2267dab692f1ad6c", null ]
-    ] ],
-    [ "expressionTypeToString", "expression__type_8h.html#ac653039e8ad02039d04a0e3561e8ca10", null ],
-    [ "isExpressionAggregate", "expression__type_8h.html#aca50bbfcc51b0b8df38b0cb0669fc873", null ],
-    [ "isExpressionBinary", "expression__type_8h.html#aa4fb78cd5622e8626169b345dcb831c5", null ],
-    [ "isExpressionBoolConnection", "expression__type_8h.html#a01e918435e6a8efab0615dd64d357eda", null ],
-    [ "isExpressionComparison", "expression__type_8h.html#aa4cf6902b5b69f36f849099a9208dc46", null ],
-    [ "isExpressionLiteral", "expression__type_8h.html#aacf627cee766be61f754b7c41471af06", null ],
-    [ "isExpressionNullOperator", "expression__type_8h.html#a2e6142aaf9b7e006b94bb047321ae570", null ],
-    [ "isExpressionSubquery", "expression__type_8h.html#a9f2e53b41374c99e99593741cf88ffcf", null ],
-    [ "isExpressionUnary", "expression__type_8h.html#a27e76ab7f8908ab6be73fe195033063f", null ]
+      [ "GRAPH", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434bae27e2917b6444fcd3452d2d87046a487", null ]
+    ] ]
 ];

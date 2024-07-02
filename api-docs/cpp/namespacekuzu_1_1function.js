@@ -38,6 +38,7 @@ var namespacekuzu_1_1function =
     [ "UnaryFunctionWrapper", "structkuzu_1_1function_1_1_unary_function_wrapper.html", null ],
     [ "UnaryNestedTypeFunctionWrapper", "structkuzu_1_1function_1_1_unary_nested_type_function_wrapper.html", null ],
     [ "UnaryRdfVariantCastFunctionWrapper", "structkuzu_1_1function_1_1_unary_rdf_variant_cast_function_wrapper.html", null ],
+    [ "UnarySequenceFunctionWrapper", "structkuzu_1_1function_1_1_unary_sequence_function_wrapper.html", null ],
     [ "UnaryStringFunctionWrapper", "structkuzu_1_1function_1_1_unary_string_function_wrapper.html", null ],
     [ "UnaryUDFExecutor", "structkuzu_1_1function_1_1_unary_u_d_f_executor.html", null ],
     [ "UnaryUDFFunctionWrapper", "structkuzu_1_1function_1_1_unary_u_d_f_function_wrapper.html", null ],

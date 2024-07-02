@@ -5,6 +5,6 @@ var classkuzu_1_1storage_1_1_boolean_bitpacking =
     [ "compressNextPage", "classkuzu_1_1storage_1_1_boolean_bitpacking.html#a15a2fe2a671aa0e87de8fcd95a673d4d", null ],
     [ "copyFromPage", "classkuzu_1_1storage_1_1_boolean_bitpacking.html#a98b616c7b7851abaddba38acd8595057", null ],
     [ "decompressFromPage", "classkuzu_1_1storage_1_1_boolean_bitpacking.html#a23c40d58d2236ddf6e8150a8fd0643bf", null ],
-    [ "getCompressionMetadata", "classkuzu_1_1storage_1_1_boolean_bitpacking.html#a6335bff49e7646e218a7d4520686bf02", null ],
+    [ "getCompressionType", "classkuzu_1_1storage_1_1_boolean_bitpacking.html#a5faa84a8b579c2205f565838517866ba", null ],
     [ "setValuesFromUncompressed", "classkuzu_1_1storage_1_1_boolean_bitpacking.html#a023db09170de6708a652b1a76e5686c3", null ]
 ];

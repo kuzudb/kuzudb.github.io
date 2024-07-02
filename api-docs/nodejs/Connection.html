@@ -447,7 +447,7 @@ function on the returned object.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line234">line 234</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line244">line 244</a>
     </li></ul></dd>
     
 
@@ -606,7 +606,7 @@ function on the returned object.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line251">line 251</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line261">line 261</a>
     </li></ul></dd>
     
 
@@ -722,7 +722,7 @@ automatically when the object goes out of scope.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line308">line 308</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line318">line 318</a>
     </li></ul></dd>
     
 
@@ -758,7 +758,7 @@ automatically when the object goes out of scope.
     
 
     
-    <h4 class="name" id="execute"><span class="type-signature"></span>execute<span class="signature">(preparedStatement, params)</span><span class="type-signature"> &rarr; {Promise.&lt;kuzu.QueryResult>}</span></h4>
+    <h4 class="name" id="execute"><span class="type-signature"></span>execute<span class="signature">(preparedStatement, params, progressCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;kuzu.QueryResult>}</span></h4>
     
 
     
@@ -790,6 +790,8 @@ automatically when the object goes out of scope.
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -815,6 +817,14 @@ automatically when the object goes out of scope.
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -838,10 +848,51 @@ automatically when the object goes out of scope.
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
             <td class="description last">a plain object mapping parameter names to values.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>progressCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Optional callback function that is invoked with the progress of the query execution. The callback receives three arguments: pipelineProgress, numPipelinesFinished, and numPipelines.</td>
         </tr>
 
     
@@ -882,7 +933,7 @@ automatically when the object goes out of scope.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line89">line 89</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line90">line 90</a>
     </li></ul></dd>
     
 
@@ -1130,7 +1181,7 @@ connection is initialized automatically when the first query is executed.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line169">line 169</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line174">line 174</a>
     </li></ul></dd>
     
 
@@ -1188,7 +1239,7 @@ connection is initialized automatically when the first query is executed.
     
 
     
-    <h4 class="name" id="query"><span class="type-signature"></span>query<span class="signature">(statement)</span><span class="type-signature"> &rarr; {Promise.&lt;kuzu.QueryResult>}</span></h4>
+    <h4 class="name" id="query"><span class="type-signature"></span>query<span class="signature">(statement, progressCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;kuzu.QueryResult>}</span></h4>
     
 
     
@@ -1220,6 +1271,8 @@ connection is initialized automatically when the first query is executed.
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -1245,10 +1298,51 @@ connection is initialized automatically when the first query is executed.
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
             <td class="description last">the statement to execute.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>progressCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Optional callback function that is invoked with the progress of the query execution. The callback receives three arguments: pipelineProgress, numPipelinesFinished, and numPipelines.</td>
         </tr>
 
     
@@ -1289,7 +1383,7 @@ connection is initialized automatically when the first query is executed.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line198">line 198</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line204">line 204</a>
     </li></ul></dd>
     
 
@@ -1448,7 +1542,7 @@ connection is initialized automatically when the first query is executed.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line269">line 269</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line279">line 279</a>
     </li></ul></dd>
     
 
@@ -1586,7 +1680,7 @@ will be aborted.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line287">line 287</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line297">line 297</a>
     </li></ul></dd>
     
 
@@ -1638,7 +1732,7 @@ will be aborted.
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Thu May 02 2024 20:34:36 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Tue Jul 02 2024 00:26:40 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>

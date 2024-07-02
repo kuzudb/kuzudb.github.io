@@ -1,7 +1,6 @@
 var classkuzu_1_1main_1_1_prepared_statement =
 [
     [ "~PreparedStatement", "classkuzu_1_1main_1_1_prepared_statement.html#a88e21bca711ab5bd45562ea675ac5498", null ],
-    [ "allowActiveTransaction", "classkuzu_1_1main_1_1_prepared_statement.html#aec4ec799e20e1a79ef24d619af9333ed", null ],
     [ "getErrorMessage", "classkuzu_1_1main_1_1_prepared_statement.html#ab39561e100f7e05322b34b90661269fd", null ],
     [ "getParameterMap", "classkuzu_1_1main_1_1_prepared_statement.html#a5cbeb6cbe7bf4545269f026003661029", null ],
     [ "isReadOnly", "classkuzu_1_1main_1_1_prepared_statement.html#a35d8e7bc8faffb809ae1ab51f264bcb3", null ],

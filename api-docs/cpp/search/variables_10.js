@@ -1,17 +1,5 @@
 var searchData=
 [
-  ['readonly_0',['readOnly',['../structkuzu_1_1main_1_1_system_config.html#a1d6b0ac8dc89075229cfca120343c053',1,'kuzu::main::SystemConfig']]],
-  ['recursive_5fpattern_5ffactor_1',['RECURSIVE_PATTERN_FACTOR',['../structkuzu_1_1main_1_1_client_config_default.html#ad5a53a60d37f25e7d9d07069642413d1',1,'kuzu::main::ClientConfigDefault']]],
-  ['recursive_5fpattern_5fsemantic_2',['RECURSIVE_PATTERN_SEMANTIC',['../structkuzu_1_1main_1_1_client_config_default.html#aa95181a96297b6df92dd699fc0b69847',1,'kuzu::main::ClientConfigDefault']]],
-  ['recursivepatterncardinalityscalefactor_3',['recursivePatternCardinalityScaleFactor',['../structkuzu_1_1main_1_1_client_config.html#a2d1f6b4925a681fe38fa7d325e4c5918',1,'kuzu::main::ClientConfig']]],
-  ['recursivepatternsemantic_4',['recursivePatternSemantic',['../structkuzu_1_1main_1_1_client_config.html#aeb7731417e8dc9699a043d34ac297c8f',1,'kuzu::main::ClientConfig']]],
-  ['release_5',['release',['../struct_arrow_schema.html#ad471ae72074febbeaf80288f2f673c57',1,'ArrowSchema::release'],['../struct_arrow_array.html#a03ad36422f651c0b0ccd9ab9c5b7d5d3',1,'ArrowArray::release']]],
-  ['rels_6',['RELS',['../structkuzu_1_1common_1_1_internal_keyword.html#a73ab607b57d45db3cfd95d06c614d467',1,'kuzu::common::InternalKeyword']]],
-  ['rels_5fmetadata_5ffile_5fname_7',['RELS_METADATA_FILE_NAME',['../structkuzu_1_1common_1_1_storage_constants.html#accc4bcd777ab835c678a22872ddd3d6d',1,'kuzu::common::StorageConstants']]],
-  ['rels_5fmetadata_5ffile_5fname_5ffor_5fwal_8',['RELS_METADATA_FILE_NAME_FOR_WAL',['../structkuzu_1_1common_1_1_storage_constants.html#a94398f667c26e28318ae758c029bd4f0',1,'kuzu::common::StorageConstants']]],
-  ['replacefunc_9',['replaceFunc',['../structkuzu_1_1function_1_1_scan_replacement.html#a591854eb0ff7162f3c6e82bb21012be0',1,'kuzu::function::ScanReplacement']]],
-  ['resulttype_10',['resultType',['../structkuzu_1_1function_1_1_function_bind_data.html#ac99c89304be697565484bb6e046f8a59',1,'kuzu::function::FunctionBindData']]],
-  ['returntypeid_11',['returnTypeID',['../structkuzu_1_1function_1_1_base_scalar_function.html#a52f7b479a956772a6f07c5ef95f38945',1,'kuzu::function::BaseScalarFunction']]],
-  ['row_5fidx_5fcolumn_5fname_12',['ROW_IDX_COLUMN_NAME',['../structkuzu_1_1common_1_1_copy_constants.html#ac685f19640bb863915340496d128d34f',1,'kuzu::common::CopyConstants']]],
-  ['row_5foffset_13',['ROW_OFFSET',['../structkuzu_1_1common_1_1_internal_keyword.html#abe718201633179438094f7f17a2f70ba',1,'kuzu::common::InternalKeyword']]]
+  ['quarter_0',['QUARTER',['../namespacekuzu_1_1common.html#ac3f416d18d4911bdc5e5bcac561cd83d',1,'kuzu::common']]],
+  ['quotechar_1',['quoteChar',['../structkuzu_1_1common_1_1_c_s_v_option.html#a7fc98bc317aa98d9e178df90e19a124c',1,'kuzu::common::CSVOption']]]
 ];

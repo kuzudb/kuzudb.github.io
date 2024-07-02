@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['uint16val_0',['uint16Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html#a5029c8cc7b85b8a6104ea9816461292e',1,'kuzu::common::Value::Val']]],
-  ['uint32val_1',['uint32Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html#a3dd7c249468c1e8a74984006d9f4d8e9',1,'kuzu::common::Value::Val']]],
-  ['uint64val_2',['uint64Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html#ae93231663a067f76bf6badb11ca5d3e9',1,'kuzu::common::Value::Val']]],
-  ['uint8val_3',['uint8Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html#a203724b76272f320ffe67dcc35b3f629',1,'kuzu::common::Value::Val']]],
-  ['uncompressed_4',['uncompressed',['../classkuzu_1_1storage_1_1_compressed_functor.html#a21a0aba199fc3d8576321632bf166ce4',1,'kuzu::storage::CompressedFunctor']]],
-  ['undefined_5fcast_5fcost_5',['UNDEFINED_CAST_COST',['../namespacekuzu_1_1common.html#a02ac7f88b0b627766181f4756f78d61b',1,'kuzu::common']]],
-  ['uniquename_6',['uniqueName',['../classkuzu_1_1binder_1_1_expression.html#a2228fc01368489a1504c6002f1e3090c',1,'kuzu::binder::Expression']]],
-  ['unlocked_7',['UNLOCKED',['../classkuzu_1_1storage_1_1_page_state.html#a417f93d16a46f7263d089c2a2972e9af',1,'kuzu::storage::PageState']]],
-  ['updatechunks_8',['updateChunks',['../classkuzu_1_1storage_1_1_local_node_group.html#aa57b51ba67dbd1e00a7a492bec907c7b',1,'kuzu::storage::LocalNodeGroup']]],
-  ['uuid_5fstring_5flength_9',['UUID_STRING_LENGTH',['../structkuzu_1_1common_1_1_u_u_i_d.html#aaa4f12ffb8447f855507a8a1ae4f8ceb',1,'kuzu::common::UUID']]]
+  ['table_0',['table',['../classkuzu_1_1storage_1_1_local_table.html#a8defdc9db68b3305383330c8877c7078',1,'kuzu::storage::LocalTable']]],
+  ['tablefunc_1',['tableFunc',['../structkuzu_1_1function_1_1_table_function.html#a70af6be23f2090d58dd5d47cb0338ac3',1,'kuzu::function::TableFunction']]],
+  ['tableid_2',['tableID',['../structkuzu_1_1common_1_1internal_i_d__t.html#a984266dadf8433ca13b9df58e5e54d00',1,'kuzu::common::internalID_t::tableID'],['../classkuzu_1_1storage_1_1_local_table_data.html#acd1797fd55eee6ea731b0b6d295f0251',1,'kuzu::storage::LocalTableData::tableID']]],
+  ['tag_5ffield_5fidx_3',['TAG_FIELD_IDX',['../structkuzu_1_1common_1_1_union_type.html#a62012c5635ea49f120eac6eb1991f0b7',1,'kuzu::common::UnionType']]],
+  ['tag_5ffield_5fname_4',['TAG_FIELD_NAME',['../structkuzu_1_1common_1_1_union_type.html#a79fcf5b031284a31070234307b5637fd',1,'kuzu::common::UnionType']]],
+  ['tag_5ffield_5ftype_5',['TAG_FIELD_TYPE',['../structkuzu_1_1common_1_1_union_type.html#a6fb1a224d16e45c5154c7c316cd52bec',1,'kuzu::common::UnionType']]],
+  ['thread_5fsleep_5ftime_5fwhen_5fwaiting_5fin_5fmicros_6',['THREAD_SLEEP_TIME_WHEN_WAITING_IN_MICROS',['../namespacekuzu_1_1common.html#a8806bd2d9a262053e8a29cfc13904af5',1,'kuzu::common']]],
+  ['timeout_5fin_5fms_7',['TIMEOUT_IN_MS',['../structkuzu_1_1main_1_1_client_config_default.html#a16ef0b755303525482a125697e83b1c1',1,'kuzu::main::ClientConfigDefault']]],
+  ['timeoutinms_8',['timeoutInMS',['../structkuzu_1_1main_1_1_client_config.html#ae3331b1a03a070f79ea1c43b3aded1d9',1,'kuzu::main::ClientConfig']]],
+  ['timer_9',['timer',['../structkuzu_1_1main_1_1_active_query.html#ac1ba609eb92578a2b241578075cf809b',1,'kuzu::main::ActiveQuery::timer'],['../classkuzu_1_1common_1_1_time_metric.html#afa1a933d0e0def7d5fea21a8f8b13182',1,'kuzu::common::TimeMetric::timer']]]
 ];

@@ -4,6 +4,7 @@ var namespacekuzu =
     [ "binder", "namespacekuzu_1_1binder.html", "namespacekuzu_1_1binder" ],
     [ "catalog", "namespacekuzu_1_1catalog.html", null ],
     [ "common", "namespacekuzu_1_1common.html", "namespacekuzu_1_1common" ],
+    [ "evaluator", "namespacekuzu_1_1evaluator.html", null ],
     [ "extension", "namespacekuzu_1_1extension.html", null ],
     [ "function", "namespacekuzu_1_1function.html", "namespacekuzu_1_1function" ],
     [ "main", "namespacekuzu_1_1main.html", "namespacekuzu_1_1main" ],
