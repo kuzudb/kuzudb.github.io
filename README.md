@@ -3,10 +3,12 @@
 This repository hosts the source code for [Kùzu website](https://kuzudb.github.io).
 
 ## Test Locally
-Since this website is a static website, you can test it with any static web server. For example, you can use the one provided by Python:
+This website is built using [Jekyll](https://jekyllrb.com/). To test the website locally, you need to have Ruby installed. You can follow the instructions [here](https://jekyllrb.com/docs/installation/) to install Ruby and Jekyll.
 
+After installing Ruby and Jekyll, you can run the following commands to test the website locally:
 ```bash
-python3 -m http.server
+bundle install
+bundle exec jekyll serve
 ```
 
 ## Add Content
