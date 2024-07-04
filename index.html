@@ -32,57 +32,13 @@
 
       <!-- Main -->
       <div id="main">
-        <!-- Introduction -->
-        <section id="intro" class="main">
-          <header class="major"></header>
-          <div class="spotlight">
-            <div class="spotlight-content">
-              <div>
-                <p class="headline">
-                  A <b>highly scalable</b>, <b>extremely fast</b>,
-                  <b>easy-to-use</b> embeddable graph database
-                </p>
-                <ul class="icons main-buttons">
-                  <li>
-                    <a
-                      href="//demo.kuzudb.com"
-                      target="_blank"
-                      class="button primary large"
-                      >Try Kùzu</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="//docs.kuzudb.com"
-                      class="button large docs-button"
-                      >Docs
-                    </a>
-                  </li>
-                </ul>
-              </div>
+        <!-- introduction section -->
+        {% include intro.html %}
 
-              <div class="logo-container">
-                <ul class="icons icons-social">
-                  {% for social in site.data.social %}
-                  <li>
-                    <a
-                      href="{{ social.url }}"
-                      class="icon fa-brands fa-{{ social.icon }} alt"
-                      ><span class="label">{{ social.name }}</span></a
-                    >
-                  </li>
-                  {% endfor %}
-                </ul>
-                <img class="logo" src="/img/kuzu-logo.png" alt="Kùzu Logo" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- download Section -->
+        <!-- download section -->
         {% include download.html %}
 
-        <!-- features Section -->
+        <!-- features section -->
         <section id="features" class="main special">
           <header class="major">
             <h2>Core Features</h2>
@@ -162,7 +118,7 @@
         planning new use cases on top of it."
         </section>
         
-        <!-- Team Members Section -->
+        <!-- team members section -->
         {% include team.html %}
       </div>
 
