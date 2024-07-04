@@ -9,7 +9,6 @@
     $body = $("body"),
     $main = $("#main");
 
-  $body.hide();
   // Breakpoints.
   breakpoints({
     xlarge: ["1281px", "1680px"],
@@ -66,11 +65,15 @@
       })
       .each(function () {
         var $this = $(this),
-          id = $this.attr("href"),
+          id = $this.attr("href");
+        var $section;
+        try {
           $section = $(id);
+        } catch (e) {
+        }
 
         // No section for this link? Bail.
-        if ($section.length < 1) return;
+        if (!$section || ($section.length < 1)) return;
 
         // Scrollex.
         $section.scrollex({

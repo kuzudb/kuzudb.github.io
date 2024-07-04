@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <!--
 	Stellar by HTML5 UP
@@ -5,38 +7,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-  <head>
-    <title>Kùzu</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Kùzu" />
-    <meta
-      property="og:image"
-      content="https://kuzudb.com/img/logo-u-with-orange-tick.jpg"
-    />
-    <meta property="og:type" content="article" />
-    <meta name="twitter:card" content="summary" />
-    <meta
-      property="twitter:image"
-      content="https://kuzudb.com/img/logo-u-with-orange-tick.jpg"
-    />
-    <meta name="twitter:site" content="@kuzudb" />
-
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
-  </head>
+  {% include head.html %}
   <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
@@ -92,41 +63,15 @@
 
               <div class="logo-container">
                 <ul class="icons icons-social">
+                  {% for social in site.data.social %}
                   <li>
                     <a
-                      href="https://github.com/kuzudb/kuzu"
-                      class="icon fa-brands fa-github alt"
-                      ><span class="label">GitHub</span></a
+                      href="{{ social.url }}"
+                      class="icon fa-brands fa-{{ social.icon }} alt"
+                      ><span class="label">{{ social.name }}</span></a
                     >
                   </li>
-                  <li>
-                    <a
-                      href="https://twitter.com/kuzudb"
-                      class="icon fa-brands fa-twitter alt"
-                      ><span class="label">Twitter</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://discord.gg/VtX2gw9Rug"
-                      class="icon fa-brands fa-discord alt"
-                      ><span class="label">Discord</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.youtube.com/@KuzuDB/"
-                      class="icon fa-brands fa-youtube alt"
-                      ><span class="label">YouTube</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://space.bilibili.com/410352593"
-                      class="icon fa-brands fa-bilibili alt"
-                      ><span class="label">Bilibili</span></a
-                    >
-                  </li>
+                  {% endfor %}
                 </ul>
                 <img class="logo" src="/img/kuzu-logo.png" alt="Kùzu Logo" />
               </div>
@@ -135,29 +80,7 @@
         </section>
 
         <!-- download Section -->
-        <section id="download" class="main special">
-          <header class="major">
-            <h2>Download</h2>
-          </header>
-          <div>
-            <ul class="actions fit small" id="download-language"></ul>
-          </div>
-          <div id="download-platform-container" style="display: none">
-            <ul class="actions fit small" id="download-platform"></ul>
-          </div>
-          <div id="download-command-container" style="display: none">
-            <pre
-              class="download-command-container-pre"
-            ><code id="download-command"></code></pre>
-          </div>
-          <small class="detected-platform">
-            <b>Version:</b>
-            <span id="version-span"></span>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <b>System detected:</b>
-            <span id="detected-platform-span"></span>
-          </small>
-        </section>
+        {% include download.html %}
 
         <!-- features Section -->
         <section id="features" class="main special">
@@ -231,24 +154,16 @@
             </ul>
           </footer>
         </section>
-        <!-- Team Members Section -->
-        <section id="team" class="main special">
-          <header class="major">
-            <h2>Team</h2>
-          </header>
-          <div class="about">
-            <p>
-              Kùzu is built by a team of developers at Kùzu Inc, a company based
-              in Waterloo, Ontario, Canada.
-              <br />
-              Reach out to us at
-              <a href="mailto:contact@kuzudb.com">contact@kuzudb.com</a>, or on
-              <a href="https://discord.gg/VtX2gw9Rug">Discord</a>.
-            </p>
-          </div>
-          <br />
-          <div id="team-members"></div>
+
+        <section class="main special">
+         "In line with our philosophy of "building a lakehouse from spare parts", we were looking for an in-process graph database
+        to run lineage queries: Kuzu is ver fast and has great foundations as the team behind it, and handles all the strange
+        inferences we throw at it. So far, we have been extremely happy with both the library and the support, and we are now
+        planning new use cases on top of it."
         </section>
+        
+        <!-- Team Members Section -->
+        {% include team.html %}
       </div>
 
       <!-- Footer -->
@@ -281,10 +196,10 @@
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/ua-parser.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- <script src="assets/js/team.js"></script> -->
+    <script src="assets/js/ua-parser.min.js"></script>
     <script src="assets/js/download.js"></script>
-    <script src="assets/js/team.js"></script>
   </body>
 </html>

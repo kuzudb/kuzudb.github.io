@@ -1,0 +1,31 @@
+<section id="team" class="main special">
+  <header class="major">
+    <h2>Team</h2>
+  </header>
+  <div class="about">
+    <p>
+      Kùzu is built by a team of developers at Kùzu Inc, a company based
+      in Waterloo, Ontario, Canada.
+      <br />
+      Reach out to us at
+      <a href="mailto:contact@kuzudb.com">contact@kuzudb.com</a>, or on
+      <a href="https://discord.gg/VtX2gw9Rug">Discord</a>.
+    </p>
+  </div>
+  <br />
+  <div id="team-members">
+    {% for member in site.data.team %}
+    <div class="team-member-profile">
+      <div class="team-member-profile-wrapper"><img src="
+                {{ member.img }}" alt="{{ member.name }}">
+        <div class="team-member-profile-text-wrapper">
+          <h4>{{ member.name }}</h4>
+          <p>
+            {{ member.title }}
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
