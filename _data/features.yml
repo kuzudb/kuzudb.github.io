@@ -1,0 +1,36 @@
+- title: Graph-based Modeling & Querying
+  icon: fa-solid fa-code
+  style: 1
+  subtitles:
+    - content: Property graph data model
+    - content: Cypher query language
+
+- title: Graph-optimized Storage
+  icon: fa-solid fa-database
+  style: 2
+  subtitles:
+    - content: Columnar storage
+    - content: Columnar sparse row-based adjacency list/join indices
+
+- title: Graph-optimized Query Execution
+  icon: fa-solid fa-bolt-lightning
+  style: 3
+  subtitles:
+    - content: Vectorized and factorized query processor
+    - content: Novel and very fast join algorithms
+    - content: Multi-core query parallelism
+  
+- title: Simple and Feature-rich
+  icon: fa-solid fa-angle-right
+  style: 4
+  subtitles:
+    - content: Embeddable, serverless integration into applications
+    - content: Serializable transactions
+    - content: Zero-copy integration with Python graph data science libraries, such as Pytorch Geometric and NetworkX
+
+- title: Free
+  icon: fa-solid fa-brands fa-osi
+  style: 5
+  subtitles:
+    - content: Open-sourced
+    - content: Permissive MIT License

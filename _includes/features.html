@@ -1,0 +1,23 @@
+<section id="features" class="main special">
+  <header class="major">
+    <h2>Core Features</h2>
+  </header>
+  <ul class="features">
+    {% for feature in site.data.features %}
+    <li>
+      <span class="icon major style{{ feature.style }} {{ feature.icon }}"></span>
+      <h3>{{ feature.title }}</h3>
+      {% for subtitle in feature.subtitles %}
+      <div>{{ subtitle.content }}</div>
+      {% endfor %}
+    </li>
+    {% endfor %}
+  </ul>
+  <footer class="major">
+    <ul class="actions special">
+      <li>
+        <a href="/blog/what-every-gdbms-should-do-and-vision.html" class="button">Learn More</a>
+      </li>
+    </ul>
+  </footer>
+</section>

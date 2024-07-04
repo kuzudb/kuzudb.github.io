@@ -1,0 +1,34 @@
+- title: Introduction
+  href: "#intro"
+  class: active link
+  target: self
+
+- title: Download
+  href: "#download"
+  class: link
+  target: self
+
+- title: Core Features
+  href: "#features"
+  class: link
+  target: self
+
+- title: Team
+  href: "#team"
+  class: link
+  target: self
+
+- title: Docs
+  href: "//docs.kuzudb.com"
+  class: link
+  target: _blank
+
+- title: Blog
+  href: "//blog.kuzudb.com"
+  class: link
+  target: _blank
+
+- title: Try Kùzu
+  href: "//demo.kuzudb.com"
+  class: button primary
+  target: _blank

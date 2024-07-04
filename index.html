@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <!--
 	Stellar by HTML5 UP
@@ -5,274 +7,30 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-  <head>
-    <title>Kùzu</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Kùzu" />
-    <meta
-      property="og:image"
-      content="https://kuzudb.com/img/logo-u-with-orange-tick.jpg"
-    />
-    <meta property="og:type" content="article" />
-    <meta name="twitter:card" content="summary" />
-    <meta
-      property="twitter:image"
-      content="https://kuzudb.com/img/logo-u-with-orange-tick.jpg"
-    />
-    <meta name="twitter:site" content="@kuzudb" />
-
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
-  </head>
+  {% include head.html %}
   <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
       <!-- Nav -->
-      <nav id="nav">
-        <ul>
-          <li><a href="#intro" class="active link">Introduction</a></li>
-          <li><a href="#download" class="link">Download</a></li>
-          <li><a href="#features" class="link">Core Features</a></li>
-          <li><a href="#team" class="link">Team</a></li>
-          <li>
-            <a class="link" href="//docs.kuzudb.com">Docs</a>
-          </li>
-          <li><a class="link" href="//blog.kuzudb.com">Blog</a></li>
-          <li>
-            <a href="//demo.kuzudb.com" class="button primary" target="_blank"
-              >Try Kùzu</a
-            >
-          </li>
-        </ul>
-      </nav>
+      {% include nav.html %}
 
       <!-- Main -->
       <div id="main">
-        <!-- Introduction -->
-        <section id="intro" class="main">
-          <header class="major"></header>
-          <div class="spotlight">
-            <div class="spotlight-content">
-              <div>
-                <p class="headline">
-                  A <b>highly scalable</b>, <b>extremely fast</b>,
-                  <b>easy-to-use</b> embeddable graph database
-                </p>
-                <ul class="icons main-buttons">
-                  <li>
-                    <a
-                      href="//demo.kuzudb.com"
-                      target="_blank"
-                      class="button primary large"
-                      >Try Kùzu</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="//docs.kuzudb.com"
-                      class="button large docs-button"
-                      >Docs
-                    </a>
-                  </li>
-                </ul>
-              </div>
+        <!-- introduction section -->
+        {% include intro.html %}
 
-              <div class="logo-container">
-                <ul class="icons icons-social">
-                  <li>
-                    <a
-                      href="https://github.com/kuzudb/kuzu"
-                      class="icon fa-brands fa-github alt"
-                      ><span class="label">GitHub</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://twitter.com/kuzudb"
-                      class="icon fa-brands fa-twitter alt"
-                      ><span class="label">Twitter</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://discord.gg/VtX2gw9Rug"
-                      class="icon fa-brands fa-discord alt"
-                      ><span class="label">Discord</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.youtube.com/@KuzuDB/"
-                      class="icon fa-brands fa-youtube alt"
-                      ><span class="label">YouTube</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://space.bilibili.com/410352593"
-                      class="icon fa-brands fa-bilibili alt"
-                      ><span class="label">Bilibili</span></a
-                    >
-                  </li>
-                </ul>
-                <img class="logo" src="/img/kuzu-logo.png" alt="Kùzu Logo" />
-              </div>
-            </div>
-          </div>
-        </section>
+        <!-- download section -->
+        {% include download.html %}
 
-        <!-- download Section -->
-        <section id="download" class="main special">
-          <header class="major">
-            <h2>Download</h2>
-          </header>
-          <div>
-            <ul class="actions fit small" id="download-language"></ul>
-          </div>
-          <div id="download-platform-container" style="display: none">
-            <ul class="actions fit small" id="download-platform"></ul>
-          </div>
-          <div id="download-command-container" style="display: none">
-            <pre
-              class="download-command-container-pre"
-            ><code id="download-command"></code></pre>
-          </div>
-          <small class="detected-platform">
-            <b>Version:</b>
-            <span id="version-span"></span>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <b>System detected:</b>
-            <span id="detected-platform-span"></span>
-          </small>
-        </section>
+        <!-- features section -->
+        {% include features.html %}
 
-        <!-- features Section -->
-        <section id="features" class="main special">
-          <header class="major">
-            <h2>Core Features</h2>
-          </header>
-          <ul class="features">
-            <li>
-              <span class="icon major style1 fa-solid fa-code"></span>
-              <h3>Graph-based Modeling &nbsp;&amp;&nbsp; Querying</h3>
-              <p>
-                Property graph data model
-                <br />
-                Cypher query language
-              </p>
-            </li>
-
-            <li>
-              <span class="icon major style2 fa-solid fa-database"></span>
-              <h3>Graph-optimized Storage</h3>
-              <p>
-                Columnar storage
-                <br />
-                Columnar sparse row-based adjacency list/join indices
-              </p>
-            </li>
-            <li>
-              <span class="icon major style3 fa-solid fa-bolt-lightning"></span>
-              <h3>Graph-optimized Query Execution</h3>
-              <p>
-                Vectorized and factorized query processor
-                <br />
-                Novel and very fast join algorithms
-                <br />
-                Multi-core query parallelism
-              </p>
-            </li>
-
-            <li>
-              <span class="icon major style4 fa-solid fa-angle-right"></span>
-              <h3>Simple and Feature-rich</h3>
-              <p>
-                Embeddable, serverless integration into applications
-                <br />
-                Serializable transactions
-                <br />
-                Zero-copy integration with Python graph data science libraries,
-                such as Pytorch Geometric and NetworkX
-              </p>
-            </li>
-
-            <li>
-              <span class="icon major style5 fa-solid fa-brands fa-osi"></span>
-              <h3>Free</h3>
-              <p>
-                Open-sourced
-                <br />
-                Permissive MIT License
-              </p>
-            </li>
-          </ul>
-          <footer class="major">
-            <ul class="actions special">
-              <li>
-                <a
-                  href="/blog/what-every-gdbms-should-do-and-vision.html"
-                  class="button"
-                  >Learn More</a
-                >
-              </li>
-            </ul>
-          </footer>
-        </section>
-        <!-- Team Members Section -->
-        <section id="team" class="main special">
-          <header class="major">
-            <h2>Team</h2>
-          </header>
-          <div class="about">
-            <p>
-              Kùzu is built by a team of developers at Kùzu Inc, a company based
-              in Waterloo, Ontario, Canada.
-              <br />
-              Reach out to us at
-              <a href="mailto:contact@kuzudb.com">contact@kuzudb.com</a>, or on
-              <a href="https://discord.gg/VtX2gw9Rug">Discord</a>.
-            </p>
-          </div>
-          <br />
-          <div id="team-members"></div>
-        </section>
+        <!-- team members section -->
+        {% include team.html %}
       </div>
 
       <!-- Footer -->
-      <footer id="footer">
-        <section>
-          <h2>Contact</h2>
-          <dl class="alt">
-            <dt>Email</dt>
-            <dd><a href="mailto:contact@kuzudb.com">contact@kuzudb.com</a></dd>
-          </dl>
-        </section>
-        <p class="copyright">
-          Kù-zu ('bright' + 'to know') is a Sumerian word for "wisdom".
-          <br />
-          &copy; Kùzu Team. Design:
-          <a href="https://html5up.net">HTML5 UP</a>.
-          <br />
-          <a
-            href="https://www.freepik.com/free-vector/white-background-with-low-poly-digital-lines-connection_8562954.htm#query=network&position=22&from_view=search&track=country_rows_v2"
-            >Background image by starline</a
-          >
-          on Freepik
-        </p>
-      </footer>
+      {% include footer.html %}
     </div>
 
     <!-- Scripts -->
@@ -281,10 +39,9 @@
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/ua-parser.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/ua-parser.min.js"></script>
     <script src="assets/js/download.js"></script>
-    <script src="assets/js/team.js"></script>
   </body>
 </html>
