@@ -4044,3 +4044,34 @@ small.detected-platform {
 pre.download-command-container-pre {
   margin-bottom: 0.8em;
 }
+
+#quotes{
+  background-color: #dc6428;
+  display: flex;
+  flex-direction: row;
+}
+
+.quotes-start{
+  color: white;
+  font-size: 8em;
+  font-weight: 300;
+}
+
+.quotes-end {
+  color: white;
+  font-size: 8em;
+  font-weight: 300;
+  margin-left: auto;
+}
+
+#quotes>div {
+  display: flex;
+  flex-direction: column;
+}
+
+#quotes>div>p{
+  font-size: 1.5em;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
