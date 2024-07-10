@@ -1,13 +1,22 @@
 <section id="quotes" class="main quotes">
-    <div class="quote">
-        <i class="fa-solid fa-quote-left"></i>
-            <p>
-                In line with our philosophy of "building a lakehouse from spare parts", we were looking for an in-process graph database
-                to run lineage queries: Kuzu is ver fast and has great foundations as the team behind it, and handles all the strange
-                inferences we throw at it. So far, we have been extremely happy with both the library and the support, and we are now
-                planning new use cases on top of it."
-            </p>
-        <i class="fa-solid fa-quote-right"></i>
-    </div>
+  <div class="buttons" id="quote-buttons">
+    <i class="fa-solid fa-chevron-up" id="next-quote"></i>
+    <i class="fa-solid fa-chevron-down" id="prev-quote"></i> 
+  </div>
+  <div class="quote">
+    <i class="fa-solid fa-quote-left"></i>
+    <p id="quote-text">
+    </p>
+    <i class="fa-solid fa-quote-right"></i>
+    <small class="name-title">
+      <span id="quote-name"></span> 
+      <a href="#"
+        target="_blank" id="quote-company"></a>
+    </small>
+  </div>
 
+  <div class="bio">
+    <img id="quote-img" width="320">
+    <img id="quote-logo" width="320">
+  </div>
 </section>

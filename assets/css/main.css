@@ -4045,23 +4045,12 @@ pre.download-command-container-pre {
   margin-bottom: 0.8em;
 }
 
-#quotes{
+#main>.main.quotes{
   background-color: #dc6428;
   display: flex;
   flex-direction: row;
-}
-
-.quotes-start{
-  color: white;
-  font-size: 8em;
-  font-weight: 300;
-}
-
-.quotes-end {
-  color: white;
-  font-size: 8em;
-  font-weight: 300;
-  margin-left: auto;
+  padding-top:0;
+  padding-bottom: 0;
 }
 
 #quotes>div {
@@ -4069,9 +4058,58 @@ pre.download-command-container-pre {
   flex-direction: column;
 }
 
-#quotes>div>p{
+#quotes>div.quote{
+  margin-right: 30px;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#quotes>div.quote>p{
   font-size: 1.5em;
   color: white;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#quotes>div.buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+#quotes>div.buttons>i{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+#quotes .fa-quote-right{
+  text-align: right;
+}
+
+#quotes i{
+  color: white;
+}
+
+#quotes h3{
+  color:#dddddd;
+}
+
+#quotes>div.bio>p.name-title{
+  font-size: 1em;
+  margin-bottom: 4px;
+  background-color: white;
+  position: absolute;
+}
+
+#quotes>div.bio>img{
+  margin-bottom: 0;
+  background-color: white;
+}
+
+#quotes>div.quote>small{
+  color: white;
 }
