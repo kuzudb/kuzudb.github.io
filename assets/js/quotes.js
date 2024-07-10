@@ -7,14 +7,6 @@ const quotes = [
     img: '/img/quotes/jacopo.jpg',
     logo: 'img/quotes/bauplan-logo.png'
   },
-  //   {
-  //   quote: 'What the fuck?',
-  //   name: 'Nobody',
-  //   company: 'Whatever',
-  //   link: 'https://www.bauplanlabs.com/',
-  //   img: '/img/quotes/jacopo.jpg',
-  //   logo: 'img/quotes/bauplan-logo.png'
-  // }
 ]
 
 const quoteText = $('#quote-text');
