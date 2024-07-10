@@ -4038,9 +4038,9 @@ div.logo-container {
     display: inline-block;
   }
 
-        .spotlight-content .button.large {
-          font-size: 1.25em;
-        }
+  .spotlight-content .button.large {
+    font-size: 1.25em;
+  }
 }
 
 small.detected-platform {
@@ -4161,6 +4161,8 @@ pre.download-command-container-pre {
 @media screen and (max-width: 736px) {
   #main>.main.quotes {
     flex-direction: column-reverse;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   #quotes>div.quote {
