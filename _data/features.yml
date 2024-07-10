@@ -5,17 +5,11 @@
     - content: Property graph data model
     - content: Cypher query language
 
-- title: Graph-optimized Storage
+- title: Graph-optimized Storage & Query Execution
   icon: fa-solid fa-database
   style: 2
   subtitles:
-    - content: Columnar storage
-    - content: Columnar sparse row-based adjacency list/join indices
-
-- title: Graph-optimized Query Execution
-  icon: fa-solid fa-bolt-lightning
-  style: 3
-  subtitles:
+    - content: Columnar storage and indices
     - content: Vectorized and factorized query processor
     - content: Novel and very fast join algorithms
     - content: Multi-core query parallelism

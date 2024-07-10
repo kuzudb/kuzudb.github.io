@@ -2892,16 +2892,9 @@ table.alt tbody tr td {
 }
 
 .features li {
-  width: calc(33.33333% - 2em);
+  width: calc(25% - 2em);
   margin-left: 2em;
-  margin-top: 3em;
   padding: 0;
-}
-
-.features li:nth-child(1),
-.features li:nth-child(2),
-.features li:nth-child(3) {
-  margin-top: 0;
 }
 
 .features li> :last-child {
@@ -4175,10 +4168,12 @@ div.community-item {
   padding: 20px;
 }
 
-div.community-item i{
+div.community-item a{
   font-size: 1.2em;
   text-align: right;
   flex-grow: 1;
+  text-decoration: none;
+  border: none;
 }
 
 div.community-buttons {
@@ -4189,7 +4184,7 @@ div.community-buttons {
   margin-top: 30px;
 }
 
-div.community-buttons>i {
+div.community-buttons>a {
   margin-right: 20px;
   margin-left: 20px;
   font-size: 1.5em;

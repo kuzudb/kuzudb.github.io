@@ -3,18 +3,13 @@
   class: active link
   target: self
 
-- title: Download
-  href: "#download"
-  class: link
-  target: self
-
-- title: Core Features
+- title: Features
   href: "#features"
   class: link
   target: self
 
-- title: Support Options
-  href: "#support"
+- title: Download
+  href: "#download"
   class: link
   target: self
 
@@ -37,6 +32,11 @@
   href: "//blog.kuzudb.com"
   class: link
   target: _blank
+
+- title: Support
+  href: "#support"
+  class: button primary
+  target: self
 
 - title: Try Kùzu
   href: "//demo.kuzudb.com"
