@@ -2,36 +2,36 @@
   url: https://x.com/Jamessandwich/status/1701160520508678388
   name: James McNeill
   handle: Jamessandwich
-  img: https://x.com/Jamessandwich/photo
+  img: /img/community/jamessandwich.jpg
   platform: twitter
 
-- quote: "Finally, a whole host of new technologies from embedded databases (@duckdb, @kuzudb) and open table formats (@ApacheIceberg, @apachehudi) are making it easier to query data in object storage and analyze "small" data on a local machine/single node."
+- quote: Finally, a whole host of new technologies from embedded databases (@duckdb, @kuzudb) and open table formats (@ApacheIceberg, @apachehudi) are making it easier to query data in object storage and analyze "small" data on a local machine/single node.
   url: https://x.com/VinIyengar/status/1724902592030126170
   name: Vinay Iyengar
   handle: VinIyengar
-  img: https://x.com/VinIyengar/photo
-  platform: Twitter
+  img: /img/community/vinIyengar.jpg
+  platform: twitter
 
 - quote: "One of my favorite recent discoveries is @kuzudb. Super lightweight and supports the Cypher query language, such a nice project for graph analytics."
   url: https://x.com/chr_norm/status/1682053731339182080
   name: Chris Norman
   handle: chr_norm
-  img: https://x.com/chr_norm/photo
-  platform: Twitter
+  img: /img/community/chr_norm.jpg
+  platform: twitter
 
 - quote: "Kùzu is a really good graph database. If DuckDB is as an emerging power in the relational database world, there is Kùzu in the GDBMS world, and it is open source and faithful to the basics."
   url: https://jeongiitae.medium.com/you-must-eat-this-graph-news-graph-omakase-2-weeks-may-db41d24b77d2
   name: Jeong Yitae
   handle: jeongiitae
-  img: https://x.com/jandland2/photo
-  platform: Medium
+  img: /img/community/jandland2.jpg
+  platform: medium
 
 - quote: "KuzuDB has straightforward integrations with Polars, NetworkX, Pandas, PyArrow and...Torch Geometric! Meaning that you can export data towards Graph Machine Learning with one method call."
   url: https://www.linkedin.com/posts/francoisvanderseypen_graphmachinelearning-activity-7171385765657075712-3XIY
   name: Francois Vanderseypen
   handle: francoisvanderseypen
-  img: https://media.licdn.com/dms/image/C4E03AQH7AuAk618FXQ/profile-displayphoto-shrink_200_200/0/1543476872514?e=1726099200&v=beta&t=-f4VE5HEojcZp7xb12zfmiF0gMdYH9BlSiIsGnjwPXU
-  platform: LinkedIn
+  img: /img/community/francoisvanderseypen.jpeg
+  platform: linkedin
 
 - quote: |
     Embedded DBs are having a renaissance.
@@ -43,5 +43,5 @@
   url: https://x.com/criccomini/status/1627508372194074624
   name: Chris Riccomini
   handle: criccomini
-  img: https://x.com/criccomini/photo
-  platform: Twitter
+  img: /img/community/criccomini.jpg
+  platform: twitter
