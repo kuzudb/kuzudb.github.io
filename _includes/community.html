@@ -1,0 +1,35 @@
+<section id="community" class="main special">
+  <header class="major">
+    <h2>Our Community</h2>
+  </header>
+  <div class="community-wrapper">
+    {% for post in site.data.community %}
+    <div class="community-item">
+      <div class="community-header">
+        <img src="{{post.img}}" alt="{{post.name}}">
+        <p>
+          <strong> {{post.name}} </strong>
+          <br>
+          <small> @{{post.handle}} </small>
+        </p>
+        <a href="{{post.url}}" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-brands fa-{{post.platform}}"></i></a>
+      </div>
+
+      <p>
+        {{post.quote | newline_to_br}}
+      </p>
+
+    </div>
+    {% endfor %}
+
+  </div>
+  <div class="community-buttons">
+    <i class="fas fa-chevron-left"
+      onclick="document.querySelector('.community-wrapper').scrollBy({left: -400, behavior: 'smooth'})"></i>
+    </i>
+    <i class="fas fa-chevron-right"
+      onclick="document.querySelector('.community-wrapper').scrollBy({left: 400, behavior: 'smooth'})"></i>
+    </i>
+  </div>
+</section>

@@ -2892,16 +2892,9 @@ table.alt tbody tr td {
 }
 
 .features li {
-  width: calc(33.33333% - 2em);
+  width: calc(25% - 2em);
   margin-left: 2em;
-  margin-top: 3em;
   padding: 0;
-}
-
-.features li:nth-child(1),
-.features li:nth-child(2),
-.features li:nth-child(3) {
-  margin-top: 0;
 }
 
 .features li> :last-child {
@@ -2914,6 +2907,10 @@ table.alt tbody tr td {
   }
 
   .features li:nth-child(3) {
+    margin-top: 3em;
+  }
+
+  .features li:nth-child(4) {
     margin-top: 3em;
   }
 }
@@ -3852,7 +3849,6 @@ body.is-preload #header.alt .logo {
   width: 100%;
   margin: 2.5em 0 2em 0;
   font-size: 0.8em;
-  text-align: center;
 }
 
 @media screen and (max-width: 1280px) {
@@ -3968,11 +3964,19 @@ div.logo-container {
   }
 
   .logo {
-    width: 20em;
+    width: 22em;
+  }
+
+  div.logo-container {
+    padding-left: 2em;
   }
 
   section#intro {
     background-position: center;
+  }
+
+  .spotlight-content .button.large {
+    font-size: 1.25em;
   }
 }
 
@@ -3982,15 +3986,19 @@ div.logo-container {
   }
 
   .logo {
-    width: 18em;
+    width: 20em;
   }
 
   div.logo-container {
-    padding-left: 3em;
+    padding-left: 2em;
   }
 
   section#intro {
     background-position: right;
+  }
+
+  .spotlight-content .button.large {
+    font-size: 1em;
   }
 }
 
@@ -4000,11 +4008,11 @@ div.logo-container {
   }
 
   .logo {
-    width: 15em;
+    width: 18em;
   }
 
   div.logo-container {
-    padding-left: 2em;
+    padding-left: 1em;
   }
 }
 
@@ -4029,6 +4037,10 @@ div.logo-container {
   .docs-button {
     display: inline-block;
   }
+
+  .spotlight-content .button.large {
+    font-size: 1.25em;
+  }
 }
 
 small.detected-platform {
@@ -4043,4 +4055,279 @@ small.detected-platform {
 
 pre.download-command-container-pre {
   margin-bottom: 0.8em;
+}
+
+#main>.main.quotes {
+  background-color: #dc6428;
+  display: flex;
+  flex-direction: row;
+  padding-top: 0;
+  padding-bottom: 0;
+  align-items: center;
+}
+
+#quotes>div {
+  display: flex;
+  flex-direction: column;
+}
+
+#quotes>div.quote {
+  margin-right: 30px;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#quotes>div.quote>p {
+  font-size: 1.5em;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#quotes>div.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
+  max-height: 380px;
+}
+
+#quotes>div.buttons>i {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+
+#quotes .fa-quote-right {
+  text-align: right;
+}
+
+#quotes i {
+  color: white;
+}
+
+#quotes h3 {
+  color: #dddddd;
+}
+
+#quotes>div.bio>p.name-title {
+  font-size: 1em;
+  margin-bottom: 4px;
+  background-color: white;
+  position: absolute;
+}
+
+#quotes>div.bio>img {
+  margin-bottom: 0;
+  background-color: white;
+  width: 320px;
+}
+
+#quotes>div.quote>small {
+  color: white;
+}
+
+@media screen and (max-width: 1280px) {
+  #quotes>div.quote>p {
+    font-size: 1.2em;
+  }
+
+  #quotes>div.buttons>i {
+    font-size: 1.5em;
+  }
+
+  #quotes>div.bio>img {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #quotes>div.quote>p {
+    font-size: 1.1em;
+  }
+
+  #quotes>div.buttons>i {
+    font-size: 1.2em;
+  }
+
+  #quotes>div.bio>img {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #main>.main.quotes {
+    flex-direction: column-reverse;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  #quotes>div.quote {
+    margin-right: 0;
+  }
+
+  #quotes>div.bio>img {
+    width: 320px;
+  }
+
+  #quotes>div.bio {
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  #quotes>div.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #quotes>div.buttons i {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1.5em;
+  }
+
+  #quotes>div.quote>p {
+    font-size: 1em;
+  }
+
+  #quotes>div.quote>small {
+    font-size: 0.8em;
+  }
+}
+
+div.support-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+div.support-options>div {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+  border: 1px solid #dc6428;
+  border-radius: 12px;
+  text-align: left;
+  padding: 20px;
+}
+
+div.support-options ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+div.support-options ul .fa-circle-check {
+  color: #8cc665;
+}
+
+div.support-options ul .fa-circle-xmark {
+  color: #f44336;
+}
+
+div.support-options>div:first-child {
+  margin-right: 40px;
+}
+
+div.support-options>div>hr {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+div.support-options>div>h2 {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 736px) {
+  div.support-options {
+    flex-direction: column;
+  }
+
+  div.support-options>div {
+    margin-bottom: 20px;
+  }
+
+  div.support-options>div:first-child {
+    margin-right: 0;
+  }
+}
+
+div.community-wrapper {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+div.community-item {
+  width: 450px;
+  min-width: 450px;
+  margin-right: 20px;
+  text-align: left;
+  border: 1px solid #dc6428;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+div.community-item a {
+  font-size: 1.2em;
+  text-align: right;
+  flex-grow: 1;
+  text-decoration: none;
+  border: none;
+}
+
+div.community-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+div.community-buttons i {
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+div.community-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+div.community-header>p {
+  align-items: center;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+div.community-header>img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 1280px) {
+  div.community-item {
+    width: 400px;
+    min-width: 400px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  div.community-item {
+    width: 325px;
+    min-width: 325px;
+  }
 }
