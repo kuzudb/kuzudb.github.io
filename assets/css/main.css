@@ -4151,6 +4151,20 @@ div.support-options>div>h2 {
   margin-bottom: 0;
 }
 
+@media screen and (max-width: 736px) {
+  div.support-options {
+    flex-direction: column;
+  }
+
+  div.support-options>div {
+    margin-bottom: 20px;
+  }
+
+  div.support-options>div:first-child {
+    margin-right: 0;
+  }
+}
+
 div.community-wrapper {
   display: flex;
   flex-direction: row;
@@ -4184,7 +4198,7 @@ div.community-buttons {
   margin-top: 30px;
 }
 
-div.community-buttons>a {
+div.community-buttons i {
   margin-right: 20px;
   margin-left: 20px;
   font-size: 1.5em;
@@ -4208,4 +4222,18 @@ div.community-header>img{
   width: 80px;
   height: 80px;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 1280px) {
+  div.community-item {
+    width: 400px;
+    min-width: 400px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  div.community-item {
+    width: 300px;
+    min-width: 300px;
+  }
 }
