@@ -4113,3 +4113,47 @@ pre.download-command-container-pre {
 #quotes>div.quote>small{
   color: white;
 }
+
+div.support-options{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+div.support-options>div{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+  border: 1px solid #dc6428;
+  border-radius: 12px;
+  text-align: left;
+  padding: 20px;
+}
+
+div.support-options ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+div.support-options ul .fa-circle-check{
+  color: #8cc665;
+}
+
+div.support-options ul .fa-circle-xmark{
+  color: #f44336;
+}
+
+div.support-options>div:first-child{
+  margin-right: 40px;
+}
+
+div.support-options>div>hr{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+div.support-options>div>h2{
+  margin-bottom: 0;
+}

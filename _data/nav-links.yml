@@ -13,6 +13,16 @@
   class: link
   target: self
 
+- title: Support Options
+  href: "#support"
+  class: link
+  target: self
+
+- title: Community
+  href: "#community"
+  class: link
+  target: self
+
 - title: Team
   href: "#team"
   class: link
