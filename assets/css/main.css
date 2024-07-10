@@ -4327,7 +4327,7 @@ div.community-header>img {
 
 @media screen and (max-width: 736px) {
   div.community-item {
-    width: 300px;
-    min-width: 300px;
+    width: 325px;
+    min-width: 325px;
   }
 }
