@@ -69,8 +69,8 @@ const data = [
   {
     language: "CLI",
     platform: PLATFORMS.mac,
-    link: "brew install kuzu",
-    isLinkAnchor: false,
+    link: DOWNLOAD_LINKS_PREFIX + "kuzu_cli-osx-universal.tar.gz",
+    isLinkAnchor: true,
   },
   {
     language: "CLI",
