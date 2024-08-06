@@ -1,7 +1,8 @@
 var chunked__node__group_8h =
 [
     [ "kuzu::storage::ChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html", "classkuzu_1_1storage_1_1_chunked_node_group" ],
-    [ "kuzu::storage::ChunkedCSRHeader", "structkuzu_1_1storage_1_1_chunked_c_s_r_header.html", "structkuzu_1_1storage_1_1_chunked_c_s_r_header" ],
-    [ "kuzu::storage::ChunkedCSRNodeGroup", "classkuzu_1_1storage_1_1_chunked_c_s_r_node_group.html", "classkuzu_1_1storage_1_1_chunked_c_s_r_node_group" ],
-    [ "kuzu::storage::NodeGroupFactory", "structkuzu_1_1storage_1_1_node_group_factory.html", null ]
+    [ "NodeGroupDataFormat", "chunked__node__group_8h.html#a8ee09a63306f4b06d74338c8466afac6", [
+      [ "REGULAR", "chunked__node__group_8h.html#a8ee09a63306f4b06d74338c8466afac6a820ead78f0fa32544c7ba38fe7ff53d9", null ],
+      [ "CSR", "chunked__node__group_8h.html#a8ee09a63306f4b06d74338c8466afac6a9dbebbc8de3ea0e81606b05de0fff36d", null ]
+    ] ]
 ];

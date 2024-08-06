@@ -7,6 +7,5 @@ var searchData=
   ['path_4',['PATH',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434ba5ffb5f0d0de78321df46fc7c93ca64a3',1,'kuzu::common']]],
   ['pattern_5',['PATTERN',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434ba04ab50cd8ffc1031a09ac85aa6c5f76a',1,'kuzu::common']]],
   ['pointer_6',['POINTER',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741aa5f41c79d3f86121f0f658eba49128d5',1,'kuzu::common::POINTER'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368aa5f41c79d3f86121f0f658eba49128d5',1,'kuzu::common::POINTER']]],
-  ['processor_7',['PROCESSOR',['../structkuzu_1_1common_1_1_logger_constants.html#a6a50e64f8f910b1952b42711ac982c51aee77ccb2e3ca1666637eb898b108fc41',1,'kuzu::common::LoggerConstants']]],
-  ['property_8',['PROPERTY',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434ba77bc4ffc1b6dce554d9dda5d6dea1660',1,'kuzu::common']]]
+  ['property_7',['PROPERTY',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434ba77bc4ffc1b6dce554d9dda5d6dea1660',1,'kuzu::common']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['offset_5fset_5ft_0',['offset_set_t',['../namespacekuzu_1_1storage.html#abfe6867b96f532cbc334c3138d8fe25c',1,'kuzu::storage']]],
-  ['offset_5ft_1',['offset_t',['../namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc',1,'kuzu::common']]],
-  ['offset_5fto_5frow_5fidx_5ft_2',['offset_to_row_idx_t',['../namespacekuzu_1_1storage.html#ab19a7c8c93e12eefabccf660b67ba37a',1,'kuzu::storage']]],
-  ['offset_5fto_5frow_5fidx_5fvec_5ft_3',['offset_to_row_idx_vec_t',['../namespacekuzu_1_1storage.html#acd36f4ad59bae9624e827a56c4435aac',1,'kuzu::storage']]]
+  ['makesignedt_0',['MakeSignedT',['../namespacekuzu_1_1common_1_1numeric__utils.html#afb40995fb4b8cc59c4a0690d998eefb7',1,'kuzu::common::numeric_utils']]],
+  ['makeunsignedt_1',['MakeUnSignedT',['../namespacekuzu_1_1common_1_1numeric__utils.html#a7c1672d6d7495839b3357d007c9321a7',1,'kuzu::common::numeric_utils']]]
 ];

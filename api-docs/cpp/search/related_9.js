@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['recursiverelval_0',['RecursiveRelVal',['../classkuzu_1_1common_1_1_value.html#a28372af3d4c55d6bb6ae87e02fcd2a6e',1,'kuzu::common::Value']]],
-  ['relval_1',['RelVal',['../classkuzu_1_1common_1_1_value.html#a6b325a39ff7cdd7fb391dc659b9d316a',1,'kuzu::common::Value']]]
+  ['nestedval_0',['NestedVal',['../classkuzu_1_1common_1_1_value.html#a54a9b01ab0b18777683864ec7bd6056d',1,'kuzu::common::Value']]],
+  ['nodeval_1',['NodeVal',['../classkuzu_1_1common_1_1_value.html#aa974a30a7bf3aa9df757f3db3c1d9249',1,'kuzu::common::Value']]]
 ];

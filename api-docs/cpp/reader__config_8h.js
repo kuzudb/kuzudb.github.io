@@ -1,5 +1,6 @@
 var reader__config_8h =
 [
+    [ "kuzu::common::FileTypeInfo", "structkuzu_1_1common_1_1_file_type_info.html", "structkuzu_1_1common_1_1_file_type_info" ],
     [ "kuzu::common::FileTypeUtils", "structkuzu_1_1common_1_1_file_type_utils.html", null ],
     [ "kuzu::common::ReaderConfig", "structkuzu_1_1common_1_1_reader_config.html", "structkuzu_1_1common_1_1_reader_config" ],
     [ "FileType", "reader__config_8h.html#a8ff236cfbd7e6125fc976faaf64e4d0e", [
