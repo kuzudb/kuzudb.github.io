@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['relmultiplicity_0',['RelMultiplicity',['../namespacekuzu_1_1common.html#a5a63be7f9acf85aab3ed8c63a859b043',1,'kuzu::common']]]
+  ['logicaltypeid_0',['LogicalTypeID',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741',1,'kuzu::common']]]
 ];

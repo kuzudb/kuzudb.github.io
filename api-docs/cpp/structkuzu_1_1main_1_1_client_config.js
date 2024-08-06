@@ -1,7 +1,9 @@
 var structkuzu_1_1main_1_1_client_config =
 [
+    [ "disableMapKeyCheck", "structkuzu_1_1main_1_1_client_config.html#a17c3afca4265bb61b9363aba60b4dc97", null ],
     [ "enableProgressBar", "structkuzu_1_1main_1_1_client_config.html#ac204d7d4c5f709b789845798cd9ee010", null ],
     [ "enableSemiMask", "structkuzu_1_1main_1_1_client_config.html#a135cd7ce0afd885ca5630f6ca3a2be08", null ],
+    [ "enableZoneMap", "structkuzu_1_1main_1_1_client_config.html#a687616154df1907c9c9d8523cfa9d2ee", null ],
     [ "fileSearchPath", "structkuzu_1_1main_1_1_client_config.html#ab47f537f7d1cf5fdc589321fc5d1e4ee", null ],
     [ "homeDirectory", "structkuzu_1_1main_1_1_client_config.html#a22f31c96831ec0ded1f71c4aedf0eb26", null ],
     [ "numThreads", "structkuzu_1_1main_1_1_client_config.html#a70a8b33ba869b449bbaa011f4179579a", null ],

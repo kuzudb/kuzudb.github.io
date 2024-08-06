@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['loggerenum_0',['LoggerEnum',['../structkuzu_1_1common_1_1_logger_constants.html#a6a50e64f8f910b1952b42711ac982c51',1,'kuzu::common::LoggerConstants']]],
-  ['logicaltypeid_1',['LogicalTypeID',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741',1,'kuzu::common']]]
+  ['expressiontype_0',['ExpressionType',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434b',1,'kuzu::common']]]
 ];

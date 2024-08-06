@@ -1,8 +1,24 @@
 var searchData=
 [
-  ['val_0',['Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html',1,'kuzu::common::Value']]],
-  ['value_1',['Value',['../classkuzu_1_1common_1_1_value.html',1,'kuzu::common']]],
-  ['valuevector_2',['ValueVector',['../classkuzu_1_1common_1_1_value_vector.html',1,'kuzu::common']]],
-  ['version_3',['Version',['../structkuzu_1_1main_1_1_version.html',1,'kuzu::main']]],
-  ['vmregion_4',['VMRegion',['../classkuzu_1_1storage_1_1_v_m_region.html',1,'kuzu::storage']]]
+  ['udf_0',['UDF',['../structkuzu_1_1function_1_1_u_d_f.html',1,'kuzu::function']]],
+  ['unarycastfunctionwrapper_1',['UnaryCastFunctionWrapper',['../structkuzu_1_1function_1_1_unary_cast_function_wrapper.html',1,'kuzu::function']]],
+  ['unarycaststringfunctionwrapper_2',['UnaryCastStringFunctionWrapper',['../structkuzu_1_1function_1_1_unary_cast_string_function_wrapper.html',1,'kuzu::function']]],
+  ['unaryfunctionexecutor_3',['UnaryFunctionExecutor',['../structkuzu_1_1function_1_1_unary_function_executor.html',1,'kuzu::function']]],
+  ['unaryfunctionwrapper_4',['UnaryFunctionWrapper',['../structkuzu_1_1function_1_1_unary_function_wrapper.html',1,'kuzu::function']]],
+  ['unarynestedtypefunctionwrapper_5',['UnaryNestedTypeFunctionWrapper',['../structkuzu_1_1function_1_1_unary_nested_type_function_wrapper.html',1,'kuzu::function']]],
+  ['unaryrdfvariantcastfunctionwrapper_6',['UnaryRdfVariantCastFunctionWrapper',['../structkuzu_1_1function_1_1_unary_rdf_variant_cast_function_wrapper.html',1,'kuzu::function']]],
+  ['unarysequencefunctionwrapper_7',['UnarySequenceFunctionWrapper',['../structkuzu_1_1function_1_1_unary_sequence_function_wrapper.html',1,'kuzu::function']]],
+  ['unarystringfunctionwrapper_8',['UnaryStringFunctionWrapper',['../structkuzu_1_1function_1_1_unary_string_function_wrapper.html',1,'kuzu::function']]],
+  ['unaryudfexecutor_9',['UnaryUDFExecutor',['../structkuzu_1_1function_1_1_unary_u_d_f_executor.html',1,'kuzu::function']]],
+  ['unaryudffunctionwrapper_10',['UnaryUDFFunctionWrapper',['../structkuzu_1_1function_1_1_unary_u_d_f_function_wrapper.html',1,'kuzu::function']]],
+  ['uncompressed_11',['Uncompressed',['../classkuzu_1_1storage_1_1_uncompressed.html',1,'kuzu::storage']]],
+  ['undobuffer_12',['UndoBuffer',['../classkuzu_1_1storage_1_1_undo_buffer.html',1,'kuzu::storage']]],
+  ['undobufferiterator_13',['UndoBufferIterator',['../classkuzu_1_1storage_1_1_undo_buffer_iterator.html',1,'kuzu::storage']]],
+  ['undomemorybuffer_14',['UndoMemoryBuffer',['../classkuzu_1_1storage_1_1_undo_memory_buffer.html',1,'kuzu::storage']]],
+  ['union_5fentry_5ft_15',['union_entry_t',['../structkuzu_1_1common_1_1union__entry__t.html',1,'kuzu::common']]],
+  ['uniontype_16',['UnionType',['../structkuzu_1_1common_1_1_union_type.html',1,'kuzu::common']]],
+  ['unionvector_17',['UnionVector',['../classkuzu_1_1common_1_1_union_vector.html',1,'kuzu::common']]],
+  ['uniqlock_18',['UniqLock',['../structkuzu_1_1common_1_1_uniq_lock.html',1,'kuzu::common']]],
+  ['updateinfo_19',['UpdateInfo',['../classkuzu_1_1storage_1_1_update_info.html',1,'kuzu::storage']]],
+  ['uuid_20',['UUID',['../structkuzu_1_1common_1_1_u_u_i_d.html',1,'kuzu::common']]]
 ];

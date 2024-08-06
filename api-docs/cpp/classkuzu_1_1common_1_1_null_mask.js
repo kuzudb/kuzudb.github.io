@@ -1,7 +1,7 @@
 var classkuzu_1_1common_1_1_null_mask =
 [
     [ "NullMask", "classkuzu_1_1common_1_1_null_mask.html#a588423954b69d774232e50b201cfcdb2", null ],
-    [ "NullMask", "classkuzu_1_1common_1_1_null_mask.html#ad2d17f16b0dd4da5b638b55cd242004a", null ],
+    [ "NullMask", "classkuzu_1_1common_1_1_null_mask.html#a400275d4a26b9a9505096b4c7579c902", null ],
     [ "copyFrom", "classkuzu_1_1common_1_1_null_mask.html#aaefdbba363e495f0aa09ea912f5ac2d8", null ],
     [ "copyFromNullBits", "classkuzu_1_1common_1_1_null_mask.html#a172d229f9ece30e68eda506595420f12", null ],
     [ "getData", "classkuzu_1_1common_1_1_null_mask.html#a667175e0181d6f400ca95076ef42e19e", null ],
