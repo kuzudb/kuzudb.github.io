@@ -1,7 +1,7 @@
 var searchData=
 [
   ['rawname_0',['rawName',['../classkuzu_1_1parser_1_1_parsed_expression.html#a9875f82a562f09f7000bc2e0a7c62d3f',1,'kuzu::parser::ParsedExpression']]],
-  ['readonly_1',['readOnly',['../structkuzu_1_1main_1_1_system_config.html#a1d6b0ac8dc89075229cfca120343c053',1,'kuzu::main::SystemConfig::readOnly'],['../classkuzu_1_1main_1_1_d_b_config.html#a233e2cb115e533396d36e6105ff38d19',1,'kuzu::main::DBConfig::readOnly']]],
+  ['readonly_1',['readOnly',['../structkuzu_1_1main_1_1_system_config.html#a1d6b0ac8dc89075229cfca120343c053',1,'kuzu::main::SystemConfig::readOnly'],['../structkuzu_1_1main_1_1_d_b_config.html#a233e2cb115e533396d36e6105ff38d19',1,'kuzu::main::DBConfig::readOnly']]],
   ['readtopagefunc_2',['readToPageFunc',['../classkuzu_1_1storage_1_1_column.html#a23a47d77a8bc7120645751b86111f401',1,'kuzu::storage::Column']]],
   ['readtovectorfunc_3',['readToVectorFunc',['../classkuzu_1_1storage_1_1_column.html#a8049b5b57777281bca9508e310af5e1b',1,'kuzu::storage::Column']]],
   ['recursive_5fpattern_5ffactor_4',['RECURSIVE_PATTERN_FACTOR',['../structkuzu_1_1main_1_1_client_config_default.html#ad5a53a60d37f25e7d9d07069642413d1',1,'kuzu::main::ClientConfigDefault']]],

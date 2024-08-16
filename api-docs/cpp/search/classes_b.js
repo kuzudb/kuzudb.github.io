@@ -7,5 +7,8 @@ var searchData=
   ['map_5fentry_5ft_4',['map_entry_t',['../structkuzu_1_1common_1_1map__entry__t.html',1,'kuzu::common']]],
   ['maptype_5',['MapType',['../structkuzu_1_1common_1_1_map_type.html',1,'kuzu::common']]],
   ['mapvector_6',['MapVector',['../classkuzu_1_1common_1_1_map_vector.html',1,'kuzu::common']]],
-  ['metric_7',['Metric',['../classkuzu_1_1common_1_1_metric.html',1,'kuzu::common']]]
+  ['maskcollection_7',['MaskCollection',['../classkuzu_1_1common_1_1_mask_collection.html',1,'kuzu::common']]],
+  ['maskdata_8',['MaskData',['../structkuzu_1_1common_1_1_mask_data.html',1,'kuzu::common']]],
+  ['maskutil_9',['MaskUtil',['../structkuzu_1_1common_1_1_mask_util.html',1,'kuzu::common']]],
+  ['metric_10',['Metric',['../classkuzu_1_1common_1_1_metric.html',1,'kuzu::common']]]
 ];

@@ -6,7 +6,7 @@ var classkuzu_1_1main_1_1_database =
     [ "addTableFunction", "classkuzu_1_1main_1_1_database.html#ab11c2eaf70da2d3c9d51eceeb70565ff", null ],
     [ "getCatalog", "classkuzu_1_1main_1_1_database.html#aead78f802ae8ce26c21a553ffb872261", null ],
     [ "getConfig", "classkuzu_1_1main_1_1_database.html#a6b1fcfee54bbb3951650512e6d60baa3", null ],
-    [ "getExtensionOption", "classkuzu_1_1main_1_1_database.html#a0659b0fbab6582db16f1e0e774401296", null ],
+    [ "getExtensionOption", "classkuzu_1_1main_1_1_database.html#a79a972faff979f6850f19d4476a2773d", null ],
     [ "getNextQueryID", "classkuzu_1_1main_1_1_database.html#aa83e94d14ce275738198387c1f8945b5", null ],
     [ "getStorageExtensions", "classkuzu_1_1main_1_1_database.html#a81ca88b4412875eee34d49161219392c", null ],
     [ "registerFileSystem", "classkuzu_1_1main_1_1_database.html#affc81746d037fa5276536b784b7aa1ac", null ],

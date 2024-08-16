@@ -11,5 +11,6 @@ var classkuzu_1_1catalog_1_1_property =
     [ "getPropertyID", "classkuzu_1_1catalog_1_1_property.html#ae6d5b1f9fb1d81170986554116abbbf8", null ],
     [ "getTableID", "classkuzu_1_1catalog_1_1_property.html#a5ae67b72861981a3b8b6437195a37e0f", null ],
     [ "rename", "classkuzu_1_1catalog_1_1_property.html#abcd3d9890a6202345d87d9db8bbc8d5d", null ],
-    [ "serialize", "classkuzu_1_1catalog_1_1_property.html#ab12e52bdd69b8368fa59fc17aa764eb8", null ]
+    [ "serialize", "classkuzu_1_1catalog_1_1_property.html#ab12e52bdd69b8368fa59fc17aa764eb8", null ],
+    [ "setColumnID", "classkuzu_1_1catalog_1_1_property.html#aef1e0d25ce2d9e942c0d5d3a0237e7d1", null ]
 ];

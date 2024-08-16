@@ -17,6 +17,7 @@ var structkuzu_1_1storage_1_1_table_scan_state =
     [ "nodeGroupScanState", "structkuzu_1_1storage_1_1_table_scan_state.html#ab34cacf813771e585d2b49bda0c56cc9", null ],
     [ "outputVectors", "structkuzu_1_1storage_1_1_table_scan_state.html#a388d95596c871b9a3fe2c0e381f3715b", null ],
     [ "rowIdxVector", "structkuzu_1_1storage_1_1_table_scan_state.html#ae45983f414ebf395f8d7a6e5ef67abf1", null ],
+    [ "semiMask", "structkuzu_1_1storage_1_1_table_scan_state.html#ab1ad48c1d5d031280bd7004f69cd7890", null ],
     [ "source", "structkuzu_1_1storage_1_1_table_scan_state.html#a29cf383f9be22bc9c8972f9c36a7941d", null ],
     [ "zoneMapResult", "structkuzu_1_1storage_1_1_table_scan_state.html#a6ebeb142ae9499e0c9952535c5c3ea0c", null ]
 ];

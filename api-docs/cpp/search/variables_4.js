@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data_0',['data',['../structkuzu_1_1common_1_1ku__string__t.html#ac2af1e77131916c2e78ee2b3aaf03601',1,'kuzu::common::ku_string_t::data'],['../structkuzu_1_1storage_1_1_vector_update_info.html#a3717957ce4543b61ab175935dad8750c',1,'kuzu::storage::VectorUpdateInfo::data']]],
+  ['data_0',['data',['../structkuzu_1_1common_1_1ku__string__t.html#ac2af1e77131916c2e78ee2b3aaf03601',1,'kuzu::common::ku_string_t::data'],['../structkuzu_1_1common_1_1_mask_data.html#a09978e3db256c5239a3b54dc326badf9',1,'kuzu::common::MaskData::data'],['../structkuzu_1_1storage_1_1_vector_update_info.html#a3717957ce4543b61ab175935dad8750c',1,'kuzu::storage::VectorUpdateInfo::data']]],
   ['data_5ffile_5fname_1',['DATA_FILE_NAME',['../structkuzu_1_1common_1_1_storage_constants.html#aab47b73903f9a5d742e08a86583fba77',1,'kuzu::common::StorageConstants']]],
   ['datachunk_2',['dataChunk',['../structkuzu_1_1function_1_1_table_func_output.html#a07dedb44df4941ea061b44b33a51ce31',1,'kuzu::function::TableFuncOutput']]],
   ['datafh_3',['dataFH',['../classkuzu_1_1storage_1_1_column.html#ad8a2bb84a66f20919c48a1a6fe1b56ab',1,'kuzu::storage::Column::dataFH'],['../structkuzu_1_1storage_1_1_node_group_checkpoint_state.html#a2e7357ead2d98815e3eb2fae798396b4',1,'kuzu::storage::NodeGroupCheckpointState::dataFH'],['../classkuzu_1_1storage_1_1_table.html#a8a8200414e46495f24b03a2c81fa8763',1,'kuzu::storage::Table::dataFH']]],

@@ -76,7 +76,7 @@ var searchData=
   ['bufferblock_73',['BufferBlock',['../structkuzu_1_1common_1_1_buffer_block.html',1,'kuzu::common::BufferBlock'],['../structkuzu_1_1common_1_1_buffer_block.html#ae705ad73f47be6a0502ff6347c407b4f',1,'kuzu::common::BufferBlock::BufferBlock()']]],
   ['buffermanager_74',['bufferManager',['../classkuzu_1_1storage_1_1_column.html#aebef5f92cb9634e27f872ac994f578d8',1,'kuzu::storage::Column::bufferManager'],['../classkuzu_1_1storage_1_1_table.html#a7358011e63687992b02f01b432e92e9c',1,'kuzu::storage::Table::bufferManager']]],
   ['bufferpoolconstants_75',['BufferPoolConstants',['../structkuzu_1_1common_1_1_buffer_pool_constants.html',1,'kuzu::common']]],
-  ['bufferpoolsize_76',['bufferPoolSize',['../structkuzu_1_1main_1_1_system_config.html#ac553a54c20cc4aa7745e075f8dddd38b',1,'kuzu::main::SystemConfig::bufferPoolSize'],['../classkuzu_1_1main_1_1_d_b_config.html#a402d31f42d922e4e660b6c776df0910a',1,'kuzu::main::DBConfig::bufferPoolSize']]],
+  ['bufferpoolsize_76',['bufferPoolSize',['../structkuzu_1_1main_1_1_system_config.html#ac553a54c20cc4aa7745e075f8dddd38b',1,'kuzu::main::SystemConfig::bufferPoolSize'],['../structkuzu_1_1main_1_1_d_b_config.html#a402d31f42d922e4e660b6c776df0910a',1,'kuzu::main::DBConfig::bufferPoolSize']]],
   ['buffers_77',['buffers',['../struct_arrow_array.html#aa6766338a7beb165e32255cbd641f569',1,'ArrowArray']]],
   ['buffersize_78',['bufferSize',['../classkuzu_1_1storage_1_1_column_chunk_data.html#adcb3c4027a33a03577c9f80bf46a4051',1,'kuzu::storage::ColumnChunkData']]],
   ['build_5fpenalty_79',['BUILD_PENALTY',['../structkuzu_1_1common_1_1_planner_knobs.html#a0dd8e7237763b847d9cc4b02fb7d916c',1,'kuzu::common::PlannerKnobs']]],

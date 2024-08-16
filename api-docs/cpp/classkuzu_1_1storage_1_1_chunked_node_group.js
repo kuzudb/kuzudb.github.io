@@ -1,6 +1,7 @@
 var classkuzu_1_1storage_1_1_chunked_node_group =
 [
     [ "ChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html#a4646ddc141a69da7d49354da04e94592", null ],
+    [ "ChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html#ab4b6bdbdf7f852d672a1f33cc1665a5d", null ],
     [ "ChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html#a635934e44600904521cde6286e9ce55f", null ],
     [ "~ChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html#a14cc559132f4abd535208e52744f3ab7", null ],
     [ "addColumn", "classkuzu_1_1storage_1_1_chunked_node_group.html#a3cebf190cdaf7bc0b78a864bba722aa4", null ],
@@ -13,6 +14,7 @@ var classkuzu_1_1storage_1_1_chunked_node_group =
     [ "finalize", "classkuzu_1_1storage_1_1_chunked_node_group.html#a6a1bd03a18fd0f27bb68ecd11edd4f55", null ],
     [ "flush", "classkuzu_1_1storage_1_1_chunked_node_group.html#ac9eb2411988b9b8406f6333cc821f127", null ],
     [ "flushAsNewChunkedNodeGroup", "classkuzu_1_1storage_1_1_chunked_node_group.html#a83e60a46e65e5da6b5b6ea51c5a64a40", null ],
+    [ "getCapacity", "classkuzu_1_1storage_1_1_chunked_node_group.html#a6e05bf4ea94888bbcbbc76744b802444", null ],
     [ "getColumnChunk", "classkuzu_1_1storage_1_1_chunked_node_group.html#a418133b3c81882f88cd619fff690e2a2", null ],
     [ "getColumnChunk", "classkuzu_1_1storage_1_1_chunked_node_group.html#ad0963cdf918a93abdc287147f044fd05", null ],
     [ "getEstimatedMemoryUsage", "classkuzu_1_1storage_1_1_chunked_node_group.html#a9a4edcfa45f8106a3726b462471ab3d7", null ],
@@ -36,7 +38,7 @@ var classkuzu_1_1storage_1_1_chunked_node_group =
     [ "resetToAllNull", "classkuzu_1_1storage_1_1_chunked_node_group.html#aedfbbe8b61077dd6fa1f6f697d1db9ae", null ],
     [ "resetToEmpty", "classkuzu_1_1storage_1_1_chunked_node_group.html#a388416ebfc8fe112512c70cc4b7e02d8", null ],
     [ "resetVersionAndUpdateInfo", "classkuzu_1_1storage_1_1_chunked_node_group.html#aab3eb06f741c1ebfb31c4f3362acd4e9", null ],
-    [ "resizeChunks", "classkuzu_1_1storage_1_1_chunked_node_group.html#ae4feb9d9f6d48d3f434da18b08950921", null ],
+    [ "resizeChunks", "classkuzu_1_1storage_1_1_chunked_node_group.html#a4fe2df0c8b6951a51e840f71fcdaceed", null ],
     [ "scan", "classkuzu_1_1storage_1_1_chunked_node_group.html#aaf4ced923b625d210928d1abc3a05bee", null ],
     [ "scanCommitted", "classkuzu_1_1storage_1_1_chunked_node_group.html#a52c3877fef54cf84b9f5d2464b15b31a", null ],
     [ "scanUpdates", "classkuzu_1_1storage_1_1_chunked_node_group.html#a49d133393caee0c1e8e3ad7f19bf313b", null ],

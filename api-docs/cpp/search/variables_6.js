@@ -9,7 +9,8 @@ var searchData=
   ['flags_6',['flags',['../struct_arrow_schema.html#a15b2e390fc6708b23ad29c69e136163c',1,'ArrowSchema']]],
   ['floatval_7',['floatVal',['../unionkuzu_1_1storage_1_1_storage_value.html#ace31f1cf2fd1e7508b1768389d1bbda4',1,'kuzu::storage::StorageValue::floatVal'],['../unionkuzu_1_1common_1_1_value_1_1_val.html#ad4f5aaad0bff2b870cb3c35c990db45b',1,'kuzu::common::Value::Val::floatVal']]],
   ['flushbufferfunction_8',['flushBufferFunction',['../classkuzu_1_1storage_1_1_column_chunk_data.html#a7474796e55666566125084a6a07bc20b',1,'kuzu::storage::ColumnChunkData']]],
-  ['format_9',['format',['../struct_arrow_schema.html#ab5d0127ee66cd298683f2a2d2aae5788',1,'ArrowSchema::format'],['../classkuzu_1_1storage_1_1_chunked_node_group.html#a3f811fb9919e09a6c9b44894a0a050ed',1,'kuzu::storage::ChunkedNodeGroup::format'],['../classkuzu_1_1storage_1_1_node_group.html#ab1f2cb5cec1374c338753f77e102fee2',1,'kuzu::storage::NodeGroup::format']]],
-  ['func_10',['func',['../structkuzu_1_1function_1_1_scan_replacement_data.html#ac2b32bb3a35be3768bb25f0d8e528c08',1,'kuzu::function::ScanReplacementData']]],
-  ['functionset_11',['functionSet',['../classkuzu_1_1catalog_1_1_function_catalog_entry.html#a70e6dc4666aece519a73b3952e7b1604',1,'kuzu::catalog::FunctionCatalogEntry']]]
+  ['forcecheckpointonclose_9',['forceCheckpointOnClose',['../structkuzu_1_1main_1_1_d_b_config.html#a1eca6fe16e8c0bf374101c91053441a7',1,'kuzu::main::DBConfig']]],
+  ['format_10',['format',['../struct_arrow_schema.html#ab5d0127ee66cd298683f2a2d2aae5788',1,'ArrowSchema::format'],['../classkuzu_1_1storage_1_1_chunked_node_group.html#a3f811fb9919e09a6c9b44894a0a050ed',1,'kuzu::storage::ChunkedNodeGroup::format'],['../classkuzu_1_1storage_1_1_node_group.html#ab1f2cb5cec1374c338753f77e102fee2',1,'kuzu::storage::NodeGroup::format']]],
+  ['func_11',['func',['../structkuzu_1_1function_1_1_scan_replacement_data.html#ac2b32bb3a35be3768bb25f0d8e528c08',1,'kuzu::function::ScanReplacementData']]],
+  ['functionset_12',['functionSet',['../classkuzu_1_1catalog_1_1_function_catalog_entry.html#a70e6dc4666aece519a73b3952e7b1604',1,'kuzu::catalog::FunctionCatalogEntry']]]
 ];

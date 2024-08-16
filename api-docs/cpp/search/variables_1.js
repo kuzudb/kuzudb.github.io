@@ -8,5 +8,5 @@ var searchData=
   ['altertype_5',['alterType',['../structkuzu_1_1binder_1_1_bound_alter_info.html#aeb138e4150fccf39106a1149e240de78',1,'kuzu::binder::BoundAlterInfo']]],
   ['anonymous_6',['ANONYMOUS',['../structkuzu_1_1common_1_1_internal_keyword.html#af29807735e6856a56eebb4c3d644ad0d',1,'kuzu::common::InternalKeyword']]],
   ['arguments_7',['arguments',['../structkuzu_1_1function_1_1_scalar_bind_func_input.html#ab48f50805e36ddaa6f7e661a45fefd1d',1,'kuzu::function::ScalarBindFuncInput']]],
-  ['autocheckpoint_8',['autoCheckpoint',['../structkuzu_1_1main_1_1_system_config.html#aa59cfd11d41b82ec8ff1ce51a04d131f',1,'kuzu::main::SystemConfig::autoCheckpoint'],['../classkuzu_1_1main_1_1_d_b_config.html#aa1ccadef24eff3ac983b89423b48b9d2',1,'kuzu::main::DBConfig::autoCheckpoint']]]
+  ['autocheckpoint_8',['autoCheckpoint',['../structkuzu_1_1main_1_1_system_config.html#aa59cfd11d41b82ec8ff1ce51a04d131f',1,'kuzu::main::SystemConfig::autoCheckpoint'],['../structkuzu_1_1main_1_1_d_b_config.html#aa1ccadef24eff3ac983b89423b48b9d2',1,'kuzu::main::DBConfig::autoCheckpoint']]]
 ];

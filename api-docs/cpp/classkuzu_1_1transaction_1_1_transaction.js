@@ -8,6 +8,7 @@ var classkuzu_1_1transaction_1_1_transaction =
     [ "getClientContext", "classkuzu_1_1transaction_1_1_transaction.html#aa9f09efe00b4345112811c620d6192d0", null ],
     [ "getCommitTS", "classkuzu_1_1transaction_1_1_transaction.html#a4e2faa51792f5ccc69d823e8ac7b9384", null ],
     [ "getCurrentTS", "classkuzu_1_1transaction_1_1_transaction.html#af78c710bbe21edcbfc47114fcf17cf78", null ],
+    [ "getEstimatedMemUsage", "classkuzu_1_1transaction_1_1_transaction.html#aff72e86b601e807ddea6facaf01f62b4", null ],
     [ "getID", "classkuzu_1_1transaction_1_1_transaction.html#ac0483a499215d9e8823b5390fc54dd8f", null ],
     [ "getLocalStorage", "classkuzu_1_1transaction_1_1_transaction.html#a0669de552abda23213eb6542382cd1b5", null ],
     [ "getMaxNodeOffsetBeforeCommit", "classkuzu_1_1transaction_1_1_transaction.html#a8994ce774b809afb5987df9f8b5cae25", null ],

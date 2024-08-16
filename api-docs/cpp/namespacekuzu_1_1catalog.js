@@ -8,6 +8,9 @@ var namespacekuzu_1_1catalog =
     [ "FunctionEntryTypeUtils", "structkuzu_1_1catalog_1_1_function_entry_type_utils.html", null ],
     [ "Property", "classkuzu_1_1catalog_1_1_property.html", "classkuzu_1_1catalog_1_1_property" ],
     [ "TableCatalogEntry", "classkuzu_1_1catalog_1_1_table_catalog_entry.html", "classkuzu_1_1catalog_1_1_table_catalog_entry" ],
+    [ "TableCatalogEntryEquality", "structkuzu_1_1catalog_1_1_table_catalog_entry_equality.html", "structkuzu_1_1catalog_1_1_table_catalog_entry_equality" ],
+    [ "TableCatalogEntryHasher", "structkuzu_1_1catalog_1_1_table_catalog_entry_hasher.html", "structkuzu_1_1catalog_1_1_table_catalog_entry_hasher" ],
+    [ "table_catalog_entry_set_t", "namespacekuzu_1_1catalog.html#a9b5c846a4292b8d74ac0df007431008a", null ],
     [ "CatalogEntryType", "namespacekuzu_1_1catalog.html#aa9fdcb674691bb2b3b9ffc4cdbefb90e", [
       [ "NODE_TABLE_ENTRY", "namespacekuzu_1_1catalog.html#aa9fdcb674691bb2b3b9ffc4cdbefb90eaadbb3c33d8994e8bb3a2657da3335910", null ],
       [ "REL_TABLE_ENTRY", "namespacekuzu_1_1catalog.html#aa9fdcb674691bb2b3b9ffc4cdbefb90eaaa1c54c04e471f02b2e4abf2f90e7ff8", null ],
