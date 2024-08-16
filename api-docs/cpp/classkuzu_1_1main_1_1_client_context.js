@@ -35,7 +35,7 @@ var classkuzu_1_1main_1_1_client_context =
     [ "hasTimeout", "classkuzu_1_1main_1_1_client_context.html#aeaa6f9fe8e0ab37cecbd990dad55b0cd", null ],
     [ "interrupt", "classkuzu_1_1main_1_1_client_context.html#a9bc4e1b96d9e3baa78c5c83ea3b605c4", null ],
     [ "interrupted", "classkuzu_1_1main_1_1_client_context.html#a8739d0ffb3a9a05a05299e261bddbd53", null ],
-    [ "isOptionSet", "classkuzu_1_1main_1_1_client_context.html#adb60da74b463b7729fb07afbb13153ef", null ],
+    [ "isOptionSet", "classkuzu_1_1main_1_1_client_context.html#a86814cc1020cdc38d7779eee9c79d40c", null ],
     [ "parseQuery", "classkuzu_1_1main_1_1_client_context.html#a859ded26ca80a5b3982faf12c69ae736", null ],
     [ "prepare", "classkuzu_1_1main_1_1_client_context.html#a2d1dc22c3786550882ac1469ded83cd3", null ],
     [ "prepareTest", "classkuzu_1_1main_1_1_client_context.html#a6dbc32c5cc040c993bcec04f6db9045c", null ],

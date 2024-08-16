@@ -104,7 +104,7 @@ var hierarchy =
     [ "kuzu::common::DataChunkState", "classkuzu_1_1common_1_1_data_chunk_state.html", null ],
     [ "kuzu::common::Date", "classkuzu_1_1common_1_1_date.html", null ],
     [ "kuzu::common::date_t", "structkuzu_1_1common_1_1date__t.html", null ],
-    [ "kuzu::main::DBConfig", "classkuzu_1_1main_1_1_d_b_config.html", null ],
+    [ "kuzu::main::DBConfig", "structkuzu_1_1main_1_1_d_b_config.html", null ],
     [ "kuzu::storage::DBFileID", "structkuzu_1_1storage_1_1_d_b_file_i_d.html", null ],
     [ "kuzu::common::DecimalType", "structkuzu_1_1common_1_1_decimal_type.html", null ],
     [ "kuzu::common::Deserializer", "classkuzu_1_1common_1_1_deserializer.html", null ],
@@ -176,6 +176,9 @@ var hierarchy =
     [ "kuzu::common::map_entry_t", "structkuzu_1_1common_1_1map__entry__t.html", null ],
     [ "kuzu::common::MapType", "structkuzu_1_1common_1_1_map_type.html", null ],
     [ "kuzu::common::MapVector", "classkuzu_1_1common_1_1_map_vector.html", null ],
+    [ "kuzu::common::MaskCollection", "classkuzu_1_1common_1_1_mask_collection.html", null ],
+    [ "kuzu::common::MaskData", "structkuzu_1_1common_1_1_mask_data.html", null ],
+    [ "kuzu::common::MaskUtil", "structkuzu_1_1common_1_1_mask_util.html", null ],
     [ "kuzu::common::Metric", "classkuzu_1_1common_1_1_metric.html", [
       [ "kuzu::common::NumericMetric", "classkuzu_1_1common_1_1_numeric_metric.html", null ],
       [ "kuzu::common::TimeMetric", "classkuzu_1_1common_1_1_time_metric.html", null ]
@@ -185,6 +188,10 @@ var hierarchy =
     [ "kuzu::storage::NodeGroupCheckpointState", "structkuzu_1_1storage_1_1_node_group_checkpoint_state.html", null ],
     [ "kuzu::storage::NodeGroupScanResult", "structkuzu_1_1storage_1_1_node_group_scan_result.html", null ],
     [ "kuzu::storage::NodeGroupScanState", "structkuzu_1_1storage_1_1_node_group_scan_state.html", null ],
+    [ "kuzu::common::NodeSemiMask", "classkuzu_1_1common_1_1_node_semi_mask.html", [
+      [ "kuzu::common::NodeOffsetLevelSemiMask", "classkuzu_1_1common_1_1_node_offset_level_semi_mask.html", null ],
+      [ "kuzu::common::NodeVectorLevelSemiMask", "classkuzu_1_1common_1_1_node_vector_level_semi_mask.html", null ]
+    ] ],
     [ "kuzu::common::NodeVal", "classkuzu_1_1common_1_1_node_val.html", null ],
     [ "kuzu::common::NullMask", "classkuzu_1_1common_1_1_null_mask.html", null ],
     [ "kuzu::main::Option", "structkuzu_1_1main_1_1_option.html", [
@@ -237,6 +244,8 @@ var hierarchy =
     [ "kuzu::main::SystemConfig", "structkuzu_1_1main_1_1_system_config.html", null ],
     [ "kuzu::storage::Table", "classkuzu_1_1storage_1_1_table.html", null ],
     [ "kuzu::storage::TableAddColumnState", "structkuzu_1_1storage_1_1_table_add_column_state.html", null ],
+    [ "kuzu::catalog::TableCatalogEntryEquality", "structkuzu_1_1catalog_1_1_table_catalog_entry_equality.html", null ],
+    [ "kuzu::catalog::TableCatalogEntryHasher", "structkuzu_1_1catalog_1_1_table_catalog_entry_hasher.html", null ],
     [ "kuzu::storage::TableDeleteState", "structkuzu_1_1storage_1_1_table_delete_state.html", null ],
     [ "kuzu::function::TableFuncBindInput", "structkuzu_1_1function_1_1_table_func_bind_input.html", [
       [ "kuzu::function::ScanTableFuncBindInput", "structkuzu_1_1function_1_1_scan_table_func_bind_input.html", null ]

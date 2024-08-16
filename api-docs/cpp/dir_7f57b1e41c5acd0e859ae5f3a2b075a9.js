@@ -59,6 +59,7 @@ var dir_7f57b1e41c5acd0e859ae5f3a2b075a9 =
     [ "kuzu_fwd.h", "kuzu__fwd_8h.html", null ],
     [ "local_storage.h", "local__storage_8h.html", "local__storage_8h" ],
     [ "local_table.h", "local__table_8h.html", "local__table_8h" ],
+    [ "mask.h", "mask_8h.html", "mask_8h" ],
     [ "metric.h", "metric_8h.html", "metric_8h" ],
     [ "nested.h", "nested_8h.html", "nested_8h" ],
     [ "node.h", "node_8h.html", "node_8h" ],

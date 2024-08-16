@@ -7,6 +7,7 @@ var classkuzu_1_1storage_1_1_local_table =
     [ "clear", "classkuzu_1_1storage_1_1_local_table.html#ac2508ec0fd0e7d293dd530b669f12d0f", null ],
     [ "constCast", "classkuzu_1_1storage_1_1_local_table.html#a63602eff99de43f31486de64e1819603", null ],
     [ "delete_", "classkuzu_1_1storage_1_1_local_table.html#aa45ebb83c74778701f833994e03f033c", null ],
+    [ "getEstimatedMemUsage", "classkuzu_1_1storage_1_1_local_table.html#af034beba7fee0c286b183f48e3e34749", null ],
     [ "getTableType", "classkuzu_1_1storage_1_1_local_table.html#aaee1ce06b27949ac074610c65fe97d20", null ],
     [ "insert", "classkuzu_1_1storage_1_1_local_table.html#aaebaa2fa139e67512733a759a5dd2a8e", null ],
     [ "ptrCast", "classkuzu_1_1storage_1_1_local_table.html#a5ac0a6612a3ff16e51cc91f0e327e9df", null ],

@@ -29,7 +29,9 @@ var annotated_dup =
         [ "FunctionCatalogEntry", "classkuzu_1_1catalog_1_1_function_catalog_entry.html", "classkuzu_1_1catalog_1_1_function_catalog_entry" ],
         [ "FunctionEntryTypeUtils", "structkuzu_1_1catalog_1_1_function_entry_type_utils.html", null ],
         [ "Property", "classkuzu_1_1catalog_1_1_property.html", "classkuzu_1_1catalog_1_1_property" ],
-        [ "TableCatalogEntry", "classkuzu_1_1catalog_1_1_table_catalog_entry.html", "classkuzu_1_1catalog_1_1_table_catalog_entry" ]
+        [ "TableCatalogEntry", "classkuzu_1_1catalog_1_1_table_catalog_entry.html", "classkuzu_1_1catalog_1_1_table_catalog_entry" ],
+        [ "TableCatalogEntryEquality", "structkuzu_1_1catalog_1_1_table_catalog_entry_equality.html", "structkuzu_1_1catalog_1_1_table_catalog_entry_equality" ],
+        [ "TableCatalogEntryHasher", "structkuzu_1_1catalog_1_1_table_catalog_entry_hasher.html", "structkuzu_1_1catalog_1_1_table_catalog_entry_hasher" ]
       ] ],
       [ "common", "namespacekuzu_1_1common.html", [
         [ "numeric_utils", "namespacekuzu_1_1common_1_1numeric__utils.html", [
@@ -94,9 +96,15 @@ var annotated_dup =
         [ "map_entry_t", "structkuzu_1_1common_1_1map__entry__t.html", "structkuzu_1_1common_1_1map__entry__t" ],
         [ "MapType", "structkuzu_1_1common_1_1_map_type.html", null ],
         [ "MapVector", "classkuzu_1_1common_1_1_map_vector.html", null ],
+        [ "MaskCollection", "classkuzu_1_1common_1_1_mask_collection.html", "classkuzu_1_1common_1_1_mask_collection" ],
+        [ "MaskData", "structkuzu_1_1common_1_1_mask_data.html", "structkuzu_1_1common_1_1_mask_data" ],
+        [ "MaskUtil", "structkuzu_1_1common_1_1_mask_util.html", null ],
         [ "Metric", "classkuzu_1_1common_1_1_metric.html", "classkuzu_1_1common_1_1_metric" ],
         [ "NestedVal", "classkuzu_1_1common_1_1_nested_val.html", null ],
+        [ "NodeOffsetLevelSemiMask", "classkuzu_1_1common_1_1_node_offset_level_semi_mask.html", "classkuzu_1_1common_1_1_node_offset_level_semi_mask" ],
+        [ "NodeSemiMask", "classkuzu_1_1common_1_1_node_semi_mask.html", "classkuzu_1_1common_1_1_node_semi_mask" ],
         [ "NodeVal", "classkuzu_1_1common_1_1_node_val.html", null ],
+        [ "NodeVectorLevelSemiMask", "classkuzu_1_1common_1_1_node_vector_level_semi_mask.html", "classkuzu_1_1common_1_1_node_vector_level_semi_mask" ],
         [ "NullMask", "classkuzu_1_1common_1_1_null_mask.html", "classkuzu_1_1common_1_1_null_mask" ],
         [ "NumericMetric", "classkuzu_1_1common_1_1_numeric_metric.html", "classkuzu_1_1common_1_1_numeric_metric" ],
         [ "OrderByConstants", "structkuzu_1_1common_1_1_order_by_constants.html", null ],
@@ -201,7 +209,7 @@ var annotated_dup =
         [ "ConfigurationOption", "structkuzu_1_1main_1_1_configuration_option.html", "structkuzu_1_1main_1_1_configuration_option" ],
         [ "Connection", "classkuzu_1_1main_1_1_connection.html", "classkuzu_1_1main_1_1_connection" ],
         [ "Database", "classkuzu_1_1main_1_1_database.html", "classkuzu_1_1main_1_1_database" ],
-        [ "DBConfig", "classkuzu_1_1main_1_1_d_b_config.html", "classkuzu_1_1main_1_1_d_b_config" ],
+        [ "DBConfig", "structkuzu_1_1main_1_1_d_b_config.html", "structkuzu_1_1main_1_1_d_b_config" ],
         [ "ExtensionOption", "structkuzu_1_1main_1_1_extension_option.html", "structkuzu_1_1main_1_1_extension_option" ],
         [ "Option", "structkuzu_1_1main_1_1_option.html", "structkuzu_1_1main_1_1_option" ],
         [ "PreparedStatement", "classkuzu_1_1main_1_1_prepared_statement.html", "classkuzu_1_1main_1_1_prepared_statement" ],
