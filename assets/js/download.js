@@ -127,6 +127,18 @@ const data = [
     link: DOWNLOAD_LINKS_PREFIX + "kuzu_java.jar",
     isLinkAnchor: true,
   },
+  {
+    language: "Go",
+    platform: PLATFORMS.mac,
+    link: "go get github.com/kuzudb/go-kuzu",
+    isLinkAnchor: false,
+  },
+  {
+    language: "Go",
+    platform: PLATFORMS.linux,
+    link: "go get github.com/kuzudb/go-kuzu",
+    isLinkAnchor: false,
+  },
 ];
 
 const languages = [...new Set(data.map((item) => item.language))];
