@@ -129,7 +129,7 @@ const data = [
   },
   {
     language: "Java",
-    link: DOWNLOAD_LINKS_PREFIX + "kuzu_java.jar",
+    link: "https://central.sonatype.com/artifact/com.kuzudb/kuzu",
     isLinkAnchor: true,
   },
 ];
