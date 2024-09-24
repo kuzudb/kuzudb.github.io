@@ -16,31 +16,35 @@ const resetDemoModal = () => {
     resetErrors();
     demoNameInput.val('');
     demoEmailInput.val('');
-    loadInfo();
+    loadDemoInfo();
 };
 
 const closeDemoModal = () => {
     $.modal.close();
 };
 
-const saveInfo = (name, email) => {
-    window.localStorage.setItem('demoName', name);
-    window.localStorage.setItem('demoEmail', email);
-};
-
-const loadInfo = () => {
+const loadDemoInfo = () => {
     const name = window.localStorage.getItem('demoName');
     const email = window.localStorage.getItem('demoEmail');
+    const retrieved = {};
     if (name) {
+        retrieved.name = name;
         demoNameInput.val(name);
     }
     if (email) {
+        retrieved.email = email;
         demoEmailInput.val(email);
     }
+    return retrieved;
 };
 
 demoModalOpenButtons.on('click', e => {
     e.preventDefault();
+    const retrieved = loadDemoInfo();
+    if (retrieved.name && retrieved.email) {
+        window.open('//demo.kuzudb.com', '_blank');
+        return;
+    }
     resetDemoModal();
     demoModal.modal();
 });
@@ -59,16 +63,36 @@ demoModalSubmitButton.on('click', e => {
     if (name === '') {
         demoErrorName.show();
         valid = false;
+        window.localStorage.removeItem('demoName');
+    } else {
+        window.localStorage.setItem('demoName', name);
     }
     if (email === '' || !window.validateEmail(email)) {
         demoErrorEmail.show();
         valid = false;
+        window.localStorage.removeItem('demoEmail');
+    } else {
+        window.localStorage.setItem('demoEmail', email);
     }
     if (!valid) {
         return;
     }
+    $.ajax({
+        url: 'https://track.kuzudb.com',
+        type: 'POST',
+        data: JSON.stringify({
+            name,
+            email,
+            origin: 'TRY_KUZU',
+        }),
+        contentType: 'application/json',
+        success: () => {
+            console.log('Demo request sent');
+        },
+        error: function (error) {
+            console.log(error);
+        },
+    });
     window.open('//demo.kuzudb.com', '_blank');
-    saveInfo(name, email);
     closeDemoModal();
-    // TODO: Send email to server
 });

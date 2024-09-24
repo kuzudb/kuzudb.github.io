@@ -4386,6 +4386,7 @@ button#newsletter-submit {
   font-size: 1.2em;
   cursor: pointer;
   margin-top: 1em;
+  padding: 0 1em !important;
 }
 
 .modal a.close-modal {
