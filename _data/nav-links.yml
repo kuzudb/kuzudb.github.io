@@ -38,7 +38,3 @@
   class: button primary
   target: self
 
-- title: Try Kùzu
-  href: "//demo.kuzudb.com"
-  class: button primary
-  target: _blank
