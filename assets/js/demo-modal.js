@@ -4,7 +4,7 @@ const demoModalCloseButton = $('.demo-modal-close');
 const demoModalSubmitButton = $('#demo-modal-submit');
 const demoErrorName = $('#demo-modal-error-name');
 const demoErrorEmail = $('#demo-modal-error-email');
-const demoFirstNameInput = $('#demo-first-name');
+const demoNameInput = $('#demo-name');
 const demoEmailInput = $('#demo-email');
 
 const resetErrors = () => {
@@ -14,7 +14,7 @@ const resetErrors = () => {
 
 const resetDemoModal = () => {
     resetErrors();
-    demoFirstNameInput.val('');
+    demoNameInput.val('');
     demoEmailInput.val('');
     loadInfo();
 };
@@ -23,16 +23,16 @@ const closeDemoModal = () => {
     $.modal.close();
 };
 
-const saveInfo = (firstName, email) => {
-    window.localStorage.setItem('demoFirstName', firstName);
+const saveInfo = (name, email) => {
+    window.localStorage.setItem('demoName', name);
     window.localStorage.setItem('demoEmail', email);
 };
 
 const loadInfo = () => {
-    const firstName = window.localStorage.getItem('demoFirstName');
+    const name = window.localStorage.getItem('demoName');
     const email = window.localStorage.getItem('demoEmail');
-    if (firstName) {
-        demoFirstNameInput.val(firstName);
+    if (name) {
+        demoNameInput.val(name);
     }
     if (email) {
         demoEmailInput.val(email);
@@ -53,7 +53,7 @@ demoModalCloseButton.on('click', e => {
 demoModalSubmitButton.on('click', e => {
     e.preventDefault();
     resetErrors();
-    const name = demoFirstNameInput.val();
+    const name = demoNameInput.val();
     const email = demoEmailInput.val();
     let valid = true;
     if (name === '') {
