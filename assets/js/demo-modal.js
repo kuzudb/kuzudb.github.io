@@ -7,9 +7,13 @@ const demoErrorEmail = $('#demo-modal-error-email');
 const demoFirstNameInput = $('#demo-first-name');
 const demoEmailInput = $('#demo-email');
 
-const resetDemoModal = () => {
+const resetErrors = () => {
     demoErrorName.hide();
     demoErrorEmail.hide();
+};
+
+const resetDemoModal = () => {
+    resetErrors();
     demoFirstNameInput.val('');
     demoEmailInput.val('');
     loadInfo();
@@ -17,12 +21,12 @@ const resetDemoModal = () => {
 
 const closeDemoModal = () => {
     $.modal.close();
-}
+};
 
 const saveInfo = (firstName, email) => {
     window.localStorage.setItem('demoFirstName', firstName);
     window.localStorage.setItem('demoEmail', email);
-}
+};
 
 const loadInfo = () => {
     const firstName = window.localStorage.getItem('demoFirstName');
@@ -33,7 +37,7 @@ const loadInfo = () => {
     if (email) {
         demoEmailInput.val(email);
     }
-}
+};
 
 demoModalOpenButtons.on('click', e => {
     e.preventDefault();
@@ -48,6 +52,7 @@ demoModalCloseButton.on('click', e => {
 
 demoModalSubmitButton.on('click', e => {
     e.preventDefault();
+    resetErrors();
     const name = demoFirstNameInput.val();
     const email = demoEmailInput.val();
     let valid = true;
