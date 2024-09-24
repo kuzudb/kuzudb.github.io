@@ -4331,3 +4331,104 @@ div.community-header>img {
     min-width: 325px;
   }
 }
+
+#main>.main.newsletter {
+  background-color: #dc6428;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+#main>.main.newsletter>h1 {
+  margin: auto;
+  color: white;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+input#newsletter-email {
+  max-width: 800px;
+  color: white;
+}
+
+input#newsletter-email::placeholder {
+  color: white !important;
+  opacity: 0.8;
+}
+
+input#newsletter-email::-webkit-input-placeholder {
+  color: white !important;
+  opacity: 0.8;
+}
+
+input#newsletter-email::-moz-placeholder {
+  color: white !important;
+  opacity: 0.8;
+}
+
+input#newsletter-email:-ms-input-placeholder {
+  color: white !important;
+  opacity: 0.8;
+}
+
+p.newsletter-message {
+  color: white;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  display: none;
+}
+
+button#newsletter-submit {
+  color: white !important;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+.modal a.close-modal {
+  display: none;
+}
+
+.modal p {
+  color: black;
+  margin-bottom: 1em;
+}
+
+.button.primary.demo-modal-close {
+  background-color: transparent !important;
+  box-shadow: inset 0 0 0 1px #dddddd !important;
+  color: #323232 !important;
+}
+
+.demo-modal-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.demo-modal-buttons>button {
+  font-size: 0.8em;
+}
+
+.demo-input { 
+  color: black !important;
+  border-color: #dddddd !important;
+  margin-bottom: 1em;
+}
+
+.demo-input::placeholder {
+  color: black !important;
+  opacity: 0.8;
+}
+
+.demo-modal-error-wrapper{
+  color: red !important;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em !important;
+  font-size: 0.8em;
+}
