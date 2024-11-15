@@ -132,17 +132,18 @@ $(function(){initNavTree('assert_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="foldopen" id="foldopen00028" data-start="" data-end="">
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="assert_8h.html#acd681321d7415a01dffba1ac66d69d6b">   28</a></span><span class="preprocessor">#define KU_UNREACHABLE                                                                             \</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">    [[unlikely]] kuzu::common::kuAssertFailureInternal(&quot;KU_UNREACHABLE&quot;, __FILE__, __LINE__)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">    </span><span class="comment">/* LCOV_EXCL_START */</span><span class="preprocessor"> [[unlikely]] kuzu::common::kuAssertFailureInternal(&quot;KU_UNREACHABLE&quot;,     \</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">        __FILE__, __LINE__) </span><span class="comment">/* LCOV_EXCL_STOP */</span><span class="preprocessor"></span></div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="assert_8h.html#a528eb606f95c1ca886fc83939ea0de28">   30</a></span><span class="preprocessor">#define KU_UNUSED(expr) (void)(expr)</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>} <span class="comment">// namespace common</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>} <span class="comment">// namespace kuzu</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="assert_8h.html#a528eb606f95c1ca886fc83939ea0de28">   31</a></span><span class="preprocessor">#define KU_UNUSED(expr) (void)(expr)</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>} <span class="comment">// namespace common</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>} <span class="comment">// namespace kuzu</span></div>
 <div class="ttc" id="aclasskuzu_1_1common_1_1_internal_exception_html"><div class="ttname"><a href="classkuzu_1_1common_1_1_internal_exception.html">kuzu::common::InternalException</a></div><div class="ttdef"><b>Definition</b> internal.h:9</div></div>
 <div class="ttc" id="ainternal_8h_html"><div class="ttname"><a href="internal_8h.html">internal.h</a></div></div>
 <div class="ttc" id="anamespacekuzu_1_1common_html_a36d602568a2046e21d5d1f2a773f283a"><div class="ttname"><a href="namespacekuzu_1_1common.html#a36d602568a2046e21d5d1f2a773f283a">kuzu::common::stringFormat</a></div><div class="ttdeci">std::string stringFormat(std::string_view format, Args... args)</div><div class="ttdef"><b>Definition</b> string_format.h:99</div></div>
 <div class="ttc" id="anamespacekuzu_1_1common_html_ad2d9564dd75a88373792a488122962d0"><div class="ttname"><a href="namespacekuzu_1_1common.html#ad2d9564dd75a88373792a488122962d0">kuzu::common::kuAssertFailureInternal</a></div><div class="ttdeci">void kuAssertFailureInternal(const char *condition_name, const char *file, int linenr)</div><div class="ttdef"><b>Definition</b> assert.h:9</div></div>
-<div class="ttc" id="anamespacekuzu_html"><div class="ttname"><a href="namespacekuzu.html">kuzu</a></div><div class="ttdef"><b>Definition</b> alter_type.h:5</div></div>
+<div class="ttc" id="anamespacekuzu_html"><div class="ttname"><a href="namespacekuzu.html">kuzu</a></div><div class="ttdef"><b>Definition</b> array_utils.h:7</div></div>
 <div class="ttc" id="astring__format_8h_html"><div class="ttname"><a href="string__format_8h.html">string_format.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

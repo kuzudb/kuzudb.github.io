@@ -1,21 +1,13 @@
 var searchData=
 [
   ['case_5felse_0',['CASE_ELSE',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434ba1b96299f53e8dc6fa6a9cdf93d3deacb',1,'kuzu::common']]],
-  ['catalog_5fentry_1',['CATALOG_ENTRY',['../classkuzu_1_1storage_1_1_undo_buffer.html#a7bc7b00ace6573548ee73a0421d4beaaa8948658dbc1c883fa77c8881e71944ac',1,'kuzu::storage::UndoBuffer']]],
-  ['check_5fversion_2',['CHECK_VERSION',['../structkuzu_1_1storage_1_1_vector_version_info.html#a63da52eaeb4abe5bdf011df3ef0bc5c0ab23b60d5f5c69b3e2ad319da699d53fe',1,'kuzu::storage::VectorVersionInfo::CHECK_VERSION'],['../structkuzu_1_1storage_1_1_vector_version_info.html#a49bae66ccff3e17c8183e85d8321de71ab23b60d5f5c69b3e2ad319da699d53fe',1,'kuzu::storage::VectorVersionInfo::CHECK_VERSION']]],
-  ['checkpoint_3',['CHECKPOINT',['../namespacekuzu_1_1transaction.html#a069cf26fb4f925fd7696e1f206a5fb90a0f15e1247e93ddfa95c008106eb0d22f',1,'kuzu::transaction']]],
-  ['comment_4',['COMMENT',['../namespacekuzu_1_1common.html#a5cb0df9872b3377462f020fede969f88af2cd320b55767434dd48d81b165ea956',1,'kuzu::common']]],
-  ['committed_5',['COMMITTED',['../namespacekuzu_1_1storage.html#abe24804988d183e0ce823d4f7f9d7c6aa1c372d13f50af5ca9a935ebc78006e82',1,'kuzu::storage']]],
-  ['configuration_6',['CONFIGURATION',['../namespacekuzu_1_1main.html#a3713a055e67675e295dc717fc92c5ecfad08e68ea80bc3bf47a03757579c11900',1,'kuzu::main']]],
-  ['constant_7',['CONSTANT',['../namespacekuzu_1_1storage.html#ab4e84e9af53348cff0e16f0dc8df98a0a8d6b5cada83510220f59e00ce86d4d92',1,'kuzu::storage']]],
-  ['copy_5ffrom_8',['COPY_FROM',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557ab10fc913a4117495a3275a3ae98aed64',1,'kuzu::common']]],
-  ['copy_5ffunction_5fentry_9',['COPY_FUNCTION_ENTRY',['../namespacekuzu_1_1catalog.html#aa9fdcb674691bb2b3b9ffc4cdbefb90ea54e6e2f49df9ed544b94ba75ad390390',1,'kuzu::catalog']]],
-  ['copy_5fto_10',['COPY_TO',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557a18155f41fdefad52d9eccd3837a27eb3',1,'kuzu::common']]],
-  ['create_11',['CREATE',['../classkuzu_1_1storage_1_1_local_storage.html#a4f1270dd91a0f621e784b3f1e58dfac5a294ce20cdefa29be3be0735cb62e715d',1,'kuzu::storage::LocalStorage']]],
-  ['create_5fmacro_12',['CREATE_MACRO',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557a39fee3204eaead78424ed7d46cf1dd41',1,'kuzu::common']]],
-  ['create_5fsequence_13',['CREATE_SEQUENCE',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557ab573a5550e41343afdd7ab4d9f39ef95',1,'kuzu::common']]],
-  ['create_5ftable_14',['CREATE_TABLE',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557aa262b4a928241dd92c1757d259f4a15d',1,'kuzu::common']]],
-  ['create_5ftype_15',['CREATE_TYPE',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557abe645bfd441a89ef77bca38e08869112',1,'kuzu::common']]],
-  ['csr_16',['CSR',['../namespacekuzu_1_1storage.html#a8ee09a63306f4b06d74338c8466afac6a9dbebbc8de3ea0e81606b05de0fff36d',1,'kuzu::storage']]],
-  ['csv_17',['CSV',['../namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0eacc8d68c551c4a9a6d5313e07de4deafd',1,'kuzu::common']]]
+  ['checkpoint_1',['CHECKPOINT',['../namespacekuzu_1_1transaction.html#a069cf26fb4f925fd7696e1f206a5fb90a0f15e1247e93ddfa95c008106eb0d22f',1,'kuzu::transaction']]],
+  ['configuration_2',['CONFIGURATION',['../namespacekuzu_1_1main.html#a3713a055e67675e295dc717fc92c5ecfad08e68ea80bc3bf47a03757579c11900',1,'kuzu::main']]],
+  ['copy_5ffrom_3',['COPY_FROM',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557ab10fc913a4117495a3275a3ae98aed64',1,'kuzu::common']]],
+  ['copy_5fto_4',['COPY_TO',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557a18155f41fdefad52d9eccd3837a27eb3',1,'kuzu::common']]],
+  ['create_5fmacro_5',['CREATE_MACRO',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557a39fee3204eaead78424ed7d46cf1dd41',1,'kuzu::common']]],
+  ['create_5fsequence_6',['CREATE_SEQUENCE',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557ab573a5550e41343afdd7ab4d9f39ef95',1,'kuzu::common']]],
+  ['create_5ftable_7',['CREATE_TABLE',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557aa262b4a928241dd92c1757d259f4a15d',1,'kuzu::common']]],
+  ['create_5ftype_8',['CREATE_TYPE',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557abe645bfd441a89ef77bca38e08869112',1,'kuzu::common']]],
+  ['csv_9',['CSV',['../namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0eacc8d68c551c4a9a6d5313e07de4deafd',1,'kuzu::common']]]
 ];

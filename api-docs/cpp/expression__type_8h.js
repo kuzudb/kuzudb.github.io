@@ -26,6 +26,7 @@ var expression__type_8h =
       [ "SUBQUERY", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434baece5b631ea0b2cdd22da5287e7b1213e", null ],
       [ "CASE_ELSE", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434ba1b96299f53e8dc6fa6a9cdf93d3deacb", null ],
       [ "GRAPH", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434bae27e2917b6444fcd3452d2d87046a487", null ],
-      [ "LAMBDA", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434ba64cd1dd4b2628444bae372942cc36e91", null ]
+      [ "LAMBDA", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434ba64cd1dd4b2628444bae372942cc36e91", null ],
+      [ "INVALID", "expression__type_8h.html#aea96cbaccc7df791e248ca95ad97434baccc0377a8afbf50e7094f5c23a8af223", null ]
     ] ]
 ];

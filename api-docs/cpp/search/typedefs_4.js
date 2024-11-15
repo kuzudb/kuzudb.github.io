@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['get_5fmetadata_5ffunc_5ft_0',['get_metadata_func_t',['../classkuzu_1_1storage_1_1_column_chunk_data.html#af30aa1eacfb8da0e87c3783873449588',1,'kuzu::storage::ColumnChunkData']]],
-  ['get_5fmin_5fmax_5ffunc_5ft_1',['get_min_max_func_t',['../classkuzu_1_1storage_1_1_column_chunk_data.html#a110d83a523386a567fda4f4f4b5b22ee',1,'kuzu::storage::ColumnChunkData']]],
-  ['get_5fsetting_2',['get_setting',['../namespacekuzu_1_1main.html#a5434e60a2b863fd3424fcbe7021e58ea',1,'kuzu::main']]]
+  ['file_5fidx_5ft_0',['file_idx_t',['../namespacekuzu_1_1common.html#a596c7802425a4d4a2619f39c7e652d99',1,'kuzu::common']]],
+  ['frame_5fgroup_5fidx_5ft_1',['frame_group_idx_t',['../namespacekuzu_1_1common.html#a1378dc850fe3eb31d9a45fde7389360b',1,'kuzu::common']]],
+  ['frame_5fidx_5ft_2',['frame_idx_t',['../namespacekuzu_1_1common.html#a27412672ca883c1d93881f1ba421f530',1,'kuzu::common']]],
+  ['function_5fset_3',['function_set',['../namespacekuzu_1_1function.html#a0bb13703cbecbf1b553841b9c98496c9',1,'kuzu::function']]]
 ];

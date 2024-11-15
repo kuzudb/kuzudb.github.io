@@ -151,7 +151,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac72401e94309f757320e03df0be95d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba22581fac079b2b3f2f97deee32fe51" id="r_aba22581fac079b2b3f2f97deee32fe51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1transaction_1_1_transaction_context.html">transaction::TransactionContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba22581fac079b2b3f2f97deee32fe51">getTransactionContext</a> () const</td></tr>
 <tr class="separator:aba22581fac079b2b3f2f97deee32fe51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cbbd81ae07055ba6e44f289855f5a99" id="r_a1cbbd81ae07055ba6e44f289855f5a99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1common_1_1_progress_bar.html">common::ProgressBar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cbbd81ae07055ba6e44f289855f5a99">getProgressBar</a> () const</td></tr>
+<tr class="memitem:a1cbbd81ae07055ba6e44f289855f5a99" id="r_a1cbbd81ae07055ba6e44f289855f5a99"><td class="memItemLeft" align="right" valign="top">common::ProgressBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cbbd81ae07055ba6e44f289855f5a99">getProgressBar</a> () const</td></tr>
 <tr class="separator:a1cbbd81ae07055ba6e44f289855f5a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94cb1661193ca35f4e34ceaebe861b11" id="r_a94cb1661193ca35f4e34ceaebe861b11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94cb1661193ca35f4e34ceaebe861b11">addScanReplace</a> (<a class="el" href="structkuzu_1_1function_1_1_scan_replacement.html">function::ScanReplacement</a> scanReplacement)</td></tr>
 <tr class="separator:a94cb1661193ca35f4e34ceaebe861b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,7 +179,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abccdfc7df218d444407ec53defced6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2bd7395734a87ce340c9f3b52ca460d" id="r_ad2bd7395734a87ce340c9f3b52ca460d"><td class="memItemLeft" align="right" valign="top">storage::WAL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2bd7395734a87ce340c9f3b52ca460d">getWAL</a> () const</td></tr>
 <tr class="separator:ad2bd7395734a87ce340c9f3b52ca460d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a724c8236daa2cf5191f9a6a6ead2ecb4" id="r_a724c8236daa2cf5191f9a6a6ead2ecb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1catalog_1_1_catalog.html">catalog::Catalog</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a724c8236daa2cf5191f9a6a6ead2ecb4">getCatalog</a> () const</td></tr>
+<tr class="memitem:a724c8236daa2cf5191f9a6a6ead2ecb4" id="r_a724c8236daa2cf5191f9a6a6ead2ecb4"><td class="memItemLeft" align="right" valign="top">catalog::Catalog *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a724c8236daa2cf5191f9a6a6ead2ecb4">getCatalog</a> () const</td></tr>
 <tr class="separator:a724c8236daa2cf5191f9a6a6ead2ecb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad95505c6380637ffeb819c1c6d9dcf0c" id="r_ad95505c6380637ffeb819c1c6d9dcf0c"><td class="memItemLeft" align="right" valign="top">transaction::TransactionManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad95505c6380637ffeb819c1c6d9dcf0c">getTransactionManagerUnsafe</a> () const</td></tr>
 <tr class="separator:ad95505c6380637ffeb819c1c6d9dcf0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,22 +193,20 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aae1c56835e34490f16d69978c5c79f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a029d9d38789fe1576a3d710fef8d9ed9" id="r_a029d9d38789fe1576a3d710fef8d9ed9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1main_1_1_query_result.html">QueryResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a029d9d38789fe1576a3d710fef8d9ed9">query</a> (std::string_view queryStatement, std::optional&lt; uint64_t &gt; queryID=std::nullopt)</td></tr>
 <tr class="separator:a029d9d38789fe1576a3d710fef8d9ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ca0893969d80d0df81d11e09836a527" id="r_a2ca0893969d80d0df81d11e09836a527"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ca0893969d80d0df81d11e09836a527">runQuery</a> (std::string <a class="el" href="#a029d9d38789fe1576a3d710fef8d9ed9">query</a>)</td></tr>
-<tr class="separator:a2ca0893969d80d0df81d11e09836a527"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dbc32c5cc040c993bcec04f6db9045c" id="r_a6dbc32c5cc040c993bcec04f6db9045c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1main_1_1_prepared_statement.html">PreparedStatement</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dbc32c5cc040c993bcec04f6db9045c">prepareTest</a> (std::string_view <a class="el" href="#a029d9d38789fe1576a3d710fef8d9ed9">query</a>)</td></tr>
-<tr class="separator:a6dbc32c5cc040c993bcec04f6db9045c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a859ded26ca80a5b3982faf12c69ae736" id="r_a859ded26ca80a5b3982faf12c69ae736"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classkuzu_1_1parser_1_1_statement.html">parser::Statement</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a859ded26ca80a5b3982faf12c69ae736">parseQuery</a> (std::string_view <a class="el" href="#a029d9d38789fe1576a3d710fef8d9ed9">query</a>)</td></tr>
 <tr class="separator:a859ded26ca80a5b3982faf12c69ae736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4f6bd25e4ec539f418b0578e82b9041" id="r_ab4f6bd25e4ec539f418b0578e82b9041"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4f6bd25e4ec539f418b0578e82b9041">setDefaultDatabase</a> (AttachedKuzuDatabase *defaultDatabase_)</td></tr>
 <tr class="separator:ab4f6bd25e4ec539f418b0578e82b9041"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0f91db9654dc36e809cf0bd312963c4" id="r_ac0f91db9654dc36e809cf0bd312963c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0f91db9654dc36e809cf0bd312963c4">hasDefaultDatabase</a> ()</td></tr>
 <tr class="separator:ac0f91db9654dc36e809cf0bd312963c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a829a1c7e988376e58aff19a57bf45d6c" id="r_a829a1c7e988376e58aff19a57bf45d6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a829a1c7e988376e58aff19a57bf45d6c">runFuncInTransaction</a> (const std::function&lt; void(void)&gt; &amp;fun)</td></tr>
-<tr class="separator:a829a1c7e988376e58aff19a57bf45d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a815d445ec00ea7d46e81a24cbcce3631" id="r_a815d445ec00ea7d46e81a24cbcce3631"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a815d445ec00ea7d46e81a24cbcce3631">addScalarFunction</a> (std::string name, <a class="el" href="namespacekuzu_1_1function.html#a0bb13703cbecbf1b553841b9c98496c9">function::function_set</a> definitions)</td></tr>
 <tr class="separator:a815d445ec00ea7d46e81a24cbcce3631"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0a13c95ea581c72c997a3874979fa6" id="r_a8e0a13c95ea581c72c997a3874979fa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e0a13c95ea581c72c997a3874979fa6">removeScalarFunction</a> (std::string name)</td></tr>
 <tr class="separator:a8e0a13c95ea581c72c997a3874979fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d3f570c17a45358e5475406e2c2d14e" id="r_a0d3f570c17a45358e5475406e2c2d14e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1processor_1_1_warning_context.html">processor::WarningContext</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d3f570c17a45358e5475406e2c2d14e">getWarningContextUnsafe</a> ()</td></tr>
+<tr class="separator:a0d3f570c17a45358e5475406e2c2d14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab431d590d719676926b7fd6a058cd1bb" id="r_ab431d590d719676926b7fd6a058cd1bb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classkuzu_1_1processor_1_1_warning_context.html">processor::WarningContext</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab431d590d719676926b7fd6a058cd1bb">getWarningContext</a> () const</td></tr>
+<tr class="separator:ab431d590d719676926b7fd6a058cd1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a327db2069643fb672604c00c651b1e6d" id="r_a327db2069643fb672604c00c651b1e6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a327db2069643fb672604c00c651b1e6d">cleanUP</a> ()</td></tr>
 <tr class="separator:a327db2069643fb672604c00c651b1e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -220,6 +218,10 @@ Friends</h2></td></tr>
 <tr class="separator:a2c5cdff3441ff680f68be6537db18d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6396edfa618c3eb40a1dd3be0b28a12" id="r_ae6396edfa618c3eb40a1dd3be0b28a12"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6396edfa618c3eb40a1dd3be0b28a12">binder::ExpressionBinder</a></td></tr>
 <tr class="separator:ae6396edfa618c3eb40a1dd3be0b28a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42d3b415fbf6a21a2ce721658feb4a8c" id="r_a42d3b415fbf6a21a2ce721658feb4a8c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42d3b415fbf6a21a2ce721658feb4a8c">processor::ImportDB</a></td></tr>
+<tr class="separator:a42d3b415fbf6a21a2ce721658feb4a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98a9b59829149f373a9d2361519d0140" id="r_a98a9b59829149f373a9d2361519d0140"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98a9b59829149f373a9d2361519d0140">main::SpillToDiskSetting</a></td></tr>
+<tr class="separator:a98a9b59829149f373a9d2361519d0140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contain client side configuration. We make profiler associated per query, so profiler is not maintained in client context. </p>
@@ -355,7 +357,7 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classkuzu_1_1catalog_1_1_catalog.html">catalog::Catalog</a> * kuzu::main::ClientContext::getCatalog </td>
+          <td class="memname">catalog::Catalog * kuzu::main::ClientContext::getCatalog </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -633,7 +635,7 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classkuzu_1_1common_1_1_progress_bar.html">common::ProgressBar</a> * kuzu::main::ClientContext::getProgressBar </td>
+          <td class="memname">common::ProgressBar * kuzu::main::ClientContext::getProgressBar </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -813,6 +815,40 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="ab431d590d719676926b7fd6a058cd1bb" name="ab431d590d719676926b7fd6a058cd1bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab431d590d719676926b7fd6a058cd1bb">&#9670;&#160;</a></span>getWarningContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classkuzu_1_1processor_1_1_warning_context.html">processor::WarningContext</a> &amp; kuzu::main::ClientContext::getWarningContext </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d3f570c17a45358e5475406e2c2d14e" name="a0d3f570c17a45358e5475406e2c2d14e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d3f570c17a45358e5475406e2c2d14e">&#9670;&#160;</a></span>getWarningContextUnsafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classkuzu_1_1processor_1_1_warning_context.html">processor::WarningContext</a> &amp; kuzu::main::ClientContext::getWarningContextUnsafe </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac0f91db9654dc36e809cf0bd312963c4" name="ac0f91db9654dc36e809cf0bd312963c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0f91db9654dc36e809cf0bd312963c4">&#9670;&#160;</a></span>hasDefaultDatabase()</h2>
 
@@ -956,23 +992,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a6dbc32c5cc040c993bcec04f6db9045c" name="a6dbc32c5cc040c993bcec04f6db9045c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dbc32c5cc040c993bcec04f6db9045c">&#9670;&#160;</a></span>prepareTest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1main_1_1_prepared_statement.html">PreparedStatement</a> &gt; kuzu::main::ClientContext::prepareTest </td>
-          <td>(</td>
-          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>query</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a029d9d38789fe1576a3d710fef8d9ed9" name="a029d9d38789fe1576a3d710fef8d9ed9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a029d9d38789fe1576a3d710fef8d9ed9">&#9670;&#160;</a></span>query()</h2>
 
@@ -1032,40 +1051,6 @@ Friends</h2></td></tr>
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a829a1c7e988376e58aff19a57bf45d6c" name="a829a1c7e988376e58aff19a57bf45d6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a829a1c7e988376e58aff19a57bf45d6c">&#9670;&#160;</a></span>runFuncInTransaction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void kuzu::main::ClientContext::runFuncInTransaction </td>
-          <td>(</td>
-          <td class="paramtype">const std::function&lt; void(void)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>fun</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2ca0893969d80d0df81d11e09836a527" name="a2ca0893969d80d0df81d11e09836a527"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ca0893969d80d0df81d11e09836a527">&#9670;&#160;</a></span>runQuery()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void kuzu::main::ClientContext::runQuery </td>
-          <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>query</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>
@@ -1232,6 +1217,50 @@ Friends</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">friend class <a class="el" href="classkuzu_1_1main_1_1_connection.html">Connection</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98a9b59829149f373a9d2361519d0140" name="a98a9b59829149f373a9d2361519d0140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a9b59829149f373a9d2361519d0140">&#9670;&#160;</a></span>main::SpillToDiskSetting</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend struct main::SpillToDiskSetting</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42d3b415fbf6a21a2ce721658feb4a8c" name="a42d3b415fbf6a21a2ce721658feb4a8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42d3b415fbf6a21a2ce721658feb4a8c">&#9670;&#160;</a></span>processor::ImportDB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class processor::ImportDB</td>
         </tr>
       </table>
   </td>

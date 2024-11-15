@@ -114,6 +114,7 @@ Inheritance diagram for kuzu::common::ExtraTypeInfo:</div>
 <area href="classkuzu_1_1common_1_1_decimal_type_info.html" alt="kuzu::common::DecimalTypeInfo" shape="rect" coords="0,56,190,80"/>
 <area href="classkuzu_1_1common_1_1_list_type_info.html" alt="kuzu::common::ListTypeInfo" shape="rect" coords="200,56,390,80"/>
 <area href="classkuzu_1_1common_1_1_struct_type_info.html" alt="kuzu::common::StructTypeInfo" shape="rect" coords="400,56,590,80"/>
+<area href="classkuzu_1_1common_1_1_u_d_t_type_info.html" alt="kuzu::common::UDTTypeInfo" shape="rect" coords="600,56,790,80"/>
 <area href="classkuzu_1_1common_1_1_array_type_info.html" alt="kuzu::common::ArrayTypeInfo" shape="rect" coords="200,112,390,136"/>
   </map>
 </div></div>
@@ -122,7 +123,7 @@ Inheritance diagram for kuzu::common::ExtraTypeInfo:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a70689fa1a2fa834e64199ce613bdfae9" id="r_a70689fa1a2fa834e64199ce613bdfae9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70689fa1a2fa834e64199ce613bdfae9">~ExtraTypeInfo</a> ()=default</td></tr>
 <tr class="separator:a70689fa1a2fa834e64199ce613bdfae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad59faca71d52c3b19c14407684cef735" id="r_ad59faca71d52c3b19c14407684cef735"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad59faca71d52c3b19c14407684cef735">serialize</a> (<a class="el" href="classkuzu_1_1common_1_1_serializer.html">Serializer</a> &amp;serializer) const</td></tr>
+<tr class="memitem:ad59faca71d52c3b19c14407684cef735" id="r_ad59faca71d52c3b19c14407684cef735"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad59faca71d52c3b19c14407684cef735">serialize</a> (Serializer &amp;serializer) const</td></tr>
 <tr class="separator:ad59faca71d52c3b19c14407684cef735"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74c6f1c80b441ade2f32c7fe7f4f668f" id="r_a74c6f1c80b441ade2f32c7fe7f4f668f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74c6f1c80b441ade2f32c7fe7f4f668f">containsAny</a> () const =0</td></tr>
 <tr class="separator:a74c6f1c80b441ade2f32c7fe7f4f668f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,7 +137,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:acc6de9d87e6cdb31788234b61e38ed6f" id="r_acc6de9d87e6cdb31788234b61e38ed6f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc6de9d87e6cdb31788234b61e38ed6f">serializeInternal</a> (<a class="el" href="classkuzu_1_1common_1_1_serializer.html">Serializer</a> &amp;serializer) const =0</td></tr>
+<tr class="memitem:acc6de9d87e6cdb31788234b61e38ed6f" id="r_acc6de9d87e6cdb31788234b61e38ed6f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc6de9d87e6cdb31788234b61e38ed6f">serializeInternal</a> (Serializer &amp;serializer) const =0</td></tr>
 <tr class="separator:acc6de9d87e6cdb31788234b61e38ed6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -216,7 +217,7 @@ template&lt;class TARGET &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_decimal_type_info.html#a5de1b51fc7eb87cb3b3bc964600e104a">kuzu::common::DecimalTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_list_type_info.html#a9581306691444a7130fa970aadd8b725">kuzu::common::ListTypeInfo</a>, and <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html#a0b065662b1141746f96649141e0ec37f">kuzu::common::StructTypeInfo</a>.</p>
+<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_decimal_type_info.html#a5de1b51fc7eb87cb3b3bc964600e104a">kuzu::common::DecimalTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_list_type_info.html#a9581306691444a7130fa970aadd8b725">kuzu::common::ListTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html#a0b065662b1141746f96649141e0ec37f">kuzu::common::StructTypeInfo</a>, and <a class="el" href="classkuzu_1_1common_1_1_u_d_t_type_info.html#acc9d1f138624a052786304687620337d">kuzu::common::UDTTypeInfo</a>.</p>
 
 </div>
 </div>
@@ -243,7 +244,7 @@ template&lt;class TARGET &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_array_type_info.html#af43e71d43f36f4b2d36fe8723de29899">kuzu::common::ArrayTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_decimal_type_info.html#a984561c23b1172a6f4ce86d87c74747a">kuzu::common::DecimalTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_list_type_info.html#aea60adce6dae6601b04ba2b49873341e">kuzu::common::ListTypeInfo</a>, and <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html#ab0bb3dec300ee696473da672c069d305">kuzu::common::StructTypeInfo</a>.</p>
+<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_array_type_info.html#af43e71d43f36f4b2d36fe8723de29899">kuzu::common::ArrayTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_decimal_type_info.html#a984561c23b1172a6f4ce86d87c74747a">kuzu::common::DecimalTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_list_type_info.html#aea60adce6dae6601b04ba2b49873341e">kuzu::common::ListTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html#ab0bb3dec300ee696473da672c069d305">kuzu::common::StructTypeInfo</a>, and <a class="el" href="classkuzu_1_1common_1_1_u_d_t_type_info.html#a337d1b3865fd752669ca8e9585436fb9">kuzu::common::UDTTypeInfo</a>.</p>
 
 </div>
 </div>
@@ -270,7 +271,7 @@ template&lt;class TARGET &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_array_type_info.html#af164edb474d9d5224d39e17e56d78fd8">kuzu::common::ArrayTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_decimal_type_info.html#aa1e35674dd2516373ffd6aeb6fd5258c">kuzu::common::DecimalTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_list_type_info.html#a3caeffe735c95f46f496ad0a0a87ec5e">kuzu::common::ListTypeInfo</a>, and <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html#ace4b48085ef1d5db9ac7a5769aa6efa8">kuzu::common::StructTypeInfo</a>.</p>
+<p>Implemented in <a class="el" href="classkuzu_1_1common_1_1_array_type_info.html#af164edb474d9d5224d39e17e56d78fd8">kuzu::common::ArrayTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_decimal_type_info.html#aa1e35674dd2516373ffd6aeb6fd5258c">kuzu::common::DecimalTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_list_type_info.html#a3caeffe735c95f46f496ad0a0a87ec5e">kuzu::common::ListTypeInfo</a>, <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html#ace4b48085ef1d5db9ac7a5769aa6efa8">kuzu::common::StructTypeInfo</a>, and <a class="el" href="classkuzu_1_1common_1_1_u_d_t_type_info.html#ae84133cbf99e379ea0f965bded0217fa">kuzu::common::UDTTypeInfo</a>.</p>
 
 </div>
 </div>
@@ -286,7 +287,7 @@ template&lt;class TARGET &gt; </div>
         <tr>
           <td class="memname">void kuzu::common::ExtraTypeInfo::serialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_serializer.html">Serializer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>serializer</em></span></td><td>)</td>
+          <td class="paramtype">Serializer &amp;</td>          <td class="paramname"><span class="paramname"><em>serializer</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -311,7 +312,7 @@ template&lt;class TARGET &gt; </div>
         <tr>
           <td class="memname">virtual void kuzu::common::ExtraTypeInfo::serializeInternal </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_serializer.html">Serializer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>serializer</em></span></td><td>)</td>
+          <td class="paramtype">Serializer &amp;</td>          <td class="paramname"><span class="paramname"><em>serializer</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>

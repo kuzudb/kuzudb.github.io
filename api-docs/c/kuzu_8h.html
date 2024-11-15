@@ -229,7 +229,6 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#a402bc5ef3e9b9a57ba391e317023f8aea64f0b8166b51a91ffd780efb725f2025">KUZU_MAP</a> = 55
 , <br />
 &#160;&#160;<a class="el" href="#a402bc5ef3e9b9a57ba391e317023f8aea76b10a346c584e6dc739351a06d3537b">KUZU_UNION</a> = 56
-, <a class="el" href="#a402bc5ef3e9b9a57ba391e317023f8aea6b9096f2a918848f9d39f08b4fddf38b">KUZU_RDF_VARIANT</a> = 57
 , <a class="el" href="#a402bc5ef3e9b9a57ba391e317023f8aeaa51d100787504ab4da32c1a3047ee078">KUZU_POINTER</a> = 58
 , <a class="el" href="#a402bc5ef3e9b9a57ba391e317023f8aea1e70c49c5fdbfef7e0eb36b5d5a965b5">KUZU_UUID</a> = 59
 <br />
@@ -499,6 +498,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a862dc931f6d04a0bed5fa2af5c9a9d0e" id="r_a862dc931f6d04a0bed5fa2af5c9a9d0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="structkuzu__value.html">kuzu_value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a862dc931f6d04a0bed5fa2af5c9a9d0e">kuzu_value_create_string</a> (const char *val_)</td></tr>
 <tr class="memdesc:a862dc931f6d04a0bed5fa2af5c9a9d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a value with string type and the given string value. Caller is responsible for destroying the returned value.  <br /></td></tr>
 <tr class="separator:a862dc931f6d04a0bed5fa2af5c9a9d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885b020a7eec8ec9266f10e006051084" id="r_a885b020a7eec8ec9266f10e006051084"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a885b020a7eec8ec9266f10e006051084">kuzu_value_create_list</a> (uint64_t num_elements, <a class="el" href="structkuzu__value.html">kuzu_value</a> **elements, <a class="el" href="structkuzu__value.html">kuzu_value</a> **out_value)</td></tr>
+<tr class="memdesc:a885b020a7eec8ec9266f10e006051084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a list value with the given number of elements and the given elements. The caller needs to make sure that all elements have the same type. The elements are copied into the list value, so destroying the elements after creating the list value is safe. Caller is responsible for destroying the returned value.  <br /></td></tr>
+<tr class="separator:a885b020a7eec8ec9266f10e006051084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb3c3c847030a96eb1cec3ef9af63be6" id="r_acb3c3c847030a96eb1cec3ef9af63be6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb3c3c847030a96eb1cec3ef9af63be6">kuzu_value_create_struct</a> (uint64_t num_fields, const char **field_names, <a class="el" href="structkuzu__value.html">kuzu_value</a> **field_values, <a class="el" href="structkuzu__value.html">kuzu_value</a> **out_value)</td></tr>
+<tr class="memdesc:acb3c3c847030a96eb1cec3ef9af63be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a struct value with the given number of fields and the given field names and values. The caller needs to make sure that all field names are unique. The field names and values are copied into the struct value, so destroying the field names and values after creating the struct value is safe. Caller is responsible for destroying the returned value.  <br /></td></tr>
+<tr class="separator:acb3c3c847030a96eb1cec3ef9af63be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a94b0e15c068b44c363a2e11afaf4c" id="r_a77a94b0e15c068b44c363a2e11afaf4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77a94b0e15c068b44c363a2e11afaf4c">kuzu_value_create_map</a> (uint64_t num_fields, <a class="el" href="structkuzu__value.html">kuzu_value</a> **keys, <a class="el" href="structkuzu__value.html">kuzu_value</a> **values, <a class="el" href="structkuzu__value.html">kuzu_value</a> **out_value)</td></tr>
+<tr class="memdesc:a77a94b0e15c068b44c363a2e11afaf4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a map value with the given number of fields and the given keys and values. The caller needs to make sure that all keys are unique, and all keys and values have the same type. The keys and values are copied into the map value, so destroying the keys and values after creating the map value is safe. Caller is responsible for destroying the returned value.  <br /></td></tr>
+<tr class="separator:a77a94b0e15c068b44c363a2e11afaf4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa13d35ee4e8505d947c7ae76536123a0" id="r_aa13d35ee4e8505d947c7ae76536123a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="structkuzu__value.html">kuzu_value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa13d35ee4e8505d947c7ae76536123a0">kuzu_value_clone</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *value)</td></tr>
 <tr class="memdesc:aa13d35ee4e8505d947c7ae76536123a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new value based on the given value. Caller is responsible for destroying the returned value.  <br /></td></tr>
 <tr class="separator:aa13d35ee4e8505d947c7ae76536123a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -523,6 +531,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a2003bf37ed08a059dfff996f498bc324" id="r_a2003bf37ed08a059dfff996f498bc324"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2003bf37ed08a059dfff996f498bc324">kuzu_value_get_struct_field_value</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *value, uint64_t index, <a class="el" href="structkuzu__value.html">kuzu_value</a> *out_value)</td></tr>
 <tr class="memdesc:a2003bf37ed08a059dfff996f498bc324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the field value at index of the given struct value. The value must be of physical type STRUCT (STRUCT, NODE, REL, RECURSIVE_REL, UNION).  <br /></td></tr>
 <tr class="separator:a2003bf37ed08a059dfff996f498bc324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63b69a1895942a8b45f42ff085c3d0b4" id="r_a63b69a1895942a8b45f42ff085c3d0b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63b69a1895942a8b45f42ff085c3d0b4">kuzu_value_get_map_size</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *value, uint64_t *out_result)</td></tr>
+<tr class="memdesc:a63b69a1895942a8b45f42ff085c3d0b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the given map value. The value must be of type MAP.  <br /></td></tr>
+<tr class="separator:a63b69a1895942a8b45f42ff085c3d0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b18ebbf3707802910a23c1d8b04ea0a" id="r_a3b18ebbf3707802910a23c1d8b04ea0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b18ebbf3707802910a23c1d8b04ea0a">kuzu_value_get_map_key</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *value, uint64_t index, <a class="el" href="structkuzu__value.html">kuzu_value</a> *out_key)</td></tr>
+<tr class="memdesc:a3b18ebbf3707802910a23c1d8b04ea0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the key at index of the given map value. The value must be of physical type MAP.  <br /></td></tr>
+<tr class="separator:a3b18ebbf3707802910a23c1d8b04ea0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923727e0d37424685416b307bbbda302" id="r_a923727e0d37424685416b307bbbda302"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a923727e0d37424685416b307bbbda302">kuzu_value_get_map_value</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *value, uint64_t index, <a class="el" href="structkuzu__value.html">kuzu_value</a> *out_value)</td></tr>
+<tr class="memdesc:a923727e0d37424685416b307bbbda302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the field value at index of the given map value. The value must be of physical type MAP.  <br /></td></tr>
+<tr class="separator:a923727e0d37424685416b307bbbda302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9e584bb02189b4eb6839c2a68bbaad2" id="r_ad9e584bb02189b4eb6839c2a68bbaad2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9e584bb02189b4eb6839c2a68bbaad2">kuzu_value_get_recursive_rel_node_list</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *value, <a class="el" href="structkuzu__value.html">kuzu_value</a> *out_value)</td></tr>
 <tr class="memdesc:ad9e584bb02189b4eb6839c2a68bbaad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of nodes for recursive rel value. The value must be of type RECURSIVE_REL.  <br /></td></tr>
 <tr class="separator:ad9e584bb02189b4eb6839c2a68bbaad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -598,6 +615,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a693c7c2af0e31a1827e257841f123d67" id="r_a693c7c2af0e31a1827e257841f123d67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a693c7c2af0e31a1827e257841f123d67">kuzu_value_get_interval</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *value, <a class="el" href="structkuzu__interval__t.html">kuzu_interval_t</a> *out_result)</td></tr>
 <tr class="memdesc:a693c7c2af0e31a1827e257841f123d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the interval value of the given value. The value must be of type INTERVAL.  <br /></td></tr>
 <tr class="separator:a693c7c2af0e31a1827e257841f123d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe64f769b43966d7f1ddadadebf35fb3" id="r_abe64f769b43966d7f1ddadadebf35fb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe64f769b43966d7f1ddadadebf35fb3">kuzu_value_get_decimal_as_string</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *value, char **out_result)</td></tr>
+<tr class="memdesc:abe64f769b43966d7f1ddadadebf35fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the decimal value of the given value as a string. The value must be of type DECIMAL.  <br /></td></tr>
+<tr class="separator:abe64f769b43966d7f1ddadadebf35fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a826b906c3061c995c0fac94ae7ded9d9" id="r_a826b906c3061c995c0fac94ae7ded9d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a826b906c3061c995c0fac94ae7ded9d9">kuzu_value_get_string</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *value, char **out_result)</td></tr>
 <tr class="memdesc:a826b906c3061c995c0fac94ae7ded9d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string value of the given value. The value must be of type STRING.  <br /></td></tr>
 <tr class="separator:a826b906c3061c995c0fac94ae7ded9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -649,57 +669,6 @@ Functions</h2></td></tr>
 <tr class="memitem:af736f1dd89275e118e09d3417b9e90d3" id="r_af736f1dd89275e118e09d3417b9e90d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af736f1dd89275e118e09d3417b9e90d3">kuzu_rel_val_to_string</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rel_val, char **out_result)</td></tr>
 <tr class="memdesc:af736f1dd89275e118e09d3417b9e90d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the given rel value to string.  <br /></td></tr>
 <tr class="separator:af736f1dd89275e118e09d3417b9e90d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdda83c5d56b5b344af79bc952a2711a" id="r_acdda83c5d56b5b344af79bc952a2711a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdda83c5d56b5b344af79bc952a2711a">kuzu_rdf_variant_get_type</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, <a class="el" href="#a402bc5ef3e9b9a57ba391e317023f8ae">kuzu_data_type_id</a> *out_type)</td></tr>
-<tr class="memdesc:acdda83c5d56b5b344af79bc952a2711a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying data type of the given rdf variant.  <br /></td></tr>
-<tr class="separator:acdda83c5d56b5b344af79bc952a2711a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcdda85db80863a1088da6ba38447ee1" id="r_adcdda85db80863a1088da6ba38447ee1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcdda85db80863a1088da6ba38447ee1">kuzu_rdf_variant_get_string</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, char **out_result)</td></tr>
-<tr class="memdesc:adcdda85db80863a1088da6ba38447ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string value of the given rdf variant. The value must be of type STRING.  <br /></td></tr>
-<tr class="separator:adcdda85db80863a1088da6ba38447ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f59000af6a805123fe413567a46a977" id="r_a1f59000af6a805123fe413567a46a977"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f59000af6a805123fe413567a46a977">kuzu_rdf_variant_get_blob</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, uint8_t **out_result)</td></tr>
-<tr class="memdesc:a1f59000af6a805123fe413567a46a977"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the blob value of the given rdf variant. The returned buffer is null-terminated similar to a string. The value must be of type BLOB.  <br /></td></tr>
-<tr class="separator:a1f59000af6a805123fe413567a46a977"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a359bdf9a5b794f7390cc7441dbaed61b" id="r_a359bdf9a5b794f7390cc7441dbaed61b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a359bdf9a5b794f7390cc7441dbaed61b">kuzu_rdf_variant_get_int64</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, int64_t *out_result)</td></tr>
-<tr class="memdesc:a359bdf9a5b794f7390cc7441dbaed61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the int64 value of the given rdf variant. The value must be of type INT64.  <br /></td></tr>
-<tr class="separator:a359bdf9a5b794f7390cc7441dbaed61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e6d8670b28636a12989d9a0e1a9b62d" id="r_a1e6d8670b28636a12989d9a0e1a9b62d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e6d8670b28636a12989d9a0e1a9b62d">kuzu_rdf_variant_get_int32</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, int32_t *out_result)</td></tr>
-<tr class="memdesc:a1e6d8670b28636a12989d9a0e1a9b62d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the int32 value of the given rdf variant. The value must be of type INT32.  <br /></td></tr>
-<tr class="separator:a1e6d8670b28636a12989d9a0e1a9b62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6915b1eaf2466ee9e57b89530e28403f" id="r_a6915b1eaf2466ee9e57b89530e28403f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6915b1eaf2466ee9e57b89530e28403f">kuzu_rdf_variant_get_int16</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, int16_t *out_result)</td></tr>
-<tr class="memdesc:a6915b1eaf2466ee9e57b89530e28403f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the int16 value of the given rdf variant. The value must be of type INT16.  <br /></td></tr>
-<tr class="separator:a6915b1eaf2466ee9e57b89530e28403f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c453f546b072c96530981bae7902ff7" id="r_a7c453f546b072c96530981bae7902ff7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c453f546b072c96530981bae7902ff7">kuzu_rdf_variant_get_int8</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, int8_t *out_result)</td></tr>
-<tr class="memdesc:a7c453f546b072c96530981bae7902ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the int8 value of the given rdf variant. The value must be of type INT8.  <br /></td></tr>
-<tr class="separator:a7c453f546b072c96530981bae7902ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43347fd992d41e470671bd404cb8aa51" id="r_a43347fd992d41e470671bd404cb8aa51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43347fd992d41e470671bd404cb8aa51">kuzu_rdf_variant_get_uint64</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, uint64_t *out_result)</td></tr>
-<tr class="memdesc:a43347fd992d41e470671bd404cb8aa51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the uint64 value of the given rdf variant. The value must be of type UINT64.  <br /></td></tr>
-<tr class="separator:a43347fd992d41e470671bd404cb8aa51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a014de9d87e7818ed6b1bca6363722268" id="r_a014de9d87e7818ed6b1bca6363722268"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a014de9d87e7818ed6b1bca6363722268">kuzu_rdf_variant_get_uint32</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, uint32_t *out_result)</td></tr>
-<tr class="memdesc:a014de9d87e7818ed6b1bca6363722268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the uint32 value of the given rdf variant. The value must be of type UINT32.  <br /></td></tr>
-<tr class="separator:a014de9d87e7818ed6b1bca6363722268"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add8974dd741d29b7e4e10074805703f9" id="r_add8974dd741d29b7e4e10074805703f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add8974dd741d29b7e4e10074805703f9">kuzu_rdf_variant_get_uint16</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, uint16_t *out_result)</td></tr>
-<tr class="memdesc:add8974dd741d29b7e4e10074805703f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the uint16 value of the given rdf variant. The value must be of type UINT16.  <br /></td></tr>
-<tr class="separator:add8974dd741d29b7e4e10074805703f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31f4f80a1203ef95ae646e12912fe89c" id="r_a31f4f80a1203ef95ae646e12912fe89c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31f4f80a1203ef95ae646e12912fe89c">kuzu_rdf_variant_get_uint8</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, uint8_t *out_result)</td></tr>
-<tr class="memdesc:a31f4f80a1203ef95ae646e12912fe89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the uint8 value of the given rdf variant. The value must be of type UINT8.  <br /></td></tr>
-<tr class="separator:a31f4f80a1203ef95ae646e12912fe89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68c617a95144bc854b8b9b42403c3111" id="r_a68c617a95144bc854b8b9b42403c3111"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68c617a95144bc854b8b9b42403c3111">kuzu_rdf_variant_get_float</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, float *out_result)</td></tr>
-<tr class="memdesc:a68c617a95144bc854b8b9b42403c3111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the float value of the given rdf variant. The value must be of type FLOAT.  <br /></td></tr>
-<tr class="separator:a68c617a95144bc854b8b9b42403c3111"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae595c465c2827c3f3989e7e978ee4278" id="r_ae595c465c2827c3f3989e7e978ee4278"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae595c465c2827c3f3989e7e978ee4278">kuzu_rdf_variant_get_double</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, double *out_result)</td></tr>
-<tr class="memdesc:ae595c465c2827c3f3989e7e978ee4278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the double value of the given rdf variant. The value must be of type DOUBLE.  <br /></td></tr>
-<tr class="separator:ae595c465c2827c3f3989e7e978ee4278"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9b3c2f756df758472b8428d60e790f5" id="r_ae9b3c2f756df758472b8428d60e790f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9b3c2f756df758472b8428d60e790f5">kuzu_rdf_variant_get_bool</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, bool *out_result)</td></tr>
-<tr class="memdesc:ae9b3c2f756df758472b8428d60e790f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the boolean value of the given rdf variant. The value must be of type BOOL.  <br /></td></tr>
-<tr class="separator:ae9b3c2f756df758472b8428d60e790f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abace929d16bc630ee42c931d8a337dd9" id="r_abace929d16bc630ee42c931d8a337dd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abace929d16bc630ee42c931d8a337dd9">kuzu_rdf_variant_get_date</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, <a class="el" href="structkuzu__date__t.html">kuzu_date_t</a> *out_result)</td></tr>
-<tr class="memdesc:abace929d16bc630ee42c931d8a337dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the date value of the given rdf variant. The value must be of type DATE.  <br /></td></tr>
-<tr class="separator:abace929d16bc630ee42c931d8a337dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50fb4679f082c2d6bbf810e612aaa0a2" id="r_a50fb4679f082c2d6bbf810e612aaa0a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50fb4679f082c2d6bbf810e612aaa0a2">kuzu_rdf_variant_get_timestamp</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, <a class="el" href="structkuzu__timestamp__t.html">kuzu_timestamp_t</a> *out_result)</td></tr>
-<tr class="memdesc:a50fb4679f082c2d6bbf810e612aaa0a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the timestamp value of the given rdf variant. The value must be of type TIMESTAMP.  <br /></td></tr>
-<tr class="separator:a50fb4679f082c2d6bbf810e612aaa0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23df97eb85e7e38a1594a688f40ee657" id="r_a23df97eb85e7e38a1594a688f40ee657"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23df97eb85e7e38a1594a688f40ee657">kuzu_rdf_variant_get_interval</a> (<a class="el" href="structkuzu__value.html">kuzu_value</a> *rdf_variant, <a class="el" href="structkuzu__interval__t.html">kuzu_interval_t</a> *out_result)</td></tr>
-<tr class="memdesc:a23df97eb85e7e38a1594a688f40ee657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the interval value of the given rdf variant. The value must be of type INTERVAL.  <br /></td></tr>
-<tr class="separator:a23df97eb85e7e38a1594a688f40ee657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b3b54e308836fde5ffe823f1b587911" id="r_a3b3b54e308836fde5ffe823f1b587911"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b3b54e308836fde5ffe823f1b587911">kuzu_destroy_string</a> (char *str)</td></tr>
 <tr class="memdesc:a3b3b54e308836fde5ffe823f1b587911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys any string created by the Kùzu C API, including both the error message and the values returned by the API functions. This function is provided to avoid the inconsistency between the memory allocation and deallocation across different libraries and is preferred over using the standard C free function.  <br /></td></tr>
 <tr class="separator:a3b3b54e308836fde5ffe823f1b587911"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -987,7 +956,6 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a402bc5ef3e9b9a57ba391e317023f8aeab6e1773c1f8cdc3134d44ab26f0dc69c" name="a402bc5ef3e9b9a57ba391e317023f8aeab6e1773c1f8cdc3134d44ab26f0dc69c"></a>KUZU_STRUCT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a402bc5ef3e9b9a57ba391e317023f8aea64f0b8166b51a91ffd780efb725f2025" name="a402bc5ef3e9b9a57ba391e317023f8aea64f0b8166b51a91ffd780efb725f2025"></a>KUZU_MAP&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a402bc5ef3e9b9a57ba391e317023f8aea76b10a346c584e6dc739351a06d3537b" name="a402bc5ef3e9b9a57ba391e317023f8aea76b10a346c584e6dc739351a06d3537b"></a>KUZU_UNION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a402bc5ef3e9b9a57ba391e317023f8aea6b9096f2a918848f9d39f08b4fddf38b" name="a402bc5ef3e9b9a57ba391e317023f8aea6b9096f2a918848f9d39f08b4fddf38b"></a>KUZU_RDF_VARIANT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a402bc5ef3e9b9a57ba391e317023f8aeaa51d100787504ab4da32c1a3047ee078" name="a402bc5ef3e9b9a57ba391e317023f8aeaa51d100787504ab4da32c1a3047ee078"></a>KUZU_POINTER&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a402bc5ef3e9b9a57ba391e317023f8aea1e70c49c5fdbfef7e0eb36b5d5a965b5" name="a402bc5ef3e9b9a57ba391e317023f8aea1e70c49c5fdbfef7e0eb36b5d5a965b5"></a>KUZU_UUID&#160;</td><td class="fielddoc"></td></tr>
 </table>
@@ -3530,533 +3498,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1f59000af6a805123fe413567a46a977" name="a1f59000af6a805123fe413567a46a977"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f59000af6a805123fe413567a46a977">&#9670;&#160;</a></span>kuzu_rdf_variant_get_blob()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_blob </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t **</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the blob value of the given rdf variant. The returned buffer is null-terminated similar to a string. The value must be of type BLOB. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the blob value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="ae9b3c2f756df758472b8428d60e790f5" name="ae9b3c2f756df758472b8428d60e790f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9b3c2f756df758472b8428d60e790f5">&#9670;&#160;</a></span>kuzu_rdf_variant_get_bool()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_bool </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the boolean value of the given rdf variant. The value must be of type BOOL. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the boolean value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="abace929d16bc630ee42c931d8a337dd9" name="abace929d16bc630ee42c931d8a337dd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abace929d16bc630ee42c931d8a337dd9">&#9670;&#160;</a></span>kuzu_rdf_variant_get_date()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_date </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structkuzu__date__t.html">kuzu_date_t</a> *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the date value of the given rdf variant. The value must be of type DATE. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the date value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="ae595c465c2827c3f3989e7e978ee4278" name="ae595c465c2827c3f3989e7e978ee4278"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae595c465c2827c3f3989e7e978ee4278">&#9670;&#160;</a></span>kuzu_rdf_variant_get_double()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_double </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the double value of the given rdf variant. The value must be of type DOUBLE. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the double value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="a68c617a95144bc854b8b9b42403c3111" name="a68c617a95144bc854b8b9b42403c3111"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68c617a95144bc854b8b9b42403c3111">&#9670;&#160;</a></span>kuzu_rdf_variant_get_float()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_float </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the float value of the given rdf variant. The value must be of type FLOAT. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the float value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="a6915b1eaf2466ee9e57b89530e28403f" name="a6915b1eaf2466ee9e57b89530e28403f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6915b1eaf2466ee9e57b89530e28403f">&#9670;&#160;</a></span>kuzu_rdf_variant_get_int16()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_int16 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int16_t *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the int16 value of the given rdf variant. The value must be of type INT16. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the int16 value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="a1e6d8670b28636a12989d9a0e1a9b62d" name="a1e6d8670b28636a12989d9a0e1a9b62d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e6d8670b28636a12989d9a0e1a9b62d">&#9670;&#160;</a></span>kuzu_rdf_variant_get_int32()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_int32 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the int32 value of the given rdf variant. The value must be of type INT32. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the int32 value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="a359bdf9a5b794f7390cc7441dbaed61b" name="a359bdf9a5b794f7390cc7441dbaed61b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a359bdf9a5b794f7390cc7441dbaed61b">&#9670;&#160;</a></span>kuzu_rdf_variant_get_int64()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_int64 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int64_t *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the int64 value of the given rdf variant. The value must be of type INT64. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the int64 value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="a7c453f546b072c96530981bae7902ff7" name="a7c453f546b072c96530981bae7902ff7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c453f546b072c96530981bae7902ff7">&#9670;&#160;</a></span>kuzu_rdf_variant_get_int8()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_int8 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int8_t *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the int8 value of the given rdf variant. The value must be of type INT8. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the int8 value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="a23df97eb85e7e38a1594a688f40ee657" name="a23df97eb85e7e38a1594a688f40ee657"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23df97eb85e7e38a1594a688f40ee657">&#9670;&#160;</a></span>kuzu_rdf_variant_get_interval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_interval </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structkuzu__interval__t.html">kuzu_interval_t</a> *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the interval value of the given rdf variant. The value must be of type INTERVAL. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the interval value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="adcdda85db80863a1088da6ba38447ee1" name="adcdda85db80863a1088da6ba38447ee1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcdda85db80863a1088da6ba38447ee1">&#9670;&#160;</a></span>kuzu_rdf_variant_get_string()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_string </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the string value of the given rdf variant. The value must be of type STRING. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the string value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="a50fb4679f082c2d6bbf810e612aaa0a2" name="a50fb4679f082c2d6bbf810e612aaa0a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50fb4679f082c2d6bbf810e612aaa0a2">&#9670;&#160;</a></span>kuzu_rdf_variant_get_timestamp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_timestamp </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structkuzu__timestamp__t.html">kuzu_timestamp_t</a> *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the timestamp value of the given rdf variant. The value must be of type TIMESTAMP. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the timestamp value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="acdda83c5d56b5b344af79bc952a2711a" name="acdda83c5d56b5b344af79bc952a2711a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdda83c5d56b5b344af79bc952a2711a">&#9670;&#160;</a></span>kuzu_rdf_variant_get_type()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_type </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a402bc5ef3e9b9a57ba391e317023f8ae">kuzu_data_type_id</a> *</td>          <td class="paramname"><span class="paramname"><em>out_type</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the underlying data type of the given rdf variant. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_type</td><td>The output parameter that will hold the data type of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="add8974dd741d29b7e4e10074805703f9" name="add8974dd741d29b7e4e10074805703f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add8974dd741d29b7e4e10074805703f9">&#9670;&#160;</a></span>kuzu_rdf_variant_get_uint16()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_uint16 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the uint16 value of the given rdf variant. The value must be of type UINT16. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the uint16 value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="a014de9d87e7818ed6b1bca6363722268" name="a014de9d87e7818ed6b1bca6363722268"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a014de9d87e7818ed6b1bca6363722268">&#9670;&#160;</a></span>kuzu_rdf_variant_get_uint32()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_uint32 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the uint32 value of the given rdf variant. The value must be of type UINT32. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the uint32 value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="a43347fd992d41e470671bd404cb8aa51" name="a43347fd992d41e470671bd404cb8aa51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43347fd992d41e470671bd404cb8aa51">&#9670;&#160;</a></span>kuzu_rdf_variant_get_uint64()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_uint64 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint64_t *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the uint64 value of the given rdf variant. The value must be of type UINT64. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the uint64 value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
-<a id="a31f4f80a1203ef95ae646e12912fe89c" name="a31f4f80a1203ef95ae646e12912fe89c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31f4f80a1203ef95ae646e12912fe89c">&#9670;&#160;</a></span>kuzu_rdf_variant_get_uint8()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_rdf_variant_get_uint8 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>rdf_variant</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the uint8 value of the given rdf variant. The value must be of type UINT8. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">rdf_variant</td><td>The rdf variant. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the uint8 value of the rdf variant. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
-
-</div>
-</div>
 <a id="ad93fd4a51fb180223f52b7d71b9b7881" name="ad93fd4a51fb180223f52b7d71b9b7881"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad93fd4a51fb180223f52b7d71b9b7881">&#9670;&#160;</a></span>kuzu_rel_val_get_dst_id_val()</h2>
 
@@ -4951,6 +4392,86 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a885b020a7eec8ec9266f10e006051084" name="a885b020a7eec8ec9266f10e006051084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a885b020a7eec8ec9266f10e006051084">&#9670;&#160;</a></span>kuzu_value_create_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_value_create_list </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>num_elements</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> **</td>          <td class="paramname"><span class="paramname"><em>elements</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> **</td>          <td class="paramname"><span class="paramname"><em>out_value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a list value with the given number of elements and the given elements. The caller needs to make sure that all elements have the same type. The elements are copied into the list value, so destroying the elements after creating the list value is safe. Caller is responsible for destroying the returned value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">num_elements</td><td>The number of elements in the list. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">elements</td><td>The elements of the list. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_value</td><td>The output parameter that will hold a pointer to the created list value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
+
+</div>
+</div>
+<a id="a77a94b0e15c068b44c363a2e11afaf4c" name="a77a94b0e15c068b44c363a2e11afaf4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a94b0e15c068b44c363a2e11afaf4c">&#9670;&#160;</a></span>kuzu_value_create_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_value_create_map </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>num_fields</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> **</td>          <td class="paramname"><span class="paramname"><em>keys</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> **</td>          <td class="paramname"><span class="paramname"><em>values</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> **</td>          <td class="paramname"><span class="paramname"><em>out_value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a map value with the given number of fields and the given keys and values. The caller needs to make sure that all keys are unique, and all keys and values have the same type. The keys and values are copied into the map value, so destroying the keys and values after creating the map value is safe. Caller is responsible for destroying the returned value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">num_fields</td><td>The number of fields in the map. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">keys</td><td>The keys of the map. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">values</td><td>The values of the map. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_value</td><td>The output parameter that will hold a pointer to the created map value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
+
+</div>
+</div>
 <a id="aeb3930c53f2273392ccbb1fe2639f22a" name="aeb3930c53f2273392ccbb1fe2639f22a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb3930c53f2273392ccbb1fe2639f22a">&#9670;&#160;</a></span>kuzu_value_create_null()</h2>
 
@@ -5017,6 +4538,49 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="acb3c3c847030a96eb1cec3ef9af63be6" name="acb3c3c847030a96eb1cec3ef9af63be6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb3c3c847030a96eb1cec3ef9af63be6">&#9670;&#160;</a></span>kuzu_value_create_struct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_value_create_struct </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>num_fields</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **</td>          <td class="paramname"><span class="paramname"><em>field_names</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> **</td>          <td class="paramname"><span class="paramname"><em>field_values</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> **</td>          <td class="paramname"><span class="paramname"><em>out_value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a struct value with the given number of fields and the given field names and values. The caller needs to make sure that all field names are unique. The field names and values are copied into the struct value, so destroying the field names and values after creating the struct value is safe. Caller is responsible for destroying the returned value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">num_fields</td><td>The number of fields in the struct. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">field_names</td><td>The field names of the struct. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">field_values</td><td>The field values of the struct. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_value</td><td>The output parameter that will hold a pointer to the created struct value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
 
 </div>
 </div>
@@ -5393,6 +4957,37 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="abe64f769b43966d7f1ddadadebf35fb3" name="abe64f769b43966d7f1ddadadebf35fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe64f769b43966d7f1ddadadebf35fb3">&#9670;&#160;</a></span>kuzu_value_get_decimal_as_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_value_get_decimal_as_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the decimal value of the given value as a string. The value must be of type DECIMAL. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">value</td><td>The value to return. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the decimal value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
+
+</div>
+</div>
 <a id="ac2d608badfb440fc075fcb3e2bf7d19b" name="ac2d608badfb440fc075fcb3e2bf7d19b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2d608badfb440fc075fcb3e2bf7d19b">&#9670;&#160;</a></span>kuzu_value_get_double()</h2>
 
@@ -5733,6 +5328,111 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir"></td><td class="paramname">value</td><td>The ARRAY value to get list size. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the number of elements per list. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
+
+</div>
+</div>
+<a id="a3b18ebbf3707802910a23c1d8b04ea0a" name="a3b18ebbf3707802910a23c1d8b04ea0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b18ebbf3707802910a23c1d8b04ea0a">&#9670;&#160;</a></span>kuzu_value_get_map_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_value_get_map_key </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>out_key</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the key at index of the given map value. The value must be of physical type MAP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">value</td><td>The MAP value to get key. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">index</td><td>The index of the field name to return. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_key</td><td>The output parameter that will hold the key at index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
+
+</div>
+</div>
+<a id="a63b69a1895942a8b45f42ff085c3d0b4" name="a63b69a1895942a8b45f42ff085c3d0b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63b69a1895942a8b45f42ff085c3d0b4">&#9670;&#160;</a></span>kuzu_value_get_map_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_value_get_map_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *</td>          <td class="paramname"><span class="paramname"><em>out_result</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the size of the given map value. The value must be of type MAP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">value</td><td>The MAP value to get size. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_result</td><td>The output parameter that will hold the size of the map. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The state indicating the success or failure of the operation. </dd></dl>
+
+</div>
+</div>
+<a id="a923727e0d37424685416b307bbbda302" name="a923727e0d37424685416b307bbbda302"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923727e0d37424685416b307bbbda302">&#9670;&#160;</a></span>kuzu_value_get_map_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4c6ca4127ef18db01d41608c5e59aa3b">KUZU_C_API</a> <a class="el" href="#a5d32b0237a5f85124a55c496d2fdf92a">kuzu_state</a> kuzu_value_get_map_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structkuzu__value.html">kuzu_value</a> *</td>          <td class="paramname"><span class="paramname"><em>out_value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the field value at index of the given map value. The value must be of physical type MAP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">value</td><td>The MAP value to get field value. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">index</td><td>The index of the field value to return. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_value</td><td>The output parameter that will hold the field value at index. </td></tr>
   </table>
   </dd>
 </dl>

@@ -111,8 +111,8 @@ $(function(){initNavTree('classkuzu_1_1common_1_1_logical_type.html',''); initRe
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ba85b56880ce4176e1d6d31de4140a7" id="r_a1ba85b56880ce4176e1d6d31de4140a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ba85b56880ce4176e1d6d31de4140a7">LogicalType</a> ()</td></tr>
 <tr class="separator:a1ba85b56880ce4176e1d6d31de4140a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ef29fc119095a1d6a853244128245c1" id="r_a8ef29fc119095a1d6a853244128245c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ef29fc119095a1d6a853244128245c1">LogicalType</a> (<a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a> typeID)</td></tr>
-<tr class="separator:a8ef29fc119095a1d6a853244128245c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace23f049e4c69d91b71395032c23a766" id="r_ace23f049e4c69d91b71395032c23a766"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace23f049e4c69d91b71395032c23a766">LogicalType</a> (<a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a> typeID, <a class="el" href="namespacekuzu_1_1common.html#a85fc1164fed96b1de51b78bd5eecc68d">TypeCategory</a> info=<a class="el" href="namespacekuzu_1_1common.html#a85fc1164fed96b1de51b78bd5eecc68da182fa1c42a2468f8488e6dcf75a81b81">TypeCategory::INTERNAL</a>)</td></tr>
+<tr class="separator:ace23f049e4c69d91b71395032c23a766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a873184c32a7a379018a00f95d84500a9" id="r_a873184c32a7a379018a00f95d84500a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a873184c32a7a379018a00f95d84500a9">EXPLICIT_COPY_DEFAULT_MOVE</a> (<a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>)</td></tr>
 <tr class="separator:a873184c32a7a379018a00f95d84500a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45ae5ab90e14376251df4df67114f9b5" id="r_a45ae5ab90e14376251df4df67114f9b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45ae5ab90e14376251df4df67114f9b5">operator==</a> (const <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;other) const</td></tr>
@@ -125,22 +125,26 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a928b50c5a344ced8c364223062e0e53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb66257b954734b69618a5d44bba55da" id="r_adb66257b954734b69618a5d44bba55da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb66257b954734b69618a5d44bba55da">containsAny</a> () const</td></tr>
 <tr class="separator:adb66257b954734b69618a5d44bba55da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c8d00ff139ac7ce8e46028690d3256" id="r_ae1c8d00ff139ac7ce8e46028690d3256"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1c8d00ff139ac7ce8e46028690d3256">isInternalType</a> () const</td></tr>
+<tr class="separator:ae1c8d00ff139ac7ce8e46028690d3256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0022171c63e0979504e1a75d91b6c96" id="r_af0022171c63e0979504e1a75d91b6c96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368">PhysicalTypeID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0022171c63e0979504e1a75d91b6c96">getPhysicalType</a> () const</td></tr>
 <tr class="separator:af0022171c63e0979504e1a75d91b6c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2793cdc02eadbe6f09cff82fc0fbd8f9" id="r_a2793cdc02eadbe6f09cff82fc0fbd8f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2793cdc02eadbe6f09cff82fc0fbd8f9">setExtraTypeInfo</a> (std::unique_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_extra_type_info.html">ExtraTypeInfo</a> &gt; typeInfo)</td></tr>
 <tr class="separator:a2793cdc02eadbe6f09cff82fc0fbd8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d51dae0ff8c49f37a299f0dd7bc2ae3" id="r_a3d51dae0ff8c49f37a299f0dd7bc2ae3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d51dae0ff8c49f37a299f0dd7bc2ae3">serialize</a> (<a class="el" href="classkuzu_1_1common_1_1_serializer.html">Serializer</a> &amp;serializer) const</td></tr>
+<tr class="memitem:ad9696fb7718a6c0e7dd47a3edb78c7d9" id="r_ad9696fb7718a6c0e7dd47a3edb78c7d9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classkuzu_1_1common_1_1_extra_type_info.html">ExtraTypeInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9696fb7718a6c0e7dd47a3edb78c7d9">getExtraTypeInfo</a> () const</td></tr>
+<tr class="separator:ad9696fb7718a6c0e7dd47a3edb78c7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d51dae0ff8c49f37a299f0dd7bc2ae3" id="r_a3d51dae0ff8c49f37a299f0dd7bc2ae3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d51dae0ff8c49f37a299f0dd7bc2ae3">serialize</a> (Serializer &amp;serializer) const</td></tr>
 <tr class="separator:a3d51dae0ff8c49f37a299f0dd7bc2ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad4347745105ea9c77534d37c560e30a0" id="r_ad4347745105ea9c77534d37c560e30a0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4347745105ea9c77534d37c560e30a0">tryConvertFromString</a> (const std::string &amp;str, <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;type)</td></tr>
-<tr class="separator:ad4347745105ea9c77534d37c560e30a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58b281fd1fe9cd810a990fde3a0c87fd" id="r_a58b281fd1fe9cd810a990fde3a0c87fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58b281fd1fe9cd810a990fde3a0c87fd">fromString</a> (const std::string &amp;str)</td></tr>
-<tr class="separator:a58b281fd1fe9cd810a990fde3a0c87fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf700a3228bd0cdc03b52d53446142f5" id="r_abf700a3228bd0cdc03b52d53446142f5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf700a3228bd0cdc03b52d53446142f5">isBuiltInType</a> (const std::string &amp;str)</td></tr>
+<tr class="separator:abf700a3228bd0cdc03b52d53446142f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30e9a0fdb5d065f742708ff3dc67434" id="r_ae30e9a0fdb5d065f742708ff3dc67434"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae30e9a0fdb5d065f742708ff3dc67434">convertFromString</a> (const std::string &amp;str, <a class="el" href="classkuzu_1_1main_1_1_client_context.html">main::ClientContext</a> *context)</td></tr>
+<tr class="separator:ae30e9a0fdb5d065f742708ff3dc67434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb7d2a7f961c8f252ab2f1e32a58e362" id="r_afb7d2a7f961c8f252ab2f1e32a58e362"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368">PhysicalTypeID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb7d2a7f961c8f252ab2f1e32a58e362">getPhysicalType</a> (<a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a> logicalType, const std::unique_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_extra_type_info.html">ExtraTypeInfo</a> &gt; &amp;extraTypeInfo=nullptr)</td></tr>
 <tr class="separator:afb7d2a7f961c8f252ab2f1e32a58e362"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d155a75f56cd4eb4184e122fa61f3c0" id="r_a0d155a75f56cd4eb4184e122fa61f3c0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d155a75f56cd4eb4184e122fa61f3c0">deserialize</a> (<a class="el" href="classkuzu_1_1common_1_1_deserializer.html">Deserializer</a> &amp;deserializer)</td></tr>
+<tr class="memitem:a0d155a75f56cd4eb4184e122fa61f3c0" id="r_a0d155a75f56cd4eb4184e122fa61f3c0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d155a75f56cd4eb4184e122fa61f3c0">deserialize</a> (Deserializer &amp;deserializer)</td></tr>
 <tr class="separator:a0d155a75f56cd4eb4184e122fa61f3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adec4b7ba5492c3446b2e5c49b5540c9e" id="r_adec4b7ba5492c3446b2e5c49b5540c9e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adec4b7ba5492c3446b2e5c49b5540c9e">copy</a> (const std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &gt; &amp;types)</td></tr>
 <tr class="separator:adec4b7ba5492c3446b2e5c49b5540c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,6 +152,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a35ee5d2727688b1884fe212ad40c4eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf3a4b9d7fbfafc730db2f006b7030ac" id="r_aaf3a4b9d7fbfafc730db2f006b7030ac"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf3a4b9d7fbfafc730db2f006b7030ac">ANY</a> ()</td></tr>
 <tr class="separator:aaf3a4b9d7fbfafc730db2f006b7030ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae371da3c120d8f98a9bf450a08ed4cf0" id="r_ae371da3c120d8f98a9bf450a08ed4cf0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae371da3c120d8f98a9bf450a08ed4cf0">ANY</a> (<a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368">PhysicalTypeID</a> physicalType)</td></tr>
+<tr class="separator:ae371da3c120d8f98a9bf450a08ed4cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a069ae2911c86cee9a24374e5fc533bcf" id="r_a069ae2911c86cee9a24374e5fc533bcf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a069ae2911c86cee9a24374e5fc533bcf">BOOL</a> ()</td></tr>
 <tr class="separator:a069ae2911c86cee9a24374e5fc533bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e8a2084a7e3465e2f74db734abc75cb" id="r_a3e8a2084a7e3465e2f74db734abc75cb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e8a2084a7e3465e2f74db734abc75cb">HASH</a> ()</td></tr>
@@ -210,8 +216,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:af5af8d3e78b684afc37aed4f0a670ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed1da33aee222b3800b9eb4f52152aa7" id="r_aed1da33aee222b3800b9eb4f52152aa7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed1da33aee222b3800b9eb4f52152aa7">REL</a> (std::unique_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_struct_type_info.html">StructTypeInfo</a> &gt; typeInfo)</td></tr>
 <tr class="separator:aed1da33aee222b3800b9eb4f52152aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9685950de66538bfe2ea55c01dafdc5" id="r_af9685950de66538bfe2ea55c01dafdc5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9685950de66538bfe2ea55c01dafdc5">RDF_VARIANT</a> ()</td></tr>
-<tr class="separator:af9685950de66538bfe2ea55c01dafdc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b406dbc91f063497e8d3de743112716" id="r_a3b406dbc91f063497e8d3de743112716"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b406dbc91f063497e8d3de743112716">UNION</a> (std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_struct_field.html">StructField</a> &gt; &amp;&amp;fields)</td></tr>
 <tr class="separator:a3b406dbc91f063497e8d3de743112716"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40cbf033488df722ae2f27c6a289a8c2" id="r_a40cbf033488df722ae2f27c6a289a8c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40cbf033488df722ae2f27c6a289a8c2">LIST</a> (<a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> childType)</td></tr>
@@ -275,8 +279,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a8ef29fc119095a1d6a853244128245c1" name="a8ef29fc119095a1d6a853244128245c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ef29fc119095a1d6a853244128245c1">&#9670;&#160;</a></span>LogicalType() <span class="overload">[2/2]</span></h2>
+<a id="ace23f049e4c69d91b71395032c23a766" name="ace23f049e4c69d91b71395032c23a766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace23f049e4c69d91b71395032c23a766">&#9670;&#160;</a></span>LogicalType() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,8 +291,12 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> kuzu::common::LogicalType::LogicalType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a></td>          <td class="paramname"><span class="paramname"><em>typeID</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a></td>          <td class="paramname"><span class="paramname"><em>typeID</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a85fc1164fed96b1de51b78bd5eecc68d">TypeCategory</a></td>          <td class="paramname"><span class="paramname"><em>info</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacekuzu_1_1common.html#a85fc1164fed96b1de51b78bd5eecc68da182fa1c42a2468f8488e6dcf75a81b81">TypeCategory::INTERNAL</a></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -302,7 +310,7 @@ Friends</h2></td></tr>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="aaf3a4b9d7fbfafc730db2f006b7030ac" name="aaf3a4b9d7fbfafc730db2f006b7030ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf3a4b9d7fbfafc730db2f006b7030ac">&#9670;&#160;</a></span>ANY()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf3a4b9d7fbfafc730db2f006b7030ac">&#9670;&#160;</a></span>ANY() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,6 +322,31 @@ Friends</h2></td></tr>
           <td class="memname">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> kuzu::common::LogicalType::ANY </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae371da3c120d8f98a9bf450a08ed4cf0" name="ae371da3c120d8f98a9bf450a08ed4cf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae371da3c120d8f98a9bf450a08ed4cf0">&#9670;&#160;</a></span>ANY() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> kuzu::common::LogicalType::ANY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368">PhysicalTypeID</a></td>          <td class="paramname"><span class="paramname"><em>physicalType</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -453,6 +486,35 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="ae30e9a0fdb5d065f742708ff3dc67434" name="ae30e9a0fdb5d065f742708ff3dc67434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30e9a0fdb5d065f742708ff3dc67434">&#9670;&#160;</a></span>convertFromString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> kuzu::common::LogicalType::convertFromString </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classkuzu_1_1main_1_1_client_context.html">main::ClientContext</a> *</td>          <td class="paramname"><span class="paramname"><em>context</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a35ee5d2727688b1884fe212ad40c4eed" name="a35ee5d2727688b1884fe212ad40c4eed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35ee5d2727688b1884fe212ad40c4eed">&#9670;&#160;</a></span>copy() <span class="overload">[1/2]</span></h2>
 
@@ -569,7 +631,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> kuzu::common::LogicalType::deserialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_deserializer.html">Deserializer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>deserializer</em></span></td><td>)</td>
+          <td class="paramtype">Deserializer &amp;</td>          <td class="paramname"><span class="paramname"><em>deserializer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -649,8 +711,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a58b281fd1fe9cd810a990fde3a0c87fd" name="a58b281fd1fe9cd810a990fde3a0c87fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58b281fd1fe9cd810a990fde3a0c87fd">&#9670;&#160;</a></span>fromString()</h2>
+<a id="ad9696fb7718a6c0e7dd47a3edb78c7d9" name="ad9696fb7718a6c0e7dd47a3edb78c7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9696fb7718a6c0e7dd47a3edb78c7d9">&#9670;&#160;</a></span>getExtraTypeInfo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -659,15 +721,15 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> kuzu::common::LogicalType::fromString </td>
+          <td class="memname">const <a class="el" href="classkuzu_1_1common_1_1_extra_type_info.html">ExtraTypeInfo</a> * kuzu::common::LogicalType::getExtraTypeInfo </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -953,6 +1015,56 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="abf700a3228bd0cdc03b52d53446142f5" name="abf700a3228bd0cdc03b52d53446142f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf700a3228bd0cdc03b52d53446142f5">&#9670;&#160;</a></span>isBuiltInType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool kuzu::common::LogicalType::isBuiltInType </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1c8d00ff139ac7ce8e46028690d3256" name="ae1c8d00ff139ac7ce8e46028690d3256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c8d00ff139ac7ce8e46028690d3256">&#9670;&#160;</a></span>isInternalType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool kuzu::common::LogicalType::isInternalType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a40cbf033488df722ae2f27c6a289a8c2" name="a40cbf033488df722ae2f27c6a289a8c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a40cbf033488df722ae2f27c6a289a8c2">&#9670;&#160;</a></span>LIST() <span class="overload">[1/2]</span></h2>
 
@@ -1149,31 +1261,6 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="af9685950de66538bfe2ea55c01dafdc5" name="af9685950de66538bfe2ea55c01dafdc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9685950de66538bfe2ea55c01dafdc5">&#9670;&#160;</a></span>RDF_VARIANT()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> kuzu::common::LogicalType::RDF_VARIANT </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a81bb2a1046ec4b19af0b0151bf6c55ff" name="a81bb2a1046ec4b19af0b0151bf6c55ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81bb2a1046ec4b19af0b0151bf6c55ff">&#9670;&#160;</a></span>RECURSIVE_REL()</h2>
 
@@ -1258,7 +1345,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void kuzu::common::LogicalType::serialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_serializer.html">Serializer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>serializer</em></span></td><td>)</td>
+          <td class="paramtype">Serializer &amp;</td>          <td class="paramname"><span class="paramname"><em>serializer</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1479,35 +1566,6 @@ template&lt;class T &gt; </div>
           <td> const</td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad4347745105ea9c77534d37c560e30a0" name="ad4347745105ea9c77534d37c560e30a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4347745105ea9c77534d37c560e30a0">&#9670;&#160;</a></span>tryConvertFromString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool kuzu::common::LogicalType::tryConvertFromString </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>

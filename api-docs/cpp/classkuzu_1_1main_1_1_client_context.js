@@ -31,6 +31,8 @@ var classkuzu_1_1main_1_1_client_context =
     [ "getTx", "classkuzu_1_1main_1_1_client_context.html#ac72401e94309f757320e03df0be95d93", null ],
     [ "getVFSUnsafe", "classkuzu_1_1main_1_1_client_context.html#a03d270ef60cf57d91462b4ad4f3b5d32", null ],
     [ "getWAL", "classkuzu_1_1main_1_1_client_context.html#ad2bd7395734a87ce340c9f3b52ca460d", null ],
+    [ "getWarningContext", "classkuzu_1_1main_1_1_client_context.html#ab431d590d719676926b7fd6a058cd1bb", null ],
+    [ "getWarningContextUnsafe", "classkuzu_1_1main_1_1_client_context.html#a0d3f570c17a45358e5475406e2c2d14e", null ],
     [ "hasDefaultDatabase", "classkuzu_1_1main_1_1_client_context.html#ac0f91db9654dc36e809cf0bd312963c4", null ],
     [ "hasTimeout", "classkuzu_1_1main_1_1_client_context.html#aeaa6f9fe8e0ab37cecbd990dad55b0cd", null ],
     [ "interrupt", "classkuzu_1_1main_1_1_client_context.html#a9bc4e1b96d9e3baa78c5c83ea3b605c4", null ],
@@ -38,12 +40,9 @@ var classkuzu_1_1main_1_1_client_context =
     [ "isOptionSet", "classkuzu_1_1main_1_1_client_context.html#a86814cc1020cdc38d7779eee9c79d40c", null ],
     [ "parseQuery", "classkuzu_1_1main_1_1_client_context.html#a859ded26ca80a5b3982faf12c69ae736", null ],
     [ "prepare", "classkuzu_1_1main_1_1_client_context.html#a2d1dc22c3786550882ac1469ded83cd3", null ],
-    [ "prepareTest", "classkuzu_1_1main_1_1_client_context.html#a6dbc32c5cc040c993bcec04f6db9045c", null ],
     [ "query", "classkuzu_1_1main_1_1_client_context.html#a029d9d38789fe1576a3d710fef8d9ed9", null ],
     [ "removeScalarFunction", "classkuzu_1_1main_1_1_client_context.html#a8e0a13c95ea581c72c997a3874979fa6", null ],
     [ "resetActiveQuery", "classkuzu_1_1main_1_1_client_context.html#adc91727eb92d9c23a8c631bd5608a0ec", null ],
-    [ "runFuncInTransaction", "classkuzu_1_1main_1_1_client_context.html#a829a1c7e988376e58aff19a57bf45d6c", null ],
-    [ "runQuery", "classkuzu_1_1main_1_1_client_context.html#a2ca0893969d80d0df81d11e09836a527", null ],
     [ "setDefaultDatabase", "classkuzu_1_1main_1_1_client_context.html#ab4f6bd25e4ec539f418b0578e82b9041", null ],
     [ "setExtensionOption", "classkuzu_1_1main_1_1_client_context.html#aea09e77d631f6832dc9b17724b37d379", null ],
     [ "setMaxNumThreadForExec", "classkuzu_1_1main_1_1_client_context.html#a61e1a79ea7f95286c62a6fe633b3af17", null ],
@@ -52,5 +51,7 @@ var classkuzu_1_1main_1_1_client_context =
     [ "tryReplace", "classkuzu_1_1main_1_1_client_context.html#aa46c7aabde31a3d6e79d973d51ebad3c", null ],
     [ "binder::Binder", "classkuzu_1_1main_1_1_client_context.html#a2c5cdff3441ff680f68be6537db18d99", null ],
     [ "binder::ExpressionBinder", "classkuzu_1_1main_1_1_client_context.html#ae6396edfa618c3eb40a1dd3be0b28a12", null ],
-    [ "Connection", "classkuzu_1_1main_1_1_client_context.html#a54a11fdc71e1679a42fa0c0e3856673d", null ]
+    [ "Connection", "classkuzu_1_1main_1_1_client_context.html#a54a11fdc71e1679a42fa0c0e3856673d", null ],
+    [ "main::SpillToDiskSetting", "classkuzu_1_1main_1_1_client_context.html#a98a9b59829149f373a9d2361519d0140", null ],
+    [ "processor::ImportDB", "classkuzu_1_1main_1_1_client_context.html#a42d3b415fbf6a21a2ce721658feb4a8c", null ]
 ];

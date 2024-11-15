@@ -2,6 +2,7 @@ var classkuzu_1_1common_1_1_data_chunk_state =
 [
     [ "DataChunkState", "classkuzu_1_1common_1_1_data_chunk_state.html#a6fa8ccc24f63e310bc412c9e07ebedb4", null ],
     [ "DataChunkState", "classkuzu_1_1common_1_1_data_chunk_state.html#a5d365a319f2598e4514918dda9dc291f", null ],
+    [ "getSelSize", "classkuzu_1_1common_1_1_data_chunk_state.html#ae47896fbbf5b58adc929dbe3d1d5c34a", null ],
     [ "getSelVector", "classkuzu_1_1common_1_1_data_chunk_state.html#a91363b43f3ac3a85220dd5a9748bdaa3", null ],
     [ "getSelVectorShared", "classkuzu_1_1common_1_1_data_chunk_state.html#ad1c468cdda8324ca2aa5c90c62c8181e", null ],
     [ "getSelVectorUnsafe", "classkuzu_1_1common_1_1_data_chunk_state.html#a6877b41131ed1c37fd2de48837b59ec6", null ],

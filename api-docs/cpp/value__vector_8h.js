@@ -6,6 +6,5 @@ var value__vector_8h =
     [ "kuzu::common::ListVector", "classkuzu_1_1common_1_1_list_vector.html", null ],
     [ "kuzu::common::StructVector", "classkuzu_1_1common_1_1_struct_vector.html", null ],
     [ "kuzu::common::UnionVector", "classkuzu_1_1common_1_1_union_vector.html", null ],
-    [ "kuzu::common::MapVector", "classkuzu_1_1common_1_1_map_vector.html", null ],
-    [ "kuzu::common::RdfVariantVector", "structkuzu_1_1common_1_1_rdf_variant_vector.html", null ]
+    [ "kuzu::common::MapVector", "classkuzu_1_1common_1_1_map_vector.html", null ]
 ];

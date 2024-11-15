@@ -5,7 +5,5 @@ var searchData=
   ['database_2eh_2',['database.h',['../database_8h.html',1,'']]],
   ['date_5ft_2eh_3',['date_t.h',['../date__t_8h.html',1,'']]],
   ['db_5fconfig_2eh_4',['db_config.h',['../db__config_8h.html',1,'']]],
-  ['db_5ffile_5fid_2eh_5',['db_file_id.h',['../db__file__id_8h.html',1,'']]],
-  ['deserializer_2eh_6',['deserializer.h',['../deserializer_8h.html',1,'']]],
-  ['dtime_5ft_2eh_7',['dtime_t.h',['../dtime__t_8h.html',1,'']]]
+  ['dtime_5ft_2eh_5',['dtime_t.h',['../dtime__t_8h.html',1,'']]]
 ];

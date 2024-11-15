@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['makesignedt_0',['MakeSignedT',['../namespacekuzu_1_1common_1_1numeric__utils.html#afb40995fb4b8cc59c4a0690d998eefb7',1,'kuzu::common::numeric_utils']]],
-  ['makeunsignedt_1',['MakeUnSignedT',['../namespacekuzu_1_1common_1_1numeric__utils.html#a7c1672d6d7495839b3357d007c9321a7',1,'kuzu::common::numeric_utils']]]
+  ['length_5ft_0',['length_t',['../namespacekuzu_1_1common.html#a000934fad4fa04836e33a76074940947',1,'kuzu::common']]],
+  ['list_5fsize_5ft_1',['list_size_t',['../namespacekuzu_1_1common.html#abe98f866f775138517ab0c785642c1c8',1,'kuzu::common']]],
+  ['logical_5ftype_5fvec_5ft_2',['logical_type_vec_t',['../namespacekuzu_1_1common.html#a9b254dca32abae9d6bfc464133eeb4c6',1,'kuzu::common']]]
 ];

@@ -122,8 +122,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa6b35faf6d4071417545e39762090301"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63dbe286d0db1c2357c015e9a0fa393c" id="r_a63dbe286d0db1c2357c015e9a0fa393c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63dbe286d0db1c2357c015e9a0fa393c">getNumValueVectors</a> () const</td></tr>
 <tr class="separator:a63dbe286d0db1c2357c015e9a0fa393c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48925d41e508e2906553d2d704feeffc" id="r_a48925d41e508e2906553d2d704feeffc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48925d41e508e2906553d2d704feeffc">getValueVector</a> (uint64_t valueVectorPos)</td></tr>
-<tr class="separator:a48925d41e508e2906553d2d704feeffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c51a1f9396d6a9d7ba3e11e57892206" id="r_a5c51a1f9396d6a9d7ba3e11e57892206"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c51a1f9396d6a9d7ba3e11e57892206">getValueVector</a> (uint64_t valueVectorPos) const</td></tr>
+<tr class="separator:a5c51a1f9396d6a9d7ba3e11e57892206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa198f327dd562ab98de42208b14eb16a" id="r_aa198f327dd562ab98de42208b14eb16a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa198f327dd562ab98de42208b14eb16a">getValueVectorMutable</a> (uint64_t valueVectorPos) const</td></tr>
+<tr class="separator:aa198f327dd562ab98de42208b14eb16a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -255,8 +257,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a48925d41e508e2906553d2d704feeffc" name="a48925d41e508e2906553d2d704feeffc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48925d41e508e2906553d2d704feeffc">&#9670;&#160;</a></span>getValueVector()</h2>
+<a id="a5c51a1f9396d6a9d7ba3e11e57892206" name="a5c51a1f9396d6a9d7ba3e11e57892206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c51a1f9396d6a9d7ba3e11e57892206">&#9670;&#160;</a></span>getValueVector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,10 +267,35 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &gt; kuzu::common::DataChunk::getValueVector </td>
+          <td class="memname">const <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &amp; kuzu::common::DataChunk::getValueVector </td>
           <td>(</td>
           <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>valueVectorPos</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa198f327dd562ab98de42208b14eb16a" name="aa198f327dd562ab98de42208b14eb16a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa198f327dd562ab98de42208b14eb16a">&#9670;&#160;</a></span>getValueVectorMutable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &amp; kuzu::common::DataChunk::getValueVectorMutable </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>valueVectorPos</em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>

@@ -1,12 +1,14 @@
 var searchData=
 [
-  ['accumulatedtime_0',['accumulatedTime',['../classkuzu_1_1common_1_1_time_metric.html#ab5b231da87cbc6a8515e49b12a5cc77b',1,'kuzu::common::TimeMetric']]],
-  ['accumulatedvalue_1',['accumulatedValue',['../classkuzu_1_1common_1_1_numeric_metric.html#ac6364045b372149d45b4722a2fef89b9',1,'kuzu::common::NumericMetric']]],
-  ['alias_2',['alias',['../classkuzu_1_1binder_1_1_expression.html#ac899da60047e21e366165840c2f11f46',1,'kuzu::binder::Expression::alias'],['../classkuzu_1_1parser_1_1_parsed_expression.html#a6eab30a5fd52999d1c5c026c39083cee',1,'kuzu::parser::ParsedExpression::alias']]],
-  ['all_5fnull_5fentry_3',['ALL_NULL_ENTRY',['../classkuzu_1_1common_1_1_null_mask.html#afbe8c6ff90fdd5ab918aea20ada37627',1,'kuzu::common::NullMask']]],
-  ['alterinfo_4',['alterInfo',['../classkuzu_1_1catalog_1_1_table_catalog_entry.html#a9857649412ad9831a8d8a51bb557b2f3',1,'kuzu::catalog::TableCatalogEntry']]],
-  ['altertype_5',['alterType',['../structkuzu_1_1binder_1_1_bound_alter_info.html#aeb138e4150fccf39106a1149e240de78',1,'kuzu::binder::BoundAlterInfo']]],
-  ['anonymous_6',['ANONYMOUS',['../structkuzu_1_1common_1_1_internal_keyword.html#af29807735e6856a56eebb4c3d644ad0d',1,'kuzu::common::InternalKeyword']]],
-  ['arguments_7',['arguments',['../structkuzu_1_1function_1_1_scalar_bind_func_input.html#ab48f50805e36ddaa6f7e661a45fefd1d',1,'kuzu::function::ScalarBindFuncInput']]],
-  ['autocheckpoint_8',['autoCheckpoint',['../structkuzu_1_1main_1_1_system_config.html#aa59cfd11d41b82ec8ff1ce51a04d131f',1,'kuzu::main::SystemConfig::autoCheckpoint'],['../structkuzu_1_1main_1_1_d_b_config.html#aa1ccadef24eff3ac983b89423b48b9d2',1,'kuzu::main::DBConfig::autoCheckpoint']]]
+  ['bc_5fsuffix_0',['BC_SUFFIX',['../classkuzu_1_1common_1_1_date.html#ae382dde3452bbe03068314458d169fa2',1,'kuzu::common::Date']]],
+  ['binddata_1',['bindData',['../structkuzu_1_1function_1_1_table_func_input.html#a37f41a4d91f4458fba07176ab0f83c28',1,'kuzu::function::TableFuncInput::bindData'],['../structkuzu_1_1function_1_1_table_function_init_input.html#a775e30f44dcef79db786b8edacf3d802',1,'kuzu::function::TableFunctionInitInput::bindData']]],
+  ['bindfunc_2',['bindFunc',['../structkuzu_1_1function_1_1_scalar_or_aggregate_function.html#afefdcf2cdf3280a7bee3a93856378577',1,'kuzu::function::ScalarOrAggregateFunction::bindFunc'],['../structkuzu_1_1function_1_1_table_function.html#a23317920f4557f8ee0c9c172eff92874',1,'kuzu::function::TableFunction::bindFunc']]],
+  ['bindinput_3',['bindInput',['../structkuzu_1_1function_1_1_scan_replacement_data.html#aa017ddf2a9de8df9a72d6dc50735aa3b',1,'kuzu::function::ScanReplacementData']]],
+  ['block_4',['block',['../structkuzu_1_1common_1_1_buffer_block.html#a804c3cb3b6f9ecc37bd58095690e9583',1,'kuzu::common::BufferBlock']]],
+  ['block_5fidx_5fidx_5',['BLOCK_IDX_IDX',['../structkuzu_1_1processor_1_1_warning_source_data.html#a1017c6f7580f3fc1e736e3f85758c981',1,'kuzu::processor::WarningSourceData']]],
+  ['bool_5fcsv_5fparsing_5foptions_6',['BOOL_CSV_PARSING_OPTIONS',['../structkuzu_1_1common_1_1_copy_constants.html#a7665d313ea06c5c69afad38ccfc5461b',1,'kuzu::common::CopyConstants']]],
+  ['booleanval_7',['booleanVal',['../unionkuzu_1_1common_1_1_value_1_1_val.html#a4db2e54607071223f466bc39b5043dfc',1,'kuzu::common::Value::Val']]],
+  ['bufferpoolsize_8',['bufferPoolSize',['../structkuzu_1_1main_1_1_system_config.html#ac553a54c20cc4aa7745e075f8dddd38b',1,'kuzu::main::SystemConfig::bufferPoolSize'],['../structkuzu_1_1main_1_1_d_b_config.html#a402d31f42d922e4e660b6c776df0910a',1,'kuzu::main::DBConfig::bufferPoolSize']]],
+  ['buffers_9',['buffers',['../struct_arrow_array.html#aa6766338a7beb165e32255cbd641f569',1,'ArrowArray']]],
+  ['build_5fpenalty_10',['BUILD_PENALTY',['../structkuzu_1_1common_1_1_planner_knobs.html#a0dd8e7237763b847d9cc4b02fb7d916c',1,'kuzu::common::PlannerKnobs']]]
 ];

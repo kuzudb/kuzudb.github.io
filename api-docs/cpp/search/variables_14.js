@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['uint16val_0',['uint16Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html#a5029c8cc7b85b8a6104ea9816461292e',1,'kuzu::common::Value::Val']]],
-  ['uint32val_1',['uint32Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html#a3dd7c249468c1e8a74984006d9f4d8e9',1,'kuzu::common::Value::Val']]],
-  ['uint64val_2',['uint64Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html#ae93231663a067f76bf6badb11ca5d3e9',1,'kuzu::common::Value::Val']]],
-  ['uint8val_3',['uint8Val',['../unionkuzu_1_1common_1_1_value_1_1_val.html#a203724b76272f320ffe67dcc35b3f629',1,'kuzu::common::Value::Val']]],
-  ['uncompressed_4',['uncompressed',['../classkuzu_1_1storage_1_1_compressed_functor.html#a21a0aba199fc3d8576321632bf166ce4',1,'kuzu::storage::CompressedFunctor']]],
-  ['undefined_5fcast_5fcost_5',['UNDEFINED_CAST_COST',['../namespacekuzu_1_1common.html#a02ac7f88b0b627766181f4756f78d61b',1,'kuzu::common']]],
-  ['undo_5fmemory_5fbuffer_5fsize_6',['UNDO_MEMORY_BUFFER_SIZE',['../classkuzu_1_1storage_1_1_undo_memory_buffer.html#a37515ba24e189983c4fea218d747ec32',1,'kuzu::storage::UndoMemoryBuffer']]],
-  ['uniquename_7',['uniqueName',['../classkuzu_1_1binder_1_1_expression.html#a2228fc01368489a1504c6002f1e3090c',1,'kuzu::binder::Expression']]],
-  ['unsignedint_8',['unsignedInt',['../unionkuzu_1_1storage_1_1_storage_value.html#aeed0d093cc3bd4443c9c707d1fd2266e',1,'kuzu::storage::StorageValue']]],
-  ['uuid_5fstring_5flength_9',['UUID_STRING_LENGTH',['../structkuzu_1_1common_1_1_u_u_i_d.html#aaa4f12ffb8447f855507a8a1ae4f8ceb',1,'kuzu::common::UUID']]]
+  ['val_0',['val',['../classkuzu_1_1common_1_1_value.html#a5363a2d88e205fbd25866fe488ecf5ad',1,'kuzu::common::Value']]],
+  ['value_1',['value',['../structkuzu_1_1common_1_1blob__t.html#ad88db793f386010bc20cfbcd52809d5b',1,'kuzu::common::blob_t::value'],['../structkuzu_1_1common_1_1timestamp__t.html#ab36c44e40db8021b572398d7bcb9613f',1,'kuzu::common::timestamp_t::value'],['../structkuzu_1_1common_1_1overflow__value__t.html#aa4c61e74aab2301dc343a58ae00dbfd7',1,'kuzu::common::overflow_value_t::value'],['../structkuzu_1_1common_1_1ku__uuid__t.html#a2b46bd881b24c7d6e0c6feda09b59d80',1,'kuzu::common::ku_uuid_t::value']]],
+  ['values_2',['values',['../structkuzu_1_1processor_1_1_warning_source_data.html#af96cb6222bdc99a67a7a4dfb18ab138f',1,'kuzu::processor::WarningSourceData']]],
+  ['valuevectors_3',['valueVectors',['../classkuzu_1_1common_1_1_data_chunk.html#adcb10043cdb24a7cfe92d36c11e5a2a8',1,'kuzu::common::DataChunk']]],
+  ['var_5flength_5fmax_5fdepth_4',['VAR_LENGTH_MAX_DEPTH',['../structkuzu_1_1main_1_1_client_config_default.html#a26a8a234b48ee9815cf8752d56916c45',1,'kuzu::main::ClientConfigDefault']]],
+  ['varlengthmaxdepth_5',['varLengthMaxDepth',['../structkuzu_1_1main_1_1_client_config.html#a5c65fac8e74edc5cc3a0a82cfd921a8f',1,'kuzu::main::ClientConfig']]],
+  ['vectors_6',['vectors',['../structkuzu_1_1function_1_1_table_func_output.html#ad21716dc70ac3e3e06cb0362e9d7308a',1,'kuzu::function::TableFuncOutput']]]
 ];

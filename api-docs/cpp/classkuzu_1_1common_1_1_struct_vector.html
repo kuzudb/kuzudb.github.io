@@ -111,10 +111,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a33e31e7ef76821a02c16b96a20a7db6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4b26441ca2aa05c08741dadd7603e7d" id="r_af4b26441ca2aa05c08741dadd7603e7d"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4b26441ca2aa05c08741dadd7603e7d">getFieldVector</a> (const <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> *vector, <a class="el" href="namespacekuzu_1_1common.html#ae846c2b0c0c800dc593f845a87975a77">struct_field_idx_t</a> idx)</td></tr>
 <tr class="separator:af4b26441ca2aa05c08741dadd7603e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0c55ce8652d9d229e0b643b8f27486" id="r_abf0c55ce8652d9d229e0b643b8f27486"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf0c55ce8652d9d229e0b643b8f27486">getFieldVectorRaw</a> (const <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &amp;vector, const std::string &amp;fieldName)</td></tr>
+<tr class="separator:abf0c55ce8652d9d229e0b643b8f27486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99df75884fa953d2e9804546cb250393" id="r_a99df75884fa953d2e9804546cb250393"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99df75884fa953d2e9804546cb250393">referenceVector</a> (<a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> *vector, <a class="el" href="namespacekuzu_1_1common.html#ae846c2b0c0c800dc593f845a87975a77">struct_field_idx_t</a> idx, std::shared_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &gt; vectorToReference)</td></tr>
 <tr class="separator:a99df75884fa953d2e9804546cb250393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7179cdd6dd12b2ac8aefaa2c1034b2c" id="r_ae7179cdd6dd12b2ac8aefaa2c1034b2c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7179cdd6dd12b2ac8aefaa2c1034b2c">initializeEntries</a> (<a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> *vector)</td></tr>
-<tr class="separator:ae7179cdd6dd12b2ac8aefaa2c1034b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9187337555f47b1fd6d348008bcc81e5" id="r_a9187337555f47b1fd6d348008bcc81e5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9187337555f47b1fd6d348008bcc81e5">copyFromRowData</a> (<a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> *vector, uint32_t pos, const uint8_t *rowData)</td></tr>
 <tr class="separator:a9187337555f47b1fd6d348008bcc81e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1658f83e3ed898e30075b04f11abe60" id="r_aa1658f83e3ed898e30075b04f11abe60"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1658f83e3ed898e30075b04f11abe60">copyToRowData</a> (const <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> *vector, uint32_t pos, uint8_t *rowData, <a class="el" href="classkuzu_1_1common_1_1_in_mem_overflow_buffer.html">InMemOverflowBuffer</a> *rowOverflowBuffer)</td></tr>
@@ -264,6 +264,35 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="abf0c55ce8652d9d229e0b643b8f27486" name="abf0c55ce8652d9d229e0b643b8f27486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf0c55ce8652d9d229e0b643b8f27486">&#9670;&#160;</a></span>getFieldVectorRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> * kuzu::common::StructVector::getFieldVectorRaw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vector</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>fieldName</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a33e31e7ef76821a02c16b96a20a7db6b" name="a33e31e7ef76821a02c16b96a20a7db6b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33e31e7ef76821a02c16b96a20a7db6b">&#9670;&#160;</a></span>getFieldVectors()</h2>
 
@@ -277,31 +306,6 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">static const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &gt; &gt; &amp; kuzu::common::StructVector::getFieldVectors </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> *</td>          <td class="paramname"><span class="paramname"><em>vector</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae7179cdd6dd12b2ac8aefaa2c1034b2c" name="ae7179cdd6dd12b2ac8aefaa2c1034b2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7179cdd6dd12b2ac8aefaa2c1034b2c">&#9670;&#160;</a></span>initializeEntries()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void kuzu::common::StructVector::initializeEntries </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> *</td>          <td class="paramname"><span class="paramname"><em>vector</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

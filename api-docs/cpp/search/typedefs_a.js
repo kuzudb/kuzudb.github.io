@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['offset_5fset_5ft_0',['offset_set_t',['../namespacekuzu_1_1storage.html#abfe6867b96f532cbc334c3138d8fe25c',1,'kuzu::storage']]],
-  ['offset_5ft_1',['offset_t',['../namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc',1,'kuzu::common']]],
-  ['offset_5fto_5frow_5fidx_5ft_2',['offset_to_row_idx_t',['../namespacekuzu_1_1storage.html#ab19a7c8c93e12eefabccf660b67ba37a',1,'kuzu::storage']]],
-  ['offset_5fto_5frow_5fidx_5fvec_5ft_3',['offset_to_row_idx_vec_t',['../namespacekuzu_1_1storage.html#acd36f4ad59bae9624e827a56c4435aac',1,'kuzu::storage']]],
-  ['options_5ft_4',['options_t',['../namespacekuzu_1_1parser.html#a4bb7cb449b6b294bc6c2b341bb9c2c89',1,'kuzu::parser']]]
+  ['offset_5ft_0',['offset_t',['../namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc',1,'kuzu::common']]],
+  ['oid_5ft_1',['oid_t',['../namespacekuzu_1_1common.html#a67524a46c03a424b450a6178f90b22e6',1,'kuzu::common']]]
 ];
