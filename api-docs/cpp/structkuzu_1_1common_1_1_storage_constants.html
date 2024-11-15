@@ -137,12 +137,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:ab8858531c966a3bc6cd8b99e0b986fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad650b8453c54fe264f126e64adc18780" id="r_ad650b8453c54fe264f126e64adc18780"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad650b8453c54fe264f126e64adc18780">NODE_GROUP_SIZE</a> = static_cast&lt;uint64_t&gt;(1) &lt;&lt; <a class="el" href="#ab8858531c966a3bc6cd8b99e0b986fb3">NODE_GROUP_SIZE_LOG2</a></td></tr>
 <tr class="separator:ad650b8453c54fe264f126e64adc18780"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad35eac5149176ea3c2d93a740e62aa46" id="r_ad35eac5149176ea3c2d93a740e62aa46"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad35eac5149176ea3c2d93a740e62aa46">NUM_VECTORS_PER_NODE_GROUP</a></td></tr>
-<tr class="separator:ad35eac5149176ea3c2d93a740e62aa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba179e9e5ffa38226285e99aa78123d6" id="r_aba179e9e5ffa38226285e99aa78123d6"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba179e9e5ffa38226285e99aa78123d6">PACKED_CSR_DENSITY</a> = 0.8</td></tr>
 <tr class="separator:aba179e9e5ffa38226285e99aa78123d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39089608714d3e21632de1abab574bb2" id="r_a39089608714d3e21632de1abab574bb2"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39089608714d3e21632de1abab574bb2">LEAF_LOW_CSR_DENSITY</a> = 0.1</td></tr>
-<tr class="separator:a39089608714d3e21632de1abab574bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7aaadd034b98ecc39781a51ab901db1" id="r_ad7aaadd034b98ecc39781a51ab901db1"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7aaadd034b98ecc39781a51ab901db1">LEAF_HIGH_CSR_DENSITY</a> = 1.0</td></tr>
 <tr class="separator:ad7aaadd034b98ecc39781a51ab901db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96b8131ceacd2cd832143422d677f4cf" id="r_a96b8131ceacd2cd832143422d677f4cf"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96b8131ceacd2cd832143422d677f4cf">CSR_LEAF_REGION_SIZE_LOG2</a> = 10</td></tr>
@@ -151,6 +147,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a5adc5d6f368bbf8869a6f8c6a866b18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ac45910afefad19ac2c70059ef898a1" id="r_a4ac45910afefad19ac2c70059ef898a1"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ac45910afefad19ac2c70059ef898a1">MAX_NUM_ROWS_IN_TABLE</a> = static_cast&lt;uint64_t&gt;(1) &lt;&lt; 62</td></tr>
 <tr class="separator:a4ac45910afefad19ac2c70059ef898a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c065da05f90b27429408724b67dcbbe" id="r_a3c065da05f90b27429408724b67dcbbe"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c065da05f90b27429408724b67dcbbe">TEMP_SPILLING_FILE_NAME</a> [] = &quot;.tmp&quot;</td></tr>
+<tr class="separator:a3c065da05f90b27429408724b67dcbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a03440eaac6ec1e7eb98a75cd91e2c03b" name="a03440eaac6ec1e7eb98a75cd91e2c03b"></a>
@@ -218,7 +216,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(1)</div>
 <div class="line">                                                     &lt;&lt; <a class="code hl_variable" href="#a96b8131ceacd2cd832143422d677f4cf">CSR_LEAF_REGION_SIZE_LOG2</a></div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_storage_constants_html_a96b8131ceacd2cd832143422d677f4cf"><div class="ttname"><a href="#a96b8131ceacd2cd832143422d677f4cf">kuzu::common::StorageConstants::CSR_LEAF_REGION_SIZE_LOG2</a></div><div class="ttdeci">static constexpr uint64_t CSR_LEAF_REGION_SIZE_LOG2</div><div class="ttdef"><b>Definition</b> constants.h:111</div></div>
+<div class="ttc" id="astructkuzu_1_1common_1_1_storage_constants_html_a96b8131ceacd2cd832143422d677f4cf"><div class="ttname"><a href="#a96b8131ceacd2cd832143422d677f4cf">kuzu::common::StorageConstants::CSR_LEAF_REGION_SIZE_LOG2</a></div><div class="ttdeci">static constexpr uint64_t CSR_LEAF_REGION_SIZE_LOG2</div><div class="ttdef"><b>Definition</b> constants.h:114</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -299,28 +297,6 @@ Static Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">double kuzu::common::StorageConstants::LEAF_HIGH_CSR_DENSITY = 1.0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a39089608714d3e21632de1abab574bb2" name="a39089608714d3e21632de1abab574bb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39089608714d3e21632de1abab574bb2">&#9670;&#160;</a></span>LEAF_LOW_CSR_DENSITY</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double kuzu::common::StorageConstants::LEAF_LOW_CSR_DENSITY = 0.1</td>
         </tr>
       </table>
   </td>
@@ -464,32 +440,6 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad35eac5149176ea3c2d93a740e62aa46" name="ad35eac5149176ea3c2d93a740e62aa46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad35eac5149176ea3c2d93a740e62aa46">&#9670;&#160;</a></span>NUM_VECTORS_PER_NODE_GROUP</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t kuzu::common::StorageConstants::NUM_VECTORS_PER_NODE_GROUP</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">        <a class="code hl_variable" href="#ad650b8453c54fe264f126e64adc18780">NODE_GROUP_SIZE</a> / <a class="code hl_variable" href="namespacekuzu_1_1common.html#a25c5a5d8d890b3d0da2338c831fbdb38">DEFAULT_VECTOR_CAPACITY</a></div>
-<div class="ttc" id="anamespacekuzu_1_1common_html_a25c5a5d8d890b3d0da2338c831fbdb38"><div class="ttname"><a href="namespacekuzu_1_1common.html#a25c5a5d8d890b3d0da2338c831fbdb38">kuzu::common::DEFAULT_VECTOR_CAPACITY</a></div><div class="ttdeci">constexpr uint64_t DEFAULT_VECTOR_CAPACITY</div><div class="ttdef"><b>Definition</b> constants.h:12</div></div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_storage_constants_html_ad650b8453c54fe264f126e64adc18780"><div class="ttname"><a href="#ad650b8453c54fe264f126e64adc18780">kuzu::common::StorageConstants::NODE_GROUP_SIZE</a></div><div class="ttdeci">static constexpr uint64_t NODE_GROUP_SIZE</div><div class="ttdef"><b>Definition</b> constants.h:103</div></div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a6ebc5c9fc210033494905271e6e9cbd6" name="a6ebc5c9fc210033494905271e6e9cbd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ebc5c9fc210033494905271e6e9cbd6">&#9670;&#160;</a></span>OVERFLOW_FILE_SUFFIX</h2>
 
@@ -599,7 +549,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">        (<span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(1) &lt;&lt; <a class="code hl_variable" href="#acaf281541a5fcf5bb61be65fdcc5e150">PAGE_GROUP_SIZE_LOG2</a>) - 1</div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_storage_constants_html_acaf281541a5fcf5bb61be65fdcc5e150"><div class="ttname"><a href="#acaf281541a5fcf5bb61be65fdcc5e150">kuzu::common::StorageConstants::PAGE_GROUP_SIZE_LOG2</a></div><div class="ttdeci">static constexpr uint64_t PAGE_GROUP_SIZE_LOG2</div><div class="ttdef"><b>Definition</b> constants.h:97</div></div>
+<div class="ttc" id="astructkuzu_1_1common_1_1_storage_constants_html_acaf281541a5fcf5bb61be65fdcc5e150"><div class="ttname"><a href="#acaf281541a5fcf5bb61be65fdcc5e150">kuzu::common::StorageConstants::PAGE_GROUP_SIZE_LOG2</a></div><div class="ttdeci">static constexpr uint64_t PAGE_GROUP_SIZE_LOG2</div><div class="ttdef"><b>Definition</b> constants.h:103</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -614,6 +564,28 @@ Static Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">char kuzu::common::StorageConstants::SHADOWING_SUFFIX[] = &quot;.shadow&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c065da05f90b27429408724b67dcbbe" name="a3c065da05f90b27429408724b67dcbbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c065da05f90b27429408724b67dcbbe">&#9670;&#160;</a></span>TEMP_SPILLING_FILE_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char kuzu::common::StorageConstants::TEMP_SPILLING_FILE_NAME[] = &quot;.tmp&quot;</td>
         </tr>
       </table>
   </td>

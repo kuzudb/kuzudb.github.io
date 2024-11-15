@@ -100,7 +100,7 @@ $(function(){initNavTree('structkuzu_1_1function_1_1_function.html',''); initRes
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structkuzu_1_1function_1_1_function-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">kuzu::function::Function Struct Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">kuzu::function::Function Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -111,9 +111,9 @@ Inheritance diagram for kuzu::function::Function:</div>
  <div class="center">
   <img src="structkuzu_1_1function_1_1_function.png" usemap="#kuzu::function::Function_map" alt=""/>
   <map id="kuzu::function::Function_map" name="kuzu::function::Function_map">
-<area href="structkuzu_1_1function_1_1_base_scalar_function.html" alt="kuzu::function::BaseScalarFunction" shape="rect" coords="0,56,209,80"/>
-<area href="structkuzu_1_1function_1_1_table_function.html" alt="kuzu::function::TableFunction" shape="rect" coords="219,56,428,80"/>
-<area href="structkuzu_1_1function_1_1_scalar_function.html" alt="kuzu::function::ScalarFunction" shape="rect" coords="0,112,209,136"/>
+<area href="structkuzu_1_1function_1_1_scalar_or_aggregate_function.html" alt="kuzu::function::ScalarOrAggregateFunction" shape="rect" coords="0,56,255,80"/>
+<area href="structkuzu_1_1function_1_1_table_function.html" alt="kuzu::function::TableFunction" shape="rect" coords="265,56,520,80"/>
+<area href="structkuzu_1_1function_1_1_scalar_function.html" alt="kuzu::function::ScalarFunction" shape="rect" coords="0,112,255,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -129,8 +129,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac06e4d770164421705a1024cad979158"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add806fcd282ada90ee4b4ab82ad848b3" id="r_add806fcd282ada90ee4b4ab82ad848b3"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add806fcd282ada90ee4b4ab82ad848b3">signatureToString</a> () const</td></tr>
 <tr class="separator:add806fcd282ada90ee4b4ab82ad848b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af58385f7e19b91105dbd94c0223a6582" id="r_af58385f7e19b91105dbd94c0223a6582"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="structkuzu_1_1function_1_1_function.html">Function</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af58385f7e19b91105dbd94c0223a6582">copy</a> () const =0</td></tr>
-<tr class="separator:af58385f7e19b91105dbd94c0223a6582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a441199f610013e5c3681f3c187974bdb" id="r_a441199f610013e5c3681f3c187974bdb"><td class="memTemplParams" colspan="2">template&lt;class TARGET &gt; </td></tr>
 <tr class="memitem:a441199f610013e5c3681f3c187974bdb"><td class="memTemplItemLeft" align="right" valign="top">const TARGET *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a441199f610013e5c3681f3c187974bdb">constPtrCast</a> () const</td></tr>
 <tr class="separator:a441199f610013e5c3681f3c187974bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,8 +142,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a2b0945ede865f229f494bd146a205a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76dce5a57038e4969316303f386285ec" id="r_a76dce5a57038e4969316303f386285ec"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">common::LogicalTypeID</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76dce5a57038e4969316303f386285ec">parameterTypeIDs</a></td></tr>
 <tr class="separator:a76dce5a57038e4969316303f386285ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9230189b9094d5a292458856380687d" id="r_ae9230189b9094d5a292458856380687d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9230189b9094d5a292458856380687d">isVarLength</a></td></tr>
+<tr class="memitem:ae9230189b9094d5a292458856380687d" id="r_ae9230189b9094d5a292458856380687d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9230189b9094d5a292458856380687d">isVarLength</a> = false</td></tr>
 <tr class="separator:ae9230189b9094d5a292458856380687d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af12204ea9e5cfc49977ea0ac86fd2c9a" id="r_af12204ea9e5cfc49977ea0ac86fd2c9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af12204ea9e5cfc49977ea0ac86fd2c9a">isListLambda</a> = false</td></tr>
+<tr class="separator:af12204ea9e5cfc49977ea0ac86fd2c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a13f80ecde7b686435bb63724a930c298" name="a13f80ecde7b686435bb63724a930c298"></a>
@@ -280,33 +280,6 @@ template&lt;class TARGET &gt; </div>
 
 </div>
 </div>
-<a id="af58385f7e19b91105dbd94c0223a6582" name="af58385f7e19b91105dbd94c0223a6582"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af58385f7e19b91105dbd94c0223a6582">&#9670;&#160;</a></span>copy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::unique_ptr&lt; <a class="el" href="structkuzu_1_1function_1_1_function.html">Function</a> &gt; kuzu::function::Function::copy </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="structkuzu_1_1function_1_1_scalar_function.html#ac54c88b6bd6623c7032534793f469d29">kuzu::function::ScalarFunction</a>, and <a class="el" href="structkuzu_1_1function_1_1_table_function.html#a0f41da645420ee429e368715ecd9c867">kuzu::function::TableFunction</a>.</p>
-
-</div>
-</div>
 <a id="a35f69eec2f6c27d192795adf931cfbd7" name="a35f69eec2f6c27d192795adf931cfbd7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35f69eec2f6c27d192795adf931cfbd7">&#9670;&#160;</a></span>ptrCast()</h2>
 
@@ -357,11 +330,25 @@ template&lt;class TARGET &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="structkuzu_1_1function_1_1_base_scalar_function.html#a434f6ee84523c24729a77e0e63a7c9c1">kuzu::function::BaseScalarFunction</a>, and <a class="el" href="structkuzu_1_1function_1_1_table_function.html#adaa622eca1cbae9f4bc52864bada5d3e">kuzu::function::TableFunction</a>.</p>
+<p>Reimplemented in <a class="el" href="structkuzu_1_1function_1_1_scalar_or_aggregate_function.html#adaee00ac47ba2aec1a7344c06066e658">kuzu::function::ScalarOrAggregateFunction</a>, and <a class="el" href="structkuzu_1_1function_1_1_table_function.html#adaa622eca1cbae9f4bc52864bada5d3e">kuzu::function::TableFunction</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="af12204ea9e5cfc49977ea0ac86fd2c9a" name="af12204ea9e5cfc49977ea0ac86fd2c9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af12204ea9e5cfc49977ea0ac86fd2c9a">&#9670;&#160;</a></span>isListLambda</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool kuzu::function::Function::isListLambda = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae9230189b9094d5a292458856380687d" name="ae9230189b9094d5a292458856380687d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9230189b9094d5a292458856380687d">&#9670;&#160;</a></span>isVarLength</h2>
 
@@ -369,7 +356,7 @@ template&lt;class TARGET &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool kuzu::function::Function::isVarLength</td>
+          <td class="memname">bool kuzu::function::Function::isVarLength = false</td>
         </tr>
       </table>
 </div><div class="memdoc">

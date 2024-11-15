@@ -116,6 +116,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a825d3c4d618b0e59af91f540d3f48907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4605dffe7980bb8ab43268eb4ee0a351" id="r_a4605dffe7980bb8ab43268eb4ee0a351"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4605dffe7980bb8ab43268eb4ee0a351">getNumFiles</a> () const</td></tr>
 <tr class="separator:a4605dffe7980bb8ab43268eb4ee0a351"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb41dc4a589e5c0ae227010882b71b88" id="r_afb41dc4a589e5c0ae227010882b71b88"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb41dc4a589e5c0ae227010882b71b88">getFilePath</a> (<a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">idx_t</a> fileIdx) const</td></tr>
+<tr class="separator:afb41dc4a589e5c0ae227010882b71b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92dcbea3ef3687d55367b427581bf36d" id="r_a92dcbea3ef3687d55367b427581bf36d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a92dcbea3ef3687d55367b427581bf36d"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a92dcbea3ef3687d55367b427581bf36d">getOption</a> (std::string optionName, T defaultValue) const</td></tr>
+<tr class="separator:a92dcbea3ef3687d55367b427581bf36d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -199,6 +204,31 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="afb41dc4a589e5c0ae227010882b71b88" name="afb41dc4a589e5c0ae227010882b71b88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb41dc4a589e5c0ae227010882b71b88">&#9670;&#160;</a></span>getFilePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string kuzu::common::ReaderConfig::getFilePath </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">idx_t</a></td>          <td class="paramname"><span class="paramname"><em>fileIdx</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a4605dffe7980bb8ab43268eb4ee0a351" name="a4605dffe7980bb8ab43268eb4ee0a351"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4605dffe7980bb8ab43268eb4ee0a351">&#9670;&#160;</a></span>getNumFiles()</h2>
 
@@ -213,6 +243,37 @@ Public Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a92dcbea3ef3687d55367b427581bf36d" name="a92dcbea3ef3687d55367b427581bf36d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92dcbea3ef3687d55367b427581bf36d">&#9670;&#160;</a></span>getOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T kuzu::common::ReaderConfig::getOption </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>optionName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span>&#160;) const</td>
         </tr>
       </table>
   </td>

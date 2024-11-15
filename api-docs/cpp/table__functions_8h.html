@@ -103,7 +103,8 @@ $(function(){initNavTree('table__functions_8h.html',''); initResizable(true); })
   <div class="headertitle"><div class="title">table_functions.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="data__chunk_8h_source.html">data_chunk.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;optional&gt;</code><br />
+<code>#include &quot;<a class="el" href="data__chunk_8h_source.html">data_chunk.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="function_8h_source.html">function.h</a>&quot;</code><br />
 </div>
 <p><a href="table__functions_8h_source.html">Go to the source code of this file.</a></p>
@@ -129,13 +130,15 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1main.html">kuzu::main</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1processor.html">kuzu::processor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html">kuzu::function</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a317c63e5b86be391d5a388f533377b1f" id="r_a317c63e5b86be391d5a388f533377b1f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html#a317c63e5b86be391d5a388f533377b1f">kuzu::function::table_func_bind_t</a></td></tr>
-<tr class="separator:a317c63e5b86be391d5a388f533377b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b9df242b6dc3b74db6c34ed4355b55" id="r_a19b9df242b6dc3b74db6c34ed4355b55"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html#a19b9df242b6dc3b74db6c34ed4355b55">kuzu::function::table_func_bind_t</a></td></tr>
+<tr class="separator:a19b9df242b6dc3b74db6c34ed4355b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c486f8f5d317d9be2b8743781d2885d" id="r_a4c486f8f5d317d9be2b8743781d2885d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html#a4c486f8f5d317d9be2b8743781d2885d">kuzu::function::table_func_t</a> = std::function&lt;<a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a>(<a class="el" href="structkuzu_1_1function_1_1_table_func_input.html">TableFuncInput</a>&amp;, <a class="el" href="structkuzu_1_1function_1_1_table_func_output.html">TableFuncOutput</a>&amp;)&gt;</td></tr>
 <tr class="separator:a4c486f8f5d317d9be2b8743781d2885d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3446f5c3b0779db51b391e649848b1f9" id="r_a3446f5c3b0779db51b391e649848b1f9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html#a3446f5c3b0779db51b391e649848b1f9">kuzu::function::table_func_init_shared_t</a></td></tr>
@@ -146,6 +149,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a35d4733088df629187cc362190d879b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c24fe73a04df7b616d5712a19209586" id="r_a8c24fe73a04df7b616d5712a19209586"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html#a8c24fe73a04df7b616d5712a19209586">kuzu::function::table_func_progress_t</a> = std::function&lt;double(<a class="el" href="structkuzu_1_1function_1_1_table_func_shared_state.html">TableFuncSharedState</a>* sharedState)&gt;</td></tr>
 <tr class="separator:a8c24fe73a04df7b616d5712a19209586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51bd0358b60963291278845655c62177" id="r_a51bd0358b60963291278845655c62177"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html#a51bd0358b60963291278845655c62177">kuzu::function::table_func_finalize_t</a></td></tr>
+<tr class="separator:a51bd0358b60963291278845655c62177"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

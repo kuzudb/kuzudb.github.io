@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['insertionstatus_0',['InsertionStatus',['../structkuzu_1_1storage_1_1_vector_version_info.html#a63da52eaeb4abe5bdf011df3ef0bc5c0',1,'kuzu::storage::VectorVersionInfo']]]
+  ['statementtype_0',['StatementType',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557',1,'kuzu::common']]]
 ];

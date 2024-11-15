@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parsedexpressionchildrenvisitor_0',['ParsedExpressionChildrenVisitor',['../classkuzu_1_1parser_1_1_parsed_expression.html#a94da858ef6bb5034b8d6583c07f0e92f',1,'kuzu::parser::ParsedExpression']]]
+  ['processor_3a_3aimportdb_0',['ImportDB',['../classkuzu_1_1main_1_1_client_context.html#a42d3b415fbf6a21a2ce721658feb4a8c',1,'kuzu::main::ClientContext']]]
 ];

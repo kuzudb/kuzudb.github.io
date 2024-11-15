@@ -109,17 +109,19 @@ $(function(){initNavTree('types_8h.html',''); initResizable(true); });
 <div class="textblock"><code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;unordered_set&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="api_8h_source.html">api.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cast_8h_source.html">cast.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="copy__constructors_8h_source.html">copy_constructors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="internal__id__t_8h_source.html">internal_id_t.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="interval__t_8h_source.html">interval_t.h</a>&quot;</code><br />
 </div>
 <p><a href="types_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1internal_i_d__t.html">kuzu::common::internalID_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1overflow__value__t.html">kuzu::common::overflow_value_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1common_1_1list__entry__t.html">kuzu::common::list_entry_t</a></td></tr>
@@ -133,6 +135,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1common_1_1_logical_type.html">kuzu::common::LogicalType</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1common_1_1_extra_type_info.html">kuzu::common::ExtraTypeInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1common_1_1_u_d_t_type_info.html">kuzu::common::UDTTypeInfo</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1common_1_1_decimal_type_info.html">kuzu::common::DecimalTypeInfo</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,6 +169,8 @@ Classes</h2></td></tr>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu.html">kuzu</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1main.html">kuzu::main</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1processor.html">kuzu::processor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html">kuzu::common</a></td></tr>
@@ -173,6 +179,8 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptkuzu_1_1common_1_1_integer_types.html">kuzu::common::IntegerTypes</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptkuzu_1_1common_1_1_floating_point_types.html">kuzu::common::FloatingPointTypes</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptkuzu_1_1common_1_1_numeric_types.html">kuzu::common::NumericTypes</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,10 +215,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a759dbaee0c6c80aba20c7024a9457cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1378dc850fe3eb31d9a45fde7389360b" id="r_a1378dc850fe3eb31d9a45fde7389360b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a1378dc850fe3eb31d9a45fde7389360b">kuzu::common::frame_group_idx_t</a> = <a class="el" href="namespacekuzu_1_1common.html#a759dbaee0c6c80aba20c7024a9457cd6">page_group_idx_t</a></td></tr>
 <tr class="separator:a1378dc850fe3eb31d9a45fde7389360b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ce73823c7df9e8e855bd341cbeb1934" id="r_a8ce73823c7df9e8e855bd341cbeb1934"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a8ce73823c7df9e8e855bd341cbeb1934">kuzu::common::property_id_t</a> = uint32_t</td></tr>
-<tr class="separator:a8ce73823c7df9e8e855bd341cbeb1934"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65a8710761710db02211ccf1d1aaa909" id="r_a65a8710761710db02211ccf1d1aaa909"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a65a8710761710db02211ccf1d1aaa909">kuzu::common::column_id_t</a> = <a class="el" href="namespacekuzu_1_1common.html#a8ce73823c7df9e8e855bd341cbeb1934">property_id_t</a></td></tr>
-<tr class="separator:a65a8710761710db02211ccf1d1aaa909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b8567de9cc3940bbd5fd4e53c4fc4fe" id="r_a7b8567de9cc3940bbd5fd4e53c4fc4fe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a7b8567de9cc3940bbd5fd4e53c4fc4fe">kuzu::common::column_id_t</a> = uint32_t</td></tr>
+<tr class="separator:a7b8567de9cc3940bbd5fd4e53c4fc4fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a205bbe18b53bc41f95e9fcd27055b56d" id="r_a205bbe18b53bc41f95e9fcd27055b56d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">kuzu::common::idx_t</a> = uint32_t</td></tr>
 <tr class="separator:a205bbe18b53bc41f95e9fcd27055b56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6da55489562f618d941c8d36d10b3ee4" id="r_a6da55489562f618d941c8d36d10b3ee4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a6da55489562f618d941c8d36d10b3ee4">kuzu::common::block_idx_t</a> = uint64_t</td></tr>
@@ -231,12 +237,31 @@ Typedefs</h2></td></tr>
 <tr class="separator:abe98f866f775138517ab0c785642c1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acceaa678d7465d87703b1b65c5897c6b" id="r_acceaa678d7465d87703b1b65c5897c6b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#acceaa678d7465d87703b1b65c5897c6b">kuzu::common::sequence_id_t</a> = uint64_t</td></tr>
 <tr class="separator:acceaa678d7465d87703b1b65c5897c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67524a46c03a424b450a6178f90b22e6" id="r_a67524a46c03a424b450a6178f90b22e6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a67524a46c03a424b450a6178f90b22e6">kuzu::common::oid_t</a> = uint64_t</td></tr>
+<tr class="separator:a67524a46c03a424b450a6178f90b22e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95fb02848b24d5e86e89c0e60efefbbd" id="r_a95fb02848b24d5e86e89c0e60efefbbd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a95fb02848b24d5e86e89c0e60efefbbd">kuzu::common::transaction_t</a> = uint64_t</td></tr>
 <tr class="separator:a95fb02848b24d5e86e89c0e60efefbbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa534185131c9eaa4e3a1b6d45c54282" id="r_aaa534185131c9eaa4e3a1b6d45c54282"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#aaa534185131c9eaa4e3a1b6d45c54282">kuzu::common::executor_id_t</a> = uint64_t</td></tr>
 <tr class="separator:aaa534185131c9eaa4e3a1b6d45c54282"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90d384a8fffe05aba871a0bf4d98c155" id="r_a90d384a8fffe05aba871a0bf4d98c155"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a90d384a8fffe05aba871a0bf4d98c155">kuzu::common::executor_info</a> = std::unordered_map&lt;<a class="el" href="namespacekuzu_1_1common.html#aaa534185131c9eaa4e3a1b6d45c54282">executor_id_t</a>, uint64_t&gt;</td></tr>
 <tr class="separator:a90d384a8fffe05aba871a0bf4d98c155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cfabdb17c11d4fec21be7223d03620d" id="r_a9cfabdb17c11d4fec21be7223d03620d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">kuzu::common::table_id_t</a> = <a class="el" href="namespacekuzu_1_1common.html#a67524a46c03a424b450a6178f90b22e6">oid_t</a></td></tr>
+<tr class="separator:a9cfabdb17c11d4fec21be7223d03620d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb610b4b3c069face3ab0ce46f5cc7ae" id="r_acb610b4b3c069face3ab0ce46f5cc7ae"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#acb610b4b3c069face3ab0ce46f5cc7ae">kuzu::common::table_id_vector_t</a> = std::vector&lt;<a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">table_id_t</a>&gt;</td></tr>
+<tr class="separator:acb610b4b3c069face3ab0ce46f5cc7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a708c179d5bf5054d490b5218d140de9a" id="r_a708c179d5bf5054d490b5218d140de9a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a708c179d5bf5054d490b5218d140de9a">kuzu::common::table_id_set_t</a> = std::unordered_set&lt;<a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">table_id_t</a>&gt;</td></tr>
+<tr class="separator:a708c179d5bf5054d490b5218d140de9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a498f6964aed1af02f7cd744198ea1d" id="r_a3a498f6964aed1af02f7cd744198ea1d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3a498f6964aed1af02f7cd744198ea1d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a3a498f6964aed1af02f7cd744198ea1d">kuzu::common::table_id_map_t</a> = std::unordered_map&lt;<a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">table_id_t</a>, T&gt;</td></tr>
+<tr class="separator:a3a498f6964aed1af02f7cd744198ea1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae224e72d8bf556b4e2249ac626d183cc" id="r_ae224e72d8bf556b4e2249ac626d183cc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">kuzu::common::offset_t</a> = uint64_t</td></tr>
+<tr class="separator:ae224e72d8bf556b4e2249ac626d183cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde7a92ad332c5738cd3ce80c37250d1" id="r_abde7a92ad332c5738cd3ce80c37250d1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#abde7a92ad332c5738cd3ce80c37250d1">kuzu::common::nodeID_t</a> = <a class="el" href="structkuzu_1_1common_1_1internal_i_d__t.html">internalID_t</a></td></tr>
+<tr class="separator:abde7a92ad332c5738cd3ce80c37250d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941534a87fb25c596f7c6df246e4c958" id="r_a941534a87fb25c596f7c6df246e4c958"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a941534a87fb25c596f7c6df246e4c958">kuzu::common::relID_t</a> = <a class="el" href="structkuzu_1_1common_1_1internal_i_d__t.html">internalID_t</a></td></tr>
+<tr class="separator:a941534a87fb25c596f7c6df246e4c958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b020b9e48464815be8b39b0190fd220" id="r_a1b020b9e48464815be8b39b0190fd220"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a1b020b9e48464815be8b39b0190fd220">kuzu::common::cardinality_t</a> = uint64_t</td></tr>
+<tr class="separator:a1b020b9e48464815be8b39b0190fd220"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b254dca32abae9d6bfc464133eeb4c6" id="r_a9b254dca32abae9d6bfc464133eeb4c6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a9b254dca32abae9d6bfc464133eeb4c6">kuzu::common::logical_type_vec_t</a> = std::vector&lt;<a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&gt;</td></tr>
 <tr class="separator:a9b254dca32abae9d6bfc464133eeb4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -284,7 +309,6 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a5af1a3a285c2bdee4192223e31e1f833">kuzu::common::MAP</a> = 55
 , <br />
 &#160;&#160;<a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741aea931da33de8ba05c3635a51c2b25d75">kuzu::common::UNION</a> = 56
-, <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741affd1cd2b3b8636169d6f5ec1f87e922a">kuzu::common::RDF_VARIANT</a> = 57
 , <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741aa5f41c79d3f86121f0f658eba49128d5">kuzu::common::POINTER</a> = 58
 , <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a5a54d9ad87f7c4c1c70c8f05b9515d5a">kuzu::common::UUID</a> = 59
 <br />
@@ -309,15 +333,22 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368ae738c26bf4ce1037fa81b039a915cbf6">kuzu::common::FLOAT</a> = 12
 , <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a21ef3147a98040a9167367c1ad8d065e">kuzu::common::INTERVAL</a> = 13
 , <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a8e6056eb4b6b0a27a397f52d353cceb7">kuzu::common::INTERNAL_ID</a> = 14
-, <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a63b588d5559f64f89a416e656880b949">kuzu::common::STRING</a> = 20
+, <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368ad2f03f3d7bd586c3e1989b121d175184">kuzu::common::ALP_EXCEPTION_FLOAT</a> = 15
 , <br />
-&#160;&#160;<a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a298cb25408234de02baf2085803a464a">kuzu::common::LIST</a> = 22
+&#160;&#160;<a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a296e531aa9a2a7f90b57d29f9db54f31">kuzu::common::ALP_EXCEPTION_DOUBLE</a> = 16
+, <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a63b588d5559f64f89a416e656880b949">kuzu::common::STRING</a> = 20
+, <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a298cb25408234de02baf2085803a464a">kuzu::common::LIST</a> = 22
 , <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368acb4fb1757fb37c43cded35d3eb857c43">kuzu::common::ARRAY</a> = 23
-, <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368ab8223be2455e0ea5a0e63e8f018d6fc3">kuzu::common::STRUCT</a> = 24
+, <br />
+&#160;&#160;<a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368ab8223be2455e0ea5a0e63e8f018d6fc3">kuzu::common::STRUCT</a> = 24
 , <a class="el" href="namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368aa5f41c79d3f86121f0f658eba49128d5">kuzu::common::POINTER</a> = 25
 <br />
  }</td></tr>
 <tr class="separator:a504e5277d0488eb4ad21b76eb84e2368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fc1164fed96b1de51b78bd5eecc68d" id="r_a85fc1164fed96b1de51b78bd5eecc68d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a85fc1164fed96b1de51b78bd5eecc68d">kuzu::common::TypeCategory</a> : uint8_t { <a class="el" href="namespacekuzu_1_1common.html#a85fc1164fed96b1de51b78bd5eecc68da182fa1c42a2468f8488e6dcf75a81b81">kuzu::common::INTERNAL</a> = 0
+, <a class="el" href="namespacekuzu_1_1common.html#a85fc1164fed96b1de51b78bd5eecc68da37c9ef439007788bd633ea027a36e87e">kuzu::common::UDT</a> = 1
+ }</td></tr>
+<tr class="separator:a85fc1164fed96b1de51b78bd5eecc68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a518704891d80325673ccd66956aae7c5" id="r_a518704891d80325673ccd66956aae7c5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a518704891d80325673ccd66956aae7c5">kuzu::common::FileVersionType</a> : uint8_t { <a class="el" href="namespacekuzu_1_1common.html#a518704891d80325673ccd66956aae7c5aa87d5006e1de1bfc07d5c56086ad20f1">kuzu::common::ORIGINAL</a> = 0
 , <a class="el" href="namespacekuzu_1_1common.html#a518704891d80325673ccd66956aae7c5a46c4cb6bfc3c106374dad6bb85532b21">kuzu::common::WAL_VERSION</a> = 1
  }</td></tr>
@@ -325,15 +356,15 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a9f04e8773e2a51e31a0cb9dbfee5c703" id="r_a9f04e8773e2a51e31a0cb9dbfee5c703"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a9f04e8773e2a51e31a0cb9dbfee5c703">kuzu::common::INVALID_SEL</a> = UINT64_MAX</td></tr>
+<tr class="separator:a9f04e8773e2a51e31a0cb9dbfee5c703"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a051f87d2205a384fdfc3206691bf0c71" id="r_a051f87d2205a384fdfc3206691bf0c71"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#aba97173866c2460aba081473237ea36a">page_idx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a051f87d2205a384fdfc3206691bf0c71">kuzu::common::INVALID_PAGE_IDX</a> = UINT32_MAX</td></tr>
 <tr class="separator:a051f87d2205a384fdfc3206691bf0c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dd97157a022adb1a1c89ede0c02e078" id="r_a9dd97157a022adb1a1c89ede0c02e078"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a596c7802425a4d4a2619f39c7e652d99">file_idx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a9dd97157a022adb1a1c89ede0c02e078">kuzu::common::INVALID_FILE_IDX</a> = UINT32_MAX</td></tr>
 <tr class="separator:a9dd97157a022adb1a1c89ede0c02e078"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b3df1944cd24aec09c09d72988b3ead" id="r_a6b3df1944cd24aec09c09d72988b3ead"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a8ce73823c7df9e8e855bd341cbeb1934">property_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a6b3df1944cd24aec09c09d72988b3ead">kuzu::common::INVALID_PROPERTY_ID</a> = UINT32_MAX</td></tr>
-<tr class="separator:a6b3df1944cd24aec09c09d72988b3ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4fe30d0ac1c557d86e24513b9aecce7" id="r_ac4fe30d0ac1c557d86e24513b9aecce7"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a65a8710761710db02211ccf1d1aaa909">column_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#ac4fe30d0ac1c557d86e24513b9aecce7">kuzu::common::INVALID_COLUMN_ID</a> = <a class="el" href="namespacekuzu_1_1common.html#a6b3df1944cd24aec09c09d72988b3ead">INVALID_PROPERTY_ID</a></td></tr>
+<tr class="memitem:ac4fe30d0ac1c557d86e24513b9aecce7" id="r_ac4fe30d0ac1c557d86e24513b9aecce7"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a7b8567de9cc3940bbd5fd4e53c4fc4fe">column_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#ac4fe30d0ac1c557d86e24513b9aecce7">kuzu::common::INVALID_COLUMN_ID</a> = UINT32_MAX</td></tr>
 <tr class="separator:ac4fe30d0ac1c557d86e24513b9aecce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a0228ef1281e0d523ddb7273abda45a" id="r_a0a0228ef1281e0d523ddb7273abda45a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a65a8710761710db02211ccf1d1aaa909">column_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a0a0228ef1281e0d523ddb7273abda45a">kuzu::common::ROW_IDX_COLUMN_ID</a> = <a class="el" href="namespacekuzu_1_1common.html#ac4fe30d0ac1c557d86e24513b9aecce7">INVALID_COLUMN_ID</a> - 1</td></tr>
+<tr class="memitem:a0a0228ef1281e0d523ddb7273abda45a" id="r_a0a0228ef1281e0d523ddb7273abda45a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a7b8567de9cc3940bbd5fd4e53c4fc4fe">column_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a0a0228ef1281e0d523ddb7273abda45a">kuzu::common::ROW_IDX_COLUMN_ID</a> = <a class="el" href="namespacekuzu_1_1common.html#ac4fe30d0ac1c557d86e24513b9aecce7">INVALID_COLUMN_ID</a> - 1</td></tr>
 <tr class="separator:a0a0228ef1281e0d523ddb7273abda45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a600d63ef2ff22480c0daecb8a4ce0d36" id="r_a600d63ef2ff22480c0daecb8a4ce0d36"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">idx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a600d63ef2ff22480c0daecb8a4ce0d36">kuzu::common::INVALID_IDX</a> = UINT32_MAX</td></tr>
 <tr class="separator:a600d63ef2ff22480c0daecb8a4ce0d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -349,8 +380,16 @@ Variables</h2></td></tr>
 <tr class="separator:a70da33e9ff84df76fe3f8fdf4181f251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba0f2d59d72d1d04828cb2e3195fd3e9" id="r_aba0f2d59d72d1d04828cb2e3195fd3e9"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a97bb57c72e82b7e8f09382c918be0017">partition_idx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#aba0f2d59d72d1d04828cb2e3195fd3e9">kuzu::common::INVALID_PARTITION_IDX</a> = UINT64_MAX</td></tr>
 <tr class="separator:aba0f2d59d72d1d04828cb2e3195fd3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81faa44d30711526cca7f8a181c48456" id="r_a81faa44d30711526cca7f8a181c48456"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a67524a46c03a424b450a6178f90b22e6">oid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a81faa44d30711526cca7f8a181c48456">kuzu::common::INVALID_OID</a> = UINT64_MAX</td></tr>
+<tr class="separator:a81faa44d30711526cca7f8a181c48456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7874b508612222bfbf81ac6fdd4c58cd" id="r_a7874b508612222bfbf81ac6fdd4c58cd"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a95fb02848b24d5e86e89c0e60efefbbd">transaction_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a7874b508612222bfbf81ac6fdd4c58cd">kuzu::common::INVALID_TRANSACTION</a> = UINT64_MAX</td></tr>
 <tr class="separator:a7874b508612222bfbf81ac6fdd4c58cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a367a9265e980c8c9f3e35a20540ec7" id="r_a8a367a9265e980c8c9f3e35a20540ec7"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">table_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a8a367a9265e980c8c9f3e35a20540ec7">kuzu::common::INVALID_TABLE_ID</a> = <a class="el" href="namespacekuzu_1_1common.html#a81faa44d30711526cca7f8a181c48456">INVALID_OID</a></td></tr>
+<tr class="separator:a8a367a9265e980c8c9f3e35a20540ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5a99d754b785986c1203bdef9b9733b" id="r_ab5a99d754b785986c1203bdef9b9733b"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">offset_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#ab5a99d754b785986c1203bdef9b9733b">kuzu::common::INVALID_OFFSET</a> = UINT64_MAX</td></tr>
+<tr class="separator:ab5a99d754b785986c1203bdef9b9733b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a207b4181c7e4d5385ae22cc303118fa1" id="r_a207b4181c7e4d5385ae22cc303118fa1"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">offset_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a207b4181c7e4d5385ae22cc303118fa1">kuzu::common::INVALID_LIMIT</a> = UINT64_MAX</td></tr>
+<tr class="separator:a207b4181c7e4d5385ae22cc303118fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

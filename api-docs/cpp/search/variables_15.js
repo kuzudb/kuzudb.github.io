@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['val_0',['val',['../classkuzu_1_1common_1_1_value.html#a5363a2d88e205fbd25866fe488ecf5ad',1,'kuzu::common::Value']]],
-  ['value_1',['value',['../structkuzu_1_1common_1_1blob__t.html#ad88db793f386010bc20cfbcd52809d5b',1,'kuzu::common::blob_t::value'],['../structkuzu_1_1common_1_1timestamp__t.html#ab36c44e40db8021b572398d7bcb9613f',1,'kuzu::common::timestamp_t::value'],['../structkuzu_1_1common_1_1overflow__value__t.html#aa4c61e74aab2301dc343a58ae00dbfd7',1,'kuzu::common::overflow_value_t::value'],['../structkuzu_1_1common_1_1ku__uuid__t.html#a2b46bd881b24c7d6e0c6feda09b59d80',1,'kuzu::common::ku_uuid_t::value']]],
-  ['valuevectors_2',['valueVectors',['../classkuzu_1_1common_1_1_data_chunk.html#adcb10043cdb24a7cfe92d36c11e5a2a8',1,'kuzu::common::DataChunk']]],
-  ['var_5flength_5fmax_5fdepth_3',['VAR_LENGTH_MAX_DEPTH',['../structkuzu_1_1main_1_1_client_config_default.html#a26a8a234b48ee9815cf8752d56916c45',1,'kuzu::main::ClientConfigDefault']]],
-  ['varlengthmaxdepth_4',['varLengthMaxDepth',['../structkuzu_1_1main_1_1_client_config.html#a5c65fac8e74edc5cc3a0a82cfd921a8f',1,'kuzu::main::ClientConfig']]],
-  ['vectors_5',['vectors',['../structkuzu_1_1function_1_1_table_func_output.html#ad21716dc70ac3e3e06cb0362e9d7308a',1,'kuzu::function::TableFuncOutput']]],
-  ['version_6',['version',['../structkuzu_1_1storage_1_1_vector_update_info.html#a2abcfcaad4888ea6c1713b6985bfd406',1,'kuzu::storage::VectorUpdateInfo']]],
-  ['versioninfo_7',['versionInfo',['../classkuzu_1_1storage_1_1_chunked_node_group.html#a8255a1b4618977e6414645ad1847503c',1,'kuzu::storage::ChunkedNodeGroup']]]
+  ['wal_5ffile_5fsuffix_0',['WAL_FILE_SUFFIX',['../structkuzu_1_1common_1_1_storage_constants.html#a45bc7b9f26e68e35666f839df5ad595e',1,'kuzu::common::StorageConstants']]],
+  ['warning_1',['warning',['../structkuzu_1_1processor_1_1_warning_info.html#a058570a38402988ac220d8aaef4c8d95',1,'kuzu::processor::WarningInfo']]],
+  ['warning_5flimit_2',['WARNING_LIMIT',['../structkuzu_1_1main_1_1_client_config_default.html#a4ff6f3fa948c158878f809728b9eb920',1,'kuzu::main::ClientConfigDefault']]],
+  ['warning_5ftable_5fcolumn_5fdata_5ftypes_3',['WARNING_TABLE_COLUMN_DATA_TYPES',['../structkuzu_1_1common_1_1_warning_constants.html#a271d24540a59148b19365b0aa882a41b',1,'kuzu::common::WarningConstants']]],
+  ['warning_5ftable_5fcolumn_5fnames_4',['WARNING_TABLE_COLUMN_NAMES',['../structkuzu_1_1common_1_1_warning_constants.html#a8b5dd0323ae4c3b260b2bb10168fcc89',1,'kuzu::common::WarningConstants']]],
+  ['warning_5ftable_5fnum_5fcolumns_5',['WARNING_TABLE_NUM_COLUMNS',['../structkuzu_1_1common_1_1_warning_constants.html#a8ed361a3dd175371951310aa6a2372ca',1,'kuzu::common::WarningConstants']]],
+  ['warningdata_6',['warningData',['../structkuzu_1_1processor_1_1_copy_from_file_error.html#a5db1589c0092f39700b98db700812b2d',1,'kuzu::processor::CopyFromFileError']]],
+  ['warninglimit_7',['warningLimit',['../structkuzu_1_1main_1_1_client_config.html#a4108609cdb0282a4029dc25332824dde',1,'kuzu::main::ClientConfig']]],
+  ['week_8',['WEEK',['../namespacekuzu_1_1common.html#ace298104816adc7a889fa914cc8cddb1',1,'kuzu::common']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['catalogentrytype_0',['CatalogEntryType',['../namespacekuzu_1_1catalog.html#aa9fdcb674691bb2b3b9ffc4cdbefb90e',1,'kuzu::catalog']]],
-  ['compressiontype_1',['CompressionType',['../namespacekuzu_1_1storage.html#ab4e84e9af53348cff0e16f0dc8df98a0',1,'kuzu::storage']]],
-  ['conflictaction_2',['ConflictAction',['../namespacekuzu_1_1common.html#a3cdec9ec6c0360fe0e1cd54c47ad48db',1,'kuzu::common']]]
+  ['filetype_0',['FileType',['../namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0e',1,'kuzu::common']]],
+  ['fileversiontype_1',['FileVersionType',['../namespacekuzu_1_1common.html#a518704891d80325673ccd66956aae7c5',1,'kuzu::common']]],
+  ['fstatetype_2',['FStateType',['../namespacekuzu_1_1common.html#a90f7695a8b63f05e0aaa13f2a3056e0a',1,'kuzu::common']]]
 ];

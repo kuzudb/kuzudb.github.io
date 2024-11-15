@@ -145,6 +145,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:aa359e5ad961e3e09583c6ea897cd1b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7ab72ea23210145725f26956dda31b4" id="r_af7ab72ea23210145725f26956dda31b4"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7ab72ea23210145725f26956dda31b4">getIntegerTypeIDs</a> ()</td></tr>
 <tr class="separator:af7ab72ea23210145725f26956dda31b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5414a7ccdc812e6dcd91efcbf13657" id="r_a7f5414a7ccdc812e6dcd91efcbf13657"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f5414a7ccdc812e6dcd91efcbf13657">getFloatingPointTypeIDs</a> ()</td></tr>
+<tr class="separator:a7f5414a7ccdc812e6dcd91efcbf13657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcdd4677ab28eaf822961cce37c8082b" id="r_adcdd4677ab28eaf822961cce37c8082b"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcdd4677ab28eaf822961cce37c8082b">getAllValidLogicTypeIDs</a> ()</td></tr>
 <tr class="separator:adcdd4677ab28eaf822961cce37c8082b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a666d0da909484ce01918ca7d8df36240" id="r_a666d0da909484ce01918ca7d8df36240"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a666d0da909484ce01918ca7d8df36240">getAllValidLogicTypes</a> ()</td></tr>
@@ -153,8 +155,41 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a176896ae3d85470af1a043c9b67f1e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7474f8567188d28f82b92b0e315d5b1" id="r_ac7474f8567188d28f82b92b0e315d5b1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7474f8567188d28f82b92b0e315d5b1">tryGetMaxLogicalType</a> (const std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &gt; &amp;types, <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;result)</td></tr>
 <tr class="separator:ac7474f8567188d28f82b92b0e315d5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecaf5d9cb7d68ebee5aac44e7d2265bf" id="r_aecaf5d9cb7d68ebee5aac44e7d2265bf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecaf5d9cb7d68ebee5aac44e7d2265bf">combineTypes</a> (const <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;left, const <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;right)</td></tr>
+<tr class="separator:aecaf5d9cb7d68ebee5aac44e7d2265bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af16bf40337a75cb6473cc7b22f778743" id="r_af16bf40337a75cb6473cc7b22f778743"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af16bf40337a75cb6473cc7b22f778743">purgeAny</a> (const <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;type, const <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;replacement)</td></tr>
+<tr class="separator:af16bf40337a75cb6473cc7b22f778743"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aecaf5d9cb7d68ebee5aac44e7d2265bf" name="aecaf5d9cb7d68ebee5aac44e7d2265bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecaf5d9cb7d68ebee5aac44e7d2265bf">&#9670;&#160;</a></span>combineTypes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> kuzu::common::LogicalTypeUtils::combineTypes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>right</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aafb539fe8c7c00a4e6880813e786590e" name="aafb539fe8c7c00a4e6880813e786590e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aafb539fe8c7c00a4e6880813e786590e">&#9670;&#160;</a></span>getAllValidComparableLogicalTypes()</h2>
 
@@ -216,6 +251,31 @@ Static Public Member Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">static std::vector&lt; <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &gt; kuzu::common::LogicalTypeUtils::getAllValidLogicTypes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f5414a7ccdc812e6dcd91efcbf13657" name="a7f5414a7ccdc812e6dcd91efcbf13657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f5414a7ccdc812e6dcd91efcbf13657">&#9670;&#160;</a></span>getFloatingPointTypeIDs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt; <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a> &gt; kuzu::common::LogicalTypeUtils::getFloatingPointTypeIDs </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -594,6 +654,35 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>dataType</em></span></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af16bf40337a75cb6473cc7b22f778743" name="af16bf40337a75cb6473cc7b22f778743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af16bf40337a75cb6473cc7b22f778743">&#9670;&#160;</a></span>purgeAny()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> kuzu::common::LogicalTypeUtils::purgeAny </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classkuzu_1_1common_1_1_logical_type.html">LogicalType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>replacement</em></span>&#160;)</td>
         </tr>
       </table>
   </td>

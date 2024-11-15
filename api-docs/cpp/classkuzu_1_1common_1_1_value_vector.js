@@ -8,6 +8,7 @@ var classkuzu_1_1common_1_1_value_vector =
     [ "copyFromVectorData", "classkuzu_1_1common_1_1_value_vector.html#aa09a74b50a273f372b00e966ae9c512d", null ],
     [ "copyFromVectorData", "classkuzu_1_1common_1_1_value_vector.html#acf901068da252c6156334ad0e2ab4772", null ],
     [ "copyToRowData", "classkuzu_1_1common_1_1_value_vector.html#a24027db98e18daf1a40a5bd4515181e7", null ],
+    [ "DELETE_COPY_AND_MOVE", "classkuzu_1_1common_1_1_value_vector.html#aad52a0eeda5fef676827157b8efe44d2", null ],
     [ "getAsValue", "classkuzu_1_1common_1_1_value_vector.html#a4a976aaf185dfd0afc82cc211b8edeb2", null ],
     [ "getData", "classkuzu_1_1common_1_1_value_vector.html#a1c1651c945f1a523ca72b7054a3c05a6", null ],
     [ "getNullMask", "classkuzu_1_1common_1_1_value_vector.html#ab1757a06b6fd7afa8dde312687c4e429", null ],

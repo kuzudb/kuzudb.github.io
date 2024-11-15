@@ -114,6 +114,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad54828f3ac96ee44ebed2d5fbf9eba8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a29cb86934e8e6875eef5ff99fbc9f8" id="r_a8a29cb86934e8e6875eef5ff99fbc9f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a29cb86934e8e6875eef5ff99fbc9f8">ValueVector</a> (<a class="el" href="namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741">LogicalTypeID</a> dataTypeID, storage::MemoryManager *memoryManager=nullptr)</td></tr>
 <tr class="separator:a8a29cb86934e8e6875eef5ff99fbc9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad52a0eeda5fef676827157b8efe44d2" id="r_aad52a0eeda5fef676827157b8efe44d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad52a0eeda5fef676827157b8efe44d2">DELETE_COPY_AND_MOVE</a> (<a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a>)</td></tr>
+<tr class="separator:aad52a0eeda5fef676827157b8efe44d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd996f1ff4d88de1072069c6a8d2b7e6" id="r_acd996f1ff4d88de1072069c6a8d2b7e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd996f1ff4d88de1072069c6a8d2b7e6">~ValueVector</a> ()=default</td></tr>
 <tr class="separator:acd996f1ff4d88de1072069c6a8d2b7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fad7688f90829aa828834134f5ba2d7" id="r_a3fad7688f90829aa828834134f5ba2d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fad7688f90829aa828834134f5ba2d7">setState</a> (const std::shared_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_data_chunk_state.html">DataChunkState</a> &gt; &amp;state_)</td></tr>
@@ -165,14 +167,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad1fcf8b2993565d5fe0ca2851e75f10e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2836651b97f1805a06ba83b77aa900a6" id="r_a2836651b97f1805a06ba83b77aa900a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2836651b97f1805a06ba83b77aa900a6">resetAuxiliaryBuffer</a> ()</td></tr>
 <tr class="separator:a2836651b97f1805a06ba83b77aa900a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8415669980b3ec37831dfb9567f12dfd" id="r_a8415669980b3ec37831dfb9567f12dfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8415669980b3ec37831dfb9567f12dfd">serialize</a> (<a class="el" href="classkuzu_1_1common_1_1_serializer.html">Serializer</a> &amp;ser) const</td></tr>
+<tr class="memitem:a8415669980b3ec37831dfb9567f12dfd" id="r_a8415669980b3ec37831dfb9567f12dfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8415669980b3ec37831dfb9567f12dfd">serialize</a> (Serializer &amp;ser) const</td></tr>
 <tr class="separator:a8415669980b3ec37831dfb9567f12dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a15e5b9b9812b8fb6881cbcdbe4171d98" id="r_a15e5b9b9812b8fb6881cbcdbe4171d98"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15e5b9b9812b8fb6881cbcdbe4171d98">discardNull</a> (<a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &amp;vector)</td></tr>
 <tr class="separator:a15e5b9b9812b8fb6881cbcdbe4171d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99ac9a22af23ed11cd5a01a5ad1d9887" id="r_a99ac9a22af23ed11cd5a01a5ad1d9887"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99ac9a22af23ed11cd5a01a5ad1d9887">deSerialize</a> (<a class="el" href="classkuzu_1_1common_1_1_deserializer.html">Deserializer</a> &amp;deSer, storage::MemoryManager *mm, std::shared_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_data_chunk_state.html">DataChunkState</a> &gt; dataChunkState)</td></tr>
+<tr class="memitem:a99ac9a22af23ed11cd5a01a5ad1d9887" id="r_a99ac9a22af23ed11cd5a01a5ad1d9887"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99ac9a22af23ed11cd5a01a5ad1d9887">deSerialize</a> (Deserializer &amp;deSer, storage::MemoryManager *mm, std::shared_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_data_chunk_state.html">DataChunkState</a> &gt; dataChunkState)</td></tr>
 <tr class="separator:a99ac9a22af23ed11cd5a01a5ad1d9887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -402,6 +404,23 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="aad52a0eeda5fef676827157b8efe44d2" name="aad52a0eeda5fef676827157b8efe44d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad52a0eeda5fef676827157b8efe44d2">&#9670;&#160;</a></span>DELETE_COPY_AND_MOVE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">kuzu::common::ValueVector::DELETE_COPY_AND_MOVE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a99ac9a22af23ed11cd5a01a5ad1d9887" name="a99ac9a22af23ed11cd5a01a5ad1d9887"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a99ac9a22af23ed11cd5a01a5ad1d9887">&#9670;&#160;</a></span>deSerialize()</h2>
 
@@ -414,7 +433,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">static std::unique_ptr&lt; <a class="el" href="classkuzu_1_1common_1_1_value_vector.html">ValueVector</a> &gt; kuzu::common::ValueVector::deSerialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_deserializer.html">Deserializer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>deSer</em></span>, </td>
+          <td class="paramtype">Deserializer &amp;</td>          <td class="paramname"><span class="paramname"><em>deSer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -708,7 +727,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void kuzu::common::ValueVector::serialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classkuzu_1_1common_1_1_serializer.html">Serializer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ser</em></span></td><td>)</td>
+          <td class="paramtype">Serializer &amp;</td>          <td class="paramname"><span class="paramname"><em>ser</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>

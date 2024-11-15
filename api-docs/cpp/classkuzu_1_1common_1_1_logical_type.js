@@ -1,11 +1,13 @@
 var classkuzu_1_1common_1_1_logical_type =
 [
     [ "LogicalType", "classkuzu_1_1common_1_1_logical_type.html#a1ba85b56880ce4176e1d6d31de4140a7", null ],
-    [ "LogicalType", "classkuzu_1_1common_1_1_logical_type.html#a8ef29fc119095a1d6a853244128245c1", null ],
+    [ "LogicalType", "classkuzu_1_1common_1_1_logical_type.html#ace23f049e4c69d91b71395032c23a766", null ],
     [ "containsAny", "classkuzu_1_1common_1_1_logical_type.html#adb66257b954734b69618a5d44bba55da", null ],
     [ "EXPLICIT_COPY_DEFAULT_MOVE", "classkuzu_1_1common_1_1_logical_type.html#a873184c32a7a379018a00f95d84500a9", null ],
+    [ "getExtraTypeInfo", "classkuzu_1_1common_1_1_logical_type.html#ad9696fb7718a6c0e7dd47a3edb78c7d9", null ],
     [ "getLogicalTypeID", "classkuzu_1_1common_1_1_logical_type.html#a928b50c5a344ced8c364223062e0e53a", null ],
     [ "getPhysicalType", "classkuzu_1_1common_1_1_logical_type.html#af0022171c63e0979504e1a75d91b6c96", null ],
+    [ "isInternalType", "classkuzu_1_1common_1_1_logical_type.html#ae1c8d00ff139ac7ce8e46028690d3256", null ],
     [ "operator!=", "classkuzu_1_1common_1_1_logical_type.html#adf9ae016763def6425583469a4077a71", null ],
     [ "operator==", "classkuzu_1_1common_1_1_logical_type.html#a45ae5ab90e14376251df4df67114f9b5", null ],
     [ "serialize", "classkuzu_1_1common_1_1_logical_type.html#a3d51dae0ff8c49f37a299f0dd7bc2ae3", null ],

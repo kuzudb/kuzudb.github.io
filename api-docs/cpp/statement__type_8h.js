@@ -8,6 +8,7 @@ var statement__type_8h =
       [ "COPY_TO", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557a18155f41fdefad52d9eccd3837a27eb3", null ],
       [ "COPY_FROM", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557ab10fc913a4117495a3275a3ae98aed64", null ],
       [ "STANDALONE_CALL", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557a8cd5c839af999089784ea01a3c46a649", null ],
+      [ "STANDALONE_CALL_FUNCTION", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557a2367368664e7667d53495517da9747d0", null ],
       [ "EXPLAIN", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557aff149905e61532412a2e7d33eb75a9c0", null ],
       [ "CREATE_MACRO", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557a39fee3204eaead78424ed7d46cf1dd41", null ],
       [ "TRANSACTION", "statement__type_8h.html#afeef9a771d4ab45b546f105ba325a557ae6bed345f53943469741d7295552fcd4", null ],
