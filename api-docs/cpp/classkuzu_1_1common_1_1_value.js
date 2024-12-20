@@ -110,7 +110,7 @@ var classkuzu_1_1common_1_1_value =
     [ "setNull", "classkuzu_1_1common_1_1_value.html#aa9b5263f0d553adbfe7618cd8f70d325", null ],
     [ "setNull", "classkuzu_1_1common_1_1_value.html#a44dd22a7875d986e7c89de3a12e44fcf", null ],
     [ "toString", "classkuzu_1_1common_1_1_value.html#a7608ca20674f8f39781320c89948e433", null ],
-    [ "validateType", "classkuzu_1_1common_1_1_value.html#ae66f6476b804801172fbf66265a6e3fb", null ],
+    [ "validateType", "classkuzu_1_1common_1_1_value.html#af72ff64d36a06337c5645c994735bbd2", null ],
     [ "ArrowRowBatch", "classkuzu_1_1common_1_1_value.html#a2bfd49735af48972ecf982e45cf7bf99", null ],
     [ "NestedVal", "classkuzu_1_1common_1_1_value.html#a54a9b01ab0b18777683864ec7bd6056d", null ],
     [ "NodeVal", "classkuzu_1_1common_1_1_value.html#aa974a30a7bf3aa9df757f3db3c1d9249", null ],

@@ -64,6 +64,9 @@ var hierarchy =
     [ "kuzu::binder::ExpressionEquality", "structkuzu_1_1binder_1_1_expression_equality.html", null ],
     [ "kuzu::binder::ExpressionHasher", "structkuzu_1_1binder_1_1_expression_hasher.html", null ],
     [ "kuzu::common::ExpressionTypeUtil", "structkuzu_1_1common_1_1_expression_type_util.html", null ],
+    [ "kuzu::function::ExtraTableFuncBindInput", "structkuzu_1_1function_1_1_extra_table_func_bind_input.html", [
+      [ "kuzu::function::ExtraScanTableFuncBindInput", "structkuzu_1_1function_1_1_extra_scan_table_func_bind_input.html", null ]
+    ] ],
     [ "kuzu::common::ExtraTypeInfo", "classkuzu_1_1common_1_1_extra_type_info.html", [
       [ "kuzu::common::DecimalTypeInfo", "classkuzu_1_1common_1_1_decimal_type_info.html", null ],
       [ "kuzu::common::ListTypeInfo", "classkuzu_1_1common_1_1_list_type_info.html", [
@@ -135,7 +138,6 @@ var hierarchy =
     [ "kuzu::function::ScalarBindFuncInput", "structkuzu_1_1function_1_1_scalar_bind_func_input.html", null ],
     [ "kuzu::function::ScanReplacement", "structkuzu_1_1function_1_1_scan_replacement.html", null ],
     [ "kuzu::function::ScanReplacementData", "structkuzu_1_1function_1_1_scan_replacement_data.html", null ],
-    [ "kuzu::function::ScanTableFuncBindInput", "structkuzu_1_1function_1_1_scan_table_func_bind_input.html", null ],
     [ "kuzu::common::SelectionVector", "classkuzu_1_1common_1_1_selection_vector.html", null ],
     [ "kuzu::parser::Statement", "classkuzu_1_1parser_1_1_statement.html", null ],
     [ "kuzu::common::StorageConstants", "structkuzu_1_1common_1_1_storage_constants.html", null ],
@@ -147,6 +149,7 @@ var hierarchy =
     [ "kuzu::common::StructType", "structkuzu_1_1common_1_1_struct_type.html", null ],
     [ "kuzu::common::StructVector", "classkuzu_1_1common_1_1_struct_vector.html", null ],
     [ "kuzu::main::SystemConfig", "structkuzu_1_1main_1_1_system_config.html", null ],
+    [ "kuzu::function::TableFuncBindInput", "structkuzu_1_1function_1_1_table_func_bind_input.html", null ],
     [ "kuzu::function::TableFuncInput", "structkuzu_1_1function_1_1_table_func_input.html", null ],
     [ "kuzu::function::TableFuncLocalState", "structkuzu_1_1function_1_1_table_func_local_state.html", null ],
     [ "kuzu::function::TableFuncOutput", "structkuzu_1_1function_1_1_table_func_output.html", null ],

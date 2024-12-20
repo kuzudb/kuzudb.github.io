@@ -207,8 +207,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0d3f570c17a45358e5475406e2c2d14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab431d590d719676926b7fd6a058cd1bb" id="r_ab431d590d719676926b7fd6a058cd1bb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classkuzu_1_1processor_1_1_warning_context.html">processor::WarningContext</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab431d590d719676926b7fd6a058cd1bb">getWarningContext</a> () const</td></tr>
 <tr class="separator:ab431d590d719676926b7fd6a058cd1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae510a7536865691bef503541f7a5b6ba" id="r_ae510a7536865691bef503541f7a5b6ba"><td class="memItemLeft" align="right" valign="top">graph::GraphEntrySet &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae510a7536865691bef503541f7a5b6ba">getGraphEntrySetUnsafe</a> ()</td></tr>
+<tr class="separator:ae510a7536865691bef503541f7a5b6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a327db2069643fb672604c00c651b1e6d" id="r_a327db2069643fb672604c00c651b1e6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a327db2069643fb672604c00c651b1e6d">cleanUP</a> ()</td></tr>
 <tr class="separator:a327db2069643fb672604c00c651b1e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab305e5ac3cfbe6bdf4e563b059b35df7" id="r_ab305e5ac3cfbe6bdf4e563b059b35df7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1main_1_1_query_result.html">QueryResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab305e5ac3cfbe6bdf4e563b059b35df7">queryInternal</a> (std::string_view <a class="el" href="#a029d9d38789fe1576a3d710fef8d9ed9">query</a>, std::string_view encodedJoin, bool enumerateAllPlans=true, std::optional&lt; uint64_t &gt; queryID=std::nullopt)</td></tr>
+<tr class="separator:ab305e5ac3cfbe6bdf4e563b059b35df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -588,6 +592,23 @@ Friends</h2></td></tr>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae510a7536865691bef503541f7a5b6ba" name="ae510a7536865691bef503541f7a5b6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae510a7536865691bef503541f7a5b6ba">&#9670;&#160;</a></span>getGraphEntrySetUnsafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">graph::GraphEntrySet &amp; kuzu::main::ClientContext::getGraphEntrySetUnsafe </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1002,6 +1023,37 @@ Friends</h2></td></tr>
           <td class="memname">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1main_1_1_query_result.html">QueryResult</a> &gt; kuzu::main::ClientContext::query </td>
           <td>(</td>
           <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>queryStatement</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; uint64_t &gt;</td>          <td class="paramname"><span class="paramname"><em>queryID</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab305e5ac3cfbe6bdf4e563b059b35df7" name="ab305e5ac3cfbe6bdf4e563b059b35df7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab305e5ac3cfbe6bdf4e563b059b35df7">&#9670;&#160;</a></span>queryInternal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classkuzu_1_1main_1_1_query_result.html">QueryResult</a> &gt; kuzu::main::ClientContext::queryInternal </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>query</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>encodedJoin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enumerateAllPlans</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

@@ -8,12 +8,13 @@ var searchData=
   ['kuzu_3a_3acommon_3a_3astring_5fformat_5fdetail_5',['string_format_detail',['../namespacekuzu_1_1common_1_1string__format__detail.html',1,'kuzu::common']]],
   ['kuzu_3a_3aextension_6',['extension',['../namespacekuzu_1_1extension.html',1,'kuzu']]],
   ['kuzu_3a_3afunction_7',['function',['../namespacekuzu_1_1function.html',1,'kuzu']]],
-  ['kuzu_3a_3amain_8',['main',['../namespacekuzu_1_1main.html',1,'kuzu']]],
-  ['kuzu_3a_3aparser_9',['parser',['../namespacekuzu_1_1parser.html',1,'kuzu']]],
-  ['kuzu_3a_3aplanner_10',['planner',['../namespacekuzu_1_1planner.html',1,'kuzu']]],
-  ['kuzu_3a_3aprocessor_11',['processor',['../namespacekuzu_1_1processor.html',1,'kuzu']]],
-  ['kuzu_3a_3aregex_12',['regex',['../namespacekuzu_1_1regex.html',1,'kuzu']]],
-  ['kuzu_3a_3astorage_13',['storage',['../namespacekuzu_1_1storage.html',1,'kuzu']]],
-  ['kuzu_3a_3atesting_14',['testing',['../namespacekuzu_1_1testing.html',1,'kuzu']]],
-  ['kuzu_3a_3atransaction_15',['transaction',['../namespacekuzu_1_1transaction.html',1,'kuzu']]]
+  ['kuzu_3a_3agraph_8',['graph',['../namespacekuzu_1_1graph.html',1,'kuzu']]],
+  ['kuzu_3a_3amain_9',['main',['../namespacekuzu_1_1main.html',1,'kuzu']]],
+  ['kuzu_3a_3aparser_10',['parser',['../namespacekuzu_1_1parser.html',1,'kuzu']]],
+  ['kuzu_3a_3aplanner_11',['planner',['../namespacekuzu_1_1planner.html',1,'kuzu']]],
+  ['kuzu_3a_3aprocessor_12',['processor',['../namespacekuzu_1_1processor.html',1,'kuzu']]],
+  ['kuzu_3a_3aregex_13',['regex',['../namespacekuzu_1_1regex.html',1,'kuzu']]],
+  ['kuzu_3a_3astorage_14',['storage',['../namespacekuzu_1_1storage.html',1,'kuzu']]],
+  ['kuzu_3a_3atesting_15',['testing',['../namespacekuzu_1_1testing.html',1,'kuzu']]],
+  ['kuzu_3a_3atransaction_16',['transaction',['../namespacekuzu_1_1transaction.html',1,'kuzu']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['tablefunc_0',['tableFunc',['../structkuzu_1_1function_1_1_table_function.html#a70af6be23f2090d58dd5d47cb0338ac3',1,'kuzu::function::TableFunction']]],
-  ['tablefunction_1',['tableFunction',['../structkuzu_1_1function_1_1_scan_table_func_bind_input.html#a66ed7515d069019d828f2cb2361c9ae1',1,'kuzu::function::ScanTableFuncBindInput']]],
+  ['tablefunction_1',['tableFunction',['../structkuzu_1_1function_1_1_extra_scan_table_func_bind_input.html#a44e8d620c06bd55fbcecfb7d62999e64',1,'kuzu::function::ExtraScanTableFuncBindInput']]],
   ['tableid_2',['tableID',['../structkuzu_1_1common_1_1internal_i_d__t.html#a984266dadf8433ca13b9df58e5e54d00',1,'kuzu::common::internalID_t']]],
   ['tag_5ffield_5fidx_3',['TAG_FIELD_IDX',['../structkuzu_1_1common_1_1_union_type.html#a62012c5635ea49f120eac6eb1991f0b7',1,'kuzu::common::UnionType']]],
   ['tag_5ffield_5fname_4',['TAG_FIELD_NAME',['../structkuzu_1_1common_1_1_union_type.html#a79fcf5b031284a31070234307b5637fd',1,'kuzu::common::UnionType']]],

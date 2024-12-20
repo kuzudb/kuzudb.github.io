@@ -127,6 +127,10 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_const_function_executor.html">ConstFunctionExecutor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_extra_scan_table_func_bind_input.html">ExtraScanTableFuncBindInput</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_extra_table_func_bind_input.html">ExtraTableFuncBindInput</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_function.html">Function</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_function_bind_data.html">FunctionBindData</a></td></tr>
@@ -143,7 +147,7 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_scan_replacement_data.html">ScanReplacementData</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_scan_table_func_bind_input.html">ScanTableFuncBindInput</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_table_func_bind_input.html">TableFuncBindInput</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_table_func_input.html">TableFuncInput</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,6 +200,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a9bccbfbc79bdbf0ac09d3ff485a36519" id="r_a9bccbfbc79bdbf0ac09d3ff485a36519"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bccbfbc79bdbf0ac09d3ff485a36519">optional_params_t</a> = <a class="el" href="namespacekuzu_1_1common.html#acf170e3d0f408e224dd325203bffd808">common::case_insensitive_map_t</a>&lt;<a class="el" href="classkuzu_1_1common_1_1_value.html">common::Value</a>&gt;</td></tr>
+<tr class="separator:a9bccbfbc79bdbf0ac09d3ff485a36519"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bb13703cbecbf1b553841b9c98496c9" id="r_a0bb13703cbecbf1b553841b9c98496c9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bb13703cbecbf1b553841b9c98496c9">function_set</a> = std::vector&lt;std::unique_ptr&lt;<a class="el" href="structkuzu_1_1function_1_1_function.html">Function</a>&gt;&gt;</td></tr>
 <tr class="separator:a0bb13703cbecbf1b553841b9c98496c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96059946bb8119ed85bafd793abfe2b1" id="r_a96059946bb8119ed85bafd793abfe2b1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96059946bb8119ed85bafd793abfe2b1">scalar_bind_func</a></td></tr>
@@ -208,8 +214,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a755d114a6cee3d7a4c157378fccd78d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcdd96fc79a12107765a223c029310ee" id="r_adcdd96fc79a12107765a223c029310ee"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcdd96fc79a12107765a223c029310ee">scan_replace_func_t</a> = std::function&lt;std::unique_ptr&lt;<a class="el" href="structkuzu_1_1function_1_1_scan_replacement_data.html">ScanReplacementData</a>&gt;(const std::string&amp;)&gt;</td></tr>
 <tr class="separator:adcdd96fc79a12107765a223c029310ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19b9df242b6dc3b74db6c34ed4355b55" id="r_a19b9df242b6dc3b74db6c34ed4355b55"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19b9df242b6dc3b74db6c34ed4355b55">table_func_bind_t</a></td></tr>
-<tr class="separator:a19b9df242b6dc3b74db6c34ed4355b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a317c63e5b86be391d5a388f533377b1f" id="r_a317c63e5b86be391d5a388f533377b1f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a317c63e5b86be391d5a388f533377b1f">table_func_bind_t</a></td></tr>
+<tr class="separator:a317c63e5b86be391d5a388f533377b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c486f8f5d317d9be2b8743781d2885d" id="r_a4c486f8f5d317d9be2b8743781d2885d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c486f8f5d317d9be2b8743781d2885d">table_func_t</a> = std::function&lt;<a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a>(<a class="el" href="structkuzu_1_1function_1_1_table_func_input.html">TableFuncInput</a>&amp;, <a class="el" href="structkuzu_1_1function_1_1_table_func_output.html">TableFuncOutput</a>&amp;)&gt;</td></tr>
 <tr class="separator:a4c486f8f5d317d9be2b8743781d2885d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3446f5c3b0779db51b391e649848b1f9" id="r_a3446f5c3b0779db51b391e649848b1f9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3446f5c3b0779db51b391e649848b1f9">table_func_init_shared_t</a></td></tr>
@@ -222,6 +228,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a8c24fe73a04df7b616d5712a19209586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51bd0358b60963291278845655c62177" id="r_a51bd0358b60963291278845655c62177"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51bd0358b60963291278845655c62177">table_func_finalize_t</a></td></tr>
 <tr class="separator:a51bd0358b60963291278845655c62177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab911ff1b9ff1d7d48b06ceb7b7a861e1" id="r_ab911ff1b9ff1d7d48b06ceb7b7a861e1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab911ff1b9ff1d7d48b06ceb7b7a861e1">table_func_rewrite_t</a></td></tr>
+<tr class="separator:ab911ff1b9ff1d7d48b06ceb7b7a861e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a0bb13703cbecbf1b553841b9c98496c9" name="a0bb13703cbecbf1b553841b9c98496c9"></a>
@@ -232,6 +240,20 @@ Typedefs</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#a0bb13703cbecbf1b553841b9c98496c9">kuzu::function::function_set</a> = std::vector&lt;std::unique_ptr&lt;<a class="el" href="structkuzu_1_1function_1_1_function.html">Function</a>&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9bccbfbc79bdbf0ac09d3ff485a36519" name="a9bccbfbc79bdbf0ac09d3ff485a36519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bccbfbc79bdbf0ac09d3ff485a36519">&#9670;&#160;</a></span>optional_params_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a9bccbfbc79bdbf0ac09d3ff485a36519">kuzu::function::optional_params_t</a> = <a class="el" href="namespacekuzu_1_1common.html#acf170e3d0f408e224dd325203bffd808">common::case_insensitive_map_t</a>&lt;<a class="el" href="classkuzu_1_1common_1_1_value.html">common::Value</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -317,19 +339,19 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a19b9df242b6dc3b74db6c34ed4355b55" name="a19b9df242b6dc3b74db6c34ed4355b55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19b9df242b6dc3b74db6c34ed4355b55">&#9670;&#160;</a></span>table_func_bind_t</h2>
+<a id="a317c63e5b86be391d5a388f533377b1f" name="a317c63e5b86be391d5a388f533377b1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a317c63e5b86be391d5a388f533377b1f">&#9670;&#160;</a></span>table_func_bind_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a19b9df242b6dc3b74db6c34ed4355b55">kuzu::function::table_func_bind_t</a></td>
+          <td class="memname">using <a class="el" href="#a317c63e5b86be391d5a388f533377b1f">kuzu::function::table_func_bind_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line"> std::function&lt;std::unique_ptr&lt;TableFuncBindData&gt;(main::ClientContext*,</div>
-<div class="line">    function::ScanTableFuncBindInput*)&gt;</div>
+<div class="line">    function::TableFuncBindInput*)&gt;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -407,6 +429,22 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a id="ab911ff1b9ff1d7d48b06ceb7b7a861e1" name="ab911ff1b9ff1d7d48b06ceb7b7a861e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab911ff1b9ff1d7d48b06ceb7b7a861e1">&#9670;&#160;</a></span>table_func_rewrite_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ab911ff1b9ff1d7d48b06ceb7b7a861e1">kuzu::function::table_func_rewrite_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"> </div>
+<div class="line">    std::function&lt;std::string(main::ClientContext&amp;, <span class="keyword">const</span> TableFuncBindData&amp; bindData)&gt;</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4c486f8f5d317d9be2b8743781d2885d" name="a4c486f8f5d317d9be2b8743781d2885d"></a>
