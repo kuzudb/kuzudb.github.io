@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['private_5fdata_0',['private_data',['../struct_arrow_schema.html#ab385d6a15b6dc46194dcc4286f36b767',1,'ArrowSchema::private_data'],['../struct_arrow_array.html#a1f2d5a334bb41924c4822bbfc7aec63e',1,'ArrowArray::private_data']]]
+  ['offset_0',['offset',['../struct_arrow_array.html#aa1b045f8e085dbca894bb9c3900c007e',1,'ArrowArray::offset'],['../structkuzu__internal__id__t.html#a1dc50d6aab50b21831ff1f25001ed5ea',1,'kuzu_internal_id_t::offset']]]
 ];

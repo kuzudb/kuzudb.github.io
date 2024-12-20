@@ -98,7 +98,6 @@ $(function(){initNavTree('classkuzu_1_1common_1_1_selection_vector.html',''); in
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classkuzu_1_1common_1_1_selection_vector-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">kuzu::common::SelectionVector Class Reference</div></div>
 </div><!--header-->
@@ -114,16 +113,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6f6932f94fd15fbd7cd0b14f19258e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a946214dae09737c6b45750228aa70b27" id="r_a946214dae09737c6b45750228aa70b27"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a946214dae09737c6b45750228aa70b27">isUnfiltered</a> () const</td></tr>
 <tr class="separator:a946214dae09737c6b45750228aa70b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c9a400c8192294de0c910dbb83ff6a9" id="r_a3c9a400c8192294de0c910dbb83ff6a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c9a400c8192294de0c910dbb83ff6a9">isContinuous</a> () const</td></tr>
-<tr class="separator:a3c9a400c8192294de0c910dbb83ff6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e02e9097056482bc8ca69f14460f07c" id="r_a0e02e9097056482bc8ca69f14460f07c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e02e9097056482bc8ca69f14460f07c">setToUnfiltered</a> ()</td></tr>
 <tr class="separator:a0e02e9097056482bc8ca69f14460f07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87387cb4210f61512c9421ff87b66751" id="r_a87387cb4210f61512c9421ff87b66751"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87387cb4210f61512c9421ff87b66751">setToUnfiltered</a> (<a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a> size)</td></tr>
 <tr class="separator:a87387cb4210f61512c9421ff87b66751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f5b8784a1eeb66612f78efa49fa51c" id="r_a80f5b8784a1eeb66612f78efa49fa51c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80f5b8784a1eeb66612f78efa49fa51c">setRange</a> (<a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a> startPos, <a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a> size)</td></tr>
+<tr class="separator:a80f5b8784a1eeb66612f78efa49fa51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a466e355497ffed666ad4647aa1d2f72d" id="r_a466e355497ffed666ad4647aa1d2f72d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a466e355497ffed666ad4647aa1d2f72d">setToFiltered</a> ()</td></tr>
 <tr class="separator:a466e355497ffed666ad4647aa1d2f72d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9be5ef11d1c057abff60c8af50a9f7ec" id="r_a9be5ef11d1c057abff60c8af50a9f7ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be5ef11d1c057abff60c8af50a9f7ec">setToFiltered</a> (<a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a> size)</td></tr>
 <tr class="separator:a9be5ef11d1c057abff60c8af50a9f7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675ce7d6295ecaf3253cb1f28ad6ebc4" id="r_a675ce7d6295ecaf3253cb1f28ad6ebc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a675ce7d6295ecaf3253cb1f28ad6ebc4">makeDynamic</a> ()</td></tr>
+<tr class="separator:a675ce7d6295ecaf3253cb1f28ad6ebc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3d02b1ed767b0d3d9606e7a9ab59a5a" id="r_ae3d02b1ed767b0d3d9606e7a9ab59a5a"><td class="memItemLeft" align="right" valign="top">std::span&lt; <a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3d02b1ed767b0d3d9606e7a9ab59a5a">getMutableBuffer</a> () const</td></tr>
 <tr class="separator:ae3d02b1ed767b0d3d9606e7a9ab59a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b77fd60ff04ecd2f490aae52c2ef6f6" id="r_a9b77fd60ff04ecd2f490aae52c2ef6f6"><td class="memItemLeft" align="right" valign="top">std::span&lt; const <a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b77fd60ff04ecd2f490aae52c2ef6f6">getSelectedPositions</a> () const</td></tr>
@@ -141,11 +142,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aec7e5cb590063d225885efbd52608326"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dec30c5bfb1d7cd9986099799309c16" id="r_a7dec30c5bfb1d7cd9986099799309c16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dec30c5bfb1d7cd9986099799309c16">operator[]</a> (<a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a> index)</td></tr>
 <tr class="separator:a7dec30c5bfb1d7cd9986099799309c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a908e6205c0908b7ecbf787e0d1493fa2" id="r_a908e6205c0908b7ecbf787e0d1493fa2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> const std::array&lt; <a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a>, <a class="el" href="namespacekuzu_1_1common.html#a25c5a5d8d890b3d0da2338c831fbdb38">DEFAULT_VECTOR_CAPACITY</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a908e6205c0908b7ecbf787e0d1493fa2">INCREMENTAL_SELECTED_POS</a></td></tr>
-<tr class="separator:a908e6205c0908b7ecbf787e0d1493fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae699001bb036a6399c0667e930c394c3" name="ae699001bb036a6399c0667e930c394c3"></a>
@@ -326,31 +322,6 @@ template&lt;class Func &gt; </div>
 
 </div>
 </div>
-<a id="a3c9a400c8192294de0c910dbb83ff6a9" name="a3c9a400c8192294de0c910dbb83ff6a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c9a400c8192294de0c910dbb83ff6a9">&#9670;&#160;</a></span>isContinuous()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool kuzu::common::SelectionVector::isContinuous </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a946214dae09737c6b45750228aa70b27" name="a946214dae09737c6b45750228aa70b27"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a946214dae09737c6b45750228aa70b27">&#9670;&#160;</a></span>isUnfiltered()</h2>
 
@@ -365,6 +336,31 @@ template&lt;class Func &gt; </div>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a675ce7d6295ecaf3253cb1f28ad6ebc4" name="a675ce7d6295ecaf3253cb1f28ad6ebc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a675ce7d6295ecaf3253cb1f28ad6ebc4">&#9670;&#160;</a></span>makeDynamic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void kuzu::common::SelectionVector::makeDynamic </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -415,6 +411,35 @@ template&lt;class Func &gt; </div>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80f5b8784a1eeb66612f78efa49fa51c" name="a80f5b8784a1eeb66612f78efa49fa51c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80f5b8784a1eeb66612f78efa49fa51c">&#9670;&#160;</a></span>setRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void kuzu::common::SelectionVector::setRange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a></td>          <td class="paramname"><span class="paramname"><em>startPos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -545,29 +570,6 @@ template&lt;class Func &gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a908e6205c0908b7ecbf787e0d1493fa2" name="a908e6205c0908b7ecbf787e0d1493fa2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a908e6205c0908b7ecbf787e0d1493fa2">&#9670;&#160;</a></span>INCREMENTAL_SELECTED_POS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> const std::array&lt;<a class="el" href="namespacekuzu_1_1common.html#ac6f8d79471c2d73f874b631b6f169646">sel_t</a>, <a class="el" href="namespacekuzu_1_1common.html#a25c5a5d8d890b3d0da2338c831fbdb38">DEFAULT_VECTOR_CAPACITY</a>&gt; kuzu::common::SelectionVector::INCREMENTAL_SELECTED_POS</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

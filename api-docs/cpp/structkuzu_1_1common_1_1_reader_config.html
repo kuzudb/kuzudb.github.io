@@ -99,6 +99,7 @@ $(function(){initNavTree('structkuzu_1_1common_1_1_reader_config.html',''); init
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="structkuzu_1_1common_1_1_reader_config-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">kuzu::common::ReaderConfig Struct Reference</div></div>
 </div><!--header-->
@@ -128,8 +129,13 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa0979148f67fbda4fd4316b7232e0f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a735a87838c255ff6ae13e28eb9216c35" id="r_a735a87838c255ff6ae13e28eb9216c35"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a735a87838c255ff6ae13e28eb9216c35">filePaths</a></td></tr>
 <tr class="separator:a735a87838c255ff6ae13e28eb9216c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9302afab404089d3a3b3ba13da0bdd8f" id="r_a9302afab404089d3a3b3ba13da0bdd8f"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, <a class="el" href="classkuzu_1_1common_1_1_value.html">Value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9302afab404089d3a3b3ba13da0bdd8f">options</a></td></tr>
-<tr class="separator:a9302afab404089d3a3b3ba13da0bdd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e810ea73ed2bb430451e9e528d3479" id="r_ab8e810ea73ed2bb430451e9e528d3479"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#acf170e3d0f408e224dd325203bffd808">case_insensitive_map_t</a>&lt; <a class="el" href="classkuzu_1_1common_1_1_value.html">Value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8e810ea73ed2bb430451e9e528d3479">options</a></td></tr>
+<tr class="separator:ab8e810ea73ed2bb430451e9e528d3479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a847e6ff26bb678cd84f600f99230764b" id="r_a847e6ff26bb678cd84f600f99230764b"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a847e6ff26bb678cd84f600f99230764b">FILE_FORMAT_OPTION_NAME</a> = &quot;FILE_FORMAT&quot;</td></tr>
+<tr class="separator:a847e6ff26bb678cd84f600f99230764b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac575ac929c97918e4e74c0b04fc9da2e" name="ac575ac929c97918e4e74c0b04fc9da2e"></a>
@@ -286,6 +292,28 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a847e6ff26bb678cd84f600f99230764b" name="a847e6ff26bb678cd84f600f99230764b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a847e6ff26bb678cd84f600f99230764b">&#9670;&#160;</a></span>FILE_FORMAT_OPTION_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* kuzu::common::ReaderConfig::FILE_FORMAT_OPTION_NAME = &quot;FILE_FORMAT&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a735a87838c255ff6ae13e28eb9216c35" name="a735a87838c255ff6ae13e28eb9216c35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a735a87838c255ff6ae13e28eb9216c35">&#9670;&#160;</a></span>filePaths</h2>
 
@@ -314,14 +342,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a9302afab404089d3a3b3ba13da0bdd8f" name="a9302afab404089d3a3b3ba13da0bdd8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9302afab404089d3a3b3ba13da0bdd8f">&#9670;&#160;</a></span>options</h2>
+<a id="ab8e810ea73ed2bb430451e9e528d3479" name="ab8e810ea73ed2bb430451e9e528d3479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e810ea73ed2bb430451e9e528d3479">&#9670;&#160;</a></span>options</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;std::string, <a class="el" href="classkuzu_1_1common_1_1_value.html">Value</a>&gt; kuzu::common::ReaderConfig::options</td>
+          <td class="memname"><a class="el" href="namespacekuzu_1_1common.html#acf170e3d0f408e224dd325203bffd808">case_insensitive_map_t</a>&lt;<a class="el" href="classkuzu_1_1common_1_1_value.html">Value</a>&gt; kuzu::common::ReaderConfig::options</td>
         </tr>
       </table>
 </div><div class="memdoc">

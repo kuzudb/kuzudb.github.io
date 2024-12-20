@@ -8,5 +8,5 @@ var structkuzu_1_1common_1_1_reader_config =
     [ "getOption", "structkuzu_1_1common_1_1_reader_config.html#a92dcbea3ef3687d55367b427581bf36d", null ],
     [ "filePaths", "structkuzu_1_1common_1_1_reader_config.html#a735a87838c255ff6ae13e28eb9216c35", null ],
     [ "fileTypeInfo", "structkuzu_1_1common_1_1_reader_config.html#aa0979148f67fbda4fd4316b7232e0f7c", null ],
-    [ "options", "structkuzu_1_1common_1_1_reader_config.html#a9302afab404089d3a3b3ba13da0bdd8f", null ]
+    [ "options", "structkuzu_1_1common_1_1_reader_config.html#ab8e810ea73ed2bb430451e9e528d3479", null ]
 ];

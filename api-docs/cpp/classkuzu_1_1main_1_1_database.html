@@ -117,8 +117,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a994eb02bd8ada1298fb78eea0e24f603" id="r_a994eb02bd8ada1298fb78eea0e24f603"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a994eb02bd8ada1298fb78eea0e24f603">~Database</a> ()</td></tr>
 <tr class="memdesc:a994eb02bd8ada1298fb78eea0e24f603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs the database object.  <br /></td></tr>
 <tr class="separator:a994eb02bd8ada1298fb78eea0e24f603"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab11c2eaf70da2d3c9d51eceeb70565ff" id="r_ab11c2eaf70da2d3c9d51eceeb70565ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab11c2eaf70da2d3c9d51eceeb70565ff">addTableFunction</a> (std::string name, std::vector&lt; std::unique_ptr&lt; <a class="el" href="structkuzu_1_1function_1_1_function.html">function::Function</a> &gt; &gt; functionSet)</td></tr>
-<tr class="separator:ab11c2eaf70da2d3c9d51eceeb70565ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f6d02a2161bdfef955565abc0e0212f" id="r_a9f6d02a2161bdfef955565abc0e0212f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f6d02a2161bdfef955565abc0e0212f">addTableFunction</a> (std::string name, std::vector&lt; std::unique_ptr&lt; <a class="el" href="structkuzu_1_1function_1_1_function.html">function::Function</a> &gt; &gt; functionSet)</td></tr>
+<tr class="separator:a9f6d02a2161bdfef955565abc0e0212f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5906d4d0ba3a00b53de7c58b3addfca5" id="r_a5906d4d0ba3a00b53de7c58b3addfca5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5906d4d0ba3a00b53de7c58b3addfca5">addStandaloneCallFunction</a> (std::string name, std::vector&lt; std::unique_ptr&lt; <a class="el" href="structkuzu_1_1function_1_1_function.html">function::Function</a> &gt; &gt; functionSet)</td></tr>
+<tr class="separator:a5906d4d0ba3a00b53de7c58b3addfca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affc81746d037fa5276536b784b7aa1ac" id="r_affc81746d037fa5276536b784b7aa1ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affc81746d037fa5276536b784b7aa1ac">registerFileSystem</a> (std::unique_ptr&lt; common::FileSystem &gt; fs)</td></tr>
 <tr class="separator:affc81746d037fa5276536b784b7aa1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6423f56e9e82aacfa09757246d317833" id="r_a6423f56e9e82aacfa09757246d317833"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6423f56e9e82aacfa09757246d317833">registerStorageExtension</a> (std::string name, std::unique_ptr&lt; storage::StorageExtension &gt; storageExtension)</td></tr>
@@ -242,14 +244,35 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ab11c2eaf70da2d3c9d51eceeb70565ff" name="ab11c2eaf70da2d3c9d51eceeb70565ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab11c2eaf70da2d3c9d51eceeb70565ff">&#9670;&#160;</a></span>addTableFunction()</h2>
+<a id="a5906d4d0ba3a00b53de7c58b3addfca5" name="a5906d4d0ba3a00b53de7c58b3addfca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5906d4d0ba3a00b53de7c58b3addfca5">&#9670;&#160;</a></span>addStandaloneCallFunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void kuzu::main::Database::addTableFunction </td>
+          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void kuzu::main::Database::addStandaloneCallFunction </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::unique_ptr&lt; <a class="el" href="structkuzu_1_1function_1_1_function.html">function::Function</a> &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>functionSet</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f6d02a2161bdfef955565abc0e0212f" name="a9f6d02a2161bdfef955565abc0e0212f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f6d02a2161bdfef955565abc0e0212f">&#9670;&#160;</a></span>addTableFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void kuzu::main::Database::addTableFunction </td>
           <td>(</td>
           <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
         </tr>

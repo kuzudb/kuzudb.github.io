@@ -46,10 +46,11 @@ var searchData=
   ['resulttype_43',['resultType',['../structkuzu_1_1function_1_1_function_bind_data.html#a2a6d2217e13ea35b4ba8a79dae9a7cc1',1,'kuzu::function::FunctionBindData']]],
   ['returntypeid_44',['returnTypeID',['../structkuzu_1_1function_1_1_scalar_or_aggregate_function.html#ac6630658ec7e32ae762c42289cc06601',1,'kuzu::function::ScalarOrAggregateFunction']]],
   ['reversecomparisondirection_45',['reverseComparisonDirection',['../structkuzu_1_1common_1_1_expression_type_util.html#ae65c017569236d07750d4e1d79ed16f5',1,'kuzu::common::ExpressionTypeUtil']]],
-  ['rightshift_46',['RightShift',['../classkuzu_1_1common_1_1_int128__t.html#ab22bb5f1205c95150893f81e7abd2c99',1,'kuzu::common::Int128_t']]],
-  ['rollback_47',['rollback',['../classkuzu_1_1transaction_1_1_transaction.html#adf8dabcdea0b49ed802b410c16cedecf',1,'kuzu::transaction::Transaction::rollback()'],['../classkuzu_1_1transaction_1_1_transaction_context.html#a77720232141c4a6e92d9e35637c3d577',1,'kuzu::transaction::TransactionContext::rollback()']]],
-  ['row_5fidx_5fcolumn_5fid_48',['ROW_IDX_COLUMN_ID',['../namespacekuzu_1_1common.html#a0a0228ef1281e0d523ddb7273abda45a',1,'kuzu::common']]],
-  ['row_5fidx_5ft_49',['row_idx_t',['../namespacekuzu_1_1common.html#aedcfd5bb2d7ac3bd7f14fc1d15cceae9',1,'kuzu::common']]],
-  ['row_5foffset_50',['ROW_OFFSET',['../structkuzu_1_1common_1_1_internal_keyword.html#abe718201633179438094f7f17a2f70ba',1,'kuzu::common::InternalKeyword']]],
-  ['runtime_5fcheck_51',['RUNTIME_CHECK',['../assert_8h.html#a5d7fff39a5a616f75b832c7af0f327d7',1,'assert.h']]]
+  ['rewritefunc_46',['rewriteFunc',['../structkuzu_1_1function_1_1_table_function.html#a3ecc81cac54a851d5d641b38a78aecc0',1,'kuzu::function::TableFunction']]],
+  ['rightshift_47',['RightShift',['../classkuzu_1_1common_1_1_int128__t.html#ab22bb5f1205c95150893f81e7abd2c99',1,'kuzu::common::Int128_t']]],
+  ['rollback_48',['rollback',['../classkuzu_1_1transaction_1_1_transaction.html#adf8dabcdea0b49ed802b410c16cedecf',1,'kuzu::transaction::Transaction::rollback()'],['../classkuzu_1_1transaction_1_1_transaction_context.html#a77720232141c4a6e92d9e35637c3d577',1,'kuzu::transaction::TransactionContext::rollback()']]],
+  ['row_5fidx_5fcolumn_5fid_49',['ROW_IDX_COLUMN_ID',['../namespacekuzu_1_1common.html#a0a0228ef1281e0d523ddb7273abda45a',1,'kuzu::common']]],
+  ['row_5fidx_5ft_50',['row_idx_t',['../namespacekuzu_1_1common.html#aedcfd5bb2d7ac3bd7f14fc1d15cceae9',1,'kuzu::common']]],
+  ['row_5foffset_51',['ROW_OFFSET',['../structkuzu_1_1common_1_1_internal_keyword.html#abe718201633179438094f7f17a2f70ba',1,'kuzu::common::InternalKeyword']]],
+  ['runtime_5fcheck_52',['RUNTIME_CHECK',['../assert_8h.html#a5d7fff39a5a616f75b832c7af0f327d7',1,'assert.h']]]
 ];

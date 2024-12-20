@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['table_5fid_0',['table_id',['../structkuzu__internal__id__t.html#a0b2cfafd90fb68fe9bc21301e091b470',1,'kuzu_internal_id_t']]]
+  ['read_5fonly_0',['read_only',['../structkuzu__system__config.html#a395e76b9208cd509f9d5c1449b0e0961',1,'kuzu_system_config']]],
+  ['release_1',['release',['../struct_arrow_schema.html#ad471ae72074febbeaf80288f2f673c57',1,'ArrowSchema::release'],['../struct_arrow_array.html#a03ad36422f651c0b0ccd9ab9c5b7d5d3',1,'ArrowArray::release']]]
 ];

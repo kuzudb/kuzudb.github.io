@@ -10,8 +10,8 @@ var searchData=
   ['ptrcast_7',['ptrCast',['../classkuzu_1_1binder_1_1_expression.html#a664b20221194c1acd9bb2364f11467f4',1,'kuzu::binder::Expression::ptrCast()'],['../structkuzu_1_1function_1_1_function.html#a35f69eec2f6c27d192795adf931cfbd7',1,'kuzu::function::Function::ptrCast()'],['../structkuzu_1_1function_1_1_table_func_shared_state.html#a5c5dfd223020c9817c09c83c41e4c712',1,'kuzu::function::TableFuncSharedState::ptrCast()'],['../structkuzu_1_1function_1_1_table_func_local_state.html#ae6c5cdb4b6705e4be45bbf99d333fe0c',1,'kuzu::function::TableFuncLocalState::ptrCast()']]],
   ['purgeany_8',['purgeAny',['../structkuzu_1_1common_1_1_logical_type_utils.html#af16bf40337a75cb6473cc7b22f778743',1,'kuzu::common::LogicalTypeUtils']]],
   ['pushcatalogentry_9',['pushCatalogEntry',['../classkuzu_1_1transaction_1_1_transaction.html#a5660c7704e30d8ab2fbf979eddb573de',1,'kuzu::transaction::Transaction']]],
-  ['pushdeleteinfo_10',['pushDeleteInfo',['../classkuzu_1_1transaction_1_1_transaction.html#a54f4c4f61d9d8e9e19f3c4b8a0d66145',1,'kuzu::transaction::Transaction']]],
-  ['pushinsertinfo_11',['pushInsertInfo',['../classkuzu_1_1transaction_1_1_transaction.html#a2774cfe3c23d4f2c6613b5da57d2dfb4',1,'kuzu::transaction::Transaction']]],
+  ['pushdeleteinfo_10',['pushDeleteInfo',['../classkuzu_1_1transaction_1_1_transaction.html#aefa9742af8d7650b528304c05e6a1397',1,'kuzu::transaction::Transaction']]],
+  ['pushinsertinfo_11',['pushInsertInfo',['../classkuzu_1_1transaction_1_1_transaction.html#a9a0921a4b96363527d89676f4e6103a1',1,'kuzu::transaction::Transaction']]],
   ['pushsequencechange_12',['pushSequenceChange',['../classkuzu_1_1transaction_1_1_transaction.html#ad489fd485354470db0118d64955f559d',1,'kuzu::transaction::Transaction']]],
   ['pushvectorupdateinfo_13',['pushVectorUpdateInfo',['../classkuzu_1_1transaction_1_1_transaction.html#a93bb60f0af16074893ab37d8a1d8464c',1,'kuzu::transaction::Transaction']]]
 ];

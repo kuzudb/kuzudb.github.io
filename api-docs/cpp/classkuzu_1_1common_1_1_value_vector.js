@@ -1,6 +1,6 @@
 var classkuzu_1_1common_1_1_value_vector =
 [
-    [ "ValueVector", "classkuzu_1_1common_1_1_value_vector.html#ad54828f3ac96ee44ebed2d5fbf9eba8d", null ],
+    [ "ValueVector", "classkuzu_1_1common_1_1_value_vector.html#a1e777e8163e1bbe9eb781138941dce2d", null ],
     [ "ValueVector", "classkuzu_1_1common_1_1_value_vector.html#a8a29cb86934e8e6875eef5ff99fbc9f8", null ],
     [ "~ValueVector", "classkuzu_1_1common_1_1_value_vector.html#acd996f1ff4d88de1072069c6a8d2b7e6", null ],
     [ "copyFromRowData", "classkuzu_1_1common_1_1_value_vector.html#a1f7cb6056e758470398c7b6c0219a4a7", null ],
@@ -8,7 +8,9 @@ var classkuzu_1_1common_1_1_value_vector =
     [ "copyFromVectorData", "classkuzu_1_1common_1_1_value_vector.html#aa09a74b50a273f372b00e966ae9c512d", null ],
     [ "copyFromVectorData", "classkuzu_1_1common_1_1_value_vector.html#acf901068da252c6156334ad0e2ab4772", null ],
     [ "copyToRowData", "classkuzu_1_1common_1_1_value_vector.html#a24027db98e18daf1a40a5bd4515181e7", null ],
+    [ "countNonNull", "classkuzu_1_1common_1_1_value_vector.html#aa8d8c7218b2f3e7161b790c860605629", null ],
     [ "DELETE_COPY_AND_MOVE", "classkuzu_1_1common_1_1_value_vector.html#aad52a0eeda5fef676827157b8efe44d2", null ],
+    [ "forEachNonNull", "classkuzu_1_1common_1_1_value_vector.html#a31900850c8007b2ec9db4e0876e17b9d", null ],
     [ "getAsValue", "classkuzu_1_1common_1_1_value_vector.html#a4a976aaf185dfd0afc82cc211b8edeb2", null ],
     [ "getData", "classkuzu_1_1common_1_1_value_vector.html#a1c1651c945f1a523ca72b7054a3c05a6", null ],
     [ "getNullMask", "classkuzu_1_1common_1_1_value_vector.html#ab1757a06b6fd7afa8dde312687c4e429", null ],

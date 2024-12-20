@@ -17,7 +17,8 @@ var searchData=
   ['equality_5fpredicate_5fselectivity_14',['EQUALITY_PREDICATE_SELECTIVITY',['../structkuzu_1_1common_1_1_planner_knobs.html#a0c4f5162517941ee617c89a37ab7937f',1,'kuzu::common::PlannerKnobs']]],
   ['escapechar_15',['escapeChar',['../structkuzu_1_1common_1_1_c_s_v_option.html#a0ca6761bac3fd837f3b471a3855e787e',1,'kuzu::common::CSVOption']]],
   ['execfunc_16',['execFunc',['../structkuzu_1_1function_1_1_scalar_function.html#a98d19ad1bd3bd4eeff8e3071907771d1',1,'kuzu::function::ScalarFunction']]],
-  ['expectedcolumnnames_17',['expectedColumnNames',['../structkuzu_1_1function_1_1_scan_table_func_bind_input.html#a80822496f406ddaeb5d5d6ce0751e72b',1,'kuzu::function::ScanTableFuncBindInput']]],
-  ['expectedcolumntypes_18',['expectedColumnTypes',['../structkuzu_1_1function_1_1_scan_table_func_bind_input.html#ab8ccc44b657d38338f95c1092b7e865e',1,'kuzu::function::ScanTableFuncBindInput']]],
-  ['expressiontype_19',['expressionType',['../classkuzu_1_1binder_1_1_expression.html#a3a271fd7eac58552c9a14f37b5472512',1,'kuzu::binder::Expression']]]
+  ['expectedcolumnnames_17',['expectedColumnNames',['../structkuzu_1_1function_1_1_extra_scan_table_func_bind_input.html#a5a281d1b53c24be94f82dd703845bc54',1,'kuzu::function::ExtraScanTableFuncBindInput']]],
+  ['expectedcolumntypes_18',['expectedColumnTypes',['../structkuzu_1_1function_1_1_extra_scan_table_func_bind_input.html#accd5f11a5796166ad9e1ba442546798f',1,'kuzu::function::ExtraScanTableFuncBindInput']]],
+  ['expressiontype_19',['expressionType',['../classkuzu_1_1binder_1_1_expression.html#a3a271fd7eac58552c9a14f37b5472512',1,'kuzu::binder::Expression']]],
+  ['extrainput_20',['extraInput',['../structkuzu_1_1function_1_1_table_func_bind_input.html#a02e536d95cabd80826daeb12662acb6a',1,'kuzu::function::TableFuncBindInput']]]
 ];

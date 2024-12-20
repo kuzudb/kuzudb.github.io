@@ -176,10 +176,7 @@ var namespacekuzu_1_1common =
       [ "UNKNOWN", "namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0ea696b031073e74bf2cb98e5ef201d4aa3", null ],
       [ "CSV", "namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0eacc8d68c551c4a9a6d5313e07de4deafd", null ],
       [ "PARQUET", "namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0ea7bb7c37684110cabfa71e442f9283f89", null ],
-      [ "NPY", "namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0ea3af71770103369a2c46630b26aa8dcae", null ],
-      [ "TURTLE", "namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0eab80b09da7c3fc971c45286531c450ece", null ],
-      [ "NQUADS", "namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0ea4ccbf0d0e062a91ef2b9622a21c8ad9f", null ],
-      [ "NTRIPLES", "namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0ead973b513784999c3c087e4a55965fd23", null ]
+      [ "NPY", "namespacekuzu_1_1common.html#a8ff236cfbd7e6125fc976faaf64e4d0ea3af71770103369a2c46630b26aa8dcae", null ]
     ] ],
     [ "FileVersionType", "namespacekuzu_1_1common.html#a518704891d80325673ccd66956aae7c5", [
       [ "ORIGINAL", "namespacekuzu_1_1common.html#a518704891d80325673ccd66956aae7c5aa87d5006e1de1bfc07d5c56086ad20f1", null ],

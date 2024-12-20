@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['days_0',['days',['../structkuzu__date__t.html#a93732298d89527c0c2bf9e09f20f55fd',1,'kuzu_date_t::days'],['../structkuzu__interval__t.html#af0c07676504c169bfaaf6211e4fcf0a7',1,'kuzu_interval_t::days']]],
-  ['dictionary_1',['dictionary',['../struct_arrow_schema.html#ac608367ec75500cd6322cf6bf45bc4cf',1,'ArrowSchema::dictionary'],['../struct_arrow_array.html#aa4b987f9f4c600b5accc9830006b4da8',1,'ArrowArray::dictionary']]]
+  ['checkpoint_5fthreshold_0',['checkpoint_threshold',['../structkuzu__system__config.html#abda6c39b91f2de1326a2b56f6ff78e15',1,'kuzu_system_config']]],
+  ['children_1',['children',['../struct_arrow_schema.html#ae0ba059e1e9a6879fc231f3475644c1a',1,'ArrowSchema::children'],['../struct_arrow_array.html#a4fb07be9899001e57c9ab0509396ffb8',1,'ArrowArray::children']]]
 ];

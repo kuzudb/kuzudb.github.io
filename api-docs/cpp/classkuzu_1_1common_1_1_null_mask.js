@@ -4,6 +4,7 @@ var classkuzu_1_1common_1_1_null_mask =
     [ "NullMask", "classkuzu_1_1common_1_1_null_mask.html#a400275d4a26b9a9505096b4c7579c902", null ],
     [ "copyFrom", "classkuzu_1_1common_1_1_null_mask.html#aaefdbba363e495f0aa09ea912f5ac2d8", null ],
     [ "copyFromNullBits", "classkuzu_1_1common_1_1_null_mask.html#a172d229f9ece30e68eda506595420f12", null ],
+    [ "countNulls", "classkuzu_1_1common_1_1_null_mask.html#ac45b06c8322426c49780c90f2e165813", null ],
     [ "getData", "classkuzu_1_1common_1_1_null_mask.html#a667175e0181d6f400ca95076ef42e19e", null ],
     [ "hasNoNullsGuarantee", "classkuzu_1_1common_1_1_null_mask.html#a43ed01a6d0e1cbe2783f0fb1b533a88e", null ],
     [ "isNull", "classkuzu_1_1common_1_1_null_mask.html#a90c8525901d66988422748769c76be57", null ],
