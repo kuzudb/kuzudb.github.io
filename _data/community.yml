@@ -1,9 +1,22 @@
-- quote: "I've enjoyed spending time with Kuzu and this blog neatly summarised why I like it (namely, how it interops so easily with relational sets - arrow, parquet etc)"
-  url: https://x.com/Jamessandwich/status/1701160520508678388
-  name: James McNeill
-  handle: Jamessandwich
-  img: /img/community/jamessandwich.jpg
+- quote: |
+    Embedded DBs are having a renaissance.
+    RDBMS: SQLite
+    OLAP: DuckDB
+    Graph: KuzuDB
+    Search: Chroma
+    The developer experience is so good on these. Things just work. Really cool to see.
+  url: https://x.com/criccomini/status/1627508372194074624
+  name: Chris Riccomini
+  handle: criccomini
+  img: /img/community/criccomini.jpg
   platform: twitter
+
+- quote: "Kùzu is a really good graph database. If DuckDB is as an emerging power in the relational database world, there is Kùzu in the GDBMS world, and it is open source and faithful to the basics."
+  url: https://jeongiitae.medium.com/you-must-eat-this-graph-news-graph-omakase-2-weeks-may-db41d24b77d2
+  name: Jeong Yitae
+  handle: jeongiitae
+  img: /img/community/jandland2.jpg
+  platform: medium
 
 - quote: Finally, a whole host of new technologies from embedded databases (@duckdb, @kuzudb) and open table formats (@ApacheIceberg, @apachehudi) are making it easier to query data in object storage and analyze "small" data on a local machine/single node.
   url: https://x.com/VinIyengar/status/1724902592030126170
@@ -19,13 +32,6 @@
   img: /img/community/chr_norm.jpg
   platform: twitter
 
-- quote: "Kùzu is a really good graph database. If DuckDB is as an emerging power in the relational database world, there is Kùzu in the GDBMS world, and it is open source and faithful to the basics."
-  url: https://jeongiitae.medium.com/you-must-eat-this-graph-news-graph-omakase-2-weeks-may-db41d24b77d2
-  name: Jeong Yitae
-  handle: jeongiitae
-  img: /img/community/jandland2.jpg
-  platform: medium
-
 - quote: "KuzuDB has straightforward integrations with Polars, NetworkX, Pandas, PyArrow and...Torch Geometric! Meaning that you can export data towards Graph Machine Learning with one method call."
   url: https://www.linkedin.com/posts/francoisvanderseypen_graphmachinelearning-activity-7171385765657075712-3XIY
   name: Francois Vanderseypen
@@ -33,15 +39,9 @@
   img: /img/community/francoisvanderseypen.jpeg
   platform: linkedin
 
-- quote: |
-    Embedded DBs are having a renaissance.
-    RDBMS: SQLite
-    OLAP: DuckDB
-    Graph: KuzuDB
-    Search: Chroma
-    The developer experience is so good on these. Things just work. Really cool to see.
-  url: https://x.com/criccomini/status/1627508372194074624
-  name: Chris Riccomini
-  handle: criccomini
-  img: /img/community/criccomini.jpg
+- quote: "I've enjoyed spending time with Kuzu and this blog neatly summarised why I like it (namely, how it interops so easily with relational sets - arrow, parquet etc)"
+  url: https://x.com/Jamessandwich/status/1701160520508678388
+  name: James McNeill
+  handle: Jamessandwich
+  img: /img/community/jamessandwich.jpg
   platform: twitter
