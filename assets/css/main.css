@@ -2695,7 +2695,7 @@ ul.icons {
 }
 
 ul.icons.icons-social {
-  text-align: center;
+  text-align: left;
   margin-bottom: 0;
 }
 
@@ -2765,6 +2765,10 @@ footer.major {
     font-size: 1.5em;
   }
 
+  ul.icons.icons-social {
+    text-align: center;
+  }
+
   header.major p {
     font-size: 1em;
     letter-spacing: 0;
@@ -2776,6 +2780,10 @@ footer.major {
 
   footer.major {
     margin-top: 0;
+  }
+
+  img.logo{
+    padding-top: 0;
   }
 }
 
@@ -3934,7 +3942,7 @@ div.logo-container {
   width: 28em;
   display: block;
   margin: auto;
-  padding-top: 2em;
+  padding-top: 5em;
 }
 
 .docs-button {
@@ -4416,7 +4424,7 @@ button#newsletter-submit {
   font-size: 0.8em;
 }
 
-.demo-input { 
+.demo-input {
   color: black !important;
   border-color: #dddddd !important;
   margin-bottom: 1em;
@@ -4427,7 +4435,7 @@ button#newsletter-submit {
   opacity: 0.8;
 }
 
-.demo-modal-error-wrapper{
+.demo-modal-error-wrapper {
   color: red !important;
   margin-top: 0.5em;
   margin-bottom: 0.5em !important;
