@@ -1,15 +1,24 @@
 <section id="intro" class="main">
-  <header class="major"></header>
   <div class="spotlight">
     <div class="spotlight-content">
       <div>
+        <ul class="icons icons-social">
+          {% for social in site.data.social %}
+          <li>
+            <a href="{{ social.url }}" class="icon fa-brands fa-{{ social.icon }} alt"><span class="label">{{
+                social.name }}</span></a>
+          </li>
+          {% endfor %}
+        </ul>
         <p class="headline">
           An <b>embeddable</b>, <b>scalable</b>,
           <b>extremely fast</b> graph database
         </p>
         <ul class="icons main-buttons">
           <li>
-            <a class="button primary large demo-modal-open" href="#">Try Kùzu</a>
+            <a class="button primary large demo-modal-open" href="#">
+              Try Kùzu
+            </a>
           </li>
           <li>
             <a href="//docs.kuzudb.com" class="button large docs-button">Docs
@@ -19,14 +28,6 @@
       </div>
 
       <div class="logo-container">
-        <ul class="icons icons-social">
-          {% for social in site.data.social %}
-          <li>
-            <a href="{{ social.url }}" class="icon fa-brands fa-{{ social.icon }} alt"><span class="label">{{
-                social.name }}</span></a>
-          </li>
-          {% endfor %}
-        </ul>
         <img class="logo" src="/img/kuzu-logo.png" alt="Kùzu Logo" />
       </div>
     </div>
