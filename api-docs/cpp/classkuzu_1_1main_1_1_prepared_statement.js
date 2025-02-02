@@ -3,7 +3,7 @@ var classkuzu_1_1main_1_1_prepared_statement =
     [ "~PreparedStatement", "classkuzu_1_1main_1_1_prepared_statement.html#a88e21bca711ab5bd45562ea675ac5498", null ],
     [ "getErrorMessage", "classkuzu_1_1main_1_1_prepared_statement.html#ab39561e100f7e05322b34b90661269fd", null ],
     [ "getParameterMap", "classkuzu_1_1main_1_1_prepared_statement.html#a5cbeb6cbe7bf4545269f026003661029", null ],
-    [ "getStatementType", "classkuzu_1_1main_1_1_prepared_statement.html#a82ad80563606077ec43d5dc1d8ee7127", null ],
+    [ "getStatementType", "classkuzu_1_1main_1_1_prepared_statement.html#ac6c15527ad5172fd30818fff3aaf7c13", null ],
     [ "isReadOnly", "classkuzu_1_1main_1_1_prepared_statement.html#a35d8e7bc8faffb809ae1ab51f264bcb3", null ],
     [ "isSuccess", "classkuzu_1_1main_1_1_prepared_statement.html#a918b8eed72640ace28ca1d49bc2f2b4e", null ],
     [ "isTransactionStatement", "classkuzu_1_1main_1_1_prepared_statement.html#af7f447231a04aea4e8858649ec57006a", null ],

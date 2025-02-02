@@ -48,17 +48,17 @@ var namespacekuzu_1_1function =
     [ "UnaryUDFFunctionWrapper", "structkuzu_1_1function_1_1_unary_u_d_f_function_wrapper.html", null ],
     [ "function_set", "namespacekuzu_1_1function.html#a0bb13703cbecbf1b553841b9c98496c9", null ],
     [ "optional_params_t", "namespacekuzu_1_1function.html#a9bccbfbc79bdbf0ac09d3ff485a36519", null ],
-    [ "scalar_bind_func", "namespacekuzu_1_1function.html#a96059946bb8119ed85bafd793abfe2b1", null ],
+    [ "scalar_bind_func", "namespacekuzu_1_1function.html#a879cc9cc9f4dfa50510c277517297238", null ],
     [ "scalar_func_compile_exec_t", "namespacekuzu_1_1function.html#a512747b6d08ae133b254d40a5dccd597", null ],
     [ "scalar_func_exec_t", "namespacekuzu_1_1function.html#a85dea526ec46a7fa6e6bacbde1f902cb", null ],
     [ "scalar_func_select_t", "namespacekuzu_1_1function.html#a755d114a6cee3d7a4c157378fccd78d3", null ],
     [ "scan_replace_func_t", "namespacekuzu_1_1function.html#adcdd96fc79a12107765a223c029310ee", null ],
-    [ "table_func_bind_t", "namespacekuzu_1_1function.html#a317c63e5b86be391d5a388f533377b1f", null ],
+    [ "table_func_bind_t", "namespacekuzu_1_1function.html#a990589c34c32790e53603488201c52b1", null ],
     [ "table_func_can_parallel_t", "namespacekuzu_1_1function.html#a35d4733088df629187cc362190d879b7", null ],
-    [ "table_func_finalize_t", "namespacekuzu_1_1function.html#a51bd0358b60963291278845655c62177", null ],
-    [ "table_func_init_local_t", "namespacekuzu_1_1function.html#a4337c7e84cb8019077a015de70d29378", null ],
-    [ "table_func_init_shared_t", "namespacekuzu_1_1function.html#a3446f5c3b0779db51b391e649848b1f9", null ],
+    [ "table_func_finalize_t", "namespacekuzu_1_1function.html#a4a7d196063ba70212e732c4ee2db9514", null ],
+    [ "table_func_init_local_t", "namespacekuzu_1_1function.html#a434c1c57436edea472c8f91f86bbf536", null ],
+    [ "table_func_init_shared_t", "namespacekuzu_1_1function.html#aca1ecff6cde31bcf382659bf4ed60af0", null ],
     [ "table_func_progress_t", "namespacekuzu_1_1function.html#a8c24fe73a04df7b616d5712a19209586", null ],
     [ "table_func_rewrite_t", "namespacekuzu_1_1function.html#ab911ff1b9ff1d7d48b06ceb7b7a861e1", null ],
-    [ "table_func_t", "namespacekuzu_1_1function.html#a4c486f8f5d317d9be2b8743781d2885d", null ]
+    [ "table_func_t", "namespacekuzu_1_1function.html#ac41965d7c5ca7a2376ce8bef5dd580e2", null ]
 ];

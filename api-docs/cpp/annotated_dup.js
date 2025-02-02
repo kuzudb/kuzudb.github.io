@@ -35,11 +35,11 @@ var annotated_dup =
         [ "ExportCSVConstants", "structkuzu_1_1common_1_1_export_c_s_v_constants.html", null ],
         [ "ExpressionTypeUtil", "structkuzu_1_1common_1_1_expression_type_util.html", null ],
         [ "ExtraTypeInfo", "classkuzu_1_1common_1_1_extra_type_info.html", "classkuzu_1_1common_1_1_extra_type_info" ],
+        [ "FileScanInfo", "structkuzu_1_1common_1_1_file_scan_info.html", "structkuzu_1_1common_1_1_file_scan_info" ],
         [ "FileTypeInfo", "structkuzu_1_1common_1_1_file_type_info.html", "structkuzu_1_1common_1_1_file_type_info" ],
         [ "FileTypeUtils", "structkuzu_1_1common_1_1_file_type_utils.html", null ],
         [ "HashIndexConstants", "structkuzu_1_1common_1_1_hash_index_constants.html", null ],
         [ "HexFormatConstants", "structkuzu_1_1common_1_1_hex_format_constants.html", null ],
-        [ "ImportDBConstants", "structkuzu_1_1common_1_1_import_d_b_constants.html", null ],
         [ "InMemOverflowBuffer", "classkuzu_1_1common_1_1_in_mem_overflow_buffer.html", "classkuzu_1_1common_1_1_in_mem_overflow_buffer" ],
         [ "Int128_t", "classkuzu_1_1common_1_1_int128__t.html", "classkuzu_1_1common_1_1_int128__t" ],
         [ "int128_t", "structkuzu_1_1common_1_1int128__t.html", "structkuzu_1_1common_1_1int128__t" ],
@@ -71,7 +71,7 @@ var annotated_dup =
         [ "PathSemanticUtils", "structkuzu_1_1common_1_1_path_semantic_utils.html", null ],
         [ "PhysicalTypeUtils", "structkuzu_1_1common_1_1_physical_type_utils.html", null ],
         [ "PlannerKnobs", "structkuzu_1_1common_1_1_planner_knobs.html", null ],
-        [ "ReaderConfig", "structkuzu_1_1common_1_1_reader_config.html", "structkuzu_1_1common_1_1_reader_config" ],
+        [ "PortDBConstants", "structkuzu_1_1common_1_1_port_d_b_constants.html", null ],
         [ "RecursiveRelVal", "classkuzu_1_1common_1_1_recursive_rel_val.html", null ],
         [ "RelVal", "classkuzu_1_1common_1_1_rel_val.html", null ],
         [ "SelectionVector", "classkuzu_1_1common_1_1_selection_vector.html", "classkuzu_1_1common_1_1_selection_vector" ],
@@ -84,6 +84,7 @@ var annotated_dup =
         [ "StructType", "structkuzu_1_1common_1_1_struct_type.html", null ],
         [ "StructTypeInfo", "classkuzu_1_1common_1_1_struct_type_info.html", "classkuzu_1_1common_1_1_struct_type_info" ],
         [ "StructVector", "classkuzu_1_1common_1_1_struct_vector.html", null ],
+        [ "TableOptionConstants", "structkuzu_1_1common_1_1_table_option_constants.html", null ],
         [ "Time", "classkuzu_1_1common_1_1_time.html", null ],
         [ "Timer", "classkuzu_1_1common_1_1_timer.html", "classkuzu_1_1common_1_1_timer" ],
         [ "Timestamp", "classkuzu_1_1common_1_1_timestamp.html", null ],
@@ -170,7 +171,8 @@ var annotated_dup =
         [ "Version", "structkuzu_1_1main_1_1_version.html", null ]
       ] ],
       [ "parser", "namespacekuzu_1_1parser.html", [
-        [ "Statement", "classkuzu_1_1parser_1_1_statement.html", "classkuzu_1_1parser_1_1_statement" ]
+        [ "Statement", "classkuzu_1_1parser_1_1_statement.html", "classkuzu_1_1parser_1_1_statement" ],
+        [ "YieldVariable", "structkuzu_1_1parser_1_1_yield_variable.html", "structkuzu_1_1parser_1_1_yield_variable" ]
       ] ],
       [ "processor", "namespacekuzu_1_1processor.html", [
         [ "CopyFromFileError", "structkuzu_1_1processor_1_1_copy_from_file_error.html", "structkuzu_1_1processor_1_1_copy_from_file_error" ],
