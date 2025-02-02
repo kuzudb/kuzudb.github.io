@@ -30,6 +30,7 @@ var dir_7f57b1e41c5acd0e859ae5f3a2b075a9 =
     [ "exception.h", "exception_8h.html", "exception_8h" ],
     [ "expression.h", "expression_8h.html", "expression_8h" ],
     [ "expression_type.h", "expression__type_8h.html", "expression__type_8h" ],
+    [ "file_scan_info.h", "file__scan__info_8h.html", "file__scan__info_8h" ],
     [ "flat_tuple.h", "flat__tuple_8h.html", "flat__tuple_8h" ],
     [ "function.h", "function_8h.html", "function_8h" ],
     [ "in_mem_overflow_buffer.h", "in__mem__overflow__buffer_8h.html", "in__mem__overflow__buffer_8h" ],
@@ -48,7 +49,6 @@ var dir_7f57b1e41c5acd0e859ae5f3a2b075a9 =
     [ "prepared_statement.h", "prepared__statement_8h.html", "prepared__statement_8h" ],
     [ "query_result.h", "query__result_8h.html", "query__result_8h" ],
     [ "query_summary.h", "query__summary_8h.html", "query__summary_8h" ],
-    [ "reader_config.h", "reader__config_8h.html", "reader__config_8h" ],
     [ "recursive_rel.h", "recursive__rel_8h.html", "recursive__rel_8h" ],
     [ "rel.h", "rel_8h.html", "rel_8h" ],
     [ "scalar_function.h", "scalar__function_8h.html", "scalar__function_8h" ],
@@ -73,5 +73,6 @@ var dir_7f57b1e41c5acd0e859ae5f3a2b075a9 =
     [ "value.h", "value_8h.html", "value_8h" ],
     [ "value_vector.h", "value__vector_8h.html", "value__vector_8h" ],
     [ "version.h", "version_8h.html", "version_8h" ],
-    [ "warning_context.h", "warning__context_8h.html", "warning__context_8h" ]
+    [ "warning_context.h", "warning__context_8h.html", "warning__context_8h" ],
+    [ "yield_variable.h", "yield__variable_8h.html", "yield__variable_8h" ]
 ];

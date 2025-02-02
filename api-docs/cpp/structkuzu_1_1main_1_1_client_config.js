@@ -2,6 +2,7 @@ var structkuzu_1_1main_1_1_client_config =
 [
     [ "disableMapKeyCheck", "structkuzu_1_1main_1_1_client_config.html#a17c3afca4265bb61b9363aba60b4dc97", null ],
     [ "enableGDS", "structkuzu_1_1main_1_1_client_config.html#a4c51274873f9ca47ce1270d245814cd3", null ],
+    [ "enablePlanOptimizer", "structkuzu_1_1main_1_1_client_config.html#a8203b05e71475e8323c6a39055a5c87c", null ],
     [ "enableProgressBar", "structkuzu_1_1main_1_1_client_config.html#ac204d7d4c5f709b789845798cd9ee010", null ],
     [ "enableSemiMask", "structkuzu_1_1main_1_1_client_config.html#a135cd7ce0afd885ca5630f6ca3a2be08", null ],
     [ "enableZoneMap", "structkuzu_1_1main_1_1_client_config.html#a687616154df1907c9c9d8523cfa9d2ee", null ],

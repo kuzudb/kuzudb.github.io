@@ -2,7 +2,7 @@ var searchData=
 [
   ['n_5fbuffers_0',['n_buffers',['../struct_arrow_array.html#acb8b049eef21583b2f9f650d36fff2f6',1,'ArrowArray']]],
   ['n_5fchildren_1',['n_children',['../struct_arrow_schema.html#a88a53da5862c6d2f66692910ce5e5c42',1,'ArrowSchema::n_children'],['../struct_arrow_array.html#a39a2697ceead3e08c0b89339c2aacb37',1,'ArrowArray::n_children']]],
-  ['name_2',['name',['../struct_arrow_schema.html#aa6dae1b0e311f4b30a9e2ca002ad8d22',1,'ArrowSchema::name'],['../structkuzu_1_1main_1_1_option.html#a73efd8949d96fd3e0d088e9952648d32',1,'kuzu::main::Option::name'],['../structkuzu_1_1function_1_1_function.html#a2b0945ede865f229f494bd146a205a42',1,'kuzu::function::Function::name']]],
+  ['name_2',['name',['../struct_arrow_schema.html#aa6dae1b0e311f4b30a9e2ca002ad8d22',1,'ArrowSchema::name'],['../structkuzu_1_1main_1_1_option.html#a73efd8949d96fd3e0d088e9952648d32',1,'kuzu::main::Option::name'],['../structkuzu_1_1function_1_1_function.html#a2b0945ede865f229f494bd146a205a42',1,'kuzu::function::Function::name'],['../structkuzu_1_1parser_1_1_yield_variable.html#afde8f6ffe4e8fd95fe81002882c8a812',1,'kuzu::parser::YieldVariable::name']]],
   ['nanos_5fper_5fday_3',['NANOS_PER_DAY',['../classkuzu_1_1common_1_1_interval.html#ac46eabdc9ba7ace98d92068dd252da0e',1,'kuzu::common::Interval']]],
   ['nanos_5fper_5fhour_4',['NANOS_PER_HOUR',['../classkuzu_1_1common_1_1_interval.html#ac4e9e1fd8c41ced269a2c4fa8ddd48e8',1,'kuzu::common::Interval']]],
   ['nanos_5fper_5fmicro_5',['NANOS_PER_MICRO',['../classkuzu_1_1common_1_1_interval.html#af0beada7713799c3505b45203b05f0a0',1,'kuzu::common::Interval']]],
@@ -13,7 +13,7 @@ var searchData=
   ['negate_10',['negate',['../classkuzu_1_1common_1_1_int128__t.html#a2ec46fbeec847ae0b1821a3626a3807d',1,'kuzu::common::Int128_t']]],
   ['negateinplace_11',['negateInPlace',['../classkuzu_1_1common_1_1_int128__t.html#ad90af22631d9c4aea2d9b7b0e6bd3377',1,'kuzu::common::Int128_t']]],
   ['nested_2eh_12',['nested.h',['../nested_8h.html',1,'']]],
-  ['nestedval_13',['NestedVal',['../classkuzu_1_1common_1_1_nested_val.html',1,'kuzu::common::NestedVal'],['../classkuzu_1_1common_1_1_value.html#a54a9b01ab0b18777683864ec7bd6056d',1,'kuzu::common::Value::NestedVal']]],
+  ['nestedval_13',['NestedVal',['../classkuzu_1_1common_1_1_nested_val.html',1,'kuzu::common::NestedVal'],['../classkuzu_1_1common_1_1_value.html#a54a9b01ab0b18777683864ec7bd6056d',1,'kuzu::common::Value::NestedVal()']]],
   ['nextqueryresult_14',['nextQueryResult',['../classkuzu_1_1main_1_1_query_result.html#a27c73d1e33c3adf23bc6d5b60ff92cb8',1,'kuzu::main::QueryResult']]],
   ['no_5fnull_5fentry_15',['NO_NULL_ENTRY',['../classkuzu_1_1common_1_1_null_mask.html#afe442d2088f25eddcf05f74acf7a15b6',1,'kuzu::common::NullMask']]],
   ['node_16',['NODE',['../classkuzu_1_1common_1_1_logical_type.html#af5af8d3e78b684afc37aed4f0a670ff8',1,'kuzu::common::LogicalType::NODE()'],['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a0cc25b606fe928a0c9a58f7f209c4495',1,'kuzu::common::NODE']]],
@@ -24,7 +24,7 @@ var searchData=
   ['nodeid_5ft_21',['nodeID_t',['../namespacekuzu_1_1common.html#abde7a92ad332c5738cd3ce80c37250d1',1,'kuzu::common']]],
   ['nodes_22',['NODES',['../structkuzu_1_1common_1_1_internal_keyword.html#ae5b65cef388d3210b855cbc7f1f9fe96',1,'kuzu::common::InternalKeyword']]],
   ['nodetostring_23',['nodeToString',['../classkuzu_1_1common_1_1_type_utils.html#ad3e8dec9564baed60f685047a62c757e',1,'kuzu::common::TypeUtils']]],
-  ['nodeval_24',['NodeVal',['../classkuzu_1_1common_1_1_node_val.html',1,'kuzu::common::NodeVal'],['../classkuzu_1_1common_1_1_value.html#aa974a30a7bf3aa9df757f3db3c1d9249',1,'kuzu::common::Value::NodeVal']]],
+  ['nodeval_24',['NodeVal',['../classkuzu_1_1common_1_1_node_val.html',1,'kuzu::common::NodeVal'],['../classkuzu_1_1common_1_1_value.html#aa974a30a7bf3aa9df757f3db3c1d9249',1,'kuzu::common::Value::NodeVal()']]],
   ['non_5fequality_5fpredicate_5fselectivity_25',['NON_EQUALITY_PREDICATE_SELECTIVITY',['../structkuzu_1_1common_1_1_planner_knobs.html#a0a1579b698578c51e7e4c8616736e6e6',1,'kuzu::common::PlannerKnobs']]],
   ['normal_5fdays_26',['NORMAL_DAYS',['../classkuzu_1_1common_1_1_date.html#aea888842aadaaad5ead4d1f0c5182e2e',1,'kuzu::common::Date']]],
   ['normalizeintervalentries_27',['normalizeIntervalEntries',['../classkuzu_1_1common_1_1_interval.html#a4b9045e6818ee2e6a964946839c4df35',1,'kuzu::common::Interval']]],
@@ -48,7 +48,8 @@ var searchData=
   ['num_5fbytes_5fper_5fnull_5fentry_45',['NUM_BYTES_PER_NULL_ENTRY',['../classkuzu_1_1common_1_1_null_mask.html#a6f19b9f4642dcf6c8497964d43e77cd5',1,'kuzu::common::NullMask']]],
   ['num_5fbytes_5fto_5fshift_5ffor_5ffirst_5fbyte_46',['NUM_BYTES_TO_SHIFT_FOR_FIRST_BYTE',['../structkuzu_1_1common_1_1_hex_format_constants.html#ade6a006bf14b42caf86a2914caf617d0',1,'kuzu::common::HexFormatConstants']]],
   ['numelements_47',['numElements',['../structkuzu_1_1common_1_1overflow__value__t.html#a6c87013261364c3f81912b5f5d3dfc76',1,'kuzu::common::overflow_value_t']]],
-  ['numofentries_48',['numOfEntries',['../structkuzu_1_1function_1_1_cast_function_bind_data.html#ade4a7d4811d969c15ba7ab406b49d60f',1,'kuzu::function::CastFunctionBindData']]],
-  ['numthreads_49',['numThreads',['../structkuzu_1_1main_1_1_client_config.html#a70a8b33ba869b449bbaa011f4179579a',1,'kuzu::main::ClientConfig']]],
-  ['numvalues_50',['numValues',['../structkuzu_1_1processor_1_1_warning_source_data.html#abe66c490893efb6fa78e9de3ff4d94f1',1,'kuzu::processor::WarningSourceData']]]
+  ['numerictypes_48',['NumericTypes',['../conceptkuzu_1_1common_1_1_numeric_types.html',1,'kuzu::common']]],
+  ['numofentries_49',['numOfEntries',['../structkuzu_1_1function_1_1_cast_function_bind_data.html#ade4a7d4811d969c15ba7ab406b49d60f',1,'kuzu::function::CastFunctionBindData']]],
+  ['numthreads_50',['numThreads',['../structkuzu_1_1main_1_1_client_config.html#a70a8b33ba869b449bbaa011f4179579a',1,'kuzu::main::ClientConfig']]],
+  ['numvalues_51',['numValues',['../structkuzu_1_1processor_1_1_warning_source_data.html#abe66c490893efb6fa78e9de3ff4d94f1',1,'kuzu::processor::WarningSourceData']]]
 ];
