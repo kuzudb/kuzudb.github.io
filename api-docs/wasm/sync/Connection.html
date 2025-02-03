@@ -136,7 +136,8 @@
                 </td>
             
 
-            <td class="description last">the maximum number of threads to use for query execution.</td>
+            <td class="description last">the maximum number of threads to use for query 
+execution.</td>
         </tr>
 
     
@@ -177,7 +178,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line14">line 14</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line19">line 19</a>
     </li></ul></dd>
     
 
@@ -285,7 +286,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line146">line 146</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line153">line 153</a>
     </li></ul></dd>
     
 
@@ -381,7 +382,8 @@
 
             
 
-            <td class="description last">the prepared statement to execute.</td>
+            <td class="description last">the prepared 
+statement to execute.</td>
         </tr>
 
     
@@ -445,7 +447,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line118">line 118</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line125">line 125</a>
     </li></ul></dd>
     
 
@@ -502,7 +504,8 @@
 <dl>
     <dt>
         <div class="param-desc">
-        if preparedStatement is not a valid PreparedStatement object.
+        if preparedStatement is not a valid PreparedStatement 
+object.
         </div>
     </dt>
     <dd></dd>
@@ -665,7 +668,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line72">line 72</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line78">line 78</a>
     </li></ul></dd>
     
 
@@ -853,7 +856,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line99">line 99</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line104">line 104</a>
     </li></ul></dd>
     
 
@@ -911,7 +914,7 @@
     
 
     
-    <h4 class="name" id="query"><span class="type-signature"></span>query<span class="signature">(statement, progressCallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {kuzu.sync.QueryResult}</span></h4>
+    <h4 class="name" id="query"><span class="type-signature"></span>query<span class="signature">(statement)</span><span class="type-signature"> &rarr; {kuzu.sync.QueryResult}</span></h4>
     
 
     
@@ -943,8 +946,6 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -970,51 +971,10 @@
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
 
             <td class="description last">the statement to execute.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>progressCallback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Optional callback function that is invoked with the progress of the query execution. The callback receives three arguments: pipelineProgress, numPipelinesFinished, and numPipelines.</td>
         </tr>
 
     
@@ -1055,7 +1015,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line85">line 85</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line90">line 90</a>
     </li></ul></dd>
     
 
@@ -1229,7 +1189,8 @@
 
             
 
-            <td class="description last">the maximum number of threads to use for query execution.</td>
+            <td class="description last">the maximum number of threads to use for query 
+execution.</td>
         </tr>
 
     
@@ -1270,7 +1231,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line50">line 50</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line56">line 56</a>
     </li></ul></dd>
     
 
@@ -1463,7 +1424,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line62">line 62</a>
+        <a href="connection.js.html">connection.js</a>, <a href="connection.js.html#line68">line 68</a>
     </li></ul></dd>
     
 
@@ -1565,13 +1526,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Connection.html">Connection</a></li><li><a href="Database.html">Database</a></li><li><a href="PreparedStatement.html">PreparedStatement</a></li><li><a href="QueryResult.html">QueryResult</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-kuzu-wasm.html">kuzu-wasm</a></li></ul><h3>Classes</h3><ul><li><a href="Connection.html">Connection</a></li><li><a href="Database.html">Database</a></li><li><a href="PreparedStatement.html">PreparedStatement</a></li><li><a href="QueryResult.html">QueryResult</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Mon Jan 13 2025 22:44:41 GMT+0800 (China Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Mon Feb 03 2025 10:03:42 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
