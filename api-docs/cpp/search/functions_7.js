@@ -1,8 +1,8 @@
 var searchData=
 [
   ['hasactivetransaction_0',['hasActiveTransaction',['../classkuzu_1_1transaction_1_1_transaction_context.html#a5ab0d44faa88278dd50b39981bbc60de',1,'kuzu::transaction::TransactionContext']]],
-  ['hasalias_1',['hasAlias',['../classkuzu_1_1binder_1_1_expression.html#a7782711f264b0414fa3547fe50a30e83',1,'kuzu::binder::Expression']]],
-  ['hasdefaultdatabase_2',['hasDefaultDatabase',['../classkuzu_1_1main_1_1_client_context.html#ac0f91db9654dc36e809cf0bd312963c4',1,'kuzu::main::ClientContext']]],
+  ['hasalias_1',['hasAlias',['../classkuzu_1_1binder_1_1_expression.html#a7782711f264b0414fa3547fe50a30e83',1,'kuzu::binder::Expression::hasAlias()'],['../structkuzu_1_1parser_1_1_yield_variable.html#abf64340012f5609100d0eff852086cac',1,'kuzu::parser::YieldVariable::hasAlias()']]],
+  ['hasdefaultdatabase_2',['hasDefaultDatabase',['../classkuzu_1_1main_1_1_client_context.html#a8a310f0279bc8d961b32a0f4b47e3f6b',1,'kuzu::main::ClientContext']]],
   ['hasfield_3',['hasField',['../classkuzu_1_1common_1_1_struct_type_info.html#ad8631945b387d1b916013fef61622e1e',1,'kuzu::common::StructTypeInfo::hasField()'],['../structkuzu_1_1common_1_1_struct_type.html#abdbaac9dccca0fca5dd7f0b8247a565b',1,'kuzu::common::StructType::hasField()']]],
   ['hash_4',['HASH',['../classkuzu_1_1common_1_1_logical_type.html#a3e8a2084a7e3465e2f74db734abc75cb',1,'kuzu::common::LogicalType']]],
   ['hasnewlyinsertednodes_5',['hasNewlyInsertedNodes',['../classkuzu_1_1transaction_1_1_transaction.html#a1dbac4b98b0e9341630d9df4fa4bd13a',1,'kuzu::transaction::Transaction']]],

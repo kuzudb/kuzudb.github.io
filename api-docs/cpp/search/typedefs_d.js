@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['scalar_5fbind_5ffunc_0',['scalar_bind_func',['../namespacekuzu_1_1function.html#a96059946bb8119ed85bafd793abfe2b1',1,'kuzu::function']]],
+  ['scalar_5fbind_5ffunc_0',['scalar_bind_func',['../namespacekuzu_1_1function.html#a879cc9cc9f4dfa50510c277517297238',1,'kuzu::function']]],
   ['scalar_5ffunc_5fcompile_5fexec_5ft_1',['scalar_func_compile_exec_t',['../namespacekuzu_1_1function.html#a512747b6d08ae133b254d40a5dccd597',1,'kuzu::function']]],
   ['scalar_5ffunc_5fexec_5ft_2',['scalar_func_exec_t',['../namespacekuzu_1_1function.html#a85dea526ec46a7fa6e6bacbde1f902cb',1,'kuzu::function']]],
   ['scalar_5ffunc_5fselect_5ft_3',['scalar_func_select_t',['../namespacekuzu_1_1function.html#a755d114a6cee3d7a4c157378fccd78d3',1,'kuzu::function']]],

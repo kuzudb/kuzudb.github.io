@@ -17,12 +17,11 @@ var classkuzu_1_1main_1_1_connection =
     [ "removeUDFFunction", "classkuzu_1_1main_1_1_connection.html#a3cc389d66982889f4ca07779525c18d6", null ],
     [ "setMaxNumThreadForExec", "classkuzu_1_1main_1_1_connection.html#a943baf10cb0856618435d9e59369d4fb", null ],
     [ "setQueryTimeOut", "classkuzu_1_1main_1_1_connection.html#aa6b95be27a0493905e82caaaeefc44a4", null ],
+    [ "benchmark::Benchmark", "classkuzu_1_1main_1_1_connection.html#a85726f686c5cf3cca562f9b2e7ae2050", null ],
     [ "ConnectionExecuteAsyncWorker", "classkuzu_1_1main_1_1_connection.html#a064e2b6153d6046cca2c2290071b7b4b", null ],
     [ "ConnectionQueryAsyncWorker", "classkuzu_1_1main_1_1_connection.html#ae167f0701882a0d9e73e012483943a4b", null ],
-    [ "kuzu::benchmark::Benchmark", "classkuzu_1_1main_1_1_connection.html#a45bbcafa0e23742eb312abb828ae49a6", null ],
-    [ "kuzu::testing::BaseGraphTest", "classkuzu_1_1main_1_1_connection.html#a45f3dbf701a9d3e1e5bdcb3f545ab0e5", null ],
-    [ "kuzu::testing::PrivateGraphTest", "classkuzu_1_1main_1_1_connection.html#a219772c5327fd6524a69301b9d33878c", null ],
-    [ "kuzu::testing::TestHelper", "classkuzu_1_1main_1_1_connection.html#ae83e5665b6b27ecbf398decf0e06ad0e", null ],
-    [ "kuzu::testing::TestRunner", "classkuzu_1_1main_1_1_connection.html#a6a41d019c9c45564693751241a08081c", null ],
-    [ "kuzu::testing::TinySnbDDLTest", "classkuzu_1_1main_1_1_connection.html#a59ec4be2bfb8b869f276a3e924dc4cb5", null ]
+    [ "testing::BaseGraphTest", "classkuzu_1_1main_1_1_connection.html#adac6bf87ea8d9617872d1e6783894cdd", null ],
+    [ "testing::PrivateGraphTest", "classkuzu_1_1main_1_1_connection.html#a3da5be4382ae10dc513e6757ddd2793a", null ],
+    [ "testing::TestHelper", "classkuzu_1_1main_1_1_connection.html#a7e9f8a6faa17af6e7e01406ef39fbd3a", null ],
+    [ "testing::TinySnbDDLTest", "classkuzu_1_1main_1_1_connection.html#aab45a28a4f41b6ffdce3bca0cafedc6f", null ]
 ];
