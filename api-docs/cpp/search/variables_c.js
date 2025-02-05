@@ -2,7 +2,7 @@ var searchData=
 [
   ['n_5fbuffers_0',['n_buffers',['../struct_arrow_array.html#acb8b049eef21583b2f9f650d36fff2f6',1,'ArrowArray']]],
   ['n_5fchildren_1',['n_children',['../struct_arrow_schema.html#a88a53da5862c6d2f66692910ce5e5c42',1,'ArrowSchema::n_children'],['../struct_arrow_array.html#a39a2697ceead3e08c0b89339c2aacb37',1,'ArrowArray::n_children']]],
-  ['name_2',['name',['../struct_arrow_schema.html#aa6dae1b0e311f4b30a9e2ca002ad8d22',1,'ArrowSchema::name'],['../structkuzu_1_1main_1_1_option.html#a73efd8949d96fd3e0d088e9952648d32',1,'kuzu::main::Option::name'],['../structkuzu_1_1function_1_1_function.html#a2b0945ede865f229f494bd146a205a42',1,'kuzu::function::Function::name']]],
+  ['name_2',['name',['../struct_arrow_schema.html#aa6dae1b0e311f4b30a9e2ca002ad8d22',1,'ArrowSchema::name'],['../structkuzu_1_1main_1_1_option.html#a73efd8949d96fd3e0d088e9952648d32',1,'kuzu::main::Option::name'],['../structkuzu_1_1function_1_1_function.html#a2b0945ede865f229f494bd146a205a42',1,'kuzu::function::Function::name'],['../structkuzu_1_1parser_1_1_yield_variable.html#afde8f6ffe4e8fd95fe81002882c8a812',1,'kuzu::parser::YieldVariable::name']]],
   ['nanos_5fper_5fday_3',['NANOS_PER_DAY',['../classkuzu_1_1common_1_1_interval.html#ac46eabdc9ba7ace98d92068dd252da0e',1,'kuzu::common::Interval']]],
   ['nanos_5fper_5fhour_4',['NANOS_PER_HOUR',['../classkuzu_1_1common_1_1_interval.html#ac4e9e1fd8c41ced269a2c4fa8ddd48e8',1,'kuzu::common::Interval']]],
   ['nanos_5fper_5fmicro_5',['NANOS_PER_MICRO',['../classkuzu_1_1common_1_1_interval.html#af0beada7713799c3505b45203b05f0a0',1,'kuzu::common::Interval']]],

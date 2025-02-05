@@ -2,8 +2,6 @@ var structkuzu_1_1function_1_1_table_function =
 [
     [ "TableFunction", "structkuzu_1_1function_1_1_table_function.html#a382f51bf95c64381edc032c9e1451b4e", null ],
     [ "TableFunction", "structkuzu_1_1function_1_1_table_function.html#ab7e41c6907eeab82728179f6ed0b1591", null ],
-    [ "TableFunction", "structkuzu_1_1function_1_1_table_function.html#a27633cb6cd872a7d3d24d03d996b8b65", null ],
-    [ "TableFunction", "structkuzu_1_1function_1_1_table_function.html#a28bd20c14875dbd8f2b103c8e7ffb74d", null ],
     [ "copy", "structkuzu_1_1function_1_1_table_function.html#af9b9b688ec66f63c52e4ba0d38ea7282", null ],
     [ "signatureToString", "structkuzu_1_1function_1_1_table_function.html#adaa622eca1cbae9f4bc52864bada5d3e", null ],
     [ "bindFunc", "structkuzu_1_1function_1_1_table_function.html#a23317920f4557f8ee0c9c172eff92874", null ],

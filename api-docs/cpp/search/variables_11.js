@@ -2,7 +2,7 @@ var searchData=
 [
   ['samplesize_0',['sampleSize',['../structkuzu_1_1common_1_1_c_s_v_option.html#ae893fd7da79dd26fe8c582bcaa99a9b9',1,'kuzu::common::CSVOption']]],
   ['scale_1',['scale',['../classkuzu_1_1common_1_1_decimal_type_info.html#a240967273ff36fc99d6b7d09e93be3dc',1,'kuzu::common::DecimalTypeInfo']]],
-  ['schema_5fname_2',['SCHEMA_NAME',['../structkuzu_1_1common_1_1_import_d_b_constants.html#a85e0cae82b44e1e0a057b3e7748841d3',1,'kuzu::common::ImportDBConstants']]],
+  ['schema_5ffile_5fname_2',['SCHEMA_FILE_NAME',['../structkuzu_1_1common_1_1_port_d_b_constants.html#a4573f047b445b2645c9ef6ec7590137b',1,'kuzu::common::PortDBConstants']]],
   ['second_3',['SECOND',['../namespacekuzu_1_1common.html#af0b2bba24a8e2662773d72479a9f60db',1,'kuzu::common']]],
   ['second_5fbyte_5fmask_4',['SECOND_BYTE_MASK',['../structkuzu_1_1common_1_1_hex_format_constants.html#acaf81af73aeee13a5849c452a7c41b49',1,'kuzu::common::HexFormatConstants']]],
   ['second_5fbytes_5fpos_5',['SECOND_BYTES_POS',['../structkuzu_1_1common_1_1_hex_format_constants.html#ab44c6f71a569c13464e6db61f9f61acf',1,'kuzu::common::HexFormatConstants']]],

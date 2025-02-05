@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['alias_0',['alias',['../classkuzu_1_1binder_1_1_expression.html#ac899da60047e21e366165840c2f11f46',1,'kuzu::binder::Expression']]],
+  ['alias_0',['alias',['../classkuzu_1_1binder_1_1_expression.html#ac899da60047e21e366165840c2f11f46',1,'kuzu::binder::Expression::alias'],['../structkuzu_1_1parser_1_1_yield_variable.html#a3e0d61ac8cf1015bce527bdeaa80b396',1,'kuzu::parser::YieldVariable::alias']]],
   ['all_5fnull_5fentry_1',['ALL_NULL_ENTRY',['../classkuzu_1_1common_1_1_null_mask.html#afbe8c6ff90fdd5ab918aea20ada37627',1,'kuzu::common::NullMask']]],
   ['allowunbracedlist_2',['allowUnbracedList',['../structkuzu_1_1common_1_1_c_s_v_option.html#af9c6fe37b6726a707c8a0b89e166b9d7',1,'kuzu::common::CSVOption']]],
   ['anonymous_3',['ANONYMOUS',['../structkuzu_1_1common_1_1_internal_keyword.html#af29807735e6856a56eebb4c3d644ad0d',1,'kuzu::common::InternalKeyword']]],
