@@ -75,6 +75,7 @@ var hierarchy =
       [ "kuzu::common::StructTypeInfo", "classkuzu_1_1common_1_1_struct_type_info.html", null ],
       [ "kuzu::common::UDTTypeInfo", "classkuzu_1_1common_1_1_u_d_t_type_info.html", null ]
     ] ],
+    [ "kuzu::common::FileScanInfo", "structkuzu_1_1common_1_1_file_scan_info.html", null ],
     [ "kuzu::common::FileTypeInfo", "structkuzu_1_1common_1_1_file_type_info.html", null ],
     [ "kuzu::common::FileTypeUtils", "structkuzu_1_1common_1_1_file_type_utils.html", null ],
     [ "kuzu::processor::FlatTuple", "classkuzu_1_1processor_1_1_flat_tuple.html", null ],
@@ -93,7 +94,6 @@ var hierarchy =
     [ "std::hash< kuzu::common::int128_t >", "structstd_1_1hash_3_01kuzu_1_1common_1_1int128__t_01_4.html", null ],
     [ "kuzu::common::HashIndexConstants", "structkuzu_1_1common_1_1_hash_index_constants.html", null ],
     [ "kuzu::common::HexFormatConstants", "structkuzu_1_1common_1_1_hex_format_constants.html", null ],
-    [ "kuzu::common::ImportDBConstants", "structkuzu_1_1common_1_1_import_d_b_constants.html", null ],
     [ "kuzu::common::InMemOverflowBuffer", "classkuzu_1_1common_1_1_in_mem_overflow_buffer.html", null ],
     [ "kuzu::common::Int128_t", "classkuzu_1_1common_1_1_int128__t.html", null ],
     [ "kuzu::common::int128_t", "structkuzu_1_1common_1_1int128__t.html", null ],
@@ -128,11 +128,11 @@ var hierarchy =
     [ "kuzu::common::PlannerKnobs", "structkuzu_1_1common_1_1_planner_knobs.html", null ],
     [ "kuzu::function::PointerFunctionExecutor", "structkuzu_1_1function_1_1_pointer_function_executor.html", null ],
     [ "kuzu::processor::PopulatedCopyFromError", "structkuzu_1_1processor_1_1_populated_copy_from_error.html", null ],
+    [ "kuzu::common::PortDBConstants", "structkuzu_1_1common_1_1_port_d_b_constants.html", null ],
     [ "kuzu::main::PreparedStatement", "classkuzu_1_1main_1_1_prepared_statement.html", null ],
     [ "kuzu::main::PreparedSummary", "structkuzu_1_1main_1_1_prepared_summary.html", null ],
     [ "kuzu::main::QueryResult", "classkuzu_1_1main_1_1_query_result.html", null ],
     [ "kuzu::main::QuerySummary", "classkuzu_1_1main_1_1_query_summary.html", null ],
-    [ "kuzu::common::ReaderConfig", "structkuzu_1_1common_1_1_reader_config.html", null ],
     [ "kuzu::common::RecursiveRelVal", "classkuzu_1_1common_1_1_recursive_rel_val.html", null ],
     [ "kuzu::common::RelVal", "classkuzu_1_1common_1_1_rel_val.html", null ],
     [ "kuzu::function::ScalarBindFuncInput", "structkuzu_1_1function_1_1_scalar_bind_func_input.html", null ],
@@ -155,6 +155,7 @@ var hierarchy =
     [ "kuzu::function::TableFuncOutput", "structkuzu_1_1function_1_1_table_func_output.html", null ],
     [ "kuzu::function::TableFuncSharedState", "structkuzu_1_1function_1_1_table_func_shared_state.html", null ],
     [ "kuzu::function::TableFunctionInitInput", "structkuzu_1_1function_1_1_table_function_init_input.html", null ],
+    [ "kuzu::common::TableOptionConstants", "structkuzu_1_1common_1_1_table_option_constants.html", null ],
     [ "kuzu::function::TernaryFunctionExecutor", "structkuzu_1_1function_1_1_ternary_function_executor.html", null ],
     [ "kuzu::function::TernaryFunctionWrapper", "structkuzu_1_1function_1_1_ternary_function_wrapper.html", null ],
     [ "kuzu::function::TernaryListFunctionWrapper", "structkuzu_1_1function_1_1_ternary_list_function_wrapper.html", null ],
@@ -196,5 +197,6 @@ var hierarchy =
     [ "kuzu::common::WarningConstants", "structkuzu_1_1common_1_1_warning_constants.html", null ],
     [ "kuzu::processor::WarningContext", "classkuzu_1_1processor_1_1_warning_context.html", null ],
     [ "kuzu::processor::WarningInfo", "structkuzu_1_1processor_1_1_warning_info.html", null ],
-    [ "kuzu::processor::WarningSourceData", "structkuzu_1_1processor_1_1_warning_source_data.html", null ]
+    [ "kuzu::processor::WarningSourceData", "structkuzu_1_1processor_1_1_warning_source_data.html", null ],
+    [ "kuzu::parser::YieldVariable", "structkuzu_1_1parser_1_1_yield_variable.html", null ]
 ];

@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['_7earrowarraywrapper_0',['~ArrowArrayWrapper',['../struct_arrow_array_wrapper.html#a4235970a6a38c8178f94ab4b1d56c363',1,'ArrowArrayWrapper']]],
+  ['_7earrowschemawrapper_1',['~ArrowSchemaWrapper',['../struct_arrow_schema_wrapper.html#af33d19040963a8876f089e11241aadec',1,'ArrowSchemaWrapper']]],
+  ['_7eauxiliarybuffer_2',['~AuxiliaryBuffer',['../classkuzu_1_1common_1_1_auxiliary_buffer.html#a100f2fd753645b2bc75b8bd1931d0607',1,'kuzu::common::AuxiliaryBuffer']]],
+  ['_7ebufferblock_3',['~BufferBlock',['../structkuzu_1_1common_1_1_buffer_block.html#a8e3f2bcc1c7a2c1f188c92ac37f14507',1,'kuzu::common::BufferBlock']]],
+  ['_7eclientcontext_4',['~ClientContext',['../classkuzu_1_1main_1_1_client_context.html#a85eec37720195455a91112b86bd2b1bf',1,'kuzu::main::ClientContext']]],
+  ['_7econnection_5',['~Connection',['../classkuzu_1_1main_1_1_connection.html#a5c92d7da053707b55e89bb6f273d5d49',1,'kuzu::main::Connection']]],
+  ['_7edatabase_6',['~Database',['../classkuzu_1_1main_1_1_database.html#a994eb02bd8ada1298fb78eea0e24f603',1,'kuzu::main::Database']]],
+  ['_7eexpression_7',['~Expression',['../classkuzu_1_1binder_1_1_expression.html#a6f7fc8e406251e662eef773595001d6b',1,'kuzu::binder::Expression']]],
+  ['_7eextratablefuncbindinput_8',['~ExtraTableFuncBindInput',['../structkuzu_1_1function_1_1_extra_table_func_bind_input.html#a941c231efc548b9bc21b9330385f4c6a',1,'kuzu::function::ExtraTableFuncBindInput']]],
+  ['_7eextratypeinfo_9',['~ExtraTypeInfo',['../classkuzu_1_1common_1_1_extra_type_info.html#a70689fa1a2fa834e64199ce613bdfae9',1,'kuzu::common::ExtraTypeInfo']]],
+  ['_7efunction_10',['~Function',['../structkuzu_1_1function_1_1_function.html#ac06e4d770164421705a1024cad979158',1,'kuzu::function::Function']]],
+  ['_7efunctionbinddata_11',['~FunctionBindData',['../structkuzu_1_1function_1_1_function_bind_data.html#a5c19336876e4f24d91e98a3a093d88ca',1,'kuzu::function::FunctionBindData']]],
+  ['_7eoption_12',['~Option',['../structkuzu_1_1main_1_1_option.html#aab1aa160616cc9539e6aea6e98858a3b',1,'kuzu::main::Option']]],
+  ['_7epreparedstatement_13',['~PreparedStatement',['../classkuzu_1_1main_1_1_prepared_statement.html#a88e21bca711ab5bd45562ea675ac5498',1,'kuzu::main::PreparedStatement']]],
+  ['_7equeryresult_14',['~QueryResult',['../classkuzu_1_1main_1_1_query_result.html#ac052771684f8332ffe52f63f061a56e0',1,'kuzu::main::QueryResult']]],
+  ['_7estatement_15',['~Statement',['../classkuzu_1_1parser_1_1_statement.html#a239f91ec51b702013945455de1acdfbf',1,'kuzu::parser::Statement']]],
+  ['_7estoragedriver_16',['~StorageDriver',['../classkuzu_1_1main_1_1_storage_driver.html#a056fcc0e3fbc2acdce53dc5d9ece83bd',1,'kuzu::main::StorageDriver']]],
+  ['_7etablefunclocalstate_17',['~TableFuncLocalState',['../structkuzu_1_1function_1_1_table_func_local_state.html#a985ed2911599614894f45454fbe01796',1,'kuzu::function::TableFuncLocalState']]],
+  ['_7etablefuncsharedstate_18',['~TableFuncSharedState',['../structkuzu_1_1function_1_1_table_func_shared_state.html#aa92110b46aa02095706f334cc60e9b41',1,'kuzu::function::TableFuncSharedState']]],
+  ['_7etablefunctioninitinput_19',['~TableFunctionInitInput',['../structkuzu_1_1function_1_1_table_function_init_input.html#a744fa8a1d98b5f344bb474e695a5c8da',1,'kuzu::function::TableFunctionInitInput']]],
+  ['_7etransaction_20',['~Transaction',['../classkuzu_1_1transaction_1_1_transaction.html#aab1ed62d03fafd1838b98f522668d4df',1,'kuzu::transaction::Transaction']]],
+  ['_7etransactioncontext_21',['~TransactionContext',['../classkuzu_1_1transaction_1_1_transaction_context.html#aeb6c3a49209a855cab76df6a3e29075c',1,'kuzu::transaction::TransactionContext']]],
+  ['_7evaluevector_22',['~ValueVector',['../classkuzu_1_1common_1_1_value_vector.html#acd996f1ff4d88de1072069c6a8d2b7e6',1,'kuzu::common::ValueVector']]]
+];

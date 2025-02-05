@@ -6,6 +6,7 @@ var classkuzu_1_1transaction_1_1_transaction_context =
     [ "beginReadTransaction", "classkuzu_1_1transaction_1_1_transaction_context.html#a96719a1f6757f97bf2e524aed2d62877", null ],
     [ "beginRecoveryTransaction", "classkuzu_1_1transaction_1_1_transaction_context.html#a607ecf22d9efb654d26f43a546729165", null ],
     [ "beginWriteTransaction", "classkuzu_1_1transaction_1_1_transaction_context.html#a55ae0dee27d1e858d5b26a0cbb52b2e3", null ],
+    [ "clearTransaction", "classkuzu_1_1transaction_1_1_transaction_context.html#a2d1e40d4038fd46423ee1f965a2cd93b", null ],
     [ "commit", "classkuzu_1_1transaction_1_1_transaction_context.html#a9827d39dcb7b20eb69a7b99c6b888d36", null ],
     [ "getActiveTransaction", "classkuzu_1_1transaction_1_1_transaction_context.html#a74cc83cd4ac9f9c10df163c8a5c4a659", null ],
     [ "getTransactionMode", "classkuzu_1_1transaction_1_1_transaction_context.html#adefad7e1030f14b2e1ee84ac484fd4a2", null ],

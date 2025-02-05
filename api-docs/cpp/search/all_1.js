@@ -5,7 +5,7 @@ var searchData=
   ['beginreadtransaction_2',['beginReadTransaction',['../classkuzu_1_1transaction_1_1_transaction_context.html#a96719a1f6757f97bf2e524aed2d62877',1,'kuzu::transaction::TransactionContext']]],
   ['beginrecoverytransaction_3',['beginRecoveryTransaction',['../classkuzu_1_1transaction_1_1_transaction_context.html#a607ecf22d9efb654d26f43a546729165',1,'kuzu::transaction::TransactionContext']]],
   ['beginwritetransaction_4',['beginWriteTransaction',['../classkuzu_1_1transaction_1_1_transaction_context.html#a55ae0dee27d1e858d5b26a0cbb52b2e3',1,'kuzu::transaction::TransactionContext']]],
-  ['benchmark_3a_3abenchmark_5',['Benchmark',['../classkuzu_1_1main_1_1_query_summary.html#a85726f686c5cf3cca562f9b2e7ae2050',1,'kuzu::main::QuerySummary']]],
+  ['benchmark_3a_3abenchmark_5',['benchmark::Benchmark',['../classkuzu_1_1main_1_1_connection.html#a85726f686c5cf3cca562f9b2e7ae2050',1,'kuzu::main::Connection::Benchmark()'],['../classkuzu_1_1main_1_1_query_summary.html#a85726f686c5cf3cca562f9b2e7ae2050',1,'kuzu::main::QuerySummary::Benchmark()']]],
   ['binary_5ffunction_5fexecutor_2eh_6',['binary_function_executor.h',['../binary__function__executor_8h.html',1,'']]],
   ['binaryand_7',['BinaryAnd',['../classkuzu_1_1common_1_1_int128__t.html#a44e40bb37b88dfc6bdc9e7f030dc57c7',1,'kuzu::common::Int128_t']]],
   ['binarycomparisonfunctionwrapper_8',['BinaryComparisonFunctionWrapper',['../structkuzu_1_1function_1_1_binary_comparison_function_wrapper.html',1,'kuzu::function']]],
