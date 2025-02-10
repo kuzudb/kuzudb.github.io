@@ -34,9 +34,10 @@ var searchData=
   ['star_31',['STAR',['../structkuzu_1_1common_1_1_internal_keyword.html#a009977bab002991eb8959ac4f435f0ae',1,'kuzu::common::InternalKeyword']]],
   ['start_5ftransaction_5fid_32',['START_TRANSACTION_ID',['../classkuzu_1_1transaction_1_1_transaction.html#ae828d693cced28c76978d476d4d28d08',1,'kuzu::transaction::Transaction']]],
   ['startbyteoffset_33',['startByteOffset',['../structkuzu_1_1processor_1_1_line_context.html#a3e840408bd88f9dec695cfc7159e41c7',1,'kuzu::processor::LineContext']]],
-  ['state_34',['state',['../classkuzu_1_1common_1_1_data_chunk.html#a0cdf98fee7db500082da2d8d529063f0',1,'kuzu::common::DataChunk::state'],['../classkuzu_1_1common_1_1_value_vector.html#aed355978414b9b29385aed6497213f17',1,'kuzu::common::ValueVector::state']]],
-  ['statementtype_35',['statementType',['../structkuzu_1_1main_1_1_prepared_summary.html#abe00a12eb8ac49a79ee7b13f2d65f688',1,'kuzu::main::PreparedSummary']]],
-  ['string_5fcsv_5fparsing_5foptions_36',['STRING_CSV_PARSING_OPTIONS',['../structkuzu_1_1common_1_1_copy_constants.html#a017f387475d3fdce76d4b7b81972c264',1,'kuzu::common::CopyConstants']]],
-  ['string_5flength_5fsize_37',['STRING_LENGTH_SIZE',['../structkuzu_1_1common_1_1_parquet_constants.html#a8cfff51ecbf6d2fa021769cdff554abf',1,'kuzu::common::ParquetConstants']]],
-  ['strval_38',['strVal',['../classkuzu_1_1common_1_1_value.html#a507f0774147a8f90a64307344ae3f28e',1,'kuzu::common::Value']]]
+  ['startoffset_34',['startOffset',['../structkuzu_1_1function_1_1_table_func_morsel.html#a95e3c192fa56d57fd997332a23d7a7f6',1,'kuzu::function::TableFuncMorsel']]],
+  ['state_35',['state',['../classkuzu_1_1common_1_1_data_chunk.html#a0cdf98fee7db500082da2d8d529063f0',1,'kuzu::common::DataChunk::state'],['../classkuzu_1_1common_1_1_value_vector.html#aed355978414b9b29385aed6497213f17',1,'kuzu::common::ValueVector::state']]],
+  ['statementtype_36',['statementType',['../structkuzu_1_1main_1_1_prepared_summary.html#abe00a12eb8ac49a79ee7b13f2d65f688',1,'kuzu::main::PreparedSummary']]],
+  ['string_5fcsv_5fparsing_5foptions_37',['STRING_CSV_PARSING_OPTIONS',['../structkuzu_1_1common_1_1_copy_constants.html#a017f387475d3fdce76d4b7b81972c264',1,'kuzu::common::CopyConstants']]],
+  ['string_5flength_5fsize_38',['STRING_LENGTH_SIZE',['../structkuzu_1_1common_1_1_parquet_constants.html#a8cfff51ecbf6d2fa021769cdff554abf',1,'kuzu::common::ParquetConstants']]],
+  ['strval_39',['strVal',['../classkuzu_1_1common_1_1_value.html#a507f0774147a8f90a64307344ae3f28e',1,'kuzu::common::Value']]]
 ];

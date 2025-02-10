@@ -10,5 +10,6 @@ var searchData=
   ['linenumber_7',['lineNumber',['../structkuzu_1_1processor_1_1_populated_copy_from_error.html#acc219610c73f8131660f31bc4f050e60',1,'kuzu::processor::PopulatedCopyFromError']]],
   ['localstate_8',['localState',['../structkuzu_1_1function_1_1_table_func_input.html#ac024c31fd0e5952062836990850e5fe3',1,'kuzu::function::TableFuncInput']]],
   ['lock_5ffile_5fname_9',['LOCK_FILE_NAME',['../structkuzu_1_1common_1_1_storage_constants.html#a48b13d60c2ee09da7ad86270e7f9dbc1',1,'kuzu::common::StorageConstants']]],
-  ['low_10',['low',['../structkuzu_1_1common_1_1int128__t.html#ac3306a9b6f2849641b45d68135775b64',1,'kuzu::common::int128_t']]]
+  ['logicaltypes_10',['logicalTypes',['../structkuzu_1_1processor_1_1_data_chunk_descriptor.html#aa3acb5d62a0551db65dad240c26e7b12',1,'kuzu::processor::DataChunkDescriptor']]],
+  ['low_11',['low',['../structkuzu_1_1common_1_1int128__t.html#ac3306a9b6f2849641b45d68135775b64',1,'kuzu::common::int128_t']]]
 ];

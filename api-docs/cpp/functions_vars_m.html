@@ -111,10 +111,12 @@ $(function(){initNavTree('functions_vars_m.html',''); initResizable(true); });
 <li>MAX_YEAR&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_date.html#ac339eb49279e279a4b275cb0a8fd5f1c">kuzu::common::Date</a></li>
 <li>maxDBSize&#160;:&#160;<a class="el" href="structkuzu_1_1main_1_1_d_b_config.html#a731f37bca68b1139acdcd7266a26a3a2">kuzu::main::DBConfig</a>, <a class="el" href="structkuzu_1_1main_1_1_system_config.html#aef4478dff66bef1bf36a6ede4fd2e8ad">kuzu::main::SystemConfig</a></li>
 <li>maxNumThreads&#160;:&#160;<a class="el" href="structkuzu_1_1main_1_1_d_b_config.html#acc4e3cbdbd57e4818860b87e607e0729">kuzu::main::DBConfig</a>, <a class="el" href="structkuzu_1_1main_1_1_system_config.html#a40db22b5b2efd81c0e9b86a1cccf5f70">kuzu::main::SystemConfig</a></li>
+<li>maxOffset&#160;:&#160;<a class="el" href="structkuzu_1_1function_1_1_table_func_shared_state.html#ae455520b174be67acf45ee254c3128bd">kuzu::function::TableFuncSharedState</a></li>
 <li>message&#160;:&#160;<a class="el" href="structkuzu_1_1processor_1_1_copy_from_file_error.html#a30d166ae2d305f4daa0af7ef7b6b8bb5">kuzu::processor::CopyFromFileError</a>, <a class="el" href="structkuzu_1_1processor_1_1_populated_copy_from_error.html#ac4bebfbe023017b9c55d71fc5021fb28">kuzu::processor::PopulatedCopyFromError</a></li>
 <li>metadata&#160;:&#160;<a class="el" href="struct_arrow_schema.html#a51ceb37c71e94fac6b6e14a3d8e3b50c">ArrowSchema</a></li>
 <li>METADATA_FILE_NAME&#160;:&#160;<a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#a690971e3c456a2f9d13eff5c26dd87b1">kuzu::common::StorageConstants</a></li>
 <li>METADATA_FILE_NAME_FOR_WAL&#160;:&#160;<a class="el" href="structkuzu_1_1common_1_1_storage_constants.html#a2fbaa58320e7cba9ff53f624837e0d67">kuzu::common::StorageConstants</a></li>
+<li>metrics&#160;:&#160;<a class="el" href="classkuzu_1_1processor_1_1_physical_operator.html#ab3109d92ca171a611facc5e5f8afcd05">kuzu::processor::PhysicalOperator</a></li>
 <li>micros&#160;:&#160;<a class="el" href="structkuzu_1_1common_1_1dtime__t.html#a08360fb45114104d58bcccc77d5a66b2">kuzu::common::dtime_t</a>, <a class="el" href="structkuzu_1_1common_1_1interval__t.html#a07e9928569d437cbc034d5877379f6f2">kuzu::common::interval_t</a></li>
 <li>MICROS_PER_DAY&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_interval.html#a1fc5df73995ad1f153ac2486d9f38a25">kuzu::common::Interval</a></li>
 <li>MICROS_PER_HOUR&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_interval.html#a70db5e609886dde7742021e8eb66ddd6">kuzu::common::Interval</a></li>
@@ -124,7 +126,6 @@ $(function(){initNavTree('functions_vars_m.html',''); initResizable(true); });
 <li>MICROS_PER_SEC&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_interval.html#a1318baec3bf4174cc1c7a7eb8b9eb153">kuzu::common::Interval</a></li>
 <li>MICROS_PER_WEEK&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_interval.html#a632b867a695a3c266cdd8d0c2fca4061">kuzu::common::Interval</a></li>
 <li>MIN_LIMIT_RATIO_TO_REDUCE&#160;:&#160;<a class="el" href="structkuzu_1_1common_1_1_order_by_constants.html#ad7f2cd7379af8c0aca988c6f95925c66">kuzu::common::OrderByConstants</a></li>
-<li>MIN_SIZE_TO_REDUCE&#160;:&#160;<a class="el" href="structkuzu_1_1common_1_1_order_by_constants.html#a6834d913af943c8c70715d1a2199db1e">kuzu::common::OrderByConstants</a></li>
 <li>MIN_YEAR&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_date.html#af6c8ab91f8ac6ec114b2de4d67d311ea">kuzu::common::Date</a></li>
 <li>MINS_PER_HOUR&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_interval.html#a26610878fdd6572f494b4ed1ef65f347">kuzu::common::Interval</a></li>
 <li>MONTH_PER_DAY_OF_YEAR&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_date.html#a2789a57cdb25e7779cf94e79074cf540">kuzu::common::Date</a></li>
@@ -135,6 +136,8 @@ $(function(){initNavTree('functions_vars_m.html',''); initResizable(true); });
 <li>MONTHS_PER_QUARTER&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_interval.html#aecff3e94925d6186ce0a70c050711e7c">kuzu::common::Interval</a></li>
 <li>MONTHS_PER_YEAR&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_interval.html#a717ca415aae22ef5d504990c2e55a1ee">kuzu::common::Interval</a></li>
 <li>MSECS_PER_SEC&#160;:&#160;<a class="el" href="classkuzu_1_1common_1_1_interval.html#a89bbf19e9ea2f28a7247bd1c5e9bab0b">kuzu::common::Interval</a></li>
+<li>mtx&#160;:&#160;<a class="el" href="structkuzu_1_1function_1_1_table_func_shared_state.html#ab5efde8c46dac5ea85e873e952b79a68">kuzu::function::TableFuncSharedState</a></li>
+<li>multiplicity&#160;:&#160;<a class="el" href="classkuzu_1_1processor_1_1_result_set.html#a35a4be5f9b881cdb94dd5ae85161c8d5">kuzu::processor::ResultSet</a></li>
 <li>mustThrow&#160;:&#160;<a class="el" href="structkuzu_1_1processor_1_1_copy_from_file_error.html#a36cc49dc2482cce19e381e154146d0a5">kuzu::processor::CopyFromFileError</a></li>
 </ul>
 </div><!-- contents -->

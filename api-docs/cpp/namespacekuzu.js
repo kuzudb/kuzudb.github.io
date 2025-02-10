@@ -14,5 +14,6 @@ var namespacekuzu =
     [ "regex", "namespacekuzu_1_1regex.html", null ],
     [ "storage", "namespacekuzu_1_1storage.html", "namespacekuzu_1_1storage" ],
     [ "testing", "namespacekuzu_1_1testing.html", null ],
-    [ "transaction", "namespacekuzu_1_1transaction.html", "namespacekuzu_1_1transaction" ]
+    [ "transaction", "namespacekuzu_1_1transaction.html", "namespacekuzu_1_1transaction" ],
+    [ "OPPrintInfo", "structkuzu_1_1_o_p_print_info.html", "structkuzu_1_1_o_p_print_info" ]
 ];

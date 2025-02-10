@@ -133,10 +133,6 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:aab3a15de5d434b34fea697bdde67779d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e1545934d12d32ef2513d1495529140" id="r_a6e1545934d12d32ef2513d1495529140"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e1545934d12d32ef2513d1495529140">PAGE_IDX_IN_GROUP_MASK</a></td></tr>
 <tr class="separator:a6e1545934d12d32ef2513d1495529140"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8858531c966a3bc6cd8b99e0b986fb3" id="r_ab8858531c966a3bc6cd8b99e0b986fb3"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8858531c966a3bc6cd8b99e0b986fb3">NODE_GROUP_SIZE_LOG2</a> = 17</td></tr>
-<tr class="separator:ab8858531c966a3bc6cd8b99e0b986fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad650b8453c54fe264f126e64adc18780" id="r_ad650b8453c54fe264f126e64adc18780"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad650b8453c54fe264f126e64adc18780">NODE_GROUP_SIZE</a> = static_cast&lt;uint64_t&gt;(1) &lt;&lt; <a class="el" href="#ab8858531c966a3bc6cd8b99e0b986fb3">NODE_GROUP_SIZE_LOG2</a></td></tr>
-<tr class="separator:ad650b8453c54fe264f126e64adc18780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba179e9e5ffa38226285e99aa78123d6" id="r_aba179e9e5ffa38226285e99aa78123d6"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba179e9e5ffa38226285e99aa78123d6">PACKED_CSR_DENSITY</a> = 0.8</td></tr>
 <tr class="separator:aba179e9e5ffa38226285e99aa78123d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7aaadd034b98ecc39781a51ab901db1" id="r_ad7aaadd034b98ecc39781a51ab901db1"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7aaadd034b98ecc39781a51ab901db1">LEAF_HIGH_CSR_DENSITY</a> = 1.0</td></tr>
@@ -216,7 +212,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(1)</div>
 <div class="line">                                                     &lt;&lt; <a class="code hl_variable" href="#a96b8131ceacd2cd832143422d677f4cf">CSR_LEAF_REGION_SIZE_LOG2</a></div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_storage_constants_html_a96b8131ceacd2cd832143422d677f4cf"><div class="ttname"><a href="#a96b8131ceacd2cd832143422d677f4cf">kuzu::common::StorageConstants::CSR_LEAF_REGION_SIZE_LOG2</a></div><div class="ttdeci">static constexpr uint64_t CSR_LEAF_REGION_SIZE_LOG2</div><div class="ttdef"><b>Definition</b> constants.h:116</div></div>
+<div class="ttc" id="astructkuzu_1_1common_1_1_storage_constants_html_a96b8131ceacd2cd832143422d677f4cf"><div class="ttname"><a href="#a96b8131ceacd2cd832143422d677f4cf">kuzu::common::StorageConstants::CSR_LEAF_REGION_SIZE_LOG2</a></div><div class="ttdeci">static constexpr uint64_t CSR_LEAF_REGION_SIZE_LOG2</div><div class="ttdef"><b>Definition</b> constants.h:88</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -396,50 +392,6 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad650b8453c54fe264f126e64adc18780" name="ad650b8453c54fe264f126e64adc18780"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad650b8453c54fe264f126e64adc18780">&#9670;&#160;</a></span>NODE_GROUP_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t kuzu::common::StorageConstants::NODE_GROUP_SIZE = static_cast&lt;uint64_t&gt;(1) &lt;&lt; <a class="el" href="#ab8858531c966a3bc6cd8b99e0b986fb3">NODE_GROUP_SIZE_LOG2</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab8858531c966a3bc6cd8b99e0b986fb3" name="ab8858531c966a3bc6cd8b99e0b986fb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8858531c966a3bc6cd8b99e0b986fb3">&#9670;&#160;</a></span>NODE_GROUP_SIZE_LOG2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t kuzu::common::StorageConstants::NODE_GROUP_SIZE_LOG2 = 17</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a6ebc5c9fc210033494905271e6e9cbd6" name="a6ebc5c9fc210033494905271e6e9cbd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ebc5c9fc210033494905271e6e9cbd6">&#9670;&#160;</a></span>OVERFLOW_FILE_SUFFIX</h2>
 
@@ -549,7 +501,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">        (<span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(1) &lt;&lt; <a class="code hl_variable" href="#acaf281541a5fcf5bb61be65fdcc5e150">PAGE_GROUP_SIZE_LOG2</a>) - 1</div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_storage_constants_html_acaf281541a5fcf5bb61be65fdcc5e150"><div class="ttname"><a href="#acaf281541a5fcf5bb61be65fdcc5e150">kuzu::common::StorageConstants::PAGE_GROUP_SIZE_LOG2</a></div><div class="ttdeci">static constexpr uint64_t PAGE_GROUP_SIZE_LOG2</div><div class="ttdef"><b>Definition</b> constants.h:105</div></div>
+<div class="ttc" id="astructkuzu_1_1common_1_1_storage_constants_html_acaf281541a5fcf5bb61be65fdcc5e150"><div class="ttname"><a href="#acaf281541a5fcf5bb61be65fdcc5e150">kuzu::common::StorageConstants::PAGE_GROUP_SIZE_LOG2</a></div><div class="ttdeci">static constexpr uint64_t PAGE_GROUP_SIZE_LOG2</div><div class="ttdef"><b>Definition</b> constants.h:80</div></div>
 </div><!-- fragment -->
 </div>
 </div>

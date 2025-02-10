@@ -315,7 +315,6 @@ var namespacekuzu_1_1common =
     [ "DECIMAL_PRECISION_LIMIT", "namespacekuzu_1_1common.html#a24613a3d7d9469aeaba25f8d26b3d43e", null ],
     [ "DEFAULT_CHECKPOINT_WAIT_TIMEOUT_IN_MICROS", "namespacekuzu_1_1common.html#aa68c4cd7cb329e98a211faee1f66527d", null ],
     [ "DEFAULT_HT_LOAD_FACTOR", "namespacekuzu_1_1common.html#a7a2020d0482eaf1d8514fc00e425b5c5", null ],
-    [ "DEFAULT_VECTOR_CAPACITY", "namespacekuzu_1_1common.html#a25c5a5d8d890b3d0da2338c831fbdb38", null ],
     [ "HOUR", "namespacekuzu_1_1common.html#ae56e0fc3aa64efa554619afadb36ebdd", null ],
     [ "int128_t", "namespacekuzu_1_1common.html#ad8e70a98e505541044f293d43ae1f4f7", null ],
     [ "INVALID_BLOCK_IDX", "namespacekuzu_1_1common.html#aa57efba90273ec4e2fcbf73fb6ef1e5b", null ],

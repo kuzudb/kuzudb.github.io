@@ -13,5 +13,6 @@ var searchData=
   ['unarysequenceexecfunction_10',['UnarySequenceExecFunction',['../structkuzu_1_1function_1_1_scalar_function.html#a3fe52c16713ba5452f75da01613bf81c',1,'kuzu::function::ScalarFunction']]],
   ['unarystringexecfunction_11',['UnaryStringExecFunction',['../structkuzu_1_1function_1_1_scalar_function.html#a3e1c1d3891de8b465a347533a403ee93',1,'kuzu::function::ScalarFunction']]],
   ['union_12',['UNION',['../classkuzu_1_1common_1_1_logical_type.html#a3b406dbc91f063497e8d3de743112716',1,'kuzu::common::LogicalType']]],
-  ['uuid_13',['UUID',['../classkuzu_1_1common_1_1_logical_type.html#a09c4d39ceea5d83e7a9695eaa1877abf',1,'kuzu::common::LogicalType']]]
+  ['useinternalcatalogentry_13',['useInternalCatalogEntry',['../classkuzu_1_1main_1_1_client_context.html#a7a4603c60bd47154711cf192937e0140',1,'kuzu::main::ClientContext']]],
+  ['uuid_14',['UUID',['../classkuzu_1_1common_1_1_logical_type.html#a09c4d39ceea5d83e7a9695eaa1877abf',1,'kuzu::common::LogicalType']]]
 ];

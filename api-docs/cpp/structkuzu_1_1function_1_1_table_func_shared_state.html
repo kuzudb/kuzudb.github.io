@@ -98,22 +98,88 @@ $(function(){initNavTree('structkuzu_1_1function_1_1_table_func_shared_state.htm
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structkuzu_1_1function_1_1_table_func_shared_state-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">kuzu::function::TableFuncSharedState Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="table__functions_8h_source.html">table_functions.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="table__function_8h_source.html">table_function.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a0c942f5d1a382d0f09a2a48747037c76" id="r_a0c942f5d1a382d0f09a2a48747037c76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c942f5d1a382d0f09a2a48747037c76">TableFuncSharedState</a> ()</td></tr>
+<tr class="separator:a0c942f5d1a382d0f09a2a48747037c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6f7ad47038fa0ef4856ea390ef2e8b" id="r_ade6f7ad47038fa0ef4856ea390ef2e8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade6f7ad47038fa0ef4856ea390ef2e8b">TableFuncSharedState</a> (<a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> <a class="el" href="#ae455520b174be67acf45ee254c3128bd">maxOffset</a>)</td></tr>
+<tr class="separator:ade6f7ad47038fa0ef4856ea390ef2e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa92110b46aa02095706f334cc60e9b41" id="r_aa92110b46aa02095706f334cc60e9b41"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa92110b46aa02095706f334cc60e9b41">~TableFuncSharedState</a> ()=default</td></tr>
 <tr class="separator:aa92110b46aa02095706f334cc60e9b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48b6ae587bcd19a60138e00819ab1b90" id="r_a48b6ae587bcd19a60138e00819ab1b90"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structkuzu_1_1function_1_1_table_func_morsel.html">TableFuncMorsel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48b6ae587bcd19a60138e00819ab1b90">getMorsel</a> ()</td></tr>
+<tr class="separator:a48b6ae587bcd19a60138e00819ab1b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c5dfd223020c9817c09c83c41e4c712" id="r_a5c5dfd223020c9817c09c83c41e4c712"><td class="memTemplParams" colspan="2">template&lt;class TARGET&gt; </td></tr>
 <tr class="memitem:a5c5dfd223020c9817c09c83c41e4c712"><td class="memTemplItemLeft" align="right" valign="top">TARGET *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5c5dfd223020c9817c09c83c41e4c712">ptrCast</a> ()</td></tr>
 <tr class="separator:a5c5dfd223020c9817c09c83c41e4c712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ae455520b174be67acf45ee254c3128bd" id="r_ae455520b174be67acf45ee254c3128bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae455520b174be67acf45ee254c3128bd">maxOffset</a></td></tr>
+<tr class="separator:ae455520b174be67acf45ee254c3128bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d3b77fec4d32b42aded09a98b9b862" id="r_aa5d3b77fec4d32b42aded09a98b9b862"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5d3b77fec4d32b42aded09a98b9b862">curOffset</a></td></tr>
+<tr class="separator:aa5d3b77fec4d32b42aded09a98b9b862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5efde8c46dac5ea85e873e952b79a68" id="r_ab5efde8c46dac5ea85e873e952b79a68"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5efde8c46dac5ea85e873e952b79a68">mtx</a></td></tr>
+<tr class="separator:ab5efde8c46dac5ea85e873e952b79a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0c942f5d1a382d0f09a2a48747037c76" name="a0c942f5d1a382d0f09a2a48747037c76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c942f5d1a382d0f09a2a48747037c76">&#9670;&#160;</a></span>TableFuncSharedState() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">kuzu::function::TableFuncSharedState::TableFuncSharedState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade6f7ad47038fa0ef4856ea390ef2e8b" name="ade6f7ad47038fa0ef4856ea390ef2e8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade6f7ad47038fa0ef4856ea390ef2e8b">&#9670;&#160;</a></span>TableFuncSharedState() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">kuzu::function::TableFuncSharedState::TableFuncSharedState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a></td>          <td class="paramname"><span class="paramname"><em>maxOffset</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa92110b46aa02095706f334cc60e9b41" name="aa92110b46aa02095706f334cc60e9b41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa92110b46aa02095706f334cc60e9b41">&#9670;&#160;</a></span>~TableFuncSharedState()</h2>
 
@@ -140,6 +206,31 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a48b6ae587bcd19a60138e00819ab1b90" name="a48b6ae587bcd19a60138e00819ab1b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48b6ae587bcd19a60138e00819ab1b90">&#9670;&#160;</a></span>getMorsel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structkuzu_1_1function_1_1_table_func_morsel.html">TableFuncMorsel</a> kuzu::function::TableFuncSharedState::getMorsel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a5c5dfd223020c9817c09c83c41e4c712" name="a5c5dfd223020c9817c09c83c41e4c712"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c5dfd223020c9817c09c83c41e4c712">&#9670;&#160;</a></span>ptrCast()</h2>
 
@@ -167,8 +258,51 @@ template&lt;class TARGET&gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa5d3b77fec4d32b42aded09a98b9b862" name="aa5d3b77fec4d32b42aded09a98b9b862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5d3b77fec4d32b42aded09a98b9b862">&#9670;&#160;</a></span>curOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> kuzu::function::TableFuncSharedState::curOffset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae455520b174be67acf45ee254c3128bd" name="ae455520b174be67acf45ee254c3128bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae455520b174be67acf45ee254c3128bd">&#9670;&#160;</a></span>maxOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> kuzu::function::TableFuncSharedState::maxOffset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5efde8c46dac5ea85e873e952b79a68" name="ab5efde8c46dac5ea85e873e952b79a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5efde8c46dac5ea85e873e952b79a68">&#9670;&#160;</a></span>mtx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex kuzu::function::TableFuncSharedState::mtx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>headers/<a class="el" href="table__functions_8h_source.html">table_functions.h</a></li>
+<li>headers/<a class="el" href="table__function_8h_source.html">table_function.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

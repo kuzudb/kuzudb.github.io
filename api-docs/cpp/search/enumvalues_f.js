@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['serial_0',['SERIAL',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a7b804a28d6154ab8007287532037f1d0',1,'kuzu::common']]],
-  ['standalone_5fcall_1',['STANDALONE_CALL',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557a8cd5c839af999089784ea01a3c46a649',1,'kuzu::common']]],
-  ['standalone_5fcall_5ffunction_2',['STANDALONE_CALL_FUNCTION',['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557a2367368664e7667d53495517da9747d0',1,'kuzu::common']]],
-  ['star_3',['STAR',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434ba8ab2630ada18b94a005a0c5399d9d483',1,'kuzu::common']]],
-  ['string_4',['STRING',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a63b588d5559f64f89a416e656880b949',1,'kuzu::common::STRING'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a63b588d5559f64f89a416e656880b949',1,'kuzu::common::STRING']]],
-  ['struct_5',['STRUCT',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741ab8223be2455e0ea5a0e63e8f018d6fc3',1,'kuzu::common::STRUCT'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368ab8223be2455e0ea5a0e63e8f018d6fc3',1,'kuzu::common::STRUCT']]],
-  ['subquery_6',['SUBQUERY',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434baece5b631ea0b2cdd22da5287e7b1213e',1,'kuzu::common']]]
+  ['read_5fonly_0',['READ_ONLY',['../namespacekuzu_1_1transaction.html#a069cf26fb4f925fd7696e1f206a5fb90a47c7e7cb36a953a8c47e02000036bb44',1,'kuzu::transaction']]],
+  ['recovery_1',['RECOVERY',['../namespacekuzu_1_1transaction.html#a069cf26fb4f925fd7696e1f206a5fb90a9c90eb3f9201a7df861d94e494aa9b0b',1,'kuzu::transaction']]],
+  ['recursive_5fjoin_2',['RECURSIVE_JOIN',['../namespacekuzu_1_1processor.html#ae7631a42025df776a7d2fadacf3df54ba923d72b08cae90c931660687b2c140c6',1,'kuzu::processor']]],
+  ['recursive_5frel_3',['RECURSIVE_REL',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a3f236838d133e7555964c9efeb9b82f5',1,'kuzu::common']]],
+  ['regular_5fpage_4',['REGULAR_PAGE',['../namespacekuzu_1_1common.html#aa5ca18c35efd5787484f93d61a48b197aae5e4cd9eb925e9a252aa51515b925f3',1,'kuzu::common']]],
+  ['rel_5',['REL',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741ae76f78a754cd06573b145266a956cfdf',1,'kuzu::common']]],
+  ['result_5fcollector_6',['RESULT_COLLECTOR',['../namespacekuzu_1_1processor.html#ae7631a42025df776a7d2fadacf3df54ba4f2b2fcaec3f482f33df9d00215e4ede',1,'kuzu::processor']]]
 ];

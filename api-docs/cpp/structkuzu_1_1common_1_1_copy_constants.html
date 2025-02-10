@@ -149,8 +149,6 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a4b6f6beaccad3f513900a8f09f78f0c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affe9ee50d322fb4d5e73ad7a4d58d517" id="r_affe9ee50d322fb4d5e73ad7a4d58d517"><td class="memItemLeft" align="right" valign="top">static constexpr std::array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affe9ee50d322fb4d5e73ad7a4d58d517">DEFAULT_CSV_ESCAPE_SEARCH_SPACE</a> = {'&quot;', '\\', '\''}</td></tr>
 <tr class="separator:affe9ee50d322fb4d5e73ad7a4d58d517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cc56b2355eda2cc333e53a5c727ff0c" id="r_a3cc56b2355eda2cc333e53a5c727ff0c"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cc56b2355eda2cc333e53a5c727ff0c">PANDAS_PARTITION_COUNT</a> = 50 * <a class="el" href="namespacekuzu_1_1common.html#a25c5a5d8d890b3d0da2338c831fbdb38">DEFAULT_VECTOR_CAPACITY</a></td></tr>
-<tr class="separator:a3cc56b2355eda2cc333e53a5c727ff0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45c9cb8ae3e015db7468f6ce6b10e727" id="r_a45c9cb8ae3e015db7468f6ce6b10e727"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45c9cb8ae3e015db7468f6ce6b10e727">INT_CSV_PARSING_OPTIONS</a> [] = {&quot;SKIP&quot;, &quot;SAMPLE_SIZE&quot;}</td></tr>
 <tr class="separator:a45c9cb8ae3e015db7468f6ce6b10e727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f1c8e850d07bed1111d732d78f01e43" id="r_a0f1c8e850d07bed1111d732d78f01e43"><td class="memItemLeft" align="right" valign="top">static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f1c8e850d07bed1111d732d78f01e43">DEFAULT_CSV_SKIP_NUM</a> = 0</td></tr>
@@ -198,7 +196,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {<span class="stringliteral">&quot;HEADER&quot;</span>, <span class="stringliteral">&quot;PARALLEL&quot;</span>,</div>
 <div class="line">        <span class="stringliteral">&quot;LIST_UNBRACED&quot;</span>, <span class="stringliteral">&quot;AUTODETECT&quot;</span>, <span class="stringliteral">&quot;AUTO_DETECT&quot;</span>, <a class="code hl_variable" href="#aa1aa42a8ea534c007ac72a906eccbbf1">CopyConstants::IGNORE_ERRORS_OPTION_NAME</a>}</div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_aa1aa42a8ea534c007ac72a906eccbbf1"><div class="ttname"><a href="#aa1aa42a8ea534c007ac72a906eccbbf1">kuzu::common::CopyConstants::IGNORE_ERRORS_OPTION_NAME</a></div><div class="ttdeci">static constexpr const char * IGNORE_ERRORS_OPTION_NAME</div><div class="ttdef"><b>Definition</b> constants.h:142</div></div>
+<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_aa1aa42a8ea534c007ac72a906eccbbf1"><div class="ttname"><a href="#aa1aa42a8ea534c007ac72a906eccbbf1">kuzu::common::CopyConstants::IGNORE_ERRORS_OPTION_NAME</a></div><div class="ttdeci">static constexpr const char * IGNORE_ERRORS_OPTION_NAME</div><div class="ttdef"><b>Definition</b> constants.h:114</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -268,8 +266,8 @@ Static Public Attributes</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">        <a class="code hl_function" href="namespacekuzu_1_1common.html#a3c2413426da498aa59abdb2ab4ef4001">arrayConcat</a>(<a class="code hl_variable" href="#a30f96296d5ba1bed4583467784ac80e1">SHARED_WARNING_DATA_COLUMN_NAMES</a>, <a class="code hl_variable" href="#a1a795d86f5af6fd5fc34dc32f87c4557">CSV_SPECIFIC_WARNING_DATA_COLUMN_NAMES</a>)</div>
 <div class="ttc" id="anamespacekuzu_1_1common_html_a3c2413426da498aa59abdb2ab4ef4001"><div class="ttname"><a href="namespacekuzu_1_1common.html#a3c2413426da498aa59abdb2ab4ef4001">kuzu::common::arrayConcat</a></div><div class="ttdeci">constexpr std::array&lt; T, N1+N2 &gt; arrayConcat(const std::array&lt; T, N1 &gt; &amp;arr1, const std::array&lt; T, N2 &gt; &amp;arr2)</div><div class="ttdef"><b>Definition</b> array_utils.h:9</div></div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_a1a795d86f5af6fd5fc34dc32f87c4557"><div class="ttname"><a href="#a1a795d86f5af6fd5fc34dc32f87c4557">kuzu::common::CopyConstants::CSV_SPECIFIC_WARNING_DATA_COLUMN_NAMES</a></div><div class="ttdeci">static constexpr std::array CSV_SPECIFIC_WARNING_DATA_COLUMN_NAMES</div><div class="ttdef"><b>Definition</b> constants.h:181</div></div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_a30f96296d5ba1bed4583467784ac80e1"><div class="ttname"><a href="#a30f96296d5ba1bed4583467784ac80e1">kuzu::common::CopyConstants::SHARED_WARNING_DATA_COLUMN_NAMES</a></div><div class="ttdeci">static constexpr std::array SHARED_WARNING_DATA_COLUMN_NAMES</div><div class="ttdef"><b>Definition</b> constants.h:174</div></div>
+<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_a1a795d86f5af6fd5fc34dc32f87c4557"><div class="ttname"><a href="#a1a795d86f5af6fd5fc34dc32f87c4557">kuzu::common::CopyConstants::CSV_SPECIFIC_WARNING_DATA_COLUMN_NAMES</a></div><div class="ttdeci">static constexpr std::array CSV_SPECIFIC_WARNING_DATA_COLUMN_NAMES</div><div class="ttdef"><b>Definition</b> constants.h:152</div></div>
+<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_a30f96296d5ba1bed4583467784ac80e1"><div class="ttname"><a href="#a30f96296d5ba1bed4583467784ac80e1">kuzu::common::CopyConstants::SHARED_WARNING_DATA_COLUMN_NAMES</a></div><div class="ttdeci">static constexpr std::array SHARED_WARNING_DATA_COLUMN_NAMES</div><div class="ttdef"><b>Definition</b> constants.h:145</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -294,8 +292,8 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">        <a class="code hl_function" href="namespacekuzu_1_1common.html#a3c2413426da498aa59abdb2ab4ef4001">arrayConcat</a>(<a class="code hl_variable" href="#ac39cf42d4fd2b6682edb3a7f322e17cf">SHARED_WARNING_DATA_COLUMN_TYPES</a>, <a class="code hl_variable" href="#a3ebc5ded6948d2884ef7dfff23593b1d">CSV_SPECIFIC_WARNING_DATA_COLUMN_TYPES</a>)</div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_a3ebc5ded6948d2884ef7dfff23593b1d"><div class="ttname"><a href="#a3ebc5ded6948d2884ef7dfff23593b1d">kuzu::common::CopyConstants::CSV_SPECIFIC_WARNING_DATA_COLUMN_TYPES</a></div><div class="ttdeci">static constexpr std::array CSV_SPECIFIC_WARNING_DATA_COLUMN_TYPES</div><div class="ttdef"><b>Definition</b> constants.h:182</div></div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_ac39cf42d4fd2b6682edb3a7f322e17cf"><div class="ttname"><a href="#ac39cf42d4fd2b6682edb3a7f322e17cf">kuzu::common::CopyConstants::SHARED_WARNING_DATA_COLUMN_TYPES</a></div><div class="ttdeci">static constexpr std::array SHARED_WARNING_DATA_COLUMN_TYPES</div><div class="ttdef"><b>Definition</b> constants.h:176</div></div>
+<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_a3ebc5ded6948d2884ef7dfff23593b1d"><div class="ttname"><a href="#a3ebc5ded6948d2884ef7dfff23593b1d">kuzu::common::CopyConstants::CSV_SPECIFIC_WARNING_DATA_COLUMN_TYPES</a></div><div class="ttdeci">static constexpr std::array CSV_SPECIFIC_WARNING_DATA_COLUMN_TYPES</div><div class="ttdef"><b>Definition</b> constants.h:153</div></div>
+<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_ac39cf42d4fd2b6682edb3a7f322e17cf"><div class="ttname"><a href="#ac39cf42d4fd2b6682edb3a7f322e17cf">kuzu::common::CopyConstants::SHARED_WARNING_DATA_COLUMN_TYPES</a></div><div class="ttdeci">static constexpr std::array SHARED_WARNING_DATA_COLUMN_TYPES</div><div class="ttdef"><b>Definition</b> constants.h:147</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -320,7 +318,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">        <a class="code hl_variable" href="#aff7bd2fcfad16ef5b6bd3765dd4658d4">CSV_WARNING_DATA_COLUMN_NAMES</a>.size()</div>
-<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_aff7bd2fcfad16ef5b6bd3765dd4658d4"><div class="ttname"><a href="#aff7bd2fcfad16ef5b6bd3765dd4658d4">kuzu::common::CopyConstants::CSV_WARNING_DATA_COLUMN_NAMES</a></div><div class="ttdeci">static constexpr std::array CSV_WARNING_DATA_COLUMN_NAMES</div><div class="ttdef"><b>Definition</b> constants.h:184</div></div>
+<div class="ttc" id="astructkuzu_1_1common_1_1_copy_constants_html_aff7bd2fcfad16ef5b6bd3765dd4658d4"><div class="ttname"><a href="#aff7bd2fcfad16ef5b6bd3765dd4658d4">kuzu::common::CopyConstants::CSV_WARNING_DATA_COLUMN_NAMES</a></div><div class="ttdeci">static constexpr std::array CSV_WARNING_DATA_COLUMN_NAMES</div><div class="ttdef"><b>Definition</b> constants.h:155</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -775,28 +773,6 @@ Static Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacekuzu_1_1common.html#a7b8567de9cc3940bbd5fd4e53c4fc4fe">column_id_t</a> kuzu::common::CopyConstants::MAX_NUM_WARNING_DATA_COLUMNS = <a class="el" href="#a7d7820795b7128c3fdbcee095b2cf14b">CSV_WARNING_DATA_NUM_COLUMNS</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3cc56b2355eda2cc333e53a5c727ff0c" name="a3cc56b2355eda2cc333e53a5c727ff0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cc56b2355eda2cc333e53a5c727ff0c">&#9670;&#160;</a></span>PANDAS_PARTITION_COUNT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t kuzu::common::CopyConstants::PANDAS_PARTITION_COUNT = 50 * <a class="el" href="namespacekuzu_1_1common.html#a25c5a5d8d890b3d0da2338c831fbdb38">DEFAULT_VECTOR_CAPACITY</a></td>
         </tr>
       </table>
   </td>

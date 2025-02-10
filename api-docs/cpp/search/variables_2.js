@@ -5,7 +5,7 @@ var searchData=
   ['catalog_5ffile_5fname_5ffor_5fwal_2',['CATALOG_FILE_NAME_FOR_WAL',['../structkuzu_1_1common_1_1_storage_constants.html#a01629b0d0ddb8b5f644a682244f94a05',1,'kuzu::common::StorageConstants']]],
   ['century_3',['CENTURY',['../namespacekuzu_1_1common.html#ad461620002eaf5807e7bdbb014c7f9c1',1,'kuzu::common']]],
   ['checkpointthreshold_4',['checkpointThreshold',['../structkuzu_1_1main_1_1_system_config.html#a9db748ac09dca1d3f97bc57643a394f9',1,'kuzu::main::SystemConfig::checkpointThreshold'],['../structkuzu_1_1main_1_1_d_b_config.html#a5c45283aa4de3e137e0e0213290fc842',1,'kuzu::main::DBConfig::checkpointThreshold']]],
-  ['children_5',['children',['../struct_arrow_schema.html#ae0ba059e1e9a6879fc231f3475644c1a',1,'ArrowSchema::children'],['../struct_arrow_array.html#a4fb07be9899001e57c9ab0509396ffb8',1,'ArrowArray::children'],['../classkuzu_1_1binder_1_1_expression.html#a528c83291f13e56fa25d7a54f5aac3df',1,'kuzu::binder::Expression::children']]],
+  ['children_5',['children',['../struct_arrow_schema.html#ae0ba059e1e9a6879fc231f3475644c1a',1,'ArrowSchema::children'],['../struct_arrow_array.html#a4fb07be9899001e57c9ab0509396ffb8',1,'ArrowArray::children'],['../classkuzu_1_1binder_1_1_expression.html#a528c83291f13e56fa25d7a54f5aac3df',1,'kuzu::binder::Expression::children'],['../classkuzu_1_1processor_1_1_physical_operator.html#a225826d8f104524b9cc36aa86a2955a9',1,'kuzu::processor::PhysicalOperator::children']]],
   ['childtype_6',['childType',['../classkuzu_1_1common_1_1_list_type_info.html#af8c11e305b40499104b84f28ef49534f',1,'kuzu::common::ListTypeInfo']]],
   ['chunk_5fresize_5fratio_7',['CHUNK_RESIZE_RATIO',['../namespacekuzu_1_1common.html#a63c7127dbb04705764f052909aca906d',1,'kuzu::common']]],
   ['clientcontext_8',['clientContext',['../structkuzu_1_1function_1_1_function_bind_data.html#aa3684a518767607f7eaede531672a2b9',1,'kuzu::function::FunctionBindData']]],
@@ -25,5 +25,6 @@ var searchData=
   ['cumulative_5fdays_22',['CUMULATIVE_DAYS',['../classkuzu_1_1common_1_1_date.html#aa69e6c180db8ecfffe996fdc2028d807',1,'kuzu::common::Date']]],
   ['cumulative_5fleap_5fdays_23',['CUMULATIVE_LEAP_DAYS',['../classkuzu_1_1common_1_1_date.html#aaf59e408775ac7deb8594c8e94898d6d',1,'kuzu::common::Date']]],
   ['cumulative_5fyear_5fdays_24',['CUMULATIVE_YEAR_DAYS',['../classkuzu_1_1common_1_1_date.html#aa36b2cca2da8ae675363d5889f870303',1,'kuzu::common::Date']]],
-  ['currentoffset_25',['currentOffset',['../structkuzu_1_1common_1_1_buffer_block.html#a51d581f45155048f8e11f6f438465fb0',1,'kuzu::common::BufferBlock']]]
+  ['curoffset_25',['curOffset',['../structkuzu_1_1function_1_1_table_func_shared_state.html#aa5d3b77fec4d32b42aded09a98b9b862',1,'kuzu::function::TableFuncSharedState']]],
+  ['currentoffset_26',['currentOffset',['../structkuzu_1_1common_1_1_buffer_block.html#a51d581f45155048f8e11f6f438465fb0',1,'kuzu::common::BufferBlock']]]
 ];

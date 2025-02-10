@@ -7,5 +7,6 @@ var searchData=
   ['merge_4',['merge',['../classkuzu_1_1common_1_1_in_mem_overflow_buffer.html#a2d466ab1019a37b1a2e919f4e11d31e4',1,'kuzu::common::InMemOverflowBuffer']]],
   ['mod_5',['Mod',['../classkuzu_1_1common_1_1_int128__t.html#ae6cd1d90a6245305ebb520676d7d016c',1,'kuzu::common::Int128_t']]],
   ['monthdays_6',['monthDays',['../classkuzu_1_1common_1_1_date.html#a0e29cebd6c4693d04e3983711c3290ea',1,'kuzu::common::Date']]],
-  ['mul_7',['Mul',['../classkuzu_1_1common_1_1_int128__t.html#a017e96e2ea7c876f83db16eee9e7128a',1,'kuzu::common::Int128_t']]]
+  ['moveunarychild_7',['moveUnaryChild',['../classkuzu_1_1processor_1_1_physical_operator.html#a47285e8855cbe0021f31796452e0eaa0',1,'kuzu::processor::PhysicalOperator']]],
+  ['mul_8',['Mul',['../classkuzu_1_1common_1_1_int128__t.html#a017e96e2ea7c876f83db16eee9e7128a',1,'kuzu::common::Int128_t']]]
 ];

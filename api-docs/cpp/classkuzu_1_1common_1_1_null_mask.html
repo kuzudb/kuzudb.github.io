@@ -144,6 +144,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a9da6bc07177e689c69f98fef63783ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c5a905b3af9e482890c25c1fcad8383" id="r_a7c5a905b3af9e482890c25c1fcad8383"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c5a905b3af9e482890c25c1fcad8383">isNull</a> (const uint64_t *nullEntries, uint32_t pos)</td></tr>
 <tr class="separator:a7c5a905b3af9e482890c25c1fcad8383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf342c7ce22d4888392cc5e3ce80261c" id="r_adf342c7ce22d4888392cc5e3ce80261c"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf342c7ce22d4888392cc5e3ce80261c">getNumNullBits</a> (std::span&lt; uint64_t &gt; data)</td></tr>
+<tr class="separator:adf342c7ce22d4888392cc5e3ce80261c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a921aa8ed839b2c0892c83cacc1dd8aa1" id="r_a921aa8ed839b2c0892c83cacc1dd8aa1"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a921aa8ed839b2c0892c83cacc1dd8aa1">getNumNullEntries</a> (uint64_t numNullBits)</td></tr>
 <tr class="separator:a921aa8ed839b2c0892c83cacc1dd8aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4498b9f39a1e4fe4c6cf66e16cbf6d8f" id="r_a4498b9f39a1e4fe4c6cf66e16cbf6d8f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4498b9f39a1e4fe4c6cf66e16cbf6d8f">copyNullMask</a> (const uint64_t *srcNullEntries, uint64_t srcOffset, uint64_t *dstNullEntries, uint64_t dstOffset, uint64_t numBitsToCopy, bool invert=false)</td></tr>
@@ -416,6 +418,31 @@ Static Public Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf342c7ce22d4888392cc5e3ce80261c" name="adf342c7ce22d4888392cc5e3ce80261c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf342c7ce22d4888392cc5e3ce80261c">&#9670;&#160;</a></span>getNumNullBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t kuzu::common::NullMask::getNumNullBits </td>
+          <td>(</td>
+          <td class="paramtype">std::span&lt; uint64_t &gt;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

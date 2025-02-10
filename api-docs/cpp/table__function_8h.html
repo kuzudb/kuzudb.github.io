@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Kùzu C++ API: headers/table_functions.h File Reference</title>
+<title>Kùzu C++ API: headers/table_function.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('table__functions_8h.html',''); initResizable(true); });
+$(function(){initNavTree('table__function_8h.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -100,16 +100,20 @@ $(function(){initNavTree('table__functions_8h.html',''); initResizable(true); })
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
-  <div class="headertitle"><div class="title">table_functions.h File Reference</div></div>
+  <div class="headertitle"><div class="title">table_function.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="data__chunk_8h_source.html">data_chunk.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;mutex&gt;</code><br />
+<code>#include &quot;<a class="el" href="data__chunk_8h_source.html">data_chunk.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="function_8h_source.html">function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="physical__operator_8h_source.html">physical_operator.h</a>&quot;</code><br />
 </div>
-<p><a href="table__functions_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="table__function_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_table_func_morsel.html">kuzu::function::TableFuncMorsel</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_table_func_shared_state.html">kuzu::function::TableFuncSharedState</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_table_func_local_state.html">kuzu::function::TableFuncLocalState</a></td></tr>
@@ -122,14 +126,58 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_table_function.html">kuzu::function::TableFunction</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_current_setting_function.html">kuzu::function::CurrentSettingFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_catalog_version_function.html">kuzu::function::CatalogVersionFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_d_b_version_function.html">kuzu::function::DBVersionFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_show_tables_function.html">kuzu::function::ShowTablesFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_show_warnings_function.html">kuzu::function::ShowWarningsFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_clear_warnings_function.html">kuzu::function::ClearWarningsFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_table_info_function.html">kuzu::function::TableInfoFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_show_sequences_function.html">kuzu::function::ShowSequencesFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_show_connection_function.html">kuzu::function::ShowConnectionFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_storage_info_function.html">kuzu::function::StorageInfoFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_stats_info_function.html">kuzu::function::StatsInfoFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_b_m_info_function.html">kuzu::function::BMInfoFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_show_attached_databases_function.html">kuzu::function::ShowAttachedDatabasesFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_show_functions_function.html">kuzu::function::ShowFunctionsFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_create_project_graph_function.html">kuzu::function::CreateProjectGraphFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_drop_project_graph_function.html">kuzu::function::DropProjectGraphFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_show_loaded_extensions_function.html">kuzu::function::ShowLoadedExtensionsFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_show_official_extensions_function.html">kuzu::function::ShowOfficialExtensionsFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1function_1_1_show_indexes_function.html">kuzu::function::ShowIndexesFunction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu.html">kuzu</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1binder.html">kuzu::binder</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1parser.html">kuzu::parser</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1planner.html">kuzu::planner</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1processor.html">kuzu::processor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1transaction.html">kuzu::transaction</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html">kuzu::function</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,13 +200,17 @@ Typedefs</h2></td></tr>
 <tr class="separator:a4a7d196063ba70212e732c4ee2db9514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab911ff1b9ff1d7d48b06ceb7b7a861e1" id="r_ab911ff1b9ff1d7d48b06ceb7b7a861e1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html#ab911ff1b9ff1d7d48b06ceb7b7a861e1">kuzu::function::table_func_rewrite_t</a></td></tr>
 <tr class="separator:ab911ff1b9ff1d7d48b06ceb7b7a861e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7973dcc0da1a35ab193ed0ceaa84b45e" id="r_a7973dcc0da1a35ab193ed0ceaa84b45e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html#a7973dcc0da1a35ab193ed0ceaa84b45e">kuzu::function::table_func_get_logical_plan_t</a></td></tr>
+<tr class="separator:a7973dcc0da1a35ab193ed0ceaa84b45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea530e9a6ccc474e182e0ba52e3021c" id="r_a3ea530e9a6ccc474e182e0ba52e3021c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1function.html#a3ea530e9a6ccc474e182e0ba52e3021c">kuzu::function::table_func_get_physical_plan_t</a></td></tr>
+<tr class="separator:a3ea530e9a6ccc474e182e0ba52e3021c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li><li class="navelem"><a class="el" href="table__functions_8h.html">table_functions.h</a></li>
+    <li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li><li class="navelem"><a class="el" href="table__function_8h.html">table_function.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

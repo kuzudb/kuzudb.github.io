@@ -99,7 +99,6 @@ $(function(){initNavTree('constants_8h.html',''); initResizable(true); });
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">constants.h File Reference</div></div>
@@ -147,13 +146,6 @@ Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html">kuzu::common</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:aaa84b318e67de9340d25fcbf37901dd9" id="r_aaa84b318e67de9340d25fcbf37901dd9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa84b318e67de9340d25fcbf37901dd9">DEFAULT_VECTOR_CAPACITY_LOG_2</a>&#160;&#160;&#160;11</td></tr>
-<tr class="separator:aaa84b318e67de9340d25fcbf37901dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb479b649d5165a56255c0c3d90eef5b" id="r_abb479b649d5165a56255c0c3d90eef5b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb479b649d5165a56255c0c3d90eef5b">VECTOR_CAPACITY_LOG_2</a>&#160;&#160;&#160;<a class="el" href="#aaa84b318e67de9340d25fcbf37901dd9">DEFAULT_VECTOR_CAPACITY_LOG_2</a></td></tr>
-<tr class="separator:abb479b649d5165a56255c0c3d90eef5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:aa5ca18c35efd5787484f93d61a48b197" id="r_aa5ca18c35efd5787484f93d61a48b197"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#aa5ca18c35efd5787484f93d61a48b197">kuzu::common::PageSizeClass</a> : uint8_t { <a class="el" href="namespacekuzu_1_1common.html#aa5ca18c35efd5787484f93d61a48b197aae5e4cd9eb925e9a252aa51515b925f3">kuzu::common::REGULAR_PAGE</a> = 0
@@ -165,8 +157,6 @@ Enumerations</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a8a0ba7b31dbe4a7605c66d8f02749eef" id="r_a8a0ba7b31dbe4a7605c66d8f02749eef"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a8a0ba7b31dbe4a7605c66d8f02749eef">kuzu::common::KUZU_VERSION</a></td></tr>
 <tr class="separator:a8a0ba7b31dbe4a7605c66d8f02749eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25c5a5d8d890b3d0da2338c831fbdb38" id="r_a25c5a5d8d890b3d0da2338c831fbdb38"><td class="memItemLeft" align="right" valign="top">constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a25c5a5d8d890b3d0da2338c831fbdb38">kuzu::common::DEFAULT_VECTOR_CAPACITY</a> = static_cast&lt;uint64_t&gt;(1) &lt;&lt; <a class="el" href="#abb479b649d5165a56255c0c3d90eef5b">VECTOR_CAPACITY_LOG_2</a></td></tr>
-<tr class="separator:a25c5a5d8d890b3d0da2338c831fbdb38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a2020d0482eaf1d8514fc00e425b5c5" id="r_a7a2020d0482eaf1d8514fc00e425b5c5"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a7a2020d0482eaf1d8514fc00e425b5c5">kuzu::common::DEFAULT_HT_LOAD_FACTOR</a> = 1.5</td></tr>
 <tr class="separator:a7a2020d0482eaf1d8514fc00e425b5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8806bd2d9a262053e8a29cfc13904af5" id="r_a8806bd2d9a262053e8a29cfc13904af5"><td class="memItemLeft" align="right" valign="top">constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a8806bd2d9a262053e8a29cfc13904af5">kuzu::common::THREAD_SLEEP_TIME_WHEN_WAITING_IN_MICROS</a> = 500</td></tr>
@@ -178,35 +168,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a24613a3d7d9469aeaba25f8d26b3d43e" id="r_a24613a3d7d9469aeaba25f8d26b3d43e"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekuzu_1_1common.html#a24613a3d7d9469aeaba25f8d26b3d43e">kuzu::common::DECIMAL_PRECISION_LIMIT</a> = 38</td></tr>
 <tr class="separator:a24613a3d7d9469aeaba25f8d26b3d43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="aaa84b318e67de9340d25fcbf37901dd9" name="aaa84b318e67de9340d25fcbf37901dd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa84b318e67de9340d25fcbf37901dd9">&#9670;&#160;</a></span>DEFAULT_VECTOR_CAPACITY_LOG_2</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEFAULT_VECTOR_CAPACITY_LOG_2&#160;&#160;&#160;11</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abb479b649d5165a56255c0c3d90eef5b" name="abb479b649d5165a56255c0c3d90eef5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb479b649d5165a56255c0c3d90eef5b">&#9670;&#160;</a></span>VECTOR_CAPACITY_LOG_2</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VECTOR_CAPACITY_LOG_2&#160;&#160;&#160;<a class="el" href="#aaa84b318e67de9340d25fcbf37901dd9">DEFAULT_VECTOR_CAPACITY_LOG_2</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

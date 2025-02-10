@@ -1,8 +1,20 @@
 var searchData=
 [
-  ['lambda_0',['LAMBDA',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434ba64cd1dd4b2628444bae372942cc36e91',1,'kuzu::common']]],
-  ['less_5fthan_1',['LESS_THAN',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434baa327176a0a845c117bdfadec134a95e9',1,'kuzu::common']]],
-  ['less_5fthan_5fequals_2',['LESS_THAN_EQUALS',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434bab0f37b62df21dd2ccb8c62b345c5c4ef',1,'kuzu::common']]],
-  ['list_3',['LIST',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a298cb25408234de02baf2085803a464a',1,'kuzu::common::LIST'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a298cb25408234de02baf2085803a464a',1,'kuzu::common::LIST']]],
-  ['literal_4',['LITERAL',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434baa0000d7769148184776f1d17656921b0',1,'kuzu::common']]]
+  ['import_5fdatabase_0',['IMPORT_DATABASE',['../namespacekuzu_1_1processor.html#ae7631a42025df776a7d2fadacf3df54bad4db107cd1a46fdaddd9cd458696d1c3',1,'kuzu::processor::IMPORT_DATABASE'],['../namespacekuzu_1_1common.html#afeef9a771d4ab45b546f105ba325a557ad4db107cd1a46fdaddd9cd458696d1c3',1,'kuzu::common::IMPORT_DATABASE']]],
+  ['index_5flookup_1',['INDEX_LOOKUP',['../namespacekuzu_1_1processor.html#ae7631a42025df776a7d2fadacf3df54ba60bd23725be8d74f2581d3b052f2d68b',1,'kuzu::processor']]],
+  ['insert_2',['INSERT',['../namespacekuzu_1_1processor.html#ae7631a42025df776a7d2fadacf3df54ba61ee777e7f71dc466c3b2c685d8d313b',1,'kuzu::processor']]],
+  ['install_5fextension_3',['INSTALL_EXTENSION',['../namespacekuzu_1_1processor.html#ae7631a42025df776a7d2fadacf3df54ba421013398189b3f94c5458a4b3e7496e',1,'kuzu::processor']]],
+  ['int128_4',['INT128',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741ac41709f50c4690286b811f5c609b1bba',1,'kuzu::common::INT128'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368ac41709f50c4690286b811f5c609b1bba',1,'kuzu::common::INT128']]],
+  ['int16_5',['INT16',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a5f90af42814c0a419d715d43ae54fd7a',1,'kuzu::common::INT16'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a5f90af42814c0a419d715d43ae54fd7a',1,'kuzu::common::INT16']]],
+  ['int32_6',['INT32',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a6495adba09844fac8eeb0aba86e6f1bf',1,'kuzu::common::INT32'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a6495adba09844fac8eeb0aba86e6f1bf',1,'kuzu::common::INT32']]],
+  ['int64_7',['INT64',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a4e866b275c85fbb439f6484251cfb31c',1,'kuzu::common::INT64'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a4e866b275c85fbb439f6484251cfb31c',1,'kuzu::common::INT64']]],
+  ['int8_8',['INT8',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741aee9d73311ff0658494edfff14c3ec1e3',1,'kuzu::common::INT8'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368aee9d73311ff0658494edfff14c3ec1e3',1,'kuzu::common::INT8']]],
+  ['internal_9',['INTERNAL',['../namespacekuzu_1_1common.html#a85fc1164fed96b1de51b78bd5eecc68da182fa1c42a2468f8488e6dcf75a81b81',1,'kuzu::common']]],
+  ['internal_5fid_10',['INTERNAL_ID',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a8e6056eb4b6b0a27a397f52d353cceb7',1,'kuzu::common::INTERNAL_ID'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a8e6056eb4b6b0a27a397f52d353cceb7',1,'kuzu::common::INTERNAL_ID']]],
+  ['intersect_11',['INTERSECT',['../namespacekuzu_1_1processor.html#ae7631a42025df776a7d2fadacf3df54ba24bdbe2bcaf533b7b3f0bd58bfa7f291',1,'kuzu::processor']]],
+  ['intersect_5fbuild_12',['INTERSECT_BUILD',['../namespacekuzu_1_1processor.html#ae7631a42025df776a7d2fadacf3df54bac51de2481af333316294cf6dc2c1f782',1,'kuzu::processor']]],
+  ['interval_13',['INTERVAL',['../namespacekuzu_1_1common.html#ae13725cc7f400e324b5f2bc1f53da741a21ef3147a98040a9167367c1ad8d065e',1,'kuzu::common::INTERVAL'],['../namespacekuzu_1_1common.html#a504e5277d0488eb4ad21b76eb84e2368a21ef3147a98040a9167367c1ad8d065e',1,'kuzu::common::INTERVAL']]],
+  ['invalid_14',['INVALID',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434baccc0377a8afbf50e7094f5c23a8af223',1,'kuzu::common']]],
+  ['is_5fnot_5fnull_15',['IS_NOT_NULL',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434ba05dd132ba23ff57c0ca5ec4100c31fdc',1,'kuzu::common']]],
+  ['is_5fnull_16',['IS_NULL',['../namespacekuzu_1_1common.html#aea96cbaccc7df791e248ca95ad97434badbd9c38e0339e6c34bd48cafc59be388',1,'kuzu::common']]]
 ];

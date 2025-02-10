@@ -219,6 +219,8 @@ var NAVTREEINDEX3 =
 "classkuzu_1_1main_1_1_client_context.html#a74be1b4a5245cf22267d0b69ac57d739":[2,0,0,3,3,22],
 "classkuzu_1_1main_1_1_client_context.html#a78638540ca8aa14865ec1a6764f553d1":[0,0,1,7,3,27],
 "classkuzu_1_1main_1_1_client_context.html#a78638540ca8aa14865ec1a6764f553d1":[2,0,0,3,3,27],
+"classkuzu_1_1main_1_1_client_context.html#a7a4603c60bd47154711cf192937e0140":[0,0,1,7,3,49],
+"classkuzu_1_1main_1_1_client_context.html#a7a4603c60bd47154711cf192937e0140":[2,0,0,3,3,49],
 "classkuzu_1_1main_1_1_client_context.html#a7bc9545007acde82b7d6b029b7e027cb":[0,0,1,7,3,14],
 "classkuzu_1_1main_1_1_client_context.html#a7bc9545007acde82b7d6b029b7e027cb":[2,0,0,3,3,14],
 "classkuzu_1_1main_1_1_client_context.html#a815d445ec00ea7d46e81a24cbcce3631":[0,0,1,7,3,2],
@@ -237,8 +239,8 @@ var NAVTREEINDEX3 =
 "classkuzu_1_1main_1_1_client_context.html#a9bc4e1b96d9e3baa78c5c83ea3b605c4":[2,0,0,3,3,36],
 "classkuzu_1_1main_1_1_client_context.html#a9d98297bef0b40f7601038510e9eed8c":[0,0,1,7,3,13],
 "classkuzu_1_1main_1_1_client_context.html#a9d98297bef0b40f7601038510e9eed8c":[2,0,0,3,3,13],
-"classkuzu_1_1main_1_1_client_context.html#aa46c7aabde31a3d6e79d973d51ebad3c":[0,0,1,7,3,49],
-"classkuzu_1_1main_1_1_client_context.html#aa46c7aabde31a3d6e79d973d51ebad3c":[2,0,0,3,3,49],
+"classkuzu_1_1main_1_1_client_context.html#aa46c7aabde31a3d6e79d973d51ebad3c":[0,0,1,7,3,48],
+"classkuzu_1_1main_1_1_client_context.html#aa46c7aabde31a3d6e79d973d51ebad3c":[2,0,0,3,3,48],
 "classkuzu_1_1main_1_1_client_context.html#aa7f6e46fe8f59a9c2c46f3be0eb4a058":[0,0,1,7,3,56],
 "classkuzu_1_1main_1_1_client_context.html#aa7f6e46fe8f59a9c2c46f3be0eb4a058":[2,0,0,3,3,56],
 "classkuzu_1_1main_1_1_client_context.html#aae1c56835e34490f16d69978c5c79f97":[0,0,1,7,3,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "classkuzu_1_1main_1_1_client_context.html#ab431d590d719676926b7fd6a058cd1bb":[2,0,0,3,3,32],
 "classkuzu_1_1main_1_1_client_context.html#ab4f6bd25e4ec539f418b0578e82b9041":[0,0,1,7,3,42],
 "classkuzu_1_1main_1_1_client_context.html#ab4f6bd25e4ec539f418b0578e82b9041":[2,0,0,3,3,42],
-"classkuzu_1_1main_1_1_client_context.html#ab84fef0e0943fd000d67be6e03ab5ec6":[0,0,1,7,3,45],
-"classkuzu_1_1main_1_1_client_context.html#ab84fef0e0943fd000d67be6e03ab5ec6":[2,0,0,3,3,45],
-"classkuzu_1_1main_1_1_client_context.html#aba22581fac079b2b3f2f97deee32fe51":[0,0,1,7,3,28]
+"classkuzu_1_1main_1_1_client_context.html#ab84fef0e0943fd000d67be6e03ab5ec6":[0,0,1,7,3,45]
 };

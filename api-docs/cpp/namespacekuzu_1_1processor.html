@@ -99,7 +99,9 @@ $(function(){initNavTree('namespacekuzu_1_1processor.html',''); initResizable(tr
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">kuzu::processor Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -108,12 +110,26 @@ $(function(){initNavTree('namespacekuzu_1_1processor.html',''); initResizable(tr
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1processor_1_1_copy_from_file_error.html">CopyFromFileError</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1processor_1_1_data_chunk_descriptor.html">DataChunkDescriptor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1processor_1_1_data_pos.html">DataPos</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1processor_1_1_flat_tuple.html">FlatTuple</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a vector of Values.  <a href="classkuzu_1_1processor_1_1_flat_tuple.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1processor_1_1_line_context.html">LineContext</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1processor_1_1_operator_metrics.html">OperatorMetrics</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1processor_1_1_physical_operator.html">PhysicalOperator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1processor_1_1_physical_operator_utils.html">PhysicalOperatorUtils</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1processor_1_1_populated_copy_from_error.html">PopulatedCopyFromError</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1processor_1_1_result_set.html">ResultSet</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkuzu_1_1processor_1_1_result_set_descriptor.html">ResultSetDescriptor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkuzu_1_1processor_1_1_warning_context.html">WarningContext</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,12 +145,117 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a46fcfa034b986c71e26d4aadc9817298" id="r_a46fcfa034b986c71e26d4aadc9817298"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46fcfa034b986c71e26d4aadc9817298">data_chunk_pos_t</a> = <a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">common::idx_t</a></td></tr>
+<tr class="separator:a46fcfa034b986c71e26d4aadc9817298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ffc5b59bb1b763085d05dd2edd865d4" id="r_a6ffc5b59bb1b763085d05dd2edd865d4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ffc5b59bb1b763085d05dd2edd865d4">value_vector_pos_t</a> = <a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">common::idx_t</a></td></tr>
+<tr class="separator:a6ffc5b59bb1b763085d05dd2edd865d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ecd7ffed31d23448d15d6bbf21e4ec5" id="r_a9ecd7ffed31d23448d15d6bbf21e4ec5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ecd7ffed31d23448d15d6bbf21e4ec5">physical_op_id</a> = uint32_t</td></tr>
+<tr class="separator:a9ecd7ffed31d23448d15d6bbf21e4ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21596704d9dc6f36f89d7f14d5cbb07f" id="r_a21596704d9dc6f36f89d7f14d5cbb07f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21596704d9dc6f36f89d7f14d5cbb07f">physical_op_vector_t</a> = std::vector&lt;std::unique_ptr&lt;<a class="el" href="classkuzu_1_1processor_1_1_physical_operator.html">PhysicalOperator</a>&gt;&gt;</td></tr>
+<tr class="separator:a21596704d9dc6f36f89d7f14d5cbb07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2a2bbdb913202f55f7b547faf8da894" id="r_ac2a2bbdb913202f55f7b547faf8da894"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2a2bbdb913202f55f7b547faf8da894">populate_func_t</a> = std::function&lt;<a class="el" href="structkuzu_1_1processor_1_1_populated_copy_from_error.html">PopulatedCopyFromError</a>(<a class="el" href="structkuzu_1_1processor_1_1_copy_from_file_error.html">CopyFromFileError</a>, <a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">common::idx_t</a>)&gt;</td></tr>
 <tr class="separator:ac2a2bbdb913202f55f7b547faf8da894"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05e4d944ee6a2591542a087cdf12ff35" id="r_a05e4d944ee6a2591542a087cdf12ff35"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05e4d944ee6a2591542a087cdf12ff35">get_file_idx_func_t</a> = std::function&lt;<a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">common::idx_t</a>(const <a class="el" href="structkuzu_1_1processor_1_1_copy_from_file_error.html">CopyFromFileError</a>&amp;)&gt;</td></tr>
 <tr class="separator:a05e4d944ee6a2591542a087cdf12ff35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ae7631a42025df776a7d2fadacf3df54b" id="r_ae7631a42025df776a7d2fadacf3df54b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7631a42025df776a7d2fadacf3df54b">PhysicalOperatorType</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54bae709bb346ebf26dccb94b57ed09ba487">ALTER</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba361d91ce0f028b6708f607b76b12a318">AGGREGATE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54baf473b7201a6f87bb428ed098df389a62">AGGREGATE_SCAN</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba06d02998f9c1641e6dd49e065ce19b4f">ATTACH_DATABASE</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba89d9abcd2b9a1a1442a4011c34e1fd0a">BATCH_INSERT</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba18155f41fdefad52d9eccd3837a27eb3">COPY_TO</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba39fee3204eaead78424ed7d46cf1dd41">CREATE_MACRO</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54bab573a5550e41343afdd7ab4d9f39ef95">CREATE_SEQUENCE</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54baa262b4a928241dd92c1757d259f4a15d">CREATE_TABLE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54babe645bfd441a89ef77bca38e08869112">CREATE_TYPE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba46016ae8cf708a784172f9b9123aeecf">CROSS_PRODUCT</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54bad4e8d9001943525cc6c50b4d5588c521">DETACH_DATABASE</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba941c42b9719734fbe289f8e65d7a7574">DELETE_</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54babf8f3be424eb6a72b21549fbb24ffb57">DROP</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54bab23b9eff83f48fb9d6693c11c975abb4">DUMMY_SINK</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba0c91849687d96da726b761e840ecfa9d">EMPTY_RESULT</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54bacd08a293dd27950b13838f37aed33a40">EXPORT_DATABASE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54bae75ab17a550f46adbbe891b819cf951d">FILTER</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba67fe3c3b350234a9755db0deddd116cf">FLATTEN</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54baf03a6af7364d7fc49bc5ef2577195121">GDS_CALL</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba8ab0d6d8bd3db201db8951c97ecec969">HASH_JOIN_BUILD</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54bacab8da493a3e2124841934235e51f197">HASH_JOIN_PROBE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54bad4db107cd1a46fdaddd9cd458696d1c3">IMPORT_DATABASE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba60bd23725be8d74f2581d3b052f2d68b">INDEX_LOOKUP</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba61ee777e7f71dc466c3b2c685d8d313b">INSERT</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54bac51de2481af333316294cf6dc2c1f782">INTERSECT_BUILD</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba24bdbe2bcaf533b7b3f0bd58bfa7f291">INTERSECT</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba421013398189b3f94c5458a4b3e7496e">INSTALL_EXTENSION</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba3d49b5cb41d88e381beb0d887d7023a2">LIMIT</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba13e17de88dbe3f78214654cbe20eee03">LOAD_EXTENSION</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba97c51054c5ed46d2f88641ac57ff6347">MERGE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba30e989a389dbaa8ec332f82d10297079">MULTIPLICITY_REDUCER</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54badc5673e019273d9a3a5b1a94afb7e295">OFFSET_SCAN_NODE_TABLE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba865423aaaf0dce0bf3d00cdd2392dc7e">PARTITIONER</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba544b7929c39fb0b1a22df31f38edb75a">PATH_PROPERTY_PROBE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba89b74e0a891c3c78b421a98e65e4e253">PRIMARY_KEY_SCAN_NODE_TABLE</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54baf4ba3e491fc18c6a9379b4e3b2aa503e">PROJECTION</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba48359f9afd830d28b1152d071fb09147">PROFILE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba923d72b08cae90c931660687b2c140c6">RECURSIVE_JOIN</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba4f2b2fcaec3f482f33df9d00215e4ede">RESULT_COLLECTOR</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba7f5bfca408d05c14a506da18728cb346">SCAN_NODE_TABLE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54bad7cfc7093dca1041d791493ba3e44398">SCAN_REL_TABLE</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba09df0b3e0bd06cb93ca1bee27bc0a4a8">SEMI_MASKER</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba617cc4b4cdfd2ff18f460955ded836d2">SET_PROPERTY</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54bab85df04e922fe1dd3c1f0692faeaacef">SKIP</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba8cd5c839af999089784ea01a3c46a649">STANDALONE_CALL</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba3f384908ae887f33de273093d9982d21">TABLE_FUNCTION_CALL</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54bab29bc294187f1315a7222f6573e99d06">TOP_K</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba112960ec830f38b43ab93a2567076bd8">TOP_K_SCAN</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54bae6bed345f53943469741d7295552fcd4">TRANSACTION</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba1da3c68137ea84b35be6067732c8e264">ORDER_BY</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba80f361a1daf6450b40250a2ff5a56393">ORDER_BY_MERGE</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba393a642d9d299c71e60f1f642157d264">ORDER_BY_SCAN</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54baa63940ad0c3bbed298b7faba8759868b">UNION_ALL_SCAN</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54ba37b88a87188456429fa6e6c31a6d2301">UNWIND</a>
+, <a class="el" href="#ae7631a42025df776a7d2fadacf3df54babc152ccc041e70158a9b33e1469ba2f5">USE_DATABASE</a>
+<br />
+ }</td></tr>
+<tr class="separator:ae7631a42025df776a7d2fadacf3df54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aac80141fffbfa90a6bfd94f638f6b15a" id="r_aac80141fffbfa90a6bfd94f638f6b15a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a46fcfa034b986c71e26d4aadc9817298">data_chunk_pos_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac80141fffbfa90a6bfd94f638f6b15a">INVALID_DATA_CHUNK_POS</a> = <a class="el" href="namespacekuzu_1_1common.html#a600d63ef2ff22480c0daecb8a4ce0d36">common::INVALID_IDX</a></td></tr>
+<tr class="separator:aac80141fffbfa90a6bfd94f638f6b15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8361a4fb8c96c46d424d5a76e995bbfc" id="r_a8361a4fb8c96c46d424d5a76e995bbfc"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a6ffc5b59bb1b763085d05dd2edd865d4">value_vector_pos_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8361a4fb8c96c46d424d5a76e995bbfc">INVALID_VALUE_VECTOR_POS</a> = <a class="el" href="namespacekuzu_1_1common.html#a600d63ef2ff22480c0daecb8a4ce0d36">common::INVALID_IDX</a></td></tr>
+<tr class="separator:a8361a4fb8c96c46d424d5a76e995bbfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a46fcfa034b986c71e26d4aadc9817298" name="a46fcfa034b986c71e26d4aadc9817298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46fcfa034b986c71e26d4aadc9817298">&#9670;&#160;</a></span>data_chunk_pos_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a46fcfa034b986c71e26d4aadc9817298">kuzu::processor::data_chunk_pos_t</a> = <a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">common::idx_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a05e4d944ee6a2591542a087cdf12ff35" name="a05e4d944ee6a2591542a087cdf12ff35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05e4d944ee6a2591542a087cdf12ff35">&#9670;&#160;</a></span>get_file_idx_func_t</h2>
 
@@ -143,6 +264,34 @@ Typedefs</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#a05e4d944ee6a2591542a087cdf12ff35">kuzu::processor::get_file_idx_func_t</a> = std::function&lt;<a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">common::idx_t</a>(const <a class="el" href="structkuzu_1_1processor_1_1_copy_from_file_error.html">CopyFromFileError</a>&amp;)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ecd7ffed31d23448d15d6bbf21e4ec5" name="a9ecd7ffed31d23448d15d6bbf21e4ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ecd7ffed31d23448d15d6bbf21e4ec5">&#9670;&#160;</a></span>physical_op_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a9ecd7ffed31d23448d15d6bbf21e4ec5">kuzu::processor::physical_op_id</a> = uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21596704d9dc6f36f89d7f14d5cbb07f" name="a21596704d9dc6f36f89d7f14d5cbb07f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21596704d9dc6f36f89d7f14d5cbb07f">&#9670;&#160;</a></span>physical_op_vector_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a21596704d9dc6f36f89d7f14d5cbb07f">kuzu::processor::physical_op_vector_t</a> = std::vector&lt;std::unique_ptr&lt;<a class="el" href="classkuzu_1_1processor_1_1_physical_operator.html">PhysicalOperator</a>&gt;&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -159,6 +308,146 @@ Typedefs</h2></td></tr>
           <td class="memname">using <a class="el" href="#ac2a2bbdb913202f55f7b547faf8da894">kuzu::processor::populate_func_t</a> = std::function&lt;<a class="el" href="structkuzu_1_1processor_1_1_populated_copy_from_error.html">PopulatedCopyFromError</a>(<a class="el" href="structkuzu_1_1processor_1_1_copy_from_file_error.html">CopyFromFileError</a>, <a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">common::idx_t</a>)&gt;</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ffc5b59bb1b763085d05dd2edd865d4" name="a6ffc5b59bb1b763085d05dd2edd865d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ffc5b59bb1b763085d05dd2edd865d4">&#9670;&#160;</a></span>value_vector_pos_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a6ffc5b59bb1b763085d05dd2edd865d4">kuzu::processor::value_vector_pos_t</a> = <a class="el" href="namespacekuzu_1_1common.html#a205bbe18b53bc41f95e9fcd27055b56d">common::idx_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ae7631a42025df776a7d2fadacf3df54b" name="ae7631a42025df776a7d2fadacf3df54b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7631a42025df776a7d2fadacf3df54b">&#9670;&#160;</a></span>PhysicalOperatorType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ae7631a42025df776a7d2fadacf3df54b">kuzu::processor::PhysicalOperatorType</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bae709bb346ebf26dccb94b57ed09ba487" name="ae7631a42025df776a7d2fadacf3df54bae709bb346ebf26dccb94b57ed09ba487"></a>ALTER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba361d91ce0f028b6708f607b76b12a318" name="ae7631a42025df776a7d2fadacf3df54ba361d91ce0f028b6708f607b76b12a318"></a>AGGREGATE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54baf473b7201a6f87bb428ed098df389a62" name="ae7631a42025df776a7d2fadacf3df54baf473b7201a6f87bb428ed098df389a62"></a>AGGREGATE_SCAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba06d02998f9c1641e6dd49e065ce19b4f" name="ae7631a42025df776a7d2fadacf3df54ba06d02998f9c1641e6dd49e065ce19b4f"></a>ATTACH_DATABASE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba89d9abcd2b9a1a1442a4011c34e1fd0a" name="ae7631a42025df776a7d2fadacf3df54ba89d9abcd2b9a1a1442a4011c34e1fd0a"></a>BATCH_INSERT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba18155f41fdefad52d9eccd3837a27eb3" name="ae7631a42025df776a7d2fadacf3df54ba18155f41fdefad52d9eccd3837a27eb3"></a>COPY_TO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba39fee3204eaead78424ed7d46cf1dd41" name="ae7631a42025df776a7d2fadacf3df54ba39fee3204eaead78424ed7d46cf1dd41"></a>CREATE_MACRO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bab573a5550e41343afdd7ab4d9f39ef95" name="ae7631a42025df776a7d2fadacf3df54bab573a5550e41343afdd7ab4d9f39ef95"></a>CREATE_SEQUENCE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54baa262b4a928241dd92c1757d259f4a15d" name="ae7631a42025df776a7d2fadacf3df54baa262b4a928241dd92c1757d259f4a15d"></a>CREATE_TABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54babe645bfd441a89ef77bca38e08869112" name="ae7631a42025df776a7d2fadacf3df54babe645bfd441a89ef77bca38e08869112"></a>CREATE_TYPE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba46016ae8cf708a784172f9b9123aeecf" name="ae7631a42025df776a7d2fadacf3df54ba46016ae8cf708a784172f9b9123aeecf"></a>CROSS_PRODUCT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bad4e8d9001943525cc6c50b4d5588c521" name="ae7631a42025df776a7d2fadacf3df54bad4e8d9001943525cc6c50b4d5588c521"></a>DETACH_DATABASE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba941c42b9719734fbe289f8e65d7a7574" name="ae7631a42025df776a7d2fadacf3df54ba941c42b9719734fbe289f8e65d7a7574"></a>DELETE_&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54babf8f3be424eb6a72b21549fbb24ffb57" name="ae7631a42025df776a7d2fadacf3df54babf8f3be424eb6a72b21549fbb24ffb57"></a>DROP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bab23b9eff83f48fb9d6693c11c975abb4" name="ae7631a42025df776a7d2fadacf3df54bab23b9eff83f48fb9d6693c11c975abb4"></a>DUMMY_SINK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba0c91849687d96da726b761e840ecfa9d" name="ae7631a42025df776a7d2fadacf3df54ba0c91849687d96da726b761e840ecfa9d"></a>EMPTY_RESULT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bacd08a293dd27950b13838f37aed33a40" name="ae7631a42025df776a7d2fadacf3df54bacd08a293dd27950b13838f37aed33a40"></a>EXPORT_DATABASE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bae75ab17a550f46adbbe891b819cf951d" name="ae7631a42025df776a7d2fadacf3df54bae75ab17a550f46adbbe891b819cf951d"></a>FILTER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba67fe3c3b350234a9755db0deddd116cf" name="ae7631a42025df776a7d2fadacf3df54ba67fe3c3b350234a9755db0deddd116cf"></a>FLATTEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54baf03a6af7364d7fc49bc5ef2577195121" name="ae7631a42025df776a7d2fadacf3df54baf03a6af7364d7fc49bc5ef2577195121"></a>GDS_CALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba8ab0d6d8bd3db201db8951c97ecec969" name="ae7631a42025df776a7d2fadacf3df54ba8ab0d6d8bd3db201db8951c97ecec969"></a>HASH_JOIN_BUILD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bacab8da493a3e2124841934235e51f197" name="ae7631a42025df776a7d2fadacf3df54bacab8da493a3e2124841934235e51f197"></a>HASH_JOIN_PROBE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bad4db107cd1a46fdaddd9cd458696d1c3" name="ae7631a42025df776a7d2fadacf3df54bad4db107cd1a46fdaddd9cd458696d1c3"></a>IMPORT_DATABASE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba60bd23725be8d74f2581d3b052f2d68b" name="ae7631a42025df776a7d2fadacf3df54ba60bd23725be8d74f2581d3b052f2d68b"></a>INDEX_LOOKUP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba61ee777e7f71dc466c3b2c685d8d313b" name="ae7631a42025df776a7d2fadacf3df54ba61ee777e7f71dc466c3b2c685d8d313b"></a>INSERT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bac51de2481af333316294cf6dc2c1f782" name="ae7631a42025df776a7d2fadacf3df54bac51de2481af333316294cf6dc2c1f782"></a>INTERSECT_BUILD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba24bdbe2bcaf533b7b3f0bd58bfa7f291" name="ae7631a42025df776a7d2fadacf3df54ba24bdbe2bcaf533b7b3f0bd58bfa7f291"></a>INTERSECT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba421013398189b3f94c5458a4b3e7496e" name="ae7631a42025df776a7d2fadacf3df54ba421013398189b3f94c5458a4b3e7496e"></a>INSTALL_EXTENSION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba3d49b5cb41d88e381beb0d887d7023a2" name="ae7631a42025df776a7d2fadacf3df54ba3d49b5cb41d88e381beb0d887d7023a2"></a>LIMIT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba13e17de88dbe3f78214654cbe20eee03" name="ae7631a42025df776a7d2fadacf3df54ba13e17de88dbe3f78214654cbe20eee03"></a>LOAD_EXTENSION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba97c51054c5ed46d2f88641ac57ff6347" name="ae7631a42025df776a7d2fadacf3df54ba97c51054c5ed46d2f88641ac57ff6347"></a>MERGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba30e989a389dbaa8ec332f82d10297079" name="ae7631a42025df776a7d2fadacf3df54ba30e989a389dbaa8ec332f82d10297079"></a>MULTIPLICITY_REDUCER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54badc5673e019273d9a3a5b1a94afb7e295" name="ae7631a42025df776a7d2fadacf3df54badc5673e019273d9a3a5b1a94afb7e295"></a>OFFSET_SCAN_NODE_TABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba865423aaaf0dce0bf3d00cdd2392dc7e" name="ae7631a42025df776a7d2fadacf3df54ba865423aaaf0dce0bf3d00cdd2392dc7e"></a>PARTITIONER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba544b7929c39fb0b1a22df31f38edb75a" name="ae7631a42025df776a7d2fadacf3df54ba544b7929c39fb0b1a22df31f38edb75a"></a>PATH_PROPERTY_PROBE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba89b74e0a891c3c78b421a98e65e4e253" name="ae7631a42025df776a7d2fadacf3df54ba89b74e0a891c3c78b421a98e65e4e253"></a>PRIMARY_KEY_SCAN_NODE_TABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54baf4ba3e491fc18c6a9379b4e3b2aa503e" name="ae7631a42025df776a7d2fadacf3df54baf4ba3e491fc18c6a9379b4e3b2aa503e"></a>PROJECTION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba48359f9afd830d28b1152d071fb09147" name="ae7631a42025df776a7d2fadacf3df54ba48359f9afd830d28b1152d071fb09147"></a>PROFILE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba923d72b08cae90c931660687b2c140c6" name="ae7631a42025df776a7d2fadacf3df54ba923d72b08cae90c931660687b2c140c6"></a>RECURSIVE_JOIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba4f2b2fcaec3f482f33df9d00215e4ede" name="ae7631a42025df776a7d2fadacf3df54ba4f2b2fcaec3f482f33df9d00215e4ede"></a>RESULT_COLLECTOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba7f5bfca408d05c14a506da18728cb346" name="ae7631a42025df776a7d2fadacf3df54ba7f5bfca408d05c14a506da18728cb346"></a>SCAN_NODE_TABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bad7cfc7093dca1041d791493ba3e44398" name="ae7631a42025df776a7d2fadacf3df54bad7cfc7093dca1041d791493ba3e44398"></a>SCAN_REL_TABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba09df0b3e0bd06cb93ca1bee27bc0a4a8" name="ae7631a42025df776a7d2fadacf3df54ba09df0b3e0bd06cb93ca1bee27bc0a4a8"></a>SEMI_MASKER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba617cc4b4cdfd2ff18f460955ded836d2" name="ae7631a42025df776a7d2fadacf3df54ba617cc4b4cdfd2ff18f460955ded836d2"></a>SET_PROPERTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bab85df04e922fe1dd3c1f0692faeaacef" name="ae7631a42025df776a7d2fadacf3df54bab85df04e922fe1dd3c1f0692faeaacef"></a>SKIP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba8cd5c839af999089784ea01a3c46a649" name="ae7631a42025df776a7d2fadacf3df54ba8cd5c839af999089784ea01a3c46a649"></a>STANDALONE_CALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba3f384908ae887f33de273093d9982d21" name="ae7631a42025df776a7d2fadacf3df54ba3f384908ae887f33de273093d9982d21"></a>TABLE_FUNCTION_CALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bab29bc294187f1315a7222f6573e99d06" name="ae7631a42025df776a7d2fadacf3df54bab29bc294187f1315a7222f6573e99d06"></a>TOP_K&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba112960ec830f38b43ab93a2567076bd8" name="ae7631a42025df776a7d2fadacf3df54ba112960ec830f38b43ab93a2567076bd8"></a>TOP_K_SCAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54bae6bed345f53943469741d7295552fcd4" name="ae7631a42025df776a7d2fadacf3df54bae6bed345f53943469741d7295552fcd4"></a>TRANSACTION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba1da3c68137ea84b35be6067732c8e264" name="ae7631a42025df776a7d2fadacf3df54ba1da3c68137ea84b35be6067732c8e264"></a>ORDER_BY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba80f361a1daf6450b40250a2ff5a56393" name="ae7631a42025df776a7d2fadacf3df54ba80f361a1daf6450b40250a2ff5a56393"></a>ORDER_BY_MERGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba393a642d9d299c71e60f1f642157d264" name="ae7631a42025df776a7d2fadacf3df54ba393a642d9d299c71e60f1f642157d264"></a>ORDER_BY_SCAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54baa63940ad0c3bbed298b7faba8759868b" name="ae7631a42025df776a7d2fadacf3df54baa63940ad0c3bbed298b7faba8759868b"></a>UNION_ALL_SCAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54ba37b88a87188456429fa6e6c31a6d2301" name="ae7631a42025df776a7d2fadacf3df54ba37b88a87188456429fa6e6c31a6d2301"></a>UNWIND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae7631a42025df776a7d2fadacf3df54babc152ccc041e70158a9b33e1469ba2f5" name="ae7631a42025df776a7d2fadacf3df54babc152ccc041e70158a9b33e1469ba2f5"></a>USE_DATABASE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aac80141fffbfa90a6bfd94f638f6b15a" name="aac80141fffbfa90a6bfd94f638f6b15a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac80141fffbfa90a6bfd94f638f6b15a">&#9670;&#160;</a></span>INVALID_DATA_CHUNK_POS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a46fcfa034b986c71e26d4aadc9817298">data_chunk_pos_t</a> kuzu::processor::INVALID_DATA_CHUNK_POS = <a class="el" href="namespacekuzu_1_1common.html#a600d63ef2ff22480c0daecb8a4ce0d36">common::INVALID_IDX</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8361a4fb8c96c46d424d5a76e995bbfc" name="a8361a4fb8c96c46d424d5a76e995bbfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8361a4fb8c96c46d424d5a76e995bbfc">&#9670;&#160;</a></span>INVALID_VALUE_VECTOR_POS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6ffc5b59bb1b763085d05dd2edd865d4">value_vector_pos_t</a> kuzu::processor::INVALID_VALUE_VECTOR_POS = <a class="el" href="namespacekuzu_1_1common.html#a600d63ef2ff22480c0daecb8a4ce0d36">common::INVALID_IDX</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

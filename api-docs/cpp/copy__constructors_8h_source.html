@@ -213,35 +213,23 @@ $(function(){initNavTree('copy__constructors_8h_source.html',''); initResizable(
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">// TODO: remove</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">static</span> std::vector&lt;std::unique_ptr&lt;T&gt;&gt; cloneVector(<span class="keyword">const</span> std::vector&lt;std::unique_ptr&lt;T&gt;&gt;&amp; objects) {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    std::vector&lt;std::unique_ptr&lt;T&gt;&gt; result;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    result.reserve(objects.size());</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : objects) {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        T&amp; ob = *object;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        result.push_back(ob.clone());</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keyword">static</span> std::unordered_map&lt;K, V&gt; copyUnorderedMap(<span class="keyword">const</span> std::unordered_map&lt;K, V&gt;&amp; objects) {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    std::unordered_map&lt;K, V&gt; result;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; [k, v] : objects) {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        result.insert({k, v.copy()});</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">static</span> std::map&lt;K, V&gt; copyMap(<span class="keyword">const</span> std::map&lt;K, V&gt;&amp; objects) {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    std::map&lt;K, V&gt; result;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; [k, v] : objects) {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        result.insert({k, v.copy()});</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">static</span> std::unordered_map&lt;K, V&gt; copyUnorderedMap(<span class="keyword">const</span> std::unordered_map&lt;K, V&gt;&amp; objects) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    std::unordered_map&lt;K, V&gt; result;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; [k, v] : objects) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        result.insert({k, v.copy()});</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">static</span> std::map&lt;K, V&gt; copyMap(<span class="keyword">const</span> std::map&lt;K, V&gt;&amp; objects) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    std::map&lt;K, V&gt; result;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; [k, v] : objects) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        result.insert({k, v.copy()});</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

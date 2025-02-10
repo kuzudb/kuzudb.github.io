@@ -15,6 +15,7 @@ var searchData=
   ['blob_12',['Blob',['../structkuzu_1_1common_1_1_blob.html',1,'kuzu::common']]],
   ['blob_5ft_13',['blob_t',['../structkuzu_1_1common_1_1blob__t.html',1,'kuzu::common']]],
   ['blobvector_14',['BlobVector',['../structkuzu_1_1common_1_1_blob_vector.html',1,'kuzu::common']]],
-  ['bufferblock_15',['BufferBlock',['../structkuzu_1_1common_1_1_buffer_block.html',1,'kuzu::common']]],
-  ['bufferpoolconstants_16',['BufferPoolConstants',['../structkuzu_1_1common_1_1_buffer_pool_constants.html',1,'kuzu::common']]]
+  ['bminfofunction_15',['BMInfoFunction',['../structkuzu_1_1function_1_1_b_m_info_function.html',1,'kuzu::function']]],
+  ['bufferblock_16',['BufferBlock',['../structkuzu_1_1common_1_1_buffer_block.html',1,'kuzu::common']]],
+  ['bufferpoolconstants_17',['BufferPoolConstants',['../structkuzu_1_1common_1_1_buffer_pool_constants.html',1,'kuzu::common']]]
 ];

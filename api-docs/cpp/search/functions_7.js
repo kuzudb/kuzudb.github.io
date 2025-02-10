@@ -5,7 +5,7 @@ var searchData=
   ['hasdefaultdatabase_2',['hasDefaultDatabase',['../classkuzu_1_1main_1_1_client_context.html#a8a310f0279bc8d961b32a0f4b47e3f6b',1,'kuzu::main::ClientContext']]],
   ['hasfield_3',['hasField',['../classkuzu_1_1common_1_1_struct_type_info.html#ad8631945b387d1b916013fef61622e1e',1,'kuzu::common::StructTypeInfo::hasField()'],['../structkuzu_1_1common_1_1_struct_type.html#abdbaac9dccca0fca5dd7f0b8247a565b',1,'kuzu::common::StructType::hasField()']]],
   ['hash_4',['HASH',['../classkuzu_1_1common_1_1_logical_type.html#a3e8a2084a7e3465e2f74db734abc75cb',1,'kuzu::common::LogicalType']]],
-  ['hasnewlyinsertednodes_5',['hasNewlyInsertedNodes',['../classkuzu_1_1transaction_1_1_transaction.html#a1dbac4b98b0e9341630d9df4fa4bd13a',1,'kuzu::transaction::Transaction']]],
+  ['hasmoretooutput_5',['hasMoreToOutput',['../structkuzu_1_1function_1_1_table_func_morsel.html#a0f3299088d2a8d38ad4a08fd9d948e3f',1,'kuzu::function::TableFuncMorsel']]],
   ['hasnext_6',['hasNext',['../classkuzu_1_1main_1_1_query_result.html#af81d9eb02084e51ef686ab435544e340',1,'kuzu::main::QueryResult']]],
   ['hasnextqueryresult_7',['hasNextQueryResult',['../classkuzu_1_1main_1_1_query_result.html#a95c83de6b8807ae199284e558e1d7c4d',1,'kuzu::main::QueryResult']]],
   ['hasnonenullchildren_8',['hasNoneNullChildren',['../classkuzu_1_1common_1_1_value.html#a4fe5fe2a95d341b9c26ffca0028f7930',1,'kuzu::common::Value']]],

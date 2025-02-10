@@ -146,18 +146,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6221b4c82183831204f2f93a37120d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a051934b2e9b52331991aed298e3f0096" id="r_a051934b2e9b52331991aed298e3f0096"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a051934b2e9b52331991aed298e3f0096">shouldForceCheckpoint</a> () const</td></tr>
 <tr class="separator:a051934b2e9b52331991aed298e3f0096"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed49ae80cbd54acfb74bdd7dc75dcd72" id="r_aed49ae80cbd54acfb74bdd7dc75dcd72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed49ae80cbd54acfb74bdd7dc75dcd72">commit</a> (storage::WAL *wal) const</td></tr>
-<tr class="separator:aed49ae80cbd54acfb74bdd7dc75dcd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf8dabcdea0b49ed802b410c16cedecf" id="r_adf8dabcdea0b49ed802b410c16cedecf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf8dabcdea0b49ed802b410c16cedecf">rollback</a> (storage::WAL *wal) const</td></tr>
-<tr class="separator:adf8dabcdea0b49ed802b410c16cedecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3503b786362be38448d29540aaa3a35" id="r_ae3503b786362be38448d29540aaa3a35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3503b786362be38448d29540aaa3a35">commit</a> (storage::WAL *wal)</td></tr>
+<tr class="separator:ae3503b786362be38448d29540aaa3a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af631a3e540a48badee0d0a08f3374cbf" id="r_af631a3e540a48badee0d0a08f3374cbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af631a3e540a48badee0d0a08f3374cbf">rollback</a> (storage::WAL *wal)</td></tr>
+<tr class="separator:af631a3e540a48badee0d0a08f3374cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff72e86b601e807ddea6facaf01f62b4" id="r_aff72e86b601e807ddea6facaf01f62b4"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff72e86b601e807ddea6facaf01f62b4">getEstimatedMemUsage</a> () const</td></tr>
 <tr class="separator:aff72e86b601e807ddea6facaf01f62b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0669de552abda23213eb6542382cd1b5" id="r_a0669de552abda23213eb6542382cd1b5"><td class="memItemLeft" align="right" valign="top">storage::LocalStorage *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0669de552abda23213eb6542382cd1b5">getLocalStorage</a> () const</td></tr>
 <tr class="separator:a0669de552abda23213eb6542382cd1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dbac4b98b0e9341630d9df4fa4bd13a" id="r_a1dbac4b98b0e9341630d9df4fa4bd13a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dbac4b98b0e9341630d9df4fa4bd13a">hasNewlyInsertedNodes</a> (<a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a> tableID) const</td></tr>
-<tr class="separator:a1dbac4b98b0e9341630d9df4fa4bd13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e0f3664c86a92ca9e3d738025ce28b2" id="r_a0e0f3664c86a92ca9e3d738025ce28b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e0f3664c86a92ca9e3d738025ce28b2">setMaxCommittedNodeOffset</a> (<a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a> tableID, <a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> offset)</td></tr>
-<tr class="separator:a0e0f3664c86a92ca9e3d738025ce28b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ddfd1ed5469f53132f6f5d22d749d32" id="r_a4ddfd1ed5469f53132f6f5d22d749d32"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ddfd1ed5469f53132f6f5d22d749d32">isUnCommitted</a> (<a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a> tableID, <a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> nodeOffset) const</td></tr>
 <tr class="separator:a4ddfd1ed5469f53132f6f5d22d749d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a109b6577214c7866cbcd14e47a0004a4" id="r_a109b6577214c7866cbcd14e47a0004a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#aedcfd5bb2d7ac3bd7f14fc1d15cceae9">common::row_idx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a109b6577214c7866cbcd14e47a0004a4">getLocalRowIdx</a> (<a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a> tableID, <a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> nodeOffset) const</td></tr>
@@ -166,16 +162,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a90bb25a2847aef0ac9644106549a630a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38a725d5a6f8d33d9854e16911dbcdda" id="r_a38a725d5a6f8d33d9854e16911dbcdda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38a725d5a6f8d33d9854e16911dbcdda">getMinUncommittedNodeOffset</a> (<a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a> tableID) const</td></tr>
 <tr class="separator:a38a725d5a6f8d33d9854e16911dbcdda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9f3b98f18082e629f032a041c3d3ecd" id="r_af9f3b98f18082e629f032a041c3d3ecd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9f3b98f18082e629f032a041c3d3ecd">getMaxCommittedNodeOffset</a> (<a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a> tableID) const</td></tr>
-<tr class="separator:af9f3b98f18082e629f032a041c3d3ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa64499b10fe7664a27878caa36024cea" id="r_aa64499b10fe7664a27878caa36024cea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa64499b10fe7664a27878caa36024cea">getCommittedOffsetFromUncommitted</a> (<a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a> tableID, <a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> uncommittedOffset) const</td></tr>
-<tr class="separator:aa64499b10fe7664a27878caa36024cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a226b552315c084b6326058935d58b5a3" id="r_a226b552315c084b6326058935d58b5a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a226b552315c084b6326058935d58b5a3">pushCreateDropCatalogEntry</a> (catalog::CatalogSet &amp;catalogSet, catalog::CatalogEntry &amp;catalogEntry, bool isInternal, bool skipLoggingToWAL=false) const</td></tr>
-<tr class="separator:a226b552315c084b6326058935d58b5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a324b3348111287aff7ad43bf04f25990" id="r_a324b3348111287aff7ad43bf04f25990"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a324b3348111287aff7ad43bf04f25990">pushAlterCatalogEntry</a> (catalog::CatalogSet &amp;catalogSet, catalog::CatalogEntry &amp;catalogEntry, const binder::BoundAlterInfo &amp;alterInfo) const</td></tr>
-<tr class="separator:a324b3348111287aff7ad43bf04f25990"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad489fd485354470db0118d64955f559d" id="r_ad489fd485354470db0118d64955f559d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad489fd485354470db0118d64955f559d">pushSequenceChange</a> (catalog::SequenceCatalogEntry *sequenceEntry, int64_t kCount, const catalog::SequenceRollbackData &amp;data) const</td></tr>
-<tr class="separator:ad489fd485354470db0118d64955f559d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6c2ff65b427d640642a2d8298accbd1" id="r_af6c2ff65b427d640642a2d8298accbd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6c2ff65b427d640642a2d8298accbd1">pushCreateDropCatalogEntry</a> (catalog::CatalogSet &amp;catalogSet, catalog::CatalogEntry &amp;catalogEntry, bool isInternal, bool skipLoggingToWAL=false)</td></tr>
+<tr class="separator:af6c2ff65b427d640642a2d8298accbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5957508e5b399ae38a48e46024e9aabb" id="r_a5957508e5b399ae38a48e46024e9aabb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5957508e5b399ae38a48e46024e9aabb">pushAlterCatalogEntry</a> (catalog::CatalogSet &amp;catalogSet, catalog::CatalogEntry &amp;catalogEntry, const binder::BoundAlterInfo &amp;alterInfo)</td></tr>
+<tr class="separator:a5957508e5b399ae38a48e46024e9aabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7bba75f81fcdb0126216c388daebac" id="r_aad7bba75f81fcdb0126216c388daebac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad7bba75f81fcdb0126216c388daebac">pushSequenceChange</a> (catalog::SequenceCatalogEntry *sequenceEntry, int64_t kCount, const catalog::SequenceRollbackData &amp;data)</td></tr>
+<tr class="separator:aad7bba75f81fcdb0126216c388daebac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a0921a4b96363527d89676f4e6103a1" id="r_a9a0921a4b96363527d89676f4e6103a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a0921a4b96363527d89676f4e6103a1">pushInsertInfo</a> (<a class="el" href="namespacekuzu_1_1common.html#a44b4c1c8ef55e51fcfcb7ee141a94eba">common::node_group_idx_t</a> nodeGroupIdx, <a class="el" href="namespacekuzu_1_1common.html#aedcfd5bb2d7ac3bd7f14fc1d15cceae9">common::row_idx_t</a> startRow, <a class="el" href="namespacekuzu_1_1common.html#aedcfd5bb2d7ac3bd7f14fc1d15cceae9">common::row_idx_t</a> numRows, const storage::VersionRecordHandler *versionRecordHandler) const</td></tr>
 <tr class="separator:a9a0921a4b96363527d89676f4e6103a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefa9742af8d7650b528304c05e6a1397" id="r_aefa9742af8d7650b528304c05e6a1397"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefa9742af8d7650b528304c05e6a1397">pushDeleteInfo</a> (<a class="el" href="namespacekuzu_1_1common.html#a44b4c1c8ef55e51fcfcb7ee141a94eba">common::node_group_idx_t</a> nodeGroupIdx, <a class="el" href="namespacekuzu_1_1common.html#aedcfd5bb2d7ac3bd7f14fc1d15cceae9">common::row_idx_t</a> startRow, <a class="el" href="namespacekuzu_1_1common.html#aedcfd5bb2d7ac3bd7f14fc1d15cceae9">common::row_idx_t</a> numRows, const storage::VersionRecordHandler *versionRecordHandler) const</td></tr>
@@ -336,8 +328,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="aed49ae80cbd54acfb74bdd7dc75dcd72" name="aed49ae80cbd54acfb74bdd7dc75dcd72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed49ae80cbd54acfb74bdd7dc75dcd72">&#9670;&#160;</a></span>commit()</h2>
+<a id="ae3503b786362be38448d29540aaa3a35" name="ae3503b786362be38448d29540aaa3a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3503b786362be38448d29540aaa3a35">&#9670;&#160;</a></span>commit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -346,7 +338,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="api_8h.html#ae723a6ac7b0cca48a22a501787397769">KUZU_API</a> void kuzu::transaction::Transaction::commit </td>
           <td>(</td>
           <td class="paramtype">storage::WAL *</td>          <td class="paramname"><span class="paramname"><em>wal</em></span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -367,35 +359,6 @@ Friends</h2></td></tr>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa64499b10fe7664a27878caa36024cea" name="aa64499b10fe7664a27878caa36024cea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa64499b10fe7664a27878caa36024cea">&#9670;&#160;</a></span>getCommittedOffsetFromUncommitted()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> kuzu::transaction::Transaction::getCommittedOffsetFromUncommitted </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a></td>          <td class="paramname"><span class="paramname"><em>tableID</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a></td>          <td class="paramname"><span class="paramname"><em>uncommittedOffset</em></span>&#160;) const</td>
         </tr>
       </table>
   </td>
@@ -578,31 +541,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="af9f3b98f18082e629f032a041c3d3ecd" name="af9f3b98f18082e629f032a041c3d3ecd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9f3b98f18082e629f032a041c3d3ecd">&#9670;&#160;</a></span>getMaxCommittedNodeOffset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a> kuzu::transaction::Transaction::getMaxCommittedNodeOffset </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a></td>          <td class="paramname"><span class="paramname"><em>tableID</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a38a725d5a6f8d33d9854e16911dbcdda" name="a38a725d5a6f8d33d9854e16911dbcdda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38a725d5a6f8d33d9854e16911dbcdda">&#9670;&#160;</a></span>getMinUncommittedNodeOffset()</h2>
 
@@ -696,31 +634,6 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#aedcfd5bb2d7ac3bd7f14fc1d15cceae9">common::row_idx_t</a></td>          <td class="paramname"><span class="paramname"><em>localRowIdx</em></span>&#160;) const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1dbac4b98b0e9341630d9df4fa4bd13a" name="a1dbac4b98b0e9341630d9df4fa4bd13a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dbac4b98b0e9341630d9df4fa4bd13a">&#9670;&#160;</a></span>hasNewlyInsertedNodes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool kuzu::transaction::Transaction::hasNewlyInsertedNodes </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a></td>          <td class="paramname"><span class="paramname"><em>tableID</em></span></td><td>)</td>
-          <td> const</td>
         </tr>
       </table>
   </td>
@@ -861,8 +774,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a324b3348111287aff7ad43bf04f25990" name="a324b3348111287aff7ad43bf04f25990"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a324b3348111287aff7ad43bf04f25990">&#9670;&#160;</a></span>pushAlterCatalogEntry()</h2>
+<a id="a5957508e5b399ae38a48e46024e9aabb" name="a5957508e5b399ae38a48e46024e9aabb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5957508e5b399ae38a48e46024e9aabb">&#9670;&#160;</a></span>pushAlterCatalogEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -880,15 +793,15 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const binder::BoundAlterInfo &amp;</td>          <td class="paramname"><span class="paramname"><em>alterInfo</em></span>&#160;) const</td>
+          <td class="paramtype">const binder::BoundAlterInfo &amp;</td>          <td class="paramname"><span class="paramname"><em>alterInfo</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a226b552315c084b6326058935d58b5a3" name="a226b552315c084b6326058935d58b5a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a226b552315c084b6326058935d58b5a3">&#9670;&#160;</a></span>pushCreateDropCatalogEntry()</h2>
+<a id="af6c2ff65b427d640642a2d8298accbd1" name="af6c2ff65b427d640642a2d8298accbd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6c2ff65b427d640642a2d8298accbd1">&#9670;&#160;</a></span>pushCreateDropCatalogEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -911,7 +824,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>skipLoggingToWAL</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;) const</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>skipLoggingToWAL</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -980,8 +893,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ad489fd485354470db0118d64955f559d" name="ad489fd485354470db0118d64955f559d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad489fd485354470db0118d64955f559d">&#9670;&#160;</a></span>pushSequenceChange()</h2>
+<a id="aad7bba75f81fcdb0126216c388daebac" name="aad7bba75f81fcdb0126216c388daebac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7bba75f81fcdb0126216c388daebac">&#9670;&#160;</a></span>pushSequenceChange()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -999,7 +912,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const catalog::SequenceRollbackData &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;) const</td>
+          <td class="paramtype">const catalog::SequenceRollbackData &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1032,8 +945,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="adf8dabcdea0b49ed802b410c16cedecf" name="adf8dabcdea0b49ed802b410c16cedecf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf8dabcdea0b49ed802b410c16cedecf">&#9670;&#160;</a></span>rollback()</h2>
+<a id="af631a3e540a48badee0d0a08f3374cbf" name="af631a3e540a48badee0d0a08f3374cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af631a3e540a48badee0d0a08f3374cbf">&#9670;&#160;</a></span>rollback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1042,38 +955,9 @@ Friends</h2></td></tr>
           <td class="memname">void kuzu::transaction::Transaction::rollback </td>
           <td>(</td>
           <td class="paramtype">storage::WAL *</td>          <td class="paramname"><span class="paramname"><em>wal</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0e0f3664c86a92ca9e3d738025ce28b2" name="a0e0f3664c86a92ca9e3d738025ce28b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e0f3664c86a92ca9e3d738025ce28b2">&#9670;&#160;</a></span>setMaxCommittedNodeOffset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void kuzu::transaction::Transaction::setMaxCommittedNodeOffset </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#a9cfabdb17c11d4fec21be7223d03620d">common::table_id_t</a></td>          <td class="paramname"><span class="paramname"><em>tableID</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacekuzu_1_1common.html#ae224e72d8bf556b4e2249ac626d183cc">common::offset_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>

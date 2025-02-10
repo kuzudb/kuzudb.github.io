@@ -48,6 +48,7 @@ var menudata={children:[
 {text:"s",url:"namespacemembers.html#index_s"},
 {text:"t",url:"namespacemembers.html#index_t"},
 {text:"u",url:"namespacemembers.html#index_u"},
+{text:"v",url:"namespacemembers.html#index_v"},
 {text:"w",url:"namespacemembers.html#index_w"}]},
 {text:"Functions",url:"namespacemembers_func.html"},
 {text:"Variables",url:"namespacemembers_vars.html",children:[
@@ -67,6 +68,7 @@ var menudata={children:[
 {text:"Typedefs",url:"namespacemembers_type.html",children:[
 {text:"b",url:"namespacemembers_type.html#index_b"},
 {text:"c",url:"namespacemembers_type.html#index_c"},
+{text:"d",url:"namespacemembers_type.html#index_d"},
 {text:"e",url:"namespacemembers_type.html#index_e"},
 {text:"f",url:"namespacemembers_type.html#index_f"},
 {text:"g",url:"namespacemembers_type.html#index_g"},
@@ -79,7 +81,8 @@ var menudata={children:[
 {text:"r",url:"namespacemembers_type.html#index_r"},
 {text:"s",url:"namespacemembers_type.html#index_s"},
 {text:"t",url:"namespacemembers_type.html#index_t"},
-{text:"u",url:"namespacemembers_type.html#index_u"}]},
+{text:"u",url:"namespacemembers_type.html#index_u"},
+{text:"v",url:"namespacemembers_type.html#index_v"}]},
 {text:"Enumerations",url:"namespacemembers_enum.html"},
 {text:"Enumerator",url:"namespacemembers_eval.html"}]}]},
 {text:"Concepts",url:"concepts.html"},
@@ -183,19 +186,5 @@ var menudata={children:[
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
-{text:"All",url:"globals.html",children:[
-{text:"a",url:"globals.html#index_a"},
-{text:"d",url:"globals.html#index_d"},
-{text:"e",url:"globals.html#index_e"},
-{text:"k",url:"globals.html#index_k"},
-{text:"m",url:"globals.html#index_m"},
-{text:"r",url:"globals.html#index_r"},
-{text:"v",url:"globals.html#index_v"}]},
-{text:"Macros",url:"globals_defs.html",children:[
-{text:"a",url:"globals_defs.html#index_a"},
-{text:"d",url:"globals_defs.html#index_d"},
-{text:"e",url:"globals_defs.html#index_e"},
-{text:"k",url:"globals_defs.html#index_k"},
-{text:"m",url:"globals_defs.html#index_m"},
-{text:"r",url:"globals_defs.html#index_r"},
-{text:"v",url:"globals_defs.html#index_v"}]}]}]}]}
+{text:"All",url:"globals.html"},
+{text:"Macros",url:"globals_defs.html"}]}]}]}
