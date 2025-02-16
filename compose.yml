@@ -1,9 +1,0 @@
-services:
-  jeykll:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    expose:
-      - "4000"
-    ports:
-      - "4000:4000"
