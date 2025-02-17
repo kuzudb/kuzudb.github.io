@@ -52,7 +52,7 @@
 		</div>
 
 		<div class="mt-12 pt-8 border-t text-center text-muted-foreground">
-			<p class="text-sm">&copy; {new Date().getFullYear()} Kùzu Inc. All rights reserved. Website designed by <a href="https://www.maximoff.studio" class="text-primary hover:text-foreground transition-colors">Maximoff.studio</a></p>
+			<p class="text-sm">&copy; 2023 - {new Date().getFullYear()} Kùzu Inc. All rights reserved. Website designed by <a href="https://www.maximoff.studio" class="text-primary hover:text-foreground transition-colors">Maximoff.studio</a></p>
 		</div>
 	</div>
 </footer> 

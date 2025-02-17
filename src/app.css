@@ -86,3 +86,8 @@
 .animate-glow {
   animation: glow 3s ease-in-out infinite;
 }
+
+body * {
+  @apply transition-colors duration-500;
+}
+
