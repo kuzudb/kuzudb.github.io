@@ -3,6 +3,8 @@
 	import { fade } from 'svelte/transition';
 	import { Button } from '$lib/components/ui/button';
 	import { Github, ArrowRight } from 'lucide-svelte';
+	import {latestVersion} from '$lib/utils/LatestVersion.json';
+
 	let section: HTMLElement;
 	let mouseX = 0;
 	let mouseY = 0;
@@ -21,8 +23,8 @@
 		return {
 			x: Math.random() * canvas.width,
 			y: Math.random() * canvas.height,
-			vx: (Math.random() - 0.5) * 2,
-			vy: (Math.random() - 0.5) * 2,
+			vx: (Math.random() - 0.5) * 1.5,
+			vy: (Math.random() - 0.5) * 1.5,
 			radius: Math.random() * 5 + 4
 		};
 	}
@@ -116,26 +118,29 @@
 	<!-- Hero Content -->
 	<div class="flex-none px-4 text-center" in:fade={{ duration: 1000 }}>
 		<div class="flex justify-center gap-4 mb-6">
-			<a href="https://github.com/kuzudb/kuzu/releases/tag/v0.8.0" class="bg-orange-500/10 border border-primary/50 rounded-full flex items-center gap-2 px-6 py-2">
+			<a href="//github.com/kuzudb/kuzu/releases/tag/v{latestVersion}" target="_blank" rel="noopener noreferrer"
+			class="bg-orange-500/10 border border-primary/50 rounded-full flex items-center gap-2 px-6 py-2">
 				<Github class="w-4 h-4" />	
 				<span class="text-foreground font-medium animate-pulse">
-					Kùzu version 0.8.0 released
+					Kùzu version {latestVersion} released
 				</span>
 				<ArrowRight class="w-4 h-4" />
 			</a>
 		</div>
 		<h1 class="text-4xl md:text-6xl font-bold mb-6 max-w-4xl mx-auto">
-			An Embeddable, Scalable, Extremely Fast Graph Database
+			An embeddable, scalable, extremely fast graph database
 		</h1>
 		<p class="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-			Built by database experts with a relentless drive towards performance, scalability, and usability!
+			Built by database experts with a relentless drive towards performance, scalability, and usability
 		</p>
 		<div class="flex gap-4 justify-center mb-8">
 			<a href="#install">
-				<Button size="lg" variant="default">Try Kùzu</Button>
+				<Button size="lg" variant="default">Download</Button>
 			</a>
-			<a href="https://docs.kuzudb.com" target="_blank" rel="noopener noreferrer">
-				<Button size="lg" variant="outline">View Documentation</Button>
+			<a href="//github.com/kuzudb/kuzu" target="_blank" rel="noopener noreferrer">
+				<Button size="lg" variant="outline">
+					<i class="fa-brands fa-github"></i>
+					GitHub</Button>
 			</a>
 		</div>
 	</div>

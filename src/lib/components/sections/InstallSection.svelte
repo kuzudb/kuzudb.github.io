@@ -4,8 +4,8 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Terminal, Copy, Check } from 'lucide-svelte';
 	import * as Select from "$lib/components/ui/select";
+	import {latestVersion} from '$lib/utils/LatestVersion.json';
 
-	const { version = "0.8.0" } = $props<{version?: string}>();
 	let userOS = $state("linux");
 	let selectedTab = $state<TabValue>("python");
 	let selectedOSTab = $state(userOS);
@@ -23,7 +23,8 @@
 		{ value: "cpp", label: "C/C++" },
 		{ value: "rust", label: "Rust" },
 		{ value: "go", label: "Go" },
-		{ value: "java", label: "Java" }
+		{ value: "java", label: "Java" },
+		{ value: "wasm", label: "WASM" }
 	];
 
 	const triggerContent = $derived(
@@ -76,17 +77,18 @@
 		nodejs: 'npm install kuzu',
 		cli: {
 			macos: 'brew install kuzu',
-			windows: 'choco install kuzu',
-			linux: 'sudo apt-get install kuzu'
+			windows: `https://github.com/kuzudb/kuzu/releases/download/v${latestVersion}/kuzu_cli-windows-x86_64.zip`,
+			linux: `x86-64: https://github.com/kuzudb/kuzu/releases/download/v${latestVersion}/kuzu_cli-linux-x86_64.tar.gz\naarch64: https://github.com/kuzudb/kuzu/releases/download/v${latestVersion}/kuzu_cli-linux-aarch64.tar.gz`
 		},
 		cpp: {
-			macos: 'https://github.com/kuzudb/kuzu/releases/download/v0.7.1/libkuzu-osx-universal.tar.gz',
-			windows: 'https://github.com/kuzudb/kuzu/releases/download/v0.7.1/libkuzu-windows-x86_64.zip',
-			linux: 'x86-64: https://github.com/kuzudb/kuzu/releases/download/v0.7.1/libkuzu-linux-x86_64.tar.gz\naarch64: https://github.com/kuzudb/kuzu/releases/download/v0.7.1/libkuzu-linux-aarch64.tar.gz '
+			macos: `https://github.com/kuzudb/kuzu/releases/download/v${latestVersion}/libkuzu-osx-universal.tar.gz`,
+			windows: `https://github.com/kuzudb/kuzu/releases/download/v${latestVersion}/libkuzu-windows-x86_64.zip`,
+			linux: `x86-64: https://github.com/kuzudb/kuzu/releases/download/v${latestVersion}/libkuzu-linux-x86_64.tar.gz\naarch64: https://github.com/kuzudb/kuzu/releases/download/v${latestVersion}/libkuzu-linux-aarch64.tar.gz`
 		},
 		rust: 'cargo add kuzu',
 		go: 'go get github.com/kuzudb/go-kuzu',
-		java: `https://central.sonatype.com/artifact/com.kuzudb/kuzu`
+		java: `https://central.sonatype.com/artifact/com.kuzudb/kuzu`,
+		wasm: `npm install kuzu-wasm`
 	};
 </script>
 
@@ -111,7 +113,7 @@
 						</Select.Root>
 					</div>
 				{:else}
-					<TabsList class="grid grid-cols-7 mb-8">
+					<TabsList class="grid grid-cols-8 mb-8">
 						<TabsTrigger value="python">Python</TabsTrigger>
 						<TabsTrigger value="nodejs">Node.js</TabsTrigger>
 						<TabsTrigger value="cli">CLI</TabsTrigger>
@@ -119,6 +121,7 @@
 						<TabsTrigger value="rust">Rust</TabsTrigger>
 						<TabsTrigger value="go">Go</TabsTrigger>
 						<TabsTrigger value="java">Java</TabsTrigger>
+						<TabsTrigger value="wasm">WASM</TabsTrigger>
 					</TabsList>
 				{/if}
 
@@ -269,10 +272,28 @@
 						</Button>
 					</div>
 				</TabsContent>
+
+				<TabsContent value="wasm" class="mt-4">
+					<div class="relative">
+						<pre class="bg-muted p-4 rounded-lg overflow-x-auto"><code>{installCommands.wasm}</code></pre>
+						<Button 
+							variant="ghost" 
+							size="icon" 
+							class="absolute top-2 right-2"
+							onclick={() => copyToClipboard(installCommands.wasm)}
+						>
+							{#if copiedCommand === installCommands.wasm}
+								<Check class="h-4 w-4" />
+							{:else}
+								<Copy class="h-4 w-4" />
+							{/if}
+						</Button>
+					</div>
+				</TabsContent>
 			</Tabs>
 		</div>
 		<p class="mt-6 text-center text-muted-foreground">
-			Version: {version} 
+			Version: {latestVersion}
 		</p>
 	</div>
 </section> 
