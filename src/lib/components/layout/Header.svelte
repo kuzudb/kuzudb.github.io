@@ -38,10 +38,10 @@
 
 			<!-- Desktop Navigation -->
 			<div class="hidden md:flex items-center gap-6">
-				<a href="https://demo.kuzudb.com" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Demo</a>
-				<a href="https://docs.kuzudb.com" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Documentation</a>
-				<a href="https://blog.kuzudb.com" class="hover:text-primary transition-colors">Blog</a>
-				<a href="https://github.com/kuzudb/kuzu" target="_blank" rel="noopener noreferrer">
+				<a href="//demo.kuzudb.com" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Demo</a>
+				<a href="//docs.kuzudb.com" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Documentation</a>
+				<a href="//blog.kuzudb.com" target="_blank" class="hover:text-primary transition-colors">Blog</a>
+				<a href="//github.com/kuzudb/kuzu" target="_blank" rel="noopener noreferrer">
 					<Button variant="ghost" size="icon">
 						<i class="fa-brands fa-github"></i>
 					</Button>
@@ -67,8 +67,8 @@
 		{#if isMenuOpen}
 			<div class="md:hidden absolute w-full bg-background border-b" transition:fly={{ y: -20, duration: 200 }}>
 				<nav class="container mx-auto px-4 py-4 flex flex-col gap-2">
-					<a href="https://docs.kuzudb.com" target="_blank" rel="noopener noreferrer" class="py-2 hover:text-primary transition-colors">Documentation</a>
-					<a href="https://blog.kuzudb.com" class="py-2 hover:text-primary transition-colors">Blog</a>
+					<a href="//docs.kuzudb.com" target="_blank" rel="noopener noreferrer" class="py-2 hover:text-primary transition-colors">Documentation</a>
+					<a href="//blog.kuzudb.com" target="_blank" class="py-2 hover:text-primary transition-colors">Blog</a>
 					<div class="flex gap-2 py-2">
 						<a href="https://github.com/kuzudb/kuzu" target="_blank" rel="noopener noreferrer">
 							<Button variant="ghost" size="icon">

@@ -70,7 +70,8 @@
 				class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto"
 			>
 				<a
-					href="https://github.com/kuzudb/kuzu"
+					href="//github.com/kuzudb/kuzu"
+					target="_blank"
 					class="p-6 bg-background rounded-lg border hover:shadow-lg transition-all"
 				>
 					<i class="fab fa-github text-4xl mb-4 text-primary"></i>
@@ -78,7 +79,8 @@
 					<p class="text-muted-foreground">Star us on GitHub</p>
 				</a>
 				<a
-					href="https://discord.gg/VtX2gw9Rug"
+					href="//discord.gg/VtX2gw9Rug"
+					target="_blank"
 					class="p-6 bg-background rounded-lg border hover:shadow-lg transition-all"
 				>
 					<i class="fab fa-discord text-4xl mb-4 text-primary"></i>
@@ -86,7 +88,8 @@
 					<p class="text-muted-foreground">Join the discussion</p>
 				</a>
 				<a
-					href="https://twitter.com/kuzudb"
+					href="//x.com/kuzudb"
+					target="_blank"
 					class="p-6 bg-background rounded-lg border hover:shadow-lg transition-all"
 				>
 					<i class="fab fa-twitter text-4xl mb-4 text-primary"></i>
@@ -94,7 +97,8 @@
 					<p class="text-muted-foreground">Follow for updates</p>
 				</a>
 				<a
-					href="https://www.youtube.com/@KuzuDB"
+					href="//www.youtube.com/@KuzuDB"
+					target="_blank"
 					class="p-6 bg-background rounded-lg border hover:shadow-lg transition-all"
 				>
 					<i class="fab fa-youtube text-4xl mb-4 text-primary"></i>

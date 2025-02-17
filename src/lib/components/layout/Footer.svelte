@@ -30,9 +30,9 @@
 			<div>
 				<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
 				<ul class="space-y-3">
-					<li><a href="https://docs.kuzudb.com" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-foreground transition-colors text-sm">Documentation</a></li>
-					<li><a href="https://blog.kuzudb.com" class="text-muted-foreground hover:text-foreground transition-colors text-sm">Blog</a></li>
-					<li><a href="https://kuzudb.com/privacy" class="text-muted-foreground hover:text-foreground transition-colors text-sm">Privacy Policy</a></li>
+					<li><a href="//docs.kuzudb.com" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-foreground transition-colors text-sm">Documentation</a></li>
+					<li><a href="//blog.kuzudb.com" target="_blank" class="text-muted-foreground hover:text-foreground transition-colors text-sm">Blog</a></li>
+					<li><a href="//kuzudb.com/privacy" target="_blank" class="text-muted-foreground hover:text-foreground transition-colors text-sm">Privacy Policy</a></li>
 				</ul>
 			</div>
 
