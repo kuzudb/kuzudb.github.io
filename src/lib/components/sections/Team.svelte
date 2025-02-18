@@ -12,7 +12,7 @@
 			linkedin:
 				"https://www.linkedin.com/in/semih-saliho%C4%9Flu-0512612a/",
 			background: [
-				"Stanford University, PhD.",
+				"Stanford University, PhD",
 				"Associate Professor at",
 				"University of Waterloo",
 			],
@@ -23,7 +23,7 @@
 			image: "Ardan.png",
 			linkedin: "https://www.linkedin.com/in/ardan-arac-85b5533a/",
 			background: [
-				"Princeton University, BSE.",
+				"Princeton University, BSE",
 				"ex-Senior Director of Product at",
 				"Google",
 			],
@@ -34,7 +34,7 @@
 			image: "Guodong.png",
 			linkedin: "https://www.linkedin.com/in/guodongjin/",
 			background: [
-				"Renmin University of China, PhD.",
+				"Renmin University of China, PhD",
 				"ex-Postdoc Researcher at",
 				"University of Waterloo",
 			],
@@ -44,27 +44,27 @@
 			role: "Software Engineer & Co-founder",
 			image: "Xiyang.png",
 			linkedin: "https://www.linkedin.com/in/xiyangfeng/",
-			background: ["University of Waterloo, MMath."],
+			background: ["University of Waterloo, MMath"],
 		},
 		{
 			name: "Ziyi Chen",
 			role: "Software Engineer & Co-founder",
 			image: "Ziyi.png",
 			linkedin: "https://www.linkedin.com/in/ziyi-chen-133547178",
-			background: ["University of Waterloo, BCS."],
+			background: ["University of Waterloo, BCS"],
 		},
 		{
 			name: "Chang Liu",
 			role: "DevOps Engineer & Co-founder",
 			image: "Chang.png",
 			linkedin: "https://www.linkedin.com/in/mewim/",
-			background: ["University of Waterloo, MMath."],
+			background: ["University of Waterloo, MMath"],
 		},
 		{
 			name: "Benjamin Winger",
 			role: "Software Engineer",
 			image: "Benjamin.png",
-			background: ["University of Waterloo, BCS."],
+			background: ["University of Waterloo, BCS"],
 		},
 		{
 			name: "Prashanth Rao",
@@ -72,8 +72,8 @@
 			image: "Prashanth.png",
 			linkedin: "https://www.linkedin.com/in/prrao87/",
 			background: [
-				"Simon Fraser University, MSc.",
-				"University of Michigan, MS.",
+				"Simon Fraser University, MSc",
+				"University of Michigan, MS",
 			],
 		},
 	];
