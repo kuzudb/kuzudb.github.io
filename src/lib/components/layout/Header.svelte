@@ -41,11 +41,11 @@
 				<a href="//demo.kuzudb.com" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Demo</a>
 				<a href="//docs.kuzudb.com" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Documentation</a>
 				<a href="//blog.kuzudb.com" target="_blank" class="hover:text-primary transition-colors">Blog</a>
-				<a href="//github.com/kuzudb/kuzu" target="_blank" rel="noopener noreferrer">
-					<Button variant="ghost" size="icon">
-						<i class="fa-brands fa-github"></i>
-					</Button>
+				<a href="//github.com/kuzudb/kuzu" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+					<i class="fa-brands fa-github"></i>
+					GitHub
 				</a>
+
 				<Button variant="ghost" size="icon" onclick={toggleMode}>
 					<Sun class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
 					<Moon class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
