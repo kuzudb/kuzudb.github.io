@@ -111,7 +111,7 @@
 	<div class="absolute inset-0 pointer-events-none">
 		<div 
 			class="absolute h-[500px] aspect-square rounded-full bg-primary/10 blur-[120px] transition-all duration-300 ease-out"
-			style="left: {mouseX}px; top: {mouseY}px; transform: translate(-50%, -50%)"
+			style="left: {mouseX}px; top: {mouseY}px; transform: translate(-50%, -50%); will-change: transform;"
 		></div>
 	</div>
 	
