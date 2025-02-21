@@ -64,7 +64,7 @@
 					</li>
 					<li>
 						<a
-							href="/privacy"
+							href="//kuzudb.com/privacy"
 							class="text-muted-foreground hover:text-foreground transition-colors text-sm"
 							>Privacy Policy</a
 						>
