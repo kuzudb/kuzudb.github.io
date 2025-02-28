@@ -83,6 +83,15 @@
 					<i class="fa-brands fa-github"></i>
 					GitHub
 				</a>
+				<a
+					href="//kuzudb.com/chat"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="hover:text-primary transition-colors"
+				>
+					<i class="fa-brands fa-discord"></i>
+					Discord
+				</a>
 				<Button variant="ghost" size="icon" onclick={toggleMode}>
 					<Sun
 						class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
