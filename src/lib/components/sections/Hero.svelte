@@ -132,7 +132,7 @@
 			>
 				<Github class="w-4 h-4" />
 				<span class="text-foreground font-medium animate-pulse">
-					Kùzu version {latestVersion} released
+					Kuzu version {latestVersion} released
 				</span>
 				<ArrowRight class="w-4 h-4" />
 			</a>

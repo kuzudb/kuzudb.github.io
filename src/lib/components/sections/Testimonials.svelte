@@ -3,7 +3,7 @@
 
 	const testimonials = [
 		{
-			text: "In line with our philosophy of 'building a lakehouse from spare parts', we were looking for an in-process graph database to run lineage queries: Kùzu is very fast and has great foundations as the team behind it, and handles all the strange inferences we throw at it.",
+			text: "In line with our philosophy of 'building a lakehouse from spare parts', we were looking for an in-process graph database to run lineage queries: Kuzu is very fast and has great foundations as the team behind it, and handles all the strange inferences we throw at it.",
 			author: "Jacopo Tagliabue",
 			role: "Founder of",
 			company: "Bauplan Labs",
@@ -16,7 +16,7 @@
 			image: "/community/criccomini.jpg"
 		},
 		{
-			text: "Kùzu is a really good graph database. If DuckDB is as an emerging power in the relational database world, there is Kùzu in the GDBMS world, and it is open source and faithful to the basics.",
+			text: "Kuzu is a really good graph database. If DuckDB is as an emerging power in the relational database world, there is Kuzu in the GDBMS world, and it is open source and faithful to the basics.",
 			author: "Jeong Yitae",
 			role: "@jeongiitae",
 			image: "/community/jandland2.jpg"

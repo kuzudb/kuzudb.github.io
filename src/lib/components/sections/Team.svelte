@@ -83,7 +83,7 @@
 	<div class="container mx-auto">
 		<h2 class="text-3xl font-bold text-center mb-6">Our Team</h2>
 		<p class="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-			Kùzu is built by a team of developers at Kùzu Inc, a company based
+			Kuzu is built by a team of developers at Kùzu Inc, a company based
 			in Waterloo, Ontario, Canada. Reach out to us at <a
 				href="mailto:contact@kuzudb.com"
 				class="text-primary hover:underline">contact@kuzudb.com</a

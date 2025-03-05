@@ -1,6 +1,6 @@
-# Kùzu Website
+# Kuzu Website
 
-This repository hosts the source code for [Kùzu website](https://kuzudb.github.io).
+This repository hosts the source code for [Kuzu website](https://kuzudb.github.io).
 
 ## Test Locally
 
@@ -36,4 +36,4 @@ This repository uses GitHub Actions for continuous integration. The workflow is 
 When a pull request is merged, the workflow will run again to build the website and deploy it to the GitHub Pages automatically.
 
 ## Contributing
-We welcome contributions to Kùzu website. If you are interested in contributing to Kùzu website, please read our [Contributing Guide](CONTRIBUTING.md).
+We welcome contributions to Kuzu website. If you are interested in contributing to Kuzu website, please read our [Contributing Guide](CONTRIBUTING.md).
