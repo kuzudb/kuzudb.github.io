@@ -48,7 +48,7 @@
 </script>
 
 <svelte:head>
-	<title>Kùzu - An embeddable, scalable, extremely fast graph database</title>
+	<title>Kuzu - An embeddable, scalable, extremely fast graph database</title>
 	<meta
 		name="description"
 		content="Built by database experts with a relentless drive towards performance, scalability, and usability."
@@ -112,9 +112,9 @@
 	<!-- Support Section -->
 	<section class="py-20 px-4">
 		<div class="container mx-auto text-center">
-			<h2 class="text-3xl font-bold mb-12">Kùzu Support Options</h2>
+			<h2 class="text-3xl font-bold mb-12">Kuzu Support Options</h2>
 			<p class="text-muted-foreground mb-12 max-w-2xl mx-auto">
-				Kùzu Inc. provides professional support for using Kùzu, ensuring
+				Kùzu Inc. provides professional support for using Kuzu, ensuring
 				timely responses and flexible coverage.
 			</p>
 			<div

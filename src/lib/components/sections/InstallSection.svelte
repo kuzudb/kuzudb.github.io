@@ -94,7 +94,7 @@
 
 <section id="install" class="py-20 px-4">
 	<div class="container mx-auto">
-		<h2 class="text-3xl font-bold text-center mb-12">Install Kùzu</h2>
+		<h2 class="text-3xl font-bold text-center mb-12">Install Kuzu</h2>
 		<div class="max-w-4xl mx-auto">
 			<Tabs value={selectedTab} onValueChange={(val: string) => selectedTab = val as TabValue} class="w-full">
 				{#if isMobile}
