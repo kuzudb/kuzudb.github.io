@@ -186,7 +186,7 @@
 
 	<!-- Newsletter Section -->
 	<section class="py-20 px-4">
-		<div class="container mx-auto max-w-xl text-center">
+		<div class="container mx-auto max-w-xl text-center" id="newsletter">
 			<h2 class="text-3xl font-bold mb-6">Stay Updated</h2>
 			<p class="text-muted-foreground mb-8">
 				Subscribe to our newsletter for the latest updates and news
