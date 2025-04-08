@@ -98,9 +98,9 @@
 				&copy; 2023 - {new Date().getFullYear()} Kùzu Inc. All rights reserved. Website
 				designed by
 				<a
-					href="https://www.maximoff.studio"
+					href="https://www.linkedin.com/in/kmaximoff/"
 					class="text-primary hover:text-foreground transition-colors"
-					>Maximoff.studio</a
+					>Kamran Maksimov</a
 				>
 			</p>
 		</div>
