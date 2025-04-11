@@ -138,13 +138,12 @@
 			</a>
 		</div>
 		<h1 class="text-4xl md:text-6xl font-bold mb-6 max-w-4xl mx-auto">
-			An embeddable, scalable, extremely fast graph database
+			Embedded, scalable, blazing fast graph database
 		</h1>
 		<p
 			class="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
 		>
-			Built by database experts with a relentless drive towards
-			performance, scalability, and usability
+			Simplest way of transforming your data into a knowledge graph
 		</p>
 		<div class="flex gap-4 justify-center mb-8">
 			<a href="//github.com/kuzudb/kuzu">
@@ -156,14 +155,14 @@
 			<a href="#install">
 				<Button size="lg" variant="outline">
 					<i class="fa-solid fa-download"></i>
-					Download</Button
+					Install</Button
 				>
 			</a>
 		</div>
 	</div>
 
 	<!-- Canvas Animation -->
-	<div class="relative w-full h-full min-h-96 max-w-5xl mx-auto">
+	<div class="relative w-full h-full min-h-80 max-w-5xl mx-auto">
 		<canvas bind:this={canvas} class="absolute inset-0 w-full h-full"
 		></canvas>
 	</div>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	import { Code, Database, Zap, Lock } from 'lucide-svelte';
+	import { DatabaseZap, Expand, Code, FolderOpen, LayoutDashboard, Puzzle } from 'lucide-svelte';
 	import type { ComponentType } from 'svelte';
 
 	const features: Array<{
@@ -9,32 +9,42 @@
 		description: string;
 	}> = [
 		{
+			icon: DatabaseZap,
+			title: 'Embedded',
+			description: 'Runs in-process, no external servers. Stores on-disk or in-memory.'
+		},
+		{
+			icon: Expand,
+			title: 'Fast and Scalable',
+			description: 'Columnar storage, vectorized processing, and novel join algorithms. Learn more.'
+		},
+		{
 			icon: Code,
-			title: 'Graph-based Modeling & Querying',
-			description: 'Property graph data model with Cypher query language support'
+			title: 'Cypher',
+			description: 'Property graph data model with Cypher query language support.'
 		},
 		{
-			icon: Database,
-			title: 'Optimized Storage & Execution',
-			description: 'Columnar storage, vectorized processing, and novel join algorithms'
+			icon: FolderOpen,
+			title: 'Open-source',
+			description: 'Free and open-source (MIT licensed) with support options'
 		},
 		{
-			icon: Zap,
-			title: 'Simple Integration',
-			description: 'Embeddable, serverless integration with zero-copy Python support'
+			icon: LayoutDashboard,
+			title: 'Full-featured',
+			description: 'Graph-native full-text search index, HNSW vector index, algorithms package, and more'
 		},
 		{
-			icon: Lock,
-			title: 'Free & Open Source',
-			description: 'MIT Licensed, open-source with enterprise-grade features'
+			icon: Puzzle,
+			title: 'AI and Data Ecosystem',
+			description: 'Works with LangChain, PyTorch Geometric, LlamaIndex, Pandas, Parquet, Iceberg and more'
 		}
 	];
 </script>
 
 <section class="py-20 px-4 bg-muted/50">
 	<div class="container mx-auto">
-		<h2 class="text-3xl font-bold text-center mb-12">Core Features</h2>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+		<h2 class="text-3xl font-bold text-center mb-12">Kuzu at a glance</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			{#each features as feature}
 				<div
 					class="p-6 rounded-lg bg-background border transition-all hover:shadow-lg hover:-translate-y-1"
