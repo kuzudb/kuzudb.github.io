@@ -37,7 +37,7 @@
 		{
 			icon: Puzzle,
 			title: 'AI and Data Ecosystem',
-			description: 'Works with LangChain, PyTorch Geometric, LlamaIndex, Pandas, Parquet, Iceberg and more'
+			description: 'Works with LangChain, PyTorch Geometric, LlamaIndex, Pandas, Parquet, Iceberg, and more'
 		}
 	];
 </script>
