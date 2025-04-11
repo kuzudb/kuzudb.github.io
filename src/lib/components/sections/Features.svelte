@@ -11,18 +11,18 @@
 		{
 			icon: DatabaseZap,
 			title: 'Embedded',
-			description: 'Runs in-process, no external servers. Stores on-disk or in-memory.'
+			description: 'Runs in-process, no external servers. Stores on-disk or in-memory'
 		},
 		{
 			icon: Expand,
 			title: 'Fast and Scalable',
-			description: 'Columnar storage, vectorized processing, and novel join algorithms.',
+			description: 'Columnar storage, vectorized processing, and novel join algorithms',
 			link: 'https://blog.kuzudb.com/post/what-every-gdbms-should-do-and-vision/'
 		},
 		{
 			icon: Code,
 			title: 'Cypher',
-			description: 'Property graph data model with Cypher query language support.',
+			description: 'Property graph data model with Cypher query language support',
 		},
 		{
 			icon: LockOpen,
@@ -44,7 +44,7 @@
 
 <section class="py-20 px-4 bg-muted/50">
 	<div class="container mx-auto">
-		<h2 class="text-3xl font-bold text-center mb-12">Kuzu at a glance</h2>
+		<h2 class="text-3xl font-bold text-center mb-12">Kuzu at a Glance</h2>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			{#each features as feature}
 				<div
