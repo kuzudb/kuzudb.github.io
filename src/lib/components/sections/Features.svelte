@@ -58,11 +58,9 @@
 					<h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
 					<p class="text-muted-foreground">{feature.description}</p>
 					{#if feature.link}
-					<span>
-						<a href={feature.link} class="text-primary">
+						<a href={feature.link} class="text-primary" target="_blank">
 							Learn more
-							</a>
-						</span>
+						</a>
 					{/if}
 				</div>
 			{/each}

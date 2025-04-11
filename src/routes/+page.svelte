@@ -48,10 +48,10 @@
 </script>
 
 <svelte:head>
-	<title>Kuzu - An embeddable, scalable, extremely fast graph database</title>
+	<title>Kuzu - Embedded, scalable, blazing fast graph database</title>
 	<meta
 		name="description"
-		content="Built by database experts with a relentless drive towards performance, scalability, and usability."
+		content="A fast, modern graph database for really large graphs, with vector search and full text search built in"
 	/>
 </svelte:head>
 
