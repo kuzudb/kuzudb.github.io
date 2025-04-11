@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	import { DatabaseZap, Expand, Code, FolderOpen, LayoutDashboard, Puzzle } from 'lucide-svelte';
+	import { DatabaseZap, Expand, Code, LockOpen, LayoutDashboard, Puzzle } from 'lucide-svelte';
 	import type { ComponentType } from 'svelte';
 
 	const features: Array<{
@@ -16,15 +16,16 @@
 		{
 			icon: Expand,
 			title: 'Fast and Scalable',
-			description: 'Columnar storage, vectorized processing, and novel join algorithms. Learn more.'
+			description: 'Columnar storage, vectorized processing, and novel join algorithms.',
+			link: 'https://blog.kuzudb.com/post/what-every-gdbms-should-do-and-vision/'
 		},
 		{
 			icon: Code,
 			title: 'Cypher',
-			description: 'Property graph data model with Cypher query language support.'
+			description: 'Property graph data model with Cypher query language support.',
 		},
 		{
-			icon: FolderOpen,
+			icon: LockOpen,
 			title: 'Open-source',
 			description: 'Free and open-source (MIT licensed) with support options'
 		},
@@ -56,6 +57,13 @@
 					/>
 					<h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
 					<p class="text-muted-foreground">{feature.description}</p>
+					{#if feature.link}
+					<span>
+						<a href={feature.link} class="text-primary">
+							Learn more
+							</a>
+						</span>
+					{/if}
 				</div>
 			{/each}
 		</div>

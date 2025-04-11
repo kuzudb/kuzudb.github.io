@@ -143,7 +143,7 @@
 		<p
 			class="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
 		>
-			Simplest way of transforming your data into a knowledge graph
+			Kuzu is the simplest way of transforming your data into a knowledge graph
 		</p>
 		<div class="flex gap-4 justify-center mb-8">
 			<a href="//github.com/kuzudb/kuzu">
