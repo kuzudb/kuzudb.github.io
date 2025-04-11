@@ -48,10 +48,10 @@
 </script>
 
 <svelte:head>
-	<title>Kuzu - An embeddable, scalable, extremely fast graph database</title>
+	<title>Kuzu - Embedded, scalable, blazing fast graph database</title>
 	<meta
 		name="description"
-		content="Built by database experts with a relentless drive towards performance, scalability, and usability."
+		content="A fast, modern graph database for really large graphs, with vector search and full text search built in"
 	/>
 </svelte:head>
 
@@ -185,7 +185,7 @@
 	</section>
 
 	<!-- Newsletter Section -->
-	<section class="py-20 px-4">
+	<section class="py-20 px-4 scroll-mt-20">
 		<div class="container mx-auto max-w-xl text-center" id="newsletter">
 			<h2 class="text-3xl font-bold mb-6">Stay Updated</h2>
 			<p class="text-muted-foreground mb-8">

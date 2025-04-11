@@ -92,7 +92,7 @@
 	};
 </script>
 
-<section id="install" class="py-20 px-4">
+<section id="install" class="py-20 px-4 scroll-mt-20">
 	<div class="container mx-auto">
 		<h2 class="text-3xl font-bold text-center mb-12">Install Kuzu</h2>
 		<div class="max-w-4xl mx-auto">

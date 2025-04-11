@@ -15,8 +15,7 @@
 					Kù-zu ('bright' + 'to know') is a Sumerian word for "wisdom"
 				</p>
 				<p class="text-muted-foreground text-sm">
-					A high-performance graph database management system designed
-					for complex graph analytics
+					A fast, modern graph database for really large graphs, with vector search and full text search built in
 				</p>
 				<div class="flex space-x-4 pt-2">
 					<a
