@@ -10,8 +10,8 @@
 	}> = [
 		{
 			icon: DatabaseZap,
-			title: 'Embedded',
-			description: 'Runs in-process, no external servers. Stores on-disk or in-memory'
+			title: 'Runs In-process,',
+			description: 'Embedded, no external servers. Stores on-disk or in-memory'
 		},
 		{
 			icon: Expand,
