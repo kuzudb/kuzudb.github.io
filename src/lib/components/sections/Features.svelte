@@ -25,11 +25,6 @@
 			description: 'Property graph data model with Cypher query language support',
 		},
 		{
-			icon: LockOpen,
-			title: 'Open-source',
-			description: 'Free and open-source (MIT licensed) with support options'
-		},
-		{
 			icon: LayoutDashboard,
 			title: 'Full-featured',
 			description: 'Graph-native full-text search index, HNSW vector index, algorithms package, and more'
@@ -38,7 +33,12 @@
 			icon: Puzzle,
 			title: 'AI and Data Ecosystem',
 			description: 'Works with LangChain, PyTorch Geometric, LlamaIndex, Pandas, Parquet, Iceberg, and more'
-		}
+		},
+		{
+			icon: LockOpen,
+			title: 'Open-source',
+			description: 'Free and open-source (MIT licensed) with support options'
+		},
 	];
 </script>
 
