@@ -143,7 +143,7 @@
 		<p
 			class="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
 		>
-			Kuzu is the simplest way to manage knowledge graphs and vectors.
+			The easiest way to manage knowledge graphs and vectors.
 		</p>
 		<div class="flex gap-4 justify-center mb-8">
 			<a href="//github.com/kuzudb/kuzu">
