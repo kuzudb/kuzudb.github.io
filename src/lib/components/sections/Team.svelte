@@ -76,6 +76,13 @@
 				"University of Michigan, MS",
 			],
 		},
+		{
+			name: "Siddhartha Sahu",
+			role: "Software Engineer",
+			image: "Siddhartha.png",
+			linkedin: "https://www.linkedin.com/in/siddharthasahu/",
+			background: ["University of Waterloo, PhD, Computer Science"]
+		}
 	];
 </script>
 
@@ -90,7 +97,7 @@
 			>.
 		</p>
 		<div
-			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-6xl mx-auto"
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-6xl mx-auto"
 		>
 			{#each teamMembers as member}
 				<div class="h-full" in:fly={{ y: 20, duration: 600 }}>
