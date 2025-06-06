@@ -82,6 +82,13 @@
 			image: "Siddhartha.png",
 			linkedin: "https://www.linkedin.com/in/siddharthasahu/",
 			background: ["University of Waterloo, PhD, Computer Science"]
+		},
+		{
+			name: "Cihan Bıyıkoğlu",
+			role: "Advisor",
+			image: "Cihan.png",
+			linkedin: "https://www.linkedin.com/in/cihan-b/",
+			background: ["Head of Product at RMS", "ex-VP of Product Management at Databricks"]
 		}
 	];
 </script>
@@ -97,7 +104,7 @@
 			>.
 		</p>
 		<div
-			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-6xl mx-auto"
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8 max-w-8xl mx-auto"
 		>
 			{#each teamMembers as member}
 				<div class="h-full" in:fly={{ y: 20, duration: 600 }}>
