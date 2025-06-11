@@ -12,7 +12,7 @@
   let viewBox = $derived(iconOnly ? "0 0 56 56" : "0 0 200 56");
 </script>
 
-<a href="/" class="inline-block">
+<a href="/" class="inline-block pt-2">
   <div
     class={`inline-flex ${className}`}
   >
