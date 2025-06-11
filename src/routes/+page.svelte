@@ -128,7 +128,7 @@
 							Use case-specific advice and custom development
 						</li>
 					</ul>
-					<a href="mailto:contact@kuzudb.com">
+					<a href="/contact">
 						<Button variant="default">Contact Us</Button>
 					</a>
 				</div>

@@ -57,10 +57,9 @@
 			<div
 				class="hidden md:flex items-center gap-4 flex-grow justify-end"
 			>
-				<a
-					href="mailto:contact@kuzudb.com"
+				<a  href="/contact"
 					rel="noopener noreferrer"
-					class="text-primary hover:text-white transition-colors">Support & Consultancy</a
+					class="text-primary hover:text-foreground transition-colors">Support & Consultancy</a
 				>
 				<a
 					href="https://demo.kuzudb.com"
