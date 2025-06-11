@@ -67,7 +67,7 @@
 			<h2 class="text-3xl font-bold mb-12">Support & Consultancy</h2>
 			<p class="text-muted-foreground mb-12 max-w-2xl mx-auto">
 				Kùzu Inc. provides professional support and consultancy for using Kuzu 
-				in <a class="underline decoration-primary text-white">agentic memory, graph AI</a> as well as other domains that use knowledge graphs. 
+				in <a class="underline decoration-primary text-foreground">agentic memory, graph AI</a> as well as other domains that use knowledge graphs. 
 			</p>
 			<div
 				class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
