@@ -89,7 +89,7 @@
 			image: "Cihan.png",
 			linkedin: "https://www.linkedin.com/in/cihan-b/",
 			background: ["Head of Product at RMS", "ex-VP of Product Management at Databricks"]
-		}
+		},
 	];
 </script>
 
