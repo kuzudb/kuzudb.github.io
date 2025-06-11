@@ -60,6 +60,82 @@
 	<Features />
 	<InstallSection />
 	<Testimonials />
+
+	<!-- Support Section -->
+	<section class="py-20 px-4">
+		<div class="container mx-auto text-center">
+			<h2 class="text-3xl font-bold mb-12">Support & Consultancy</h2>
+			<p class="text-muted-foreground mb-12 max-w-2xl mx-auto">
+				Kùzu Inc. provides professional support and consultancy for using Kuzu 
+				in <a class="underline decoration-primary text-white">agentic memory, graph AI</a> as well as other domains that use knowledge graphs. 
+			</p>
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+			>
+				<div
+					class="p-8 bg-background rounded-lg border hover:shadow-lg transition-all"
+				>
+					<h3 class="text-2xl font-semibold mb-6">
+						Community Support
+					</h3>
+					<div class="h-px w-full bg-border mb-6"></div>
+					<ul class="space-y-4 mb-8 text-left">
+						<li class="flex items-center">
+							<i
+								class="fa-regular fa-circle-check text-primary mr-2"
+							></i>
+							Public issue tracker
+						</li>
+						<li class="flex items-center text-muted-foreground">
+							<i class="fa-regular fa-circle-xmark mr-2"></i>
+							No guaranteed response time
+						</li>
+						<li class="flex items-center text-muted-foreground">
+							<i class="fa-regular fa-circle-xmark mr-2"></i>
+							No guaranteed resolution
+						</li>
+					</ul>
+					<a
+						href="//github.com/kuzudb/kuzu/"
+						target="_blank"
+						class="inline-block"
+					>
+						<Button variant="outline">Get Started</Button>
+					</a>
+				</div>
+				<div
+					class="relative p-8 bg-background rounded-lg border-1 border-primary shadow-sm transition-all animate-glow"
+				>
+					<h3 class="text-2xl font-semibold mb-6">Custom Support & Consultancy</h3>
+					<div class="h-px w-full bg-primary/20 mb-6"></div>
+					<ul class="space-y-4 mb-8 text-left">
+						<li class="flex items-center">
+							<i
+								class="fa-regular fa-circle-check text-primary mr-2"
+							></i>
+							Deployment advice
+						</li>
+						<li class="flex items-center">
+							<i
+								class="fa-regular fa-circle-check text-primary mr-2"
+							></i>
+							Feature prioritization
+						</li>
+						<li class="flex items-center">
+							<i
+								class="fa-regular fa-circle-check text-primary mr-2"
+							></i>
+							Use case-specific advice and custom development
+						</li>
+					</ul>
+					<a href="/contact">
+						<Button variant="default">Contact Us</Button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<Team />
 
 	<!-- Community Section -->
@@ -109,80 +185,7 @@
 		</div>
 	</section>
 
-	<!-- Support Section -->
-	<section class="py-20 px-4">
-		<div class="container mx-auto text-center">
-			<h2 class="text-3xl font-bold mb-12">Kuzu Support Options</h2>
-			<p class="text-muted-foreground mb-12 max-w-2xl mx-auto">
-				Kùzu Inc. provides professional support for using Kuzu, ensuring
-				timely responses and flexible coverage.
-			</p>
-			<div
-				class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
-			>
-				<div
-					class="p-8 bg-background rounded-lg border hover:shadow-lg transition-all"
-				>
-					<h3 class="text-2xl font-semibold mb-6">
-						Community Support
-					</h3>
-					<div class="h-px w-full bg-border mb-6"></div>
-					<ul class="space-y-4 mb-8 text-left">
-						<li class="flex items-center">
-							<i
-								class="fa-regular fa-circle-check text-primary mr-2"
-							></i>
-							Public issue tracker
-						</li>
-						<li class="flex items-center text-muted-foreground">
-							<i class="fa-regular fa-circle-xmark mr-2"></i>
-							No guaranteed response time
-						</li>
-						<li class="flex items-center text-muted-foreground">
-							<i class="fa-regular fa-circle-xmark mr-2"></i>
-							No guaranteed resolution
-						</li>
-					</ul>
-					<a
-						href="//github.com/kuzudb/kuzu/"
-						target="_blank"
-						class="inline-block"
-					>
-						<Button variant="outline">Get Started</Button>
-					</a>
-				</div>
-				<div
-					class="relative p-8 bg-background rounded-lg border-1 border-primary shadow-sm transition-all animate-glow"
-				>
-					<h3 class="text-2xl font-semibold mb-6">Custom Support</h3>
-					<div class="h-px w-full bg-primary/20 mb-6"></div>
-					<ul class="space-y-4 mb-8 text-left">
-						<li class="flex items-center">
-							<i
-								class="fa-regular fa-circle-check text-primary mr-2"
-							></i>
-							Private issue tracker
-						</li>
-						<li class="flex items-center">
-							<i
-								class="fa-regular fa-circle-check text-primary mr-2"
-							></i>
-							Guaranteed response time
-						</li>
-						<li class="flex items-center">
-							<i
-								class="fa-regular fa-circle-check text-primary mr-2"
-							></i>
-							Deployment and performance advice
-						</li>
-					</ul>
-					<a href="mailto:contact@kuzudb.com">
-						<Button variant="default">Contact Us</Button>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+	
 
 	<!-- Newsletter Section -->
 	<section class="py-20 px-4 scroll-mt-20">
