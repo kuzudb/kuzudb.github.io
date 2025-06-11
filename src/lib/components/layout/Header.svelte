@@ -5,9 +5,11 @@
 	import { fade, fly } from "svelte/transition";
 	import { Spring } from "svelte/motion";
 	import KuzuLogo from "$lib/components/KuzuLogo.svelte";
+	import { page } from '$app/stores';
 
 	let isMenuOpen = $state(false);
 	let scrolled = $state(false);
+	let isContactPage = $derived($page.url.pathname === '/contact');
 
 	function handleScroll() {
 		scrolled = window.scrollY > 0;
@@ -57,10 +59,17 @@
 			<div
 				class="hidden md:flex items-center gap-4 flex-grow justify-end"
 			>
-				<a  href="/contact"
-					rel="noopener noreferrer"
-					class="text-primary hover:text-foreground transition-colors">Support & Consultancy</a
-				>
+				{#if isContactPage}
+					<a href="/"
+						rel="noopener noreferrer"
+						class="text-primary hover:text-foreground transition-colors">Home Page</a
+					>
+				{:else}
+					<a href="/contact"
+						rel="noopener noreferrer"
+						class="text-primary hover:text-foreground transition-colors">Support & Consultancy</a
+					>
+				{/if}
 				<a
 					href="https://demo.kuzudb.com"
 					target="_blank"
@@ -85,7 +94,7 @@
 					class="hover:text-primary transition-colors"
 				>
 					<i class="fa-brands fa-github"></i>
-					GitHub
+					<span class="transition-all duration-300" class:hidden={scrolled}>GitHub</span>
 				</a>
 				<a
 					href="//kuzudb.com/chat"
@@ -94,7 +103,7 @@
 					class="hover:text-primary transition-colors"
 				>
 					<i class="fa-brands fa-discord"></i>
-					Discord
+					<span class="transition-all duration-300" class:hidden={scrolled}>Discord</span>
 				</a>
 				<Button variant="ghost" size="icon" onclick={toggleMode}>
 					<Sun
