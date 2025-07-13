@@ -24,7 +24,8 @@
 		{ value: "rust", label: "Rust" },
 		{ value: "go", label: "Go" },
 		{ value: "java", label: "Java" },
-		{ value: "wasm", label: "WASM" }
+		{ value: "swift", label: "Swift" },
+		{ value: "wasm", label: "WASM" },
 	];
 
 	const triggerContent = $derived(
@@ -88,7 +89,8 @@
 		rust: 'cargo add kuzu',
 		go: 'go get github.com/kuzudb/go-kuzu',
 		java: `https://central.sonatype.com/artifact/com.kuzudb/kuzu`,
-		wasm: `npm install kuzu-wasm`
+		wasm: `npm install kuzu-wasm`, 
+		swift: `.package(url: "https://github.com/kuzudb/kuzu-swift/", branch: "v${latestVersion}")`
 	};
 </script>
 
@@ -113,7 +115,7 @@
 						</Select.Root>
 					</div>
 				{:else}
-					<TabsList class="grid grid-cols-8 mb-8">
+					<TabsList class="grid grid-cols-9 mb-9">
 						<TabsTrigger value="python">Python</TabsTrigger>
 						<TabsTrigger value="nodejs">Node.js</TabsTrigger>
 						<TabsTrigger value="cli">CLI</TabsTrigger>
@@ -121,6 +123,7 @@
 						<TabsTrigger value="rust">Rust</TabsTrigger>
 						<TabsTrigger value="go">Go</TabsTrigger>
 						<TabsTrigger value="java">Java</TabsTrigger>
+						<TabsTrigger value="swift">Swift</TabsTrigger>
 						<TabsTrigger value="wasm">WASM</TabsTrigger>
 					</TabsList>
 				{/if}
@@ -265,6 +268,24 @@
 							onclick={() => copyToClipboard(installCommands.java)}
 						>
 							{#if copiedCommand === installCommands.java}
+								<Check class="h-4 w-4" />
+							{:else}
+								<Copy class="h-4 w-4" />
+							{/if}
+						</Button>
+					</div>
+				</TabsContent>
+
+				<TabsContent value="swift" class="mt-4">
+					<div class="relative">
+						<pre class="bg-muted p-4 rounded-lg overflow-x-auto"><code>{installCommands.swift}</code></pre>
+						<Button 
+							variant="ghost" 
+							size="icon" 
+							class="absolute top-2 right-2"
+							onclick={() => copyToClipboard(installCommands.swift)}
+						>
+							{#if copiedCommand === installCommands.swift}
 								<Check class="h-4 w-4" />
 							{:else}
 								<Copy class="h-4 w-4" />
