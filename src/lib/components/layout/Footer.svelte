@@ -49,7 +49,7 @@
 				</div>
 			</div>
 
-			<div class="flex flex-row gap-20">
+			<div class="flex flex-col md:flex-row gap-20">
 				<div>
 					<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
 					<ul class="space-y-3">

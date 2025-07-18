@@ -53,9 +53,15 @@
 	];
 </script>
 
-<section class="relative py-20 bg-background overflow-hidden">
+
+<section class="relative py-20 bg-background overflow-auto">
   <div class="container max-w-7xl mx-auto">
-    <div class="h-[800px] overflow-hidden relative">
+    <div class=" h-[400px] md:h-[800px] overflow-y-auto relative [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:rounded-full
+  [&::-webkit-scrollbar-track]:bg-background
+  [&::-webkit-scrollbar-thumb]:rounded-full
+  [&::-webkit-scrollbar-thumb]:bg-muted">
+
       <div class="columns-1 md:columns-2 lg:columns-3 gap-6">
         {#each testimonials as testimonial}
           <div class="mb-6 break-inside-avoid bg-background border rounded-lg p-6">
