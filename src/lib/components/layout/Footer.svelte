@@ -5,7 +5,7 @@
 
 <footer class="bg-muted mt-20 border-t">
 	<div class="container mx-auto px-4 py-12">
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+		<div class="justify-between flex flex-row gap-12">
 			<div class="space-y-4">
 				<KuzuLogo
 					textClass="text-muted-foreground"
@@ -28,7 +28,7 @@
 					<a
 						href="https://twitter.com/kuzudb"
 						class="text-muted-foreground hover:text-foreground transition-colors"
-						aria-label="Twitter"
+						aria-label="X"
 					>
 						<i class="fa-brands fa-x-twitter"></i>
 					</a>
@@ -39,56 +39,65 @@
 					>
 						<i class="fa-brands fa-discord"></i>
 					</a>
+					<a
+						href="https://www.youtube.com/@KuzuDB"
+						class="text-muted-foreground hover:text-foreground transition-colors"
+						aria-label="Youtube"
+					>
+						<i class="fa-brands fa-youtube"></i>
+					</a>
 				</div>
 			</div>
 
-			<div>
-				<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-				<ul class="space-y-3">
-					<li>
-						<a
-							href="https://docs.kuzudb.com"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="text-muted-foreground hover:text-foreground transition-colors text-sm"
-							>Documentation</a
-						>
-					</li>
-					<li>
-						<a
-							href="https://blog.kuzudb.com"
-							class="text-muted-foreground hover:text-foreground transition-colors text-sm"
-							>Blog</a
-						>
-					</li>
-					<li>
-						<a
-							href="//kuzudb.com/privacy"
-							class="text-muted-foreground hover:text-foreground transition-colors text-sm"
-							>Privacy Policy</a
-						>
-					</li>
-				</ul>
-			</div>
+			<div class="flex flex-row gap-20">
+				<div>
+					<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+					<ul class="space-y-3">
+						<li>
+							<a
+								href="https://docs.kuzudb.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-muted-foreground hover:text-foreground transition-colors text-sm"
+								>Documentation</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://blog.kuzudb.com"
+								class="text-muted-foreground hover:text-foreground transition-colors text-sm"
+								>Blog</a
+							>
+						</li>
+						<li>
+							<a
+								href="//kuzudb.com/privacy"
+								class="text-muted-foreground hover:text-foreground transition-colors text-sm"
+								>Privacy Policy</a
+							>
+						</li>
+					</ul>
+				</div>
 
-			<div>
-				<h3 class="text-lg font-semibold mb-4">Contact</h3>
-				<ul class="space-y-3">
-					<li class="flex items-center space-x-2">
-						<Mail class="h-4 w-4 text-muted-foreground" />
-						<a
-							href="mailto:contact@kuzudb.com"
-							class="text-muted-foreground hover:text-foreground transition-colors text-sm"
-							>contact@kuzudb.com</a
-						>
-					</li>
-					<li class="flex items-center space-x-2">
-						<MapPin class="h-4 w-4 text-muted-foreground" />
-						<span class="text-muted-foreground text-sm"
-							>295 Hagey Blvd, Waterloo, ON</span
-						>
-					</li>
-				</ul>
+				<div>
+					<h3 class="text-lg font-semibold mb-4">Contact</h3>
+					<ul class="space-y-3">
+						<li class="flex items-center space-x-2">
+							<Mail class="h-4 w-4 text-muted-foreground" />
+							<a
+								href="mailto:contact@kuzudb.com"
+								class="text-muted-foreground hover:text-foreground transition-colors text-sm"
+								>contact@kuzudb.com</a
+							>
+						</li>
+						<li class="flex items-center space-x-2">
+							<MapPin class="h-4 w-4 text-muted-foreground" />
+							<span class="text-muted-foreground text-sm"
+								>295 Hagey Blvd, Waterloo, ON</span
+							>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 

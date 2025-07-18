@@ -123,7 +123,8 @@
 
 	<!-- Hero Content -->
 	<div class="flex-none px-4 text-center" in:fade={{ duration: 1000 }}>
-		<div class="flex justify-center gap-4 mb-6">
+		<div class="flex flex-row gap-6 justify-center">
+		<!-- <div class="flex  gap-4 mb-6">
 			<a
 				href="//github.com/kuzudb/kuzu/releases/tag/v{latestVersion}"
 				target="_blank"
@@ -136,7 +137,22 @@
 				</span>
 				<ArrowRight class="w-4 h-4" />
 			</a>
+		</div> -->
+		<div class="flex  gap-4 mb-6">
+			<a
+				href="/product"
+				target="_self"
+				rel="noopener noreferrer"
+				class="bg-orange-500/10 border border-primary/50 rounded-full flex items-center gap-2 px-6 py-2"
+			>
+				<i class="fa fa-star" aria-hidden="true"></i>
+				<span class="text-foreground font-medium animate-pulse">
+					Enterprise Edition Waitlist
+				</span>
+				<ArrowRight class="w-4 h-4" />
+			</a>
 		</div>
+	</div>
 		<h1 class="text-4xl md:text-6xl font-bold mb-6 max-w-4xl mx-auto">
 			Embedded, scalable, blazing fast graph database
 		</h1>

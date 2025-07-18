@@ -5,6 +5,7 @@
 	import Features from "$lib/components/sections/Features.svelte";
 	import InstallSection from "$lib/components/sections/InstallSection.svelte";
 	import Testimonials from "$lib/components/sections/Testimonials.svelte";
+	import Enterprise from "$lib/components/sections/Enterprise.svelte";
 	import Team from "$lib/components/sections/Team.svelte";
 
 	let email = "";
@@ -57,9 +58,10 @@
 
 <div class="relative">
 	<Hero />
+	<Enterprise />
 	<Features />
 	<InstallSection />
-	<Testimonials />
+
 
 	<!-- Support Section -->
 	<section class="py-20 px-4">
@@ -73,7 +75,7 @@
 				class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
 			>
 				<div
-					class="p-8 bg-background rounded-lg border hover:shadow-lg transition-all"
+					class="p-8 bg-background rounded-lg border hover:shadow-lg transition-all flex flex-col h-full"
 				>
 					<h3 class="text-2xl font-semibold mb-6">
 						Community Support
@@ -98,7 +100,7 @@
 					<a
 						href="//github.com/kuzudb/kuzu/"
 						target="_blank"
-						class="inline-block"
+						class="inline-block mt-auto"
 					>
 						<Button variant="outline">Get Started</Button>
 					</a>
@@ -136,54 +138,15 @@
 		</div>
 	</section>
 
-	<Team />
-
 	<!-- Community Section -->
-	<section class="py-20 px-4 bg-muted/50">
+	<section class="pt-20 px-4 bg-background">
 		<div class="container mx-auto text-center">
-			<h2 class="text-3xl font-bold mb-12">Join Our Community</h2>
-			<div
-				class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto"
-			>
-				<a
-					href="//github.com/kuzudb/kuzu"
-					target="_blank"
-					class="p-6 bg-background rounded-lg border hover:shadow-lg transition-all"
-				>
-					<i class="fab fa-github text-4xl mb-4 text-primary"></i>
-					<h3 class="text-xl font-semibold mb-2">GitHub</h3>
-					<p class="text-muted-foreground">Star us on GitHub</p>
-				</a>
-				<a
-					href="//discord.gg/VtX2gw9Rug"
-					target="_blank"
-					class="p-6 bg-background rounded-lg border hover:shadow-lg transition-all"
-				>
-					<i class="fab fa-discord text-4xl mb-4 text-primary"></i>
-					<h3 class="text-xl font-semibold mb-2">Discord</h3>
-					<p class="text-muted-foreground">Join the discussion</p>
-				</a>
-				<a
-					href="//x.com/kuzudb"
-					target="_blank"
-					class="p-6 bg-background rounded-lg border hover:shadow-lg transition-all"
-				>
-					<i class="fab fa-twitter text-4xl mb-4 text-primary"></i>
-					<h3 class="text-xl font-semibold mb-2">Twitter</h3>
-					<p class="text-muted-foreground">Follow for updates</p>
-				</a>
-				<a
-					href="//www.youtube.com/@KuzuDB"
-					target="_blank"
-					class="p-6 bg-background rounded-lg border hover:shadow-lg transition-all"
-				>
-					<i class="fab fa-youtube text-4xl mb-4 text-primary"></i>
-					<h3 class="text-xl font-semibold mb-2">YouTube</h3>
-					<p class="text-muted-foreground">Watch tutorials</p>
-				</a>
-			</div>
+			<h2 class="text-3xl font-bold">Join Our Community</h2>
+			<Testimonials />
 		</div>
 	</section>
+
+	
 
 	
 
