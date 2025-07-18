@@ -5,9 +5,6 @@
 <section class="py-20 px-4 bg-muted/50">
     <div class="container max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold mb-12 text-center">Products</h2>
-        <p class="text-muted-foreground mb-8 text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        </p>
         <div class="grid grid-cols-1 md:grid-cols-8 gap-8 max-w-6xl mx-auto">
             <!-- Logo Scroll -->
             <div class="p-8 bg-background rounded-lg border hover:shadow-lg transition-all col-span-3 flex flex-col h-[36rem] min-h-[28rem]">
