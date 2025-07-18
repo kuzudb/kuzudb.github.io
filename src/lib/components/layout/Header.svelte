@@ -10,6 +10,7 @@
 	let isMenuOpen = $state(false);
 	let scrolled = $state(false);
 	let isContactPage = $derived($page.url.pathname === '/contact');
+	let isProductPage = $derived($page.url.pathname === '/product')
 
 	function handleScroll() {
 		scrolled = window.scrollY > 0;
@@ -70,6 +71,18 @@
 						class="text-primary hover:text-foreground transition-colors">Support & Consultancy</a
 					>
 				{/if}
+				{#if isProductPage}
+					<a href="/"
+						rel="noopener noreferrer"
+						class="text-foreground hover:text-primary transition-colors">Home Page</a
+					>
+				{:else}
+					<a href="/product"
+						rel="noopener noreferrer"
+						class="text-foreground hover:text-primary transition-colors">Product</a
+					>
+				{/if}
+
 				<a
 					href="https://demo.kuzudb.com"
 					target="_blank"
@@ -96,7 +109,7 @@
 					<i class="fa-brands fa-github"></i>
 					<span class="transition-all duration-300" class:hidden={scrolled}>GitHub</span>
 				</a>
-				<a
+				<!-- <a
 					href="//kuzudb.com/chat"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -104,7 +117,7 @@
 				>
 					<i class="fa-brands fa-discord"></i>
 					<span class="transition-all duration-300" class:hidden={scrolled}>Discord</span>
-				</a>
+				</a> -->
 				<Button variant="ghost" size="icon" onclick={toggleMode}>
 					<Sun
 						class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"

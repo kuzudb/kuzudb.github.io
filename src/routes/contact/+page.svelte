@@ -90,21 +90,28 @@
 				</p>
 				
 				<div class="space-y-4">
-					<div class="flex items-center gap-3">
-						<i class="fas fa-envelope text-primary"></i>
-						<a href="mailto:contact@kuzudb.com" class="hover:text-primary transition-colors">
+					<div class="flex items-center gap-4">
+						<span class="w-7 h-7 flex items-center justify-center">
+							<i class="fas fa-envelope text-primary text-[1.5rem]"></i>
+						</span>
+						<a href="mailto:contact@kuzudb.com" class="hover:text-primary transition-colors text-md">
 							contact@kuzudb.com
 						</a>
 					</div>
-					<div class="flex items-center gap-3">
-						<i class="fab fa-github text-primary"></i>
-						<a href="https://github.com/kuzudb/kuzu" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+					<div class="flex items-center gap-4">
+						<span class="w-7 h-7 flex items-center justify-center">
+							<i class="fab fa-github text-primary text-[1.5rem]"></i>
+						</span>
+						<a href="https://github.com/kuzudb/kuzu" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors text-md">
 							github.com/kuzudb/kuzu
 						</a>
 					</div>
-					<div class="flex items-center gap-3">
-						<i class="fab fa-discord text-primary"></i>
-						<a href="https://discord.gg/VtX2gw9Rug" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+					
+					<div class="flex items-center gap-4">
+						<span class="w-7 h-7 flex items-center justify-center">
+							<i class="fab fa-discord text-primary text-[1.5rem]"></i>
+						</span>
+						<a href="https://discord.gg/VtX2gw9Rug" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors text-md">
 							Join our Discord
 						</a>
 					</div>
