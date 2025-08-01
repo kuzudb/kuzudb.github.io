@@ -76,6 +76,10 @@
                             <img src="/img/visteon.png" loading="lazy" alt="Visteon" class="block dark:hidden h-12 w-auto max-w-[120px] object-contain" role="presentation" />
                             <img src="/img/visteon-light.png" loading="lazy" alt="Visteon" class="hidden dark:block h-12 w-auto max-w-[120px] object-contain" role="presentation" />
                         </div>
+                        <div class="flex items-center justify-center" aria-hidden="true">
+                            <img src="/img/sunlife-light.png" loading="lazy" alt="Sunlife" class="block dark:hidden h-12 w-auto max-w-[120px] object-contain" role="presentation" />
+                            <img src="/img/sunlife.png" loading="lazy" alt="Sunlife" class="hidden dark:block h-12 w-auto max-w-[120px] object-contain" role="presentation" />
+                        </div>
                         <!-- Duplicate for seamless scroll -->
                         <div class="flex items-center justify-center" aria-hidden="true">
                             <img src="/img/jpmorgan.png" loading="lazy" alt="JPMorgan" class="block dark:hidden h-12 w-auto max-w-[120px] object-contain" role="presentation" />
@@ -95,6 +99,10 @@
                         <div class="flex items-center justify-center" aria-hidden="true">
                             <img src="/img/visteon.png" loading="lazy" alt="Visteon" class="block dark:hidden h-12 w-auto max-w-[120px] object-contain" role="presentation" />
                             <img src="/img/visteon-light.png" loading="lazy" alt="Visteon" class="hidden dark:block h-12 w-auto max-w-[120px] object-contain" role="presentation" />
+                        </div>
+                        <div class="flex items-center justify-center" aria-hidden="true">
+                            <img src="/img/sunlife-light.png" loading="lazy" alt="Sunlife" class="block dark:hidden h-12 w-auto max-w-[120px] object-contain" role="presentation" />
+                            <img src="/img/sunlife.png" loading="lazy" alt="Sunlife" class="hidden dark:block h-12 w-auto max-w-[120px] object-contain" role="presentation" />
                         </div>
                     </div>
                 </div>

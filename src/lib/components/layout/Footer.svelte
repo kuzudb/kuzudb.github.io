@@ -5,7 +5,7 @@
 
 <footer class="bg-muted mt-20 border-t">
 	<div class="container mx-auto px-4 py-12">
-		<div class="justify-between flex flex-row gap-12">
+		<div class="justify-between flex flex-col md:flex-row gap-12">
 			<div class="space-y-4">
 				<KuzuLogo
 					textClass="text-muted-foreground"
@@ -109,6 +109,12 @@
 					href="https://www.linkedin.com/in/kmaximoff/"
 					class="text-primary hover:text-foreground transition-colors"
 					>Kamran Maksimov</a
+				>
+				and 
+				<a
+					href="https://www.linkedin.com/in/lily-song-b82a18284/"
+					class="text-primary hover:text-foreground transition-colors"
+					>Lily Song</a
 				>
 			</p>
 		</div>
