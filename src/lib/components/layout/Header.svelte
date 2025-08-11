@@ -152,6 +152,22 @@
 			>
 				<nav class="container mx-auto px-4 py-4 flex flex-col gap-2">
 					<a
+					href="/contact"
+					target="_self"
+					rel="noopener noreferrer"
+					class="py-2 hover:text-primary transition-colors"
+					> 	
+						Support & Consultancy
+					</a>
+					<a
+					href="/product"
+					target="_self"
+					rel="noopener noreferrer"
+					class="py-2 hover:text-primary transition-colors"
+					> 	
+						Product
+					</a>
+					<a
 						href="https://docs.kuzudb.com"
 						target="_blank"
 						rel="noopener noreferrer"

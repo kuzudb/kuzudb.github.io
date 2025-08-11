@@ -5,9 +5,9 @@
 <section class="py-20 px-4 bg-muted/50">
     <div class="container max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold mb-12 text-center">Products</h2>
-        <div class="grid grid-cols-1 md:grid-cols-8 gap-8 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-6xl mx-auto">
             <!-- Logo Scroll -->
-            <div class="p-8 bg-background rounded-lg border hover:shadow-lg transition-all col-span-3 flex flex-col h-[36rem] min-h-[28rem]">
+            <div class="p-8 bg-background rounded-lg border hover:shadow-lg transition-all flex flex-col h-[36rem] min-h-[28rem] mx-auto w-full max-w-md md:mr-8">
                 <h3 class="text-2xl font-semibold mb-6 text-center md:text-left">
                     Trusted by
                 </h3>
@@ -100,81 +100,75 @@
                 </div>
             </div>
 
-            <div class="col-span-5 h-full">
-                <div class="grid grid-cols-5 h-full">
-                    <!-- Open Source -->
-                    <div class="col-span-2 h-full">
-                        <div class="p-8 bg-background rounded-l-lg border shadow-md hover:shadow-lg transition-all h-full flex flex-col">
-                            <h3 class="text-2xl font-semibold text-center md:text-left mb-6">
-                                Open Source
-                            </h3>
-                            <div class="h-px w-full bg-border mb-6"></div>
-                            <ul class="space-y-4 mb-8 text-left">
-                                <li class="flex items-center">
-                                    <i class="fa-regular fa-circle-check text-primary mr-2"></i>
-                                    In-process architecture
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fa-regular fa-circle-check text-primary mr-2"></i>
-                                    High performance at scale
-                                </li>
-                                <li class="flex items-center ">
-                                    <i class="fa-regular fa-circle-check text-primary mr-2"></i>
-                                    Graph-native features
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fa-regular fa-circle-check text-primary mr-2"></i>
-                                    AI and Data ecosystem integration
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fa-regular fa-circle-check text-primary mr-2"></i>
-                                    MIT-licensed
-                                </li>
-                            </ul>
-                            <a href="//github.com/kuzudb/kuzu/" target="_blank" class="mt-auto">
-                                <Button variant="outline">Get Started</Button>
-                            </a>
-                        </div>
+            <!-- Open Source -->
+            <div class="flex flex-col h-full mx-auto w-full max-w-md md:border-l md:pl-8">
+                <div class="p-8 bg-background rounded-l-lg border shadow-md hover:shadow-lg transition-all h-full flex flex-col">
+                    <h3 class="text-2xl font-semibold text-center md:text-left mb-6">
+                        Open Source
+                    </h3>
+                    <div class="h-px w-full bg-border mb-6"></div>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-circle-check text-primary mr-2"></i>
+                            In-process architecture
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-circle-check text-primary mr-2"></i>
+                            High performance at scale
+                        </li>
+                        <li class="flex items-center ">
+                            <i class="fa-regular fa-circle-check text-primary mr-2"></i>
+                            Graph-native features
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-circle-check text-primary mr-2"></i>
+                            AI and Data ecosystem integration
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-circle-check text-primary mr-2"></i>
+                            MIT-licensed
+                        </li>
+                    </ul>
+                    <a href="//github.com/kuzudb/kuzu/" target="_blank" class="mt-auto">
+                        <Button variant="outline">Get Started</Button>
+                    </a>
+                </div>
+            </div>
+            <!-- Enterprise Edition -->
+            <div class="flex flex-col h-full mx-auto w-full max-w-md">
+                <div class="relative p-8 bg-background rounded-r-lg border-1 border-primary shadow-sm transition-all animate-glow h-full flex flex-col">
+                    <h3 class="text-2xl font-semibold text-center md:text-left mb-6">Enterprise Edition</h3>
+                    <div class="h-px w-full bg-primary/20 mb-6"></div>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-circle-check text-primary mr-2"></i>
+                            All open source features
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-circle-check text-primary mr-2"></i>
+                            Standalone server deployment
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-circle-check text-primary mr-2"></i>
+                            Enterprise security
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-circle-check text-primary mr-2"></i>
+                            Observability
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-circle-check text-primary mr-2"></i>
+                            Data backup and recovery
+                        </li>
+                    </ul>
+                    <div class="flex flex-row gap-6 mt-auto">
+                        <a href="/product">
+                            <Button variant="default">Learn More</Button>
+                        </a>
                     </div>
-                    <!-- Enterprise Edition -->
-                    <div class="col-span-3 h-full">
-                        <div class="relative p-8 bg-background rounded-r-lg border-1 border-primary shadow-sm transition-all animate-glow h-full flex flex-col">
-                            <h3 class="text-2xl font-semibold text-center md:text-left mb-6">Enterprise Edition</h3>
-                            <div class="h-px w-full bg-primary/20 mb-6"></div>
-                            <ul class="space-y-4 mb-8 text-left">
-                                <li class="flex items-center">
-                                    <i class="fa-regular fa-circle-check text-primary mr-2"></i>
-                                    All open source features
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fa-regular fa-circle-check text-primary mr-2"></i>
-                                    Standalone server deployment
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fa-regular fa-circle-check text-primary mr-2"></i>
-                                    Enterprise security
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fa-regular fa-circle-check text-primary mr-2"></i>
-                                    Observability
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fa-regular fa-circle-check text-primary mr-2"></i>
-                                    Data backup and recovery
-                                </li>
-                            </ul>
-                            <div class="flex flex-row gap-6 mt-auto">
-                                <a href="/product">
-                                    <Button variant="default">Learn More</Button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
 
-            
         </div>
     </div>
 </section>
@@ -198,4 +192,6 @@
         width: 100%;
         will-change: transform;
     }
+
 </style>
+
