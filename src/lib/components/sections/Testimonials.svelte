@@ -1,5 +1,13 @@
 <script lang="ts">
 	const testimonials = [
+
+		{
+			text: "Ever wish your AI could show its work instead of guessing in a black box? With graph databases like Kuzu and AI-generated Cypher queries, you get exactly that.",
+			author: "Nick Talwar",
+			role: "CTO of",
+			company: "Bottega8, Ex-Microsoft",
+			image: "/community/nicktalwar.jpg",
+		},
 		
 		{
 			text: "🚀 Build Real-Time Knowledge Graphs with kuzudb + LLMs. Production-grade, ultra-performant, step-by-step. ✅ Kuzu: high-performance graph DB, written in C++ Perfect for anyone building a real-time knowledge base.",
@@ -15,20 +23,6 @@
 			company:"AcreHedge Inc.",
 			image: "/community/todd.jpg"
 		},
-    {
-			text: "We were looking for an in-process graph database to run lineage queries: Kuzu is very fast and has great foundations as the team behind it, and handles all the strange inferences we throw at it.",
-			author: "Jacopo Tagliabue",
-			role: "Founder of",
-			company: "Bauplan Labs",
-			image: "/community/jacopo.jpg"
-		},
-		{
-			text: "Ever wish your AI could show its work instead of guessing in a black box? With graph databases like Kuzu and AI-generated Cypher queries, you get exactly that.",
-			author: "Nick Talwar",
-			role: "CTO of",
-			company: "Bottega8, Ex-Microsoft",
-			image: "/community/nicktalwar.jpg",
-		},
 		{
 			text: "Embedded DBs are having a renaissance. RDBMS: SQLite OLAP: DuckDB Graph: KuzuDB Search: Chroma The developer experience is so good on these. Things just work. Really cool to see.",
 			author: "Chris Riccomini",
@@ -36,19 +30,20 @@
 			company: "",
 			image: "/community/criccomini.jpg",
 		},
+
+		{
+			text: "We were looking for an in-process graph database to run lineage queries: Kuzu is very fast and has great foundations as the team behind it, and handles all the strange inferences we throw at it.",
+			author: "Jacopo Tagliabue",
+			role: "Founder of",
+			company: "Bauplan Labs",
+			image: "/community/jacopo.jpg"
+		},
 		{
 			text: "1. KuzuDB seems faster than Neo4j across the board! (Upto 188x). 2. Features like vectorized query execution, morsel-driven parallelism, worst-case optimal joins, and factorized execution perhaps contribute to this. 3. Embeddability is a big usability win.",
 			author: "ttanay666",
 			role: "HackerNews",
 			company: "",
 			image: "",
-		},
-		{
-			text: "Knowledge graphs are infinitely better than vector search for building the memory of AI agents. With five lines of code, you can build a knowledge graph with your data. When you see the results, you'll never go back to vector-mediocrity-land.",
-			author: "Santiago Valdarrama",
-			role: "Founder of",
-			company: "Tideily",
-			image: "/community/santiago.jpg"
 		},
 	];
 </script>
