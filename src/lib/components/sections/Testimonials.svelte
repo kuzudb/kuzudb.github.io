@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fly } from 'svelte/transition';
 	const testimonials = [
 
 		{
@@ -46,21 +47,109 @@
 			image: "",
 		},
 	];
+	let currentSlide = 0;
+	let isAnimating = false;
+	function nextSlide() {
+		if (isAnimating) return;
+		isAnimating = true;
+		currentSlide = (currentSlide + 1) % testimonials.length;
+		setTimeout(() => { isAnimating = false; }, 300);
+	}
+	function prevSlide() {
+		if (isAnimating) return;
+		isAnimating = true;
+		currentSlide = currentSlide === 0 ? testimonials.length - 1 : currentSlide - 1;
+		setTimeout(() => { isAnimating = false; }, 300);
+	}
+	function goToSlide(index: number) {
+		if (isAnimating) return;
+		isAnimating = true;
+		currentSlide = index;
+		setTimeout(() => { isAnimating = false; }, 300);
+	}
 </script>
 
 
 <section class="relative py-20 bg-background overflow-auto">
-  <div class="container max-w-7xl mx-auto">
-    <div class=" h-[400px] md:h-[800px] overflow-y-auto relative [&::-webkit-scrollbar]:w-2
-  [&::-webkit-scrollbar-track]:rounded-full
-  [&::-webkit-scrollbar-track]:bg-background
-  [&::-webkit-scrollbar-thumb]:rounded-full
-  [&::-webkit-scrollbar-thumb]:bg-muted">
+	<div class="container max-w-7xl mx-auto">
+	  <!-- Mobile: Carousel -->
+	  <div class="md:hidden relative">
+		<div class="h-[400px] relative overflow-hidden">
+		  {#each testimonials as testimonial, index}
+			{#if index === currentSlide}
+			  <div 
+				class="absolute inset-0 w-full"
+				transition:fly={{ x: 300, duration: 300 }}
+			  >
+				<div class="w-full max-w-sm mx-auto bg-background border rounded-lg p-6 h-full flex flex-col">
+				  <p class="text-foreground mb-4 text-left whitespace-pre-line flex-grow">{testimonial.text}</p>
+				  <div class="flex items-center gap-3 pt-4 border-t mt-4 flex-none">
+					{#if testimonial.image}
+					  <div class="w-12 h-12 rounded-full overflow-hidden bottom-0 flex-shrink-0">
+						<img
+						  src={testimonial.image}
+						  alt={testimonial.author}
+						  class="w-full h-full object-cover"
+						/>
+					  </div>
+					{:else}
+					  <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+						<span class="text-xl font-bold text-primary">
+						  {testimonial.author[0]}
+						</span>
+					  </div>
+					{/if}
+					<div class="text-left">
+					  <div class="font-semibold text-foreground">{testimonial.author}</div>
+					  <div class="text-xs text-muted-foreground">{testimonial.role} {testimonial.company}</div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			{/if}
+		  {/each}
+		</div>
+  
+		<!-- Navigation Buttons -->
+		<button 
+		  class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-background/80 hover:bg-background border rounded-full p-2 shadow-lg transition-all"
+		  on:click={prevSlide}
+		  aria-label="Previous testimonial"
+		>
+		  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+		  </svg>
+		</button>
+  
+		<button 
+		  class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-background/80 hover:bg-background border rounded-full p-2 shadow-lg transition-all"
+		  on:click={nextSlide}
+		  aria-label="Next testimonial"
+		>
+		  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+		  </svg>
+		</button>
+  
+		<!-- Slide Indicators -->
+		<div class="flex justify-center gap-2 mt-4">
+		  {#each testimonials as _, index}
+			<button
+			  class="w-2 h-2 rounded-full transition-all {index === currentSlide ? 'bg-primary' : 'bg-muted'}"
+			  on:click={() => goToSlide(index)}
+			  aria-label="Go to slide {index + 1}"
+			></button>
+		  {/each}
+		</div>
+	  </div>
+  
+	  <!-- Desktop: Masonry Layout -->
+	  <div class="hidden md:block h-[800px] overflow-y-auto relative [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-background [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted">
 
       <div class="columns-1 md:columns-2 lg:columns-3 gap-6">
         {#each testimonials as testimonial}
-          <div class="mb-6 break-inside-avoid bg-background border rounded-lg p-6">
-            <p class="text-foreground mb-4 text-left whitespace-pre-line">{testimonial.text}</p>
+		<div class="mb-6 break-inside-avoid bg-background border rounded-lg p-6 flex flex-col h-full">
+            <p class="text-foreground mb-4 text-left whitespace-pre-line flex-grow">{testimonial.text}</p>
             <div class="flex items-center gap-3 pt-4 border-t mt-4 flex-none">
               {#if testimonial.image}
                 <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
