@@ -94,7 +94,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					class="hover:text-primary transition-colors"
-					>Documentation</a
+					>Docs</a
 				>
 				<a
 					href="https://blog.kuzudb.com"
@@ -109,15 +109,15 @@
 					<i class="fa-brands fa-github"></i>
 					<span class="transition-all duration-300" class:hidden={scrolled}>GitHub</span>
 				</a>
-				<!-- <a
-					href="//kuzudb.com/chat"
+				<a
+					href="https://discord.com/invite/VtX2gw9Rug"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="hover:text-primary transition-colors"
 				>
 					<i class="fa-brands fa-discord"></i>
 					<span class="transition-all duration-300" class:hidden={scrolled}>Discord</span>
-				</a> -->
+				</a>
 				<Button variant="ghost" size="icon" onclick={toggleMode}>
 					<Sun
 						class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
@@ -187,6 +187,15 @@
 						>
 							<Button variant="ghost" size="icon">
 								<i class="fa-brands fa-github"></i>
+							</Button>
+						</a>
+						<a
+							href="https://discord.com/invite/VtX2gw9Rug"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Button variant="ghost" size="icon">
+								<i class="fa-brands fa-discord"></i>
 							</Button>
 						</a>
 						<Button
