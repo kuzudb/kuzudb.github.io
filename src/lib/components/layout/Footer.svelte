@@ -110,12 +110,6 @@
 					class="text-primary hover:text-foreground transition-colors"
 					>Kamran Maksimov</a
 				>
-				and 
-				<a
-					href="https://www.linkedin.com/in/lily-song-b82a18284/"
-					class="text-primary hover:text-foreground transition-colors"
-					>Lily Song</a
-				>
 			</p>
 		</div>
 	</div>
