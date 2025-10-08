@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 export const useModeStore = defineStore("mode", {
   state: () => ({
-    theme: "vs-dark",
+    theme: "",
   }),
 
   actions: {
@@ -12,9 +12,6 @@ export const useModeStore = defineStore("mode", {
         'data-bs-theme',
         this.theme === 'vs-dark' ? 'dark' : 'light'
       );
-      if (window.Monaco?.editor) {
-        window.Monaco.editor.setTheme(this.theme);
-      }
     },
     setTheme(theme) {
       this.theme = theme;
@@ -22,9 +19,10 @@ export const useModeStore = defineStore("mode", {
         'data-bs-theme',
         theme === 'vs-dark' ? 'dark' : 'light'
       );
-      if (window.Monaco?.editor) {
-        window.Monaco.editor.setTheme(theme);
-      }
+    },
+    init() {
+      const savedTheme = localStorage.getItem('themePreference') || 'vs-light';
+      this.setTheme(savedTheme);
     },
   },
 });

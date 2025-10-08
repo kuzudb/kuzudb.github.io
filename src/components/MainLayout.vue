@@ -4,28 +4,6 @@
       <div class="main-layout__sidebar">
         <ul class="main-layout__sidebar-nav">
           <li>
-            <ul
-              v-if="modeStore.isReadOnly"
-              class="navbar-nav hide-on-collapse"
-            >
-              <li class="nav-item">
-                <span
-                  class="badge"
-                  @click="accessModeModal.show()"
-                >Read-only Mode</span>
-              </li>
-            </ul>
-            <ul
-              v-if="modeStore.isDemo"
-              class="navbar-nav hide-on-collapse"
-            >
-              <li class="nav-item">
-                <span
-                  class="badge"
-                  @click="accessModeModal.show()"
-                >Instructions</span>
-              </li>
-            </ul>
             <div class="main-layout__sidebar-header flex justify-between items-center">
               <a
                 class="navbar-brand"
@@ -193,6 +171,7 @@ export default {
     },
   },
   mounted() {
+    this.modeStore.init();
     this.updateAlertHeight();
     window.addEventListener('resize', this.updateAlertHeight);
   },
@@ -206,31 +185,11 @@ export default {
         this.alertHeight = this.$refs.bannerAlert.offsetHeight;
       }
     },
-    // Manual cookie handling methods
-    setCookie(name, value, days) {
-      let expires = "";
-      if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-      }
-      document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    },
-    getCookie(name) {
-      const nameEQ = name + "=";
-      const ca = document.cookie.split(';');
-      for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-      }
-      return null;
-    },
-    // Handle theme toggle, save to cookie, then update store
+    // Handle theme toggle, save to localStorage, then update store
     handleThemeToggle() {
       const currentTheme = this.modeStore.theme;
       const nextTheme = currentTheme === 'vs-dark' ? 'vs-light' : 'vs-dark';
-      this.setCookie('themePreference', nextTheme, 365); // Save preference for 365 days
+      localStorage.setItem('themePreference', nextTheme);
       this.modeStore.toggleTheme(); // Let the store handle the actual theme change
     },
   },
@@ -445,12 +404,11 @@ html, body {
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  color: var(--bs-body-text);
 }
+
 
 .hero-description {
   font-size: 1.5rem;
-  color: var(--bs-body-text);
   opacity: 0.8;
   margin-bottom: 2rem;
   max-width: 42rem;
@@ -546,8 +504,8 @@ html, body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--bs-body-text);
 }
+
 
 .features-grid {
   display: grid;
