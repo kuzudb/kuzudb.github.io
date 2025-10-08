@@ -20,17 +20,6 @@
             </div>
             <hr>
           </li>
-
-          <li class="nav-item">
-            <a
-              aria-hidden="true"
-              href="http://kuzudb.github.io/docs"
-              target="_blank"
-            >
-              <i class="fa-solid fa-book" />
-              <span>Docs</span>
-            </a>
-          </li>
           <li class="nav-item">
             <a
               aria-hidden="true"
