@@ -31,7 +31,7 @@ python3 -m http.server
 ```
 
 ## Continuous Integration
-This repository uses GitHub Actions for continuous integration. The workflow is defined in the `.github/workflows/svelte.yml` file. When a pull request is opened, the workflow will run and build the website. If the build is successful, the artifacts will be uploaded as a zip file to the pull request. The artifacts can be downloaded and tested locally.
+This repository uses GitHub Actions for continuous integration. The workflow is defined in the `.github/workflows/vuejs.yml` file. When a pull request is opened, the workflow will run and build the website. If the build is successful, the artifacts will be uploaded as a zip file to the pull request. The artifacts can be downloaded and tested locally.
 
 When a pull request is merged, the workflow will run again to build the website and deploy it to the GitHub Pages automatically.
 

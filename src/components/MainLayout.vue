@@ -488,7 +488,7 @@ html, body {
 }
 
 .btn-lg {
-  padding: 2rem 4rem;
+  padding: 1rem 2rem;
   font-size: 1.75rem;
 }
 
@@ -513,7 +513,6 @@ html, body {
 
   .hero-buttons .btn.btn-lg,
   .hero-buttons .btn-primary.btn-lg {
-    padding: 1rem 2rem !important;
     font-size: 1rem !important;
   }
 }
