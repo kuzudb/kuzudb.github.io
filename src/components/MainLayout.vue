@@ -417,12 +417,12 @@ html, body {
   width: 100%;
   z-index: 999;
   border-radius: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {
   .banner-alert {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -441,7 +441,7 @@ html, body {
 }
 
 .hero-title {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
@@ -449,7 +449,7 @@ html, body {
 }
 
 .hero-description {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--bs-body-text);
   opacity: 0.8;
   margin-bottom: 2rem;
@@ -470,7 +470,7 @@ html, body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
   border-radius: 0.5rem;
@@ -489,7 +489,7 @@ html, body {
 
 .btn-lg {
   padding: 1rem 2rem;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
 }
 
 .hero-buttons .btn-primary {
@@ -504,16 +504,16 @@ html, body {
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .hero-description {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   .hero-buttons .btn.btn-lg,
   .hero-buttons .btn-primary.btn-lg {
-    font-size: 1rem !important;
+    font-size: 0.875rem !important;
   }
 }
 
@@ -521,7 +521,7 @@ html, body {
   .hero-buttons .btn.btn-lg,
   .hero-buttons .btn-primary.btn-lg {
     padding: 0.75rem 1.5rem !important;
-    font-size: 0.875rem !important;
+    font-size: 0.75rem !important;
   }
 
   .hero-buttons .btn span,
@@ -542,7 +542,7 @@ html, body {
 }
 
 .features-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
@@ -569,20 +569,20 @@ html, body {
 }
 
 .feature-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #ff5722;
   margin-bottom: 1rem;
 }
 
 .feature-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--bs-body-text);
 }
 
 .feature-description {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--bs-body-text);
   opacity: 0.8;
   line-height: 1.6;
@@ -640,7 +640,7 @@ html, body {
 
 .footer-social-link {
   color: #ccc;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   transition: all 0.2s ease;
 }
 
@@ -659,7 +659,7 @@ html, body {
 }
 
 .footer-section-title {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #fff;
