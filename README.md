@@ -4,16 +4,16 @@ This repository hosts the source code for [Kuzu website](https://kuzudb.github.i
 
 ## Test Locally
 
-This website is built using [Svelte](https://svelte.dev). To test the website locally, you need to have Node.js installed on your machine. You can install Node.js from [here](https://nodejs.org/en/download/).
+To test the website locally, you need to have Node.js installed on your machine. You can install Node.js from [here](https://nodejs.org/en/download/).
 
 After installing Node.js, you can clone this repository and run the following commands to test the website locally:
 
 ```bash
 npm install
-npm run dev
+npm run serve
 ```
 
-This will start a development server on `localhost:5173`. You can open this URL in your browser to view the website.
+This will start a development server on `localhost:8080`. You can open this URL in your browser to view the website.
 
 ## Build
 

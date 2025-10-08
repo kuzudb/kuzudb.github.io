@@ -1,38 +1,60 @@
 {
-	"name": "kuzu-website",
-	"private": true,
-	"version": "0.0.1",
-	"type": "module",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-node": "^5.2.11",
-		"@sveltejs/adapter-static": "^3.0.8",
-		"@sveltejs/kit": "^2.16.0",
-		"@sveltejs/vite-plugin-svelte": "^5.0.0",
-		"autoprefixer": "^10.4.20",
-		"bits-ui": "1.0.0-next.87",
-		"clsx": "^2.1.1",
-		"embla-carousel-svelte": "^8.5.2",
-		"lucide-svelte": "^0.473.0",
-		"svelte": "^5.0.0",
-		"svelte-check": "^4.0.0",
-		"tailwind-merge": "^2.6.0",
-		"tailwind-variants": "^0.3.1",
-		"tailwindcss": "^3.4.17",
-		"tailwindcss-animate": "^1.0.7",
-		"typescript": "^5.0.0",
-		"vite": "^6.0.0"
-	},
-	"dependencies": {
-		"@types/d3": "^7.4.3",
-		"d3": "^7.9.0",
-		"mode-watcher": "^0.5.0"
-	}
+  "name": "kuzu-explorer",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "serve": "NODE_ENV=development vue-cli-service serve",
+    "build": "KUZU_IN_MEMORY=true NODE_ENV=production vue-cli-service build",
+    "clean": "rm -rf node_modules dist",
+    "eslint": "eslint --ext .js,.vue src",
+    "eslint-fix": "eslint --ext .js,.vue src --fix"
+  },
+  "dependencies": {
+    "@antv/g6": "^5.0.49",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.1",
+    "chroma-js": "^3.0.0",
+    "core-js": "^3.8.3",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "pinia": "^2.0.23",
+    "pino": "^8.16.1",
+    "pino-pretty": "^10.2.3",
+    "uuid": "^9.0.1",
+    "vue": "^3.2.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-transform-private-methods": "^7.27.1",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "monaco-editor-webpack-plugin": "^7.1.0",
+    "nodemon": "^3.0.1",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
+    "webpack": "^5.88.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
 }
