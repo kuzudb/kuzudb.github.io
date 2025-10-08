@@ -4,7 +4,7 @@ module.exports = defineConfig({
   pages: {
     index: {
       entry: "src/main.js",
-      title: "Kuzu",
+      title: "Kuzu - Embedded, scalable, blazing fast graph database",
     },
   },
   outputDir: "_site",
